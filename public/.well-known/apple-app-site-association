@@ -1,0 +1,25 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "B88CURT7Z3.com.vuatho.mobile",
+        "paths": [
+          "*"
+        ]
+      },
+      {
+        "appID": "B88CURT7Z3.com.vuatho.mobile.dev",
+        "paths": [
+          "*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "B88CURT7Z3.com.vuatho.mobile",
+      "B88CURT7Z3.com.vuatho.mobile.dev"
+    ]
+  }
+}

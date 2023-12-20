@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ct-container-70 {
+  @apply mx-auto w-full max-w-[1600px] px-8 13inch:w-[1240px] 13inch:px-0;
+}
+
+.ct-container-promotion {
+  @apply mx-auto w-full max-w-[1600px] px-6 13inch:w-[1240px] 13inch:px-0;
+}
+
+.ai-section-image {
+  -webkit-filter: drop-shadow(5px 5px 10px #77d3f9);
+  filter: drop-shadow(5px 5px 10px #77d3f9);
+}
+
+#globeContainer {
+  background-color: transparent;
+}
+
+canvas {
+  background: transparent !important;
+}

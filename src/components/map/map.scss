@@ -1,0 +1,12 @@
+.map {
+  path {
+    fill: #3b77ff;
+    transition: all 0.3s;
+    position: absolute;
+    cursor: pointer;
+
+    &:hover {
+      fill: #fcb713;
+    }
+  }
+}
