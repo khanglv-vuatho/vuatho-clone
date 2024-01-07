@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params?: any }) {
       en: 'Home',
     }
     return {
-      title: metadata[params.locale || 'vi'],
+      title: metadata[params.locale || 'vi'] || metadata.en,
     }
   } catch (error) {
     console.log(error)

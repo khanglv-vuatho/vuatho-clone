@@ -24,7 +24,9 @@
     "download": "Tải ngay",
     "download_now": "Để trải nghiệm công nghệ AI tiên tiến nhất",
     "download_appstore": "Tải từ",
-    "download_chplay": "Tải từ"
+    "download_chplay": "Tải từ",
+    "text1": "Đặt thợ, tìm việc với công nghệ AI",
+    "text2": "Hoặc quét mã QR dưới đây"
   },
   "Footer": {
     "address": "57 Song Hành, P. An Phú, TP. Thủ Đức,",
@@ -34,12 +36,15 @@
     "about_us": "Về chúng tôi",
     "faq": "Câu hỏi thường gặp",
     "become_worker": "Hướng dẫn đăng ký thành thợ",
+    "promotion": "Chương trình khuyến mãi",
     "contact_with_vuatho": "Hợp tác cùng Vua Thợ",
     "guides": "Điều khoản và Điều kiện",
     "private_infomation": "Chính sách bảo mật",
     "contact_us": "Liên hệ",
     "sending": "Đang gửi thông báo đến ",
-    "BCT": "bộ công thương"
+    "BCT": "bộ công thương",
+    "text": "Công ty TNHH CN Vua Thợ",
+    "text1": "Mã số thuế: "
   },
   "NotFound": {
     "text": "Không tìm thấy trang bạn cần tìm !",
@@ -62,7 +67,7 @@
   },
   "MainSection": {
     "heading1": "Ứng dụng ",
-    "heading1-1": "Tìm Thợ - Tìm Việc ",
+    "heading1-1": "Kết Nối Thợ Gần Nhất",
     "heading2": "Áp Dụng Công Nghệ AI",
     "listCard": {
       "title1": "Đột phá",
@@ -85,7 +90,8 @@
     "title3": "Sự đa dạng ngôn ngữ với AI",
     "desc3": "Không bao giờ bị rào cản ngôn ngữ ngăn cách bạn và giải pháp mà bạn cần",
     "title4": "Hiệu Suất AI Đột Phá",
-    "desc4": "AI giúp bạn tiết kiệm thời gian và tìm ra giải pháp một cách nhanh nhất"
+    "desc4": "AI giúp bạn tiết kiệm thời gian và tìm ra giải pháp một cách nhanh nhất",
+    "text": "công nghệ"
   },
   "MinhBach": {
     "heading": "Tinh Thần Linh Động Trong Thỏa Thuận",
@@ -941,5 +947,12 @@
       "text10": "Hệ thống sẽ tự động tiến hành vòng quay lần lượt và chọn ra 03 dãy số để trao giải lần lượt Nhất - Nhì - Ba, chương trình sẽ được thông báo công khai trực tuyến trên các phương tiện truyền thông của Vua Thợ.",
       "text11": "Trong vòng 24 giờ kể từ khi có kết quả xác định trúng thưởng, Vua Thợ sẽ liên hệ để thông báo và hướng dẫn về thời gian, địa điểm, thủ tục nhận thưởng theo quy định."
     }
+  },
+  "InputMainSearch": {
+    "text1": "Thợ nào cũng có, khó lắm kiếm cũng ra...",
+    "text2": "Đang tìm kiếm ...",
+    "worker": "Thợ",
+    "customer": "Khách",
+    "industry": "Ngành Nghề"
   }
 }

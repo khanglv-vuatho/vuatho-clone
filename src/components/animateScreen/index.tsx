@@ -26,7 +26,7 @@ export const Screen = ({ style }: { style?: string }) => {
     <div
       ref={container}
       className={twMerge(
-        'h-[500px] min-w-[260px] overflow-hidden 13inch:h-[700px] 13inch:min-w-[300px]',
+        'min-h-[500px] min-w-[260px] overflow-hidden 13inch:min-h-[700px] 13inch:min-w-[300px]',
         style,
       )}
     ></div>

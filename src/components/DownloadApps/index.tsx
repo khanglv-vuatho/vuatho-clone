@@ -117,7 +117,7 @@ export const QrCode: React.FC<{ height?: string }> = ({ height }) => {
         quality={100}
         className={`${
           height ? height : 'h-[140px]'
-        } relative z-[1] w-auto object-contain`}
+        } relative z-[1] aspect-square w-auto object-contain`}
       />
       <div className='absolute left-0 top-0 hidden aspect-square h-1/2 w-fit animate-pulse rounded-full bg-primary-blue blur-xl lg:block' />
       <div className='absolute right-0 top-0 hidden aspect-square h-1/2 w-fit animate-pulse rounded-full bg-primary-yellow blur-xl lg:block' />

@@ -7,14 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { langs } from '@/constants'
 
-import {
-  Button,
-  Input,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  useSelect,
-} from '@nextui-org/react'
+import { Button, Input, Popover, PopoverContent, PopoverTrigger } from '@nextui-org/react'
 import { Add, Global, SearchNormal1 } from 'iconsax-react'
 
 import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
@@ -244,11 +237,11 @@ function LangsComp() {
                           selectCurrency.code === item.code
                             ? 'bg-primary-blue-2 text-primary-blue'
                             : 'hover:bg-base-gray disabled:hover:bg-transparent'
-                        } flex items-center gap-2 whitespace-nowrap rounded-lg px-4 py-6 text-left text-[1.8rem] disabled:cursor-not-allowed`}
+                        } flex items-center gap-2 whitespace-nowrap rounded-lg px-4 py-6 text-left text-[1.8rem]`}
                       >
                         <span
                           className={`${
-                            item.code === selectCurrency.code ? '' : 'text-black/30'
+                            item.code === selectCurrency.code ? '' : 'text-black/80'
                           }`}
                         >
                           {item.code} - {item.symbol}

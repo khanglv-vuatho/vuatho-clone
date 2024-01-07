@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params?: any }) {
       en: 'Leading App in Vietnam',
     }
     return {
-      title: metadata[params.locale || 'vi'],
-      description: description[params.locale || 'vi'],
+      title: metadata[params.locale || 'vi'] || metadata.en,
+      description: description[params.locale || 'vi'] || metadata.en,
     }
   } catch (error) {
     console.log(error)
@@ -52,7 +52,9 @@ function AboutUs() {
       <div className='w-full bg-[#F6F8FA]'>
         <SectionServices />
       </div>
-      <SectionDownload />
+      <div className='py-[40px] md:py-[100px]'>
+        <SectionDownload />
+      </div>
     </div>
   )
 }

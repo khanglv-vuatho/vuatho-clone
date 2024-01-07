@@ -14,7 +14,6 @@ const GlobeComponent = React.memo((props: any) => {
 
     const colors = [
       'red',
-      'white',
       'blue',
       'green',
       'yellow',
@@ -43,7 +42,7 @@ const GlobeComponent = React.memo((props: any) => {
       'peru',
       'sienna',
     ]
-    const arcsData: any = Array.from(Array(15).keys()).map(() => ({
+    const arcsData: any = Array.from(Array(10).keys()).map(() => ({
       startLat: (Math.random() - 0.5) * 180,
       startLng: (Math.random() - 0.5) * 360,
       endLat: (Math.random() - 0.5) * 180,
@@ -61,8 +60,8 @@ const GlobeComponent = React.memo((props: any) => {
     ])
 
     globe
-      .width(960)
-      .height(960)
+      .width(600)
+      .height(600)
       .backgroundColor('#FFFFFF00')
       .globeImageUrl('//unpkg.com/three-globe@2.30.0/example/img/earth-blue-marble.jpg')
       .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
@@ -111,6 +110,7 @@ const GlobeComponent = React.memo((props: any) => {
     globe.controls().autoRotate = true
     globe.controls().autoRotateSpeed = 0.3
     globe.controls().enableZoom = false
+    globe.controls().enableRotate = false
 
     function animate() {
       globe.controls().update()

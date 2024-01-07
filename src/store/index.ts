@@ -6,6 +6,7 @@ const DefaultValueState: any = {
   currency: [],
   languages: [],
   currencyCurrent: { code: 'VND', name: 'Vietnamese Đồng', symbol: '₫' },
+  services: [],
 }
 
 function counterReducer(state: any = DefaultValueState, action: any) {
@@ -18,6 +19,8 @@ function counterReducer(state: any = DefaultValueState, action: any) {
       return { ...state, currency: [...action.payload] }
     case 'currencyCurrent':
       return { ...state, currencyCurrent: { ...action.payload } }
+    case 'services':
+      return { ...state, services: [...action.payload] }
     default:
       return state
   }

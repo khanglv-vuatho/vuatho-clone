@@ -6,7 +6,6 @@ import Script from 'next/script'
 import { ToastContainer } from 'react-toastify'
 
 import { locales } from '@/constants'
-
 import { Providers } from './providers'
 
 import './global.css'

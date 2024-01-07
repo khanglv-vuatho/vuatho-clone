@@ -25,13 +25,6 @@ export default async function RootLayout({ children, params }: any) {
     return redirect(`/vi/${locale}`)
   }
 
-  let messages
-  try {
-    messages = (await import(`../../../messages/${locale || 'vi'}.json`)).default
-  } catch (error) {
-    console.log(error)
-  }
-
   return (
     <>
       <Header />

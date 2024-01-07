@@ -34,6 +34,7 @@ function Footer() {
       { title: t('about_us'), url: `/${locale}/about-us` },
       { title: t('faq'), url: `/${locale}/faq` },
       { title: t('become_worker'), url: `/${locale}/become-services-provider` },
+      { title: t('promotion'), url: `/promotion` },
     ],
     policy: [
       { title: t('guides'), url: `/${locale}/terms-and-condition` },
@@ -119,7 +120,7 @@ function Footer() {
               <div className='flex items-center gap-4'>
                 <PhoneIcon className='text-primary-blue' variant='Bold' />
                 <span className='text-[1.8rem] font-light md:text-[2rem]'>
-                  <span className='text-gray-500'>(+84)</span> 3878 6688
+                  <span className='text-gray-500'>(+84)</span> 912 426 404
                 </span>
               </div>
               <div className='flex items-center gap-4'>
@@ -129,15 +130,19 @@ function Footer() {
                 </span>
               </div>
               <div className='flex items-center gap-4'>
-                <LocationIcon className='text-primary-blue' variant='Bold' />
+                <LocationIcon
+                  className='!size-[24px] flex-shrink-0 text-primary-blue'
+                  variant='Bold'
+                />
                 <span className='text-[1.8rem] font-light md:text-[2rem]'>
                   {t('address')}
-                  <br className='hidden lg:block' />
+                  <br className='hidden xl:block 3xl:hidden' />
+                  <span className='ml-2 xl:ml-0 3xl:ml-2' />
                   {t('location')}
                 </span>
               </div>
               <p className='text-[1.8rem] font-light md:text-[2rem]'>
-                <span className='font-semibold'>MST: </span>
+                <span className='font-semibold'>{t('text1')}</span>
                 <span className=''>0318063280</span>
               </p>
             </div>
@@ -223,7 +228,7 @@ const SubFooter = () => {
         height={71}
         className='md:h-auto h-32 w-auto object-contain'
       /> */}
-      <p className='text-[1.8rem] text-baseBlack'>Công ty TNHH CN Vua Thợ</p>
+      <p className='text-[1.8rem] text-baseBlack'>{t('text')}</p>
       <p className='col-span-2 text-center text-[1.8rem] text-baseBlack md:text-left'>
         © 2023. All rights reserved.
       </p>

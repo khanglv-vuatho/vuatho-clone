@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params?: any }) {
       en: 'Tag not found',
     }
     return {
-      title: metadata[params.locale || 'vi'],
+      title: metadata[params.locale || 'vi'] || metadata.en,
     }
   }
 }

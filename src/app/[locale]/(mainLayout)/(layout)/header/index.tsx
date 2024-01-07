@@ -5,7 +5,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-
 import LangsComp from '@/components/LangsComp'
 
 import { Button } from '@nextui-org/react'
@@ -13,14 +12,14 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Add as AddIcon, HambergerMenu as MenuIcon } from 'iconsax-react'
 import { twMerge } from 'tailwind-merge'
 
-const Header = () => {
+const Header = React.memo(() => {
   return (
     <HeaderWrapper>
       <Logo />
       <RightNav />
     </HeaderWrapper>
   )
-}
+})
 
 export const HeaderWrapper = ({
   children,
@@ -110,7 +109,7 @@ export const Logo = () => {
   )
 }
 
-const RightNav = () => {
+const RightNav = React.memo(() => {
   const t = useTranslations('Navbar')
 
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -154,7 +153,7 @@ const RightNav = () => {
         <div className='flex items-center gap-[16px]'>
           <Button
             onClick={_HandleOpenWindow.bind(this)}
-            className='hidden h-[44px] w-auto rounded-[44px] bg-primaryYellow px-[24px] text-[1.8rem] font-semibold text-baseBlack lg:block'
+            className='hidden h-[44px] w-auto rounded-[44px] bg-gradient-to-br from-[#ffa488] to-[#ffcc3f] px-[24px] text-[1.8rem] font-semibold text-baseBlack transition hover:from-[#ffcc3f] hover:to-[#ffa488] lg:block'
           >
             {t('download')}
           </Button>
@@ -168,7 +167,7 @@ const RightNav = () => {
           <div className='flex items-center gap-[20px]'>
             <Button
               onClick={_HandleOpenWindow.bind(this)}
-              className='h-[40px] w-auto bg-primaryYellow px-[30px] text-[1.8rem] font-semibold text-baseBlack md:px-[50px] lg:hidden xl:h-[50px]'
+              className='h-[40px] w-auto bg-gradient-to-br from-[#f5b500] to-[#fff0c6] px-[30px] text-[1.8rem] font-semibold text-baseBlack md:px-[50px] lg:hidden xl:h-[50px]'
             >
               {t('download')}
             </Button>
@@ -192,7 +191,7 @@ const RightNav = () => {
       </AnimatePresence>
     </>
   )
-}
+})
 
 const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
   const pathname = usePathname()

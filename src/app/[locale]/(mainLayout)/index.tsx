@@ -2,17 +2,18 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useRef, useState, useCallback } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 import confetti from 'canvas-confetti'
 import { motion, useAnimate } from 'framer-motion'
-import { ArrowRight, Dislike, Like1 } from 'iconsax-react'
+import { ArrowRight2, Dislike, Like1 } from 'iconsax-react'
+
 import { useLocale, useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
+import { Autoplay, EffectFade, FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Agree, CheckIcon, GigEconomy, ImageSkeleton, Support } from '@/components/Icons'
+import { ImageSkeleton, Wave } from '@/components/Icons'
 import Article from '@/components/article'
 import { SkeletonBlog } from '@/components/skeleton'
 import instance from '@/services/axiosConfig'
@@ -21,15 +22,20 @@ import SectionDownload from './(sections)/downloadApp'
 import SectionToTheMoon from './(sections)/toTheMoon'
 import SectionWithVuaTho from './(sections)/withVuaTho'
 
+import CountUp from 'react-countup'
+
 import ImageFallback from '@/components/ImageFallback'
 import { ToastComponent } from '@/components/ToastComponent'
 import { DefaultModal } from '@/components/modal'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
+import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import 'swiper/css/thumbs'
 import './swipper.scss'
 
+import InputSearch from '@/components/input/services'
 import dynamic from 'next/dynamic'
 
 const GlobeComponent = dynamic(() => import('@/components/GlobeComponent'), {
@@ -77,12 +83,15 @@ const AISection = () => {
   return (
     <div id='AI' className='relative bg-white py-[40px] md:py-[80px] xl:py-[100px]'>
       <div className='ct-container-70 relative'>
-        <h4 className='relative z-10 mb-[60px] inline-block w-full bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-center text-[2.4rem] font-semibold uppercase  text-transparent drop-shadow-sm md:text-[4.2rem] 2xl:mb-[100px]'>
+        <h5 className='text-center font-semibold uppercase leading-[30px] tracking-[8px]'>
+          {t('text')}
+        </h5>
+        <h4 className='relative z-10 mb-[60px] inline-block w-full text-center text-[2.4rem] font-semibold uppercase text-primary-blue drop-shadow-sm md:text-[4.2rem] 2xl:mb-[100px] '>
           {t('heading1')}
         </h4>
         <div className='flex flex-col'>
           <div className='bottom-2 flex h-full w-full items-center justify-center md:absolute md:justify-end 13inch:justify-center'>
-            <div className='xl:mt-[200px] flex w-full items-center justify-center md:w-1/2 13inch:w-auto'>
+            <div className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'>
               <Image
                 src={'/ai-section-1.png'}
                 alt='AI Robot'
@@ -148,10 +157,8 @@ const MinhBach = () => {
   return (
     <div className='' id='trade'>
       <section className='ct-container-70'>
-        <h2
-          className='mb-[40px] inline-block bg-gradient-to-br from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-[2.4rem] font-semibold uppercase text-[#f5b500]
-        text-transparent md:text-[4.2rem]'
-        >
+        <h3 className='font-semibold uppercase tracking-[8px]'>thỏa thuận</h3>
+        <h2 className='mb-[40px] inline-block text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>
           {t('heading')}
         </h2>
         <div className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'>
@@ -161,9 +168,9 @@ const MinhBach = () => {
               className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'
             >
               <div className='flex items-center gap-[10px]'>
-                <span className='relative flex h-6 w-6 items-center justify-center'>
+                <span className='relative flex h-[16px] w-[16px] items-center justify-center'>
                   <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f5b500] opacity-75'></span>
-                  <span className='relative inline-flex h-4 w-4 rounded-full bg-[#f5b500]'></span>
+                  <span className='relative inline-flex h-[10px] w-[10px] rounded-full bg-[#f5b500]'></span>
                 </span>
                 <h3 className=' text-[2.2rem] font-bold text-black'>{item.title}</h3>
               </div>
@@ -209,10 +216,8 @@ const HinhThucKetNoi = () => {
   return (
     <section id='multi' className=''>
       <section className='ct-container-70'>
-        <h2
-          className='mb-[40px] inline-block bg-gradient-to-br from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-[2.4rem] font-semibold
-        uppercase  text-transparent md:text-[4.2rem]'
-        >
+        <h3 className='font-semibold uppercase tracking-[8px]'>hợp tác</h3>
+        <h2 className='mb-[40px] inline-block  text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>
           {t('heading')}
         </h2>
         <div className='grid grid-cols-1 gap-[20px] pb-[40px] lg:grid-cols-2 lg:gap-[40px]'>
@@ -223,9 +228,9 @@ const HinhThucKetNoi = () => {
             >
               <div className='flex items-center gap-[10px]'>
                 {/* <div className='h-[12px] w-[12px] animate-ping rounded-full bg-gradient-to-tr from-[#000000] to-[#181818]' /> */}
-                <span className='relative flex h-6 w-6 items-center justify-center'>
+                <span className='relative flex h-[16px] w-[16px] items-center justify-center'>
                   <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f5b500] opacity-75'></span>
-                  <span className='relative inline-flex h-4 w-4 rounded-full bg-[#f5b500]'></span>
+                  <span className='relative inline-flex h-[10px] w-[10px] rounded-full bg-[#f5b500]'></span>
                 </span>
                 <h3 className='text-[2.2rem] font-bold text-black'>{item.label}</h3>
               </div>
@@ -240,36 +245,17 @@ const HinhThucKetNoi = () => {
 
 const MainSection = () => {
   const t = useTranslations('MainSection')
-  const listCard = [
-    {
-      id: '#AI',
-      icon: GigEconomy,
-      title: t('listCard.title1'),
-      desc: t('listCard.desc1'),
-    },
-    {
-      id: '#trade',
-      icon: Agree,
-      title: t('listCard.title2'),
-      desc: t('listCard.desc2'),
-    },
-    {
-      id: '#multi',
-      icon: Support,
-      title: t('listCard.title3'),
-      desc: t('listCard.desc3'),
-    },
-  ]
+
   return (
     <div>
-      <div className='relative bg-[white]'>
-        <div className='ct-container-70 z-1 relative grid grid-cols-1 xl:grid-cols-5'>
+      <div className='relative overflow-hidden bg-[white]'>
+        <div className='ct-container-70 z-1 relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5'>
           <div className='col-span-1 xl:col-span-3'>
-            <div className='relative z-10 mx-auto flex max-w-max flex-col justify-between gap-[20px] pt-10 xl:mx-0 xl:w-full xl:pt-20'>
+            <div className='relative z-10 flex max-w-max flex-col justify-between gap-[20px] pt-10 xl:mx-0  xl:w-full xl:pt-20'>
               <div className='mx-auto flex max-w-max flex-col  xl:mx-0 xl:w-full'>
                 <h3 className='text-[2.8rem] font-bold uppercase'>{t('heading1')}</h3>
                 <h3 className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-left text-[2.4rem] font-bold uppercase text-[#f5b500] text-transparent xl:text-[3.2rem]'>
-                  <span className='text-[#f5b500]'>{t('heading1-1')}</span>
+                  {t('heading1-1')}
                 </h3>
                 <h3 className='text-[2.8rem] font-bold uppercase'>{t('heading2')}</h3>
               </div>
@@ -287,117 +273,120 @@ const MainSection = () => {
                   </p>
                 </div>
               </div>
-              <div className='relative'>
-                <div></div>
-              </div>
             </div>
-            <div className='mt-24 grid w-full grid-cols-1 gap-6 md:grid-cols-3'>
-              {listCard.map((item: any, index: any) => (
-                <a
-                  href={item.id}
-                  key={`listcard-${index}`}
-                  className='group z-[2] flex cursor-pointer items-center gap-[10px] rounded-[10px] bg-white p-[12px] shadow-xl duration-300 hover:border-transparent hover:bg-white md:flex-col md:items-start xl:p-[10px] xl:hover:-translate-y-[6px]'
-                >
-                  <item.icon size={40} className='text-[#f5b500]' variant='Bold' />
-                  <div className='w-full pl-5 md:pl-0'>
-                    <p className='mt-2 text-[1.8rem] text-primaryText'>{item.desc}</p>
-                    <div className='flex items-center justify-between'>
-                      <p className='mt-2 text-[1.8rem] font-semibold text-primaryText'>
-                        {item.title}
-                      </p>
-                      <span className='-translate-x-[10px] opacity-0 duration-300 group-hover:translate-x-0 group-hover:opacity-100'>
-                        <ArrowRight size={24} className='text-black' />
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
+            <QuickDashboard />
           </div>
           <div className='z-[1] col-span-1 mt-32 w-full justify-center xl:col-span-2'>
-            <Image
-              src={'/hand-hold-phone-1.png'}
-              alt=''
-              quality={100}
-              width={400}
-              height={400}
-              className='object-fit relative z-[1]'
-            />
-            <Image
-              src={'/globe.svg'}
-              alt=''
-              quality={100}
-              width={400}
-              height={400}
-              className='motion-safe:animate-bounce-slow absolute top-[660px] z-[0] object-contain lg:top-12'
-            />
+            <motion.div
+              initial={{ opacity: 0, y: 200 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+                delay: 2,
+              }}
+            >
+              <Image
+                src={'/hand-hold-phone-1.webp'}
+                alt=''
+                quality={100}
+                width={400}
+                height={400}
+                className='object-fit relative z-[1]'
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 3,
+              }}
+              className='absolute top-[460px] z-[0] object-contain md:top-0'
+            >
+              <GlobeComponent />
+            </motion.div>
           </div>
         </div>
         <div className='absolute bottom-0 left-0 right-0 z-[0] -skew-y-0 transform'>
-          <svg
-            id='wave'
-            style={{
-              transform: 'rotate(0deg)',
-              transition: '0.3s',
-            }}
-            viewBox='0 0 1440 380'
-            version='1.1'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <defs>
-              <linearGradient id='sw-gradient-0' x1='0' x2='0' y1='1' y2='0'>
-                <stop stop-color='rgba(255, 247.849, 245.552, 1)' offset='0%'></stop>
-                <stop stop-color='rgba(255, 214.838, 126.06, 1)' offset='100%'></stop>
-              </linearGradient>
-            </defs>
-            <defs>
-              <linearGradient id='sw-gradient-1' x1='0' x2='0' y1='1' y2='0'>
-                <stop stop-color='rgba(255, 220.258, 82.871, 1)' offset='0%'></stop>
-                <stop stop-color='rgba(255, 233.672, 186.526, 1)' offset='100%'></stop>
-              </linearGradient>
-            </defs>
-            <path
-              style={{
-                transform: 'translate(0, 50px)',
-                opacity: 0.9,
-              }}
-              fill='url(#sw-gradient-1)'
-              d='M0,38L80,82.3C160,127,320,215,480,247C640,279,800,253,960,240.7C1120,228,1280,228,1440,202.7C1600,177,1760,127,1920,133C2080,139,2240,203,2400,209C2560,215,2720,165,2880,171C3040,177,3200,241,3360,240.7C3520,241,3680,177,3840,164.7C4000,152,4160,190,4320,177.3C4480,165,4640,101,4800,82.3C4960,63,5120,89,5280,88.7C5440,89,5600,63,5760,88.7C5920,114,6080,190,6240,234.3C6400,279,6560,291,6720,247C6880,203,7040,101,7200,57C7360,13,7520,25,7680,25.3C7840,25,8000,13,8160,50.7C8320,89,8480,177,8640,228C8800,279,8960,291,9120,266C9280,241,9440,177,9600,126.7C9760,76,9920,38,10080,25.3C10240,13,10400,25,10560,44.3C10720,63,10880,89,11040,107.7C11200,127,11360,139,11440,145.7L11520,152L11520,380L11440,380C11360,380,11200,380,11040,380C10880,380,10720,380,10560,380C10400,380,10240,380,10080,380C9920,380,9760,380,9600,380C9440,380,9280,380,9120,380C8960,380,8800,380,8640,380C8480,380,8320,380,8160,380C8000,380,7840,380,7680,380C7520,380,7360,380,7200,380C7040,380,6880,380,6720,380C6560,380,6400,380,6240,380C6080,380,5920,380,5760,380C5600,380,5440,380,5280,380C5120,380,4960,380,4800,380C4640,380,4480,380,4320,380C4160,380,4000,380,3840,380C3680,380,3520,380,3360,380C3200,380,3040,380,2880,380C2720,380,2560,380,2400,380C2240,380,2080,380,1920,380C1760,380,1600,380,1440,380C1280,380,1120,380,960,380C800,380,640,380,480,380C320,380,160,380,80,380L0,380Z'
-            ></path>
-            <defs>
-              <linearGradient id='sw-gradient-2' x1='0' x2='0' y1='1' y2='0'>
-                <stop stop-color='rgba(255, 240.059, 105.905, 1)' offset='0%'></stop>
-                <stop stop-color='rgba(255, 179, 11, 1)' offset='100%'></stop>
-              </linearGradient>
-            </defs>
-            <path
-              style={{
-                transform: 'translate(0, 100px)',
-                opacity: 0.8,
-              }}
-              fill='url(#sw-gradient-2)'
-              d='M0,266L80,266C160,266,320,266,480,240.7C640,215,800,165,960,171C1120,177,1280,241,1440,221.7C1600,203,1760,101,1920,57C2080,13,2240,25,2400,69.7C2560,114,2720,190,2880,190C3040,190,3200,114,3360,101.3C3520,89,3680,139,3840,183.7C4000,228,4160,266,4320,247C4480,228,4640,152,4800,145.7C4960,139,5120,203,5280,221.7C5440,241,5600,215,5760,190C5920,165,6080,139,6240,139.3C6400,139,6560,165,6720,158.3C6880,152,7040,114,7200,82.3C7360,51,7520,25,7680,69.7C7840,114,8000,228,8160,259.7C8320,291,8480,241,8640,221.7C8800,203,8960,215,9120,202.7C9280,190,9440,152,9600,164.7C9760,177,9920,241,10080,259.7C10240,279,10400,253,10560,215.3C10720,177,10880,127,11040,107.7C11200,89,11360,101,11440,107.7L11520,114L11520,380L11440,380C11360,380,11200,380,11040,380C10880,380,10720,380,10560,380C10400,380,10240,380,10080,380C9920,380,9760,380,9600,380C9440,380,9280,380,9120,380C8960,380,8800,380,8640,380C8480,380,8320,380,8160,380C8000,380,7840,380,7680,380C7520,380,7360,380,7200,380C7040,380,6880,380,6720,380C6560,380,6400,380,6240,380C6080,380,5920,380,5760,380C5600,380,5440,380,5280,380C5120,380,4960,380,4800,380C4640,380,4480,380,4320,380C4160,380,4000,380,3840,380C3680,380,3520,380,3360,380C3200,380,3040,380,2880,380C2720,380,2560,380,2400,380C2240,380,2080,380,1920,380C1760,380,1600,380,1440,380C1280,380,1120,380,960,380C800,380,640,380,480,380C320,380,160,380,80,380L0,380Z'
-            ></path>
-            <defs>
-              <linearGradient id='sw-gradient-3' x1='0' x2='0' y1='1' y2='0'>
-                <stop stop-color='rgba(255, 186.256, 0, 1)' offset='0%'></stop>
-                <stop stop-color='rgba(255, 179, 11, 1)' offset='100%'></stop>
-              </linearGradient>
-            </defs>
-            <path
-              style={{
-                transform: 'translate(0, 150px)',
-                opacity: 0.7,
-              }}
-              fill='url(#sw-gradient-3)'
-              d='M0,266L80,259.7C160,253,320,241,480,215.3C640,190,800,152,960,120.3C1120,89,1280,63,1440,82.3C1600,101,1760,165,1920,164.7C2080,165,2240,101,2400,101.3C2560,101,2720,165,2880,158.3C3040,152,3200,76,3360,69.7C3520,63,3680,127,3840,183.7C4000,241,4160,291,4320,266C4480,241,4640,139,4800,114C4960,89,5120,139,5280,171C5440,203,5600,215,5760,228C5920,241,6080,253,6240,228C6400,203,6560,139,6720,120.3C6880,101,7040,127,7200,139.3C7360,152,7520,152,7680,177.3C7840,203,8000,253,8160,285C8320,317,8480,329,8640,304C8800,279,8960,215,9120,171C9280,127,9440,101,9600,133C9760,165,9920,253,10080,240.7C10240,228,10400,114,10560,101.3C10720,89,10880,177,11040,183.7C11200,190,11360,114,11440,76L11520,38L11520,380L11440,380C11360,380,11200,380,11040,380C10880,380,10720,380,10560,380C10400,380,10240,380,10080,380C9920,380,9760,380,9600,380C9440,380,9280,380,9120,380C8960,380,8800,380,8640,380C8480,380,8320,380,8160,380C8000,380,7840,380,7680,380C7520,380,7360,380,7200,380C7040,380,6880,380,6720,380C6560,380,6400,380,6240,380C6080,380,5920,380,5760,380C5600,380,5440,380,5280,380C5120,380,4960,380,4800,380C4640,380,4480,380,4320,380C4160,380,4000,380,3840,380C3680,380,3520,380,3360,380C3200,380,3040,380,2880,380C2720,380,2560,380,2400,380C2240,380,2080,380,1920,380C1760,380,1600,380,1440,380C1280,380,1120,380,960,380C800,380,640,380,480,380C320,380,160,380,80,380L0,380Z'
-            ></path>
-          </svg>
+          <Wave />
         </div>
       </div>
     </div>
   )
 }
+
+const QuickDashboard = React.memo(() => {
+  const t = useTranslations('InputMainSearch')
+
+  const [objectData, sObjectData] = useState({
+    customers: 0,
+    providers: 0,
+    services: 0,
+  })
+
+  const [onFetching, sOnFetching] = useState(false)
+
+  const _HandleFetching = () => {
+    instance.get('/home/dash').then((res: any) => {
+      sObjectData({ ...res })
+      sOnFetching(false)
+    })
+  }
+
+  useEffect(() => {
+    onFetching && _HandleFetching()
+  }, [onFetching])
+
+  useEffect(() => {
+    sOnFetching(true)
+  }, [])
+
+  return (
+    <div className='relative z-[10] mt-[10px] space-y-16'>
+      <InputSearch />
+      <div className='grid grid-cols-3 '>
+        <div>
+          <h1>{t('worker')}</h1>
+          <h1 className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-7xl font-bold text-transparent'>
+            <CountUp end={objectData?.providers} delay={5} />
+          </h1>
+        </div>
+        <div>
+          <h1>{t('customer')}</h1>
+          <h1 className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-7xl font-bold text-transparent'>
+            <CountUp end={objectData?.customers} delay={5} />
+          </h1>
+        </div>
+        <div>
+          <ServcesModal value={objectData?.services} />
+        </div>
+      </div>
+    </div>
+  )
+})
+
+const ServcesModal = React.memo((props: any) => {
+  const t = useTranslations('InputMainSearch')
+
+  const locale = useLocale()
+  const [countUpValue, setcountUpValue] = useState(props?.value)
+
+  useEffect(() => {
+    setcountUpValue(props?.value)
+  }, [props?.value])
+
+  return (
+    <div>
+      <h1>{t('industry')}</h1>
+      <Link
+        href={`/${locale}/services`}
+        className='cursor-pointer bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-7xl font-bold text-transparent hover:opacity-80 active:opacity-100'
+      >
+        <CountUp end={countUpValue} delay={5} />
+      </Link>
+    </div>
+  )
+})
 
 const CustomerBenefitSection = () => {
   const t = useTranslations('CustomerBenefitSection')
@@ -428,18 +417,18 @@ const CustomerBenefitSection = () => {
             <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
               {t('benefit')}
             </h3>
-            <p className='whitespace-nowrap bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-[2.4rem] font-semibold uppercase text-transparent md:text-[3.2rem]'>
+            <p className='whitespace-nowrap text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[3.2rem]'>
               {t('text')}
             </p>
           </div>
-          <div className='mx-auto mt-6 h-[400px] w-[400px] md:h-[300px] md:w-[300px] xl:mx-0 xl:h-[480px] xl:w-[480px]'>
+          <div className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'>
             <Image
-              src={'/khach-benefit-7.png'}
+              src={'/khach-benefit-7.webp'}
               alt=''
               quality={100}
               height={600}
               width={600}
-              className='pointer-events-none h-full w-full select-none object-contain'
+              className='pointer-events-none select-none h-full w-full object-contain'
             />
           </div>
         </div>
@@ -447,17 +436,13 @@ const CustomerBenefitSection = () => {
           {listBenefit.map((item: TlistBenefit, index: number) => (
             <div className='col-span-1' key={`listBenefit-${index}`}>
               <div className='items-left flex items-center gap-[20px] md:flex-col lg:justify-center xl:gap-[6px]'>
-                <Image
+                <ImageFallback
                   src={`/numbers/${index + 1}.png`}
                   alt='AI Robot'
-                  width={128}
-                  height={128}
-                  quality={100}
-                  className='pointer-events-none select-none'
+                  width={200}
+                  height={200}
+                  className='pointer-events-none size-[200px] select-none'
                 />
-                {/* <p className='text-[4rem] font-semibold leading-none text-[#f5b500] md:text-[6.4rem]'>
-                  {index + 1}
-                </p> */}
                 <h3 className='mt-[-16px] text-[1.8rem] text-base-black-1 lg:text-center'>
                   {item.title}
                 </h3>
@@ -478,7 +463,7 @@ const WorkerBenefitSection = () => {
   const [onFetching, setOnFetching] = useState<boolean>(false)
   const [onRefresh, setOnRefresh] = useState<boolean>(false)
   const [listDataBenefit, setListDataBenefit] = useState<any>([])
-
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
   const swiperRef = useRef<any>(null)
 
   const _handleFetching = useCallback(async () => {
@@ -518,9 +503,9 @@ const WorkerBenefitSection = () => {
   const pagination = {
     clickable: true,
     renderBullet: function (index: any, className: any) {
-      return `<span class="paginationBenefit ${className}" key="bullet-${index}">${
+      return `<img key="bullet-${index}" alt="image benefits" src="/benefits/mini/${
         index + 1
-      }</span>`
+      }.png" class="w-[120px] object-cover rounded-full overflow-hidden paginationBenefit hover:scale-110 active:scale-100 cursor-pointer  ${className}"/>`
     },
   }
 
@@ -531,13 +516,19 @@ const WorkerBenefitSection = () => {
   return (
     <div className='relative flex flex-col gap-[20px] '>
       <div className='ct-container-70 flex flex-col gap-[20px] xl:gap-[40px]'>
-        <div className='flex flex-col gap-[10px]'>
-          <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
-            {t('benefit')}
-          </h3>
-          <p className='bg-gradient-to-r from-[#f5b500] to-[#ff8800] bg-clip-text text-[2.4rem] font-bold uppercase text-transparent md:text-[3.6rem]'>
-            {t('text')}
-          </p>
+        <div className='flex items-center justify-between'>
+          <div className='flex flex-col gap-[10px]'>
+            <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
+              {t('benefit')}
+            </h3>
+            <p className='text-[2.4rem] font-bold uppercase text-primary-blue md:text-[3.6rem]'>
+              {t('text')}
+            </p>
+          </div>
+          <div className='rounded-full bg-black px-[24px] py-[8px] text-white'>
+            {currentIndex + 1 <= 9 ? `0${currentIndex + 1}` : currentIndex + 1}/
+            {listDataBenefit.length}
+          </div>
         </div>
         {onFetching ? (
           <>
@@ -566,55 +557,51 @@ const WorkerBenefitSection = () => {
             </div>
           </>
         ) : (
-          <Swiper
-            ref={swiperRef}
-            spaceBetween={30}
-            effect={'fade'}
-            loop
-            autoHeight
-            autoplay={{
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-              delay: 15000,
-            }}
-            slidesPerView={1}
-            navigation
-            pagination={pagination}
-            modules={[Autoplay, EffectFade, Pagination, Navigation]}
-            className='benefitSwipper h-full w-full'
-            onActiveIndexChange={(swiper: any) => {
-              setCurrentIndex(swiper.realIndex)
-            }}
-          >
-            {listDataBenefit?.map((item: any, index: number) => {
-              return (
-                <div className='h-full w-full' key={`listDataBenefit-${index}`}>
-                  <SwiperSlide
-                    className={currentIndex === index ? 'visible' : 'invisible'}
-                    onClick={_handleClickSwiper}
-                  >
-                    <div className='relative z-[12] mb-[16px] flex items-center justify-between'>
-                      <div className='flex h-[76px] items-center gap-[12px]'>
-                        <p className='text-[4rem] font-semibold uppercase leading-none text-[#f5b500] xl:text-[6.4rem]'>
-                          {index + 1}
-                        </p>
-                        <h4 className='text-[1.8rem] font-bold uppercase text-[#f5b500] xl:text-[2.4rem]'>
+          <>
+            <Swiper
+              ref={swiperRef}
+              effect={'fade'}
+              loop
+              autoHeight
+              autoplay={{
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+                delay: 15000,
+              }}
+              slidesPerView={1}
+              thumbs={{
+                swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+              }}
+              navigation
+              modules={[Autoplay, EffectFade, FreeMode, Navigation, Thumbs]}
+              className='benefitSwipper z-[5] h-full w-full'
+              onActiveIndexChange={(swiper: any) => {
+                setCurrentIndex(swiper.realIndex)
+              }}
+            >
+              {listDataBenefit?.map((item: any, index: number) => {
+                return (
+                  <div className='h-full w-full' key={`listDataBenefit-${index}`}>
+                    <SwiperSlide
+                      className={currentIndex === index ? 'visible' : 'invisible'}
+                      onClick={_handleClickSwiper}
+                    >
+                      <div className='relative z-[12] flex items-center justify-between gap-[40px]'>
+                        <h4 className='text-[2rem] font-semibold text-base-black-1'>
                           {item.title}
                         </h4>
+                        <div className='likeButton z-[10] hidden md:block'>
+                          <LikeControl item={item} />
+                        </div>
                       </div>
-                      <div className='likeButton z-[10] hidden md:block'>
+                      <div className='likeButtonMobile relative z-[10] my-10 w-auto md:hidden'>
                         <LikeControl item={item} />
                       </div>
-                    </div>
-                    <div className='likeButtonMobile relative z-[10] w-auto md:hidden'>
-                      <LikeControl item={item} />
-                    </div>
-                    <div className='grid w-full grid-cols-5 rounded-xl'>
-                      <div className='text order-1 col-span-5 h-full w-full p-[20px] text-[1.8rem] xl:order-none xl:col-span-2'>
-                        <div dangerouslySetInnerHTML={{ __html: item.html }} />
-                      </div>
-                      <div className='relative order-none col-span-5 h-full w-full xl:order-1 xl:col-span-3'>
-                        <div className='rounded-t-[12px] md:mt-[-20px] xl:rounded-r-[12px]'>
+                      <div className='grid w-full grid-cols-2 gap-[20px] rounded-xl'>
+                        <div className='text order-1 col-span-2 h-full w-full text-[1.8rem] md:order-none md:col-span-1'>
+                          <div dangerouslySetInnerHTML={{ __html: item.html }} />
+                        </div>
+                        <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
                           <ImageFallback
                             src={`/benefits/${index + 1}.png`}
                             alt={item.title}
@@ -625,17 +612,52 @@ const WorkerBenefitSection = () => {
                           />
                         </div>
                       </div>
-                    </div>
-                  </SwiperSlide>
-                </div>
-              )
-            })}
-          </Swiper>
+                    </SwiperSlide>
+                  </div>
+                )
+              })}
+            </Swiper>
+            <Swiper
+              onSwiper={(swiper: any) => setThumbsSwiper(swiper)}
+              slidesPerView={6}
+              spaceBetween={10}
+              freeMode={true}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className='swipperPagination z-[-1] mx-auto flex w-full max-w-[90%] items-center justify-between gap-[20px]'
+            >
+              {listDataBenefit?.map((item: any, index: number) => (
+                <SwiperSlide>
+                  <div
+                    className={`${
+                      currentIndex === index
+                        ? ' border-[#FCB713]'
+                        : 'border-transparent opacity-50'
+                    }  relative overflow-hidden rounded-[10px] border-[2px] transition`}
+                  >
+                    <ImageFallback
+                      src={`/benefits/${index + 1}.png`}
+                      alt={item.title}
+                      height={400}
+                      width={860}
+                      quality={100}
+                      className={`h-full w-full cursor-pointer select-none object-cover transition hover:scale-105 ${
+                        currentIndex === index && 'scale-105'
+                      } `}
+                    />
+                    <span className='absolute left-[8px] top-[8px] flex size-[24px] items-center justify-center rounded-full bg-black text-[1.2rem] text-white'>
+                      {index < 9 ? `0${index + 1}` : index + 1}
+                    </span>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </>
         )}
       </div>
     </div>
   )
 }
+
 const PressHome = () => {
   const locale = useLocale()
   const t = useTranslations('PressHome')
@@ -670,14 +692,17 @@ const PressHome = () => {
   return (
     <div className='ct-container-70 flex flex-col gap-[20px] pb-[40px] md:pb-0'>
       <div className='flex items-center justify-between'>
-        <h2 className='inline-block bg-gradient-to-br from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-[1.8rem] font-bold uppercase text-transparent md:text-[3.2rem]'>
+        <h2 className='inline-block text-[1.8rem] font-bold uppercase text-primary-blue md:text-[3.2rem]'>
           {t('heading')}
         </h2>
         <Link
           href={`/${locale}/press`}
-          className='text-[1.8rem] font-semibold uppercase text-[#f5b500]'
+          className='group inline-flex items-center text-[1.6rem] font-semibold md:text-[1.8rem]'
         >
-          {t('seeAll')}
+          <p>{t('seeAll')}</p>
+          <span className='transition group-hover:translate-x-2'>
+            <ArrowRight2 />
+          </span>
         </Link>
       </div>
       <div className='blog-home flex flex-nowrap gap-[20px] overflow-x-auto xl:grid xl:grid-cols-4 xl:overflow-x-auto'>
@@ -780,7 +805,7 @@ const LikeControl = ({ item }: { item: any }) => {
             onClick={() => _HandleAction('like')}
           />
         </div>
-        <div className='mx-[8px] flex h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1]' />
+        <div className='mx-[8px] hidden h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1] md:flex' />
         <div className=''>
           <UnLike
             isDislike={checkDislike.isDisliked}
@@ -891,8 +916,6 @@ const UnLike = ({
   return (
     <>
       <button
-        type='button'
-        title='button'
         onClick={() => _HandleUnLike()}
         disabled={isDislike}
         className='unlike flex items-center px-[20px] py-[10px]'
