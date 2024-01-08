@@ -868,5 +868,10 @@
     "worker": "Tjänsteleverantör",
     "customer": "Kund",
     "industry": "Bransch"
+  },
+  "Extra": {
+    "text": "åtagande",
+    "text1": "AVTAL",
+    "text2": "samarbete"
   }
 }

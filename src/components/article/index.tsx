@@ -13,7 +13,7 @@ const Article = forwardRef(({ item, style }: { item: any; style?: string }, ref)
       href={`/${locale}/${item.slug}`}
       ref={ref}
       className={twMerge(
-        'group flex w-full flex-shrink-0 cursor-pointer flex-col bg-white',
+        'group flex w-full flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-[8px] bg-white shadow-[0px_4px_8px_0px_#50505029]',
         style,
       )}
     >
@@ -31,7 +31,7 @@ const Article = forwardRef(({ item, style }: { item: any; style?: string }, ref)
         <div className='flex items-center justify-between text-[1.4rem]'>
           <Link
             href={`/${locale}/press/${item.category.slug}`}
-            className='text-[1.5rem] font-light text-[#f5b500] hover:cursor-pointer hover:text-[#f5b500]/80'
+            className='text-[1.5rem] font-light hover:cursor-pointer hover:text-base-black-1/80'
           >
             {item.category.title}
           </Link>

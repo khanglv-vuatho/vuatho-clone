@@ -868,5 +868,10 @@
     "worker": "Dostawca Usług",
     "customer": "Klient",
     "industry": "Branża"
+  },
+  "Extra": {
+    "text": "zobowiązanie",
+    "text1": "UMOWA",
+    "text2": "współpraca"
   }
 }

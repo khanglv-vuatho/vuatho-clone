@@ -67,7 +67,7 @@
   },
   "MainSection": {
     "heading1": "App ",
-    "heading1-1": "FindService Providers, Find Jobs ",
+    "heading1-1": "Find Service Providers, Find Jobs ",
     "heading2": "Innovation with AI",
     "listCard": {
       "title1": "Breakthrough",
@@ -868,5 +868,10 @@
     "worker": "Service Provider",
     "customer": "Customer",
     "industry": "Industry"
+  },
+  "Extra": {
+    "text": "commitment",
+    "text1": "agreement",
+    "text2": "cooperation"
   }
 }

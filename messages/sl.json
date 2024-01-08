@@ -869,5 +869,10 @@
     "worker": "Ponudnik storitev",
     "customer": "Stranka",
     "industry": "Industrija"
+  },
+  "Extra": {
+    "text": "zaveza",
+    "text1": "dogovor",
+    "text2": "sodelovanje"
   }
 }

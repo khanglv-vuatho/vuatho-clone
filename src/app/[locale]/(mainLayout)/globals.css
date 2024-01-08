@@ -43,3 +43,9 @@ html *::-webkit-scrollbar-track {
 body {
   @apply text-[1.6rem];
 }
+
+.blog-home::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: transparent;
+}

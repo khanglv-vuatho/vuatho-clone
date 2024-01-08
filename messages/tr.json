@@ -869,5 +869,10 @@
     "worker": "Hizmet Sağlayıcı",
     "customer": "Müşteri",
     "industry": "Endüstri"
+  },
+  "Extra": {
+    "text": "taahhüt",
+    "text1": "ANLAŞMA",
+    "text2": "işbirliği"
   }
 }

@@ -868,5 +868,10 @@
     "worker": "Pakalpojumu sniedzējs",
     "customer": "Klients",
     "industry": "Nozare"
+  },
+  "Extra": {
+    "text": "saistība",
+    "text1": "VIENOŠANĀS",
+    "text2": "sadarbība"
   }
 }

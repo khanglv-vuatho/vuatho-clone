@@ -954,5 +954,10 @@
     "worker": "Thợ",
     "customer": "Khách",
     "industry": "Ngành Nghề"
+  },
+  "Extra": {
+    "text": "cam kết",
+    "text1": "THỎA THUẬN",
+    "text2": "hợp tác"
   }
 }

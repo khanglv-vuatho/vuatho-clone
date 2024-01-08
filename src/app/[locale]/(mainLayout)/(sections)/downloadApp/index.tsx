@@ -1,7 +1,8 @@
 import { useTranslations } from 'next-intl'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 import { Screen } from '@/components/animateScreen'
-import Image from 'next/image'
 import ImageFallback from '@/components/ImageFallback'
 import { AndroidBtn, IosBtn } from '@/components/DownloadApps'
 
@@ -10,7 +11,23 @@ const SectionDownload = () => {
   return (
     <div className='relative bg-gradient-to-r from-[#ffffff] to-[#ffffff] '>
       <div className='ct-container-70 left-1/2 h-full md:absolute md:-translate-x-1/2 md:px-[16px]'>
-        <div className='md:absolute md:left-[20px] 13inch:left-0'>
+        <motion.div
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            y: 0,
+          }}
+          initial={{
+            opacity: 0,
+            y: -100,
+          }}
+          transition={{
+            delay: 1,
+            duration: 0.5,
+          }}
+          viewport={{ once: true }}
+          className='md:absolute md:left-[20px] 13inch:left-0'
+        >
           <ImageFallback
             src={'/downloadApp/download-person.png'}
             alt=''
@@ -18,11 +35,27 @@ const SectionDownload = () => {
             width={605}
             className='size-full md:size-[450px] lg:size-[500px] xl:size-[605px]'
           />
-        </div>
+        </motion.div>
       </div>
       <div className='relative z-10'>
-        <section className='ct-container-70 flex items-center justify-start gap-4 overflow-hidden py-[20px] md:justify-center md:py-[60px]'>
-          <div className='flex flex-col items-start md:flex-row md:gap-[60px] md:pl-[30%] 3xl:gap-[100px]'>
+        <motion.section
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            y: 0,
+          }}
+          initial={{
+            opacity: 0,
+            x: 200,
+          }}
+          transition={{
+            delay: 0.5,
+            duration: 0.5,
+          }}
+          viewport={{ once: true }}
+          className='ct-container-70 flex items-center justify-start gap-4 overflow-hidden py-[20px] md:justify-center md:py-[60px]'
+        >
+          <div className='flex flex-col items-start md:flex-row md:gap-[60px] md:pl-[40%] 3xl:gap-[100px]'>
             <div className='order-2 flex w-full items-center justify-center md:order-1 md:justify-start'>
               <div className='flex w-full flex-col items-start justify-start gap-[4px] md:items-center md:justify-center md:gap-[20px]'>
                 <h2
@@ -60,7 +93,7 @@ const SectionDownload = () => {
               <Screen />
             </div>
           </div>
-        </section>
+        </motion.section>
       </div>
     </div>
   )

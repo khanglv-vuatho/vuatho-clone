@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 function SectionToTheMoon() {
   const t = useTranslations('ToTheMoon')
+  const td = useTranslations('Extra')
 
   return (
     // <div className='flex-center relative md:min-h-[500px]'>
@@ -41,7 +42,7 @@ function SectionToTheMoon() {
     <div className='ct-container-70 grid lg:grid-cols-2'>
       <div className='order-1 flex flex-col justify-center gap-[10px]'>
         <>
-          <h3 className='font-bold uppercase tracking-[8px]'>Cam kết</h3>
+          <h3 className='font-bold uppercase tracking-[8px]'>{td('text')}</h3>
           <h2 className='text-[2.4rem] font-semibold text-primary-blue md:text-[3.2rem]'>
             {t('title')}
           </h2>

@@ -114,6 +114,7 @@ const RightNav = React.memo(() => {
 
   const [toggleMenu, setToggleMenu] = useState(false)
   const handleToggleMenu = () => setToggleMenu(!toggleMenu)
+
   const _HandleOpenWindow = () => {
     window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
   }

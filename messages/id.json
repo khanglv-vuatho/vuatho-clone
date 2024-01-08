@@ -868,5 +868,10 @@
     "worker": "Penyedia Layanan",
     "customer": "Pelanggan",
     "industry": "Industri"
+  },
+  "Extra": {
+    "text": "komitmen",
+    "text1": "perjanjian",
+    "text2": "kerjasama"
   }
 }

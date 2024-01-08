@@ -868,5 +868,10 @@
     "worker": "Dělník",
     "customer": "Zákazník",
     "industry": "Průmysl"
+  },
+  "Extra": {
+    "text": "závazek",
+    "text1": "DOHODA",
+    "text2": "spolupráce"
   }
 }

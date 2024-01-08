@@ -871,5 +871,10 @@
     "worker": "Tagapagbigay ng Serbisyo",
     "customer": "Customer",
     "industry": "Industriya"
+  },
+  "Extra": {
+    "text": "pangako",
+    "text1": "kasunduan",
+    "text2": "kooperasyon"
   }
 }

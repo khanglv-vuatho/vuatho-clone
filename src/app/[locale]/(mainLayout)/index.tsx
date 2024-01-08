@@ -12,21 +12,20 @@ import { useLocale, useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 import { Autoplay, EffectFade, FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import CountUp from 'react-countup'
+import { Button, Skeleton, Textarea, Tooltip, useDisclosure } from '@nextui-org/react'
 
 import { ImageSkeleton, Wave } from '@/components/Icons'
 import Article from '@/components/article'
 import { SkeletonBlog } from '@/components/skeleton'
 import instance from '@/services/axiosConfig'
-import { Button, Skeleton, Textarea, Tooltip, useDisclosure } from '@nextui-org/react'
 import SectionDownload from './(sections)/downloadApp'
 import SectionToTheMoon from './(sections)/toTheMoon'
 import SectionWithVuaTho from './(sections)/withVuaTho'
-
-import CountUp from 'react-countup'
-
 import ImageFallback from '@/components/ImageFallback'
 import { ToastComponent } from '@/components/ToastComponent'
 import { DefaultModal } from '@/components/modal'
+
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/free-mode'
@@ -49,10 +48,10 @@ function HomePage() {
   return (
     <>
       <div
-        className={`${
+        className={`flex flex-col overflow-hidden  ${
           hiddenHeaderAndFooter
-            ? 'space-y-[40px] overflow-hidden md:space-y-[100px] xl:space-y-[100px]'
-            : 'space-y-[40px] overflow-hidden pt-[70px] md:space-y-[100px] xl:space-y-[100px] 3xl:pt-[80px]'
+            ? 'gap-[40px] md:gap-[100px]'
+            : 'gap-[40px] pt-[70px] md:gap-[100px] 3xl:pt-[80px]'
         }`}
       >
         <MainSection />
@@ -104,7 +103,17 @@ const AISection = () => {
           </div>
           <div className='grid grid-cols-1 items-center gap-[20px] py-12 lg:ml-[10%] 13inch:ml-0 13inch:grid-cols-2 13inch:gap-[56px]'>
             {listAI.map((item, index) => (
-              <div
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 100,
+                }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 1 * (index + 1) * 0.25,
+                }}
+                viewport={{ once: true }}
                 key={`listAI-${index}`}
                 className={`relative z-[10] flex w-full flex-col gap-[10px] p-[20px] text-baseBlack md:max-w-[400px]  ${
                   index % 2 !== 0 && '13inch:ml-[36%]'
@@ -115,7 +124,7 @@ const AISection = () => {
                 ></div>
                 <h5 className=' z-[4] text-[1.8rem] font-bold'>{item.title}</h5>
                 <p className='z-[4] text-[1.8rem]'>{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -126,6 +135,7 @@ const AISection = () => {
 
 const MinhBach = () => {
   const t = useTranslations('MinhBach')
+  const td = useTranslations('Extra')
 
   const listData = [
     {
@@ -157,7 +167,7 @@ const MinhBach = () => {
   return (
     <div className='' id='trade'>
       <section className='ct-container-70'>
-        <h3 className='font-semibold uppercase tracking-[8px]'>thỏa thuận</h3>
+        <h3 className='font-semibold uppercase tracking-[8px]'>{td('text1')}</h3>
         <h2 className='mb-[40px] inline-block text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>
           {t('heading')}
         </h2>
@@ -185,6 +195,7 @@ const MinhBach = () => {
 
 const HinhThucKetNoi = () => {
   const t = useTranslations('HinhThucKetNoi')
+  const td = useTranslations('Extra')
 
   const DataLabel: any = [
     {
@@ -216,7 +227,7 @@ const HinhThucKetNoi = () => {
   return (
     <section id='multi' className=''>
       <section className='ct-container-70'>
-        <h3 className='font-semibold uppercase tracking-[8px]'>hợp tác</h3>
+        <h3 className='font-semibold uppercase tracking-[8px]'>{td('text2')}</h3>
         <h2 className='mb-[40px] inline-block  text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>
           {t('heading')}
         </h2>
@@ -282,7 +293,7 @@ const MainSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 1,
-                delay: 2,
+                delay: 1.5,
               }}
             >
               <Image
@@ -299,7 +310,7 @@ const MainSection = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{
                 duration: 0.5,
-                delay: 3,
+                delay: 2.5,
               }}
               className='absolute top-[460px] z-[0] object-contain md:top-0'
             >
@@ -411,7 +422,7 @@ const CustomerBenefitSection = () => {
         </h3>
         <p className=' text-[2.4rem] md:text-[3.2rem]'>{t('text')}</p>
       </div>
-      <div className=' grid grid-cols-1 gap-[20px] xl:grid-cols-5'>
+      <div className='mt-[40px] grid grid-cols-1 gap-[20px] xl:grid-cols-5'>
         <div className='col-span-1 xl:col-span-2'>
           <div className='hidden flex-col gap-[10px] md:flex'>
             <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
@@ -421,20 +432,49 @@ const CustomerBenefitSection = () => {
               {t('text')}
             </p>
           </div>
-          <div className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'>
+          <motion.div
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{
+              once: true,
+            }}
+            className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'
+          >
             <Image
               src={'/khach-benefit-7.webp'}
               alt=''
               quality={100}
               height={600}
               width={600}
-              className='pointer-events-none select-none h-full w-full object-contain'
+              className='pointer-events-none h-full w-full select-none object-contain'
             />
-          </div>
+          </motion.div>
         </div>
         <div className='col-span-1 grid grid-cols-1 gap-[20px] md:mx-auto md:max-w-[820px] md:grid-cols-2 md:gap-[40px] xl:col-span-3'>
           {listBenefit.map((item: TlistBenefit, index: number) => (
-            <div className='col-span-1' key={`listBenefit-${index}`}>
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: (index + 1) % 2 === 0 ? -200 : 200,
+                y: -200,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.2,
+                ease: 'easeOut',
+                delay: 1 * (index + 1) * 0.25,
+              }}
+              viewport={{
+                once: true,
+              }}
+              className='col-span-1'
+              key={`listBenefit-${index}`}
+            >
               <div className='items-left flex items-center gap-[20px] md:flex-col lg:justify-center xl:gap-[6px]'>
                 <ImageFallback
                   src={`/numbers/${index + 1}.png`}
@@ -447,7 +487,7 @@ const CustomerBenefitSection = () => {
                   {item.title}
                 </h3>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -462,8 +502,12 @@ const WorkerBenefitSection = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [onFetching, setOnFetching] = useState<boolean>(false)
   const [onRefresh, setOnRefresh] = useState<boolean>(false)
+
   const [listDataBenefit, setListDataBenefit] = useState<any>([])
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
+
+  const [isMobile, setIsMobile] = useState(false)
+
   const swiperRef = useRef<any>(null)
 
   const _handleFetching = useCallback(async () => {
@@ -500,22 +544,27 @@ const WorkerBenefitSection = () => {
     }, 30000)
   }
 
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index: any, className: any) {
-      return `<img key="bullet-${index}" alt="image benefits" src="/benefits/mini/${
-        index + 1
-      }.png" class="w-[120px] object-cover rounded-full overflow-hidden paginationBenefit hover:scale-110 active:scale-100 cursor-pointer  ${className}"/>`
-    },
-  }
-
   useEffect(() => {
     return () => clearTimeout(timer)
   }, [timer])
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
-    <div className='relative flex flex-col gap-[20px] '>
-      <div className='ct-container-70 flex flex-col gap-[20px] xl:gap-[40px]'>
+    <div className='relative flex flex-col'>
+      <div className='ct-container-70 flex flex-col'>
         <div className='flex items-center justify-between'>
           <div className='flex flex-col gap-[10px]'>
             <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
@@ -532,8 +581,8 @@ const WorkerBenefitSection = () => {
         </div>
         {onFetching ? (
           <>
-            <div className='flex h-[200px] w-full animate-pulse items-center justify-center bg-gray-300'>
-              <ImageSkeleton style='h-[60px] w-full animate-pulse' />
+            <div className='flex h-[600px] w-full animate-pulse items-center justify-center bg-gray-300'>
+              <ImageSkeleton style='h-[100px] w-full animate-pulse' />
             </div>
             <div className='flex w-full flex-col items-center justify-center gap-[12px] p-[20px]'>
               {Array(4)
@@ -545,7 +594,7 @@ const WorkerBenefitSection = () => {
                   />
                 ))}
             </div>
-            <div className='flex w-full items-center justify-center gap-[20px]'>
+            <div className='flex w-full items-center justify-center  gap-[20px]'>
               {Array(6)
                 .fill(1)
                 .map((_: any, index: number) => (
@@ -619,14 +668,16 @@ const WorkerBenefitSection = () => {
             </Swiper>
             <Swiper
               onSwiper={(swiper: any) => setThumbsSwiper(swiper)}
-              slidesPerView={6}
+              slidesPerView={isMobile ? 3 : 6}
               spaceBetween={10}
               freeMode={true}
               modules={[FreeMode, Navigation, Thumbs]}
-              className='swipperPagination z-[-1] mx-auto flex w-full max-w-[90%] items-center justify-between gap-[20px]'
+              className={`swiperPagination z-10 flex w-full max-w-[86%] items-center justify-between ${
+                isMobile ? 'mt-10' : ''
+              }`}
             >
               {listDataBenefit?.map((item: any, index: number) => (
-                <SwiperSlide>
+                <SwiperSlide key={`swipper-slide-${index}`}>
                   <div
                     className={`${
                       currentIndex === index
@@ -644,7 +695,7 @@ const WorkerBenefitSection = () => {
                         currentIndex === index && 'scale-105'
                       } `}
                     />
-                    <span className='absolute left-[8px] top-[8px] flex size-[24px] items-center justify-center rounded-full bg-black text-[1.2rem] text-white'>
+                    <span className='absolute left-[8px] top-[8px] flex size-12 items-center justify-center rounded-full bg-black text-[1.2rem] text-white'>
                       {index < 9 ? `0${index + 1}` : index + 1}
                     </span>
                   </div>
@@ -690,7 +741,7 @@ const PressHome = () => {
   }, [locale])
 
   return (
-    <div className='ct-container-70 flex flex-col gap-[20px] pb-[40px] md:pb-0'>
+    <div className='ct-container-70 z-10 flex flex-col gap-[20px] pb-[40px] md:pb-0'>
       <div className='flex items-center justify-between'>
         <h2 className='inline-block text-[1.8rem] font-bold uppercase text-primary-blue md:text-[3.2rem]'>
           {t('heading')}
@@ -705,7 +756,7 @@ const PressHome = () => {
           </span>
         </Link>
       </div>
-      <div className='blog-home flex flex-nowrap gap-[20px] overflow-x-auto xl:grid xl:grid-cols-4 xl:overflow-x-auto'>
+      <div className='blog-home flex flex-nowrap gap-[20px] overflow-x-auto p-[4px] lg:grid lg:grid-cols-4'>
         {onFetching
           ? Array(4)
               .fill(null)
@@ -720,7 +771,7 @@ const PressHome = () => {
                   <Article
                     key={`blog-${index}`}
                     item={item}
-                    style='w-[80%] md:w-[40%] xl:w-full cursor-pointer'
+                    style='w-[80%] md:w-[40%] lg:w-full cursor-pointer'
                   />
                 )
               })

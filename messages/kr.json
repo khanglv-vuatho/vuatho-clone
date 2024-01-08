@@ -868,5 +868,10 @@
     "worker": "서비스 제공자",
     "customer": "고객",
     "industry": "산업"
+  },
+  "Extra": {
+    "text": "약속",
+    "text1": "합의",
+    "text2": "협력"
   }
 }

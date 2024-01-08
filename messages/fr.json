@@ -868,5 +868,10 @@
     "worker": "Fournisseur de services",
     "customer": "Client",
     "industry": "Industrie"
+  },
+  "Extra": {
+    "text": "engagement",
+    "text1": "accord",
+    "text2": "coopération"
   }
 }

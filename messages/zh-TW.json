@@ -868,5 +868,10 @@
     "worker": "工人",
     "customer": "客户",
     "industry": "行业"
+  },
+  "Extra": {
+    "text": "承诺",
+    "text1": "协议",
+    "text2": "合作"
   }
 }
