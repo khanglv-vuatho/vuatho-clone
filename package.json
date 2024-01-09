@@ -33,7 +33,7 @@
     "helmet": "^7.1.0",
     "iconsax-react": "^0.0.8",
     "lottie-web": "^5.12.2",
-    "next": "^14.0.2",
+    "next": "^14.0.4",
     "next-intl": "^3.0.0-beta.19",
     "next-nprogress-bar": "^2.1.2",
     "next-redux-wrapper": "^8.1.0",
