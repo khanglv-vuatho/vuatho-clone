@@ -1,7 +1,7 @@
 {
   "Navbar": {
-    "become_employee": "Trở thành thợ",
-    "find_employee": "Tìm thợ",
+    "become_employee": "Trở thành Thợ",
+    "find_employee": "Tìm Thợ",
     "store": "Đồng phục",
     "language": "Ngôn ngữ",
     "download": "Tải ngay",
@@ -25,17 +25,17 @@
     "download_now": "Để trải nghiệm công nghệ AI tiên tiến nhất",
     "download_appstore": "Tải từ",
     "download_chplay": "Tải từ",
-    "text1": "Đặt thợ, tìm việc với công nghệ AI",
+    "text1": "Đặt Thợ, tìm việc với công nghệ AI",
     "text2": "Hoặc quét mã QR dưới đây"
   },
   "Footer": {
     "address": "57 Song Hành, P. An Phú, TP. Thủ Đức,",
-    "location": "TP. HCM, Việt Nam.",
+    "location": "TP. Hồ Chí Minh, Việt Nam.",
     "our_partner": "Đối tác của chúng tôi",
     "about_vuatho": "Về Vua Thợ",
     "about_us": "Về chúng tôi",
     "faq": "Câu hỏi thường gặp",
-    "become_worker": "Hướng dẫn đăng ký thành thợ",
+    "become_worker": "Hướng dẫn đăng ký thành Thợ",
     "promotion": "Chương trình khuyến mãi",
     "contact_with_vuatho": "Hợp tác cùng Vua Thợ",
     "guides": "Điều khoản và Điều kiện",
@@ -43,7 +43,7 @@
     "contact_us": "Liên hệ",
     "sending": "Đang gửi thông báo đến ",
     "BCT": "bộ công thương",
-    "text": "Công ty TNHH CN Vua Thợ",
+    "text": "Công ty TNHH Công nghệ Vua Thợ",
     "text1": "Mã số thuế: "
   },
   "NotFound": {
@@ -84,10 +84,10 @@
     "heading1": "Áp dụng công nghệ AI đột phá ",
     "heading2": "Trong Hệ Thống Của Chúng Tôi",
     "title1": "Phân Tích Nhu Cầu Bằng AI",
-    "desc1": "Hệ thống AI thông minh, phân tích chính xác nhu cầu khách hàng, đảm bảo kết nối tối ưu với thợ phù hợp.",
+    "desc1": "Hệ thống AI thông minh, phân tích chính xác nhu cầu Khách hàng, đảm bảo kết nối tối ưu với Thợ phù hợp.",
     "title2": "Kiểm Tra Kỹ Năng Thợ Bằng AI",
-    "desc2": "Nâng cao chất lượng thợ và đảm bảo dịch vụ hoàn hảo tốt nhất cho khách hàng",
-    "title3": "Sự đa dạng ngôn ngữ với AI",
+    "desc2": "Nâng cao chất lượng Thợ và đảm bảo dịch vụ hoàn hảo tốt nhất cho Khách hàng",
+    "title3": "Sự Đa Dạng Ngôn Ngữ Với AI",
     "desc3": "Không bao giờ bị rào cản ngôn ngữ ngăn cách bạn và giải pháp mà bạn cần",
     "title4": "Hiệu Suất AI Đột Phá",
     "desc4": "AI giúp bạn tiết kiệm thời gian và tìm ra giải pháp một cách nhanh nhất",
@@ -132,7 +132,7 @@
     "text": "Đối với Khách Hàng",
     "listBenefit": {
       "title1": "Tìm được Thợ gần nhất để xử lý sự cố nhanh",
-      "title2": "Chọn được người thợ giỏi",
+      "title2": "Chọn được người Thợ giỏi",
       "title3": "Quy trình và giá thành hợp lí",
       "title4": "Được bảo hành lâu nhất",
       "title5": "Đảm bảo dịch vụ hoàn hảo và chuyên nghiệp nhất"
@@ -171,7 +171,7 @@
       "children2": {
         "title1": "Ứng dụng Vua Thợ là gì?",
         "children1": {
-          "title1": "Vua Thợ là một ứng dụng kết nối người cần dịch vụ với các thợ chuyên nghiệp trong nhiều lĩnh vực khác nhau. Chúng tôi giúp người dùng dễ dàng tìm kiếm và thuê thợ, cũng như cho phép thợ tìm kiếm công việc phù hợp với kỹ năng của họ."
+          "title1": "Vua Thợ là một ứng dụng kết nối người cần dịch vụ với các Thợ chuyên nghiệp trong nhiều lĩnh vực khác nhau. Chúng tôi giúp người dùng dễ dàng tìm kiếm và thuê Thợ, cũng như cho phép Thợ tìm kiếm công việc phù hợp với kỹ năng của họ."
         },
         "title2": "Ứng dụng đang được triển khai ở đâu?",
         "children2": {
@@ -179,19 +179,19 @@
         },
         "title3": "Mình muốn sử dụng thử dịch vụ của Vua Thợ nhưng phân vân về chất lượng dịch vụ có tốt hay không?",
         "children3": {
-          "title1": "Chúng tôi hiểu sự phân vân của bạn. Để đảm bảo chất lượng dịch vụ, Vua Thợ đã xây dựng một hệ thống đánh giá và đánh giá từng thợ sau mỗi công việc hoàn thành. Bạn có thể xem xét nhận xét và đánh giá từ người dùng khác để đưa ra quyết định thông thái khi chọn thợ."
+          "title1": "Chúng tôi hiểu sự phân vân của bạn. Để đảm bảo chất lượng dịch vụ, Vua Thợ đã xây dựng một hệ thống đánh giá và đánh giá từng Thợ sau mỗi công việc hoàn thành. Bạn có thể xem xét nhận xét và đánh giá từ người dùng khác để đưa ra quyết định thông thái khi chọn Thợ."
         },
         "title4": "Khi đăng công việc lên ứng dụng thì phải mất bao lâu mới có người nhận việc?",
         "children4": {
-          "title1": "Thời gian để có người thợ nhận công việc có thể thay đổi tùy theo vị trí của bạn và loại công việc. Thông thường, các công việc thông thường có thể tìm được thợ nhanh chóng, trong khi các công việc đặc biệt hoặc tại vị trí xa hơn có thể mất thời gian hơn."
+          "title1": "Thời gian để có người Thợ nhận công việc có thể thay đổi tùy theo vị trí của bạn và loại công việc. Thông thường, các công việc thông thường có thể tìm được Thợ nhanh chóng, trong khi các công việc đặc biệt hoặc tại vị trí xa hơn có thể mất thời gian hơn."
         },
         "title5": "Làm sao tôi biết được người giúp việc này có làm tốt hay không?",
         "children5": {
-          "title1": "Bạn có thể đánh giá và xem xét lịch sử làm việc của thợ thông qua hồ sơ của họ trên ứng dụng. Ngoài ra, bạn cũng có thể tham khảo đánh giá và nhận xét từ người dùng khác để đảm bảo chọn một thợ có độ tin cậy và kỹ năng phù hợp."
+          "title1": "Bạn có thể đánh giá và xem xét lịch sử làm việc của Thợ thông qua hồ sơ của họ trên ứng dụng. Ngoài ra, bạn cũng có thể tham khảo đánh giá và nhận xét từ người dùng khác để đảm bảo chọn một Thợ có độ tin cậy và kỹ năng phù hợp."
         },
-        "title6": "Làm sao nhận dạng thợ?",
+        "title6": "Làm sao nhận dạng Thợ?",
         "children6": {
-          "title1": "Mọi thợ trên ứng dụng Vua Thợ đều có hồ sơ cá nhân với hình ảnh, thông tin liên hệ và đánh giá từ người dùng khác. Bạn có thể kiểm tra hồ sơ của thợ trước khi quyết định chọn họ để thực hiện công việc."
+          "title1": "Mọi Thợ trên ứng dụng Vua Thợ đều có hồ sơ cá nhân với hình ảnh, thông tin liên hệ và đánh giá từ người dùng khác. Bạn có thể kiểm tra hồ sơ của Thợ trước khi quyết định chọn họ để thực hiện công việc."
         },
         "title7": "Nếu giới thiệu bạn bè sử dụng ứng dụng tôi có được khuyến mại gì không?",
         "children7": {
@@ -204,10 +204,10 @@
         "title9": "Làm thể nào để sử dụng dịch vụ trên Ứng dụng một cách hoàn hảo?",
         "children9": {
           "title1": "Để sử dụng dịch vụ một cách tốt nhất, hãy:",
-          "title2": "- Xem xét đánh giá và lựa chọn thợ có uy tín và kỹ năng phù hợp.",
-          "title3": "- Mô tả chi tiết công việc của bạn để thợ hiểu rõ yêu cầu.",
-          "title4": "- Đặt lịch trước để đảm bảo bạn có người thợ vào thời gian bạn muốn.",
-          "title5": "- Khi công việc hoàn thành, đánh giá và xem xét thợ để giúp cải thiện chất lượng dịch vụ."
+          "title2": "- Xem xét đánh giá và lựa chọn Thợ có uy tín và kỹ năng phù hợp.",
+          "title3": "- Mô tả chi tiết công việc của bạn để Thợ hiểu rõ yêu cầu.",
+          "title4": "- Đặt lịch trước để đảm bảo bạn có người Thợ vào thời gian bạn muốn.",
+          "title5": "- Khi công việc hoàn thành, đánh giá và xem xét Thợ để giúp cải thiện chất lượng dịch vụ."
         },
         "title10": "Giá dịch vụ được tính như thế nào?",
         "children10": {
@@ -216,17 +216,17 @@
       },
       "title3": "Thao tác trên ứng dụng Vua Thợ",
       "children3": {
-        "title1": "Tôi có thể đặt lịch thợ vào buổi tối không?",
+        "title1": "Tôi có thể đặt lịch Thợ vào buổi tối không?",
         "children1": {
-          "title1": "Có, bạn có thể đặt lịch thợ vào buổi tối. Vua Thợ cung cấp dịch vụ quanh năm, bao gồm cả buổi tối và cuối tuần. Tuy nhiên, bạn nên đặt lịch trước để đảm bảo có thợ sẵn trong thời gian bạn mong muốn."
+          "title1": "Có, bạn có thể đặt lịch Thợ vào buổi tối. Vua Thợ cung cấp dịch vụ quanh năm, bao gồm cả buổi tối và cuối tuần. Tuy nhiên, bạn nên đặt lịch trước để đảm bảo có Thợ sẵn trong thời gian bạn mong muốn."
         },
         "title2": "Thợ liên hệ với tôi bằng cách nào?",
         "children2": {
-          "title1": "Thợ sẽ liên hệ với bạn thông qua ứng dụng Vua Thợ qua tin nhắn hoặc cuộc gọi điện thoại. Bạn sẽ nhận được thông báo khi có thợ đồng ý nhận công việc của bạn và từ đó có thể trao đổi thông tin chi tiết."
+          "title1": "Thợ sẽ liên hệ với bạn thông qua ứng dụng Vua Thợ qua tin nhắn hoặc cuộc gọi điện thoại. Bạn sẽ nhận được thông báo khi có Thợ đồng ý nhận công việc của bạn và từ đó có thể trao đổi thông tin chi tiết."
         },
-        "title3": "Tôi muốn có nhiều thợ đến hỗ trợ sửa chữa cho nhanh thì phải làm như thế nào?",
+        "title3": "Tôi muốn có nhiều Thợ đến hỗ trợ sửa chữa cho nhanh thì phải làm như thế nào?",
         "children3": {
-          "title1": "Để có nhiều thợ đến hỗ trợ công việc sửa chữa nhanh chóng, bạn có thể tạo nhiều đơn tìm thợ cho nhiều công việc. Các thợ sẽ cùng nhận việc để hoàn thành trong thời gian ngắn."
+          "title1": "Để có nhiều Thợ đến hỗ trợ công việc sửa chữa nhanh chóng, bạn có thể tạo nhiều đơn tìm Thợ cho nhiều công việc. Các Thợ sẽ cùng nhận việc để hoàn thành trong thời gian ngắn."
         },
         "title4": "Tôi muốn người giúp việc đến nấu ăn cho gia đình mà không cần dọn dẹp có được không?",
         "children4": {
@@ -234,11 +234,11 @@
         },
         "title5": "Tôi có thể đặt nhiều dịch vụ cùng một lúc được không?",
         "children5": {
-          "title1": "Có, bạn có thể đặt nhiều dịch vụ khác nhau cùng một lúc thông qua ứng dụng Vua Thợ. Chỉ cần đăng công việc cho mỗi loại dịch vụ bạn cần và chọn thợ phù hợp cho từng công việc."
+          "title1": "Có, bạn có thể đặt nhiều dịch vụ khác nhau cùng một lúc thông qua ứng dụng Vua Thợ. Chỉ cần đăng công việc cho mỗi loại dịch vụ bạn cần và chọn Thợ phù hợp cho từng công việc."
         },
         "title6": "Ngoài dọn dẹp nhà ra nếu tôi cần người nấu ăn, ủi đồ thì Vua Thợ có thể đáp ứng được không?",
         "children6": {
-          "title1": "Vua Thợ cung cấp nhiều loại dịch vụ khác nhau, bao gồm dọn dẹp nhà, nấu ăn, ủi đồ và nhiều dịch vụ khác. Bạn có thể chọn các dịch vụ mà bạn cần và tìm thợ phù hợp để thực hiện chúng."
+          "title1": "Vua Thợ cung cấp nhiều loại dịch vụ khác nhau, bao gồm dọn dẹp nhà, nấu ăn, ủi đồ và nhiều dịch vụ khác. Bạn có thể chọn các dịch vụ mà bạn cần và tìm Thợ phù hợp để thực hiện chúng."
         },
         "title7": "Tôi có thể huỷ việc sau khi đăng việc không?",
         "children7": {
@@ -250,7 +250,7 @@
         },
         "title9": "Tôi muốn đổi lịch thì phải làm thế nào?",
         "children9": {
-          "title1": "Để đổi lịch đã đặt, bạn có thể liên hệ trực tiếp với thợ thông qua tin nhắn trong ứng dụng để thỏa thuận về thời gian mới. Tuy nhiên, hãy lưu ý rằng thay đổi lịch có thể phụ thuộc vào sự sẵn có của thợ trong thời gian bạn mong muốn."
+          "title1": "Để đổi lịch đã đặt, bạn có thể liên hệ trực tiếp với Thợ thông qua tin nhắn trong ứng dụng để thỏa thuận về thời gian mới. Tuy nhiên, hãy lưu ý rằng thay đổi lịch có thể phụ thuộc vào sự sẵn có của Thợ trong thời gian bạn mong muốn."
         },
         "title10": "Theo dõi tình trạng đơn hàng ở đâu?",
         "children10": {
@@ -281,7 +281,7 @@
         "title1": "Hình thức thanh toán như thế nào?",
         "children1": {
           "title1": "Vua Thợ hỗ trợ nhiều hình thức thanh toán để bạn có sự linh hoạt. Các hình thức thanh toán thường bao gồm:",
-          "title2": "- Thanh toán trực tiếp cho thợ sau khi công việc hoàn thành.",
+          "title2": "- Thanh toán trực tiếp cho Thợ sau khi công việc hoàn thành.",
           "title3": "- Thanh toán qua ứng dụng Vua Thợ, sử dụng thẻ tín dụng hoặc ví điện tử."
         },
         "title2": "Tôi có nhận được biên nhận khi đặt dịch vụ không?",
@@ -293,25 +293,25 @@
           "title1": "Vua Thợ có thể xuất hoá đơn giá trị gia tăng (VAT) cho dịch vụ, tùy theo quy định thuế và yêu cầu của địa phương. Thông tin về VAT sẽ được cung cấp trên hoá đơn nếu áp dụng."
         }
       },
-      "title5": "Đặt thợ định kì",
+      "title5": "Đặt Thợ định kì",
       "children5": {
         "title1": "Với vai trò khách",
         "children1": {
-          "title1": "Có cách đặt thợ định kì không?",
-          "title2": "- Có, bạn có thể đặt thợ định kì để thực hiện các dịch vụ theo lịch trình cố định, ví dụ như dọn dẹp nhà hàng tuần hoặc hàng tháng. Trong ứng dụng, bạn có thể chọn tùy chọn Đặt dịch vụ định kì và xác định lịch trình và loại dịch vụ bạn muốn.",
-          "title3": "Tôi đang sử dụng đặt thợ định kì, tôi muốn thay đổi thợ khác có được không?",
-          "title4": "- Có, bạn có quyền thay đổi thợ nếu bạn cảm thấy không hài lòng hoặc có lý do khác. Trong ứng dụng, bạn có thể tìm kiếm và chọn thợ mới để thay thế.",
-          "title5": "Tôi đang sử dụng đặt thợ định kì, tôi có việc bận đột xuất và đi vắng, tôi phải làm như thế nào?",
-          "title6": "- Nếu bạn có việc bận đột xuất hoặc đi vắng và không cần dịch vụ trong thời gian đó, bạn nên thay đổi lịch trình đặt thợ để tránh làm phiền thợ của mình. Trong ứng dụng, bạn có thể điều chỉnh lịch đặt thợ theo nhu cầu của bạn.",
+          "title1": "Có cách đặt Thợ định kì không?",
+          "title2": "- Có, bạn có thể đặt Thợ định kì để thực hiện các dịch vụ theo lịch trình cố định, ví dụ như dọn dẹp nhà hàng tuần hoặc hàng tháng. Trong ứng dụng, bạn có thể chọn tùy chọn Đặt dịch vụ định kì và xác định lịch trình và loại dịch vụ bạn muốn.",
+          "title3": "Tôi đang sử dụng đặt Thợ định kì, tôi muốn thay đổi Thợ khác có được không?",
+          "title4": "- Có, bạn có quyền thay đổi Thợ nếu bạn cảm thấy không hài lòng hoặc có lý do khác. Trong ứng dụng, bạn có thể tìm kiếm và chọn Thợ mới để thay thế.",
+          "title5": "Tôi đang sử dụng đặt Thợ định kì, tôi có việc bận đột xuất và đi vắng, tôi phải làm như thế nào?",
+          "title6": "- Nếu bạn có việc bận đột xuất hoặc đi vắng và không cần dịch vụ trong thời gian đó, bạn nên thay đổi lịch trình đặt Thợ để tránh làm phiền Thợ của mình. Trong ứng dụng, bạn có thể điều chỉnh lịch đặt Thợ theo nhu cầu của bạn.",
           "title7": "Tôi có thể huỷ dọn dẹp nhà theo gói không?",
           "title8": "- Có, bạn có thể huỷ dịch vụ dọn dẹp nhà theo gói, tuy nhiên, hãy xem xét chính sách và điều khoản huỷ bỏ của ứng dụng để biết thông tin chi tiết về quyền lợi và điều kiện của bạn."
         },
-        "title2": "Với vai trò thợ",
+        "title2": "Với vai trò Thợ",
         "children2": {
           "title1": "Thợ muốn ứng trước tiền",
           "title2": "- Trong ứng dụng Vua Thợ, hình thức thanh toán thường là sau khi công việc hoàn thành. Tuy nhiên, bạn có thể thảo luận với khách hàng của mình về việc thanh toán trước tiền và đưa ra thoả thuận cụ thể về hình thức thanh toán.",
           "title3": "Thợ muốn khách hàng trả hết tiền",
-          "title4": "Có cách đặt thợ định kì không?",
+          "title4": "Có cách đặt Thợ định kì không?",
           "title5": "- Bạn có thể thảo luận với khách hàng về việc thanh toán trước hoặc trả hết tiền sau khi công việc hoàn thành. Điều này nên được thống nhất giữa bạn và khách hàng trước khi bắt đầu công việc để tránh những hiểu lầm sau này."
         }
       },
@@ -319,22 +319,22 @@
       "children6": {
         "title1": "Tôi phải làm như thế nào khi Thợ huỷ công việc?",
         "children1": {
-          "title1": "Nếu thợ đã huỷ công việc, bạn nên thực hiện các bước sau:",
-          "title2": "- Liên hệ với thợ để hiểu lý do họ đã huỷ và xem xét có thể thỏa thuận lại lịch khác.",
-          "title3": "- Nếu không thể thỏa thuận được, hãy đăng lại công việc trên ứng dụng để tìm một thợ khác.",
-          "title4": "- Đánh giá và ghi nhận trường hợp huỷ công việc của thợ trên ứng dụng để cung cấp phản hồi cho Vua Thợ."
+          "title1": "Nếu Thợ đã huỷ công việc, bạn nên thực hiện các bước sau:",
+          "title2": "- Liên hệ với Thợ để hiểu lý do họ đã huỷ và xem xét có thể thỏa thuận lại lịch khác.",
+          "title3": "- Nếu không thể thỏa thuận được, hãy đăng lại công việc trên ứng dụng để tìm một Thợ khác.",
+          "title4": "- Đánh giá và ghi nhận trường hợp huỷ công việc của Thợ trên ứng dụng để cung cấp phản hồi cho Vua Thợ."
         },
-        "title2": "Tại sao không có thợ nhận việc mà tôi đã đăng?",
+        "title2": "Tại sao không có Thợ nhận việc mà tôi đã đăng?",
         "children2": {
-          "title1": "Có một số lý do có thể khiến không có thợ nhận công việc của bạn, chẳng hạn:",
-          "title2": "- Công việc yêu cầu một kỹ năng đặc biệt mà không có thợ phù hợp sẵn.",
-          "title3": "- Thời gian bạn đề xuất không phù hợp với lịch của thợ.",
-          "title4": "- Địa điểm của bạn quá xa so với thợ gần khu vực đó. Trong trường hợp này, bạn nên thử điều chỉnh yêu cầu công việc, thời gian hoặc địa điểm để tăng khả năng tìm thấy thợ."
+          "title1": "Có một số lý do có thể khiến không có Thợ nhận công việc của bạn, chẳng hạn:",
+          "title2": "- Công việc yêu cầu một kỹ năng đặc biệt mà không có Thợ phù hợp sẵn.",
+          "title3": "- Thời gian bạn đề xuất không phù hợp với lịch của Thợ.",
+          "title4": "- Địa điểm của bạn quá xa so với Thợ gần khu vực đó. Trong trường hợp này, bạn nên thử điều chỉnh yêu cầu công việc, thời gian hoặc địa điểm để tăng khả năng tìm thấy Thợ."
         },
-        "title3": "Tôi phải làm như thế nào khi thợ đến không giống trên ứng dụng?",
+        "title3": "Tôi phải làm như thế nào khi Thợ đến không giống trên ứng dụng?",
         "children3": {
-          "title1": "Nếu thợ đến không giống như thông tin trên ứng dụng, bạn nên thực hiện các bước sau:",
-          "title2": "- Liên hệ với thợ để xác nhận danh tính và thông tin cá nhân của họ.",
+          "title1": "Nếu Thợ đến không giống như thông tin trên ứng dụng, bạn nên thực hiện các bước sau:",
+          "title2": "- Liên hệ với Thợ để xác nhận danh tính và thông tin cá nhân của họ.",
           "title3": "- Nếu bạn có bất kỳ sự nghi ngờ hoặc vấn đề nào về an toàn, hãy ngừng công việc và liên hệ với Vua Thợ để báo cáo tình huống.",
           "title4": "- Ghi chú lại sự không phù hợp này trên ứng dụng để cung cấp phản hồi cho Vua Thợ."
         },
@@ -359,20 +359,20 @@
     "text": "Tại Vua Thợ, chúng tôi tự hào là một công ty công nghệ hàng đầu và là người tiên phong trong việc cung cấp mô hình hệ sinh thái siêu ứng dụng tại Đông Nam Á. Khởi nguồn từ lòng đam mê và sứ mệnh cải thiện cuộc sống của hàng triệu người dùng trên khắp con đường phát triển, chúng tôi mang đến một trải nghiệm đỉnh cao và tiện lợi.",
     "goal": "Mục tiêu sẽ đạt mốc kết nối",
     "numberGoal": "100.000 +",
-    "textGold": "Thợ và người dùng trên toàn quốc trong năm 2024"
+    "textGold": "Thợ và Khách hàng trên toàn quốc trong năm 2024"
   },
   "ContactUs": {
     "heading": "Hãy liên hệ với chúng tôi",
     "address1": "57 Song Hành, P. An Phú, TP. Thủ Đức, TP.",
-    "address2": "HCM, Việt Nam.",
+    "address2": "Hồ Chí Minh, Việt Nam.",
     "timeNumber": "8h30 đến 16h30",
     "timeDay": "Thứ Hai đến thứ Sáu",
     "text": "Không hỗ trợ vào thứ 7, chủ nhật và các ngày lễ trong năm",
-    "numberPhone": "38 786 688",
+    "numberPhone": "0912 426 404",
     "gmail": "info@vuatho.com"
   },
   "BecomeWorker": {
-    "heading": "Hướng dẫn đăng ký thành thợ",
+    "heading": "Hướng dẫn đăng ký thành Thợ",
     "text1": "Bước 1: Chuẩn bị đủ giấy tờ",
     "text2": "Bước 2: Tải ứng dụng Vua Thợ",
     "text3": "Bước 3: Đăng ký tài khoản",
@@ -385,6 +385,7 @@
     "text10": "Các loại dấu mộc rõ ràng",
     "text11": "Căn cước công dân",
     "text12": "Hộ chiếu",
+    "text12-1": "Giấy phép lái xe",
     "text13": "Yêu cầu chung về giấy tờ",
     "text14": "Chuẩn bị đủ 1 trong 2 loại giấy tờ",
     "text15": "Tải ứng dụng Vua Thợ",
@@ -396,7 +397,7 @@
     "text21": "Sau khi tải thành công người dùng mở ứng dụng và chọn vai trò:",
     "text22": "Khách hàng",
     "text23": " Nếu bạn muốn tìm kiếm ",
-    "text24": "dịch vụ/thợ.",
+    "text24": "dịch vụ/Thợ.",
     "text25": " Nếu bạn muốn cung cấp dịch vụ và tìm kiếm công việc.",
     "text26": "Thợ",
     "text27": "Hai vai trò này sẽ được tích hợp và sử dụng trong ứng dụng Vua Thợ.",
@@ -430,10 +431,10 @@
     "text54": " Người dùng phải thực hiện việc xác minh lần nữa để có thể sử dụng tất cả dịch vụ và các tính năng của ứng dụng"
   },
   "FindWorker": {
-    "heading": "Hướng dẫn cách tìm thợ trên Vua Thợ",
+    "heading": "Hướng dẫn cách tìm Thợ trên Vua Thợ",
     "text1": "Bước 1: Tải ứng dụng",
     "text2": "Bước 2: Đăng ký/Đăng nhập",
-    "text3": "Bước 3: Tìm thợ",
+    "text3": "Bước 3: Tìm Thợ",
     "text4": "Tải ứng dụng Vua Thợ",
     "text5": "Hệ điều hành Android",
     "text6": "Hệ điều hành IOS",
@@ -460,21 +461,21 @@
     "text27": "Nhập mã OTP được hệ thống gửi dưới dạng SMS",
     "text28": "Bước 5",
     "text29": "Bước 6",
-    "text30": "Nhấn vào biểu tượng “tìm thợ” ở bên dưới thanh điều hướng để mở trang tìm thợ",
-    "text31": "Người dùng khách thêm các chi tiết cho đơn tìm thợ",
+    "text30": "Nhấn vào biểu tượng “tìm Thợ” ở bên dưới thanh điều hướng để mở trang tìm Thợ",
+    "text31": "Người dùng khách thêm các chi tiết cho đơn tìm Thợ",
     "text32": "Dịch vụ",
     "text33": "Mô tả chi tiết đơn",
     "text34": "Thời gian",
     "text35": "Hình ảnh - video - mô tả (nếu có)",
-    "text36": "Bấm Tìm thợ và xác nhận lại thông tin",
-    "text37": "Sau khi đã kiểm tra kĩ lại thông tin một lần nữa thì bạn hãy nhấn nút Xác nhận để bắt đầu tìm thợ",
-    "text38": "Sau khi đã xác nhận ở bước 3, màn hình sẽ chuyển sang bản đồ để bắt đầu quét tìm thợ",
-    "text39": "Khi có thợ báo giá hệ thống sẽ thông báo cho khách hàng. Khách hàng sẽ chọn thợ phù hợp bằng cách bấm nút Xem ngay để xem chi tiết thông tin thợ và báo giá",
-    "text40": "Sau khi vào trang Chi tiết báo giá, nếu khách đồng ý đặt thợ hãy bấm nút Đặt thợ",
-    "text41": "Hệ thống sẽ đợi thợ xác nhận và đến nhà khách thực hiện kiểm tra chốt giá",
-    "text42": "Người dùng thực hiện thanh toán sau khi thợ hoàn tất công việc bằng cách bấm vào Thanh toán tại trang chi tiết đơn hàng",
-    "text43": "Người dùng có thể thêm mã ưu đãi (nếu có), tip cho thợ (nếu có), chọn phương thức và bấm Xác nhận",
-    "text44": "Tìm thợ",
+    "text36": "Bấm Tìm Thợ và xác nhận lại thông tin",
+    "text37": "Sau khi đã kiểm tra kĩ lại thông tin một lần nữa thì bạn hãy nhấn nút Xác nhận để bắt đầu tìm Thợ",
+    "text38": "Sau khi đã xác nhận ở bước 3, màn hình sẽ chuyển sang bản đồ để bắt đầu quét tìm Thợ",
+    "text39": "Khi có Thợ báo giá hệ thống sẽ thông báo cho khách hàng. Khách hàng sẽ chọn Thợ phù hợp bằng cách bấm nút Xem ngay để xem chi tiết thông tin Thợ và báo giá",
+    "text40": "Sau khi vào trang Chi tiết báo giá, nếu khách đồng ý đặt Thợ hãy bấm nút Đặt Thợ",
+    "text41": "Hệ thống sẽ đợi Thợ xác nhận và đến nhà khách thực hiện kiểm tra chốt giá",
+    "text42": "Người dùng thực hiện thanh toán sau khi Thợ hoàn tất công việc bằng cách bấm vào Thanh toán tại trang chi tiết đơn hàng",
+    "text43": "Người dùng có thể thêm mã ưu đãi (nếu có), tip cho Thợ (nếu có), chọn phương thức và bấm Xác nhận",
+    "text44": "Tìm Thợ",
     "text45": "Để đăng nhập lại vào ứng dụng, người dùng chỉ cần nhập số điện thoại sau đó nhập mã OTP được hệ thống gửi dưới dạng SMS"
   },
   "PressHome": {
@@ -487,11 +488,11 @@
     "text3": "Liên hệ đặt mua ngay",
     "text4": "ĐỒNG PHỤC CỦA VUA THỢ",
     "text5": "Chúng tôi chỉ cung cấp đồng phục cho nhân viên nội bộ công ty. Cảm ơn bạn đã quan tâm và rất mong bạn thông cảm cho sự bất tiện này.",
-    "text6": " Số điện thoại đăng ký thợ",
+    "text6": " Số điện thoại đăng ký Thợ",
     "text7": "Tiếp tục",
     "text8": "Chúng tôi rất vui nếu bạn muốn đăng ký đồng phục. Tuy nhiên, bạn cần trở thành Thợ trước khi có thể thực hiện điều này. Cảm ơn bạn đã hiểu và hợp tác!",
     "text9": "Xác thực lại",
-    "text10": "Trở thành thợ",
+    "text10": "Trở thành Thợ",
     "text11": "Hết hàng",
     "text12": "Đặt hàng",
     "text13": "Đăng nhập thành công!",
@@ -633,7 +634,7 @@
     "text74": "Theo yêu cầu của cơ quan nhà nước có thẩm quyền.",
     "text75": "Các trường hợp khác theo quy định Pháp luật hiện hành.",
     "text76": "3. Người dùng là các đối tác khác",
-    "text77": "Tùy thuộc vào các dịch vụ cụ thể mà Vua thợ và đối tác ký kết hoặc dự định ký kết, Vua Thợ cam kết chỉ thu thập Dữ liệu cá nhân của đối tác hoặc Dữ liệu cá nhân do đối tác cung cấp, trong phạm vi và mục đích cụ thể để phục vụ cho hoạt động kinh doanh của Vua Thợ (chẳng hạn như gửi các thông tin tiếp thị, giới thiệu sản phẩm, khuyến mại, chăm sóc khách hàng, hay các hoạt động khảo sát), thực hiện hợp đồng, tuân thủ các quy định pháp luật và quy định của Vua Thợ. Chẳng hạn, Chúng tôi sẽ thu thập các thông tin liên lạc cho phép liên lạc đến đối tác (như họ tên, tên người dùng, địa chỉ email, số điện thoại); hay thông tin về mối quan hệ kinh doanh của Vua Thợ với đối tác, thông tin giao dịch về cách thức tương tác (như thông tin tài khoản, thông tin giao dịch).",
+    "text77": "Tùy thuộc vào các dịch vụ cụ thể mà Vua Thợ và đối tác ký kết hoặc dự định ký kết, Vua Thợ cam kết chỉ thu thập Dữ liệu cá nhân của đối tác hoặc Dữ liệu cá nhân do đối tác cung cấp, trong phạm vi và mục đích cụ thể để phục vụ cho hoạt động kinh doanh của Vua Thợ (chẳng hạn như gửi các thông tin tiếp thị, giới thiệu sản phẩm, khuyến mại, chăm sóc khách hàng, hay các hoạt động khảo sát), thực hiện hợp đồng, tuân thủ các quy định pháp luật và quy định của Vua Thợ. Chẳng hạn, Chúng tôi sẽ thu thập các thông tin liên lạc cho phép liên lạc đến đối tác (như họ tên, tên người dùng, địa chỉ email, số điện thoại); hay thông tin về mối quan hệ kinh doanh của Vua Thợ với đối tác, thông tin giao dịch về cách thức tương tác (như thông tin tài khoản, thông tin giao dịch).",
     "text78": "Phần D - Chúng tôi chia sẻ dữ liệu cá nhân của Người dùng với ai và tại sao",
     "text79": "Chúng tôi không chia sẻ dữ liệu cá nhân về hoặc liên quan đến Người dùng với đơn vị, tổ chức và cá nhân bên ngoài Vua Thợ ngoại trừ các trường hợp dưới đây:",
     "text80": "1. Có sự đồng ý của Người dùng sẽ chia sẻ dữ liệu của Người dùng với công ty, tổ chức hoặc cá nhân bên ngoài Người dùng khi chúng tôi có sự đồng ý của Người dùng để làm vậy.",

@@ -68,7 +68,7 @@ export const AndroidBtn: React.FC<{ style?: any }> = ({ style }) => {
       href='https://play.google.com/store/apps/details?id=com.vuatho.mobile&pli=1'
       target='_blank'
       className={twMerge(
-        'group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-4 text-white 2xl:min-w-[140px] 3xl:min-w-[220px] 3xl:p-6',
+        'group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-4 text-white 2xl:min-w-[140px]',
         style,
       )}
     >
@@ -91,7 +91,7 @@ export const IosBtn: React.FC<{ style?: any }> = ({ style }) => {
       href='https://apps.apple.com/vn/app/vua-th%E1%BB%A3-si%C3%AAu-k%E1%BA%BFt-n%E1%BB%91i/id6467541777?l=vi'
       target='_blank'
       className={twMerge(
-        'group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-4 text-white 2xl:min-w-[180px] 3xl:min-w-[220px] 3xl:p-6',
+        'group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-4 text-white 2xl:min-w-[140px]',
         style,
       )}
     >

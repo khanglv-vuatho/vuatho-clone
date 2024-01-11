@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import animationAboutUs from '@/components/animateJson/aboutUs_banner.json'
-import animationData from '@/components/animateJson/downloadApp.json'
+import animationData from '@/components/animateJson/downloadApp1.json'
 
 export const Screen = ({ style }: { style?: string }) => {
   const container = useRef(null)

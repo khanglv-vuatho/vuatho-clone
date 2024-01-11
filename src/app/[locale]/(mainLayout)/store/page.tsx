@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: { params?: any }) {
     console.log(error)
   }
 }
+
 function StorePage() {
   return <Store />
 }

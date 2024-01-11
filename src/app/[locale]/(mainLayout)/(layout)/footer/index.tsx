@@ -34,7 +34,7 @@ function Footer() {
       { title: t('about_us'), url: `/${locale}/about-us` },
       { title: t('faq'), url: `/${locale}/faq` },
       { title: t('become_worker'), url: `/${locale}/become-services-provider` },
-      { title: t('promotion'), url: `/promotion` },
+      { title: t('promotion'), url: 'https://promotion.vuatho.com' },
     ],
     policy: [
       { title: t('guides'), url: `/${locale}/terms-and-condition` },
@@ -89,7 +89,7 @@ function Footer() {
       <div className='ct-container-70 space-y-10 pb-20 pt-10'>
         <div className='flex items-center justify-between'>
           <Image
-            src='/logo/textLogo.webp'
+            src='/logo/textLogo.png'
             alt='Logo footer'
             width={256}
             height={176}
@@ -154,7 +154,12 @@ function Footer() {
               </h5>
               <div className='flex flex-col gap-[20px]'>
                 {listSubFooter.info.map((i) => (
-                  <Link href={i.url} key={i.title} title={i.title}>
+                  <Link
+                    href={i.url}
+                    key={i.title}
+                    title={i.title}
+                    target={i.url.startsWith('https') ? '_blank' : ''}
+                  >
                     <p className='text-[1.8rem] font-light hover:text-primary-blue md:text-[2rem]'>
                       {i.title}
                     </p>

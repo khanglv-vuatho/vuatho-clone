@@ -29,7 +29,7 @@
     "text2": "Ya da aşağıdaki QR kodunu tarayın"
   },
   "Footer": {
-    "address": "57 Song Hanh, An Phu Mahallesi, Thu Duc Şehri,",
+    "address": "Vua Thợ Teknoloji AŞ",
     "location": "Ho Chi Minh Şehri, Vietnam.",
     "our_partner": "İş Ortağımız",
     "about_vuatho": "Vua Thợ Hakkında",
@@ -361,7 +361,7 @@
     "numberGoal": "100,000 +",
     "textGold": "2024 yılına kadar ulusal çapta işçi ve kullanıcıları bir araya getirmek"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Bize Ulaşın",
     "address1": "57 Song Hanh, An Phu Mahallesi, Thu Duc Şehri,",
     "address2": "Ho Chi Minh Şehri, Vietnam.",
@@ -385,6 +385,7 @@
     "text10": "Net ve açık ahşap damgalara sahip olmalıdır",
     "text11": "Ulusal Kimlik Kartı",
     "text12": "Pasaport",
+    "text12-1": "Sürücü belgesi",
     "text13": "Genel Belgeler Gereksinimleri",
     "text14": "İki tür belge hazırlamalısınız",
     "text15": "Vua Thợ Uygulamasını İndirin",

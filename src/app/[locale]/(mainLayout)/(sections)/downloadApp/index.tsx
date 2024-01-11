@@ -57,7 +57,7 @@ const SectionDownload = () => {
           viewport={{ once: true }}
           className='ct-container-70 flex items-center justify-start gap-4 overflow-hidden py-[20px] md:justify-center md:py-[60px]'
         >
-          <div className='flex flex-col items-start md:flex-row md:gap-[60px] md:pl-[40%] 3xl:gap-[100px]'>
+          <div className='flex flex-col items-start md:flex-row md:gap-[60px] md:pl-[30%] xl:pl-[40%] 3xl:gap-[100px]'>
             <div className='order-2 flex w-full items-center justify-center md:order-1 md:justify-start'>
               <div className='flex w-full flex-col items-start justify-start gap-[4px] md:items-center md:justify-center md:gap-[20px]'>
                 <h2
@@ -74,7 +74,7 @@ const SectionDownload = () => {
                       <AndroidBtn style={'min-w-[160px]'} />
                       <IosBtn style={'min-w-[160px]'} />
                     </div>
-                    <div className='hidden flex-col items-start gap-[10px] md:flex'>
+                    <div className='pointer-events-none hidden select-none flex-col items-start gap-[10px] md:flex'>
                       <p className='text-[1.8rem] font-light text-base-black-1'>
                         {t('text2')}
                       </p>

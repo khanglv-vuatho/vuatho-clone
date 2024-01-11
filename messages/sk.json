@@ -29,7 +29,7 @@
     "text2": "Alebo naskenujte nižšie uvedený QR kód"
   },
   "Footer": {
-    "address": "57 Song Hanh, Obvod An Phu, Mesto Thu Duc,",
+    "address": "Spoločnosť s ručením obmedzeným pre technológiu Vua Thợ",
     "location": "Ho Či Minovo mesto, Vietnam.",
     "our_partner": "Naši partneri",
     "about_vuatho": "O Vua Thợ",
@@ -361,7 +361,7 @@
     "numberGoal": "100 000 +",
     "textGold": "Remeselníkov a používateľov po celom štáte do roku 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Kontaktujte nás",
     "address1": "57 Song Hanh, Mestska časť An Phu, Mesto Thu Duc,",
     "address2": "Ho Chi Minh City, Vietnam.",
@@ -385,6 +385,7 @@
     "text10": "Čisté a zreteľné pečiatky dreva",
     "text11": "Občiansky preukaz",
     "text12": "Pas",
+    "text12-1": "Vodičský preukaz",
     "text13": "Všeobecné požiadavky na doklady",
     "text14": "Pripravte jeden z dvoch typov dokladov",
     "text15": "Stiahnite si aplikáciu Vua Thợ",

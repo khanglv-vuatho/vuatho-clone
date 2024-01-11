@@ -29,7 +29,7 @@
     "text2": "Nebo naskenujte níže uvedený QR kód"
   },
   "Footer": {
-    "address": "57 Song Hanh, obvod An Phu, město Thu Duc,",
+    "address": "Společnost s ručením omezeným Vua Thợ",
     "location": "Ho Či Minovo město, Vietnam.",
     "our_partner": "Naši partneři",
     "about_vuatho": "O Vua Thợ",
@@ -83,8 +83,8 @@
   "AISection": {
     "heading1": "Použití průlomové technologie AI ",
     "heading2": "v našem systému",
-    "title1": "Analýza poptávky AI",
-    "desc1": "Inteligentní systém AI přesně analyzuje potřeby zákazníka a zajišťuje optimální spojení s vhodnými pracovníky.",
+    "title1": "Analýza Poptávky AI",
+    "desc1": "Inteligentní Systém AI Přesně Analyzuje Potřeby Zákazníka a zajišťuje optimální spojení s vhodnými pracovníky.",
     "title2": "Ověření dovedností AI",
     "desc2": "Zvyšuje kvalitu pracovníků a zajišťuje nejlepší možnou službu pro zákazníky",
     "title3": "Jazyková různorodost s AI",
@@ -361,9 +361,9 @@
     "numberGoal": "100 000 +",
     "textGold": "Řemeslníky a uživatele po celé zemi do roku 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Kontaktujte nás",
-    "address1": "57 Song Hanh, čtvrť An Phu, Thu Duc City,",
+    "address1": "57 Song Hanh, čtvrť An Phu,",
     "address2": "Ho Chi Minh City, Vietnam.",
     "timeNumber": "8:30 dopoledne - 4:30 odpoledne",
     "timeDay": "pondělí až pátek",
@@ -385,6 +385,7 @@
     "text10": "Jasné a zřetelné znaky dřeva",
     "text11": "Občanský průkaz",
     "text12": "Pas",
+    "text12-1": "Řidičský průkaz",
     "text13": "Obecné požadavky na dokumenty",
     "text14": "Připravte jeden ze dvou typů dokumentů",
     "text15": "Stáhněte si aplikaci Vua Thợ",

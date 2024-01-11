@@ -29,7 +29,7 @@
     "text2": "或扫描下方的QR码"
   },
   "Footer": {
-    "address": "57松汉，安富区，屯杂市，",
+    "address": "Vua Thợ科技有限公司",
     "location": "越南胡志明市。",
     "promotion": "促销活动",
     "our_partner": "我们的合作伙伴",
@@ -361,9 +361,9 @@
     "numberGoal": "100,000 +",
     "textGold": "2024年之前全国范围内的工匠和用户"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "联系我们",
-    "address1": "越南胡志明市Thu Duc区An Phu社区Song Hanh路57号",
+    "address1": "越南胡志明市Thu Duc区An Phu社区Song Hanh路57号 Ho Chi Minh",
     "address2": "越南胡志明市。",
     "timeNumber": "上午8:30到下午4:30",
     "timeDay": "星期一至星期五",
@@ -385,6 +385,7 @@
     "text10": "清晰的木刻印章",
     "text11": "国民身份证",
     "text12": "护照",
+    "text12-1": "驾驶执照",
     "text13": "一般文件要求",
     "text14": "准备其中两种文件之一",
     "text15": "下载Vua Thợ应用程序",

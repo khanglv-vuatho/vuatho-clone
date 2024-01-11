@@ -52,9 +52,9 @@ function AboutUs() {
       <div className='w-full bg-[#F6F8FA]'>
         <SectionServices />
       </div>
-      <div className='py-[40px] md:py-[100px]'>
+      {/* <div className='py-[40px] md:py-[100px]'>
         <SectionDownload />
-      </div>
+      </div> */}
     </div>
   )
 }

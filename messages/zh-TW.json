@@ -29,7 +29,7 @@
     "text2": "或扫描下方的QR码"
   },
   "Footer": {
-    "address": "57松汗，An Phu區，Thu Duc市，",
+    "address": "Vua Thợ科技有限公司",
     "location": "胡志明市，越南。",
     "our_partner": "我們的合作夥伴",
     "about_vuatho": "關於Vua Thợ",
@@ -360,9 +360,9 @@
     "numberGoal": "100,000 +",
     "textGold": "2024年前全國的工匠和用戶"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "聯繫我們",
-    "address1": "越南胡志明市Thu Duc City, An Phu區, Song Hanh路57號",
+    "address1": "越南胡志明市Thu Duc City, An Phu區, Song Hanh路57號 Ho Chi Minh",
     "address2": "越南胡志明市。",
     "timeNumber": "上午8:30至下午4:30",
     "timeDay": "星期一至星期五",
@@ -384,6 +384,7 @@
     "text10": "清晰而明顯的木印",
     "text11": "國民身分證",
     "text12": "護照",
+    "text12-1": "驾驶执照",
     "text13": "一般文件要求",
     "text14": "準備兩種文件中的一種",
     "text15": "下載Vua Thợ應用程式",

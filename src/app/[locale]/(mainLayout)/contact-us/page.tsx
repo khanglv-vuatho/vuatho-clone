@@ -58,11 +58,8 @@ const ContactUs = () => {
                 <CallIcon variant='Bold' />
               </div>
               <h5 className='text-[1.8rem] font-semibold text-primary-blue'>
-                {t('numberPhone')}
+                0912 426 404
               </h5>
-              <h6 className='rounded-xl bg-base-gray p-3 text-[1.8rem] font-semibold'>
-                24/7
-              </h6>
             </div>
             <div className='flex items-center gap-6 xl:gap-10'>
               <div className='h120 flex aspect-square w-fit flex-col items-center justify-center rounded-full bg-primary-blue-2 text-primary-blue md:h-20'>

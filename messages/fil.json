@@ -29,7 +29,7 @@
     "text2": "O i-scan ang QR code sa ibaba"
   },
   "Footer": {
-    "address": "57 Song Hanh, Ward An Phu, Thu Duc City,",
+    "address": "Kumpanya ng Vua Thợ",
     "location": "Ho Chi Minh City, Vietnam.",
     "our_partner": "Mga Kasosyo Namin",
     "about_vuatho": "Tungkol sa Vua Thợ",
@@ -363,7 +363,7 @@
     "numberGoal": "100,000 +",
     "textGold": "Mga Manggagawa at mga tagagamit sa buong bansa ngayong 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Makipag-ugnay Sa Amin",
     "address1": "57 Song Hanh, Ward An Phu, Thu Duc City,",
     "address2": "Ho Chi Minh City, Vietnam.",
@@ -387,6 +387,7 @@
     "text10": "Malinaw at iba't-ibang marka ng kahoy",
     "text11": "National ID Card",
     "text12": "Pasaporte",
+    "text12-1": "Lisensiyang Pamaneho",
     "text13": "Pangkalahatang mga Kinakailangan ng Dokumento",
     "text14": "Ihanda ang isa sa dalawang uri ng mga dokumento",
     "text15": "I-download ang Vua Thợ App",

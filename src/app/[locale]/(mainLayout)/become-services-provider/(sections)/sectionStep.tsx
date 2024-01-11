@@ -142,7 +142,7 @@ const Step1: React.FC = () => {
   const t = useTranslations('BecomeWorker')
 
   const DocRequirements = [t('text6'), t('text7'), t('text8'), t('text9'), t('text10')]
-  const DocType = [t('text11'), t('text12')]
+  const DocType = [t('text11'), t('text12'), t('text12-1')]
 
   return (
     <>
@@ -162,20 +162,20 @@ const Step1: React.FC = () => {
           </li>
         ))}
       </ul>
-      <div className='mt-6 flex flex-col items-center gap-6 13inch:flex-row'>
+      <div className='mt-6 flex flex-col items-center justify-start gap-4 md:flex-row '>
         <Image
           src={'/images/cmnd1.png'}
           alt=''
           width={324}
           height={191}
-          className='pointer-events-none'
+          className='pointer-events-none max-w-[240px]'
         />
         <Image
           src={'/images/cmnd2.png'}
           alt=''
           width={324}
           height={191}
-          className='pointer-events-none'
+          className='pointer-events-none max-w-[240px]'
         />
       </div>
     </>
@@ -218,9 +218,9 @@ const Step3: React.FC = () => {
       <p className='mt-5 text-[1.8rem]'>{t('text21')}</p>
       <div className='mt-3 flex flex-col gap-10 xl:flex-row'>
         <div className=' mt-5 w-full space-y-5'>
-          <div className='flex justify-end'>
-            <div className='relative ml-20 flex w-full flex-col justify-center rounded-2xl bg-primary-yellow/10 p-8 pb-[50px] 3xl:ml-28'>
-              <p className='w-[60%] text-[1.8rem]'>
+          <div className='flex md:justify-end'>
+            <div className='relative flex w-full max-w-[500px] flex-col justify-center rounded-2xl bg-primary-yellow/10 p-8 pb-[50px] md:ml-20 3xl:ml-28'>
+              <p className='w-full text-[1.8rem] md:w-[60%]'>
                 <span className='font-bold'> {t('text22')}</span>
                 <br />
                 {t('text23')}
@@ -232,14 +232,14 @@ const Step3: React.FC = () => {
                 src='/become-employee/step3/khach.png'
                 width={519}
                 height={615}
-                className='pointer-events-none absolute right-0 top-0 z-[1] h-[200px] w-auto object-contain md:-right-3'
+                className='pointer-events-none absolute right-0 top-0 z-[1] hidden h-[200px] w-auto object-contain md:-right-3 md:block'
               />
             </div>
           </div>
           <div className='flex justify-start'>
-            <div className='relative mr-20 flex w-full flex-col justify-center rounded-2xl bg-primary-blue/10 p-8  3xl:mr-28'>
+            <div className='relative flex w-full max-w-[500px] flex-col justify-center rounded-2xl bg-primary-blue/10 p-8 md:mr-20  3xl:mr-28'>
               <div className='flex justify-end'>
-                <p className='w-[60%] text-right text-[1.8rem]'>
+                <p className='w-full text-[1.8rem] md:w-[60%] md:text-right'>
                   <span className='font-bold'>{t('text26')}</span>
                   <br /> {t('text25')}
                 </p>
@@ -249,7 +249,7 @@ const Step3: React.FC = () => {
                 src='/become-employee/step3/tho.png'
                 width={519}
                 height={615}
-                className='pointer-events-none absolute bottom-0 left-0 h-[200px] w-auto object-contain md:-left-3 '
+                className='pointer-events-none absolute bottom-0 left-0 hidden h-[200px] w-auto object-contain  md:-left-3 md:block'
               />
             </div>
           </div>

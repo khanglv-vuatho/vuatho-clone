@@ -29,7 +29,7 @@
     "text2": "Or scan the QR code below"
   },
   "Footer": {
-    "address": "57 Song Hanh, Ward An Phu, Thu Duc City,",
+    "address": "Vua Thợ Technology Company Limited",
     "location": "Ho Chi Minh City, Vietnam.",
     "our_partner": "Our Partners",
     "about_vuatho": "About Vua Thợ",
@@ -39,7 +39,7 @@
     "contact_with_vuatho": "Collaborate with Vua Thợ",
     "guides": "Terms and Conditions",
     "private_infomation": "Privacy Policy",
-    "contact_us": "Contact Us",
+    "contact_us": "ContactUs",
     "promotion": "Promotional program",
     "sending": "Sending notifications to",
     "BCT": "Ministry of Industry and Trade",
@@ -78,15 +78,15 @@
       "desc3": "Forms of collaboration"
     },
     "text1": "Supports multiple languages and industries",
-    "text2": "Service Provider are everywhere - EveryService Provider is here"
+    "text2": "Service Provider are everywhere - Every Service Provider is here"
   },
   "AISection": {
     "heading1": "Applying Breakthrough AI Technology ",
     "heading2": "In Our System",
     "title1": "AI Demand Analysis",
-    "desc1": "Intelligent AI system accurately analyzes customer needs, ensuring optimal connections with suitableService Providers.",
+    "desc1": "Intelligent AI system accurately analyzes customer needs, ensuring optimal connections with suitable Service Providers.",
     "title2": "AI Skills Verification",
-    "desc2": "EnhancesService Provider quality and ensures the best possible service for customers",
+    "desc2": "Enhances Service Provider quality and ensures the best possible service for customers",
     "title3": "Language Diversity with AI",
     "desc3": "Never be language-barriered between you and the solution you need",
     "title4": "Breakthrough AI Performance",
@@ -359,10 +359,10 @@
     "text": "At Vua Thợ, we take pride in being a leading technology company and a pioneer in providing a super app ecosystem model in Southeast Asia. Stemming from our passion and mission to improve the lives of millions of users along the path of development, we deliver a top-notch and convenient experience.",
     "goal": "Our goal is to connect",
     "numberGoal": "100,000 +",
-    "textGold": "Service provider and users nationwide by 2024"
+    "textGold": "Service provider and customer nationwide by 2024"
   },
-  "Contact Us": {
-    "heading": "Contact Us",
+  "ContactUs": {
+    "heading": "ContactUs",
     "address1": "57 Song Hanh, Ward An Phu, Thu Duc City,",
     "address2": "Ho Chi Minh City, Vietnam.",
     "timeNumber": "8:30 AM to 4:30 PM",
@@ -385,6 +385,7 @@
     "text10": "Clear and distinct woodmarks",
     "text11": "National ID Card",
     "text12": "Passport",
+    "text12-1": "Driver's License",
     "text13": "General Document Requirements",
     "text14": "Prepare one of the two types of documents",
     "text15": "Download the Vua Thợ App",
@@ -428,10 +429,10 @@
     "text54": "Users must perform identity verification again to access all features and services of the application"
   },
   "FindWorker": {
-    "heading": "How to FindService Providers on Vua Thợ",
+    "heading": "How to Find Service Providers on Vua Thợ",
     "text1": "Step 1: Download the App",
     "text2": "Step 2: Register/Login",
-    "text3": "Step 3: FindService Providers",
+    "text3": "Step 3: Find Service Providers",
     "text4": "Download the Vua Thợ App",
     "text5": "Android Operating System",
     "text6": "iOS Operating System",
@@ -458,21 +459,21 @@
     "text27": "Enter the OTP code sent by the system via SMS",
     "text28": "Step 5",
     "text29": "Step 6",
-    "text30": "Click on the 'findService Providers' icon below the navigation bar to open the findService Providers page",
-    "text31": "Customers can add details to theirService Provider request",
+    "text30": "Click on the 'find Service Providers' icon below the navigation bar to open the find Service Providers page",
+    "text31": "Customers can add details to their Service Provider request",
     "text32": "Service",
     "text33": "Detailed job description",
     "text34": "Timeframe",
     "text35": "Images - videos - descriptions (if available)",
-    "text36": "Click FindService Providers and confirm the information",
-    "text37": "After double-checking the information, click the Confirm button to start findingService Providers",
-    "text38": "After confirming in step 3, the screen will switch to the map to begin searching forService Providers",
-    "text39": "When aService Provider provides a quote, the system will notify the customer. Customers can choose a suitableService Provider by clicking View Details to see theService Provider's information and quote",
-    "text40": "After entering the Quote Details page, if the customer agrees to hire theService Provider, click the HireService Provider button",
-    "text41": "The system will wait for theService Provider to confirm and come to the customer's location to finalize the price",
-    "text42": "Customers can make payment after theService Provider completes the job by clicking on Payment on the order details page",
-    "text43": "Customers can apply promo codes (if available), tip theService Provider (if desired), select a payment method, and click Confirm",
-    "text44": "FindService Providers",
+    "text36": "Click Find Service Providers and confirm the information",
+    "text37": "After double-checking the information, click the Confirm button to start finding Service Providers",
+    "text38": "After confirming in step 3, the screen will switch to the map to begin searching for Service Providers",
+    "text39": "When a Service Provider provides a quote, the system will notify the customer. Customers can choose a suitable Service Provider by clicking View Details to see the Service Provider's information and quote",
+    "text40": "After entering the Quote Details page, if the customer agrees to hire the Service Provider, click the Hire Service Provider button",
+    "text41": "The system will wait for the Service Provider to confirm and come to the customer's location to finalize the price",
+    "text42": "Customers can make payment after the Service Provider completes the job by clicking on Payment on the order details page",
+    "text43": "Customers can apply promo codes (if available), tip the Service Provider (if desired), select a payment method, and click Confirm",
+    "text44": "Find Service Providers",
     "text45": "To log back into the app, users only need to enter their phone number and the OTP code sent by the system via SMS"
   },
   "PressHome": {

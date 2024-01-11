@@ -29,7 +29,7 @@
     "text2": "Vai nolasiet zemāk esošo QR kodu"
   },
   "Footer": {
-    "address": "57 Song Hanh iela, An Phu rajons, Thu Duc pilsēta,",
+    "address": "Vua Thợ tehnoloģiju SIA",
     "location": "Hošiminas pilsēta, Vjetnama.",
     "our_partner": "Mūsu partneri",
     "about_vuatho": "Par Vua Thợ",
@@ -361,7 +361,7 @@
     "numberGoal": "100 000 +",
     "textGold": "Amatniekus un lietotājus visā valstī līdz 2024. gadam"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Sazinieties ar mums",
     "address1": "57 Song Hanh, An Phu rajons, Thu Duc pilsēta,",
     "address2": "Ho Chi Minh pilsēta, Vjetnama.",
@@ -385,6 +385,7 @@
     "text10": "Skaidras un atšķirīgas koka zīmes",
     "text11": "Nacionālais ID kartes",
     "text12": "Pase",
+    "text12-1": "Autovadītāja apliecība",
     "text13": "Vispārīgie dokumentu prasījumi",
     "text14": "Sagatavojiet vienu no diviem dokumentu veidiem",
     "text15": "Lejupielādējiet Vua Thợ lietotni",

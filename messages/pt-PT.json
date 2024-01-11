@@ -29,7 +29,7 @@
     "text2": "Ou escaneie o código QR abaixo"
   },
   "Footer": {
-    "address": "57 Song Hanh, Bairro An Phu, Cidade Thu Duc,",
+    "address": "Empresa de Tecnologia Vua Thợ",
     "location": "Cidade de Ho Chi Minh, Vietnã.",
     "our_partner": "Nossos Parceiros",
     "about_vuatho": "Sobre a Vua Thợ",
@@ -361,7 +361,7 @@
     "numberGoal": "100.000 +",
     "textGold": "Artesãos e utilizadores em todo o país até 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Contate-nos",
     "address1": "57 Song Hanh, Bairro An Phu, Cidade Thu Duc,",
     "address2": "Cidade de Ho Chi Minh, Vietnã.",
@@ -385,6 +385,7 @@
     "text10": "Marcas de madeira claras e distintas",
     "text11": "Carteira de Identidade Nacional",
     "text12": "Passaporte",
+    "text12-1": "Carta de condução",
     "text13": "Requisitos Gerais do Documento",
     "text14": "Preparar um dos dois tipos de documentos",
     "text15": "Baixar o Aplicativo Vua Thợ",

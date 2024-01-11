@@ -98,12 +98,12 @@ export const Logo = () => {
       className='block h-full'
     >
       <Image
-        src='/logo/textLogo.webp'
+        src='/logo/textLogo.png'
         alt='Logo nav'
         width={256}
         height={176}
         quality={100}
-        className='pointer-events-none h-[50px] w-auto object-contain 3xl:h-[80px]'
+        className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[70px]'
       />
     </button>
   )

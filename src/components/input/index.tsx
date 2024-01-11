@@ -25,6 +25,7 @@ export const InputSearch = ({ onRefresh }: { onRefresh: any }) => {
   const t = useTranslations('inputSearch')
 
   const exclusionRef = useRef(null)
+
   const itemRef = useUnfocusItem(() => {
     setShowSearchItem(false)
   }, exclusionRef)

@@ -1,6 +1,5 @@
 import ImageFallback from '@/components/ImageFallback'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
 
 function SectionWithVuaTho() {
   const t = useTranslations('WithVuaTho')
@@ -12,7 +11,7 @@ function SectionWithVuaTho() {
           <div className='absolute right-[50%] top-[-10%] hidden scale-x-[-1] text-[16rem] text-[white]/30 md:top-0 lg:block'>
             “
           </div>
-          <div className='pt-20 md:pt-0 lg:w-[50%] xl:w-[60%]'>
+          <div className='lg:w-[50%] xl:w-[60%]'>
             <div className='flex flex-col justify-end gap-[8px] text-[#f5b500] md:gap-[20px]'>
               <h5 className='text-[3.2rem] font-bold text-white'>
                 {t('title')} {t('title1')}
@@ -24,7 +23,7 @@ function SectionWithVuaTho() {
           </div>
         </div>
       </div>
-      <div className='absolute bottom-0 right-0 top-0 z-[10] hidden lg:block'>
+      <div className='absolute bottom-0 right-0 top-0 z-[10] hidden lg:block 2xl:right-[16%]'>
         <ImageFallback
           alt='with-us'
           src='/with-us.png'

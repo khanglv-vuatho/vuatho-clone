@@ -419,7 +419,7 @@ const SwiperPress = React.memo(({ renderBreadcums }: { renderBreadcums: any }) =
           titleLink: 'Xem ngay',
         },
         {
-          title: 'Trang phục chuyên nghiệp cho thợ tự tin hơn khi làm việc',
+          title: 'Trang phục chuyên nghiệp cho Thợ tự tin hơn khi làm việc',
           img: '/',
           url: '#',
           titleLink: 'Xem ngay',

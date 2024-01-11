@@ -5,8 +5,14 @@ import Link from 'next/link'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 import confetti from 'canvas-confetti'
-import { motion, useAnimate } from 'framer-motion'
-import { ArrowRight2, Dislike, Like1 } from 'iconsax-react'
+import {
+  motion,
+  useAnimate,
+  useMotionValue,
+  useScroll,
+  useTransform,
+} from 'framer-motion'
+import { ArrowRight2, Dislike, Like1, Login } from 'iconsax-react'
 
 import { useLocale, useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
@@ -36,6 +42,7 @@ import './swipper.scss'
 
 import InputSearch from '@/components/input/services'
 import dynamic from 'next/dynamic'
+import numeral from 'numeral'
 
 const GlobeComponent = dynamic(() => import('@/components/GlobeComponent'), {
   ssr: false,
@@ -90,7 +97,18 @@ const AISection = () => {
         </h4>
         <div className='flex flex-col'>
           <div className='bottom-2 flex h-full w-full items-center justify-center md:absolute md:justify-end 13inch:justify-center'>
-            <div className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'>
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0,
+              }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+              }}
+              viewport={{ once: true }}
+              className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'
+            >
               <Image
                 src={'/ai-section-1.png'}
                 alt='AI Robot'
@@ -99,7 +117,7 @@ const AISection = () => {
                 quality={100}
                 className='pointer-events-none select-none'
               />
-            </div>
+            </motion.div>
           </div>
           <div className='grid grid-cols-1 items-center gap-[20px] py-12 lg:ml-[10%] 13inch:ml-0 13inch:grid-cols-2 13inch:gap-[56px]'>
             {listAI.map((item, index) => (
@@ -111,7 +129,7 @@ const AISection = () => {
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 transition={{
                   duration: 0.3,
-                  delay: 1 * (index + 1) * 0.25,
+                  delay: 1 * ((index + 1) * 0.25),
                 }}
                 viewport={{ once: true }}
                 key={`listAI-${index}`}
@@ -122,7 +140,9 @@ const AISection = () => {
                 <div
                   className={`absolute inset-0 z-[2] rounded-[20px] border-b-[2px] border-[#fbac47] bg-gradient-to-br from-[#ffffff] via-[#ffffff] to-[#e7e7e7] shadow-[0px_8px_16px_0px_#A2BAF366]`}
                 ></div>
-                <h5 className=' z-[4] text-[1.8rem] font-bold'>{item.title}</h5>
+                <h5 className=' z-[4] text-[1.8rem] font-bold'>
+                  {item.title.replace(/(^|\s)\S/g, (match) => match.toUpperCase())}
+                </h5>
                 <p className='z-[4] text-[1.8rem]'>{item.desc}</p>
               </motion.div>
             ))}
@@ -165,13 +185,30 @@ const MinhBach = () => {
   ]
 
   return (
-    <div className='' id='trade'>
+    <div id='trade'>
       <section className='ct-container-70'>
         <h3 className='font-semibold uppercase tracking-[8px]'>{td('text1')}</h3>
         <h2 className='mb-[40px] inline-block text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>
           {t('heading')}
         </h2>
-        <div className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'>
+        <motion.div
+          initial={{
+            y: 100,
+            x: -200,
+            opacity: 0,
+          }}
+          whileInView={{
+            x: 0,
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.3,
+            delay: 0.5,
+          }}
+          viewport={{ once: true }}
+          className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'
+        >
           {listData.map((item, index) => (
             <div
               key={`listData-${index}`}
@@ -187,7 +224,7 @@ const MinhBach = () => {
               <p className='text-[1.8rem] font-light'>{item.desc}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </div>
   )
@@ -231,14 +268,30 @@ const HinhThucKetNoi = () => {
         <h2 className='mb-[40px] inline-block  text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>
           {t('heading')}
         </h2>
-        <div className='grid grid-cols-1 gap-[20px] pb-[40px] lg:grid-cols-2 lg:gap-[40px]'>
+        <motion.div
+          initial={{
+            x: 200,
+            y: 100,
+            opacity: 0,
+          }}
+          whileInView={{
+            x: 0,
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.3,
+            delay: 0.5,
+          }}
+          viewport={{ once: true }}
+          className='grid grid-cols-1 gap-[20px] pb-[40px] lg:grid-cols-2 lg:gap-[40px]'
+        >
           {DataLabel.map((item: any, index: number) => (
             <div
               key={`datalabel-${index}`}
               className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'
             >
               <div className='flex items-center gap-[10px]'>
-                {/* <div className='h-[12px] w-[12px] animate-ping rounded-full bg-gradient-to-tr from-[#000000] to-[#181818]' /> */}
                 <span className='relative flex h-[16px] w-[16px] items-center justify-center'>
                   <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f5b500] opacity-75'></span>
                   <span className='relative inline-flex h-[10px] w-[10px] rounded-full bg-[#f5b500]'></span>
@@ -248,7 +301,7 @@ const HinhThucKetNoi = () => {
               <p className=' text-[1.8rem] font-light'>{item.description}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </section>
   )
@@ -329,19 +382,25 @@ const MainSection = () => {
 const QuickDashboard = React.memo(() => {
   const t = useTranslations('InputMainSearch')
 
-  const [objectData, sObjectData] = useState({
+  const [objectData, setObjectData] = useState({
     customers: 0,
     providers: 0,
     services: 0,
   })
 
-  const [onFetching, sOnFetching] = useState(false)
+  const [onFetching, setOnFetching] = useState(false)
 
-  const _HandleFetching = () => {
-    instance.get('/home/dash').then((res: any) => {
-      sObjectData({ ...res })
-      sOnFetching(false)
-    })
+  const _HandleFetching = async () => {
+    try {
+      const data: any = await instance.get('/home/dash')
+      console.log(data)
+
+      setObjectData({ ...data })
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setOnFetching(false)
+    }
   }
 
   useEffect(() => {
@@ -349,26 +408,26 @@ const QuickDashboard = React.memo(() => {
   }, [onFetching])
 
   useEffect(() => {
-    sOnFetching(true)
+    setOnFetching(true)
   }, [])
 
   return (
-    <div className='relative z-[10] mt-[10px] space-y-16'>
+    <div className='relative z-[10] mb-[40px] mt-[10px] space-y-16'>
       <InputSearch />
-      <div className='grid grid-cols-3 '>
-        <div>
+      <div className='grid gap-[20px] md:grid-cols-3 md:gap-0'>
+        <div className='flex items-center justify-between md:block'>
           <h1>{t('worker')}</h1>
           <h1 className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-7xl font-bold text-transparent'>
-            <CountUp end={objectData?.providers} delay={5} />
+            <CountUp end={objectData?.providers} />
           </h1>
         </div>
-        <div>
+        <div className='flex items-center justify-between md:block'>
           <h1>{t('customer')}</h1>
           <h1 className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-7xl font-bold text-transparent'>
-            <CountUp end={objectData?.customers} delay={5} />
+            <CountUp end={objectData?.customers} />
           </h1>
         </div>
-        <div>
+        <div className=''>
           <ServcesModal value={objectData?.services} />
         </div>
       </div>
@@ -387,7 +446,7 @@ const ServcesModal = React.memo((props: any) => {
   }, [props?.value])
 
   return (
-    <div>
+    <div className='flex w-full items-center justify-between md:block'>
       <h1>{t('industry')}</h1>
       <Link
         href={`/${locale}/services`}
@@ -467,7 +526,7 @@ const CustomerBenefitSection = () => {
               transition={{
                 duration: 0.2,
                 ease: 'easeOut',
-                delay: 1 * (index + 1) * 0.25,
+                delay: 1 * ((index + 1) * 0.25),
               }}
               viewport={{
                 once: true,
@@ -679,6 +738,7 @@ const WorkerBenefitSection = () => {
               {listDataBenefit?.map((item: any, index: number) => (
                 <SwiperSlide key={`swipper-slide-${index}`}>
                   <div
+                    onClick={_handleClickSwiper}
                     className={`${
                       currentIndex === index
                         ? ' border-[#FCB713]'
@@ -756,7 +816,7 @@ const PressHome = () => {
           </span>
         </Link>
       </div>
-      <div className='blog-home flex flex-nowrap gap-[20px] overflow-x-auto p-[4px] lg:grid lg:grid-cols-4'>
+      <div className='blog-home flex flex-nowrap gap-[20px] overflow-x-auto overflow-y-hidden p-[4px] lg:grid lg:grid-cols-4'>
         {onFetching
           ? Array(4)
               .fill(null)
@@ -788,6 +848,7 @@ const PressHome = () => {
 }
 
 const LikeControl = ({ item }: { item: any }) => {
+  const t = useTranslations('Modal')
   const [checkLike, setCheckLike] = useState({ isLiked: item.isLike, count: item.like })
   const [checkDislike, setCheckDislike] = useState<any>({ isDisliked: item.isDislike })
 
@@ -811,7 +872,7 @@ const LikeControl = ({ item }: { item: any }) => {
         message: dislikeMessage,
       })
       setCheckDislike(data)
-      ToastComponent({ message: 'Cảm ơn bạn đã đóng góp ý kiến', type: 'success' })
+      ToastComponent({ message: t('messageToast'), type: 'success' })
     } catch (error) {
       console.log(error)
     }
@@ -841,7 +902,7 @@ const LikeControl = ({ item }: { item: any }) => {
   return (
     <Tooltip
       isDisabled={!checkDislike.isDisliked}
-      content={'Cảm ơn bạn đã đóng góp ý kiến'}
+      content={t('messageToast')}
       placement='top'
       classNames={{
         content: 'text-[1.8rem] px-[16px] py-[8px]',

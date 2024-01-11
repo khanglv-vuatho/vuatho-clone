@@ -29,7 +29,7 @@
     "text2": "Eller skanna QR-koden nedan"
   },
   "Footer": {
-    "address": "57 Song Hanh, Kv. An Phu, Thu Duc City,",
+    "address": "Vua Thợ Teknologi AB",
     "location": "Ho Chi Minh-staden, Vietnam.",
     "our_partner": "Våra Partners",
     "about_vuatho": "Om Vua Thợ",
@@ -361,7 +361,7 @@
     "numberGoal": "100 000 +",
     "textGold": "Hantverkare och användare i hela landet fram till 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Kontakta oss",
     "address1": "57 Song Hanh, An Phu Ward, Thu Duc City,",
     "address2": "Ho Chi Minh City, Vietnam.",
@@ -385,6 +385,7 @@
     "text10": "Tydliga och distinkta träffmärken",
     "text11": "Nationellt ID-kort",
     "text12": "Pass",
+    "text12-1": "Körkort",
     "text13": "Allmänna Dokumentkrav",
     "text14": "Förbered en av de två typerna av dokument",
     "text15": "Ladda ner Vua Thợ Appen",

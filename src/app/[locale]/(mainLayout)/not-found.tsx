@@ -6,6 +6,7 @@ import Link from 'next/link'
 
 export default function NotFound() {
   const t = useTranslations('NotFound')
+
   return (
     <div className='w-full'>
       <div className='flex h-[80vh] w-full flex-col items-center justify-center'>

@@ -543,6 +543,7 @@ const CheckValidWorker = ({
                       value={phoneCountry}
                       radius='full'
                       isRequired
+                      allowsCustomValue
                       isClearable={false}
                       defaultSelectedKey={phoneCountry}
                       onSelectionChange={(e: any) => setPhoneCountry(e)}
@@ -551,12 +552,13 @@ const CheckValidWorker = ({
                       }}
                       popoverProps={{
                         classNames: {
-                          content: 'text-[1.2rem] whitespace-nowrap ',
+                          content: 'text-[1.2rem] whitespace-nowrap',
                         },
                       }}
                       inputProps={{
                         classNames: {
                           input: 'text-[1.4rem] text-[#A5A5A5]',
+                          errorMessage: 'hidden',
                           inputWrapper:
                             'border-[#BABEF4] data-[hover=true]:border-[#BABEF4] group-data-[focus=true]:border-[#BABEF4] border-1 h-[44px] pl-[16px]',
                         },

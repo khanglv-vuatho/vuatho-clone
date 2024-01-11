@@ -29,7 +29,7 @@
     "text2": "Atau pindai kode QR di bawah ini"
   },
   "Footer": {
-    "address": "57 Song Hanh, Kelurahan An Phu, Kota Thu Duc,",
+    "address": "Perusahaan Teknologi Vua Thợ",
     "location": "Ho Chi Minh City, Vietnam.",
     "our_partner": "Mitra Kami",
     "about_vuatho": "Tentang Vua Thợ",
@@ -361,7 +361,7 @@
     "numberGoal": "100,000 +",
     "textGold": "Tukang dan pengguna di seluruh negeri pada tahun 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Hubungi Kami",
     "address1": "57 Song Hanh, Kelurahan An Phu, Kota Thu Duc,",
     "address2": "Ho Chi Minh City, Vietnam.",
@@ -385,6 +385,7 @@
     "text10": "Tanda air yang jelas dan berbeda",
     "text11": "Kartu Identitas Nasional",
     "text12": "Paspor",
+    "text12-1": "Surat Izin Mengemudi",
     "text13": "Persyaratan Dokumen Umum",
     "text14": "Siapkan salah satu dari dua jenis dokumen",
     "text15": "Unduh Aplikasi Vua Thợ",

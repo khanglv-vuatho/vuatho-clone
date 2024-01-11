@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl'
 export async function generateMetadata({ params }: { params?: any }) {
   try {
     const metadata: any = {
-      vi: 'Trở thành thợ',
+      vi: 'Trở thành Thợ',
       en: 'Become worker',
     }
     const description: any = {

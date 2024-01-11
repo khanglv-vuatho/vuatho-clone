@@ -29,7 +29,7 @@
     "text2": "또는 아래의 QR 코드를 스캔하세요"
   },
   "Footer": {
-    "address": "57 Song Hanh, Ward An Phu, Thu Duc City,",
+    "address": "Vua Thợテクノロジー有限会社",
     "location": "호치민시, 베트남.",
     "our_partner": "우리 파트너",
     "about_vuatho": "Vua Thợ에 대하여",
@@ -361,7 +361,7 @@
     "numberGoal": "2024년까지 100,000 명 이상의",
     "textGold": "모든 지역의 장인 및 사용자들을 연결하는 것입니다."
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "문의하기",
     "address1": "베트남 호치민시 슈투둑시 안푸 지구 송한 57번지,",
     "address2": "베트남.",
@@ -385,6 +385,7 @@
     "text10": "명확하고 구분되는 워터마크",
     "text11": "국민 신분증",
     "text12": "여권",
+    "text12-1": "운전 면허증",
     "text13": "일반 문서 요구 사항",
     "text14": "두 가지 유형 중 하나의 문서를 준비하세요",
     "text15": "Vua Thợ 앱 다운로드",

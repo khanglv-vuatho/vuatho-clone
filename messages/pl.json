@@ -29,7 +29,7 @@
     "text2": "lub zeskanuj poniższy kod QR"
   },
   "Footer": {
-    "address": "57 Song Hanh, Dzielnica An Phu, Miasto Thu Duc,",
+    "address": "Firma Technologiczna Vua Thợ sp. z o.o.",
     "location": "Ho Chi Minh, Wietnam.",
     "our_partner": "Nasi Partnerzy",
     "about_vuatho": "O Vua Thợ",
@@ -361,7 +361,7 @@
     "numberGoal": "100 000 +",
     "textGold": "Rzemieślników i użytkowników na całym kraju do 2024 roku"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Kontakt",
     "address1": "57 Song Hanh, Dzielnica An Phu, Miasto Thu Duc,",
     "address2": "Ho Chi Minh City, Wietnam.",
@@ -385,6 +385,7 @@
     "text10": "Wyraźne i czytelne znaki wodne",
     "text11": "Dowód osobisty",
     "text12": "Paszport",
+    "text12-1": "Prawo jazdy",
     "text13": "Ogólne wymagania dotyczące dokumentów",
     "text14": "Przygotuj jeden z dwóch rodzajów dokumentów",
     "text15": "Pobierz aplikację Vua Thợ",

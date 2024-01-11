@@ -29,7 +29,7 @@
     "text2": "または、以下のQRコードをスキャンしてください"
   },
   "Footer": {
-    "address": "ベトナム、ホーチミン市、アンフー区、ソンハン57号",
+    "address": "Vua Thợテクノロジー有限会社",
     "location": "ホーチミン市、ベトナム",
     "our_partner": "パートナー",
     "about_vuatho": "Vua Thợについて",
@@ -361,9 +361,9 @@
     "numberGoal": "100,000以上",
     "textGold": "2024年までに全国の職人とユーザーを結びつけることです。"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "お問い合わせ",
-    "address1": "57 Song Hanh, Ward An Phu, Thu Duc City,",
+    "address1": "57 Song Hanh, Ward An Phu, Thu Duc, Ho Chi Minh City,",
     "address2": "ホーチミン市、ベトナム。",
     "timeNumber": "8:30 AMから4:30 PM",
     "timeDay": "月曜日から金曜日",
@@ -385,6 +385,7 @@
     "text10": "クリアで明確なウッドマーク",
     "text11": "国民IDカード",
     "text12": "パスポート",
+    "text12-1": "運転免許証",
     "text13": "一般的な書類の要件",
     "text14": "次の2つのタイプの書類のいずれかを用意してください。",
     "text15": "Vua Thợアプリのダウンロード",

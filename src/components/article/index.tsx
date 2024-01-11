@@ -17,14 +17,14 @@ const Article = forwardRef(({ item, style }: { item: any; style?: string }, ref)
         style,
       )}
     >
-      <div className='h-[206px] w-full overflow-hidden'>
+      <div className='h-[206px] w-full overflow-hidden transition hover:scale-105'>
         <ImageFallback
           src={item.thumb}
           alt='Article image'
           height={406}
           width={800}
           quality={100}
-          className='h-full w-full object-cover transition group-hover:scale-[1.1]'
+          className='h-full w-full object-cover transition'
         />
       </div>
       <div className='flex flex-col gap-[8px] p-[16px]'>

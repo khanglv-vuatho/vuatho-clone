@@ -29,7 +29,7 @@
     "text2": "Ali skenirajte spodnjo QR kodo"
   },
   "Footer": {
-    "address": "57 Song Hanh, četrt An Phu, mesto Thu Duc,",
+    "address": "Podjetje za tehnologijo Vua Tho",
     "location": "Ho Chi Minh, Vietnam.",
     "our_partner": "Naši partnerji",
     "about_vuatho": "O Vua Thợ",
@@ -362,7 +362,7 @@
     "numberGoal": "100.000 +",
     "textGold": "mojstrov in uporabnikov po vsej državi do leta 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Kontaktirajte nas",
     "address1": "57 Song Hanh, Četrt An Phu, Mesto Thu Duc,",
     "address2": "Ho Chi Minh City, Vietnam.",
@@ -386,6 +386,7 @@
     "text10": "Jasni in razločni žigi",
     "text11": "Osebna izkaznica",
     "text12": "Potni list",
+    "text12-1": "Vozniško dovoljenje",
     "text13": "Splošni zahtevi za dokumente",
     "text14": "Pripravite enega od dveh vrst dokumentov",
     "text15": "Prenesite aplikacijo Vua Thợ",

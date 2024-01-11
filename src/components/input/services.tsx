@@ -1,29 +1,33 @@
 'use client'
 
-import Image from 'next/image'
-import React, { useEffect, useState, useCallback, useRef } from 'react'
-import instance from '@/services/axiosConfig'
-import { SearchNormal1 as IconSearchNormal1 } from 'iconsax-react'
+import { SearchNormal1 as SearchNormal1Icon } from 'iconsax-react'
 import { useLocale, useTranslations } from 'next-intl'
-import { useRouter } from '@/navigation'
+import Image from 'next/image'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
-let timerSearch: any = null
+import { useUnfocusItem } from '@/hook'
+import { useRouter } from '@/navigation'
+import instance from '@/services/axiosConfig'
+
 const InputMainSearch = React.memo((props: any) => {
   const t = useTranslations('InputMainSearch')
 
-  const [isFocus, sIsFocus] = useState(false)
+  const [isFocus, setIsFocus] = useState(false)
   const [onFetching, sOnFetching] = useState(false)
   const [data, sData] = useState<any>([])
 
-  const [keyword, sKeyword] = useState('')
+  const timerSearch: any = useRef(null)
+  const exclusionRef = useRef(null)
+  const searchAreaRef = useUnfocusItem(() => _HandleOnFocus(false), exclusionRef)
 
-  const _HandleSearching = useCallback(() => {
+  const [keyword, setKeyword] = useState('')
+
+  const _HandleSearching = useCallback(async () => {
     try {
-      instance.get('/services/search', { params: { keyword } }).then((res) => {
-        console.log(res)
-        sData(res)
-      })
+      const data = await instance.get('/services/search', { params: { keyword } })
+      sData(data)
     } catch (error) {
+      console.log(error)
     } finally {
       sOnFetching(false)
     }
@@ -35,39 +39,24 @@ const InputMainSearch = React.memo((props: any) => {
 
   useEffect(() => {
     if (keyword) {
-      timerSearch && clearTimeout(timerSearch)
-      timerSearch = setTimeout(() => {
+      timerSearch.current && clearTimeout(timerSearch.current)
+      timerSearch.current = setTimeout(() => {
         sOnFetching(true)
       }, 250)
     } else {
-      timerSearch && clearTimeout(timerSearch)
+      timerSearch.current && clearTimeout(timerSearch.current)
     }
     return () => {
-      timerSearch && clearTimeout(timerSearch)
+      timerSearch.current && clearTimeout(timerSearch.current)
     }
   }, [keyword])
 
   const _HandleOnFocus = useCallback((isBoolean: any) => {
-    sIsFocus(isBoolean)
+    setIsFocus(isBoolean)
   }, [])
 
   const _HandleOnChangeInput = useCallback((e: any) => {
-    sKeyword(e.target.value)
-  }, [])
-
-  const searchAreaRef = useRef<any>(null)
-
-  const handleClickOutside = (event: any) => {
-    if (searchAreaRef.current && !searchAreaRef.current.contains(event.target)) {
-      _HandleOnFocus(false)
-    }
-  }
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
+    setKeyword(e.target.value)
   }, [])
 
   return (
@@ -78,7 +67,7 @@ const InputMainSearch = React.memo((props: any) => {
     >
       <div className='flex w-full rounded-full border-2 border-[#f5b500] p-3 outline-none focus:border-[#ffcc3f]'>
         <input
-          onFocus={_HandleOnFocus.bind(this, true)}
+          onFocus={() => _HandleOnFocus(true)}
           type='text'
           onChange={_HandleOnChangeInput}
           placeholder={t('text1')}
@@ -89,7 +78,7 @@ const InputMainSearch = React.memo((props: any) => {
           }
         />
         <button className='rounded-full bg-[#f5b500] p-3 hover:opacity-75 active:opacity-100'>
-          <IconSearchNormal1 />
+          <SearchNormal1Icon />
         </button>
       </div>
       <div
