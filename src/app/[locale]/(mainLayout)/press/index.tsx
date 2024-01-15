@@ -220,9 +220,9 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
                 {onFetching || onLoading ? (
                   Array(4)
                     .fill(null)
-                    .map((item: any, index: number) => <SkeletonBlog key={index} />)
+                    .map((_, index) => <SkeletonBlog key={index} />)
                 ) : !!listMostView.length ? (
-                  listMostView.map((item: any) => <Article item={item} key={item.id} />)
+                  listMostView.map((item: any, index: number) => <Article item={item} key={item.id} index={index} />)
                 ) : (
                   <p className='font-light text-[#969696]'>{td('oops')}</p>
                 )}
@@ -249,8 +249,8 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
               ) : !!listBlog?.length ? (
                 <>
                   <div className='grid grid-cols-1 gap-[20px] md:grid-cols-2'>
-                    {listBlog.map((item: any) => (
-                      <Article key={item.id} item={item} />
+                    {listBlog.map((item: any, index: number) => (
+                      <Article key={item.id} item={item} index={index} />
                     ))}
                   </div>
                   <div className='flex items-center justify-center'>
