@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { memo, useCallback, useEffect, useMemo, useState } from 'react'
 import LangsComp from '@/components/LangsComp'
 
 import { Button } from '@nextui-org/react'
@@ -21,13 +21,7 @@ const Header = React.memo(() => {
   )
 })
 
-export const HeaderWrapper = ({
-  children,
-  style,
-}: {
-  children: React.ReactNode
-  style?: string
-}) => {
+export const HeaderWrapper = ({ children, style }: { children: React.ReactNode; style?: string }) => {
   const [isWebview, sIsWebview] = useState(false)
 
   const [isHeaderVisible, setHeaderVisible] = useState(true)
@@ -64,57 +58,35 @@ export const HeaderWrapper = ({
   }
   if (hiddenHeaderAndFooter) return null
   return (
-    <header
-      id='header'
-      className={`header fixed left-0 right-0 z-[11] w-full bg-white transition ${
-        isHeaderVisible ? 'translate-y-0 shadow-sm' : '-translate-y-[100%]'
-      }`}
-    >
-      <div
-        className={twMerge(
-          `ct-container-70 flex h-[70px] items-center justify-between 3xl:h-[80px]`,
-          style,
-        )}
-      >
-        {children}
-      </div>
+    <header id='header' className={`header fixed left-0 right-0 z-[11] w-full bg-white transition ${isHeaderVisible ? 'translate-y-0 shadow-sm' : '-translate-y-[100%]'}`}>
+      <div className={twMerge(`ct-container-70 flex h-[70px] items-center justify-between 3xl:h-[80px]`, style)}>{children}</div>
     </header>
   )
 }
 
-export const Logo = () => {
+export const Logo = memo(() => {
   const locale = useLocale()
+  const _handleClickLogo = useCallback(() => {
+    window.scrollTo({
+      top: 0,
+    })
+  }, [])
   return (
-    <Link
-      onClick={() => {
-        window.scrollTo({
-          top: 0,
-        })
-      }}
-      href={`/${locale}`}
-      className='block h-fit'
-    >
-      <Image
-        src='/logo/textLogo.png'
-        alt='Logo nav'
-        width={256}
-        height={176}
-        quality={100}
-        className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[70px]'
-      />
+    <Link onClick={_handleClickLogo} href={`/${locale}`} className='block h-fit'>
+      <Image src='/logo/textLogo.png' alt='Logo nav' width={256} height={176} quality={100} className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[70px]' />
     </Link>
   )
-}
+})
 
-const RightNav = React.memo(() => {
+const RightNav = memo(() => {
   const t = useTranslations('Navbar')
 
   const [toggleMenu, setToggleMenu] = useState(false)
-  const handleToggleMenu = () => setToggleMenu(!toggleMenu)
+  const handleToggleMenu = useCallback(() => setToggleMenu(!toggleMenu), [toggleMenu])
 
-  const _HandleOpenWindow = () => {
+  const _HandleOpenWindow = useCallback(() => {
     window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
-  }
+  }, [])
 
   const menuVariants = {
     initial: {
@@ -137,9 +109,7 @@ const RightNav = React.memo(() => {
   }
 
   useEffect(() => {
-    toggleMenu
-      ? (document.body.style.overflow = 'hidden')
-      : (document.body.style.overflow = 'auto')
+    toggleMenu ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto')
   }, [toggleMenu])
 
   return (
@@ -150,7 +120,7 @@ const RightNav = React.memo(() => {
         </div>
         <div className='flex items-center gap-[16px]'>
           <Button
-            onClick={_HandleOpenWindow.bind(this)}
+            onClick={_HandleOpenWindow}
             className='hidden h-[44px] w-auto rounded-[44px] bg-gradient-to-br from-[#ffa488] to-[#ffcc3f] px-[24px] text-[1.8rem] font-semibold text-baseBlack transition hover:from-[#ffcc3f] hover:to-[#ffa488] lg:block'
           >
             {t('download')}
@@ -164,7 +134,7 @@ const RightNav = React.memo(() => {
         ) : (
           <div className='flex items-center gap-[20px]'>
             <Button
-              onClick={_HandleOpenWindow.bind(this)}
+              onClick={_HandleOpenWindow}
               className='h-[40px] w-auto bg-gradient-to-br from-[#f5b500] to-[#fff0c6] px-[30px] text-[1.8rem] font-semibold text-baseBlack md:px-[50px] lg:hidden xl:h-[50px]'
             >
               {t('download')}
@@ -191,7 +161,7 @@ const RightNav = React.memo(() => {
   )
 })
 
-const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
+const LinkList = memo(({ handleToggleMenu }: { handleToggleMenu?: any }) => {
   const pathname = usePathname()
   const t = useTranslations('Navbar')
   const locale = useLocale()
@@ -252,24 +222,10 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
               }}
               className='text-[1.8rem]'
             >
-              <button
-                onClick={() => handleClick(link.url)}
-                className={`${
-                  isActive
-                    ? 'text-[#0B27B6] '
-                    : 'text-base-black-1 hover:text-[#0B27B6]/60'
-                } block duration-300 md:hidden`}
-              >
+              <button onClick={() => handleClick(link.url)} className={`${isActive ? 'text-[#0B27B6] ' : 'text-base-black-1 hover:text-[#0B27B6]/60'} block duration-300 md:hidden`}>
                 {link.title}
               </button>
-              <Link
-                href={link.url}
-                className={`hidden md:block ${
-                  isActive
-                    ? 'text-[#0B27B6]'
-                    : 'text-base-black-1 hover:text-[#0B27B6]/60'
-                }`}
-              >
+              <Link href={link.url} className={`hidden md:block ${isActive ? 'text-[#0B27B6]' : 'text-base-black-1 hover:text-[#0B27B6]/60'}`}>
                 {link.title}
               </Link>
             </motion.div>
@@ -278,6 +234,6 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
       })}
     </>
   )
-}
+})
 
-export default Header
+export default memo(Header)

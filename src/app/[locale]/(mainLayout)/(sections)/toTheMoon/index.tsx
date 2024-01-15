@@ -1,6 +1,10 @@
-import ImageFallback from '@/components/ImageFallback'
+'use client'
+
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import { memo } from 'react'
+
+import ImageFallback from '@/components/ImageFallback'
 
 function SectionToTheMoon() {
   const t = useTranslations('ToTheMoon')
@@ -11,9 +15,7 @@ function SectionToTheMoon() {
       <div className='order-1 flex flex-col justify-center gap-[10px]'>
         <>
           <h3 className='font-bold uppercase tracking-[8px]'>{td('text')}</h3>
-          <h2 className='text-[2.4rem] font-semibold text-primary-blue md:text-[3.2rem]'>
-            {t('title')}
-          </h2>
+          <h2 className='text-[2.4rem] font-semibold text-primary-blue md:text-[3.2rem]'>{t('title')}</h2>
         </>
         <motion.p
           initial={{
@@ -50,16 +52,9 @@ function SectionToTheMoon() {
         viewport={{ once: true }}
         className='z-[-1] order-none lg:relative lg:right-[20%] lg:order-2 lg:min-h-[570px] lg:min-w-[680px]'
       >
-        <ImageFallback
-          src={'/home/test12.webp'}
-          alt=''
-          height={280}
-          quality={100}
-          width={1028}
-          className='size-full object-contain lg:absolute'
-        />
+        <ImageFallback src={'/home/test12.webp'} alt='' height={280} quality={100} width={1028} className='size-full object-contain lg:absolute' />
       </motion.div>
     </div>
   )
 }
-export default SectionToTheMoon
+export default memo(SectionToTheMoon)

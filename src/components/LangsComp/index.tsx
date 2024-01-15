@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { langs } from '@/constants'
@@ -29,9 +29,7 @@ function LangsComp() {
   const [lang, setLang] = useState<any>(langs.find((e) => e.code == locale))
   const [searchLang, setSearchLang] = useState('')
 
-  const [listCurrency, setListCurrency] = useState<
-    { label: string; active: boolean; code: string; name: string; symbol: string }[]
-  >([])
+  const [listCurrency, setListCurrency] = useState<{ label: string; active: boolean; code: string; name: string; symbol: string }[]>([])
 
   const [searchCurrency, setSearchCurrency] = useState('')
   const currency = useSelector((state: any) => state.currency)
@@ -90,14 +88,10 @@ function LangsComp() {
     setIsOpen(false)
 
     const arrayUrl = pathName?.split('/')
-    const urlReplace = arrayUrl
-      .map((item) => (item === arrayUrl[1] ? value.code : item))
-      .join('/')
+    const urlReplace = arrayUrl.map((item) => (item === arrayUrl[1] ? value.code : item)).join('/')
 
     const queryString = Object.keys(allQueryParams)
-      .map(
-        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(allQueryParams[key])}`,
-      )
+      .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(allQueryParams[key])}`)
       .join('&')
 
     router.replace(urlReplace + (queryString !== null ? `?${queryString}` : ''), {
@@ -143,20 +137,13 @@ function LangsComp() {
             </button>
           </PopoverTrigger>
           <PopoverContent>
-            <Button
-              isIconOnly
-              onPress={() => setIsOpen(false)}
-              variant='light'
-              className='absolute right-0 top-0 h-[48px] w-[56px]'
-            >
+            <Button isIconOnly onPress={() => setIsOpen(false)} variant='light' className='absolute right-0 top-0 h-[48px] w-[56px]'>
               <Add className='rotate-45 text-base-black-1' size={24} />
             </Button>
             <div className='grid grid-cols-2 gap-[20px] overflow-y-scroll'>
               <div className='col-span-1 flex flex-col gap-[8px]'>
                 <div className='flex flex-col justify-between gap-[16px]'>
-                  <h5 className='text-[1.8rem] font-bold leading-normal text-primary-blue'>
-                    {t('language')}
-                  </h5>
+                  <h5 className='text-[1.8rem] font-bold leading-normal text-primary-blue'>{t('language')}</h5>
                   <Input
                     variant='underlined'
                     value={searchLang}
@@ -175,33 +162,25 @@ function LangsComp() {
                 </div>
                 <div className='grid max-h-[400px] grid-cols-1 gap-1 overflow-y-scroll py-2'>
                   {langs
-                    .filter((item) =>
-                      normalizeKeyword(item.label).includes(normalizeKeyword(searchLang)),
-                    )
+                    .filter((item) => normalizeKeyword(item.label).includes(normalizeKeyword(searchLang)))
                     .map((item) => (
                       <button
                         onClick={() => _HandleChangeLang(item)}
                         disabled={!item.active}
                         key={item.code}
                         className={`${
-                          lang === item
-                            ? 'bg-primary-blue-2 text-primary-blue'
-                            : 'hover:bg-base-gray disabled:hover:bg-transparent'
+                          lang === item ? 'bg-primary-blue-2 text-primary-blue' : 'hover:bg-base-gray disabled:hover:bg-transparent'
                         } flex items-center gap-2 whitespace-nowrap rounded-lg px-4 py-6 text-left text-[1.8rem]`}
                       >
                         <span>{item.symbol}</span>
-                        <span className={`${item.active ? '' : 'text-black/30'}`}>
-                          {item.label}
-                        </span>
+                        <span className={`${item.active ? '' : 'text-black/30'}`}>{item.label}</span>
                       </button>
                     ))}
                 </div>
               </div>
               <div className='col-span-1 flex flex-col gap-[8px]'>
                 <div className='flex flex-col justify-between gap-[16px]'>
-                  <h5 className='text-[1.8rem] font-bold leading-normal text-primary-blue'>
-                    {t('money')}
-                  </h5>
+                  <h5 className='text-[1.8rem] font-bold leading-normal text-primary-blue'>{t('money')}</h5>
                   <Input
                     variant='underlined'
                     value={searchCurrency}
@@ -218,11 +197,7 @@ function LangsComp() {
                 </div>
                 <div className='grid max-h-[400px] grid-cols-1 gap-1 overflow-y-scroll py-2'>
                   {currency
-                    .filter((item: any) =>
-                      `${item.code} ${item.name} ${item.symbol}`
-                        .toLowerCase()
-                        .includes(searchCurrency.toLowerCase().trim()),
-                    )
+                    .filter((item: any) => `${item.code} ${item.name} ${item.symbol}`.toLowerCase().includes(searchCurrency.toLowerCase().trim()))
                     ?.map((x: any) => ({
                       ...x,
                       priority: x.code === selectCurrency.code ? 1 : 0,
@@ -234,16 +209,10 @@ function LangsComp() {
                         key={item.code}
                         disabled={item.code === selectCurrency.code}
                         className={`${
-                          selectCurrency.code === item.code
-                            ? 'bg-primary-blue-2 text-primary-blue'
-                            : 'hover:bg-base-gray disabled:hover:bg-transparent'
+                          selectCurrency.code === item.code ? 'bg-primary-blue-2 text-primary-blue' : 'hover:bg-base-gray disabled:hover:bg-transparent'
                         } flex items-center gap-2 whitespace-nowrap rounded-lg px-4 py-6 text-left text-[1.8rem]`}
                       >
-                        <span
-                          className={`${
-                            item.code === selectCurrency.code ? '' : 'text-black/80'
-                          }`}
-                        >
+                        <span className={`${item.code === selectCurrency.code ? '' : 'text-black/80'}`}>
                           {item.code} - {item.symbol}
                         </span>
                       </button>
@@ -258,9 +227,7 @@ function LangsComp() {
         <div className='grid grid-cols-2 gap-[20px] overflow-y-scroll'>
           <div className=''>
             <div className='flex flex-col justify-between gap-[16px]'>
-              <h5 className='text-[1.8rem] font-normal text-primary-blue'>
-                {t('language')}
-              </h5>
+              <h5 className='text-[1.8rem] font-normal text-primary-blue'>{t('language')}</h5>
               <Input
                 variant='underlined'
                 value={searchLang}
@@ -279,24 +246,18 @@ function LangsComp() {
             </div>
             <div className='grid max-h-[400px] grid-cols-1 gap-1 overflow-y-scroll py-2'>
               {langs
-                .filter((item) =>
-                  normalizeKeyword(item.label).includes(normalizeKeyword(searchLang)),
-                )
+                .filter((item) => normalizeKeyword(item.label).includes(normalizeKeyword(searchLang)))
                 .map((item) => (
                   <button
                     onClick={() => _HandleChangeLang(item)}
                     disabled={!item.active}
                     key={item.code}
                     className={`${
-                      lang === item
-                        ? 'bg-primary-blue-2 text-primary-blue'
-                        : 'hover:bg-base-gray disabled:hover:bg-transparent'
+                      lang === item ? 'bg-primary-blue-2 text-primary-blue' : 'hover:bg-base-gray disabled:hover:bg-transparent'
                     } flex items-center gap-2 whitespace-nowrap rounded-lg px-4 py-6 text-left text-[1.8rem]`}
                   >
                     <span>{item.symbol}</span>
-                    <span className={`${item.active ? '' : 'text-black/30'}`}>
-                      {item.label}
-                    </span>
+                    <span className={`${item.active ? '' : 'text-black/30'}`}>{item.label}</span>
                   </button>
                 ))}
             </div>
@@ -320,23 +281,17 @@ function LangsComp() {
             </div>
             <div className='grid max-h-[400px] grid-cols-1 gap-1 overflow-y-scroll py-2'>
               {listCurrency
-                .filter((item) =>
-                  item.label.toLowerCase().includes(searchCurrency.toLowerCase().trim()),
-                )
+                .filter((item) => item.label.toLowerCase().includes(searchCurrency.toLowerCase().trim()))
                 .map((item) => (
                   <button
                     onClick={() => _HandleChangeCurrency(item)}
                     key={item.code}
                     disabled={!item.active}
                     className={`${
-                      selectCurrency.code === item.code
-                        ? 'bg-primary-blue-2 text-primary-blue'
-                        : 'hover:bg-base-gray disabled:hover:bg-transparent'
+                      selectCurrency.code === item.code ? 'bg-primary-blue-2 text-primary-blue' : 'hover:bg-base-gray disabled:hover:bg-transparent'
                     } flex items-center gap-2 whitespace-nowrap rounded-lg px-4 py-6 text-left text-[1.8rem]`}
                   >
-                    <span className={`${item.active ? '' : 'text-black/30'}`}>
-                      {item.label}
-                    </span>
+                    <span className={`${item.active ? '' : 'text-black/30'}`}>{item.label}</span>
                   </button>
                 ))}
             </div>
@@ -347,4 +302,4 @@ function LangsComp() {
   )
 }
 
-export default LangsComp
+export default memo(LangsComp)

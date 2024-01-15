@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { memo, useEffect, useRef, useState } from 'react'
 import { Accordion, AccordionItem } from '@nextui-org/react'
 
 import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'
@@ -72,18 +72,13 @@ const SectionStep = () => {
     <div className='bg-white py-[20px] 13inch:py-[40px] 3xl:py-[80px]'>
       <div className='ct-container-70 hidden w-full gap-10 md:flex lg:gap-20'>
         <div className='relative min-w-[28%] lg:min-w-[31%] 2xl:min-w-[28%] '>
-          <div
-            className='absolute w-full rounded-[60px] bg-gradient-to-r from-[#FFB500] to-[#FED32C] transition'
-            ref={highlightRef}
-          />
+          <div className='absolute w-full rounded-[60px] bg-gradient-to-r from-[#FFB500] to-[#FED32C] transition' ref={highlightRef} />
           <div className='flex flex-col gap-2'>
             {listAccordion.map((i: any, index: number) => (
               <button
                 onClick={() => handleActiveSelect(i.title, index)}
                 className={`flex w-full items-center justify-start rounded-[60px] px-10 py-6 text-[1.8rem] ${
-                  activeSelect === i.title
-                    ? 'menuActive text-black'
-                    : 'bg-transparent hover:bg-gradient-to-r hover:from-[#FFB500]/5 hover:to-[#FED32C]/5'
+                  activeSelect === i.title ? 'menuActive text-black' : 'bg-transparent hover:bg-gradient-to-r hover:from-[#FFB500]/5 hover:to-[#FED32C]/5'
                 }`}
                 key={i.title}
               >
@@ -92,9 +87,7 @@ const SectionStep = () => {
             ))}
           </div>
         </div>
-        <div className='w-full border-l-1 border-[#E1E1E1] pl-10 lg:pl-20'>
-          {listAccordion[contentNumber].content}
-        </div>
+        <div className='w-full border-l-1 border-[#E1E1E1] pl-10 lg:pl-20'>{listAccordion[contentNumber].content}</div>
       </div>
 
       <div className='ct-container-70 block md:hidden'>
@@ -138,7 +131,7 @@ const SectionStep = () => {
   )
 }
 
-const Step1: React.FC = () => {
+const Step1: React.FC = memo(() => {
   const t = useTranslations('BecomeWorker')
 
   const DocRequirements = [t('text6'), t('text7'), t('text8'), t('text9'), t('text10')]
@@ -163,26 +156,14 @@ const Step1: React.FC = () => {
         ))}
       </ul>
       <div className='mt-6 flex flex-col items-center justify-start gap-4 md:flex-row '>
-        <Image
-          src={'/images/cmnd1.png'}
-          alt=''
-          width={324}
-          height={191}
-          className='pointer-events-none max-w-[240px]'
-        />
-        <Image
-          src={'/images/cmnd2.png'}
-          alt=''
-          width={324}
-          height={191}
-          className='pointer-events-none max-w-[240px]'
-        />
+        <Image src={'/images/cmnd1.png'} alt='' width={324} height={191} className='pointer-events-none max-w-[240px]' />
+        <Image src={'/images/cmnd2.png'} alt='' width={324} height={191} className='pointer-events-none max-w-[240px]' />
       </div>
     </>
   )
-}
+})
 
-const Step2: React.FC = () => {
+const Step2: React.FC = memo(() => {
   const t = useTranslations('BecomeWorker')
 
   return (
@@ -206,9 +187,9 @@ const Step2: React.FC = () => {
       </div>
     </>
   )
-}
+})
 
-const Step3: React.FC = () => {
+const Step3: React.FC = memo(() => {
   const t = useTranslations('BecomeWorker')
 
   return (
@@ -256,14 +237,7 @@ const Step3: React.FC = () => {
           <p className='pt-5 text-center text-[1.5rem] text-black/30'>{t('text27')}</p>
         </div>
         <div className='w-full xl:w-1/3'>
-          <Image
-            alt='login screen'
-            src='/become-employee/step3/login.png'
-            width={432}
-            height={599}
-            quality={100}
-            className='w-auto'
-          />
+          <Image alt='login screen' src='/become-employee/step3/login.png' width={432} height={599} quality={100} className='w-auto' />
           <p className='text-[1.8rem]'>
             {t('text28')}
             <span className='font-bold'>{t('text29')}</span> {t('text30')}
@@ -274,72 +248,30 @@ const Step3: React.FC = () => {
       <p className='text-[1.8rem]'>{t('text32')}</p>
       <p className='text-[1.8rem]'>{t('text33')}</p>
       <div className='mt-6 flex flex-col gap-6'>
-        <Image
-          src={'/become-woker/step2-1.webp'}
-          alt=''
-          width={200}
-          height={400}
-          className='pointer-events-none'
-        />
-        <Image
-          src={'/become-woker/step2-2.webp'}
-          alt=''
-          width={405}
-          height={407}
-          className='pointer-events-none'
-        />
-        <Image
-          src={'/become-woker/step2-3.webp'}
-          alt=''
-          width={378}
-          height={407}
-          className='pointer-events-none'
-        />
+        <Image src={'/become-woker/step2-1.webp'} alt='' width={200} height={400} className='pointer-events-none' />
+        <Image src={'/become-woker/step2-2.webp'} alt='' width={405} height={407} className='pointer-events-none' />
+        <Image src={'/become-woker/step2-3.webp'} alt='' width={378} height={407} className='pointer-events-none' />
       </div>
       <h4 className='mt-8 text-[1.8rem] font-bold'>{t('text34')}</h4>
       <p className='text-[1.8rem]'>{t('text35')}</p>
       <p className='text-[1.8rem]'>{t('text36')}</p>
-      <Image
-        src={'/become-woker/step3-1.webp'}
-        alt=''
-        width={200}
-        height={400}
-        className='my-8'
-      />
+      <Image src={'/become-woker/step3-1.webp'} alt='' width={200} height={400} className='my-8' />
       <strong className='text-[1.8rem]'>{t('text37')}</strong>
       <p className='text-[1.8rem]'>{t('text38')}</p>
       <p className='mb-8 text-[1.8rem]'>{t('text39')}</p>
       <div className='flex flex-col gap-8'>
-        <Image
-          src={'/become-woker/step3-2.webp'}
-          alt=''
-          width={430}
-          height={400}
-          className='pointer-events-none'
-        />
-        <Image
-          src={'/become-woker/step3-3.webp'}
-          alt=''
-          width={410}
-          height={400}
-          className='pointer-events-none'
-        />
+        <Image src={'/become-woker/step3-2.webp'} alt='' width={430} height={400} className='pointer-events-none' />
+        <Image src={'/become-woker/step3-3.webp'} alt='' width={410} height={400} className='pointer-events-none' />
       </div>
       <p className='my-8'>
         <strong className='text-[1.8rem]'>{t('text40')}</strong>
       </p>
-      <Image
-        src={'/become-woker/step3-4.webp'}
-        alt=''
-        width={410}
-        height={400}
-        className='pointer-events-none'
-      />
+      <Image src={'/become-woker/step3-4.webp'} alt='' width={410} height={400} className='pointer-events-none' />
     </>
   )
-}
+})
 
-const Step4: React.FC = () => {
+const Step4: React.FC = memo(() => {
   const t = useTranslations('BecomeWorker')
 
   return (
@@ -349,32 +281,14 @@ const Step4: React.FC = () => {
       <p className='mt-5 text-[1.8rem]'>{t('text43')}</p>
       <div className='mt-5 flex justify-center'>
         <div className='relative w-fit rounded-xl border-2 border-base-gray p-4'>
-          <p className='absolute -left-1 top-3 rounded-r-full bg-base-gray p-5 pr-10 text-center text-[1.8rem] font-medium shadow-md '>
-            {t('text44')}
-          </p>
-          <Image
-            alt='noti-kyc'
-            src='/become-employee/step4/nation.png'
-            width={640}
-            height={518}
-            quality={100}
-            className='h-auto w-[350px] object-contain 2xl:w-[450px] '
-          />
+          <p className='absolute -left-1 top-3 rounded-r-full bg-base-gray p-5 pr-10 text-center text-[1.8rem] font-medium shadow-md '>{t('text44')}</p>
+          <Image alt='noti-kyc' src='/become-employee/step4/nation.png' width={640} height={518} quality={100} className='h-auto w-[350px] object-contain 2xl:w-[450px] ' />
         </div>
       </div>
       <div className='mt-5 flex justify-center'>
         <div className='relative w-fit rounded-xl border-2 border-base-gray p-4 pt-32'>
-          <p className='absolute -left-1 top-3 rounded-r-full bg-base-gray p-5 pr-10 text-center text-[1.8rem] font-medium shadow-md'>
-            {t('text45')}
-          </p>
-          <Image
-            alt='noti-kyc'
-            src='/become-employee/step4/docs.png'
-            width={640}
-            height={439}
-            quality={100}
-            className='h-auto w-[350px] object-contain 2xl:w-[450px] '
-          />
+          <p className='absolute -left-1 top-3 rounded-r-full bg-base-gray p-5 pr-10 text-center text-[1.8rem] font-medium shadow-md'>{t('text45')}</p>
+          <Image alt='noti-kyc' src='/become-employee/step4/docs.png' width={640} height={439} quality={100} className='h-auto w-[350px] object-contain 2xl:w-[450px] ' />
           <p className='mt-2 text-center text-[1.8rem] text-black/30'>
             {t('text46')}
             <br />
@@ -385,24 +299,15 @@ const Step4: React.FC = () => {
       <p className='mt-8 text-[1.8rem]'>{t('text48')}</p>
       <div className='mt-8 flex justify-center'>
         <div className='relative w-fit rounded-xl border-2 border-base-gray p-4 pt-32'>
-          <p className='absolute -left-1 top-3 rounded-r-full bg-base-gray p-5 pr-10 text-center text-[1.8rem] font-medium shadow-md'>
-            {t('text49')}
-          </p>
-          <Image
-            alt='noti-kyc'
-            src='/become-employee/step4/kyc.png'
-            width={640}
-            height={439}
-            quality={100}
-            className='h-auto w-[350px] object-contain 2xl:w-[450px] '
-          />
+          <p className='absolute -left-1 top-3 rounded-r-full bg-base-gray p-5 pr-10 text-center text-[1.8rem] font-medium shadow-md'>{t('text49')}</p>
+          <Image alt='noti-kyc' src='/become-employee/step4/kyc.png' width={640} height={439} quality={100} className='h-auto w-[350px] object-contain 2xl:w-[450px] ' />
         </div>
       </div>
     </>
   )
-}
+})
 
-const Step5: React.FC = () => {
+const Step5: React.FC = memo(() => {
   const t = useTranslations('BecomeWorker')
 
   return (
@@ -410,46 +315,23 @@ const Step5: React.FC = () => {
       <h3 className='text-[1.8rem] font-bold text-[#0B27B6]'>{t('text50')}</h3>
       <p className='mt-8 text-[1.8rem]'>{t('text51')}</p>
       <div className='mt-8 flex w-fit flex-col items-center gap-10 rounded-xl bg-black/[0.02] p-8 md:flex-row'>
-        <Image
-          alt='noti-kyc'
-          src='/become-employee/step5/noti.png'
-          width={640}
-          height={492}
-          quality={100}
-          className='pointer-events-none h-[200px] w-auto object-contain lg:h-[250px]'
-        />
-        <p className='text-center text-[1.8rem] md:w-[400px] md:text-left'>
-          {t('text50')}
-        </p>
+        <Image alt='noti-kyc' src='/become-employee/step5/noti.png' width={640} height={492} quality={100} className='pointer-events-none h-[200px] w-auto object-contain lg:h-[250px]' />
+        <p className='text-center text-[1.8rem] md:w-[400px] md:text-left'>{t('text50')}</p>
       </div>
       <p className='mt-8 text-[1.8rem]'>{t('text52')}</p>
       <div className='mt-8 flex flex-col items-center gap-10 xl:flex-row'>
         <div className='flex w-[300px] flex-col items-center space-y-6 lg:w-[350px] xl:w-[300px] 2xl:w-[400px]'>
-          <Image
-            alt='noti-kyc'
-            src='/become-employee/step5/success.png'
-            width={640}
-            height={492}
-            quality={100}
-            className='h-auto w-[300px] object-contain 2xl:w-[400px] '
-          />
+          <Image alt='noti-kyc' src='/become-employee/step5/success.png' width={640} height={492} quality={100} className='h-auto w-[300px] object-contain 2xl:w-[400px] ' />
           <p className='text-center text-[1.8rem] text-black/30'>{t('text53')}</p>
         </div>
         <span className='text-[1.8rem] text-black/50'>{t('or')}</span>
         <div className='flex w-[300px] flex-col items-center space-y-6 lg:w-[350px] xl:w-[300px] 2xl:w-[400px]'>
-          <Image
-            alt='noti-kyc'
-            src='/become-employee/step5/error.png'
-            width={640}
-            height={492}
-            quality={100}
-            className='h-auto w-[300px] object-contain 2xl:w-[400px]'
-          />
+          <Image alt='noti-kyc' src='/become-employee/step5/error.png' width={640} height={492} quality={100} className='h-auto w-[300px] object-contain 2xl:w-[400px]' />
           <p className='text-center text-[1.8rem] text-black/30'>{t('text54')}</p>
         </div>
       </div>
     </>
   )
-}
+})
 
-export default SectionStep
+export default memo(SectionStep)

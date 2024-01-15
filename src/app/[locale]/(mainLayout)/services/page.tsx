@@ -1,5 +1,4 @@
 import Map from '@/components/map'
-import React from 'react'
 import LeftRenderSearch from '@/components/services/LeftSideRender'
 
 export async function generateMetadata({ params }: { params?: any }) {

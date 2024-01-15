@@ -4,8 +4,9 @@ import { useTranslations } from 'next-intl'
 import { Accordion, AccordionItem, Image, Tab, Tabs } from '@nextui-org/react'
 
 import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'
+import { memo } from 'react'
 
-const SectionTest = () => {
+const SectionTest = memo(() => {
   const t = useTranslations('FindWorker')
   const tabs = [
     {
@@ -35,15 +36,12 @@ const SectionTest = () => {
             tabList: 'gap-6 w-full relative rounded-none py-2',
             cursor: 'w-full bg-[#405AB7]',
             tab: 'max-w-fit px-[20px] py-[30px] flex items-center justify-center bg-[#F8F8F8]',
-            tabContent:
-              'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
+            tabContent: 'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
           }}
         >
           {(item) => (
             <Tab key={item.id} title={item.label}>
-              <div className='rounded-2xl border-[1px] border-[#E1E1E1] p-[20px]'>
-                {item.content}
-              </div>
+              <div className='rounded-2xl border-[1px] border-[#E1E1E1] p-[20px]'>{item.content}</div>
             </Tab>
           )}
         </Tabs>
@@ -84,9 +82,9 @@ const SectionTest = () => {
       </div>
     </div>
   )
-}
+})
 
-const Step1 = () => {
+const Step1 = memo(() => {
   const t = useTranslations('FindWorker')
 
   return (
@@ -103,16 +101,14 @@ const Step1 = () => {
             <IosBtn />
           </div>
         </div>
-        <span className='text-[1.8rem] text-black/50 3xl:text-[1.8rem]'>
-          {t('text7')}
-        </span>
+        <span className='text-[1.8rem] text-black/50 3xl:text-[1.8rem]'>{t('text7')}</span>
         <QrCode />
       </div>
     </div>
   )
-}
+})
 
-const Step2 = () => {
+const Step2 = memo(() => {
   const t = useTranslations('FindWorker')
 
   const tabs = [
@@ -139,8 +135,7 @@ const Step2 = () => {
             tabList: 'gap-6 w-full relative rounded-none py-2 flex-col',
             cursor: 'w-full bg-[#405AB7]',
             tab: 'xl:min-w-[300px] min-w-[100px] p-[24px] flex items-center justify-start border-[1px] border-[#E1E1E1]',
-            tabContent:
-              'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
+            tabContent: 'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
           }}
         >
           {(item) => (
@@ -156,9 +151,9 @@ const Step2 = () => {
       </div>
     </div>
   )
-}
+})
 
-const Step3 = () => {
+const Step3 = memo(() => {
   const t = useTranslations('FindWorker')
 
   const listRegisterItem = [
@@ -243,9 +238,9 @@ const Step3 = () => {
       </div>
     </div>
   )
-}
+})
 
-const Register: any = () => {
+const Register: any = memo(() => {
   const t = useTranslations('FindWorker')
 
   const listRegisterItem = [
@@ -294,9 +289,7 @@ const Register: any = () => {
 
   return (
     <div className=''>
-      <h5 className='mb-10 block w-full rounded-lg bg-primary-blue py-6 pl-6 text-[2.5rem] text-white lg:hidden'>
-        {t('text8')}
-      </h5>
+      <h5 className='mb-10 block w-full rounded-lg bg-primary-blue py-6 pl-6 text-[2.5rem] text-white lg:hidden'>{t('text8')}</h5>
       <div className='grid gap-10 md:grid-cols-2'>
         {listRegisterItem.map((i) => (
           <RegisterItem url={i.url} key={i.url}>
@@ -306,16 +299,14 @@ const Register: any = () => {
       </div>
     </div>
   )
-}
+})
 
-const Login = () => {
+const Login = memo(() => {
   const t = useTranslations('FindWorker')
 
   return (
     <>
-      <h5 className='mb-10 w-full rounded-lg bg-primary-blue py-6 pl-6 text-[2.5rem] text-white lg:hidden'>
-        {t('text9')}
-      </h5>
+      <h5 className='mb-10 w-full rounded-lg bg-primary-blue py-6 pl-6 text-[2.5rem] text-white lg:hidden'>{t('text9')}</h5>
       <p className='text-[1.8rem]'>{t('text22')}</p>
       <p className='my-4'>
         <strong className='text-[1.8rem]'> {t('text23')}</strong>
@@ -327,90 +318,36 @@ const Login = () => {
         <li> {t('text27')}</li>
       </ul>
       <div className='mt-[20px] flex'>
-        <Image
-          src='/find-worker/loginScreen1.png'
-          alt=''
-          width={220}
-          height={420}
-          className='pointer-events-none'
-        />
-        <Image
-          src='/find-worker/loginScreen2.png'
-          alt=''
-          width={220}
-          height={420}
-          className='pointer-events-none'
-        />
-        <Image
-          src='/find-worker/loginScreen3.png'
-          alt=''
-          width={220}
-          height={420}
-          className='pointer-events-none'
-        />
+        <Image src='/find-worker/loginScreen1.png' alt='' width={220} height={420} className='pointer-events-none' />
+        <Image src='/find-worker/loginScreen2.png' alt='' width={220} height={420} className='pointer-events-none' />
+        <Image src='/find-worker/loginScreen3.png' alt='' width={220} height={420} className='pointer-events-none' />
       </div>
     </>
   )
-}
+})
 
-const RegisterItem = ({
-  children,
-  url,
-  url2,
-  index,
-}: {
-  children: any
-  url: any
-  url2?: any
-  index?: number
-}) => {
+const RegisterItem = memo(({ children, url, url2, index }: { children: any; url: any; url2?: any; index?: number }) => {
   return (
-    <div
-      className={`${
-        index == 4 || index == 5 ? 'md:col-span-2 xl:col-span-1' : 'col-span-1'
-      } flex flex-col items-center justify-between gap-[20px] md:flex-row`}
-    >
-      <div
-        className={`flex flex-col gap-4 text-[#282828] ${url2 ? 'md:max-w-[55%]' : ''}`}
-      >
-        {children}
-      </div>
+    <div className={`${index == 4 || index == 5 ? 'md:col-span-2 xl:col-span-1' : 'col-span-1'} flex flex-col items-center justify-between gap-[20px] md:flex-row`}>
+      <div className={`flex flex-col gap-4 text-[#282828] ${url2 ? 'md:max-w-[55%]' : ''}`}>{children}</div>
       {url2 ? (
         <div className='flex w-fit flex-col gap-10 md:flex-row md:gap-2'>
           <div className='w-[180px]'>
-            <Image
-              src={`/find-worker/${url}`}
-              alt=''
-              width={220}
-              height={300}
-              className='pointer-events-none h-full w-full'
-            />
+            <Image src={`/find-worker/${url}`} alt='' width={220} height={300} className='pointer-events-none h-full w-full' />
           </div>
           <div className='w-[180px]'>
-            <Image
-              src={`/find-worker/${url2}`}
-              alt=''
-              width={220}
-              height={300}
-              className='pointer-events-none h-full w-full'
-            />
+            <Image src={`/find-worker/${url2}`} alt='' width={220} height={300} className='pointer-events-none h-full w-full' />
           </div>
         </div>
       ) : (
         <div className='flex w-fit justify-start md:justify-end'>
           <div className='w-[180px]'>
-            <Image
-              src={`/find-worker/${url}`}
-              alt=''
-              width={220}
-              height={300}
-              className='pointer-events-none'
-            />
+            <Image src={`/find-worker/${url}`} alt='' width={220} height={300} className='pointer-events-none' />
           </div>
         </div>
       )}
     </div>
   )
-}
+})
 
-export default SectionTest
+export default memo(SectionTest)

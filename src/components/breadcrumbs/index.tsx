@@ -1,8 +1,9 @@
 'use client'
 
-import { IBreadcrumbWithUrl } from '@/interface'
-import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/breadcrumbs'
 import { memo } from 'react'
+import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/breadcrumbs'
+
+import { IBreadcrumbWithUrl } from '@/interface'
 
 export const ListBreadcrumbs = memo(({ list }: { list: IBreadcrumbWithUrl[] }) => {
   return (

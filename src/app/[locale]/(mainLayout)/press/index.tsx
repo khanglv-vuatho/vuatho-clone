@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 
 import { IBreadcrumbWithUrl, IMostViewed, IMeta } from '@/interface'
 import instance from '@/services/axiosConfig'
@@ -28,7 +28,7 @@ import 'swiper/css/pagination'
 
 import './pressSwiper.scss'
 
-export const MostViewed: React.FC<IMostViewed> = ({ isHidden, dataDefault, onLoading, onFetching }) => {
+export const MostViewed: React.FC<IMostViewed> = memo(({ isHidden, dataDefault, onLoading, onFetching }) => {
   const t = useTranslations('Press')
   const locale = useLocale()
 
@@ -80,9 +80,9 @@ export const MostViewed: React.FC<IMostViewed> = ({ isHidden, dataDefault, onLoa
       </div>
     </>
   )
-}
+})
 
-export const PressContent = ({ searchParams }: { searchParams: any }) => {
+export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
   const t = useTranslations('listBreadcrumbs')
   const td = useTranslations('Press')
 
@@ -139,7 +139,7 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
 
   const _serverFetching = async () => {
     try {
-      const data: any = searchParams.search
+      const data: any = !!searchParams?.search
         ? await instance.get('/blog/search', {
             params: {
               keyword: searchParams.search,
@@ -282,9 +282,9 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
       </div>
     </>
   )
-}
+})
 
-const SwiperPress = React.memo(({ renderBreadcums }: { renderBreadcums: any }) => {
+const SwiperPress = memo(({ renderBreadcums }: { renderBreadcums: any }) => {
   const [onFetching, setOnFetching] = useState(false)
   const [onLoading, setOnLoading] = useState(true)
   const [slidersData, setSliderData] = useState<any>([])
@@ -377,4 +377,3 @@ const SwiperPress = React.memo(({ renderBreadcums }: { renderBreadcums: any }) =
     </div>
   )
 })
-SwiperPress.displayName = 'SwiperPress'

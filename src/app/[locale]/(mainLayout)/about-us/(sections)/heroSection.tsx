@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import { memo, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import lottie from 'lottie-web'
 
@@ -24,29 +24,20 @@ const HeroSection = () => {
           </div>
         </div>
         <div className='order-1 mb-[35px] w-full md:order-3'>
-          <p className='my-4 block w-full whitespace-nowrap text-center text-[3.2rem] font-bold md:hidden '>
-            {t('heading')}
-          </p>
+          <p className='my-4 block w-full whitespace-nowrap text-center text-[3.2rem] font-bold md:hidden '>{t('heading')}</p>
           <div className='mx-auto max-w-[400px]'>
             <AnimatePhone />
           </div>
         </div>
       </div>
       <div className='absolute bottom-[-10%] w-full '>
-        <Image
-          src={'/images/about-us/bottom.png'}
-          height={149}
-          width={2700}
-          quality={100}
-          alt='bottom'
-          className='pointer-events-none h-full w-full'
-        />
+        <Image src={'/images/about-us/bottom.png'} height={149} width={2700} quality={100} alt='bottom' className='pointer-events-none h-full w-full' />
       </div>
     </div>
   )
 }
 
-const AnimatePhone = () => {
+const AnimatePhone = memo(() => {
   const container = useRef(null)
 
   useEffect(() => {
@@ -62,6 +53,6 @@ const AnimatePhone = () => {
   }, [])
 
   return <div ref={container} className='' />
-}
+})
 
-export default HeroSection
+export default memo(HeroSection)

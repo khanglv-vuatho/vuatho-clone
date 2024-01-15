@@ -3,7 +3,7 @@
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 import { FacebookIcon, LinkedinIcon, YoutubeIcon } from '@/components/Icons'
@@ -192,4 +192,4 @@ const SubFooter = () => {
   )
 }
 
-export default Footer
+export default memo(Footer)

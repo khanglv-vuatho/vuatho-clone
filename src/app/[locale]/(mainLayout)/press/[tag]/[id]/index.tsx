@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
@@ -151,4 +151,4 @@ function PressDetail() {
   )
 }
 
-export default PressDetail
+export default memo(PressDetail)

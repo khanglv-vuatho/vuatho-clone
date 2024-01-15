@@ -4,8 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 
-import confetti from 'canvas-confetti'
-import { motion, useAnimate } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ArrowRight2, Dislike, Like1 } from 'iconsax-react'
 
 import { Button, Skeleton, Textarea, Tooltip, useDisclosure } from '@nextui-org/react'
@@ -289,11 +288,11 @@ const MainSection = () => {
               </div>
               <div className='flex flex-col gap-[20px]'>
                 <div className='flex items-center gap-[8px]'>
-                  <Image src={'/storm.png'} alt='' width={14} height={14} />
+                  <Image src={'/storm.svg'} alt='' width={14} height={14} />
                   <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>{t('text1')}</p>
                 </div>
                 <div className='flex items-center gap-[8px]'>
-                  <Image src={'/storm.png'} alt='' width={14} height={14} />
+                  <Image src={'/storm.svg'} alt='' width={14} height={14} />
                   <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>{t('text2')}</p>
                 </div>
               </div>
@@ -502,8 +501,11 @@ const WorkerBenefitSection = () => {
 
   const _handleFetching = useCallback(async () => {
     try {
-      const data: any = await instance.get(`home/benefit?lang=${locale}`)
+      const data: any = await instance.get(`home/benefit?lang=${onRefresh ? 'en' : locale}`)
       setListDataBenefit([...data])
+      if (!data?.length) {
+        setOnRefresh(true)
+      }
     } catch (error) {
       console.log(error)
     } finally {
@@ -566,7 +568,7 @@ const WorkerBenefitSection = () => {
         </div>
         {onFetching ? (
           <>
-            <div className='flex min-h-[800px] w-full animate-pulse items-center justify-center bg-gray-300'>
+            <div className='flex min-h-[400px] w-full animate-pulse items-center justify-center bg-gray-300 md:min-h-[600px] xl:min-h-[800px]'>
               <ImageSkeleton style='h-[100px] w-full animate-pulse' />
             </div>
             <div className='flex w-full flex-col items-center justify-center gap-[12px] p-[20px]'>
@@ -602,7 +604,7 @@ const WorkerBenefitSection = () => {
               }}
               navigation
               modules={[Autoplay, EffectFade, FreeMode, Navigation, Thumbs]}
-              className='benefitSwipper z-[5] h-full w-full'
+              className='benefitSwipper z-[5]  h-full  w-full md:max-h-[420px] lg:max-h-[500px]'
               onActiveIndexChange={(swiper: any) => {
                 setCurrentIndex(swiper.realIndex)
               }}
@@ -624,7 +626,7 @@ const WorkerBenefitSection = () => {
                         <div dangerouslySetInnerHTML={{ __html: item.html }} />
                       </div>
                       <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
-                        <ImageFallback priority src={`/benefits/${index + 1}.png`} alt={item.title} height={400} width={400} className='max-h-[250px] w-full object-cover md:max-h-none' />
+                        <ImageFallback priority src={`/benefits/${index + 1}.png`} alt={item.title} height={400} width={400} className='max-h-[300px] w-full md:max-h-none' />
                       </div>
                     </div>
                   </SwiperSlide>
@@ -720,17 +722,7 @@ const PressHome = () => {
               ))
           : listBlog.length > 0
             ? listBlog.map((item: any, index: number) => {
-                return (
-                  <motion.div
-                    initial={{ x: (index + 1) * 100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.2, delay: 0.2 * index }}
-                    viewport={{ once: true }}
-                    key={`blog-${index}`}
-                  >
-                    <Article item={item} style='w-[80%] md:w-[40%] lg:w-full cursor-pointer' />
-                  </motion.div>
-                )
+                return <Article key={index} index={index} item={item} style='w-[80%] md:w-[40%] lg:w-full cursor-pointer' />
               })
             : Array(4)
                 .fill(null)
