@@ -1,7 +1,6 @@
-import { memo } from 'react'
+import { useTranslations } from 'next-intl'
 
 import BackgroundRelative from '@/components/BackgroundRelative'
-import { useTranslations } from 'next-intl'
 import FaqSection from './(sections)/faqSection'
 
 export async function generateMetadata({ params }: { params?: any }) {
@@ -33,4 +32,4 @@ function Faq() {
   )
 }
 
-export default memo(Faq)
+export default Faq

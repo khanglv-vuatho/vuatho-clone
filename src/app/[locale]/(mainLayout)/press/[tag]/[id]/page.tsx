@@ -12,10 +12,7 @@ export async function generateMetadata({ params }: { params?: any }) {
         },
       },
     )
-    const description: any = {
-      vi: 'Ứng dụng số 1 Việt Nam',
-      en: 'Leading App in Vietnam',
-    }
+
     return {
       title: data?.data.title,
       description: data?.data.description || data?.data.content,

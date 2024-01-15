@@ -1,7 +1,6 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-
 import { Accordion, AccordionItem, Image, Tab, Tabs } from '@nextui-org/react'
 
 import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'

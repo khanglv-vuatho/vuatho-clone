@@ -1,8 +1,7 @@
-import { Metadata } from 'next'
+import { useTranslations } from 'next-intl'
 
 import BackgroundRelative from '@/components/BackgroundRelative'
 import SectionStep from './(sections)/sectionStep'
-import { useTranslations } from 'next-intl'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {

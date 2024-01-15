@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import QRCode from 'react-qr-code'
 
 import { Screen } from '@/components/animateScreen'
 import ImageFallback from '@/components/ImageFallback'
@@ -78,14 +79,18 @@ const SectionDownload = () => {
                       <p className='text-[1.8rem] font-light text-base-black-1'>
                         {t('text2')}
                       </p>
-                      <Image
+                      <QRCode
+                        value='https://vuatho.com/vi/qrcode-download-app'
+                        size={128}
+                      />
+                      {/* <Image
                         alt='QRCode'
                         src={'/downloadApp/qrcode.webp'}
                         width={128}
                         height={128}
                         quality={100}
                         className={`relative z-[1] aspect-square size-[140px] w-auto object-contain`}
-                      />
+                      /> */}
                     </div>
                   </div>
                 </div>

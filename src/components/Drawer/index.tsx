@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
 import { Add as AddIcon } from 'iconsax-react'
 import { Button } from '@nextui-org/react'
-import Image from 'next/image'
 
 type DrawerType = {
   isOpen: boolean

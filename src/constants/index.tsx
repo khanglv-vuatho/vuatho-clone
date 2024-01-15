@@ -433,8 +433,6 @@ export const langs = [
   },
 ]
 
-// console.log(JSON.stringify(langs.map((x) => x.code)))
-
 export const currentcy = [
   {
     label: 'VND',

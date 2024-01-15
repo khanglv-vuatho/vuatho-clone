@@ -1,47 +1,21 @@
 'use client'
 
 import Image from 'next/image'
-import { useCallback, useEffect, useState } from 'react'
+import { memo, useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
-import {
-  Autocomplete,
-  AutocompleteItem,
-  Badge,
-  Button,
-  Input,
-  Skeleton,
-  useDisclosure,
-} from '@nextui-org/react'
-import { Add, ArrowLeft, Bag2, Minus, Trash } from 'iconsax-react'
-import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { useLocale, useTranslations } from 'next-intl'
+import { Add, ArrowLeft, Bag2, Minus, Trash } from 'iconsax-react'
+import { Autocomplete, AutocompleteItem, Badge, Button, Input, Skeleton, useDisclosure } from '@nextui-org/react'
 
 import ImageFallback from '@/components/ImageFallback'
 import { ToastComponent } from '@/components/ToastComponent'
 import { ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
 import { DefaultModal } from '@/components/modal'
 import { phoneSelect } from '@/constants'
-import { BreadcrumbWithUrl } from '@/interface'
+import { IBreadcrumbWithUrl, IItemClothes } from '@/interface'
 import instance from '@/services/axiosConfig'
 import { formatMoney } from '@/utils'
-
-interface IItemClothe {
-  title: string
-  thumb: string
-  currency: string
-}
-
-interface IItemClothes {
-  title: string
-  price: string | any
-  thumb: string
-  version: number
-  currency: string
-  isInStock: boolean
-  package: IItemClothe[]
-  uuid: string
-}
 
 export const Store = () => {
   const td = useTranslations('listBreadcrumbs')
@@ -66,10 +40,7 @@ export const Store = () => {
     setToken(localStorage.getItem('token') || '')
   }, [])
 
-  const listBreadcrumbs: BreadcrumbWithUrl[] = [
-    { title: td('home'), url: '/' },
-    { title: td('store') },
-  ]
+  const listBreadcrumbs: IBreadcrumbWithUrl[] = [{ title: td('home'), url: '/' }, { title: td('store') }]
 
   useEffect(() => {
     const storeItem: any = JSON.parse(localStorage.getItem('store') || '[]') || []
@@ -80,8 +51,10 @@ export const Store = () => {
     info: { name: string; phone: { phone_code: string; phone_number: string } }
     list: IItemClothes[]
   }
+
   const serverFetching = useCallback(async () => {
     if (!token?.length) return
+
     try {
       const data: TUniform = await instance.get('/uniforms', {
         params: {
@@ -146,45 +119,27 @@ export const Store = () => {
         token={token}
         setToken={setToken}
       />
-      <div className='ct-container-70 mb-[60px]'>
+      <div className='ct-container-70 mb-[60px] min-h-[40vh]'>
         <div className='mt-[40px]'>
           <ListBreadcrumbsForDetailPress list={listBreadcrumbs} />
         </div>
         <div className='flex items-center justify-between'>
-          <h3 className='mb-[20px] mt-[36px] text-[2.4rem] font-semibold uppercase text-base-black-1'>
-            {t('text4')}
-          </h3>
+          <h3 className='mb-[20px] mt-[36px] text-[2.4rem] font-semibold uppercase text-base-black-1'>{t('text4')}</h3>
           {valid && <Bagde cartItems={cartItems} setCartItems={setCartItems} />}
         </div>
 
         {!valid && !isOpenModal && !onLoading && !onFetching && (
           <div className='flex min-h-[400px] w-full flex-col items-center justify-center gap-[20px]'>
             <div className='max-w-[150px]'>
-              <ImageFallback
-                src={'/store/only-services-provider.png'}
-                width={'307'}
-                height={'240'}
-                alt=''
-                className='object-cover'
-              />
+              <ImageFallback src={'/store/only-services-provider.png'} width={'307'} height={'240'} alt='' className='object-cover' />
             </div>
-            <p className='max-w-[500px] text-center text-[1.8rem] text-base-black-1'>
-              {t('text8')}
-            </p>
+            <p className='max-w-[500px] text-center text-[1.8rem] text-base-black-1'>{t('text8')}</p>
             <div className='flex items-center gap-[16px]'>
-              <Button
-                variant='bordered'
-                className='h-[44px] w-full border-[#FCB813] px-[20px] text-[1.5rem] font-medium text-[#282828]'
-                radius='full'
-                onClick={() => setIsOpenModal(true)}
-              >
+              <Button variant='bordered' className='h-[44px] w-full border-[#FCB813] px-[20px] text-[1.5rem] font-medium text-[#282828]' radius='full' onClick={() => setIsOpenModal(true)}>
                 {t('text9')}
               </Button>
               <Link href={`/${locale}/become-services-provider`}>
-                <Button
-                  className='h-[44px] w-full bg-[#FCB813] px-[20px] text-[1.5rem] font-medium text-[#282828]'
-                  radius='full'
-                >
+                <Button className='h-[44px] w-full bg-[#FCB813] px-[20px] text-[1.5rem] font-medium text-[#282828]' radius='full'>
                   {t('text10')}
                 </Button>
               </Link>
@@ -196,10 +151,7 @@ export const Store = () => {
             ? Array(8)
                 .fill(null)
                 .map((item, index) => (
-                  <div
-                    className='overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]'
-                    key={index}
-                  >
+                  <div className='overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]' key={index}>
                     <Skeleton className='h-[200px] w-full' />
                     <div className='flex flex-col gap-[8px] p-[16px] '>
                       <Skeleton className='h-[10px] w-1/2 rounded-[8px]' />
@@ -208,14 +160,7 @@ export const Store = () => {
                   </div>
                 ))
             : listItem?.map((item: IItemClothes) => {
-                return (
-                  <ItemClothe
-                    cartItems={cartItems}
-                    setCartItems={setCartItems}
-                    item={item}
-                    key={item.uuid}
-                  />
-                )
+                return <ItemClothe cartItems={cartItems} setCartItems={setCartItems} item={item} key={item.uuid} />
               })}
         </div>
       </div>
@@ -223,18 +168,8 @@ export const Store = () => {
   )
 }
 
-const ItemClothe = ({
-  cartItems,
-  setCartItems,
-  item,
-}: {
-  item: IItemClothes
-  cartItems: any
-  setCartItems: any
-}) => {
-  const t = useTranslations('Store')
-
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
+const ItemClothe = ({ cartItems, setCartItems, item }: { item: IItemClothes; cartItems: any; setCartItems: any }) => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure()
 
   const handleClick = (item: IItemClothes) => {
     item.thumb && onOpen()
@@ -242,23 +177,12 @@ const ItemClothe = ({
 
   return (
     <>
-      <div
-        className='group flex h-full cursor-pointer flex-col overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]'
-        onClick={() => handleClick(item)}
-      >
+      <div className='group flex h-full cursor-pointer flex-col overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]' onClick={() => handleClick(item)}>
         <div className='h-[200px] min-h-[200px] w-full overflow-hidden'>
-          <ImageFallback
-            src={item?.thumb}
-            alt=''
-            height={300}
-            width={600}
-            className='h-full w-full object-cover duration-300 group-hover:scale-[1.1]'
-          />
+          <ImageFallback src={item?.thumb} alt='' height={300} width={600} className='h-full w-full object-cover duration-300 group-hover:scale-[1.1]' />
         </div>
         <div className='flex h-full flex-col justify-between gap-[8px] bg-white p-[16px]'>
-          <p className='line-clamp-2 min-h-[54px] text-[1.8rem] font-semibold text-base-black-1'>
-            {item.title}
-          </p>
+          <p className='line-clamp-2 min-h-[30px] text-[1.8rem] font-semibold text-base-black-1'>{item.title}</p>
           <p className='text-[1.8rem] font-semibold text-primary-blue'>
             {formatMoney(item.price)}
             {item.currency}
@@ -269,37 +193,14 @@ const ItemClothe = ({
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         styleHeader='pt-[12px] pl-[24px]'
-        title={
-          <h3 className='max-w-[90%] text-[1.6rem] font-semibold leading-normal text-base-black-1 md:text-[2.4rem]'>
-            {item?.title}
-          </h3>
-        }
-        modalBody={
-          <RenderBodyItemDetail
-            data={item}
-            cartItems={cartItems}
-            setCartItems={setCartItems}
-            onCloseModal={() => {
-              onClose()
-            }}
-          />
-        }
+        title={<h3 className='max-w-[90%] text-[1.6rem] font-semibold leading-normal text-base-black-1 md:text-[2.4rem]'>{item?.title}</h3>}
+        modalBody={<RenderBodyItemDetail data={item} cartItems={cartItems} setCartItems={setCartItems} />}
       ></DefaultModal>
     </>
   )
 }
 
-const RenderBodyItemDetail = ({
-  data,
-  onCloseModal,
-  cartItems,
-  setCartItems,
-}: {
-  data: any
-  onCloseModal: any
-  cartItems: any
-  setCartItems: any
-}) => {
+const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: any; cartItems: any; setCartItems: any }) => {
   const t = useTranslations('Store')
 
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
@@ -327,12 +228,10 @@ const RenderBodyItemDetail = ({
   const _handleBookNow = () => {
     onOpen()
     const cloneItem = [{ ...item, quantity }]
-    console.log(cloneItem)
-
     setCartItems(cloneItem)
   }
 
-  const _HandleChangeSize = (uuid: string, sizeCheck: string) => {
+  const HandleChangeSize = (uuid: string, sizeCheck: string) => {
     const newData = item.package.map((item: any) => {
       if (item.uuid === uuid) {
         const sizeActive = item.sizes.map((size: any) => {
@@ -348,7 +247,6 @@ const RenderBodyItemDetail = ({
         return item
       }
     })
-    console.log(newData)
     setItem({ ...item, package: newData })
   }
 
@@ -359,13 +257,7 @@ const RenderBodyItemDetail = ({
   return (
     <div className='flex flex-col gap-[24px] p-[16px] pt-0 md:p-[24px]'>
       <div className='h-full max-h-[320px] w-full overflow-hidden rounded-[8px]'>
-        <ImageFallback
-          src={currentImage}
-          alt=''
-          width={800}
-          height={600}
-          className='max-h-[320px] w-full object-cover'
-        />
+        <ImageFallback src={currentImage} alt='' width={800} height={600} className='max-h-[320px] w-full object-cover' />
       </div>
       <div className='flex flex-col gap-[16px]'>
         <p className='text-[2.4rem] font-semibold text-[#405AB7]'>
@@ -378,12 +270,8 @@ const RenderBodyItemDetail = ({
               <PackageItem
                 key={itemPackage.uuid}
                 itemPackage={itemPackage}
-                _HandleChangeSize={(sizeCheck: string) =>
-                  _HandleChangeSize(itemPackage.uuid, sizeCheck)
-                }
-                handleChangeCurrentImage={(thumb: string) =>
-                  handleChangeCurrentImage(thumb)
-                }
+                HandleChangeSize={(sizeCheck: string) => HandleChangeSize(itemPackage.uuid, sizeCheck)}
+                handleChangeCurrentImage={(thumb: string) => handleChangeCurrentImage(thumb)}
               />
             ))}
         </div>
@@ -392,32 +280,15 @@ const RenderBodyItemDetail = ({
             <p className='select-none whitespace-nowrap text-[#969696]'>Số lượng</p>
             <QuantityControl quantity={quantity} setQuantity={setQuantity} minQuanlity />
           </div>
-          <Button
-            onPress={_handleBookNow}
-            variant='bordered'
-            radius='full'
-            className='h-[44px] w-full border-0 bg-[#FCB813] text-[1.5rem] font-medium text-[#282828]'
-          >
+          <Button onPress={_handleBookNow} variant='bordered' radius='full' className='h-[44px] w-full border-0 bg-[#FCB813] text-[1.5rem] font-medium text-[#282828]'>
             {t('text12')}
           </Button>
-          <DefaultModal
-            isOpen={isOpen}
-            onOpenChange={onOpenChange}
-            hiddenHeader
-            hiddenCloseBtn
-            modalBody={
-              <BodyCard
-                cartItems={cartItems}
-                setCartItems={setCartItems}
-                onCloseCart={onClose}
-              />
-            }
-          />
+          <DefaultModal isOpen={isOpen} onOpenChange={onOpenChange} hiddenHeader hiddenCloseBtn modalBody={<BodyCard cartItems={cartItems} setCartItems={setCartItems} onCloseCart={onClose} />} />
         </div>
       </div>
     </div>
   )
-}
+})
 
 const CheckValidWorker = ({
   setOnFetching,
@@ -505,10 +376,7 @@ const CheckValidWorker = ({
             title={
               <>
                 <Link href={'/'}>
-                  <Button
-                    startContent={<ArrowLeft size={24} />}
-                    className='h-[44px] gap-[12px] bg-transparent hover:bg-base-gray-2'
-                  >
+                  <Button startContent={<ArrowLeft size={24} />} className='h-[44px] gap-[12px] bg-transparent hover:bg-base-gray-2'>
                     <p className='text-[1.6rem]'>{t('text14')}</p>
                   </Button>
                 </Link>
@@ -518,19 +386,11 @@ const CheckValidWorker = ({
             modalBody={
               <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
                 <div className='flex items-center justify-center'>
-                  <Image
-                    src={'/store/heart1.png'}
-                    alt='write-mascot'
-                    height={240}
-                    width={307}
-                    className='object-cover'
-                  />
+                  <Image src={'/store/heart1.png'} alt='write-mascot' height={240} width={307} className='object-cover' />
                 </div>
                 <div className='flex flex-col justify-center gap-[8px]'>
                   <div className='flex flex-col gap-[4px]'>
-                    <h3 className='text-[2.4rem] font-semibold text-base-black-1'>
-                      {t('text6')}
-                    </h3>
+                    <h3 className='text-[2.4rem] font-semibold text-base-black-1'>{t('text6')}</h3>
                     <p className='font-light text-base-black-1 '>{t('text5')}</p>
                   </div>
                 </div>
@@ -559,8 +419,7 @@ const CheckValidWorker = ({
                         classNames: {
                           input: 'text-[1.4rem] text-[#A5A5A5]',
                           errorMessage: 'hidden',
-                          inputWrapper:
-                            'border-[#BABEF4] data-[hover=true]:border-[#BABEF4] group-data-[focus=true]:border-[#BABEF4] border-1 h-[44px] pl-[16px]',
+                          inputWrapper: 'border-[#BABEF4] data-[hover=true]:border-[#BABEF4] group-data-[focus=true]:border-[#BABEF4] border-1 h-[44px] pl-[16px]',
                         },
                       }}
                     >
@@ -584,8 +443,7 @@ const CheckValidWorker = ({
                       radius='full'
                       classNames={{
                         input: 'text-[1.4rem]',
-                        inputWrapper:
-                          'h-[44px] pl-[16px] bg-white border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 ',
+                        inputWrapper: 'h-[44px] pl-[16px] bg-white border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 ',
                       }}
                     />
                   </div>
@@ -622,8 +480,7 @@ const Bagde = ({ cartItems, setCartItems }: { cartItems: any[]; setCartItems: an
             content={cartItems?.length || 0}
             placement='top-right'
             classNames={{
-              badge:
-                'bg-[#FF4343] text-white h-[16px] w-[16px] text-[1rem] right-[20%] top-[20%] border-0',
+              badge: 'bg-[#FF4343] text-white h-[16px] w-[16px] text-[1rem] right-[20%] top-[20%] border-0',
             }}
           >
             <Bag2 size={24} />
@@ -632,57 +489,28 @@ const Bagde = ({ cartItems, setCartItems }: { cartItems: any[]; setCartItems: an
       >
         Giỏ hàng
       </Button>
-      <DefaultModal
-        isOpen={isOpen}
-        onOpenChange={onOpenChange}
-        hiddenHeader
-        hiddenCloseBtn
-        modalBody={
-          <BodyCard
-            cartItems={cartItems}
-            setCartItems={setCartItems}
-            onCloseCart={onClose}
-          />
-        }
-      />
+      <DefaultModal isOpen={isOpen} onOpenChange={onOpenChange} hiddenHeader hiddenCloseBtn modalBody={<BodyCard cartItems={cartItems} setCartItems={setCartItems} onCloseCart={onClose} />} />
     </>
   )
 }
 
-const PackageItem = ({
-  itemPackage,
-  _HandleChangeSize,
-  handleChangeCurrentImage,
-}: {
-  itemPackage: any
-  _HandleChangeSize: any
-  handleChangeCurrentImage: any
-}) => {
+const PackageItem = ({ itemPackage, HandleChangeSize, handleChangeCurrentImage }: { itemPackage: any; HandleChangeSize: any; handleChangeCurrentImage: any }) => {
   return (
     <div className='grid grid-cols-3 gap-[16px] md:gap-0' key={itemPackage.uuid}>
       <div className='col-span-3 flex items-center gap-[16px] md:col-span-1'>
         <div className='max-h-[60px] min-w-[60px] max-w-[60px] overflow-hidden rounded-[8px]'>
-          <ImageFallback
-            src={itemPackage.thumb}
-            alt=''
-            width={60}
-            height={40}
-            className='aspect-square max-h-[320px] object-cover'
-            onClick={() => handleChangeCurrentImage(itemPackage.thumb)}
-          />
+          <ImageFallback src={itemPackage.thumb} alt='' width={60} height={40} className='aspect-square max-h-[320px] object-cover' onClick={() => handleChangeCurrentImage(itemPackage.thumb)} />
         </div>
-        <p className='font-light text-base-black-1'>{itemPackage.title || ''}</p>
-        <p className='font-light text-base-black-1'>x {itemPackage.quantity || ''}</p>
+        <p className='font-light text-base-black-1'>{itemPackage?.title || ''}</p>
+        <p className='font-light text-base-black-1'>x {itemPackage?.quantity || '1'}</p>
       </div>
       <div className='col-span-3 flex items-center gap-[8px] pr-[8px] md:col-span-2 md:justify-end md:gap-[16px]'>
         <p className='text-[#969696]'>Chọn size</p>
         {itemPackage.sizes.map((itemSize: any) => (
           <button
             key={itemSize.name}
-            onClick={() => _HandleChangeSize(itemSize.name)}
-            className={`flex-center h-[40px] w-[40px] flex-shrink-0 cursor-pointer rounded-full text-[#222] duration-200 ${
-              itemSize.isActive ? 'bg-[#FCB713]' : 'bg-[#E1E1E1]'
-            }`}
+            onClick={() => HandleChangeSize(itemSize.name)}
+            className={`flex-center h-[40px] w-[40px] flex-shrink-0 cursor-pointer rounded-full text-[#222] duration-200 ${itemSize.isActive ? 'bg-[#FCB713]' : 'bg-[#E1E1E1]'}`}
           >
             {itemSize.name}
           </button>
@@ -692,24 +520,12 @@ const PackageItem = ({
   )
 }
 
-const CartItem = ({
-  item,
-  cartItems,
-  setCartItems,
-}: {
-  item: any
-  cartItems: any[]
-  setCartItems: any
-}) => {
-  const t = useTranslations('Store')
-
+const CartItem = ({ item, cartItems, setCartItems }: { item: any; cartItems: any[]; setCartItems: any }) => {
   const [quantity, setQuantity] = useState(item.quantity)
   const _handleChangeQuantity = (newQuantity: number) => {
     setQuantity(newQuantity)
     const cloneItems = [...cartItems]
-    const findIndexItem = cloneItems.findIndex(
-      (cartItem: any) => cartItem.uuid === item.uuid,
-    )
+    const findIndexItem = cloneItems.findIndex((cartItem: any) => cartItem.uuid === item.uuid)
     if (findIndexItem !== -1) {
       cloneItems[findIndexItem].quantity = newQuantity
       setCartItems(cloneItems)
@@ -718,12 +534,8 @@ const CartItem = ({
 
   const _handleDeleteItem = () => {
     const cloneItems = [...cartItems]
-    const findIndexItem = cloneItems.findIndex(
-      (cartItem: any) => cartItem.uuid === item.uuid,
-    )
-    const newData = cloneItems.filter(
-      (cartItemData: any) => cartItemData !== cloneItems[findIndexItem],
-    )
+    const findIndexItem = cloneItems.findIndex((cartItem: any) => cartItem.uuid === item.uuid)
+    const newData = cloneItems.filter((cartItemData: any) => cartItemData !== cloneItems[findIndexItem])
     setCartItems([...newData])
   }
 
@@ -741,32 +553,19 @@ const CartItem = ({
                 <div className='grid grid-cols-2' key={item.title}>
                   <div className='flex items-center'>
                     <h3 className=''>
-                      {item.title} (
-                      {item.sizes.find((i: any) => i.isActive === true).name})
+                      {item.title} ({item.sizes.find((i: any) => i.isActive === true).name})
                     </h3>
                   </div>
-                  <div className='flex items-center justify-end gap-[48px]'>
-                    x{item.quantity}
-                  </div>
+                  <div className='flex items-center justify-end gap-[48px]'>x{item?.quantity || '1'}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
         <div className='col-span-3 mt-[10px] flex items-start justify-end gap-[16px] md:col-span-1 '>
-          <QuantityControl
-            quantity={quantity}
-            setQuantity={_handleChangeQuantity}
-            onDelete={_handleDeleteItem}
-          />
+          <QuantityControl quantity={quantity} setQuantity={_handleChangeQuantity} onDelete={_handleDeleteItem} />
           <div className='flex items-center gap-[16px]'>
-            <Button
-              isIconOnly
-              variant='light'
-              radius='full'
-              className='h-[48px] w-[48px]'
-              onClick={_handleDeleteItem}
-            >
+            <Button isIconOnly variant='light' radius='full' className='h-[48px] w-[48px]' onClick={_handleDeleteItem}>
               <Trash className=' text-[#FF4343]' size={24} />
             </Button>
           </div>
@@ -776,17 +575,7 @@ const CartItem = ({
   )
 }
 
-const QuantityControl = ({
-  minQuanlity,
-  quantity,
-  setQuantity,
-  onDelete,
-}: {
-  quantity: any
-  setQuantity: any
-  minQuanlity?: boolean
-  onDelete?: any
-}) => {
+const QuantityControl = ({ minQuanlity, quantity, setQuantity, onDelete }: { quantity: any; setQuantity: any; minQuanlity?: boolean; onDelete?: any }) => {
   return (
     <div className='flex items-center gap-[16px]'>
       <Button
@@ -811,24 +600,16 @@ const QuantityControl = ({
   )
 }
 
-const BodyCard = ({
-  cartItems,
-  setCartItems,
-  onCloseCart,
-}: {
-  cartItems: any
-  setCartItems: any
-  onCloseCart: any
-}) => {
+const BodyCard = ({ cartItems, setCartItems, onCloseCart }: { cartItems: any; setCartItems: any; onCloseCart: any }) => {
   const t = useTranslations('Store')
 
   const workerInfo = useSelector((state: any) => state.workerInfo)
   const currencyCurrent = useSelector((state: any) => state.currencyCurrent)
 
   const initalInfo = {
-    name: workerInfo.name,
-    phone: workerInfo.phone.phone_number,
-    phoneCountry: workerInfo.phone.phone_code,
+    name: workerInfo?.name || 'name',
+    phone: workerInfo?.phone?.phone_number || 'phone_number',
+    phoneCountry: workerInfo?.phone?.phone_code || 'phone_code',
     address: '',
   }
   const [infoCustomer, setInfoCustomer] = useState(initalInfo)
@@ -920,10 +701,7 @@ const BodyCard = ({
   }, [onSending])
 
   useEffect(() => {
-    const totalPrice = cartItems.reduce(
-      (acc: any, product: any) => acc + product.price * product.quantity,
-      0,
-    )
+    const totalPrice = cartItems.reduce((acc: any, product: any) => acc + product.price * product.quantity, 0)
     setTotalPrice(totalPrice)
   }, [cartItems])
 
@@ -935,38 +713,18 @@ const BodyCard = ({
   return (
     <div className='flex flex-col gap-[24px] p-[24px]'>
       <div className='flex items-center justify-between'>
-        <h3 className='font-semibold text-base-black-1 md:text-[2.4rem]'>
-          {t('text19')}
-        </h3>
-        <Button
-          isIconOnly
-          onPress={onCloseCart}
-          variant='light'
-          className='absolute right-0 top-0 h-[48px] w-[56px]'
-        >
+        <h3 className='font-semibold text-base-black-1 md:text-[2.4rem]'>{t('text19')}</h3>
+        <Button isIconOnly onPress={onCloseCart} variant='light' className='absolute right-0 top-0 h-[48px] w-[56px]'>
           <Add className='rotate-45 text-base-black-1' size={24} />
         </Button>
       </div>
       <div className='flex max-h-[300px] flex-col gap-[24px] overflow-y-auto pr-12'>
         {!!cartItems?.length ? (
-          cartItems?.map((item: any) => (
-            <CartItem
-              key={item.uuid}
-              item={item}
-              cartItems={cartItems}
-              setCartItems={setCartItems}
-            />
-          ))
+          cartItems?.map((item: any) => <CartItem key={item.uuid} item={item} cartItems={cartItems} setCartItems={setCartItems} />)
         ) : (
           <div className='flex min-h-[300px] flex-col items-center justify-center gap-[16px]'>
             <div className='max-w-[150px]'>
-              <ImageFallback
-                src={'/store/emptyCart.png'}
-                alt=''
-                width={307}
-                height={240}
-                className='object-cover'
-              />
+              <ImageFallback src={'/store/emptyCart.png'} alt='' width={307} height={240} className='object-cover' />
             </div>
             <p className=''>{t('text20')}</p>
           </div>
@@ -994,35 +752,18 @@ const BodyCard = ({
                   radius='full'
                   classNames={{
                     input: ' text-[1.4rem]',
-                    inputWrapper:
-                      'border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 h-[44px] pl-[16px]',
+                    inputWrapper: 'border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 h-[44px] pl-[16px]',
                   }}
                 />
-                <span
-                  className={`${
-                    errorInfo.name && infoCustomer.name === ''
-                      ? 'h-[10px] text-[1.2rem] text-red-500 opacity-100'
-                      : 'h-[10px] opacity-0'
-                  } `}
-                >
-                  {t('text23')}
-                </span>
+                <span className={`${errorInfo.name && infoCustomer.name === '' ? 'h-[10px] text-[1.2rem] text-red-500 opacity-100' : 'h-[10px] opacity-0'} `}>{t('text23')}</span>
               </div>
               <div className=''>
                 <div className='flex items-center'>
                   <div className='flex h-[46px] justify-center rounded-s-full border-1 border-[#E1E1E1] pl-[16px] focus:outline-none data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1]'>
-                    <input
-                      readOnly={true}
-                      value={infoCustomer.phoneCountry}
-                      className='max-w-[46px] bg-transparent text-[1.4rem] focus:outline-none'
-                    />
+                    <input readOnly={true} value={infoCustomer.phoneCountry} className='max-w-[46px] bg-transparent text-[1.4rem] focus:outline-none' />
                   </div>
                   <div className='flex h-[46px] w-full justify-center rounded-e-full border-1 border-l-0 border-[#E1E1E1] pl-[16px] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1]'>
-                    <input
-                      readOnly={true}
-                      value={`0${infoCustomer.phone}`}
-                      className='w-full bg-transparent text-[1.4rem] focus:outline-none'
-                    />
+                    <input readOnly={true} value={`0${infoCustomer.phone}`} className='w-full bg-transparent text-[1.4rem] focus:outline-none' />
                   </div>
                 </div>
               </div>
@@ -1036,19 +777,10 @@ const BodyCard = ({
                 radius='full'
                 classNames={{
                   input: 'text-[1.4rem]',
-                  inputWrapper:
-                    'border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 h-[44px] pl-[16px]',
+                  inputWrapper: 'border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 h-[44px] pl-[16px]',
                 }}
               />
-              <span
-                className={`${
-                  errorInfo.address && infoCustomer.address === ''
-                    ? 'h-[10px] text-[1.2rem] text-red-500 opacity-100'
-                    : 'h-[10px] opacity-0'
-                } `}
-              >
-                {t('text24')}
-              </span>
+              <span className={`${errorInfo.address && infoCustomer.address === '' ? 'h-[10px] text-[1.2rem] text-red-500 opacity-100' : 'h-[10px] opacity-0'} `}>{t('text24')}</span>
             </div>
           </div>
           <ButtonOreder onSubmit={handleSubmit} />
@@ -1063,10 +795,7 @@ const BodyCard = ({
 const ButtonOreder = ({ onSubmit }: { onSubmit: any }) => {
   const t = useTranslations('Store')
   return (
-    <Button
-      onPress={onSubmit}
-      className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium text-base-black-1'
-    >
+    <Button onPress={onSubmit} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium text-base-black-1'>
       {t('text25')}
     </Button>
   )

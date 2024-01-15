@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useParams, usePathname } from 'next/navigation'
+import { useParams } from 'next/navigation'
 
 import instance from '@/services/axiosConfig'
-import { BreadcrumbWithUrl } from '@/interface'
+import { IBreadcrumbWithUrl } from '@/interface'
 import { MostViewed } from '../..'
 
 import { ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
@@ -20,8 +20,6 @@ function PressDetail() {
   const td = useTranslations('DetailsPress')
 
   const paramsData = useParams()
-  const pathname = usePathname()
-  console.log(pathname)
   const locale = useLocale()
 
   const [onFetching, setOnFetching] = useState<boolean>(false)
@@ -33,11 +31,7 @@ function PressDetail() {
   const [listMostView, setListMostView] = useState<any>([])
   const [detailPress, setDetailPress] = useState<any>({})
 
-  const listBreadcrumbs: BreadcrumbWithUrl[] = [
-    { title: t('home'), url: '/' },
-    { title: t('acrticle'), url: '/press' },
-    { title: detailPress?.title },
-  ]
+  const listBreadcrumbs: IBreadcrumbWithUrl[] = [{ title: t('home'), url: '/' }, { title: t('acrticle'), url: '/press' }, { title: detailPress?.title }]
 
   const ServerFetching = async () => {
     try {
@@ -103,11 +97,7 @@ function PressDetail() {
           </div>
           <div className='grid grid-cols-6 lg:gap-[20px]'>
             <div className='order-1 col-span-6 lg:order-none lg:col-span-2'>
-              <MostViewed
-                dataDefault={listMostView}
-                onFetching={onFetchingMostView}
-                onLoading={onLoadingMostView}
-              />
+              <MostViewed dataDefault={listMostView} onFetching={onFetchingMostView} onLoading={onLoadingMostView} />
             </div>
             <div className='order-none col-span-6 space-y-[16px] rounded-[16px] bg-white p-[16px] lg:order-1 lg:col-span-4'>
               {onFetching || onLoading ? (
@@ -122,7 +112,7 @@ function PressDetail() {
                   <div className='flex flex-col gap-[8px]'>
                     {Array(7)
                       .fill(null)
-                      .map((item, index) => (
+                      .map((_, index) => (
                         <Skeleton key={index} className='h-[16px] w-full rounded-lg ' />
                       ))}
                   </div>
@@ -132,13 +122,7 @@ function PressDetail() {
                   {!isSuccess ? (
                     <div className='flex h-full min-h-[400px] w-full flex-col items-center justify-center'>
                       <div className='h-[126px] w-[158px]'>
-                        <Image
-                          src={'/empty.png'}
-                          alt='empty'
-                          height={126}
-                          width={158}
-                          className='h-full w-full object-contain'
-                        />
+                        <Image src={'/empty.png'} alt='empty' height={126} width={158} className='h-full w-full object-contain' />
                       </div>
                       <p className='font-light text-[#969696]'>{td('oopsDetail')}</p>
                     </div>
@@ -150,18 +134,11 @@ function PressDetail() {
                       </h1>
                       <div className='flex items-center gap-[16px]'>
                         <h3 className='text-base-black-1'>
-                          <Link href={`/${paramsData.locale}/press/${detailPress?.category?.slug}`}>
-                            {detailPress?.category?.name}
-                          </Link>
+                          <Link href={`/${paramsData.locale}/press/${detailPress?.category?.slug}`}>{detailPress?.category?.name}</Link>
                         </h3>
-                        <time className='font-light text-base-drak-gray'>
-                          {detailPress?.created_at}
-                        </time>
+                        <time className='font-light text-base-drak-gray'>{detailPress?.created_at}</time>
                       </div>
-                      <div
-                        className='content-blog'
-                        dangerouslySetInnerHTML={{ __html: detailPress?.content }}
-                      />
+                      <div className='content-blog' dangerouslySetInnerHTML={{ __html: detailPress?.content }} />
                     </>
                   )}
                 </>

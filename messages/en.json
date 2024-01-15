@@ -29,7 +29,7 @@
     "text2": "Or scan the QR code below"
   },
   "Footer": {
-    "address": "Vua Thợ Technology Company Limited",
+    "address": "57 Song Hanh, An Phu Ward, Thu Duc City, ",
     "location": "Ho Chi Minh City, Vietnam.",
     "our_partner": "Our Partners",
     "about_vuatho": "About Vua Thợ",
@@ -39,8 +39,8 @@
     "contact_with_vuatho": "Collaborate with Vua Thợ",
     "guides": "Terms and Conditions",
     "private_infomation": "Privacy Policy",
-    "contact_us": "ContactUs",
-    "promotion": "Promotional program",
+    "contact_us": "Contact Us",
+    "promotion": "Promotional programs",
     "sending": "Sending notifications to",
     "BCT": "Ministry of Industry and Trade",
     "text": "Vua Thợ Technology Limited Liability Company",
@@ -362,14 +362,14 @@
     "textGold": "Service providers and customers nationwide by 2024"
   },
   "ContactUs": {
-    "heading": "ContactUs",
+    "heading": "Contact Us",
     "address1": "57 Song Hanh, An Phu Ward, Thu Duc City,",
     "address2": "Ho Chi Minh City, Vietnam.",
     "timeNumber": "8:30 AM to 4:30 PM",
     "timeDay": "Monday to Friday",
     "text": "No support on Saturdays, Sundays, and public holidays",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "Guide to Register as a Service Provider",
@@ -484,13 +484,13 @@
     "text1": "Professional Attire for Service provider",
     "text2": "Feel More Confident at Work",
     "text3": "Contact to Place an Order",
-    "text4": "ROYAL CRAFTSMAN UNIFORMS",
+    "text4": "UNIFORMS OF SERVICE PROVIDER",
     "text5": "We only provide uniforms for in-house company employees. Thank you for your interest, and we hope you understand this inconvenience.",
-    "text6": "Registered Craftsman Phone Number",
+    "text6": "Registered service provider Phone Number",
     "text7": "Continue",
-    "text8": "We'd be delighted if you'd like to order uniforms. However, you need to become a Craftsman first before you can do so. Thank you for your understanding and cooperation!",
+    "text8": "We'd be delighted if you'd like to order uniforms. However, you need to become a service provider first before you can do so. Thank you for your understanding and cooperation!",
     "text9": "Re-verify",
-    "text10": "Become a Craftsman",
+    "text10": "Become a service provider",
     "text11": "Out of Stock",
     "text12": "Place an Order",
     "text13": "Login Successful!",
@@ -724,12 +724,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, An Phu Ward, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, An Phu Ward, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -854,7 +854,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",

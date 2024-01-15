@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
+import QRCode from 'react-qr-code'
 
 import { Apple as AppleIcon, GooglePlay as GooglePlayIcon } from 'iconsax-react'
 
@@ -109,16 +110,14 @@ export const IosBtn: React.FC<{ style?: any }> = ({ style }) => {
 export const QrCode: React.FC<{ height?: string }> = ({ height }) => {
   return (
     <div className='relative overflow-hidden rounded-lg bg-black/5 p-3 backdrop-blur-md'>
-      <Image
-        alt='QRCode'
-        src={'/downloadApp/qrcode.webp'}
-        width={128}
-        height={128}
-        quality={100}
+      <QRCode
+        value='https://vuatho.com/vi/qrcode-download-app'
+        size={128}
         className={`${
-          height ? height : 'h-[140px]'
+          height ? height : 'size-[140px]'
         } relative z-[1] aspect-square w-auto object-contain`}
       />
+
       <div className='absolute left-0 top-0 hidden aspect-square h-1/2 w-fit animate-pulse rounded-full bg-primary-blue blur-xl lg:block' />
       <div className='absolute right-0 top-0 hidden aspect-square h-1/2 w-fit animate-pulse rounded-full bg-primary-yellow blur-xl lg:block' />
       <div className='absolute bottom-0 left-0 hidden aspect-square h-1/2 w-fit animate-pulse rounded-full bg-primary-yellow blur-xl lg:block' />

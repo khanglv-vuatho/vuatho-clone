@@ -83,19 +83,16 @@ export const HeaderWrapper = ({
 }
 
 export const Logo = () => {
-  const router = useRouter()
   const locale = useLocale()
   return (
-    <button
-      title='button'
-      type='button'
+    <Link
       onClick={() => {
-        router.push(`/${locale}`)
         window.scrollTo({
           top: 0,
         })
       }}
-      className='block h-full'
+      href={`/${locale}`}
+      className='block h-fit'
     >
       <Image
         src='/logo/textLogo.png'
@@ -105,7 +102,7 @@ export const Logo = () => {
         quality={100}
         className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[70px]'
       />
-    </button>
+    </Link>
   )
 }
 

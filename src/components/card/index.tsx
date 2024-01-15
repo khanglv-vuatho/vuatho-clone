@@ -1,26 +1,25 @@
+'use client'
+
 import Image from 'next/image'
 
+import { memo } from 'react'
 import { useTranslations } from 'next-intl'
 
-export const IntroCard = () => {
+export const IntroCard = memo(() => {
   const t = useTranslations('ServicesVuaTho')
 
   return (
     <div className='flex-center group relative h-full w-full flex-col gap-[10px] overflow-hidden rounded-[60px] bg-gradient-to-t from-[#0A1D89] to-[#233FCA] px-8 xl:px-20 13inch:gap-[20px] 3xl:gap-[30px]'>
       <Image src={'/images/about-us/vuatho.png'} alt='' width={350} height={85} />
-      <p className='w-[90%] text-center text-[4rem] text-white md:w-full md:text-left'>
-        {t('title')}
-      </p>
-      <p className='w-[90%] text-center text-[2.4rem] text-white md:w-full md:text-left md:text-[2rem]'>
-        {t('text')}
-      </p>
+      <p className='w-[90%] text-center text-[4rem] text-white md:w-full md:text-left'>{t('title')}</p>
+      <p className='w-[90%] text-center text-[2.4rem] text-white md:w-full md:text-left md:text-[2rem]'>{t('text')}</p>
       <div className='absolute -right-1/3 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/[0.15] transition group-hover:-translate-x-1/3' />
       <div className='absolute -right-1/2 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/10 transition group-hover:-translate-x-1/3' />
     </div>
   )
-}
+})
 
-export const SubCard1 = () => {
+export const SubCard1 = memo(() => {
   const tc = useTranslations('Card')
 
   return (
@@ -43,9 +42,9 @@ export const SubCard1 = () => {
       <div className='absolute -right-[2%] bottom-[4%] hidden aspect-square h-1/2 w-fit rounded-full bg-primary-yellow/10 lg:block lg:blur-2xl' />
     </div>
   )
-}
+})
 
-export const SubCard2 = () => {
+export const SubCard2 = memo(() => {
   const tc = useTranslations('Card')
 
   return (
@@ -68,9 +67,9 @@ export const SubCard2 = () => {
       <div className='absolute -left-[2%] bottom-[4%] hidden aspect-square h-1/2 w-fit rounded-full bg-primary-yellow/10 lg:block lg:blur-2xl' />
     </div>
   )
-}
+})
 
-export const SubCard3 = () => {
+export const SubCard3 = memo(() => {
   const tc = useTranslations('Card')
 
   return (
@@ -93,4 +92,4 @@ export const SubCard3 = () => {
       <div className='absolute -right-[2%] bottom-[4%] hidden aspect-square h-1/2 w-fit rounded-full bg-primary-yellow/10 lg:block lg:blur-2xl' />
     </div>
   )
-}
+})

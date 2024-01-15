@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl'
+
 import SectionTest from './(sections)/sectionStep'
 
 export async function generateMetadata({ params }: { params?: any }) {

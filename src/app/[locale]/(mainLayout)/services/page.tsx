@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl'
 import Map from '@/components/map'
 import React from 'react'
 import LeftRenderSearch from '@/components/services/LeftSideRender'
@@ -23,8 +22,6 @@ export async function generateMetadata({ params }: { params?: any }) {
 }
 
 const Default = () => {
-  const t = useTranslations('TermsAndCondition')
-
   return (
     <div className=''>
       <div className='py-[20px] 13inch:py-[40px] 3xl:py-[80px]'>

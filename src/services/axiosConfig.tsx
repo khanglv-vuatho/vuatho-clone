@@ -13,7 +13,6 @@ const urlExceptAuthorization = ['Authenticate']
 
 const authorization = async () => {
   const token = localStorage.getItem('access_token')
-  console.log(token)
 
   if (token) {
     return { Authorization: 'Bearer ' + token }

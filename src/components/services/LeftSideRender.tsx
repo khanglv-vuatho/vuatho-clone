@@ -16,7 +16,6 @@ const LeftRenderSearch = memo(() => {
   const [keyword, sKeyword] = useState('')
   const dataRender = useSelector((state: any) => state.services)
   const [onFetching, setOnFetching] = useState(false)
-  const [onLoading, setOnLoading] = useState(true)
 
   const _ServerFetching = async () => {
     try {
@@ -26,7 +25,6 @@ const LeftRenderSearch = memo(() => {
       console.log(error)
     } finally {
       setOnFetching(false)
-      setOnLoading(false)
     }
   }
 
@@ -46,7 +44,7 @@ const LeftRenderSearch = memo(() => {
     <div className='flex flex-col gap-[10px]'>
       <div className='mb-3'>
         <input
-          onChange={_HandleOnChangeKeySearch.bind(this)}
+          onChange={_HandleOnChangeKeySearch}
           placeholder={td('search')}
           className='w-full rounded-full border p-3 px-6 py-5 focus-within:outline-none'
         />
@@ -96,7 +94,13 @@ const ItemService = memo((props: any) => {
           : 'hover:bg-base-gray'
       }`}
     >
-      <Image src={props.icon} alt='' width={68} height={68} />
+      <Image
+        src={props.icon}
+        alt=''
+        width={68}
+        height={68}
+        className='max-h-[50px] max-w-[50px]'
+      />
       <div>
         <h3 className='text-[1.8rem] xl:text-[1.8rem]'>{props.name[locale]} </h3>
       </div>

@@ -3,9 +3,9 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
+import { Accordion, AccordionItem } from '@nextui-org/react'
 
 import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'
-import { Accordion, AccordionItem } from '@nextui-org/react'
 
 const SectionStep = () => {
   const t = useTranslations('BecomeWorker')

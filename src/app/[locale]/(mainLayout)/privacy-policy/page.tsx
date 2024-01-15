@@ -1,5 +1,6 @@
-import BackgroundRelative from '@/components/BackgroundRelative'
 import { useTranslations } from 'next-intl'
+
+import BackgroundRelative from '@/components/BackgroundRelative'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
