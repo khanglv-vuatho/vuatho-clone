@@ -67,14 +67,14 @@ export const MostViewed: React.FC<IMostViewed> = memo(({ isHidden, dataDefault, 
                         {item.category.name}
                       </Link>
                       <time className='text-[1.5rem] text-base-drak-gray'>{item.created_at}</time>
-                      <h5 className='mt-[8px] line-clamp-2 h-fit text-[1.8rem] font-semibold leading-[1] text-base-black-1'>{item.title}</h5>
+                      <h5 className='mt-[8px] line-clamp-2 h-fit text-[1.8rem] font-semibold leading-[1] '>{item.title}</h5>
                     </div>
                   </div>
                 </Link>
               )
             })
           ) : (
-            <div className=''>{t('errorNetwork')}</div>
+            <div>{t('errorNetwork')}</div>
           )}
         </div>
       </div>
@@ -354,7 +354,7 @@ const SwiperPress = memo(({ renderBreadcums }: { renderBreadcums: any }) => {
           className='pressSwiper w-full'
         >
           {slidersData?.map((item: any, index: number) => (
-            <SwiperSlide key={index} className=''>
+            <SwiperSlide key={index}>
               <Image src={'/press/pressBanner1.png'} alt='' height={419} width={3000} className={`absolute h-full rotate-180 object-cover`} />
               <div className='relative inset-0 h-[420px]'>
                 <div className='ct-container-70 relative flex h-full flex-col p-12'>
@@ -363,7 +363,7 @@ const SwiperPress = memo(({ renderBreadcums }: { renderBreadcums: any }) => {
                     <h1 className='text-[2.4rem] font-semibold text-white md:text-[3.2rem]'>{item.title}</h1>
 
                     <Link href={item.url || ''}>
-                      <Button type='button' className='h-[46px] max-w-max rounded-full bg-[#FCB713] px-[24px] text-[1.8rem] font-semibold text-base-black-1'>
+                      <Button type='button' className='h-[46px] max-w-max rounded-full bg-[#FCB713] px-[24px] text-[1.8rem] font-semibold '>
                         {item.titleLink}
                       </Button>
                     </Link>

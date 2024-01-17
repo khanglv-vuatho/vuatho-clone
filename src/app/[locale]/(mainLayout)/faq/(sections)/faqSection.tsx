@@ -414,7 +414,7 @@ function FaqSection() {
               selectionMode='single'
               className='gap-5'
               itemClasses={{
-                base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]',
+                base: 'group-[.is-splitted]:shadow-[0px_8px_32px_0px_#00000014]',
               }}
             >
               {listAccordion.map((item: any, index: any) => (

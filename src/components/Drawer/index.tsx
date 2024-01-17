@@ -40,7 +40,7 @@ const Drawer: React.FC<DrawerType> = ({ isOpen, setIsOpen, title, children, onCl
           <AddIcon className='rotate-45 text-white' />
         </Button>
       </div>
-      <div className=''>{children}</div>
+      <div>{children}</div>
     </div>
   )
 }

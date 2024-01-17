@@ -8,7 +8,7 @@ import { memo } from 'react'
 
 import ImageFallback from '../ImageFallback'
 
-const Article = memo(({ item, style, index }: { item: any; style?: string; index: number }) => {
+const Article = ({ item, style, index }: { item: any; style?: string; index: number }) => {
   const locale = useLocale()
 
   return (
@@ -24,7 +24,7 @@ const Article = memo(({ item, style, index }: { item: any; style?: string; index
       </Link>
       <div className='flex flex-col gap-[8px] p-[16px]'>
         <div className='flex items-center justify-between text-[1.4rem]'>
-          <Link href={`/${locale}/press/${item.category.slug}`} className='text-[1.5rem] font-light hover:cursor-pointer hover:text-base-black-1/80'>
+          <Link href={`/${locale}/press/${item.category.slug}`} className='hover:/80 text-[1.5rem] font-light hover:cursor-pointer'>
             {item.category.title}
           </Link>
           <Link href={`/${locale}/${item.slug}`}>
@@ -40,6 +40,6 @@ const Article = memo(({ item, style, index }: { item: any; style?: string; index
       </div>
     </motion.div>
   )
-})
+}
 
-export default Article
+export default memo(Article)

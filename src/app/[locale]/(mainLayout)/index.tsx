@@ -230,7 +230,7 @@ const HinhThucKetNoi = () => {
   ]
 
   return (
-    <section id='multi' className=''>
+    <section id='multi'>
       <section className='ct-container-70'>
         <h3 className='font-semibold uppercase tracking-[8px]'>{td('text2')}</h3>
         <h2 className='mb-[40px] inline-block  text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>{t('heading')}</h2>
@@ -308,7 +308,7 @@ const MainSection = () => {
                 delay: 1.5,
               }}
             >
-              <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit relative z-[1]' />
+              <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit pointer-events-none relative z-[1] select-none' />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -377,7 +377,7 @@ const QuickDashboard = React.memo(() => {
             <CountUp end={objectData?.customers} />
           </h1>
         </div>
-        <div className=''>
+        <div>
           <ServcesModal value={objectData?.services} />
         </div>
       </div>
@@ -474,7 +474,7 @@ const CustomerBenefitSection = () => {
             >
               <div className='items-left flex items-center gap-[20px] md:flex-col lg:justify-center xl:gap-[6px]'>
                 <ImageFallback src={`/numbers/${index + 1}.png`} alt='AI Robot' width={200} height={200} className='pointer-events-none size-[200px] select-none' />
-                <h3 className='mt-[-16px] text-[1.8rem] text-base-black-1 lg:text-center'>{item.title}</h3>
+                <h3 className='mt-[-16px] text-[1.8rem] lg:text-center'>{item.title}</h3>
               </div>
             </motion.div>
           ))}
@@ -613,7 +613,7 @@ const WorkerBenefitSection = () => {
                 return (
                   <SwiperSlide key={item.uuid} className={currentIndex === index ? 'visible' : 'invisible'} onClick={_handleClickSwiper}>
                     <div className='relative z-[12] flex items-center justify-between gap-[40px]'>
-                      <h4 className='text-[2rem] font-semibold text-base-black-1'>{item.title}</h4>
+                      <h4 className='text-[2rem] font-semibold '>{item.title}</h4>
                       <div className='likeButton z-[10] hidden md:block'>
                         <LikeControl item={item} />
                       </div>
@@ -626,7 +626,7 @@ const WorkerBenefitSection = () => {
                         <div dangerouslySetInnerHTML={{ __html: item.html }} />
                       </div>
                       <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
-                        <ImageFallback priority src={`/benefits/${index + 1}.png`} alt={item.title} height={400} width={400} className='max-h-[300px] w-full md:max-h-none' />
+                        <ImageFallback priority src={`/benefits/${index + 1}.png`} alt={item.title} height={400} width={400} className='max-h-[400px] w-full md:max-h-none' />
                       </div>
                     </div>
                   </SwiperSlide>
@@ -655,7 +655,7 @@ const WorkerBenefitSection = () => {
                       quality={100}
                       className={`h-full w-full cursor-pointer select-none object-cover transition hover:scale-105 ${currentIndex === index && 'scale-105'} `}
                     />
-                    <span className='absolute left-[8px] top-[8px] flex size-12 items-center justify-center rounded-full bg-black text-[1.2rem] text-white'>
+                    <span className='absolute left-[8px] top-[8px] flex size-12 items-center justify-center rounded-full bg-black text-[1.2rem] text-white md:size-10 lg:size-12'>
                       {index < 9 ? `0${index + 1}` : index + 1}
                     </span>
                   </div>
@@ -798,11 +798,11 @@ const LikeControl = ({ item }: { item: any }) => {
       }}
     >
       <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
-        <div className=''>
+        <div>
           <Like isDislike={checkDislike.isDisliked} isLike={checkLike.isLiked} count={checkLike.count} onClick={() => _HandleAction('like')} />
         </div>
         <div className='mx-[8px] hidden h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1] md:flex' />
-        <div className=''>
+        <div>
           <UnLike isDislike={checkDislike.isDisliked} setMessage={setDislikeMessage} message={dislikeMessage} onClick={() => _HandleAction('dislike')} />
         </div>
       </div>
@@ -814,9 +814,9 @@ const Like = ({ onClick, isLike, count, isDislike }: { onClick?: any; isLike?: b
   return (
     <button disabled={isDislike} className='like flex items-center gap-[8px] px-[20px] py-[10px]' onClick={onClick}>
       <motion.div>
-        <Like1 variant={isLike ? 'Bold' : 'Linear'} size={24} style={{ zIndex: 1000 }} className={isLike ? 'text-[#FCB713]' : 'text-base-black-1'} />
+        <Like1 variant={isLike ? 'Bold' : 'Linear'} size={24} style={{ zIndex: 1000 }} className={isLike ? 'text-[#FCB713]' : ''} />
       </motion.div>
-      <span className='text-base-black-1'>{count}</span>
+      <span className=''>{count}</span>
     </button>
   )
 }
@@ -842,7 +842,7 @@ const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; is
   return (
     <>
       <button onClick={() => _HandleUnLike()} disabled={isDislike} className='unlike flex items-center px-[20px] py-[10px]'>
-        <Dislike size={24} variant={isDislike ? 'Bold' : 'Linear'} className={isDislike ? 'text-[#FCB713]' : 'text-base-black-1'} />
+        <Dislike size={24} variant={isDislike ? 'Bold' : 'Linear'} className={isDislike ? 'text-[#FCB713]' : ''} />
       </button>
       <DefaultModal
         onOpenChange={onOpenChange}
@@ -853,7 +853,7 @@ const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; is
               <Image src={'/benefitCustomer/Fixy-write1.png'} alt='write-mascot' height={174} width={217} className='object-cover' />
             </div>
             <div className='flex flex-col justify-center gap-[8px]'>
-              <p className='font-medium text-base-black-1 '>{t('heading')}</p>
+              <p className='font-medium  '>{t('heading')}</p>
               <Textarea
                 value={message}
                 onChange={(e: any) => setMessage(e.target.value)}
@@ -866,7 +866,7 @@ const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; is
                 }}
               />
             </div>
-            <Button onPress={_HandleSendMessage} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.8rem] font-medium text-base-black-1'>
+            <Button onPress={_HandleSendMessage} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.8rem] font-medium '>
               {t('send')}
             </Button>
           </div>

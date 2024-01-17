@@ -128,12 +128,12 @@ function PressDetail() {
                     </div>
                   ) : (
                     <>
-                      <h1 className='text-[3.2rem] font-semibold text-base-black-1'>
+                      <h1 className='text-[3.2rem] font-semibold '>
                         {/* <Link href={`${detailPress?.slug}`}>{detailPress?.title}</Link> */}
                         {detailPress?.title}
                       </h1>
                       <div className='flex items-center gap-[16px]'>
-                        <h3 className='text-base-black-1'>
+                        <h3 className=''>
                           <Link href={`/${paramsData.locale}/press/${detailPress?.category?.slug}`}>{detailPress?.category?.name}</Link>
                         </h3>
                         <time className='font-light text-base-drak-gray'>{detailPress?.created_at}</time>

@@ -25,7 +25,7 @@ function Faq() {
   const t = useTranslations('Footer')
 
   return (
-    <div className=''>
+    <div>
       <BackgroundRelative text={t('faq')} />
       <FaqSection />
     </div>

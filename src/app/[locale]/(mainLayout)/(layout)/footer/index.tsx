@@ -111,13 +111,12 @@ function Footer() {
                 <LocationIcon className='!size-[24px] flex-shrink-0 text-primary-blue' variant='Bold' />
                 <span className='text-[1.8rem] font-light md:text-[2rem]'>
                   {t('address')}
-                  <span className='ml-2 xl:ml-0 3xl:ml-2' />
-                  {t('location')}
+                  <span className='ml-2 xl:ml-0 3xl:ml-2' /> {t('location')}
                 </span>
               </div>
               <p className='text-[1.8rem] font-light md:text-[2rem]'>
                 <span className='font-semibold'>{t('text1')}</span>
-                <span className=''>0318063280</span>
+                <span>0318063280</span>
               </p>
             </div>
           </div>

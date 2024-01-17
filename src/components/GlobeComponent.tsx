@@ -47,10 +47,7 @@ const GlobeComponent = React.memo((props: any) => {
       startLng: (Math.random() - 0.5) * 360,
       endLat: (Math.random() - 0.5) * 180,
       endLng: (Math.random() - 0.5) * 360,
-      color: [
-        colors[Math.floor(Math.random() * colors.length)],
-        colors[Math.floor(Math.random() * colors.length)],
-      ],
+      color: [colors[Math.floor(Math.random() * colors.length)], colors[Math.floor(Math.random() * colors.length)]],
     }))
 
     const globe = Globe()(globeEl.current)
@@ -96,8 +93,7 @@ const GlobeComponent = React.memo((props: any) => {
     //     `,
     //   )
 
-    const CLOUDS_IMG_URL =
-      'https://vasturiano.github.io/three-globe/example/clouds/clouds.png' // Path to your clouds image
+    const CLOUDS_IMG_URL = 'https://vasturiano.github.io/three-globe/example/clouds/clouds.png' // Path to your clouds image
     const clouds = new THREE.Mesh(
       new THREE.SphereGeometry(globe.getGlobeRadius() * 1.01, 75, 75),
       new THREE.MeshPhongMaterial({

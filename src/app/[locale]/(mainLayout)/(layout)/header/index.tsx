@@ -11,6 +11,7 @@ import { Button } from '@nextui-org/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Add as AddIcon, HambergerMenu as MenuIcon } from 'iconsax-react'
 import { twMerge } from 'tailwind-merge'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Header = React.memo(() => {
   return (
@@ -23,8 +24,8 @@ const Header = React.memo(() => {
 
 export const HeaderWrapper = ({ children, style }: { children: React.ReactNode; style?: string }) => {
   const [isWebview, sIsWebview] = useState(false)
-
   const [isHeaderVisible, setHeaderVisible] = useState(true)
+
   const searchParams = useSearchParams()
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
 
@@ -81,8 +82,11 @@ export const Logo = memo(() => {
 const RightNav = memo(() => {
   const t = useTranslations('Navbar')
 
-  const [toggleMenu, setToggleMenu] = useState(false)
-  const handleToggleMenu = useCallback(() => setToggleMenu(!toggleMenu), [toggleMenu])
+  const toggleMenu = useSelector((state: any) => state.openMenu)
+
+  const dispatch = useDispatch()
+
+  const handleToggleMenu = useCallback(() => dispatch({ type: 'toggle_menu', payload: toggleMenu }), [toggleMenu])
 
   const _HandleOpenWindow = useCallback(() => {
     window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
@@ -222,10 +226,10 @@ const LinkList = memo(({ handleToggleMenu }: { handleToggleMenu?: any }) => {
               }}
               className='text-[1.8rem]'
             >
-              <button onClick={() => handleClick(link.url)} className={`${isActive ? 'text-[#0B27B6] ' : 'text-base-black-1 hover:text-[#0B27B6]/60'} block duration-300 md:hidden`}>
+              <button onClick={() => handleClick(link.url)} className={`${isActive ? 'text-[#0B27B6] ' : ' hover:text-[#0B27B6]/60'} block duration-300 md:hidden`}>
                 {link.title}
               </button>
-              <Link href={link.url} className={`hidden md:block ${isActive ? 'text-[#0B27B6]' : 'text-base-black-1 hover:text-[#0B27B6]/60'}`}>
+              <Link href={link.url} className={`hidden md:block ${isActive ? 'text-[#0B27B6]' : ' hover:text-[#0B27B6]/60'}`}>
                 {link.title}
               </Link>
             </motion.div>

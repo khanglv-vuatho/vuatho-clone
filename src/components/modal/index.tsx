@@ -18,17 +18,7 @@ type DefaultModal = {
   size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full' | 'xs' | '3xl' | '4xl' | '5xl'
 }
 
-export const DefaultModal: React.FC<DefaultModal> = ({
-  isOpen,
-  onOpenChange,
-  modalBody,
-  defaultOpen,
-  title,
-  hiddenCloseBtn,
-  hiddenHeader,
-  size,
-  styleHeader,
-}) => {
+export const DefaultModal: React.FC<DefaultModal> = ({ isOpen, onOpenChange, modalBody, defaultOpen, title, hiddenCloseBtn, hiddenHeader, size, styleHeader }) => {
   return (
     <>
       <Modal
@@ -48,24 +38,11 @@ export const DefaultModal: React.FC<DefaultModal> = ({
           {(onClose) => (
             <>
               {!hiddenHeader && (
-                <ModalHeader
-                  className={twMerge(
-                    `relative flex items-center p-2 ${
-                      title ? 'justify-between' : 'justify-end'
-                    }`,
-                    styleHeader,
-                  )}
-                >
+                <ModalHeader className={twMerge(`relative flex items-center p-2 ${title ? 'justify-between' : 'justify-end'}`, styleHeader)}>
                   {title}
                   {!hiddenCloseBtn && (
-                    <Button
-                      isIconOnly
-                      radius='full'
-                      onPress={onClose}
-                      variant='light'
-                      className='absolute right-[1%] top-[10%] h-[48px] w-[48px] min-w-[unset]'
-                    >
-                      <Add className='rotate-45 text-base-black-1' size={32} />
+                    <Button isIconOnly radius='full' onPress={onClose} variant='light' className='absolute right-[1%] top-[10%] h-[48px] w-[48px] min-w-[unset]'>
+                      <Add className='rotate-45 ' size={32} />
                     </Button>
                   )}
                 </ModalHeader>

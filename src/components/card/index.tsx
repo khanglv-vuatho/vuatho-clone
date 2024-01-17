@@ -27,7 +27,7 @@ export const SubCard1 = memo(() => {
       <h6 className='absolute right-[8%] top-[8%] z-[1] text-[4rem] font-bold text-primary-blue'>
         {tc('SubCard1.text')} <br /> {tc('SubCard1.text1')}
       </h6>
-      <div className=''>
+      <div>
         <Image
           src={'/mascot/1.png'}
           alt='mascot'
@@ -52,7 +52,7 @@ export const SubCard2 = memo(() => {
       <h6 className='absolute left-[8%] top-[8%] z-[1] text-[4rem] font-bold text-primary-blue'>
         {tc('SubCard2.text')} <br /> {tc('SubCard2.text1')} <br /> {tc('SubCard2.text2')}
       </h6>
-      <div className=''>
+      <div>
         <Image
           src={'/mascot/2.png'}
           alt='mascot'
@@ -77,7 +77,7 @@ export const SubCard3 = memo(() => {
       <h6 className='absolute right-[8%] top-[8%] z-[1] text-[4rem] font-bold text-primary-blue'>
         {tc('SubCard3.text')} <br /> {tc('SubCard3.text1')}
       </h6>
-      <div className=''>
+      <div>
         <Image
           src={'/mascot/3.png'}
           alt='mascot'

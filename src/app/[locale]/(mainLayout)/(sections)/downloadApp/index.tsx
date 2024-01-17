@@ -58,14 +58,14 @@ const SectionDownload = () => {
               <div className='flex w-full flex-col items-start justify-start gap-[4px] md:items-center md:justify-center md:gap-[20px]'>
                 <h2 className={`w-full text-left text-[2.4rem] font-medium uppercase text-primary-blue md:text-[3.6rem]`}>{t('download')}</h2>
                 <div className='flex w-full flex-col gap-[20px] md:gap-[10px]'>
-                  <p className='font-light text-base-black-1 md:text-[1.8rem]'>{t('text1')}</p>
+                  <p className='font-light  md:text-[1.8rem]'>{t('text1')}</p>
                   <div className='flex flex-col gap-[40px]'>
                     <div className='flex flex-row items-start gap-[10px] md:flex-col 13inch:flex-row 13inch:items-center '>
                       <AndroidBtn style={'min-w-[160px]'} />
                       <IosBtn style={'min-w-[160px]'} />
                     </div>
                     <div className='pointer-events-none hidden select-none flex-col items-start gap-[10px] md:flex'>
-                      <p className='text-[1.8rem] font-light text-base-black-1'>{t('text2')}</p>
+                      <p className='text-[1.8rem] font-light '>{t('text2')}</p>
                       <QRCode value='https://vuatho.com/vi/qrcode-download-app' size={128} />
                       {/* <Image
                         alt='QRCode'

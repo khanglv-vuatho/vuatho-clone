@@ -52,7 +52,7 @@ const AnimatePhone = memo(() => {
     return () => instance.destroy()
   }, [])
 
-  return <div ref={container} className='' />
+  return <div ref={container} />
 })
 
 export default memo(HeroSection)

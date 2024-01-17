@@ -3,21 +3,22 @@
 import Image from 'next/image'
 import { memo, useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
-import { Add, ArrowLeft, Bag2, Minus, Trash } from 'iconsax-react'
+import Link from 'next/link'
+
 import { Autocomplete, AutocompleteItem, Badge, Button, Input, Skeleton, useDisclosure } from '@nextui-org/react'
+import { Add, ArrowLeft, Bag2, Minus, Trash } from 'iconsax-react'
 
 import ImageFallback from '@/components/ImageFallback'
 import { ToastComponent } from '@/components/ToastComponent'
 import { ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
 import { DefaultModal } from '@/components/modal'
 import { phoneSelect } from '@/constants'
-import { IBreadcrumbWithUrl, IItemClothes } from '@/interface'
+import { IBreadcrumbWithUrl, IItemClothes, IUniform } from '@/interface'
 import instance from '@/services/axiosConfig'
 import { formatMoney } from '@/utils'
 
-export const Store = () => {
+export const Store = memo(() => {
   const td = useTranslations('listBreadcrumbs')
   const t = useTranslations('Store')
   const dispatch = useDispatch()
@@ -47,16 +48,10 @@ export const Store = () => {
     setCartItems([...storeItem])
   }, [])
 
-  type TUniform = {
-    info: { name: string; phone: { phone_code: string; phone_number: string } }
-    list: IItemClothes[]
-  }
-
   const serverFetching = useCallback(async () => {
     if (!token?.length) return
-
     try {
-      const data: TUniform = await instance.get('/uniforms', {
+      const data: IUniform = await instance.get('/uniforms', {
         params: {
           lang: locale,
           currency: currencyCurrent?.code,
@@ -79,7 +74,6 @@ export const Store = () => {
   useEffect(() => {
     if (token === null) {
       setIsOpenModal(true)
-
       setOnFetching(false)
       setOnLoading(false)
       setValid(false)
@@ -87,11 +81,9 @@ export const Store = () => {
     }
     if (!!token?.length) {
       setIsOpenModal(false)
-
       setOnFetching(true)
     } else {
       setIsOpenModal(true)
-
       setOnFetching(false)
       setOnLoading(false)
       setValid(false)
@@ -107,24 +99,22 @@ export const Store = () => {
   }, [currencyCurrent?.code])
 
   return (
-    <div className='pt-[64px] 3xl:pt-[80px]'>
+    <div className='min-h-[60vh] pt-[64px] 3xl:pt-[80px]'>
       <CheckValidWorker
         onLoading={onLoading}
         setOnLoading={setOnLoading}
         setOnFetching={setOnFetching}
-        valid={valid}
         isOpenModal={isOpenModal}
         setIsOpenModal={setIsOpenModal}
         setValid={setValid}
-        token={token}
         setToken={setToken}
       />
-      <div className='ct-container-70 mb-[60px] min-h-[40vh]'>
+      <div className='ct-container-70 mb-[60px]'>
         <div className='mt-[40px]'>
           <ListBreadcrumbsForDetailPress list={listBreadcrumbs} />
         </div>
         <div className='flex items-center justify-between'>
-          <h3 className='mb-[20px] mt-[36px] text-[2.4rem] font-semibold uppercase text-base-black-1'>{t('text4')}</h3>
+          <h3 className='mb-[20px] mt-[36px] text-[2.4rem] font-semibold uppercase '>{t('text4')}</h3>
           {valid && <Bagde cartItems={cartItems} setCartItems={setCartItems} />}
         </div>
 
@@ -133,7 +123,7 @@ export const Store = () => {
             <div className='max-w-[150px]'>
               <ImageFallback src={'/store/only-services-provider.png'} width={'307'} height={'240'} alt='' className='object-cover' />
             </div>
-            <p className='max-w-[500px] text-center text-[1.8rem] text-base-black-1'>{t('text8')}</p>
+            <p className='max-w-[500px] text-center text-[1.8rem] '>{t('text8')}</p>
             <div className='flex items-center gap-[16px]'>
               <Button variant='bordered' className='h-[44px] w-full border-[#FCB813] px-[20px] text-[1.5rem] font-medium text-[#282828]' radius='full' onClick={() => setIsOpenModal(true)}>
                 {t('text9')}
@@ -146,34 +136,209 @@ export const Store = () => {
             </div>
           </div>
         )}
-        <div className='grid grid-cols-1 gap-[20px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-          {onFetching || onLoading
-            ? Array(8)
-                .fill(null)
-                .map((item, index) => (
-                  <div className='overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]' key={index}>
-                    <Skeleton className='h-[200px] w-full' />
-                    <div className='flex flex-col gap-[8px] p-[16px] '>
-                      <Skeleton className='h-[10px] w-1/2 rounded-[8px]' />
-                      <Skeleton className='h-[10px] w-1/3 rounded-[8px]' />
+        {!!listItem?.length && (
+          <div className='grid grid-cols-1 gap-[20px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+            {onFetching || onLoading
+              ? Array(8)
+                  .fill(null)
+                  .map((_, index) => (
+                    <div className='overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]' key={index}>
+                      <Skeleton className='h-[200px] w-full' />
+                      <div className='flex flex-col gap-[8px] p-[16px] '>
+                        <Skeleton className='h-[10px] w-1/2 rounded-[8px]' />
+                        <Skeleton className='h-[10px] w-1/3 rounded-[8px]' />
+                      </div>
                     </div>
-                  </div>
-                ))
-            : listItem?.map((item: IItemClothes) => {
-                return <ItemClothe cartItems={cartItems} setCartItems={setCartItems} item={item} key={item.uuid} />
-              })}
-        </div>
+                  ))
+              : listItem?.map((item: IItemClothes) => {
+                  return <ItemClothe cartItems={cartItems} setCartItems={setCartItems} item={item} key={item.uuid} />
+                })}
+          </div>
+        )}
       </div>
     </div>
   )
-}
+})
 
-const ItemClothe = ({ cartItems, setCartItems, item }: { item: IItemClothes; cartItems: any; setCartItems: any }) => {
+const CheckValidWorker = memo(
+  ({
+    setOnFetching,
+    onLoading,
+    setOnLoading,
+    setValid,
+    setToken,
+    isOpenModal,
+    setIsOpenModal,
+  }: {
+    setOnFetching: any
+    onLoading: boolean
+    setOnLoading: any
+    setValid: any
+    setToken: any
+    isOpenModal: any
+    setIsOpenModal: any
+  }) => {
+    const t = useTranslations('Store')
+
+    const { onOpenChange } = useDisclosure()
+
+    const [onSending, setOnSending] = useState<boolean>(false)
+
+    const [phone, setPhone] = useState('')
+    const [phoneCountry, setPhoneCountry] = useState('+84')
+
+    const _handleCheckValid = async () => {
+      try {
+        console.log({
+          phone,
+          phone_code: phoneCountry,
+        })
+
+        const data: any = await instance.post('/uniforms/confirm_worker', {
+          phone,
+          phone_code: phoneCountry,
+        })
+
+        if (data.status == 200) {
+          localStorage.setItem('token', data.token)
+          ToastComponent({ message: t('text13'), type: 'success' })
+          setToken(data.token)
+          setValid(true)
+          setOnFetching(false)
+          setIsOpenModal(false)
+        } else {
+          setIsOpenModal(false)
+        }
+      } catch (error: any) {
+        setIsOpenModal(false)
+      } finally {
+        setOnSending(false)
+        setIsOpenModal(false)
+        setOnLoading(false)
+      }
+    }
+
+    useEffect(() => {
+      onSending && _handleCheckValid()
+    }, [onSending])
+
+    const _HandeleCheckValid = () => {
+      setOnSending(true)
+    }
+
+    const _HandleSubmit = (e: any) => {
+      e.preventDefault()
+      _HandeleCheckValid
+    }
+
+    return (
+      <>
+        {onLoading ? (
+          <></>
+        ) : (
+          <div tabIndex={0}>
+            <DefaultModal
+              isOpen={isOpenModal}
+              onOpenChange={onOpenChange}
+              hiddenCloseBtn
+              title={
+                <>
+                  <Link href={'/'}>
+                    <Button startContent={<ArrowLeft size={24} />} className='h-[44px] gap-[12px] bg-transparent hover:bg-base-gray-2'>
+                      <p className='text-[1.6rem]'>{t('text14')}</p>
+                    </Button>
+                  </Link>
+                </>
+              }
+              size='5xl'
+              modalBody={
+                <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
+                  <div className='flex items-center justify-center'>
+                    <Image src={'/store/heart1.png'} alt='write-mascot' height={240} width={307} className='object-cover' />
+                  </div>
+                  <div className='flex flex-col justify-center gap-[8px]'>
+                    <div className='flex flex-col gap-[4px]'>
+                      <h3 className='text-[2.4rem] font-semibold '>{t('text6')}</h3>
+                      <p className='font-light  '>{t('text5')}</p>
+                    </div>
+                  </div>
+                  <form onSubmit={_HandleSubmit.bind(this)}>
+                    <div className='flex items-center gap-[16px]'>
+                      <Autocomplete
+                        defaultItems={phoneSelect}
+                        variant='bordered'
+                        className='max-w-[120px] '
+                        value={phoneCountry}
+                        radius='full'
+                        isRequired
+                        isClearable={false}
+                        defaultSelectedKey={phoneCountry}
+                        onSelectionChange={(e: any) => setPhoneCountry(e)}
+                        scrollShadowProps={{
+                          isEnabled: false,
+                        }}
+                        popoverProps={{
+                          classNames: {
+                            content: 'text-[1.2rem] whitespace-nowrap',
+                          },
+                        }}
+                        inputProps={{
+                          classNames: {
+                            input: 'text-[1.4rem] text-[#A5A5A5]',
+                            inputWrapper: 'border-[#BABEF4] data-[hover=true]:border-[#BABEF4] group-data-[focus=true]:border-[#BABEF4] border-1 h-[44px] pl-[16px]',
+                          },
+                        }}
+                      >
+                        {(item: any) => (
+                          <AutocompleteItem
+                            key={item.value}
+                            classNames={{
+                              title: 'text-[1.4rem] py-[8px]',
+                            }}
+                          >
+                            {item.label}
+                          </AutocompleteItem>
+                        )}
+                      </Autocomplete>
+                      <Input
+                        value={phone}
+                        onChange={(e: any) => {
+                          setPhone(e.target.value)
+                        }}
+                        placeholder={t('text15')}
+                        radius='full'
+                        classNames={{
+                          input: 'text-[1.4rem]',
+                          inputWrapper: 'h-[44px] pl-[16px] bg-white border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1',
+                        }}
+                      />
+                    </div>
+                    <Button
+                      onPress={_HandeleCheckValid}
+                      isDisabled={!phone.length || onSending}
+                      type='submit'
+                      isLoading={onSending}
+                      className='mt-6 flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium '
+                    >
+                      {t('text7')}
+                    </Button>
+                  </form>
+                </div>
+              }
+            />
+          </div>
+        )}
+      </>
+    )
+  },
+)
+
+const ItemClothe = memo(({ cartItems, setCartItems, item }: { item: IItemClothes; cartItems: any; setCartItems: any }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
 
-  const handleClick = (item: IItemClothes) => {
+  const handleClick = useCallback((item: IItemClothes) => {
     item.thumb && onOpen()
-  }
+  }, [])
 
   return (
     <>
@@ -182,7 +347,7 @@ const ItemClothe = ({ cartItems, setCartItems, item }: { item: IItemClothes; car
           <ImageFallback src={item?.thumb} alt='' height={300} width={600} className='h-full w-full object-cover duration-300 group-hover:scale-[1.1]' />
         </div>
         <div className='flex h-full flex-col justify-between gap-[8px] bg-white p-[16px]'>
-          <p className='line-clamp-2 min-h-[30px] text-[1.8rem] font-semibold text-base-black-1'>{item.title}</p>
+          <p className='line-clamp-2 min-h-[54px] text-[1.8rem] font-semibold '>{item.title}</p>
           <p className='text-[1.8rem] font-semibold text-primary-blue'>
             {formatMoney(item.price)}
             {item.currency}
@@ -193,12 +358,12 @@ const ItemClothe = ({ cartItems, setCartItems, item }: { item: IItemClothes; car
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         styleHeader='pt-[12px] pl-[24px]'
-        title={<h3 className='max-w-[90%] text-[1.6rem] font-semibold leading-normal text-base-black-1 md:text-[2.4rem]'>{item?.title}</h3>}
+        title={<h3 className='max-w-[90%] text-[1.6rem] font-semibold leading-normal  md:text-[2.4rem]'>{item?.title}</h3>}
         modalBody={<RenderBodyItemDetail data={item} cartItems={cartItems} setCartItems={setCartItems} />}
-      ></DefaultModal>
+      />
     </>
   )
-}
+})
 
 const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: any; cartItems: any; setCartItems: any }) => {
   const t = useTranslations('Store')
@@ -228,27 +393,32 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: an
   const _handleBookNow = () => {
     onOpen()
     const cloneItem = [{ ...item, quantity }]
+    console.log(cloneItem)
+
     setCartItems(cloneItem)
   }
 
-  const HandleChangeSize = (uuid: string, sizeCheck: string) => {
-    const newData = item.package.map((item: any) => {
-      if (item.uuid === uuid) {
-        const sizeActive = item.sizes.map((size: any) => {
-          if (size.name === sizeCheck) {
-            return { ...size, isActive: true }
-          } else {
-            return { ...size, isActive: false }
-          }
-        })
+  const HandleChangeSize = useCallback(
+    (uuid: string, sizeCheck: string) => {
+      const newData = item.package.map((item: any) => {
+        if (item.uuid === uuid) {
+          const sizeActive = item.sizes.map((size: any) => {
+            if (size.name === sizeCheck) {
+              return { ...size, isActive: true }
+            } else {
+              return { ...size, isActive: false }
+            }
+          })
 
-        return { ...item, sizes: sizeActive }
-      } else {
-        return item
-      }
-    })
-    setItem({ ...item, package: newData })
-  }
+          return { ...item, sizes: sizeActive }
+        } else {
+          return item
+        }
+      })
+      setItem({ ...item, package: newData })
+    },
+    [item],
+  )
 
   const handleChangeCurrentImage = (thumb: string) => {
     setCurrentImage(thumb)
@@ -290,183 +460,9 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: an
   )
 })
 
-const CheckValidWorker = ({
-  setOnFetching,
-  valid,
-  onLoading,
-  setOnLoading,
-  setValid,
-  token,
-  setToken,
-  isOpenModal,
-  setIsOpenModal,
-}: {
-  setOnFetching: any
-  valid: boolean
-  onLoading: boolean
-  setOnLoading: any
-  setValid: any
-  token: any
-  setToken: any
-  isOpenModal: any
-  setIsOpenModal: any
-}) => {
+const Bagde = memo(({ cartItems, setCartItems }: { cartItems: any[]; setCartItems: any }) => {
   const t = useTranslations('Store')
 
-  const { onOpenChange } = useDisclosure()
-
-  const [onSending, setOnSending] = useState<boolean>(false)
-
-  const [phone, setPhone] = useState('')
-  const [phoneCountry, setPhoneCountry] = useState('+84')
-
-  const _handleCheckValid = async () => {
-    try {
-      console.log({
-        phone,
-        phone_code: phoneCountry,
-      })
-
-      const data: any = await instance.post('/uniforms/confirm_worker', {
-        phone,
-        phone_code: phoneCountry,
-      })
-
-      if (data.status == 200) {
-        localStorage.setItem('token', data.token)
-        ToastComponent({ message: t('text13'), type: 'success' })
-        setToken(data.token)
-        setValid(true)
-        setOnFetching(true)
-        setIsOpenModal(false)
-      } else {
-        setIsOpenModal(false)
-      }
-    } catch (error: any) {
-      setIsOpenModal(false)
-    } finally {
-      setOnSending(false)
-      setIsOpenModal(false)
-    }
-  }
-
-  useEffect(() => {
-    onSending && _handleCheckValid()
-  }, [onSending])
-
-  const _HandeleCheckValid = () => {
-    setOnSending(true)
-  }
-
-  const _HandleSubmit = (e: any) => {
-    e.preventDefault()
-    _HandeleCheckValid
-  }
-
-  return (
-    <>
-      {onLoading ? (
-        <></>
-      ) : (
-        <div tabIndex={0}>
-          <DefaultModal
-            isOpen={isOpenModal}
-            onOpenChange={onOpenChange}
-            hiddenCloseBtn
-            title={
-              <>
-                <Link href={'/'}>
-                  <Button startContent={<ArrowLeft size={24} />} className='h-[44px] gap-[12px] bg-transparent hover:bg-base-gray-2'>
-                    <p className='text-[1.6rem]'>{t('text14')}</p>
-                  </Button>
-                </Link>
-              </>
-            }
-            size='5xl'
-            modalBody={
-              <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
-                <div className='flex items-center justify-center'>
-                  <Image src={'/store/heart1.png'} alt='write-mascot' height={240} width={307} className='object-cover' />
-                </div>
-                <div className='flex flex-col justify-center gap-[8px]'>
-                  <div className='flex flex-col gap-[4px]'>
-                    <h3 className='text-[2.4rem] font-semibold text-base-black-1'>{t('text6')}</h3>
-                    <p className='font-light text-base-black-1 '>{t('text5')}</p>
-                  </div>
-                </div>
-                <form onSubmit={_HandleSubmit.bind(this)}>
-                  <div className='flex items-center gap-[16px] '>
-                    <Autocomplete
-                      defaultItems={phoneSelect}
-                      variant='bordered'
-                      className='max-w-[120px] '
-                      value={phoneCountry}
-                      radius='full'
-                      isRequired
-                      allowsCustomValue
-                      isClearable={false}
-                      defaultSelectedKey={phoneCountry}
-                      onSelectionChange={(e: any) => setPhoneCountry(e)}
-                      scrollShadowProps={{
-                        isEnabled: false,
-                      }}
-                      popoverProps={{
-                        classNames: {
-                          content: 'text-[1.2rem] whitespace-nowrap',
-                        },
-                      }}
-                      inputProps={{
-                        classNames: {
-                          input: 'text-[1.4rem] text-[#A5A5A5]',
-                          errorMessage: 'hidden',
-                          inputWrapper: 'border-[#BABEF4] data-[hover=true]:border-[#BABEF4] group-data-[focus=true]:border-[#BABEF4] border-1 h-[44px] pl-[16px]',
-                        },
-                      }}
-                    >
-                      {(item: any) => (
-                        <AutocompleteItem
-                          key={item.value}
-                          classNames={{
-                            title: 'text-[1.4rem] py-[8px]',
-                          }}
-                        >
-                          {item.label}
-                        </AutocompleteItem>
-                      )}
-                    </Autocomplete>
-                    <Input
-                      value={phone}
-                      onChange={(e: any) => {
-                        setPhone(e.target.value)
-                      }}
-                      placeholder={t('text15')}
-                      radius='full'
-                      classNames={{
-                        input: 'text-[1.4rem]',
-                        inputWrapper: 'h-[44px] pl-[16px] bg-white border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 ',
-                      }}
-                    />
-                  </div>
-                  <Button
-                    onPress={_HandeleCheckValid}
-                    isDisabled={!phone.length || onSending}
-                    type='submit'
-                    isLoading={onSending}
-                    className='mt-6 flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium text-base-black-1'
-                  >
-                    {t('text7')}
-                  </Button>
-                </form>
-              </div>
-            }
-          />
-        </div>
-      )}
-    </>
-  )
-}
-
-const Bagde = ({ cartItems, setCartItems }: { cartItems: any[]; setCartItems: any }) => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
   return null
   return (
@@ -477,7 +473,7 @@ const Bagde = ({ cartItems, setCartItems }: { cartItems: any[]; setCartItems: an
         className='h-[40px] items-center gap-[8px] border-[#FCB713] text-[1.6rem] text-[#FCB713]'
         startContent={
           <Badge
-            content={cartItems?.length || 0}
+            content={!!cartItems?.length || 0}
             placement='top-right'
             classNames={{
               badge: 'bg-[#FF4343] text-white h-[16px] w-[16px] text-[1rem] right-[20%] top-[20%] border-0',
@@ -487,25 +483,26 @@ const Bagde = ({ cartItems, setCartItems }: { cartItems: any[]; setCartItems: an
           </Badge>
         }
       >
-        Giỏ hàng
+        {t('text29')}
       </Button>
       <DefaultModal isOpen={isOpen} onOpenChange={onOpenChange} hiddenHeader hiddenCloseBtn modalBody={<BodyCard cartItems={cartItems} setCartItems={setCartItems} onCloseCart={onClose} />} />
     </>
   )
-}
+})
 
-const PackageItem = ({ itemPackage, HandleChangeSize, handleChangeCurrentImage }: { itemPackage: any; HandleChangeSize: any; handleChangeCurrentImage: any }) => {
+const PackageItem = memo(({ itemPackage, HandleChangeSize, handleChangeCurrentImage }: { itemPackage: any; HandleChangeSize: any; handleChangeCurrentImage: any }) => {
+  const t = useTranslations('Store')
   return (
     <div className='grid grid-cols-3 gap-[16px] md:gap-0' key={itemPackage.uuid}>
       <div className='col-span-3 flex items-center gap-[16px] md:col-span-1'>
         <div className='max-h-[60px] min-w-[60px] max-w-[60px] overflow-hidden rounded-[8px]'>
           <ImageFallback src={itemPackage.thumb} alt='' width={60} height={40} className='aspect-square max-h-[320px] object-cover' onClick={() => handleChangeCurrentImage(itemPackage.thumb)} />
         </div>
-        <p className='font-light text-base-black-1'>{itemPackage?.title || ''}</p>
-        <p className='font-light text-base-black-1'>x {itemPackage?.quantity || '1'}</p>
+        <p className='font-light '>{itemPackage.title || ''}</p>
+        <p className='font-light '>x {itemPackage.quantity || '1'}</p>
       </div>
       <div className='col-span-3 flex items-center gap-[8px] pr-[8px] md:col-span-2 md:justify-end md:gap-[16px]'>
-        <p className='text-[#969696]'>Chọn size</p>
+        <p className='text-[#969696]'>{t('text28')}</p>
         {itemPackage.sizes.map((itemSize: any) => (
           <button
             key={itemSize.name}
@@ -518,11 +515,14 @@ const PackageItem = ({ itemPackage, HandleChangeSize, handleChangeCurrentImage }
       </div>
     </div>
   )
-}
+})
 
-const CartItem = ({ item, cartItems, setCartItems }: { item: any; cartItems: any[]; setCartItems: any }) => {
+const CartItem = memo(({ item, cartItems, setCartItems }: { item: any; cartItems: any[]; setCartItems: any }) => {
+  const t = useTranslations('Store')
+
   const [quantity, setQuantity] = useState(item.quantity)
-  const _handleChangeQuantity = (newQuantity: number) => {
+
+  const _handleChangeQuantity = useCallback((newQuantity: number) => {
     setQuantity(newQuantity)
     const cloneItems = [...cartItems]
     const findIndexItem = cloneItems.findIndex((cartItem: any) => cartItem.uuid === item.uuid)
@@ -530,7 +530,7 @@ const CartItem = ({ item, cartItems, setCartItems }: { item: any; cartItems: any
       cloneItems[findIndexItem].quantity = newQuantity
       setCartItems(cloneItems)
     }
-  }
+  }, [])
 
   const _handleDeleteItem = () => {
     const cloneItems = [...cartItems]
@@ -547,23 +547,23 @@ const CartItem = ({ item, cartItems, setCartItems }: { item: any; cartItems: any
             <ImageFallback src={item.thumb} alt='12312321' width={74} height={128} />
           </div>
           <div className='flex w-full flex-col gap-[8px]'>
-            <h3 className='text-[1.8rem] uppercase text-base-black-1'>{item.title}</h3>
+            <h3 className='text-[1.8rem] uppercase '>{item.title}</h3>
             <div className='text-[1.6rem]'>
               {item.package.map((item: any) => (
                 <div className='grid grid-cols-2' key={item.title}>
                   <div className='flex items-center'>
-                    <h3 className=''>
+                    <h3>
                       {item.title} ({item.sizes.find((i: any) => i.isActive === true).name})
                     </h3>
                   </div>
-                  <div className='flex items-center justify-end gap-[48px]'>x{item?.quantity || '1'}</div>
+                  <div className='flex items-center justify-end gap-[48px]'>x{item.quantity}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
         <div className='col-span-3 mt-[10px] flex items-start justify-end gap-[16px] md:col-span-1 '>
-          <QuantityControl quantity={quantity} setQuantity={_handleChangeQuantity} onDelete={_handleDeleteItem} />
+          <QuantityControl quantity={quantity} setQuantity={_handleChangeQuantity} />
           <div className='flex items-center gap-[16px]'>
             <Button isIconOnly variant='light' radius='full' className='h-[48px] w-[48px]' onClick={_handleDeleteItem}>
               <Trash className=' text-[#FF4343]' size={24} />
@@ -573,43 +573,46 @@ const CartItem = ({ item, cartItems, setCartItems }: { item: any; cartItems: any
       </div>
     </div>
   )
-}
+})
 
-const QuantityControl = ({ minQuanlity, quantity, setQuantity, onDelete }: { quantity: any; setQuantity: any; minQuanlity?: boolean; onDelete?: any }) => {
+const QuantityControl = memo(({ minQuanlity, quantity, setQuantity }: { quantity: any; setQuantity: any; minQuanlity?: boolean }) => {
+  const _HandleDecrease = useCallback(() => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1)
+    }
+  }, [quantity])
+  const _HandleIncrease = useCallback(() => setQuantity(quantity <= 9 ? quantity + 1 : quantity), [quantity])
+
   return (
     <div className='flex items-center gap-[16px]'>
       <Button
         disabled={minQuanlity && quantity === 1}
         className='flex-center h-[44px]  w-[44px] min-w-[unset] flex-shrink-0 cursor-pointer rounded-full border-1 border-[#A5A5A5] bg-white p-0 transition-all active:scale-[1.05]'
-        onClick={() => {
-          if (quantity > 1) {
-            setQuantity(quantity - 1)
-          }
-        }}
+        onClick={_HandleDecrease}
       >
         <Minus size={24} className='#292D32' />
       </Button>
       <span className='select-none font-semibold text-[#222222]'>{quantity}</span>
       <Button
         className='flex-center  h-[44px] w-[44px] min-w-[unset] flex-shrink-0 cursor-pointer rounded-full border-1 border-[#222222] bg-white p-0 transition-all active:scale-[1.05]'
-        onClick={() => setQuantity(quantity <= 9 ? quantity + 1 : quantity)}
+        onClick={_HandleIncrease}
       >
         <Add size={24} className='#292D32' />
       </Button>
     </div>
   )
-}
+})
 
-const BodyCard = ({ cartItems, setCartItems, onCloseCart }: { cartItems: any; setCartItems: any; onCloseCart: any }) => {
+const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: any; setCartItems: any; onCloseCart: any }) => {
   const t = useTranslations('Store')
 
   const workerInfo = useSelector((state: any) => state.workerInfo)
   const currencyCurrent = useSelector((state: any) => state.currencyCurrent)
 
   const initalInfo = {
-    name: workerInfo?.name || 'name',
-    phone: workerInfo?.phone?.phone_number || 'phone_number',
-    phoneCountry: workerInfo?.phone?.phone_code || 'phone_code',
+    name: workerInfo.name,
+    phone: workerInfo.phone.phone_number,
+    phoneCountry: workerInfo.phone.phone_code,
     address: '',
   }
   const [infoCustomer, setInfoCustomer] = useState(initalInfo)
@@ -713,9 +716,9 @@ const BodyCard = ({ cartItems, setCartItems, onCloseCart }: { cartItems: any; se
   return (
     <div className='flex flex-col gap-[24px] p-[24px]'>
       <div className='flex items-center justify-between'>
-        <h3 className='font-semibold text-base-black-1 md:text-[2.4rem]'>{t('text19')}</h3>
+        <h3 className='font-semibold  md:text-[2.4rem]'>{t('text19')}</h3>
         <Button isIconOnly onPress={onCloseCart} variant='light' className='absolute right-0 top-0 h-[48px] w-[56px]'>
-          <Add className='rotate-45 text-base-black-1' size={24} />
+          <Add className='rotate-45 ' size={24} />
         </Button>
       </div>
       <div className='flex max-h-[300px] flex-col gap-[24px] overflow-y-auto pr-12'>
@@ -726,7 +729,7 @@ const BodyCard = ({ cartItems, setCartItems, onCloseCart }: { cartItems: any; se
             <div className='max-w-[150px]'>
               <ImageFallback src={'/store/emptyCart.png'} alt='' width={307} height={240} className='object-cover' />
             </div>
-            <p className=''>{t('text20')}</p>
+            <p>{t('text20')}</p>
           </div>
         )}
       </div>
@@ -740,7 +743,7 @@ const BodyCard = ({ cartItems, setCartItems, onCloseCart }: { cartItems: any; se
             </span>
           </div>
           <div className='flex flex-col'>
-            <p className='text-[2.4rem] font-semibold text-base-black-1'>{t('text22')}</p>
+            <p className='text-[2.4rem] font-semibold '>{t('text22')}</p>
             <div className='mt-[16px] grid grid-cols-2 gap-[16px]'>
               <div>
                 <Input
@@ -757,7 +760,7 @@ const BodyCard = ({ cartItems, setCartItems, onCloseCart }: { cartItems: any; se
                 />
                 <span className={`${errorInfo.name && infoCustomer.name === '' ? 'h-[10px] text-[1.2rem] text-red-500 opacity-100' : 'h-[10px] opacity-0'} `}>{t('text23')}</span>
               </div>
-              <div className=''>
+              <div>
                 <div className='flex items-center'>
                   <div className='flex h-[46px] justify-center rounded-s-full border-1 border-[#E1E1E1] pl-[16px] focus:outline-none data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1]'>
                     <input readOnly={true} value={infoCustomer.phoneCountry} className='max-w-[46px] bg-transparent text-[1.4rem] focus:outline-none' />
@@ -790,13 +793,13 @@ const BodyCard = ({ cartItems, setCartItems, onCloseCart }: { cartItems: any; se
       )}
     </div>
   )
-}
+})
 
-const ButtonOreder = ({ onSubmit }: { onSubmit: any }) => {
+const ButtonOreder = memo(({ onSubmit }: { onSubmit: any }) => {
   const t = useTranslations('Store')
   return (
-    <Button onPress={onSubmit} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium text-base-black-1'>
+    <Button onPress={onSubmit} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium '>
       {t('text25')}
     </Button>
   )
-}
+})

@@ -27,7 +27,7 @@ const BeComeEmployee = () => {
   const t = useTranslations('Footer')
 
   return (
-    <div className=''>
+    <div>
       <BackgroundRelative text={t('become_worker')} />
       <SectionStep />
     </div>

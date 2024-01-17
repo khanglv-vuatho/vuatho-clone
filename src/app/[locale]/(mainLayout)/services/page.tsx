@@ -22,14 +22,14 @@ export async function generateMetadata({ params }: { params?: any }) {
 
 const Default = () => {
   return (
-    <div className=''>
+    <div>
       <div className='py-[20px] 13inch:py-[40px] 3xl:py-[80px]'>
         <div className='ct-container-70 mt-[68px]'>
           <div className='flex flex-col gap-[20px]'>
-            <div className=''>
+            <div>
               <LeftRenderSearch />
             </div>
-            <div className=''>
+            <div>
               <div className='h-full w-full p-5'>
                 <div className='flex space-x-6'>{/* <h1>Việt Nam</h1> */}</div>
                 <Map />
