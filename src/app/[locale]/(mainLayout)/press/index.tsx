@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import React, { memo, useEffect, useMemo, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 
 import { IBreadcrumbWithUrl, IMostViewed, IMeta } from '@/interface'
 import instance from '@/services/axiosConfig'
@@ -57,9 +57,9 @@ export const MostViewed: React.FC<IMostViewed> = memo(({ isHidden, dataDefault, 
             dataDefault?.map((item: any, index: number) => {
               if (index > 4) return
               return (
-                <div key={item.title} className='block'>
+                <div title={item.title} key={item.title} className='block'>
                   <div className='group grid grid-cols-5 items-center bg-white'>
-                    <Link href={`/${locale}/${item.slug}`} title={item.title} className='col-span-2 h-full min-h-[130px] w-full overflow-hidden'>
+                    <Link href={`/${locale}/${item.slug}`} className='col-span-2 h-full min-h-[130px] w-full overflow-hidden'>
                       <ImageFallback alt='blog' src={item?.thumb} width={256} height={202} className='h-full w-full object-cover transition group-hover:scale-[1.1]' />
                     </Link>
                     <div className='col-span-3 flex h-full flex-col justify-center gap-[4px] p-[16px]'>
@@ -76,7 +76,7 @@ export const MostViewed: React.FC<IMostViewed> = memo(({ isHidden, dataDefault, 
               )
             })
           ) : (
-            <p>{t('errorNetwork')}</p>
+            <div>{t('errorNetwork')}</div>
           )}
         </div>
       </div>
@@ -97,8 +97,8 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
   const [meta, setMeta] = useState<IMeta>({
     limit: 6,
     page: 1,
-    totalPages: 1,
-    total: 0,
+    totalPages: 6,
+    total: 10,
   })
 
   const pathname = usePathname()
@@ -120,23 +120,103 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
   }
 
   const _handleFetchingBlogByTag = async () => {
-    //check current page is press/[tag]
-    if (pathname.split('/').length !== 4) return
-    try {
-      const { data } = await instance.get('blog/byCategory', {
-        params: {
-          slug: pathname.split('/')?.[3],
-          lang: locale,
-        },
-      })
+    if (pathname.split('/').length === 4) {
+      try {
+        const { data } = await instance.get('blog/byCategory', {
+          params: {
+            slug: pathname.split('/')?.[3],
+            lang: locale,
+            page: searchParams.page || 1,
+          },
+        })
 
-      setListBlog(data)
-      console.log('123')
-    } catch (error) {
-      console.log(error)
-    } finally {
-      setOnFetching(false)
-      setOnLoading(false)
+        // setListBlog(data)
+        setListBlog([
+          {
+            id: 9,
+            uuid: '3dc2baa1-8e58-4ea5-85f1-f2ef79c039a4',
+            thumb: 'https://sandbox-api-cms.vuatho.com/statics/blog/thumbs/9.jpg?cache=1701240176325',
+            title: 'test-3',
+            slug: 'press/tin-tuc/test-3',
+            short_description: 'asdasdas3',
+            category: {
+              title: 'Tin tức',
+              slug: 'tin-tuc',
+            },
+            thumbnail: null,
+          },
+          {
+            id: 8,
+            uuid: 'fde75cfd-a873-49db-9daf-7851cd889080',
+            thumb: 'https://sandbox-api-cms.vuatho.com/statics/blog/thumbs/8.jpg?cache=1701240175945',
+            title: 'test-2',
+            slug: 'press/tin-tuc/test-2',
+            short_description: 'asdasdas2',
+            category: {
+              title: 'Tin tức',
+              slug: 'tin-tuc',
+            },
+            thumbnail: null,
+          },
+          {
+            id: 7,
+            uuid: '85e8b72d-05ed-4cab-9605-262ef7ee257a',
+            thumb: 'https://sandbox-api-cms.vuatho.com/statics/blog/thumbs/7.jpg?cache=1701240174445',
+            title: 'test-1',
+            slug: 'press/tin-tuc/test-1',
+            short_description: 'asdasdas1',
+            category: {
+              title: 'Tin tức',
+              slug: 'tin-tuc',
+            },
+            thumbnail: null,
+          },
+          {
+            id: 7,
+            uuid: '85e8b72d-05ed-4cab-9605-262ef7ee257a',
+            thumb: 'https://sandbox-api-cms.vuatho.com/statics/blog/thumbs/7.jpg?cache=1701240174445',
+            title: 'test-1',
+            slug: 'press/tin-tuc/test-1',
+            short_description: 'asdasdas1',
+            category: {
+              title: 'Tin tức',
+              slug: 'tin-tuc',
+            },
+            thumbnail: null,
+          },
+          {
+            id: 7,
+            uuid: '85e8b72d-05ed-4cab-9605-262ef7ee257a',
+            thumb: 'https://sandbox-api-cms.vuatho.com/statics/blog/thumbs/7.jpg?cache=1701240174445',
+            title: 'test-1',
+            slug: 'press/tin-tuc/test-1',
+            short_description: 'asdasdas1',
+            category: {
+              title: 'Tin tức',
+              slug: 'tin-tuc',
+            },
+            thumbnail: null,
+          },
+          {
+            id: 7,
+            uuid: '85e8b72d-05ed-4cab-9605-262ef7ee257a',
+            thumb: 'https://sandbox-api-cms.vuatho.com/statics/blog/thumbs/7.jpg?cache=1701240174445',
+            title: 'test-1',
+            slug: 'press/tin-tuc/test-1',
+            short_description: 'asdasdas1',
+            category: {
+              title: 'Tin tức',
+              slug: 'tin-tuc',
+            },
+            thumbnail: null,
+          },
+        ])
+      } catch (error) {
+        console.log(error)
+      } finally {
+        setOnFetching(false)
+        setOnLoading(false)
+      }
     }
   }
 
@@ -164,8 +244,6 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
           total: 0,
         },
       )
-
-      console.log('456')
     } catch (error) {
       console.log(error)
     } finally {
@@ -175,8 +253,8 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
   }
 
   useEffect(() => {
-    searchParams.page && !isNaN(Number(searchParams?.page)) ? setMeta((prev: any) => ({ ...prev, page: Number(searchParams.page) })) : router.push(`${pathname}?page=1`)
-  }, [searchParams.page])
+    searchParams.page && !isNaN(Number(searchParams?.page)) && setMeta((prev: any) => ({ ...prev, page: Number(searchParams.page) }))
+  }, [])
 
   useEffect(() => {
     onFetchingMostView && _serverFetchingMostView()
@@ -191,7 +269,6 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
       onFetching && _handleFetchingBlogByTag()
       return
     }
-
     onFetching && _serverFetching()
   }, [onFetching])
 

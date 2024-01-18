@@ -13,7 +13,7 @@ const Article = ({ item, style, index }: { item: any; style?: string; index: num
 
   return (
     <motion.div
-      initial={{ x: (index + 1) * 100, opacity: 0 }}
+      initial={{ x: 40, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.2, delay: 0.2 * index }}
       viewport={{ once: true }}

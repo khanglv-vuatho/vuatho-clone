@@ -31,7 +31,7 @@ function PressDetail() {
   const [listMostView, setListMostView] = useState<any>([])
   const [detailPress, setDetailPress] = useState<any>({})
 
-  const listBreadcrumbs: IBreadcrumbWithUrl[] = [{ title: t('home'), url: '/' }, { title: t('acrticle'), url: '/press' }, { title: detailPress?.title }]
+  const listBreadcrumbs: IBreadcrumbWithUrl[] = [{ title: t('home'), url: '/' }, { title: t('acrticle'), url: `/${locale}/press` }, { title: detailPress?.title }]
 
   const ServerFetching = async () => {
     try {
