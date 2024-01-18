@@ -164,8 +164,7 @@ const MinhBach = () => {
         <h2 className='mb-[40px] inline-block text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>{t('heading')}</h2>
         <motion.div
           initial={{
-            y: 100,
-            x: -200,
+            y: 60,
             opacity: 0,
           }}
           whileInView={{
@@ -236,8 +235,7 @@ const HinhThucKetNoi = () => {
         <h2 className='mb-[40px] inline-block  text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>{t('heading')}</h2>
         <motion.div
           initial={{
-            x: 200,
-            y: 100,
+            y: 60,
             opacity: 0,
           }}
           whileInView={{

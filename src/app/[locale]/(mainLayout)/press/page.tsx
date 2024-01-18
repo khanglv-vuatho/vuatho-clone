@@ -13,7 +13,7 @@ export async function generateMetadata({ params, searchParams }: any): Promise<M
   }
 }
 
-function Press({ searchParams, params }: { searchParams: any; params: any }) {
+function Press({ searchParams }: { searchParams: any }) {
   return (
     <div className='flex flex-col pt-[64px] 3xl:pt-[80px]'>
       <PressContent searchParams={searchParams} />

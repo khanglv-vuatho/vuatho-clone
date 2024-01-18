@@ -44,7 +44,6 @@ function AboutUs() {
       {/* <div className='py-[40px] md:py-[100px]'>
         <SectionDownload />
       </div> */}
-      {/* asd */}
     </div>
   )
 }

@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo, useEffect, useMemo, useState } from 'react'
 
 import { IBreadcrumbWithUrl, IMostViewed, IMeta } from '@/interface'
 import instance from '@/services/axiosConfig'
@@ -57,24 +57,26 @@ export const MostViewed: React.FC<IMostViewed> = memo(({ isHidden, dataDefault, 
             dataDefault?.map((item: any, index: number) => {
               if (index > 4) return
               return (
-                <Link href={`/${locale}/${item.slug}`} title={item.title} key={item.title} className='block'>
+                <div key={item.title} className='block'>
                   <div className='group grid grid-cols-5 items-center bg-white'>
-                    <div className='col-span-2 h-full min-h-[130px] w-full overflow-hidden'>
+                    <Link href={`/${locale}/${item.slug}`} title={item.title} className='col-span-2 h-full min-h-[130px] w-full overflow-hidden'>
                       <ImageFallback alt='blog' src={item?.thumb} width={256} height={202} className='h-full w-full object-cover transition group-hover:scale-[1.1]' />
-                    </div>
+                    </Link>
                     <div className='col-span-3 flex h-full flex-col justify-center gap-[4px] p-[16px]'>
                       <Link href={`/${locale}/press/${item.category.slug}`} className='mb-[4px] block text-[1.5rem] text-primary-blue'>
                         {item.category.name}
                       </Link>
                       <time className='text-[1.5rem] text-base-drak-gray'>{item.created_at}</time>
-                      <h5 className='mt-[8px] line-clamp-2 h-fit text-[1.8rem] font-semibold leading-[1] '>{item.title}</h5>
+                      <Link href={`/${locale}/${item.slug}`} className='mt-[8px] line-clamp-2 h-fit text-[1.8rem] font-semibold leading-[1] '>
+                        {item.title}
+                      </Link>
                     </div>
                   </div>
-                </Link>
+                </div>
               )
             })
           ) : (
-            <div>{t('errorNetwork')}</div>
+            <p>{t('errorNetwork')}</p>
           )}
         </div>
       </div>
@@ -118,22 +120,23 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
   }
 
   const _handleFetchingBlogByTag = async () => {
-    if (pathname.split('/').length === 4) {
-      try {
-        const { data } = await instance.get('blog/byCategory', {
-          params: {
-            slug: pathname.split('/')?.[3],
-            lang: locale,
-          },
-        })
+    //check current page is press/[tag]
+    if (pathname.split('/').length !== 4) return
+    try {
+      const { data } = await instance.get('blog/byCategory', {
+        params: {
+          slug: pathname.split('/')?.[3],
+          lang: locale,
+        },
+      })
 
-        setListBlog(data)
-      } catch (error) {
-        console.log(error)
-      } finally {
-        setOnFetching(false)
-        setOnLoading(false)
-      }
+      setListBlog(data)
+      console.log('123')
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setOnFetching(false)
+      setOnLoading(false)
     }
   }
 
@@ -161,6 +164,8 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
           total: 0,
         },
       )
+
+      console.log('456')
     } catch (error) {
       console.log(error)
     } finally {
@@ -186,6 +191,7 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
       onFetching && _handleFetchingBlogByTag()
       return
     }
+
     onFetching && _serverFetching()
   }, [onFetching])
 

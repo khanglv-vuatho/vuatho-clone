@@ -34,9 +34,7 @@ const Article = ({ item, style, index }: { item: any; style?: string; index: num
         <Link href={`/${locale}/${item.slug}`} className='text-[1.8rem] font-semibold'>
           {item.title}
         </Link>
-        <Link href={`/${locale}/${item.slug}`} className='line-clamp-3 text-[1.8rem] font-light text-base-drak-gray'>
-          {item.short_description}
-        </Link>
+        <p className='line-clamp-3 text-[1.8rem] font-light text-base-drak-gray'>{item.short_description}</p>
       </div>
     </motion.div>
   )
