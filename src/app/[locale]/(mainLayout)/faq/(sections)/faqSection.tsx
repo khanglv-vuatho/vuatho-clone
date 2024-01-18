@@ -360,13 +360,13 @@ function FaqSection() {
       <div className='py-[20px] 13inch:py-[40px] 3xl:py-[80px]'>
         <div className='ct-container-70 hidden gap-10 md:flex'>
           <div className='relative w-full max-w-[320px] 3xl:max-w-[400px]'>
-            <div className='absolute min-h-[40px] w-full rounded-[60px] bg-gradient-to-r from-[#FFB500] to-[#FED32C] px-10 py-[10px] transition 13inch:h-[50px] 3xl:h-[60px]' ref={highlightRef} />
+            <div className='absolute w-full border-l-[4px] border-[#FCB713] bg-gradient-to-r from-[#FCB71333] to-[#FCB71300] transition ' ref={highlightRef} />
             <div className='flex flex-col gap-2'>
               {listAccordion.map((i: any) => (
                 <button
                   onClick={() => handleActiveSelect(i.title)}
-                  className={`flex min-h-[40px] w-full items-center justify-start rounded-[60px] px-10 py-[10px] text-[1.8rem] 13inch:h-[50px] 3xl:h-[60px] ${
-                    activeSelect === i.title ? ' menuActive text-black' : 'bg-transparent hover:bg-gradient-to-r hover:from-[#FFB500]/5 hover:to-[#FED32C]/5'
+                  className={`flex w-full items-center justify-start border-l-[4px] border-transparent px-10 py-6 text-[1.8rem] ${
+                    activeSelect === i.title ? ' menuActive text-black' : 'hover:border-[#FCB713]/5 hover:bg-gradient-to-r hover:from-[#FCB71333]/5 hover:to-[#FCB71300]/5'
                   }`}
                   key={i.title}
                 >

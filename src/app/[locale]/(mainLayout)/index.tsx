@@ -443,10 +443,10 @@ const CustomerBenefitSection = () => {
             }}
             className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'
           >
-            <Image src={'/khach-benefit-7.webp'} alt='' quality={100} height={600} width={600} className='pointer-events-none h-full w-full select-none object-contain' />
+            <Image src={'/khach-benefit-7.webp'} alt='khach-benefit-7' quality={100} height={600} width={600} className='pointer-events-none h-full w-full select-none object-contain' />
           </motion.div>
         </div>
-        <div className='col-span-1 grid grid-cols-1 gap-[20px] md:mx-auto md:max-w-[820px] md:grid-cols-2 md:gap-[40px] xl:col-span-3'>
+        <div className='col-span-1 grid grid-cols-1 md:mx-auto md:max-w-[820px] md:grid-cols-2 xl:col-span-3'>
           {listBenefit.map((item, index) => (
             <motion.div
               initial={{
@@ -471,7 +471,7 @@ const CustomerBenefitSection = () => {
               key={item.id}
             >
               <div className='items-left flex items-center gap-[20px] md:flex-col lg:justify-center xl:gap-[6px]'>
-                <ImageFallback src={`/numbers/${index + 1}.png`} alt='AI Robot' width={200} height={200} className='pointer-events-none size-[200px] select-none' />
+                <ImageFallback src={`/numbers/${index + 1}.png`} alt='AI Robot' width={200} height={200} className='pointer-events-none size-[180px] select-none' />
                 <h3 className='mt-[-16px] text-[1.8rem] lg:text-center'>{item.title}</h3>
               </div>
             </motion.div>
@@ -602,7 +602,7 @@ const WorkerBenefitSection = () => {
               }}
               navigation
               modules={[Autoplay, EffectFade, FreeMode, Navigation, Thumbs]}
-              className='benefitSwipper z-[5]  h-full  w-full md:max-h-[420px] lg:max-h-[500px]'
+              className='benefitSwipper z-[5] h-full w-full md:max-h-[420px] 13inch:max-h-[480px]'
               onActiveIndexChange={(swiper: any) => {
                 setCurrentIndex(swiper.realIndex)
               }}
@@ -624,7 +624,14 @@ const WorkerBenefitSection = () => {
                         <div dangerouslySetInnerHTML={{ __html: item.html }} />
                       </div>
                       <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
-                        <ImageFallback priority src={`/benefits/${index + 1}.png`} alt={item.title} height={400} width={400} className='max-h-[400px] w-full md:max-h-none' />
+                        <ImageFallback
+                          priority
+                          src={`/benefits/${index + 1}.png`}
+                          alt={item.title}
+                          height={400}
+                          width={400}
+                          className='max-h-[400px] w-full object-contain md:max-h-[280px] 13inch:max-h-none'
+                        />
                       </div>
                     </div>
                   </SwiperSlide>
@@ -709,7 +716,7 @@ const PressHome = () => {
           </span>
         </Link>
       </div>
-      <div className='blog-home flex flex-nowrap gap-[20px] overflow-x-auto overflow-y-hidden p-[4px] lg:grid lg:grid-cols-4'>
+      <div className='blog-home flex flex-nowrap gap-[10px] overflow-x-auto overflow-y-hidden p-[4px] lg:grid lg:grid-cols-4 lg:gap-[20px]'>
         {onFetching
           ? Array(4)
               .fill(null)

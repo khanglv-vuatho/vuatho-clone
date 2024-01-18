@@ -9,7 +9,7 @@
   }
   .swiper-button-prev,
   .swiper-button-next {
-    @apply -bottom-[40px] top-auto z-20 hidden h-[50px] w-[50px] translate-y-1/2 items-center justify-center rounded-full bg-[#FCB713] md:flex lg:-bottom-[50px] xl:-bottom-[10%];
+    @apply -bottom-[40px] top-auto z-20 hidden h-[50px] w-[50px] translate-y-1/2 items-center justify-center rounded-full bg-[#FCB713] text-base-black-1 md:flex lg:-bottom-[50px] xl:-bottom-[10%];
 
     &::after {
       @apply text-[1.6rem];

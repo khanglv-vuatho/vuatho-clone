@@ -21,7 +21,7 @@ function Footer() {
   const [isWebview, sIsWebview] = useState(false)
 
   useEffect(() => {
-    var is_uiwebview = navigator.userAgent.includes('WebView')
+    const is_uiwebview = navigator.userAgent.includes('WebView')
     sIsWebview(is_uiwebview)
   }, [])
 

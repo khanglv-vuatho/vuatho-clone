@@ -22,7 +22,9 @@ function LangsComp() {
   const pathName = usePathname()
   const allQueryParams: any = useGetAllQueryParams()
 
-  const lang = useMemo(() => langs.find((e) => e.code == locale), [locale])
+  const lang = useMemo(() => {
+    return langs.find((e) => e.code == locale)
+  }, [locale])
 
   const [onFetching, setOnFetching] = useState<boolean>(false)
 
@@ -158,7 +160,7 @@ function LangsComp() {
         </Popover>
       </div>
       <div className='block w-full lg:hidden'>
-        <div className='grid grid-cols-2 gap-[20px] overflow-y-scroll'>
+        <div className='grid grid-cols-2 overflow-y-scroll lg:gap-[20px]'>
           <LangSelect lang={lang} onClick={(item: any) => _HandleChangeLang(item)} />
           <CurrencySelect currency={currency} onClick={(item: any) => _HandleChangeCurrency(item)} selectCurrency={selectCurrency} />
         </div>
@@ -192,7 +194,7 @@ const LangSelect = memo(({ lang, onClick }: { lang: any; onClick: any }) => {
           }}
         />
       </div>
-      <div className='grid max-h-[70vh] grid-cols-1 gap-1 overflow-y-scroll py-2 lg:max-h-[400px]'>
+      <div className='grid max-h-[70vh] grid-cols-1 gap-1 overflow-x-hidden overflow-y-scroll py-2 lg:max-h-[400px]'>
         {langs
           .filter((itemFilter) => normalizeKeyword(itemFilter.label).includes(normalizeKeyword(searchLang)))
           .map((item) => (
@@ -237,7 +239,7 @@ const CurrencySelect = memo(({ currency, selectCurrency, onClick }: { currency: 
           }}
         />
       </div>
-      <div className='grid max-h-[70vh] min-w-[236px] grid-cols-1 gap-1 overflow-y-scroll py-2 lg:max-h-[400px]'>
+      <div className='grid max-h-[70vh] grid-cols-1 gap-1 overflow-y-scroll py-2 lg:max-h-[400px] lg:min-w-[236px]'>
         {currency
           .filter((item: any) => `${item.code} ${item.name} ${item.symbol}`.toLowerCase().includes(searchCurrency.toLowerCase().trim()))
           ?.map((x: any) => ({

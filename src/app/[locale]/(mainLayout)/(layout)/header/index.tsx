@@ -169,6 +169,7 @@ const LinkList = memo(({ handleToggleMenu }: { handleToggleMenu?: any }) => {
   const pathname = usePathname()
   const t = useTranslations('Navbar')
   const locale = useLocale()
+  const router = useRouter()
 
   const navLink = [
     {
@@ -205,12 +206,11 @@ const LinkList = memo(({ handleToggleMenu }: { handleToggleMenu?: any }) => {
     },
   }
 
-  const router = useRouter()
-
   const handleClick = (url: any) => {
     router.replace(url)
     handleToggleMenu ? handleToggleMenu() : () => {}
   }
+
   return (
     <>
       {navLink.map((link) => {

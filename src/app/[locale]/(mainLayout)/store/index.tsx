@@ -556,7 +556,7 @@ const CartItem = memo(({ item, cartItems, setCartItems }: { item: any; cartItems
                       {item.title} ({item.sizes.find((i: any) => i.isActive === true).name})
                     </h3>
                   </div>
-                  <div className='flex items-center justify-end gap-[48px]'>x{item.quantity}</div>
+                  <div className='flex items-center justify-end gap-[48px]'>x{item?.quantity || 1}</div>
                 </div>
               ))}
             </div>
@@ -610,9 +610,9 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
   const currencyCurrent = useSelector((state: any) => state.currencyCurrent)
 
   const initalInfo = {
-    name: workerInfo.name,
-    phone: workerInfo.phone.phone_number,
-    phoneCountry: workerInfo.phone.phone_code,
+    name: workerInfo?.full_name || 'full name',
+    phone: workerInfo?.phone?.phone_number || '0123456789',
+    phoneCountry: workerInfo?.phone?.phone_code || '+84',
     address: '',
   }
   const [infoCustomer, setInfoCustomer] = useState(initalInfo)
