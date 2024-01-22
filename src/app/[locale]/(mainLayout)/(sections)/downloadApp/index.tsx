@@ -67,14 +67,6 @@ const SectionDownload = () => {
                     <div className='pointer-events-none hidden select-none flex-col items-start gap-[10px] md:flex'>
                       <p className='text-[1.8rem] font-light '>{t('text2')}</p>
                       <QRCode value='https://vuatho.com/vi/qrcode-download-app' size={128} />
-                      {/* <Image
-                        alt='QRCode'
-                        src={'/downloadApp/qrcode.webp'}
-                        width={128}
-                        height={128}
-                        quality={100}
-                        className={`relative z-[1] aspect-square size-[140px] w-auto object-contain`}
-                      /> */}
                     </div>
                   </div>
                 </div>

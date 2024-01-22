@@ -69,7 +69,7 @@ export const Store = memo(() => {
       setOnFetching(false)
       setOnLoading(false)
     }
-  }, [token, currencyCurrent?.code, dispatch, locale])
+  }, [token, currencyCurrent?.code, locale])
 
   useEffect(() => {
     if (token === null) {
@@ -117,11 +117,10 @@ export const Store = memo(() => {
           <h3 className='mb-[20px] mt-[36px] text-[2.4rem] font-semibold uppercase '>{t('text4')}</h3>
           {valid && <Bagde cartItems={cartItems} setCartItems={setCartItems} />}
         </div>
-
         {!valid && !isOpenModal && !onLoading && !onFetching && (
           <div className='flex min-h-[400px] w-full flex-col items-center justify-center gap-[20px]'>
             <div className='max-w-[150px]'>
-              <ImageFallback src={'/store/only-services-provider.png'} width={'307'} height={'240'} alt='' className='object-cover' />
+              <ImageFallback src={'/store/only-services-provider.png'} width={'307'} height={'240'} alt='image' className='object-cover' />
             </div>
             <p className='max-w-[500px] text-center text-[1.8rem] '>{t('text8')}</p>
             <div className='flex items-center gap-[16px]'>
@@ -302,9 +301,7 @@ const CheckValidWorker = memo(
                       </Autocomplete>
                       <Input
                         value={phone}
-                        onChange={(e: any) => {
-                          setPhone(e.target.value)
-                        }}
+                        onChange={(e: any) => setPhone(e.target.value)}
                         placeholder={t('text15')}
                         radius='full'
                         classNames={{
@@ -344,7 +341,7 @@ const ItemClothe = memo(({ cartItems, setCartItems, item }: { item: IItemClothes
     <>
       <div className='group flex h-full cursor-pointer flex-col overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]' onClick={() => handleClick(item)}>
         <div className='h-[200px] min-h-[200px] w-full overflow-hidden'>
-          <ImageFallback src={item?.thumb} alt='' height={300} width={600} className='h-full w-full object-cover duration-300 group-hover:scale-[1.1]' />
+          <ImageFallback src={item?.thumb} alt='image' height={300} width={600} className='h-full w-full object-cover duration-300 group-hover:scale-[1.1]' />
         </div>
         <div className='flex h-full flex-col justify-between gap-[8px] bg-white p-[16px]'>
           <p className='line-clamp-2 min-h-[54px] text-[1.8rem] font-semibold '>{item.title}</p>
@@ -393,8 +390,6 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: an
   const _handleBookNow = () => {
     onOpen()
     const cloneItem = [{ ...item, quantity }]
-    console.log(cloneItem)
-
     setCartItems(cloneItem)
   }
 
@@ -421,13 +416,14 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: an
   )
 
   const handleChangeCurrentImage = (thumb: string) => {
+    console.log(thumb)
     setCurrentImage(thumb)
   }
 
   return (
     <div className='flex flex-col gap-[24px] p-[16px] pt-0 md:p-[24px]'>
       <div className='h-full max-h-[320px] w-full overflow-hidden rounded-[8px]'>
-        <ImageFallback src={currentImage} alt='' width={800} height={600} className='max-h-[320px] w-full object-cover' />
+        <ImageFallback src={currentImage} alt='image' width={800} height={600} className='max-h-[320px] w-full object-cover' />
       </div>
       <div className='flex flex-col gap-[16px]'>
         <p className='text-[2.4rem] font-semibold text-[#405AB7]'>
@@ -460,43 +456,13 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: an
   )
 })
 
-const Bagde = memo(({ cartItems, setCartItems }: { cartItems: any[]; setCartItems: any }) => {
-  const t = useTranslations('Store')
-
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
-  return null
-  return (
-    <>
-      <Button
-        onPress={onOpen}
-        variant='bordered'
-        className='h-[40px] items-center gap-[8px] border-[#FCB713] text-[1.6rem] text-[#FCB713]'
-        startContent={
-          <Badge
-            content={!!cartItems?.length || 0}
-            placement='top-right'
-            classNames={{
-              badge: 'bg-[#FF4343] text-white h-[16px] w-[16px] text-[1rem] right-[20%] top-[20%] border-0',
-            }}
-          >
-            <Bag2 size={24} />
-          </Badge>
-        }
-      >
-        {t('text29')}
-      </Button>
-      <DefaultModal isOpen={isOpen} onOpenChange={onOpenChange} hiddenHeader hiddenCloseBtn modalBody={<BodyCard cartItems={cartItems} setCartItems={setCartItems} onCloseCart={onClose} />} />
-    </>
-  )
-})
-
 const PackageItem = memo(({ itemPackage, HandleChangeSize, handleChangeCurrentImage }: { itemPackage: any; HandleChangeSize: any; handleChangeCurrentImage: any }) => {
   const t = useTranslations('Store')
   return (
     <div className='grid grid-cols-3 gap-[16px] md:gap-0' key={itemPackage.uuid}>
       <div className='col-span-3 flex items-center gap-[16px] md:col-span-1'>
         <div className='max-h-[60px] min-w-[60px] max-w-[60px] overflow-hidden rounded-[8px]'>
-          <ImageFallback src={itemPackage.thumb} alt='' width={60} height={40} className='aspect-square max-h-[320px] object-cover' onClick={() => handleChangeCurrentImage(itemPackage.thumb)} />
+          <ImageFallback src={itemPackage.thumb} alt='image' width={60} height={40} className='aspect-square max-h-[320px] object-cover' onClick={() => handleChangeCurrentImage(itemPackage.thumb)} />
         </div>
         <p className='font-light '>{itemPackage.title || ''}</p>
         <p className='font-light '>x {itemPackage.quantity || '1'}</p>
@@ -727,7 +693,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
         ) : (
           <div className='flex min-h-[300px] flex-col items-center justify-center gap-[16px]'>
             <div className='max-w-[150px]'>
-              <ImageFallback src={'/store/emptyCart.png'} alt='' width={307} height={240} className='object-cover' />
+              <ImageFallback src={'/store/emptyCart.png'} alt='image' width={307} height={240} className='object-cover' />
             </div>
             <p>{t('text20')}</p>
           </div>
@@ -786,7 +752,9 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
               <span className={`${errorInfo.address && infoCustomer.address === '' ? 'h-[10px] text-[1.2rem] text-red-500 opacity-100' : 'h-[10px] opacity-0'} `}>{t('text24')}</span>
             </div>
           </div>
-          <ButtonOreder onSubmit={handleSubmit} />
+          <Button onPress={handleSubmit} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium '>
+            {t('text25')}
+          </Button>
         </div>
       ) : (
         <></>
@@ -795,11 +763,32 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
   )
 })
 
-const ButtonOreder = memo(({ onSubmit }: { onSubmit: any }) => {
+const Bagde = memo(({ cartItems, setCartItems }: { cartItems: any[]; setCartItems: any }) => {
   const t = useTranslations('Store')
+
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
+  return null
   return (
-    <Button onPress={onSubmit} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium '>
-      {t('text25')}
-    </Button>
+    <>
+      <Button
+        onPress={onOpen}
+        variant='bordered'
+        className='h-[40px] items-center gap-[8px] border-[#FCB713] text-[1.6rem] text-[#FCB713]'
+        startContent={
+          <Badge
+            content={!!cartItems?.length || 0}
+            placement='top-right'
+            classNames={{
+              badge: 'bg-[#FF4343] text-white h-[16px] w-[16px] text-[1rem] right-[20%] top-[20%] border-0',
+            }}
+          >
+            <Bag2 size={24} />
+          </Badge>
+        }
+      >
+        {t('text29')}
+      </Button>
+      <DefaultModal isOpen={isOpen} onOpenChange={onOpenChange} hiddenHeader hiddenCloseBtn modalBody={<BodyCard cartItems={cartItems} setCartItems={setCartItems} onCloseCart={onClose} />} />
+    </>
   )
 })

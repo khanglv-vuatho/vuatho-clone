@@ -1,6 +1,6 @@
 'use client'
 
-import { memo, useEffect, useState } from 'react'
+import { memo, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
@@ -31,7 +31,9 @@ function PressDetail() {
   const [listMostView, setListMostView] = useState<any>([])
   const [detailPress, setDetailPress] = useState<any>({})
 
-  const listBreadcrumbs: IBreadcrumbWithUrl[] = [{ title: t('home'), url: '/' }, { title: t('acrticle'), url: `/${locale}/press` }, { title: detailPress?.title }]
+  const listBreadcrumbs: IBreadcrumbWithUrl[] = useMemo(() => {
+    return [{ title: t('home'), url: '/' }, { title: t('acrticle'), url: `/${locale}/press` }, { title: detailPress?.title }]
+  }, [])
 
   const ServerFetching = async () => {
     try {

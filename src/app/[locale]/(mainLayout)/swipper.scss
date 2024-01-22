@@ -4,21 +4,24 @@
   .swiper-button-prev {
     @apply left-0;
   }
+
   .swiper-button-next {
     @apply right-0;
   }
+
   .swiper-button-prev,
   .swiper-button-next {
-    @apply -bottom-[40px] top-auto z-20 hidden h-[50px] w-[50px] translate-y-1/2 items-center justify-center rounded-full bg-[#FCB713] text-base-black-1 md:flex lg:-bottom-[50px] xl:-bottom-[10%];
+    @apply -bottom-[30px] top-auto z-20 hidden size-[40px] translate-y-1/2 items-center justify-center rounded-full bg-[#FCB713] text-base-black-1 md:flex lg:-bottom-[50px] xl:-bottom-[12%] xl:size-[50px];
 
     &::after {
-      @apply text-[1.6rem];
+      @apply text-[1.2rem] xl:text-[1.6rem];
     }
 
     &.swiper-button-disabled {
       @apply bg-base-black-1/10;
     }
   }
+
   .swiper-wrapper {
     .swiper-slide {
       @apply md:pb-[180px] xl:pb-[108px];

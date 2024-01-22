@@ -30,7 +30,7 @@ export const HeaderWrapper = ({ children, style }: { children: React.ReactNode; 
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
 
   useEffect(() => {
-    var is_uiwebview = navigator.userAgent.includes('WebView')
+    const is_uiwebview = navigator.userAgent.includes('WebView')
     sIsWebview(is_uiwebview)
   }, [])
 
@@ -57,7 +57,9 @@ export const HeaderWrapper = ({ children, style }: { children: React.ReactNode; 
   if (isWebview) {
     return null
   }
+
   if (hiddenHeaderAndFooter) return null
+
   return (
     <header id='header' className={`header fixed left-0 right-0 z-[11] w-full bg-white transition ${isHeaderVisible ? 'translate-y-0 shadow-sm' : '-translate-y-[100%]'}`}>
       <div className={twMerge(`ct-container-70 flex h-[70px] items-center justify-between 3xl:h-[80px]`, style)}>{children}</div>
@@ -154,7 +156,7 @@ const RightNav = memo(() => {
             animate='animate'
             exit='exit'
             variants={menuVariants}
-            className='fixed bottom-0 left-0 right-0 top-[60px] z-10 flex h-[calc(100vh-60px)] origin-top flex-col items-start gap-6 overflow-auto bg-bg p-6'
+            className='fixed bottom-0 left-0 right-0 top-[60px] z-10 flex h-[calc(100vh-60px)] origin-top flex-col items-start gap-[16px] overflow-auto bg-bg p-[10px]'
           >
             <LinkList handleToggleMenu={handleToggleMenu} />
             <LangsComp />

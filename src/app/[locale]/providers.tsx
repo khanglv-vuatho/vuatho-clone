@@ -12,12 +12,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <Provider store={store}>
       <NextUIProvider>
         <NextThemesProvider attribute='class' defaultTheme='light'>
-          <ProgressBar
-            height='4px'
-            color='#3748A0'
-            options={{ showSpinner: true }}
-            shallowRouting
-          />
+          <ProgressBar height='4px' color='#3748A0' options={{ showSpinner: true }} shallowRouting />
           {children}
         </NextThemesProvider>
       </NextUIProvider>

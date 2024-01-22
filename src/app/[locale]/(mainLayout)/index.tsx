@@ -306,7 +306,7 @@ const MainSection = () => {
                 delay: 1.5,
               }}
             >
-              <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit pointer-events-none relative z-[1] select-none' />
+              <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit relative z-[1]' />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -315,7 +315,7 @@ const MainSection = () => {
                 duration: 0.5,
                 delay: 2.5,
               }}
-              className='absolute top-[460px] z-[0] object-contain md:top-0'
+              className='absolute top-[550px] z-[0] object-contain md:top-0'
             >
               <GlobeComponent />
             </motion.div>

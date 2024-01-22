@@ -42,6 +42,7 @@ const GlobeComponent = React.memo((props: any) => {
       'peru',
       'sienna',
     ]
+
     const arcsData: any = Array.from(Array(10).keys()).map(() => ({
       startLat: (Math.random() - 0.5) * 180,
       startLng: (Math.random() - 0.5) * 360,

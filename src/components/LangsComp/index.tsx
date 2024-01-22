@@ -194,7 +194,7 @@ const LangSelect = memo(({ lang, onClick }: { lang: any; onClick: any }) => {
           }}
         />
       </div>
-      <div className='grid max-h-[70vh] grid-cols-1 gap-1 overflow-x-hidden overflow-y-scroll py-2 lg:max-h-[400px]'>
+      <div className='grid max-h-[calc(100vh-300px)] grid-cols-1 gap-1 overflow-x-hidden overflow-y-scroll py-2 lg:max-h-[400px]'>
         {langs
           .filter((itemFilter) => normalizeKeyword(itemFilter.label).includes(normalizeKeyword(searchLang)))
           .map((item) => (
@@ -239,7 +239,7 @@ const CurrencySelect = memo(({ currency, selectCurrency, onClick }: { currency: 
           }}
         />
       </div>
-      <div className='grid max-h-[70vh] grid-cols-1 gap-1 overflow-y-scroll py-2 lg:max-h-[400px] lg:min-w-[236px]'>
+      <div className='grid  max-h-[calc(100vh-300px)] grid-cols-1 gap-1 overflow-y-scroll py-2 lg:max-h-[400px] lg:min-w-[236px]'>
         {currency
           .filter((item: any) => `${item.code} ${item.name} ${item.symbol}`.toLowerCase().includes(searchCurrency.toLowerCase().trim()))
           ?.map((x: any) => ({
