@@ -547,6 +547,7 @@ const QuantityControl = memo(({ minQuanlity, quantity, setQuantity }: { quantity
       setQuantity(quantity - 1)
     }
   }, [quantity])
+
   const _HandleIncrease = useCallback(() => setQuantity(quantity <= 9 ? quantity + 1 : quantity), [quantity])
 
   return (
@@ -604,6 +605,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
       setInfoCustomer({ ...infoCustomer, [type]: value?.target.value })
     }
   }
+
   const handleSubmit = () => {
     const checkError = {
       name: infoCustomer.name === '' ? true : false,
@@ -665,6 +667,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
       setOnSending(false)
     }
   }
+
   useEffect(() => {
     onSending && _HandlePostCart()
   }, [onSending])
