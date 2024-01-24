@@ -1,12 +1,12 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-
 import { Accordion, AccordionItem, Image, Tab, Tabs } from '@nextui-org/react'
 
 import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'
+import { memo } from 'react'
 
-const SectionTest = () => {
+const SectionTest = memo(() => {
   const t = useTranslations('FindWorker')
   const tabs = [
     {
@@ -27,39 +27,36 @@ const SectionTest = () => {
   ]
   return (
     <div className='flex w-full flex-col'>
-      <div className='hidden md:block'>
+      <div className='hidden lg:block'>
         <Tabs
-          aria-label='Dynamic tabs'
+          aria-label='Find Woker Tabs'
           items={tabs}
           variant='light'
           classNames={{
             tabList: 'gap-6 w-full relative rounded-none py-2',
             cursor: 'w-full bg-[#405AB7]',
             tab: 'max-w-fit px-[20px] py-[30px] flex items-center justify-center bg-[#F8F8F8]',
-            tabContent:
-              'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
+            tabContent: 'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
           }}
         >
           {(item) => (
             <Tab key={item.id} title={item.label}>
-              <div className='rounded-2xl border-[1px] border-[#E1E1E1] p-[20px]'>
-                {item.content}
-              </div>
+              <div className='rounded-2xl border-[1px] border-[#E1E1E1] p-[20px]'>{item.content}</div>
             </Tab>
           )}
         </Tabs>
       </div>
-      <div className='block md:hidden'>
+      <div className='block lg:hidden'>
         <Accordion
           className='gap-5'
           itemClasses={{
             base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]',
           }}
         >
-          {tabs.map((i: any, index: any) => (
+          {tabs.map((item: any, index: any) => (
             <AccordionItem
-              key={`tab-find-worker-${i.id}`}
-              aria-label={i.label}
+              key={`tab-find-worker-${item.id}`}
+              aria-label={item.label}
               title={
                 <p
                   onClick={() =>
@@ -68,7 +65,7 @@ const SectionTest = () => {
                     })
                   }
                 >
-                  {i.label}
+                  {item.label}
                 </p>
               }
               classNames={{
@@ -78,22 +75,22 @@ const SectionTest = () => {
                 base: 'group-[.is-splitted]:pl-12',
               }}
             >
-              {i.content}
+              {item.content}
             </AccordionItem>
           ))}
         </Accordion>
       </div>
     </div>
   )
-}
+})
 
-const Step1 = () => {
+const Step1 = memo(() => {
   const t = useTranslations('FindWorker')
 
   return (
     <div className='flex-col gap-[20px] rounded-lg border-2 border-base-gray p-6 md:flex md:border-none md:p-0'>
       <h3 className='text-[1.8rem] font-semibold text-[#405AB7]'>{t('text4')}</h3>
-      <div className='mt-8 flex flex-col items-center gap-10 md:flex-row'>
+      <div className='mt-8 flex flex-col gap-10 md:flex-row md:items-center'>
         <div className='space-y-10'>
           <div>
             <h4 className='mb-2 whitespace-nowrap text-[1.8rem]'>{t('text5')}</h4>
@@ -104,16 +101,16 @@ const Step1 = () => {
             <IosBtn />
           </div>
         </div>
-        <span className='text-[1.8rem] text-black/50 3xl:text-[1.8rem]'>
-          {t('text7')}
-        </span>
-        <QrCode />
+        <span className='text-[1.8rem] text-black/50 3xl:text-[1.8rem]'>{t('text7')}</span>
+        <div>
+          <QrCode />
+        </div>
       </div>
     </div>
   )
-}
+})
 
-const Step2 = () => {
+const Step2 = memo(() => {
   const t = useTranslations('FindWorker')
 
   const tabs = [
@@ -133,15 +130,14 @@ const Step2 = () => {
       <h3 className='text-[1.8rem] font-semibold text-[#405AB7]'>{t('text10')}</h3>
       <div className='hidden w-full gap-[20px] lg:flex'>
         <Tabs
-          aria-label='Dynamic tabs'
+          aria-label='Option Login Logout Tabs'
           items={tabs}
           variant='light'
           classNames={{
             tabList: 'gap-6 w-full relative rounded-none py-2 flex-col',
             cursor: 'w-full bg-[#405AB7]',
             tab: 'xl:min-w-[300px] min-w-[100px] p-[24px] flex items-center justify-start border-[1px] border-[#E1E1E1]',
-            tabContent:
-              'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
+            tabContent: 'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
           }}
         >
           {(item) => (
@@ -157,73 +153,66 @@ const Step2 = () => {
       </div>
     </div>
   )
-}
+})
 
-const Step3 = () => {
+const Step3 = memo(() => {
   const t = useTranslations('FindWorker')
 
   const listRegisterItem = [
     {
-      url: 'findWorker1.png',
+      thumb: 'findWorker1.png',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold'>{t('text11')}</p>
+          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text11')}</p>
           <p className='text-[1.8rem]'>{t('text30')}</p>
         </>
       ),
     },
     {
-      url: 'findWorker2.png',
+      thumb: 'findWorker2.png',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold'>{t('text14')}</p>
+          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text14')}</p>
           <p className='text-[1.8rem]'>{t('text31')}</p>
-          <ul className='list-inside list-disc text-[1.8rem]'>
-            <li>{t('text32')}</li>
-            <li>{t('text33')}</li>
-            <li>{t('text34')}</li>
-            <li>{t('text35')}</li>
-          </ul>
         </>
       ),
     },
     {
-      url: 'findWorker3.png',
+      thumb: 'findWorker3.png',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold'>{t('text17')}</p>
+          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text17')}</p>
           <p className='text-[1.8rem]'>{t('text36')}</p>
-          <p className='text-[1.8rem]'>{t('text37')}</p>
         </>
       ),
     },
     {
-      url: 'findWorker4.png',
+      thumb: 'findWorker4.png',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold'>{t('text20')}</p>
+          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text20')}</p>
           <p className='text-[1.8rem]'>{t('text38')}</p>
           <p className='text-[1.8rem]'>{t('text39')}</p>
         </>
       ),
     },
     {
-      url: 'findWorker5-1.png',
-      url2: 'findWorker5-2.png',
+      thumb: 'findWorker5-1.png',
+      thumb2: 'findWorker5-2.png',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold'>{t('text28')}</p>
+          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text28')}</p>
           <p className='text-[1.8rem]'>{t('text40')}</p>
           <p className='text-[1.8rem]'>{t('text41')}</p>
         </>
       ),
     },
     {
-      url: 'findWorker6-1.png',
-      url2: 'findWorker6-2.png',
+      thumb: 'findWorker6-1.png',
+      thumb2: 'findWorker6-2.png',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold'>{t('text29')}</p>
+          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text29')}</p>
           <p className='text-[1.8rem]'>{t('text42')}</p>
           <p className='text-[1.8rem]'>{t('text43')}</p>
         </>
@@ -235,23 +224,23 @@ const Step3 = () => {
     <div className='rounded-lg border-2 border-base-gray p-6 md:border-none md:p-0'>
       <h3 className='text-[1.8rem] font-semibold text-[#405AB7]'>{t('text44')}</h3>
       <p className='my-[20px] text-[1.8rem]'>{t('text45')}</p>
-      <div className='grid gap-10 md:grid-cols-2 2xl:gap-y-20'>
-        {listRegisterItem.map((i, index) => (
-          <RegisterItem url={i.url} key={i.url} url2={i.url2} index={index}>
-            {i.content}
+      <div className='grid gap-[40px] lg:grid-cols-2'>
+        {listRegisterItem.map((item) => (
+          <RegisterItem thumb={item.thumb} key={item.thumb} thumb2={item.thumb2}>
+            {item.content}
           </RegisterItem>
         ))}
       </div>
     </div>
   )
-}
+})
 
-const Register: any = () => {
+const Register: any = memo(() => {
   const t = useTranslations('FindWorker')
 
   const listRegisterItem = [
     {
-      url: 'screen1.png',
+      thumb: 'screen1.png',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold'>{t('text11')}</p>
@@ -261,7 +250,7 @@ const Register: any = () => {
       ),
     },
     {
-      url: 'screen2.png',
+      thumb: 'screen2.png',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold'>{t('text14')}</p>
@@ -271,7 +260,7 @@ const Register: any = () => {
       ),
     },
     {
-      url: 'screen3.png',
+      thumb: 'screen3.png',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold'>{t('text17')}</p>
@@ -283,7 +272,7 @@ const Register: any = () => {
       ),
     },
     {
-      url: 'screen4.png',
+      thumb: 'screen4.png',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold'>{t('text20')}</p>
@@ -294,29 +283,25 @@ const Register: any = () => {
   ]
 
   return (
-    <div className=''>
-      <h5 className='mb-10 block w-full rounded-lg bg-primary-blue py-6 pl-6 text-[2.5rem] text-white lg:hidden'>
-        {t('text8')}
-      </h5>
+    <div>
+      <h5 className='mb-10 block w-full rounded-lg bg-primary-blue py-2 pl-6 text-[2.2rem] text-white lg:hidden'>{t('text8')}</h5>
       <div className='grid gap-10 md:grid-cols-2'>
-        {listRegisterItem.map((i) => (
-          <RegisterItem url={i.url} key={i.url}>
-            {i.content}
+        {listRegisterItem.map((item) => (
+          <RegisterItem thumb={item.thumb} key={item.thumb}>
+            {item.content}
           </RegisterItem>
         ))}
       </div>
     </div>
   )
-}
+})
 
-const Login = () => {
+const Login = memo(() => {
   const t = useTranslations('FindWorker')
 
   return (
     <>
-      <h5 className='mb-10 w-full rounded-lg bg-primary-blue py-6 pl-6 text-[2.5rem] text-white lg:hidden'>
-        {t('text9')}
-      </h5>
+      <h5 className='mb-10 w-full rounded-lg bg-primary-blue py-2 pl-6 text-[2.2rem] text-white lg:hidden'>{t('text9')}</h5>
       <p className='text-[1.8rem]'>{t('text22')}</p>
       <p className='my-4'>
         <strong className='text-[1.8rem]'> {t('text23')}</strong>
@@ -328,90 +313,36 @@ const Login = () => {
         <li> {t('text27')}</li>
       </ul>
       <div className='mt-[20px] flex'>
-        <Image
-          src='/find-worker/loginScreen1.png'
-          alt=''
-          width={220}
-          height={420}
-          className='pointer-events-none'
-        />
-        <Image
-          src='/find-worker/loginScreen2.png'
-          alt=''
-          width={220}
-          height={420}
-          className='pointer-events-none'
-        />
-        <Image
-          src='/find-worker/loginScreen3.png'
-          alt=''
-          width={220}
-          height={420}
-          className='pointer-events-none'
-        />
+        <Image src='/find-worker/loginScreen1.png' alt={`find-worker-loginScreen1`} width={220} height={420} className='pointer-events-none' />
+        <Image src='/find-worker/loginScreen2.png' alt={`find-worker-loginScreen2`} width={220} height={420} className='pointer-events-none' />
+        <Image src='/find-worker/loginScreen3.png' alt={`find-worker-loginScreen3`} width={220} height={420} className='pointer-events-none' />
       </div>
     </>
   )
-}
+})
 
-const RegisterItem = ({
-  children,
-  url,
-  url2,
-  index,
-}: {
-  children: any
-  url: any
-  url2?: any
-  index?: number
-}) => {
+const RegisterItem = memo(({ children, thumb, thumb2 }: { children: any; thumb: any; thumb2?: any }) => {
   return (
-    <div
-      className={`${
-        index == 4 || index == 5 ? 'md:col-span-2 xl:col-span-1' : 'col-span-1'
-      } flex flex-col items-center justify-between gap-[20px] md:flex-row`}
-    >
-      <div
-        className={`flex flex-col gap-4 text-[#282828] ${url2 ? 'md:max-w-[55%]' : ''}`}
-      >
-        {children}
-      </div>
-      {url2 ? (
+    <div className={`flex flex-col justify-between gap-[20px] md:col-span-2 md:flex-row xl:col-span-1`}>
+      <div className={`flex flex-col gap-4 text-[#282828] ${thumb2 ? 'md:max-w-[55%]' : ''}`}>{children}</div>
+      {thumb2 ? (
         <div className='flex w-fit flex-col gap-10 md:flex-row md:gap-2'>
           <div className='w-[180px]'>
-            <Image
-              src={`/find-worker/${url}`}
-              alt=''
-              width={220}
-              height={300}
-              className='pointer-events-none h-full w-full'
-            />
+            <Image src={`/find-worker/${thumb}`} alt={`find-worker-${thumb}`} width={220} height={300} className='pointer-events-none h-full w-full' />
           </div>
           <div className='w-[180px]'>
-            <Image
-              src={`/find-worker/${url2}`}
-              alt=''
-              width={220}
-              height={300}
-              className='pointer-events-none h-full w-full'
-            />
+            <Image src={`/find-worker/${thumb2}`} alt={`find-worker-${thumb2}`} width={220} height={300} className='pointer-events-none h-full w-full' />
           </div>
         </div>
       ) : (
         <div className='flex w-fit justify-start md:justify-end'>
           <div className='w-[180px]'>
-            <Image
-              src={`/find-worker/${url}`}
-              alt=''
-              width={220}
-              height={300}
-              className='pointer-events-none'
-            />
+            <Image src={`/find-worker/${thumb}`} alt={`find-worker-${thumb}`} width={220} height={300} className='pointer-events-none h-full w-full' />
           </div>
         </div>
       )}
     </div>
   )
-}
+})
 
-export default SectionTest
+export default memo(SectionTest)

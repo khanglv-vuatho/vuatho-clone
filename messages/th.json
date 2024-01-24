@@ -29,8 +29,8 @@
     "text2": "หรือสแกนรหัส QR ด้านล่าง"
   },
   "Footer": {
-    "address": "57 ถนนส่งหาน, ตำบลอ่านภู, เทศบาลนครธุรกิจ,",
-    "location": "เมืองโฮชิมินห์, เวียดนาม.",
+    "address": "บริษัท จำกัด ทางเทคโนโลยี Vua Thợ",
+    "location": "เมืองโฮชิมินห์, เวียดนาม",
     "our_partner": "พันธมิตรของเรา",
     "about_vuatho": "เกี่ยวกับ Vua Thợ",
     "about_us": "เกี่ยวกับเรา",
@@ -362,7 +362,7 @@
     "numberGoal": "100,000 +",
     "textGold": "ช่างและผู้ใช้ทั่วประเทศภายในปี 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "ติดต่อเรา",
     "address1": "57 ท Song Hanh, ตำบล An Phu, นคร Thu Duc,",
     "address2": "เมืองโฮจิมินห์, เวียดนาม",
@@ -370,7 +370,7 @@
     "timeDay": "จันทร์ถึงศุกร์",
     "text": "ไม่มีบริการในวันเสาร์ วันอาทิตย์ และวันหยุดราชการ",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "คู่มือการลงทะเบียนเป็นผู้ให้บริการ",
@@ -386,6 +386,7 @@
     "text10": "รายละเอียดไม่ยุติธรรมและชัดเจนของเอกสาร",
     "text11": "บัตรประจำตัวประชาชน",
     "text12": "หนังสือเดินทาง",
+    "text12-1": "ใบขับขี่",
     "text13": "ข้อกำหนดทั่วไปของเอกสาร",
     "text14": "เตรียมเอกสารอย่างน้อยหนึ่งในสองประเภท",
     "text15": "ดาวน์โหลดแอพ Vua Thợ",
@@ -398,6 +399,7 @@
     "text22": "ลูกค้า",
     "text23": "หากคุณต้องการค้นหาบริการ/ผู้ให้บริการ",
     "text24": "หากคุณต้องการให้บริการและค้นหางาน",
+    "text25": "“ช่าง” หากคุณต้องการให้บริการและกำลังมองหางาน.",
     "text26": "ผู้ให้บริการบริการ",
     "text27": "บทบาททั้งสองนี้ได้รับการรวมเข้าด้วยกันและใช้งานในแอพ Vua Thợ",
     "text28": "เป็นผู้ใช้ใหม่ พวกเขาควรเลือก",
@@ -426,7 +428,24 @@
     "text51": "หลังจากที่ทำขั้นตอนด้านบนเสร็จสมบูรณ์ รอให้ระบบตรวจสอบบัญชีของคุณและให้คำแนะนำเร็วที่สุด",
     "text52": "การตอบสนองของระบบจะรวมถึง:",
     "text53": "ผู้ใช้สามารถใช้คุณสมบัติและบริการทั้งหมดของแอพได้",
-    "text54": "ผู้ใช้จะต้องทำการยืนยันตัวตนอีกครั้งเพื่อเข้าถึงคุณสมบัติและบริการทั้งหมดของแอพ"
+    "text54": "ผู้ใช้จะต้องทำการยืนยันตัวตนอีกครั้งเพื่อเข้าถึงคุณสมบัติและบริการทั้งหมดของแอพ",
+    "text55": "เตรียมเอกสารครบถ้วน",
+    "text56": "หรือสแกนรหัส QR",
+    "text57": "ผู้ใช้สามารถดาวน์โหลดแอป Vua Thợ จาก App Store หรือ CH Play",
+    "text59": "เลือก 'ลูกค้า' หากคุณต้องการค้นหาบริการ/ช่าง",
+    "text61": "ระบบต้องการให้กรอกหมายเลขโทรศัพท์และรหัสประเทศของหมายเลขโทรศัพท์",
+    "text65": "ผู้ใช้เพียงทำ eKYC ตัวตนเพียง 1 ครั้งกับบัญชี 1 ครั้งเมื่อสลับบัญชี (ช่าง → ลูกค้า/ลูกค้า → ช่าง) จะไม่ต้องทำ eKYC ตัวตนอีกครั้ง",
+    "text66": "ผู้ใช้สามารถทำ eKYC ได้เองในส่วนบัญชีที่แสดงด้านบนหรือระบบจะแนะนำการทำเมื่อเปิดดูแอปโดยใช้บัญชีที่ยังไม่ได้ทำ eKYC",
+    "text67": "แอป Vua Thợร่วมมือกับ SumSub เพื่อดำเนินการตรวจสอบบัญชีออนไลน์ กระบวนการตรวจสอบต้องการผู้ใช้ให้ข้อมูลต่อไปนี้:",
+    "text68": "ประเทศที่อาศัย",
+    "text69": "เอกสารที่เกี่ยวข้องกับตัวตน (ผู้ใช้เลือก 1 ในประเภทเอกสารเพื่อการยืนยัน)",
+    "text70": "บัตรประจำตัวประชาชน",
+    "text71": "ทะเบียนบ้าน",
+    "text72": "ใบขับขี่",
+    "text73": "หลังจากเลือกประเทศและประเภทของเอกสารตัวตนที่เกี่ยวข้อง ระบบจะขอให้ผู้ใช้ถ่ายรูปด้านหลังและด้านหน้าของเอกสารที่เลือก (แนะนำให้ใช้บัตรประจำตัวประชาชน - CCCD ในเวียดนาม) จากนั้นจะถ่ายรูปเซลฟีตามคำแนะนำจากบุคคลที่สาม SumSub",
+    "text74": "หลังจากทำการตรวจสอบตัวตนเสร็จสมบูรณ์ ระบบจะให้ผลการตรวจสอบโดยประมาณในเวลาไม่เกิน 5 นาที ผลลัพธ์จะประกอบด้วย:",
+    "text75": "การยืนยันสำเร็จ: ผู้ใช้สามารถใช้บริการและคุณลักษณะทั้งหมดของแอปได้",
+    "text76": "การยืนยันล้มเหลว: ผู้ใช้ต้องทำการยืนยันอีกครั้งเพื่อให้สามารถใช้บริการและคุณลักษณะทั้งหมดของแอป"
   },
   "FindWorker": {
     "heading": "วิธีการค้นหาคนงานบน Vua Thợ",
@@ -459,13 +478,9 @@
     "text27": "ป้อนรหัส OTP ที่ระบบส่งทาง SMS",
     "text28": "ขั้นตอนที่ 5",
     "text29": "ขั้นตอนที่ 6",
-    "text30": "คลิกที่ไอคอน 'ค้นหาคนงาน' ด้านล่างแถบนำทางเพื่อเปิดหน้าค้นหาคนงาน",
-    "text31": "ลูกค้าสามารถเพิ่มรายละเอียดในคำขอคนงานของพวกเขา",
-    "text32": "บริการ",
-    "text33": "คำอธิบายงานอย่างละเอียด",
-    "text34": "ช่วงเวลา",
-    "text35": "รูปภาพ - วิดีโอ - คำอธิบาย (หากมี)",
-    "text36": "คลิกค้นหาคนงานและยืนยันข้อมูล",
+    "text30": "คลิกที่ไอคอน 'Vua Thợ AI' เพื่อเริ่มการค้นหาช่างโดยใช้ผู้ช่วย AI",
+    "text31": "สนทนากับ AI เพื่อยืนยันคำสั่ง",
+    "text36": "ยืนยันข้อมูลอีกครั้งและกดค้นหาช่าง",
     "text37": "หลังจากตรวจสอบข้อมูลอีกครั้ง คลิกปุ่มยืนยันเพื่อเริ่มการค้นหาคนงาน",
     "text38": "หลังจากยืนยันในขั้นตอนที่ 3 หน้าจอจะเปลี่ยนเป็นแผนที่เพื่อเริ่มการค้นหาคนงาน",
     "text39": "เมื่อคนงานให้ราคา ระบบจะแจ้งให้ลูกค้าทราบ ลูกค้าสามารถเลือกคนงานที่เหมาะสมได้โดยคลิกดูรายละเอียดเพื่อดูข้อมูลคนงานและราคา",
@@ -506,7 +521,10 @@
     "text23": "โปรดป้อนชื่อ",
     "text24": "โปรดป้อนที่อยู่",
     "text25": "ยืนยันข้อมูลการสั่งซื้อ",
-    "text26": "ที่อยู่สำหรับการจัดส่ง"
+    "text26": "ที่อยู่สำหรับการจัดส่ง",
+    "text27": "จำนวน",
+    "text28": "เลือกขนาด",
+    "text29": "ตะกร้า"
   },
   "Map": {
     "text1": "ผู้ใช้แอปพลิเคชัน",
@@ -724,12 +742,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -854,7 +872,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -869,5 +887,10 @@
     "worker": "ผู้ให้บริการ",
     "customer": "ลูกค้า",
     "industry": "อุตสาหกรรม"
+  },
+  "Extra": {
+    "text": "การสัญญา",
+    "text1": "ข้อตกลง",
+    "text2": "การร่วมมือ"
   }
 }

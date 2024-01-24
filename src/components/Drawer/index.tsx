@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect } from 'react'
 
 import { Add as AddIcon } from 'iconsax-react'
 import { Button } from '@nextui-org/react'
-import Image from 'next/image'
 
 type DrawerType = {
   isOpen: boolean
@@ -15,15 +14,7 @@ type DrawerType = {
   header: React.ReactNode
 }
 
-const Drawer: React.FC<DrawerType> = ({
-  isOpen,
-  setIsOpen,
-  title,
-  children,
-  onClose,
-  isBgWhite,
-  header,
-}) => {
+const Drawer: React.FC<DrawerType> = ({ isOpen, setIsOpen, title, children, onClose, isBgWhite, header }) => {
   useEffect(() => {
     const handleKeyDown = (event: any) => {
       if (event.nativeEvent) {
@@ -42,22 +33,16 @@ const Drawer: React.FC<DrawerType> = ({
   }, [])
 
   return (
-    <div
-      className={`${
-        isOpen ? 'translate-y-[50%]' : 'translate-y-[100%]'
-      }  fixed bottom-0 right-0 top-0 z-10 flex w-full flex-col ${
-        isBgWhite ? 'bg-white' : 'bg-[#4770FF]'
-      } transition`}
-    >
+    <div className={`${isOpen ? 'translate-y-[50%]' : 'translate-y-[100%]'}  fixed bottom-0 right-0 top-0 z-10 flex w-full flex-col ${isBgWhite ? 'bg-white' : 'bg-[#4770FF]'} transition`}>
       <div className='flex items-center justify-between p-4'>
         {header}
         <Button isIconOnly onClick={() => setIsOpen(false)} className='bg-transparent'>
           <AddIcon className='rotate-45 text-white' />
         </Button>
       </div>
-      <div className=''>{children}</div>
+      <div>{children}</div>
     </div>
   )
 }
 
-export default Drawer
+export default memo(Drawer)

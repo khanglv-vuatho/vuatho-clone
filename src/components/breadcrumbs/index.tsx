@@ -1,9 +1,11 @@
 'use client'
 
-import { BreadcrumbWithUrl } from '@/interface'
+import { memo } from 'react'
 import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/breadcrumbs'
 
-export const ListBreadcrumbs = ({ list }: { list: BreadcrumbWithUrl[] }) => {
+import { IBreadcrumbWithUrl } from '@/interface'
+
+export const ListBreadcrumbs = memo(({ list }: { list: IBreadcrumbWithUrl[] }) => {
   return (
     <Breadcrumbs
       underline='hover'
@@ -16,20 +18,16 @@ export const ListBreadcrumbs = ({ list }: { list: BreadcrumbWithUrl[] }) => {
         separator: 'text-[2.4rem] text-white font-light',
       }}
     >
-      {list.map((i) => (
-        <BreadcrumbItem key={i.title} href={i?.url}>
-          {i.title}
+      {list.map((item) => (
+        <BreadcrumbItem key={item?.title} href={item?.url}>
+          {item?.title}
         </BreadcrumbItem>
       ))}
     </Breadcrumbs>
   )
-}
+})
 
-export const ListBreadcrumbsForDetailPress = ({
-  list,
-}: {
-  list: BreadcrumbWithUrl[]
-}) => {
+export const ListBreadcrumbsForDetailPress = memo(({ list }: { list: IBreadcrumbWithUrl[] }) => {
   return (
     <Breadcrumbs
       underline='hover'
@@ -42,13 +40,11 @@ export const ListBreadcrumbsForDetailPress = ({
         separator: 'text-[2.4rem] text-[#C9C9C9]',
       }}
     >
-      {list.map((i) => (
-        <BreadcrumbItem key={i.title} href={i?.url}>
-          {i.title}
-          <div className='class="flex text-[1.8rem]" line-clamp-1 cursor-default items-center gap-1 whitespace-nowrap text-foreground no-underline outline-none transition-opacity tap-highlight-transparent data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-offset-2 data-[focus-visible=true]:outline-focus'></div>
-          <div className='line-clamp-1 flex cursor-pointer items-center gap-1 whitespace-nowrap text-[1.8rem] text-foreground/50 outline-none transition-opacity tap-highlight-transparent hover:underline hover:opacity-80 active:opacity-disabled data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-offset-2 data-[focus-visible=true]:outline-focus'></div>
+      {list.map((item, index) => (
+        <BreadcrumbItem key={`details-${index}`} href={item?.url}>
+          {item?.title}
         </BreadcrumbItem>
       ))}
     </Breadcrumbs>
   )
-}
+})

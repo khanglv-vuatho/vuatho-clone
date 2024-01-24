@@ -1,7 +1,6 @@
-import { memo } from 'react'
+import { useTranslations } from 'next-intl'
 
 import BackgroundRelative from '@/components/BackgroundRelative'
-import { useTranslations } from 'next-intl'
 import FaqSection from './(sections)/faqSection'
 
 export async function generateMetadata({ params }: { params?: any }) {
@@ -26,11 +25,11 @@ function Faq() {
   const t = useTranslations('Footer')
 
   return (
-    <div className=''>
+    <div>
       <BackgroundRelative text={t('faq')} />
       <FaqSection />
     </div>
   )
 }
 
-export default memo(Faq)
+export default Faq

@@ -1,13 +1,12 @@
-import { Metadata } from 'next'
+import { useTranslations } from 'next-intl'
 
 import BackgroundRelative from '@/components/BackgroundRelative'
 import SectionStep from './(sections)/sectionStep'
-import { useTranslations } from 'next-intl'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
     const metadata: any = {
-      vi: 'Trở thành thợ',
+      vi: 'Trở thành Thợ',
       en: 'Become worker',
     }
     const description: any = {
@@ -28,7 +27,7 @@ const BeComeEmployee = () => {
   const t = useTranslations('Footer')
 
   return (
-    <div className=''>
+    <div>
       <BackgroundRelative text={t('become_worker')} />
       <SectionStep />
     </div>

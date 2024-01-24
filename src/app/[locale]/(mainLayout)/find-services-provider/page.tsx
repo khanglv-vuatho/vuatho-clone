@@ -1,10 +1,11 @@
 import { useTranslations } from 'next-intl'
+
 import SectionTest from './(sections)/sectionStep'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
     const metadata: any = {
-      vi: 'Tìm thợ',
+      vi: 'Tìm Thợ',
       en: 'Find worker',
     }
     const description: any = {

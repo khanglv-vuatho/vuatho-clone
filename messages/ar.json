@@ -30,7 +30,7 @@
   },
   "Footer": {
     "address": "57 Song Hanh، الحي أن فو، مدينة ثو دوك،",
-    "location": "مدينة هوشي منه، فيتنام.",
+    "location": "مدينة هوشي منه، فيتنام",
     "our_partner": "شركاؤنا",
     "about_vuatho": "عن Vua Thợ",
     "about_us": "عنا",
@@ -43,7 +43,7 @@
     "contact_us": "اتصل بنا",
     "sending": "إرسال الإشعارات إلى",
     "BCT": "وزارة الصناعة والتجارة",
-    "text": "شركة تقنية محدودة المسؤولية ملك الحرفيين",
+    "text": "شركة تكنولوجيا Vua Thợ",
     "text1": "الرقم الضريبي: "
   },
   "NotFound": {
@@ -361,7 +361,7 @@
     "numberGoal": "100,000 +",
     "textGold": "حرفيين ومستخدمين على مستوى الوطن بحلول عام 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "اتصل بنا",
     "address1": "57 شارع هان سونغ، حي آن فو، مدينة تو دوك،",
     "address2": "مدينة هوشي منه، فيتنام.",
@@ -369,7 +369,7 @@
     "timeDay": "من الاثنين إلى الجمعة",
     "text": "لا يتم دعم الاستفسارات يومي السبت والأحد وأيام العطل الرسمية",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "دليل للتسجيل كمقدم خدمة",
@@ -385,6 +385,7 @@
     "text10": "علامات خشبية واضحة ومميزة",
     "text11": "بطاقة الهوية الوطنية",
     "text12": "جواز السفر",
+    "text12-1": "رخصة القيادة",
     "text13": "متطلبات الوثائق العامة",
     "text14": "استعد أحد النوعين من الوثائق",
     "text15": "قم بتنزيل تطبيق Vua Thợ",
@@ -397,6 +398,7 @@
     "text22": "العميل",
     "text23": "إذا كنت ترغب في البحث عن الخدمات/مقدمي الخدمات.",
     "text24": "إذا كنت ترغب في تقديم الخدمات والبحث عن وظائف.",
+    "text25": "“عامل” إذا كنت ترغب في تقديم خدمات والبحث عن وظيفة.",
     "text26": "مقدم الخدمة",
     "text27": "كلا الدورين متكاملين ويتم استخدامهما داخل تطبيق Vua Thợ.",
     "text28": "كمستخدمين جدد، يجب عليهم اختيار",
@@ -425,7 +427,24 @@
     "text51": "بعد إكمال الخطوات أعلاه، انتظر حتى يراجع النظام حسابك ويقدم تعليقًا في أقرب وقت ممكن.",
     "text52": "سيتضمن رد النظام ما يلي:",
     "text53": "يمكن للمستخدمين استخدام جميع ميزات وخدمات التطبيق",
-    "text54": "يجب على المستخدمين إجراء التحقق من الهوية مرة أخرى للوصول إلى جميع ميزات وخدمات التطبيق"
+    "text54": "يجب على المستخدمين إجراء التحقق من الهوية مرة أخرى للوصول إلى جميع ميزات وخدمات التطبيق",
+    "text55": "إعداد الوثائق الكافية",
+    "text56": "أو امسح رمز الاستجابة السريعة",
+    "text57": "قام المستخدمون بتنزيل تطبيق Vua Thợ من App Store أو CH Play.",
+    "text59": "اختر 'زائر' إذا كنت ترغب في البحث عن خدمة / فني.",
+    "text61": "يتطلب النظام إدخال رقم الهاتف ورمز بلد رقم الهاتف.",
+    "text65": "يتعين على المستخدمين إجراء تحقق هوية eKYC مرة واحدة مع حساب واحد فقط، عند التبديل بين الحسابات (فني → زائر/زائر → فني) لا يلزم إجراء تحقق هوية eKYC للمرة الثانية.",
+    "text66": "يمكن للمستخدمين إجراء تحقق هوية eKYC بنشاط في قسم الحساب الذي يظهر في أعلى الصفحة أو يتم إرشادهم من قبل النظام عند تصفح التطبيق باستخدام حساب لم يتم فيه التحقق من الهوية مسبقًا.",
+    "text67": "تتعاون تطبيق Vua Thợ مع SumSub لتنفيذ تحقق الهوية عبر الإنترنت. يتطلب تحقق الهوية من المستخدمين توفير المعلومات التالية:",
+    "text68": "بلد الإقامة",
+    "text69": "وثائق هوية ذات صلة (يختار المستخدم واحدة من أنواع الوثائق للتحقق)",
+    "text70": "بطاقة الهوية",
+    "text71": "سجل الأسرة",
+    "text72": "رخصة القيادة",
+    "text73": "بعد اختيار بلد الإقامة ونوع وثيقة الهوية ذات الصلة، يطلب النظام من المستخدمين التقاط صورة لوجهين للوثيقة المختارة (يفضل استخدام بطاقة الهوية الوطنية في فيتنام). ثم يقومون بالتقاط صورة شخصية وفقًا لتوجيهات SumSub.",
+    "text74": "بعد الانتهاء من عملية التحقق من الهوية، سيقدم النظام نتائج مؤقتة في غضون 5 دقائق، وستشمل نتائج النظام:",
+    "text75": "تحقق ناجح: يمكن للمستخدمين استخدام جميع الخدمات والميزات في التطبيق.",
+    "text76": "فشل التحقق: يجب على المستخدمين إعادة التحقق لاستخدام جميع الخدمات والميزات في التطبيق."
   },
   "FindWorker": {
     "heading": "كيفية العثور على العمال على تطبيق Vua Thợ",
@@ -458,13 +477,9 @@
     "text27": "إدخال رمز OTP الذي تم إرساله من قبل النظام عبر الرسائل النصية",
     "text28": "الخطوة 5",
     "text29": "الخطوة 6",
-    "text30": "انقر على أيقونة 'البحث عن العمال' أسفل شريط التنقل لفتح صفحة البحث عن العمال",
-    "text31": "يمكن للعملاء إضافة تفاصيل إلى طلبهم للعاملين",
-    "text32": "الخدمة",
-    "text33": "وصف الوظيفة التفصيلي",
-    "text34": "الإطار الزمني",
-    "text35": "الصور - الفيديو - الوصف (إذا كان متاحًا)",
-    "text36": "انقر على البحث عن العمال وقم بتأكيد المعلومات",
+    "text30": "انقر على رمز \"ملك الحرفيين الذكي\" لبدء البحث عن حرفي باستخدام مساعد الذكاء الاصطناعي",
+    "text31": "تحدث مع الذكاء الاصطناعي لتأكيد الطلب",
+    "text36": "قم بتأكيد المعلومات مرة أخرى واضغط على البحث عن حرفي",
     "text37": "بعد التحقق من المعلومات في الخطوة 3، ستتغير الشاشة إلى الخريطة لبدء البحث عن العمال",
     "text39": "عندما يقدم العامل عرضًا، سيقوم النظام بإخطار العميل. يمكن للعملاء اختيار عامل مناسب عن طريق النقر فوق عرض التفاصيل لرؤية معلومات العامل والعرض",
     "text40": "بعد دخول صفحة تفاصيل العرض، إذا وافق العميل على توظيف العامل، انقر على زر توظيف العامل",
@@ -504,7 +519,10 @@
     "text23": "الرجاء إدخال الاسم",
     "text24": "الرجاء إدخال العنوان",
     "text25": "تأكيد معلومات الطلب",
-    "text26": "عنوان التسليم"
+    "text26": "عنوان التسليم",
+    "text27": "الكمية",
+    "text28": "اختر الحجم",
+    "text29": "عربة التسوق"
   },
   "Map": {
     "text1": "مستخدمو التطبيق",
@@ -722,12 +740,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -852,7 +870,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -867,5 +885,10 @@
     "worker": "فني",
     "customer": "زبون",
     "industry": "الصناعة"
+  },
+  "Extra": {
+    "text": "التزام",
+    "text1": "اتفاق",
+    "text2": "تعاون"
   }
 }

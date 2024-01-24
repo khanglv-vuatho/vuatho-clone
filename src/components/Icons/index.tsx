@@ -771,14 +771,14 @@ export const Wave = () => {
     >
       <defs>
         <linearGradient id='sw-gradient-0' x1='0' x2='0' y1='1' y2='0'>
-          <stop stop-color='rgba(255, 247.849, 245.552, 1)' offset='0%'></stop>
-          <stop stop-color='rgba(255, 214.838, 126.06, 1)' offset='100%'></stop>
+          <stop stopColor='rgba(255, 247.849, 245.552, 1)' offset='0%'></stop>
+          <stop stopColor='rgba(255, 214.838, 126.06, 1)' offset='100%'></stop>
         </linearGradient>
       </defs>
       <defs>
         <linearGradient id='sw-gradient-1' x1='0' x2='0' y1='1' y2='0'>
-          <stop stop-color='rgba(255, 220.258, 82.871, 1)' offset='0%'></stop>
-          <stop stop-color='rgba(255, 233.672, 186.526, 1)' offset='100%'></stop>
+          <stop stopColor='rgba(255, 220.258, 82.871, 1)' offset='0%'></stop>
+          <stop stopColor='rgba(255, 233.672, 186.526, 1)' offset='100%'></stop>
         </linearGradient>
       </defs>
       <path
@@ -791,8 +791,8 @@ export const Wave = () => {
       ></path>
       <defs>
         <linearGradient id='sw-gradient-2' x1='0' x2='0' y1='1' y2='0'>
-          <stop stop-color='rgba(255, 240.059, 105.905, 1)' offset='0%'></stop>
-          <stop stop-color='rgba(255, 179, 11, 1)' offset='100%'></stop>
+          <stop stopColor='rgba(255, 240.059, 105.905, 1)' offset='0%'></stop>
+          <stop stopColor='rgba(255, 179, 11, 1)' offset='100%'></stop>
         </linearGradient>
       </defs>
       <path
@@ -805,8 +805,8 @@ export const Wave = () => {
       ></path>
       <defs>
         <linearGradient id='sw-gradient-3' x1='0' x2='0' y1='1' y2='0'>
-          <stop stop-color='rgba(255, 186.256, 0, 1)' offset='0%'></stop>
-          <stop stop-color='rgba(255, 179, 11, 1)' offset='100%'></stop>
+          <stop stopColor='rgba(255, 186.256, 0, 1)' offset='0%'></stop>
+          <stop stopColor='rgba(255, 179, 11, 1)' offset='100%'></stop>
         </linearGradient>
       </defs>
       <path

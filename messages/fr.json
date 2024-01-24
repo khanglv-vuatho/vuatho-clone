@@ -8,39 +8,39 @@
     "money": "Argent"
   },
   "ServicesVuaTho": {
-    "title": "Impressionnants services multi-industriels",
-    "text": "Né au Vietnam avec l'esprit de 'Rehausser les travailleurs qualifiés' et 'Convenance pour tous.'"
+    "title": "Impressionnants Services Multi-Industriels",
+    "text": "Né au Vietnam avec l'esprit d' 'Élever les Travailleurs Qualifiés' et de 'Convenience pour Tous.'"
   },
   "ToTheMoon": {
-    "title": "Développement incessant",
-    "desc": "Nous nous engageons à écouter constamment les commentaires de la communauté, à nous améliorer continuellement, à expérimenter et à nous étendre pour offrir encore plus de services diversifiés sur le marché vietnamien à l'avenir."
+    "title": "Développement Incessant",
+    "desc": "Nous nous engageons à écouter constamment les retours de la communauté, à nous améliorer en permanence, à expérimenter et à nous développer pour offrir encore plus de services diversifiés sur le marché vietnamien à l'avenir."
   },
   "WithVuaTho": {
     "title": "Voyage",
     "title1": "avec Vua Thợ",
-    "text": "Avec Vua Thợ, vous trouverez non seulement des services pratiques, mais vous ferez également partie d'une communauté passionnée et créative. Commencez votre voyage avec Vua Thợ dès aujourd'hui pour une vie meilleure."
+    "text": "Avec Vua Thợ, vous ne trouverez pas seulement des services pratiques, mais vous ferez également partie d'une communauté passionnée et créative. Commencez votre voyage avec Vua Thợ aujourd'hui pour une vie meilleure."
   },
   "Download": {
     "download": "Télécharger maintenant",
-    "download_now": "Pour découvrir la technologie AI la plus avancée",
+    "download_now": "Pour découvrir la technologie IA la plus avancée",
     "download_appstore": "Télécharger depuis",
     "download_chplay": "Télécharger depuis",
     "text1": "Embaucher un artisan, trouver un emploi avec la technologie de l'IA",
     "text2": "Ou scannez le code QR ci-dessous"
   },
   "Footer": {
-    "address": "57 Song Hanh, Quartier An Phu, Ville de Thu Duc,",
-    "location": "Ho Chi Minh City, Vietnam.",
-    "our_partner": "Nos partenaires",
-    "about_vuatho": "À propos de Vua Thợ",
-    "about_us": "À propos de nous",
-    "faq": "Questions fréquemment posées",
-    "become_worker": "Comment s'inscrire en tant que travailleur",
+    "address": "Société par actions simplifiée Vua Thợ",
+    "location": "Ho Chi Minh Ville, Vietnam",
+    "our_partner": "Nos Partenaires",
+    "about_vuatho": "À Propos de Vua Thợ",
+    "about_us": "À Propos de Nous",
+    "faq": "Questions Fréquemment Posées",
+    "become_worker": "Comment S'Inscrire en tant que Travailleur",
     "contact_with_vuatho": "Collaborer avec Vua Thợ",
-    "guides": "Conditions générales",
-    "private_infomation": "Politique de confidentialité",
+    "guides": "Conditions Générales",
+    "private_infomation": "Politique de Confidentialité",
     "promotion": "Programme promotionnel",
-    "contact_us": "Contactez-nous",
+    "contact_us": "Contactez-Nous",
     "sending": "Envoi de notifications à",
     "BCT": "Ministère de l'Industrie et du Commerce",
     "text": "Société à responsabilité limitée Vua Thợ",
@@ -57,100 +57,101 @@
     },
     "SubCard2": {
       "text": "Réparation",
-      "text1": "Électricité et plomberie",
+      "text1": "Électrique et Plomberie",
       "text2": "à domicile"
     },
     "SubCard3": {
       "text": "Aide domestique",
-      "text1": "rapidement"
+      "text1": "rapide"
     }
   },
   "MainSection": {
     "heading1": "Application ",
-    "heading1-1": "Trouvez des travailleurs, trouvez des emplois ",
+    "heading1-1": "Trouvez des Travailleurs, Trouvez des Emplois ",
     "heading2": "Innovation avec l'IA",
     "listCard": {
-      "title1": "Avancée",
-      "desc1": "Comment cela fonctionne",
+      "title1": "Révolutionnaire",
+      "desc1": "Comment ça marche",
       "title2": "Transparence",
       "desc2": "Transactions et accords",
       "title3": "Diversité",
       "desc3": "Formes de collaboration"
     },
-    "text1": "Prend en charge plusieurs langues et industries",
+    "text1": "Prise en charge de plusieurs langues et industries",
     "text2": "Les travailleurs sont partout - Chaque travailleur est ici"
   },
   "AISection": {
-    "heading1": "Application de la technologie AI révolutionnaire ",
-    "heading2": "Dans notre système",
-    "title1": "Analyse de la demande AI",
-    "desc1": "Le système AI intelligent analyse avec précision les besoins des clients, garantissant des connexions optimales avec des travailleurs appropriés.",
-    "title2": "Vérification des compétences AI",
-    "desc2": "Améliore la qualité des travailleurs et assure le meilleur service possible pour les clients",
-    "title3": "Diversité linguistique avec AI",
-    "desc3": "Ne soyez jamais bloqué par la langue entre vous et la solution dont vous avez besoin",
-    "title4": "Performance AI révolutionnaire",
-    "desc4": "L'IA vous fait gagner du temps et vous aide à trouver les solutions les plus rapides",
+    "heading1": "Application de la Technologie IA Révolutionnaire ",
+    "heading2": "Dans Notre Système",
+    "title1": "Analyse de la Demande IA",
+    "desc1": "Le système IA intelligent analyse avec précision les besoins des clients, garantissant des connexions optimales avec les travailleurs adaptés.",
+    "title2": "Vérification des Compétences par IA",
+    "desc2": "Améliore la qualité des travailleurs et garantit le meilleur service possible pour les clients",
+    "title3": "Diversité Linguistique avec l'IA",
+    "desc3": "Ne soyez jamais bloqué par la barrière de la langue entre vous et la solution dont vous avez besoin",
+    "title4": "Performance IA Révolutionnaire",
+    "desc4": "L'IA vous fait gagner du temps et trouve les solutions les plus rapides",
     "text": "technologie"
   },
+
   "MinhBach": {
-    "heading": "Flexibilité dans les accords",
+    "heading": "Flexibilité dans les Accords",
     "listData": {
-      "title1": "Détails complets",
-      "desc1": "Les techniciens doivent clarifier tous les détails sur le travail et les documents nécessaires afin que le client dispose d'informations complètes avant de prendre une décision.",
-      "title2": "Confirmation de mise à jour",
-      "desc2": "Chaque modification du contrat numérique nécessite la confirmation du client pour garantir l'authenticité de la transaction.",
-      "title3": "Accord mutuel",
-      "desc3": "Les modifications ne sont mises en œuvre dans le contrat numérique que lorsque les deux parties s'accordent sur des objectifs communs.",
-      "title4": "Négociation flexible",
-      "desc4": "Les techniciens et les clients ont l'occasion de mener des négociations ouvertes pour parvenir aux conditions les plus adaptées.",
-      "title5": "Honnêteté dans les contrats",
-      "desc5": "Toutes les informations et modifications du contrat numérique doivent être véridiques et refléter les besoins des deux parties.",
-      "title6": "Accords équitables",
-      "desc6": "Tous les accords doivent être équitables, privilégier les intérêts mutuels et créer des conditions propices à une relation de coopération à long terme."
+      "title1": "Détails Complets",
+      "desc1": "Les techniciens doivent clarifier tous les détails sur le travail et les documents nécessaires pour que le client dispose d'informations complètes avant de prendre une décision.",
+      "title2": "Confirmation des Mises à Jour",
+      "desc2": "Chaque modification du Contrat Numérique nécessite la confirmation du client pour garantir l'authenticité de la transaction.",
+      "title3": "Accord Mutuel",
+      "desc3": "Les modifications ne sont mises en œuvre dans le Contrat Numérique que lorsque les deux parties sont d'accord sur des objectifs communs.",
+      "title4": "Négociation Flexible",
+      "desc4": "Les techniciens et les clients ont l'opportunité de négocier ouvertement pour obtenir les conditions les plus adaptées.",
+      "title5": "Honnêteté dans les Contrats",
+      "desc5": "Toutes les informations et modifications apportées au Contrat Numérique doivent être véridiques et refléter les besoins des deux parties.",
+      "title6": "Accords Équitables",
+      "desc6": "Tous les accords doivent être équitables, privilégier les intérêts mutuels et créer des conditions pour une relation de coopération à long terme."
     }
   },
   "HinhThucKetNoi": {
-    "heading": "Transparence et diversité dans la collaboration",
+    "heading": "Transparence et Diversité dans la Collaboration",
     "listData": {
-      "label1": "Large choix",
+      "label1": "Large Gamme de Choix",
       "description1": "Offrir une diversité de choix permet aux clients de trouver des services qui correspondent à leurs besoins spécifiques.",
-      "label2": "Solutions économiques et optimisées",
-      "description2": "Engagement à fournir des solutions économiques et optimisées pour les clients et les techniciens.",
-      "label3": "Technologie de contrat intelligent",
-      "description3": "Application de la technologie de contrat intelligent pour protéger les droits et assurer la transparence de toutes les transactions.",
-      "label4": "Réponse rapide",
-      "description4": "Veiller à ce que toutes les demandes soient traitées rapidement et efficacement.",
-      "label5": "Potentiel de développement élevé",
-      "description5": "Création d'opportunités de développement des compétences et contribution à la croissance de l'économie numérique.",
-      "label6": "Protection des droits",
-      "description6": "Se concentrer non seulement sur les transactions, mais aussi sur la protection des droits et le soutien à la communauté en période de difficulté."
+      "label2": "Solutions Économiques et Optimisées",
+      "description2": "Engagement à fournir des solutions économiques et optimisées tant pour les clients que pour les techniciens.",
+      "label3": "Technologie de Contrat Intelligent",
+      "description3": "Application de la technologie de contrat intelligent pour protéger les droits et garantir la transparence dans toutes les transactions.",
+      "label4": "Réponse Rapide",
+      "description4": "S'assurer que toutes les demandes sont traitées rapidement et efficacement.",
+      "label5": "Potentiel de Développement Élevé",
+      "description5": "Créer des opportunités de développement des compétences et contribuer à la croissance de l'économie numérique.",
+      "label6": "Protection des Droits",
+      "description6": "Se concentrer non seulement sur les transactions, mais aussi sur la protection des droits et le soutien à la communauté en cas de difficultés."
     }
   },
   "CustomerBenefitSection": {
     "benefit": "avantages",
-    "text": "Pour les clients",
+    "text": "Pour les Clients",
     "listBenefit": {
       "title1": "Trouvez le technicien le plus proche pour résoudre rapidement les problèmes",
       "title2": "Sélectionnez des techniciens qualifiés",
       "title3": "Processus et tarification raisonnables",
-      "title4": "Les plus longues garanties",
+      "title4": "Les garanties les plus longues",
       "title5": "Services parfaits et professionnels assurés"
     }
   },
   "WorkerBenefitSection": {
     "benefit": "avantages",
-    "text": "Pour les techniciens"
+    "text": "Pour les Techniciens"
   },
   "FaqSection": {
     "listAccordion": {
       "title1": "Compte",
       "children1": {
-        "title1": "Comment changer mon nom, mon e-mail et mon numéro de téléphone ?",
+        "title1": "Comment changer mon nom, mon email et mon numéro de téléphone ?",
         "children1": {
           "title1": "Étape 1 : Connectez-vous à votre compte sur l'application Vua Thợ.",
           "title2": "Étape 2 : Accédez à la section Paramètres du compte ou Informations personnelles dans l'application.",
-          "title3": "Étape 3 : Choisissez l'option pour modifier votre nom, votre e-mail ou votre numéro de téléphone et suivez les instructions."
+          "title3": "Étape 3 : Choisissez l'option pour modifier votre nom, votre email ou votre numéro de téléphone et suivez les instructions."
         },
         "title2": "Comment changer la langue dans l'application ?",
         "children2": {
@@ -163,15 +164,15 @@
         "children3": {
           "title1": "Si vous soupçonnez que quelqu'un accède à votre compte sans votre autorisation, suivez ces étapes :",
           "title2": "Étape 1 : Connectez-vous immédiatement à votre compte.",
-          "title3": "Étape 2 : Changez votre mot de passe de connexion pour empêcher l'accès non autorisé.",
-          "title4": "Étape 3 : Contactez notre service de support pour signaler cet incident et obtenir de l'aide pour récupérer votre compte."
+          "title3": "Étape 2 : Changez votre mot de passe de connexion pour prévenir tout accès non autorisé.",
+          "title4": "Étape 3 : Contactez notre service de support pour signaler cet incident et recevoir de l'aide pour récupérer votre compte."
         }
       },
       "title2": "Aperçu de l'application Vua Thợ",
       "children2": {
         "title1": "Qu'est-ce que l'application Vua Thợ ?",
         "children1": {
-          "title1": "Vua Thợ est une application qui relie les personnes ayant besoin de services à des professionnels qualifiés dans différents domaines. Nous aidons les utilisateurs à trouver et à embaucher facilement des professionnels, ainsi qu'à permettre aux professionnels de rechercher des emplois correspondant à leurs compétences."
+          "title1": "Vua Thợ est une application qui met en relation les personnes ayant besoin de services avec des professionnels qualifiés dans divers domaines. Nous aidons les utilisateurs à trouver facilement et à embaucher des professionnels, ainsi qu'à permettre aux professionnels de rechercher des emplois correspondant à leurs compétences."
         },
         "title2": "Où l'application est-elle actuellement disponible ?",
         "children2": {
@@ -179,35 +180,35 @@
         },
         "title3": "Je veux essayer les services de Vua Thợ, mais je m'inquiète de la qualité. Est-ce bon ?",
         "children3": {
-          "title1": "Nous comprenons vos préoccupations. Pour garantir la qualité du service, Vua Thợ a mis en place un système de notation et d'avis pour chaque professionnel après chaque travail terminé. Vous pouvez consulter et évaluer les commentaires d'autres utilisateurs pour prendre une décision éclairée lorsque vous choisissez un professionnel."
+          "title1": "Nous comprenons vos préoccupations. Pour garantir la qualité du service, Vua Thợ a mis en place un système d'évaluation et d'avis pour chaque professionnel après chaque travail accompli. Vous pouvez consulter et évaluer les commentaires d'autres utilisateurs pour prendre une décision éclairée lors du choix d'un professionnel."
         },
-        "title4": "Combien de temps faut-il pour trouver quelqu'un pour le travail lorsque je le poste sur l'application ?",
+        "title4": "Combien de temps faut-il pour trouver quelqu'un pour le travail lorsque je le publie sur l'application ?",
         "children4": {
           "title1": "Le temps nécessaire pour trouver un professionnel pour le travail peut varier en fonction de votre emplacement et du type de travail. En général, les travaux courants peuvent être rapidement assortis à des professionnels, tandis que les travaux spéciaux ou dans des endroits éloignés peuvent prendre plus de temps."
         },
-        "title5": "Comment savoir si ce professionnel fait du bon travail ?",
+        "title5": "Comment puis-je savoir si ce prestataire fait du bon travail ?",
         "children5": {
-          "title1": "Vous pouvez évaluer et consulter l'historique de travail du professionnel via son profil sur l'application. De plus, vous pouvez également vous référer aux avis et commentaires d'autres utilisateurs pour vous assurer de choisir un professionnel fiable avec les compétences appropriées."
+          "title1": "Vous pouvez évaluer et consulter l'historique de travail du professionnel sur son profil dans l'application. De plus, vous pouvez également vous référer aux avis et commentaires d'autres utilisateurs pour vous assurer de choisir un professionnel fiable avec les compétences appropriées."
         },
         "title6": "Comment puis-je identifier les professionnels ?",
         "children6": {
-          "title1": "Tous les professionnels sur l'application Vua Thợ ont des profils personnels avec des photos, des coordonnées et des évaluations d'autres utilisateurs. Vous pouvez consulter le profil du professionnel avant de décider de l'embaucher pour le travail."
+          "title1": "Tous les professionnels de l'application Vua Thợ ont des profils personnels avec des photos, des coordonnées et des évaluations d'autres utilisateurs. Vous pouvez vérifier le profil du professionnel avant de décider de l'embaucher pour le travail."
         },
-        "title7": "Si je recommande des amis d'utiliser l'application, vais-je obtenir des promotions ?",
+        "title7": "Si je recommande des amis à utiliser l'application, vais-je bénéficier de promotions ?",
         "children7": {
-          "title1": "Nous avons un programme de parrainage pour les utilisateurs qui recommandent des amis. Lorsque vous recommandez des amis d'utiliser l'application et qu'ils effectuent leur premier travail, vous recevrez tous les deux des réductions ou des promotions pour les services futurs."
+          "title1": "Nous avons un programme de parrainage pour les utilisateurs qui recommandent des amis. Lorsque vous recommandez des amis à utiliser l'application et qu'ils effectuent leur premier travail, vous recevrez tous les deux des remises ou des promotions pour les services futurs."
         },
         "title8": "Pendant les vacances et le Têt (Nouvel An lunaire), le prestataire viendra-t-il nettoyer la maison ?",
         "children8": {
-          "title1": "Nous fournissons des services tout au long de l'année, y compris pendant les vacances et le Têt. Cependant, ces jours-là, il peut y avoir une demande plus élevée de services, il est donc conseillé de réserver à l'avance pour vous assurer d'avoir un prestataire au moment souhaité."
+          "title1": "Nous fournissons des services toute l'année, y compris pendant les vacances et le Têt. Cependant, ces jours-là, la demande de services peut être plus élevée, il est donc conseillé de réserver à l'avance pour vous assurer d'avoir un prestataire à l'heure qui vous convient."
         },
-        "title9": "Comment puis-je utiliser parfaitement le service sur l'application ?",
+        "title9": "Comment puis-je utiliser le service sur l'application de manière optimale ?",
         "children9": {
-          "title1": "Pour utiliser le service efficacement, vous devez :",
+          "title1": "Pour utiliser le service efficacement, vous devriez :",
           "title2": "- Examiner et sélectionner des professionnels ayant une bonne réputation et des compétences pertinentes.",
           "title3": "- Fournir une description détaillée de votre travail pour que les professionnels comprennent vos besoins.",
           "title4": "- Planifier à l'avance pour vous assurer d'avoir un professionnel à l'heure qui vous convient.",
-          "title5": "- Après l'achèvement du travail, évaluer et évaluer le professionnel pour contribuer à améliorer la qualité du service."
+          "title5": "- Après l'achèvement du travail, évaluez et évaluez le professionnel pour contribuer à améliorer la qualité du service."
         },
         "title10": "Comment est calculé le prix du service ?",
         "children10": {
@@ -222,23 +223,23 @@
         },
         "title2": "Comment le technicien me contactera-t-il ?",
         "children2": {
-          "title1": "Le technicien vous contactera via l'application Vua Thợ via des messages ou des appels téléphoniques. Vous recevrez des notifications lorsque le technicien accepte de prendre votre travail, et vous pourrez alors échanger des informations détaillées."
+          "title1": "Le technicien vous contactera via l'application Vua Thợ par messages ou appels téléphoniques. Vous recevrez des notifications lorsque le technicien acceptera votre travail, et vous pourrez ensuite échanger des informations détaillées."
         },
         "title3": "Je veux que plusieurs techniciens m'aident à effectuer des réparations rapidement. Que dois-je faire ?",
         "children3": {
-          "title1": "Pour que plusieurs techniciens vous aident à effectuer des réparations rapidement, vous pouvez créer plusieurs demandes de travail pour des tâches différentes. Les techniciens peuvent accepter ces emplois et travailler ensemble pour les terminer dans un court laps de temps."
+          "title1": "Pour que plusieurs techniciens vous aident à effectuer des réparations rapidement, vous pouvez créer plusieurs demandes de travail pour différentes tâches. Les techniciens peuvent accepter ces emplois et travailler ensemble pour les terminer dans un court laps de temps."
         },
         "title4": "Puis-je demander un chef pour cuisiner sans nettoyer ?",
         "children4": {
-          "title1": "Oui, vous pouvez demander un service de cuisine sans nettoyage. Lors du processus de publication du travail, vous pouvez préciser que vous avez seulement besoin de services de cuisine et pas de nettoyage. Le technicien répondra à votre demande en conséquence."
+          "title1": "Oui, vous pouvez demander un service de cuisson sans nettoyage. Lors du processus de publication de l'emploi, vous pouvez spécifier que vous avez uniquement besoin de services de cuisson et aucun nettoyage. Le technicien satisfera votre demande en conséquence."
         },
         "title5": "Puis-je réserver plusieurs services simultanément ?",
         "children5": {
-          "title1": "Oui, vous pouvez réserver plusieurs services différents simultanément via l'application Vua Thợ. Il vous suffit de publier une demande de travail pour chaque type de service dont vous avez besoin et de choisir les techniciens appropriés pour chaque tâche."
+          "title1": "Oui, vous pouvez réserver plusieurs services différents simultanément grâce à l'application Vua Thợ. Il vous suffit de publier une demande de travail pour chaque type de service dont vous avez besoin et de choisir des techniciens adaptés à chaque tâche."
         },
-        "title6": "Outre le nettoyage de la maison, si j'ai besoin d'un cuisinier ou d'un service de blanchisserie, Vua Thợ peut-il accommoder cela ?",
+        "title6": "En plus du nettoyage de la maison, si j'ai besoin d'un cuisinier ou d'un service de blanchisserie, Vua Thợ peut-il répondre à cela ?",
         "children6": {
-          "title1": "Vua Thợ propose divers types de services, notamment le nettoyage de la maison, la cuisine, la blanchisserie et bien d'autres. Vous pouvez sélectionner les services dont vous avez besoin et trouver des techniciens adaptés pour les effectuer."
+          "title1": "Vua Thợ propose divers types de services, notamment le nettoyage de la maison, la cuisine, la blanchisserie et bien d'autres. Vous pouvez sélectionner les services dont vous avez besoin et trouver des techniciens adaptés pour les réaliser."
         },
         "title7": "Puis-je annuler un travail après l'avoir publié ?",
         "children7": {
@@ -246,7 +247,7 @@
         },
         "title8": "Impossible de trouver ma position ?",
         "children8": {
-          "title1": "Si vous ne parvenez pas à trouver votre emplacement dans l'application, essayez d'entrer une adresse spécifique ou le repère le plus proche pour créer votre emplacement. Si vous rencontrez toujours des difficultés, vous pouvez contacter le service client pour obtenir de l'aide supplémentaire."
+          "title1": "Si vous ne pouvez pas trouver votre position dans l'application, essayez d'entrer une adresse précise ou le repère le plus proche pour créer votre position. Si vous rencontrez toujours des difficultés, vous pouvez contacter le service client pour obtenir de l'aide supplémentaire."
         },
         "title9": "Comment puis-je reporter un rendez-vous ?",
         "children9": {
@@ -254,100 +255,100 @@
         },
         "title10": "Où puis-je suivre l'état de ma commande ?",
         "children10": {
-          "title1": "Vous pouvez suivre l'état de votre commande directement dans l'application Vua Thợ. Dans la section 'Mes activités', vous trouverez des informations sur votre commande en cours, y compris son statut et les détails connexes."
+          "title1": "Vous pouvez suivre l'état de votre commande directement dans l'application Vua Thợ. Dans la section 'Mes activités', vous trouverez des informations sur votre commande en cours, y compris son état et les détails associés."
         },
         "title11": "Quels outils le personnel apportera-t-il ?",
         "children11": {
-          "title1": "Les outils et l'équipement que le personnel apportera dépendront du type de service que vous demandez. Les techniciens apporteront les outils nécessaires pour effectuer le travail que vous avez réservé, tels que des outils de jardinage, des outils de réparation ou de l'équipement de cuisine, en fonction de vos besoins."
+          "title1": "Les outils et l'équipement que le personnel apportera dépendent du type de service que vous demandez. Les techniciens apporteront les outils nécessaires pour effectuer le travail que vous avez réservé, tels que des outils de jardinage, des outils de réparation ou de l'équipement de cuisine, en fonction de vos besoins."
         },
-        "title12": "Pourquoi devrais-je noter le travail accompli ?",
+        "title12": "Pourquoi devrais-je noter le travail effectué ?",
         "children12": {
-          "title1": "Noter le travail accompli est une opportunité pour vous de donner votre avis sur le service, ce qui nous aide à améliorer et à développer des services qui répondent mieux aux besoins du marché. Les notations précoces dans les 24 heures garantissent vos droits en matière de garantie au cas où la qualité du travail ne répondrait pas à votre satisfaction."
+          "title1": "Noter le travail effectué est l'occasion pour vous de fournir des commentaires sur le service, ce qui nous aide à améliorer et à développer des services qui répondent mieux aux besoins du marché. Les notations de travail effectué dans les 24 heures garantissent vos droits en cas de qualité insatisfaisante du travail."
         },
         "title13": "Que fera le personnel lorsqu'il arrivera ?",
         "children13": {
           "title1": "Avant de commencer le travail :",
           "title2": "Étape 1 : Saluer le client (C), se présenter par son nom et démarrer le chronomètre sur l'application de travail.",
           "title3": "Étape 2 : Conseiller à C de ranger les objets de valeur et facilement perdus dans un placard verrouillé.",
-          "title4": "Étape 3 : Demander à C s'il a des demandes spéciales (le cas échéant) ou suivre la procédure préétablie.",
+          "title4": "Étape 3 : Demander à C s'il a des demandes spéciales (le cas échéant) ou suivre la procédure prévue.",
           "title5": "Après avoir terminé le travail :",
           "title6": "- Vérifier les sacs.",
           "title7": "- Y a-t-il des problèmes ou des tâches inachevées ?",
           "title8": "- Le personnel dit au revoir à C et appuie sur le bouton 'Terminer' de l'application, puis part."
         }
       },
-      "title4": "Méthodes de Paiement",
+      "title4": "Méthodes de paiement",
       "children4": {
-        "title1": "Comment puis-je effectuer un paiement ?",
+        "title1": "Comment puis-je effectuer un paiement?",
         "children1": {
-          "title1": "Vua Thợ propose diverses méthodes de paiement pour vous offrir de la flexibilité. Les méthodes de paiement couramment utilisées incluent :",
+          "title1": "Vua Thợ propose diverses méthodes de paiement pour vous offrir de la flexibilité. Les méthodes de paiement couramment utilisées comprennent:",
           "title2": "- Paiement directement au prestataire de services après la fin du travail.",
           "title3": "- Paiement via l'application Vua Thợ, en utilisant des cartes de crédit ou des portefeuilles électroniques."
         },
-        "title2": "Recevrai-je un reçu lorsque je réserve un service ?",
+        "title2": "Recevrai-je un reçu lorsque je réserve un service?",
         "children2": {
           "title1": "Oui, vous recevrez un reçu ou une facture électronique après la fin du travail. Ce reçu contient des informations sur les services rendus et le montant que vous avez payé."
         },
-        "title3": "Est-ce que Vua Thợ émet des factures de taxe sur la valeur ajoutée (TVA) ?",
+        "title3": "Est-ce que Vua Thợ émet des factures de taxe sur la valeur ajoutée (TVA)?",
         "children3": {
-          "title1": "Vua Thợ peut émettre des factures de taxe sur la valeur ajoutée (TVA) pour les services, en fonction des réglementations fiscales locales et des exigences. Les informations concernant la TVA seront fournies sur la facture si cela s'applique."
+          "title1": "Vua Thợ peut émettre des factures de taxe sur la valeur ajoutée (TVA) pour les services, en fonction des réglementations fiscales locales et des exigences. Les informations concernant la TVA seront fournies sur la facture si elle est applicable."
         }
       },
-      "title5": "Réservation de Service Planifiée",
+      "title5": "Réservation de service planifiée",
       "children5": {
-        "title1": "En tant que Client",
+        "title1": "En tant que client",
         "children1": {
-          "title1": "Puis-je planifier des rendez-vous de service réguliers ?",
-          "title2": "- Oui, vous pouvez planifier des rendez-vous de service réguliers pour avoir des services effectués selon un calendrier fixe, comme le nettoyage de maison hebdomadaire ou mensuel. Dans l'application, vous pouvez choisir l'option 'Réservation de Service Planifiée' et spécifier le calendrier et le type de service que vous souhaitez.",
-          "title3": "J'utilise la réservation de service planifiée, puis-je changer de prestataire de services ?",
+          "title1": "Puis-je programmer des rendez-vous de service réguliers?",
+          "title2": "- Oui, vous pouvez programmer des rendez-vous de service réguliers pour bénéficier de services à un horaire fixe, comme le nettoyage de la maison chaque semaine ou chaque mois. Dans l'application, vous pouvez choisir l'option 'Réservation de service planifiée' et spécifier l'horaire et le type de service souhaité.",
+          "title3": "J'utilise la réservation de service planifiée, puis-je changer de prestataire de services?",
           "title4": "- Oui, vous avez le droit de changer de prestataire de services si vous n'êtes pas satisfait ou pour toute autre raison. Dans l'application, vous pouvez rechercher et sélectionner un nouveau prestataire de services pour remplacer l'actuel.",
-          "title5": "J'utilise la réservation de service planifiée, mais j'ai un événement inattendu et j'ai besoin de m'absenter, que dois-je faire ?",
-          "title6": "- Si vous avez un événement inattendu ou avez besoin de vous absenter et que vous n'avez pas besoin du service pendant cette période, vous devez ajuster le calendrier de réservation du service pour éviter de gêner votre prestataire de services. Dans l'application, vous pouvez modifier le calendrier de réservation du service selon vos besoins.",
-          "title7": "Puis-je annuler le forfait de nettoyage de maison ?",
-          "title8": "- Oui, vous pouvez annuler le service de forfait de nettoyage de maison. Cependant, veuillez consulter la politique d'annulation de l'application et les conditions pour des informations détaillées sur vos droits et conditions."
+          "title5": "J'utilise la réservation de service planifiée, mais j'ai un événement imprévu et j'ai besoin d'être absent, que dois-je faire?",
+          "title6": "- Si vous avez un événement imprévu ou si vous avez besoin d'être absent et que vous n'avez pas besoin du service pendant cette période, vous devez ajuster l'horaire de réservation du service en fonction de vos besoins. Dans l'application, vous pouvez modifier l'horaire de réservation du service selon vos besoins.",
+          "title7": "Puis-je annuler le forfait de nettoyage de la maison?",
+          "title8": "- Oui, vous pouvez annuler le service de forfait de nettoyage de la maison. Cependant, veuillez consulter la politique d'annulation et les conditions de l'application pour des informations détaillées sur vos droits et conditions."
         },
-        "title2": "En tant que Prestataire de Services",
+        "title2": "En tant que prestataire de services",
         "children2": {
-          "title1": "Le Prestataire de Services souhaite un paiement anticipé",
-          "title2": "- Dans l'application Vua Thợ, la méthode de paiement habituelle est après la fin du travail. Cependant, vous pouvez discuter d'un paiement anticipé avec vos clients et parvenir à un accord spécifique sur la méthode de paiement.",
-          "title3": "Le Prestataire de Services souhaite un paiement intégral des Clients",
-          "title4": "Puis-je planifier des rendez-vous de service réguliers ?",
-          "title5": "- Vous pouvez discuter avec vos clients s'ils doivent payer anticipativement ou intégralement après la fin du travail. Cela devrait être convenu entre vous et le client avant de commencer le travail pour éviter les malentendus ultérieurs."
+          "title1": "Le prestataire de services souhaite un paiement anticipé",
+          "title2": "- Dans l'application Vua Thợ, la méthode de paiement habituelle est après la fin du travail. Cependant, vous pouvez discuter du paiement anticipé avec vos clients et parvenir à un accord spécifique sur la méthode de paiement.",
+          "title3": "Le prestataire de services souhaite un paiement complet de la part des clients",
+          "title4": "Puis-je programmer des rendez-vous de service réguliers?",
+          "title5": "- Vous pouvez discuter avec vos clients s'ils doivent payer à l'avance ou en totalité après la fin du travail. Cela doit être convenu entre vous et le client avant le début du travail pour éviter tout malentendu ultérieur."
         }
       },
-      "title6": "Rapport d'Incident",
+      "title6": "Rapport d'incident",
       "children6": {
-        "title1": "Que dois-je faire lorsque qu'un Technicien annule le travail ?",
+        "title1": "Que dois-je faire lorsque qu'un technicien annule le travail?",
         "children1": {
-          "title1": "Si un technicien annule le travail, vous devez suivre les étapes suivantes :",
+          "title1": "Si un technicien annule le travail, vous devez suivre les étapes suivantes:",
           "title2": "- Contactez le technicien pour comprendre pourquoi il a annulé et envisagez de reporter le travail à un autre moment.",
-          "title3": "- Si aucun accord n'est trouvé, republiez le travail sur l'application pour trouver un autre technicien.",
-          "title4": "- Évaluez et documentez l'annulation du travail par le technicien sur l'application afin de fournir des commentaires à King of Technicians."
+          "title3": "- Si un accord ne peut pas être trouvé, republiez le travail sur l'application pour trouver un autre technicien.",
+          "title4": "- Évaluez et documentez l'annulation du travail par le technicien sur l'application pour fournir des commentaires à King of Technicians."
         },
-        "title2": "Pourquoi aucun technicien n'accepte-t-il le travail que j'ai publié ?",
+        "title2": "Pourquoi aucun technicien n'accepte-t-il le travail que j'ai publié?",
         "children2": {
-          "title1": "Il y a plusieurs raisons pour lesquelles aucun technicien ne peut accepter votre travail, telles que :",
-          "title2": "- Le travail nécessite une compétence spécifique pour laquelle aucun technicien adapté n'est disponible.",
-          "title3": "- L'heure proposée ne correspond pas aux horaires des techniciens.",
-          "title4": "- Votre emplacement est trop éloigné des techniciens de cette région. Dans ce cas, vous devriez essayer d'ajuster les exigences du travail, l'heure ou l'emplacement pour augmenter vos chances de trouver un technicien."
+          "title1": "Il existe plusieurs raisons pour lesquelles aucun technicien n'accepte peut-être votre travail, telles que:",
+          "title2": "- Le travail nécessite des compétences spécifiques pour lesquelles aucun technicien approprié n'est disponible.",
+          "title3": "- L'horaire proposé ne correspond pas aux horaires des techniciens.",
+          "title4": "- Votre emplacement est trop éloigné des techniciens de cette zone. Dans ce cas, vous devriez essayer d'ajuster les exigences du travail, l'heure ou l'emplacement pour augmenter les chances de trouver un technicien."
         },
-        "title3": "Que dois-je faire lorsque le technicien qui arrive ne correspond pas aux informations de l'application ?",
+        "title3": "Que dois-je faire lorsque le technicien qui arrive ne correspond pas aux informations de l'application?",
         "children3": {
-          "title1": "Si le technicien qui arrive ne correspond pas aux informations de l'application, vous devez suivre les étapes suivantes :",
+          "title1": "Si le technicien qui arrive ne correspond pas aux informations de l'application, vous devez suivre les étapes suivantes:",
           "title2": "- Contactez le technicien pour confirmer son identité et ses informations personnelles.",
           "title3": "- Si vous avez des doutes ou des préoccupations concernant la sécurité, arrêtez le travail et contactez King of Technicians pour signaler la situation.",
           "title4": "- Notez cette divergence sur l'application pour fournir des commentaires à King of Technicians."
         },
-        "title4": "Pourquoi ne puis-je pas utiliser le code promotionnel ?",
+        "title4": "Pourquoi ne puis-je pas utiliser le code promotionnel?",
         "children4": {
-          "title1": "Si vous rencontrez des problèmes avec l'utilisation d'un code promotionnel, vous devriez vérifier les éléments suivants :",
+          "title1": "Si vous rencontrez des problèmes pour utiliser un code promotionnel, vous devez vérifier ce qui suit:",
           "title2": "- Assurez-vous que le code promotionnel que vous utilisez est toujours valide et n'a pas expiré.",
           "title3": "- Vérifiez s'il existe des termes et conditions spécifiques applicables au code promotionnel, tels que le nombre d'utilisations ou les exigences de valeur minimale.",
           "title4": "- Si vous continuez à rencontrer des difficultés, contactez le service d'assistance de King of Technicians pour obtenir de l'aide."
         },
-        "title5": "En cas de dommages ou de vol de biens pendant le travail, comment King of Technicians gérera-t-il la situation ?",
+        "title5": "En cas de dommage ou de vol de biens pendant le travail, comment King of Technicians gérera-t-il la situation?",
         "children5": {
-          "title1": "King of Technicians prendra sérieusement en compte tout incident de dommages ou de vol. Vous devriez signaler l'incident immédiatement et fournir des preuves pertinentes telles que des photos ou des informations spécifiques. King of Technicians mènera une enquête et vous aidera à résoudre le problème."
+          "title1": "King of Technicians prendra très au sérieux tout incident de dommage ou de vol. Vous devez signaler immédiatement l'incident et fournir des preuves pertinentes telles que des photos ou des informations spécifiques. King of Technicians mènera une enquête et vous aidera à résoudre le problème."
         }
       }
     }
@@ -355,77 +356,96 @@
   "AboutUs": {
     "heading1": "Leader en",
     "heading2": "Technologie & Écosystème",
-    "heading": "Super App",
-    "text": "Chez Vua Thợ, nous sommes fiers d'être une entreprise technologique de premier plan et un pionnier dans la fourniture d'un modèle d'écosystème de super application en Asie du Sud-Est. Découlant de notre passion et de notre mission d'améliorer la vie de millions d'utilisateurs sur la voie du développement, nous offrons une expérience de première classe et pratique.",
+    "heading": "Super Application",
+    "text": "Chez Vua Thợ, nous sommes fiers d'être une entreprise technologique de premier plan et un pionnier dans la fourniture d'un modèle d'écosystème de super application en Asie du Sud-Est. Découlant de notre passion et de notre mission d'améliorer la vie de millions d'utilisateurs sur la voie du développement, nous offrons une expérience de haute qualité et pratique.",
     "goal": "Notre objectif est de connecter",
     "numberGoal": "100 000 +",
     "textGold": "Artisans et utilisateurs à l'échelle nationale d'ici 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Contactez-nous",
     "address1": "57 Song Hanh, Quartier An Phu, Ville de Thu Duc,",
     "address2": "Ho Chi Minh Ville, Vietnam.",
     "timeNumber": "8h30 à 16h30",
-    "timeDay": "du lundi au vendredi",
+    "timeDay": "Du lundi au vendredi",
     "text": "Pas de support les samedis, dimanches et jours fériés",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
-    "heading": "Guide pour s'inscrire en tant que fournisseur de services",
+    "heading": "Guide pour s'inscrire en tant que prestataire de services",
     "text1": "Étape 1 : Préparez les documents nécessaires",
     "text2": "Étape 2 : Téléchargez l'application Vua Thợ",
-    "text3": "Étape 3 : Inscrivez-vous",
-    "text4": "Étape 4 : Complétez la vérification en ligne eKYC",
+    "text3": "Étape 3 : Enregistrez un compte",
+    "text4": "Étape 4 : Effectuez la vérification en ligne eKYC",
     "text5": "Étape 5 : Approbation du profil et activation du compte",
     "text6": "Informations claires, lisibles, intactes et non altérées",
     "text7": "Informations complètes sur vos documents",
     "text8": "Les photos doivent être claires, non floues, non recadrées et non déformées",
     "text9": "Valide",
-    "text10": "Marques distinctes et claires",
+    "text10": "Marques en bois claires et distinctes",
     "text11": "Carte d'identité nationale",
     "text12": "Passeport",
+    "text12-1": "Permis de conduire",
     "text13": "Exigences générales en matière de documents",
     "text14": "Préparez l'un des deux types de documents",
     "text15": "Téléchargez l'application Vua Thợ",
     "text16": "Pour le système d'exploitation Android",
-    "text17": "Pour le système d'exploitation iOS",
+    "text17": "Pour iOS",
     "text18": "ou",
     "text19": "Inscrivez-vous",
     "text20": "Étape 1",
-    "text21": "Après avoir téléchargé avec succès, les utilisateurs doivent ouvrir l'application et sélectionner leur rôle :",
+    "text21": "Après avoir téléchargé avec succès, les utilisateurs doivent ouvrir l'application et choisir leur rôle :",
     "text22": "Client",
     "text23": "Si vous souhaitez rechercher des services/fournisseurs.",
     "text24": "Si vous souhaitez fournir des services et rechercher des emplois.",
-    "text26": "Fournisseur de services",
+    "text25": "Guide pour s'inscrire en tant que prestataire de services. Si vous souhaitez fournir des services et rechercher des emplois en tant que prestataire de services.",
+    "text26": "Prestataire de services",
     "text27": "Ces deux rôles sont intégrés et utilisés dans l'application Vua Thợ.",
-    "text28": "En tant que nouveaux utilisateurs, ils devraient sélectionner le bouton",
+    "text28": "En tant que nouveaux utilisateurs, ils doivent sélectionner le",
     "text29": "S'inscrire",
-    "text30": "dans l'application.",
+    "text30": "bouton dans l'application.",
     "text31": "Étape 2",
-    "text32": "Le système demandera aux utilisateurs de saisir leur numéro de téléphone et le code pays.",
-    "text33": "Les utilisateurs peuvent saisir un code de parrainage (si disponible).",
+    "text32": "Le système demandera aux utilisateurs de saisir leur numéro de téléphone et leur code pays.",
+    "text33": "Les utilisateurs peuvent saisir un code de parrainage (s'il est disponible).",
     "text34": "Étape 3",
     "text35": "Après avoir saisi le numéro de téléphone et appuyé sur Suivant, le système enverra un OTP par SMS.",
     "text36": "Saisissez l'OTP reçu par SMS.",
     "text37": "En cas de saisie incorrecte de l'OTP, les utilisateurs peuvent demander un nouvel OTP en appuyant sur 'Renvoyer'.",
     "text39": "Les utilisateurs seront connectés à leur compte client.",
     "text40": "Le système vérifiera l'OTP, et s'il est correct, il s'affichera comme indiqué.",
-    "text41": "Complétez la vérification en ligne eKYC",
-    "text42": "Pour utiliser les fonctionnalités et les services de l'application Vua Thợ, les utilisateurs doivent effectuer une vérification eKYC.",
-    "text43": "L'application Vua Thợ collabore avec SumSub pour effectuer la vérification en ligne de l'identité des utilisateurs. La vérification de l'identité de l'utilisateur nécessite que l'utilisateur fournisse les informations suivantes :",
+    "text41": "Effectuez la vérification en ligne eKYC",
+    "text42": "Pour utiliser les fonctionnalités et les services de l'application Vua Thợ, les utilisateurs doivent effectuer la vérification en ligne eKYC.",
+    "text43": "L'application Vua Thợ collabore avec SumSub pour effectuer la vérification en ligne du compte. La vérification de l'identité de l'utilisateur nécessite que les utilisateurs fournissent les informations suivantes :",
     "text44": "Pays de résidence",
     "text45": "Document d'identification personnel",
-    "text46": "Sélectionnez un seul type de document d'identification personnel pour la vérification",
+    "text46": "Sélectionnez uniquement un type de document d'identification personnel pour la vérification",
     "text47": "(L'utilisation de la carte d'identité nationale est recommandée)",
-    "text48": "Après avoir sélectionné le pays et le type de document d'identification personnel pertinent, le système demandera aux utilisateurs de prendre des photos des deux côtés du document choisi et un selfie en suivant les instructions de SumSub.",
-    "text49": "Vérification de l'identité",
+    "text48": "Après avoir sélectionné le pays et le type de document d'identification personnel pertinent, le système demandera aux utilisateurs de prendre des photos des deux côtés du document choisi et un selfie suivant les instructions de SumSub.",
+    "text49": "Vérification d'identité",
     "text50": "Approbation du profil et activation du compte",
     "or": "ou",
-    "text51": "Après avoir terminé les étapes ci-dessus, attendez que le système examine votre compte et fournisse un retour d'information dès que possible.",
+    "text51": "Après avoir accompli les étapes ci-dessus, attendez que le système examine votre compte et fournisse des commentaires dès que possible.",
     "text52": "La réponse du système comprendra :",
     "text53": "Les utilisateurs peuvent utiliser toutes les fonctionnalités et les services de l'application",
-    "text54": "Les utilisateurs doivent effectuer à nouveau la vérification de l'identité pour accéder à toutes les fonctionnalités et les services de l'application"
+    "text54": "Les utilisateurs doivent effectuer à nouveau la vérification d'identité pour accéder à toutes les fonctionnalités et les services de l'application",
+    "text55": "Préparez tous les documents nécessaires",
+    "text56": "Ou scanner le code QR",
+    "text57": "Les utilisateurs téléchargent l'application Vua Thợ sur l'App Store ou sur le Google Play Store.",
+    "text59": "\"Client\" si vous souhaitez rechercher des services/des artisans.",
+    "text61": "Le système demande le numéro de téléphone et le code pays du numéro de téléphone.",
+    "text65": "Les utilisateurs n'ont besoin de réaliser l'identification eKYC qu'une seule fois avec un compte. Lors de la transition de compte (artisans → clients/clients → artisans), aucune nouvelle identification eKYC n'est nécessaire.",
+    "text66": "Les utilisateurs peuvent effectuer une identification eKYC proactive dans la section Compte, affichée dans la partie supérieure du compte, ou le système les guide lorsqu'ils consultent l'application avec un compte non eKYC.",
+    "text67": "L'application Vua Thợ collabore avec SumSub pour réaliser l'identification du compte en ligne. L'identification nécessite que les utilisateurs fournissent les informations suivantes :",
+    "text68": "Pays de résidence",
+    "text69": "Pièces d'identité pertinentes (les utilisateurs choisissent l'un des types de pièces d'identité pour la vérification)",
+    "text70": "Carte d'identité",
+    "text71": "Livret de famille",
+    "text72": "Permis de conduire",
+    "text73": "Après avoir sélectionné le pays et le type de pièce d'identité pertinent, le système demande aux utilisateurs de prendre des photos des deux côtés de la pièce d'identité choisie (l'utilisation de la Carte d'identité nationale - CCCD est recommandée au Vietnam). Ensuite, les utilisateurs doivent prendre un selfie conformément aux instructions de SumSub.",
+    "text74": "Une fois l'identification terminée, le système fournira un résultat estimatif dans les 5 minutes, le résultat du système inclura :",
+    "text75": "Vérification réussie : Les utilisateurs peuvent utiliser tous les services et fonctionnalités de l'application.",
+    "text76": "Échec de la vérification : Les utilisateurs doivent refaire la vérification pour pouvoir utiliser tous les services et fonctionnalités de l'application."
   },
   "FindWorker": {
     "heading": "Comment trouver des travailleurs sur Vua Thợ",
@@ -444,88 +464,87 @@
     "text13": "Si vous êtes un nouvel utilisateur, sélectionnez l'option S'inscrire dans l'application",
     "text14": "Étape 2",
     "text15": "Sélectionnez le code pays et saisissez le numéro de téléphone de l'utilisateur",
-    "text16": "Saisissez le code de parrainage (si disponible)",
+    "text16": "Saisissez le code de parrainage (s'il est disponible)",
     "text17": "Étape 3",
-    "text18": "Appuyez sur Suivant pour entrer le code OTP",
-    "text19": "(OTP sera envoyé par le système via SMS)",
+    "text18": "Appuyez sur Suivant pour saisir le code OTP",
+    "text19": " (L'OTP sera envoyé par le système par SMS)",
     "text20": "Étape 4",
-    "text21": "Après une inscription réussie, le système demandera le nom de l'utilisateur, et l'utilisateur devrait saisir son nom et appuyer sur Terminer",
-    "text22": "Pour se reconnecter à l'application, l'utilisateur doit simplement saisir son numéro de téléphone et le code OTP envoyé par le système via SMS",
+    "text21": "Après l'inscription réussie, le système demandera le nom de l'utilisateur, et l'utilisateur doit saisir son nom et appuyer sur Terminer",
+    "text22": "Pour vous reconnecter à l'application, l'utilisateur doit simplement saisir son numéro de téléphone et le code OTP envoyé par le système par SMS",
     "text23": "Remarque :",
-    "text24": "Pour s'inscrire/se connecter avec succès, les utilisateurs doivent :",
-    "text25": "Sélectionnez le code pays approprié",
-    "text26": "Saisissez le numéro de téléphone du client",
-    "text27": "Saisissez le code OTP envoyé par le système via SMS",
+    "text24": "Pour vous inscrire/connecter avec succès, les utilisateurs doivent :",
+    "text25": "Sélectionner le code pays approprié",
+    "text26": "Saisir le numéro de téléphone du client",
+    "text27": "Saisir le code OTP envoyé par le système par SMS",
     "text28": "Étape 5",
     "text29": "Étape 6",
-    "text30": "Cliquez sur l'icône 'trouver des travailleurs' sous la barre de navigation pour ouvrir la page de recherche des travailleurs",
-    "text31": "Les clients peuvent ajouter des détails à leur demande de travailleur",
-    "text32": "Service",
-    "text33": "Description détaillée du travail",
-    "text34": "Délai",
-    "text35": "Images - vidéos - descriptions (si disponibles)",
-    "text36": "Cliquez sur Trouver des travailleurs et confirmez les informations",
-    "text37": "Après avoir vérifié les informations, cliquez sur le bouton Confirmer pour commencer à chercher des travailleurs",
-    "text38": "Après confirmation à l'étape 3, l'écran passera à la carte pour commencer la recherche des travailleurs",
-    "text39": "Lorsqu'un travailleur propose un devis, le système en informera le client. Les clients peuvent choisir un travailleur adapté en cliquant sur Voir les détails pour voir les informations et le devis du travailleur",
-    "text40": "Après avoir accédé à la page de détails du devis, si le client accepte d'embaucher le travailleur, cliquez sur le bouton Embaucher le travailleur",
-    "text41": "Le système attendra que le travailleur confirme et vienne à l'emplacement du client pour finaliser le prix",
-    "text42": "Les clients peuvent effectuer le paiement après que le travailleur ait terminé le travail en cliquant sur Paiement sur la page des détails de la commande",
-    "text43": "Les clients peuvent utiliser des codes promo (si disponibles), donner un pourboire au travailleur (si souhaité), choisir un mode de paiement et cliquer sur Confirmer",
+    "text30": "Cliquez sur l'icône du \"Roi des artisans AI\" pour commencer à rechercher un artisan avec l'assistant AI",
+    "text31": "Discutez avec l'IA pour confirmer la commande",
+    "text36": "Vérifiez à nouveau les informations et appuyez sur chercher un artisan",
+    "text37": "Après avoir vérifié les informations, cliquez sur le bouton Confirmer pour commencer à trouver des travailleurs",
+    "text38": "Après confirmation à l'étape 3, l'écran basculera vers la carte pour commencer la recherche de travailleurs",
+    "text39": "Lorsqu'un travailleur propose un devis, le système en informera le client. Les clients peuvent choisir un travailleur approprié en cliquant sur Voir les détails pour voir les informations du travailleur et le devis",
+    "text40": "Après avoir accédé à la page des détails du devis, si le client accepte d'embaucher le travailleur, cliquez sur le bouton Embaucher le travailleur",
+    "text41": "Le système attendra que le travailleur confirme et vienne au lieu du client pour finaliser le prix",
+    "text42": "Les clients peuvent effectuer le paiement après que le travailleur a terminé le travail en cliquant sur Paiement sur la page des détails de la commande",
+    "text43": "Les clients peuvent appliquer des codes promotionnels (si disponibles), donner un pourboire au travailleur (si désiré), choisir un mode de paiement et cliquer sur Confirmer",
     "text44": "Trouver des travailleurs",
-    "text45": "Pour se reconnecter à l'application, les utilisateurs n'ont qu'à saisir leur numéro de téléphone et le code OTP envoyé par le système via SMS"
+    "text45": "Pour vous reconnecter à l'application, les utilisateurs n'ont qu'à saisir leur numéro de téléphone et le code OTP envoyé par le système par SMS"
   },
   "PressHome": {
     "heading": "Articles pour Vous",
-    "seeAll": "Voir tout"
+    "seeAll": "Voir Tout"
   },
   "Store": {
-    "text1": "Tenue professionnelle pour les artisans",
-    "text2": "Sentez-vous plus confiant au travail",
-    "text3": "Contactez pour passer une commande",
-    "text4": "UNIFORMES ROYAUX DES ARTISANS",
-    "text5": "Nous fournissons uniquement des uniformes aux employés en interne de l'entreprise. Merci de votre intérêt, et nous espérons que vous comprenez cet inconvénient.",
-    "text6": "Numéro de téléphone de l'artisan enregistré",
+    "text1": "Tenues Professionnelles pour Artisans",
+    "text2": "Sentez-vous Plus Confiant au Travail",
+    "text3": "Contactez pour Passer une Commande",
+    "text4": "TENUES DE VUA THỢ",
+    "text5": "Nous ne fournissons des uniformes que pour les employés de l'entreprise interne. Merci de votre intérêt et nous espérons que vous comprenez cet inconvénient.",
+    "text6": "Numéro de Téléphone de l'Artisan Enregistré",
     "text7": "Continuer",
-    "text8": "Nous serions ravis si vous souhaitez commander des uniformes. Cependant, vous devez d'abord devenir un artisan avant de pouvoir le faire. Merci de votre compréhension et de votre coopération !",
-    "text9": "Révérifier",
-    "text10": "Devenir un artisan",
-    "text11": "En rupture de stock",
-    "text12": "Passer une commande",
-    "text13": "Connexion réussie !",
-    "text14": "Retour à la page d'accueil",
-    "text15": "Votre numéro de téléphone",
-    "text16": "Ajouter un produit au panier",
-    "text17": "Veuillez saisir des informations complètes",
-    "text18": "Vous avez passé avec succès une commande",
-    "text19": "Commander des uniformes",
-    "text20": "Aucun produit pour le moment",
+    "text8": "Nous serions ravis si vous souhaitez commander des uniformes. Cependant, vous devez d'abord devenir un Artisan avant de pouvoir le faire. Merci de votre compréhension et de votre coopération !",
+    "text9": "Re-vérifier",
+    "text10": "Devenir un Artisan",
+    "text11": "Épuisé",
+    "text12": "Passer une Commande",
+    "text13": "Connexion Réussie !",
+    "text14": "Retour à la Page d'Accueil",
+    "text15": "Votre Numéro de Téléphone",
+    "text16": "Ajouter un Produit au Panier",
+    "text17": "Veuillez entrer des informations complètes",
+    "text18": "Vous avez passé une commande avec succès",
+    "text19": "Commander des Uniformes",
+    "text20": "Aucun Produit pour le Moment",
     "text21": "Total",
-    "text22": "Informations de livraison",
-    "text23": "Veuillez saisir un nom",
-    "text24": "Veuillez saisir une adresse",
-    "text25": "Confirmer les informations de commande",
-    "text26": "Adresse de livraison"
+    "text22": "Informations de Livraison",
+    "text23": "Veuillez entrer un nom",
+    "text24": "Veuillez entrer une adresse",
+    "text25": "Confirmer les Informations de Commande",
+    "text26": "Adresse de Livraison",
+    "text27": "Quantité",
+    "text28": "Choisissez la taille",
+    "text29": "Panier"
   },
   "Map": {
-    "text1": "Utilisateurs de l'application",
+    "text1": "Utilisateurs de l'Application",
     "user": "utilisateur"
   },
   "Press": {
     "popular": "Populaires",
-    "newest": "Les plus récents",
-    "result": "Résultats de la recherche pour",
+    "newest": "Les Plus Récents",
+    "result": "Résultats de Recherche pour",
     "errorNetwork": "Veuillez vérifier votre connexion réseau.",
-    "oops": "Oops, le mot-clé que vous recherchez n'est pas disponible !",
-    "notFound": "Catégorie non trouvée"
+    "oops": "Oups, le mot-clé que vous recherchez n'est pas disponible !",
+    "notFound": "Catégorie Non Trouvée"
   },
   "DetailsPress": {
-    "oopsDetail": "Oops, Article non trouvé"
+    "oopsDetail": "Oups, Article Non Trouvé"
   },
   "inputSearch": {
-    "searchFrequently": "Recherche fréquente",
+    "searchFrequently": "Rechercher Fréquemment",
     "search": "Rechercher",
-    "lookingFor": "Recherche en cours..."
+    "lookingFor": " Recherche en Cours..."
   },
   "listBreadcrumbs": {
     "home": "Accueil",
@@ -533,7 +552,7 @@
     "store": "Uniformes"
   },
   "Modal": {
-    "heading": "Veuillez laisser votre feedback pour que nous puissions nous améliorer !",
+    "heading": "Veuillez laisser vos commentaires pour que nous puissions nous améliorer !",
     "type": "Type...",
     "send": "Envoyer",
     "messageToast": "Merci pour votre contribution"
@@ -723,12 +742,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -853,7 +872,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -868,5 +887,10 @@
     "worker": "Fournisseur de services",
     "customer": "Client",
     "industry": "Industrie"
+  },
+  "Extra": {
+    "text": "engagement",
+    "text1": "accord",
+    "text2": "coopération"
   }
 }

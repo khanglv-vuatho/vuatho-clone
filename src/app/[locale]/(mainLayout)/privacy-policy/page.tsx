@@ -1,5 +1,6 @@
-import BackgroundRelative from '@/components/BackgroundRelative'
 import { useTranslations } from 'next-intl'
+
+import BackgroundRelative from '@/components/BackgroundRelative'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
@@ -24,7 +25,7 @@ function PrivateInformation() {
   const t = useTranslations('PrivacyPolicy')
 
   return (
-    <div className=''>
+    <div>
       <BackgroundRelative text={t('heading')} />
       <div className='bg-white py-[20px] 13inch:py-[40px] 3xl:py-[80px]'>
         <div className='ct-container-70 gap-10 md:gap-20'>
@@ -58,12 +59,10 @@ function PrivateInformation() {
                 {t('text9')}
               </p>
               <p className='text-[1.8rem]'>
-                <strong className='text-[1.8rem]'>{t('baovedulieucanhan')}</strong>{' '}
-                {t('text10')}
+                <strong className='text-[1.8rem]'>{t('baovedulieucanhan')}</strong> {t('text10')}
               </p>
               <p className='text-[1.8rem]'>
-                <strong className='text-[1.8rem]'>{t('phapluathienhanh')}</strong>{' '}
-                {t('text11')}
+                <strong className='text-[1.8rem]'>{t('phapluathienhanh')}</strong> {t('text11')}
               </p>
               <p className='text-[1.8rem]'>{t('text12')}</p>
               <h5 className='text-[1.8rem] text-[#0B27B6]/90'>{t('phanA')}</h5>
@@ -279,8 +278,7 @@ function PrivateInformation() {
                   <strong className='text-[1.8rem]'>{t('text168')}</strong>
                 </li>
                 <li>
-                  <strong className='text-[1.8rem]'> {t('text169')}</strong> {' '}
-                  {t('text170')}
+                  <strong className='text-[1.8rem]'> {t('text169')}</strong>  {t('text170')}
                 </li>
                 <li>{t('text171')}</li>
               </ul>

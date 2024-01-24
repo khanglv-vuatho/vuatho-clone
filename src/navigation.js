@@ -8,8 +8,7 @@ export const pathnames = {
   '/about-us': '/about-us',
 }
 
-export const { Link, redirect, usePathname, useRouter, getPathname } =
-  createLocalizedPathnamesNavigation({
-    locales,
-    pathnames,
-  })
+export const { Link, redirect, usePathname, useRouter, getPathname } = createLocalizedPathnamesNavigation({
+  locales,
+  pathnames,
+})

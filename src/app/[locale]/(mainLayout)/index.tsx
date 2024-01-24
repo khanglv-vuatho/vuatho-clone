@@ -4,29 +4,27 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 
-import confetti from 'canvas-confetti'
-import { motion, useAnimate } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ArrowRight2, Dislike, Like1 } from 'iconsax-react'
 
+import { Button, Skeleton, Textarea, Tooltip, useDisclosure } from '@nextui-org/react'
 import { useLocale, useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
+import CountUp from 'react-countup'
 import { Autoplay, EffectFade, FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { ImageSkeleton, Wave } from '@/components/Icons'
+import ImageFallback from '@/components/ImageFallback'
+import { ToastComponent } from '@/components/ToastComponent'
 import Article from '@/components/article'
+import { DefaultModal } from '@/components/modal'
 import { SkeletonBlog } from '@/components/skeleton'
 import instance from '@/services/axiosConfig'
-import { Button, Skeleton, Textarea, Tooltip, useDisclosure } from '@nextui-org/react'
 import SectionDownload from './(sections)/downloadApp'
 import SectionToTheMoon from './(sections)/toTheMoon'
 import SectionWithVuaTho from './(sections)/withVuaTho'
 
-import CountUp from 'react-countup'
-
-import ImageFallback from '@/components/ImageFallback'
-import { ToastComponent } from '@/components/ToastComponent'
-import { DefaultModal } from '@/components/modal'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/free-mode'
@@ -48,13 +46,7 @@ function HomePage() {
 
   return (
     <>
-      <div
-        className={`${
-          hiddenHeaderAndFooter
-            ? 'space-y-[40px] overflow-hidden md:space-y-[100px] xl:space-y-[100px]'
-            : 'space-y-[40px] overflow-hidden pt-[70px] md:space-y-[100px] xl:space-y-[100px] 3xl:pt-[80px]'
-        }`}
-      >
+      <div className={`flex flex-col overflow-hidden  ${hiddenHeaderAndFooter ? 'gap-[40px] md:gap-[100px]' : 'gap-[40px] pt-[70px] md:gap-[100px] 3xl:pt-[80px]'}`}>
         <MainSection />
         <WorkerBenefitSection />
         <CustomerBenefitSection />
@@ -83,39 +75,49 @@ const AISection = () => {
   return (
     <div id='AI' className='relative bg-white py-[40px] md:py-[80px] xl:py-[100px]'>
       <div className='ct-container-70 relative'>
-        <h5 className='text-center font-semibold uppercase leading-[30px] tracking-[8px]'>
-          {t('text')}
-        </h5>
+        <h5 className='text-center font-semibold uppercase leading-[30px] tracking-[8px]'>{t('text')}</h5>
         <h4 className='relative z-10 mb-[60px] inline-block w-full text-center text-[2.4rem] font-semibold uppercase text-primary-blue drop-shadow-sm md:text-[4.2rem] 2xl:mb-[100px] '>
           {t('heading1')}
         </h4>
         <div className='flex flex-col'>
           <div className='bottom-2 flex h-full w-full items-center justify-center md:absolute md:justify-end 13inch:justify-center'>
-            <div className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'>
-              <Image
-                src={'/ai-section-1.png'}
-                alt='AI Robot'
-                width={700}
-                height={680}
-                quality={100}
-                className='pointer-events-none select-none'
-              />
-            </div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0,
+              }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+              }}
+              viewport={{ once: true }}
+              className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'
+            >
+              <ImageFallback src={'/ai-section-1.png'} alt='AI Robot' width={700} height={680} quality={100} className='pointer-events-none w-auto select-none' />
+            </motion.div>
           </div>
           <div className='grid grid-cols-1 items-center gap-[20px] py-12 lg:ml-[10%] 13inch:ml-0 13inch:grid-cols-2 13inch:gap-[56px]'>
             {listAI.map((item, index) => (
-              <div
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 100,
+                }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 1 * ((index + 1) * 0.25),
+                }}
+                viewport={{ once: true }}
                 key={`listAI-${index}`}
-                className={`relative z-[10] flex w-full flex-col gap-[10px] p-[20px] text-baseBlack md:max-w-[400px]  ${
-                  index % 2 !== 0 && '13inch:ml-[36%]'
-                }`}
+                className={`relative z-[10] flex w-full flex-col gap-[10px] p-[20px] text-baseBlack md:max-w-[400px]  ${index % 2 !== 0 && '13inch:ml-[36%]'}`}
               >
                 <div
                   className={`absolute inset-0 z-[2] rounded-[20px] border-b-[2px] border-[#fbac47] bg-gradient-to-br from-[#ffffff] via-[#ffffff] to-[#e7e7e7] shadow-[0px_8px_16px_0px_#A2BAF366]`}
                 ></div>
-                <h5 className=' z-[4] text-[1.8rem] font-bold'>{item.title}</h5>
+                <h5 className=' z-[4] text-[1.8rem] font-bold'>{item.title.replace(/(^|\s)\S/g, (match) => match.toUpperCase())}</h5>
                 <p className='z-[4] text-[1.8rem]'>{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -126,6 +128,7 @@ const AISection = () => {
 
 const MinhBach = () => {
   const t = useTranslations('MinhBach')
+  const td = useTranslations('Extra')
 
   const listData = [
     {
@@ -155,18 +158,29 @@ const MinhBach = () => {
   ]
 
   return (
-    <div className='' id='trade'>
+    <div id='trade'>
       <section className='ct-container-70'>
-        <h3 className='font-semibold uppercase tracking-[8px]'>thỏa thuận</h3>
-        <h2 className='mb-[40px] inline-block text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>
-          {t('heading')}
-        </h2>
-        <div className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'>
+        <h3 className='font-semibold uppercase tracking-[8px]'>{td('text1')}</h3>
+        <h2 className='mb-[40px] inline-block text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>{t('heading')}</h2>
+        <motion.div
+          initial={{
+            y: 60,
+            opacity: 0,
+          }}
+          whileInView={{
+            x: 0,
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.3,
+            delay: 0.5,
+          }}
+          viewport={{ once: true }}
+          className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'
+        >
           {listData.map((item, index) => (
-            <div
-              key={`listData-${index}`}
-              className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'
-            >
+            <div key={`listData-${index}`} className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'>
               <div className='flex items-center gap-[10px]'>
                 <span className='relative flex h-[16px] w-[16px] items-center justify-center'>
                   <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f5b500] opacity-75'></span>
@@ -177,7 +191,7 @@ const MinhBach = () => {
               <p className='text-[1.8rem] font-light'>{item.desc}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </div>
   )
@@ -185,6 +199,7 @@ const MinhBach = () => {
 
 const HinhThucKetNoi = () => {
   const t = useTranslations('HinhThucKetNoi')
+  const td = useTranslations('Extra')
 
   const DataLabel: any = [
     {
@@ -214,20 +229,30 @@ const HinhThucKetNoi = () => {
   ]
 
   return (
-    <section id='multi' className=''>
+    <section id='multi'>
       <section className='ct-container-70'>
-        <h3 className='font-semibold uppercase tracking-[8px]'>hợp tác</h3>
-        <h2 className='mb-[40px] inline-block  text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>
-          {t('heading')}
-        </h2>
-        <div className='grid grid-cols-1 gap-[20px] pb-[40px] lg:grid-cols-2 lg:gap-[40px]'>
+        <h3 className='font-semibold uppercase tracking-[8px]'>{td('text2')}</h3>
+        <h2 className='mb-[40px] inline-block  text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>{t('heading')}</h2>
+        <motion.div
+          initial={{
+            y: 60,
+            opacity: 0,
+          }}
+          whileInView={{
+            x: 0,
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.3,
+            delay: 0.5,
+          }}
+          viewport={{ once: true }}
+          className='grid grid-cols-1 gap-[20px] pb-[40px] lg:grid-cols-2 lg:gap-[40px]'
+        >
           {DataLabel.map((item: any, index: number) => (
-            <div
-              key={`datalabel-${index}`}
-              className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'
-            >
+            <div key={`datalabel-${index}`} className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'>
               <div className='flex items-center gap-[10px]'>
-                {/* <div className='h-[12px] w-[12px] animate-ping rounded-full bg-gradient-to-tr from-[#000000] to-[#181818]' /> */}
                 <span className='relative flex h-[16px] w-[16px] items-center justify-center'>
                   <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f5b500] opacity-75'></span>
                   <span className='relative inline-flex h-[10px] w-[10px] rounded-full bg-[#f5b500]'></span>
@@ -237,7 +262,7 @@ const HinhThucKetNoi = () => {
               <p className=' text-[1.8rem] font-light'>{item.description}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </section>
   )
@@ -261,16 +286,12 @@ const MainSection = () => {
               </div>
               <div className='flex flex-col gap-[20px]'>
                 <div className='flex items-center gap-[8px]'>
-                  <Image src={'/storm.svg'} alt='' width={14} height={14} />
-                  <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>
-                    {t('text1')}
-                  </p>
+                  <Image src={'/storm.svg'} alt='storm' width={14} height={14} className='w-auto' />
+                  <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>{t('text1')}</p>
                 </div>
                 <div className='flex items-center gap-[8px]'>
-                  <Image src={'/storm.svg'} alt='' width={14} height={14} />
-                  <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>
-                    {t('text2')}
-                  </p>
+                  <Image src={'/storm.svg'} alt='storm' width={14} height={14} className='w-auto' />
+                  <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>{t('text2')}</p>
                 </div>
               </div>
             </div>
@@ -282,26 +303,19 @@ const MainSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 1,
-                delay: 2,
+                delay: 1.5,
               }}
             >
-              <Image
-                src={'/hand-hold-phone-1.webp'}
-                alt=''
-                quality={100}
-                width={400}
-                height={400}
-                className='object-fit relative z-[1]'
-              />
+              <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit relative z-[1] w-auto' />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{
                 duration: 0.5,
-                delay: 3,
+                delay: 2.5,
               }}
-              className='absolute top-[460px] z-[0] object-contain md:top-0'
+              className='absolute top-[550px] z-[0] object-contain md:top-0'
             >
               <GlobeComponent />
             </motion.div>
@@ -318,19 +332,23 @@ const MainSection = () => {
 const QuickDashboard = React.memo(() => {
   const t = useTranslations('InputMainSearch')
 
-  const [objectData, sObjectData] = useState({
+  const [objectData, setObjectData] = useState({
     customers: 0,
     providers: 0,
     services: 0,
   })
 
-  const [onFetching, sOnFetching] = useState(false)
+  const [onFetching, setOnFetching] = useState(false)
 
-  const _HandleFetching = () => {
-    instance.get('/home/dash').then((res: any) => {
-      sObjectData({ ...res })
-      sOnFetching(false)
-    })
+  const _HandleFetching = async () => {
+    try {
+      const data: any = await instance.get('/home/dash')
+      setObjectData({ ...data })
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setOnFetching(false)
+    }
   }
 
   useEffect(() => {
@@ -338,23 +356,23 @@ const QuickDashboard = React.memo(() => {
   }, [onFetching])
 
   useEffect(() => {
-    sOnFetching(true)
+    setOnFetching(true)
   }, [])
 
   return (
-    <div className='relative z-[10] mt-[10px] space-y-16'>
+    <div className='relative z-[10] mb-[40px] mt-[10px] space-y-16'>
       <InputSearch />
-      <div className='grid grid-cols-3 '>
-        <div>
+      <div className='grid gap-[20px] md:grid-cols-3 md:gap-0'>
+        <div className='flex items-center justify-between md:block'>
           <h1>{t('worker')}</h1>
           <h1 className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-7xl font-bold text-transparent'>
-            <CountUp end={objectData?.providers} delay={5} />
+            <CountUp end={objectData?.providers} />
           </h1>
         </div>
-        <div>
+        <div className='flex items-center justify-between md:block'>
           <h1>{t('customer')}</h1>
           <h1 className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-7xl font-bold text-transparent'>
-            <CountUp end={objectData?.customers} delay={5} />
+            <CountUp end={objectData?.customers} />
           </h1>
         </div>
         <div>
@@ -376,14 +394,16 @@ const ServcesModal = React.memo((props: any) => {
   }, [props?.value])
 
   return (
-    <div>
+    <div className='flex w-full items-center justify-between md:block'>
       <h1>{t('industry')}</h1>
-      <Link
-        href={`/${locale}/services`}
-        className='cursor-pointer bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-7xl font-bold text-transparent hover:opacity-80 active:opacity-100'
-      >
-        <CountUp end={countUpValue} delay={5} />
-      </Link>
+      <div>
+        <Link
+          href={`/${locale}/services`}
+          className='cursor-pointer bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-7xl font-bold text-transparent hover:opacity-80 active:opacity-100'
+        >
+          <CountUp end={countUpValue} delay={5} />
+        </Link>
+      </div>
     </div>
   )
 })
@@ -391,11 +411,10 @@ const ServcesModal = React.memo((props: any) => {
 const CustomerBenefitSection = () => {
   const t = useTranslations('CustomerBenefitSection')
 
-  interface TlistBenefit {
+  const listBenefit: {
     title: string
     id: number
-  }
-  const listBenefit: TlistBenefit[] = [
+  }[] = [
     { title: t('listBenefit.title1'), id: 1 },
     { title: t('listBenefit.title2'), id: 2 },
     { title: t('listBenefit.title3'), id: 3 },
@@ -406,48 +425,56 @@ const CustomerBenefitSection = () => {
   return (
     <div className='ct-container-70 flex flex-col gap-[20px]'>
       <div className='flex flex-col gap-[10px] md:hidden'>
-        <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] text-primary-blue lg:text-[2rem]'>
-          {t('benefit')}
-        </h3>
+        <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] text-primary-blue lg:text-[2rem]'>{t('benefit')}</h3>
         <p className=' text-[2.4rem] md:text-[3.2rem]'>{t('text')}</p>
       </div>
-      <div className=' grid grid-cols-1 gap-[20px] xl:grid-cols-5'>
+      <div className='mt-[40px] grid grid-cols-1 gap-[20px] xl:grid-cols-5'>
         <div className='col-span-1 xl:col-span-2'>
           <div className='hidden flex-col gap-[10px] md:flex'>
-            <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
-              {t('benefit')}
-            </h3>
-            <p className='whitespace-nowrap text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[3.2rem]'>
-              {t('text')}
-            </p>
+            <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>{t('benefit')}</h3>
+            <p className='whitespace-nowrap text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[3.2rem]'>{t('text')}</p>
           </div>
-          <div className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'>
-            <Image
-              src={'/khach-benefit-7.webp'}
-              alt=''
-              quality={100}
-              height={600}
-              width={600}
-              className='pointer-events-none select-none h-full w-full object-contain'
-            />
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{
+              once: true,
+            }}
+            className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'
+          >
+            <Image src={'/khach-benefit-7.webp'} alt='khach-benefit-7' quality={100} height={600} width={600} className='pointer-events-none h-full w-full select-none object-contain' />
+          </motion.div>
         </div>
-        <div className='col-span-1 grid grid-cols-1 gap-[20px] md:mx-auto md:max-w-[820px] md:grid-cols-2 md:gap-[40px] xl:col-span-3'>
-          {listBenefit.map((item: TlistBenefit, index: number) => (
-            <div className='col-span-1' key={`listBenefit-${index}`}>
+        <div className='col-span-1 grid grid-cols-1 md:mx-auto md:max-w-[820px] md:grid-cols-2 xl:col-span-3'>
+          {listBenefit.map((item, index) => (
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: (index + 1) % 2 === 0 ? -200 : 200,
+                y: -200,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.2,
+                ease: 'easeOut',
+                delay: 1 * ((index + 1) * 0.25),
+              }}
+              viewport={{
+                once: true,
+              }}
+              className='col-span-1'
+              key={item.id}
+            >
               <div className='items-left flex items-center gap-[20px] md:flex-col lg:justify-center xl:gap-[6px]'>
-                <ImageFallback
-                  src={`/numbers/${index + 1}.png`}
-                  alt='AI Robot'
-                  width={200}
-                  height={200}
-                  className='pointer-events-none size-[200px] select-none'
-                />
-                <h3 className='mt-[-16px] text-[1.8rem] text-base-black-1 lg:text-center'>
-                  {item.title}
-                </h3>
+                <ImageFallback src={`/numbers/${index + 1}.png`} alt='AI Robot' width={200} height={200} className='pointer-events-none size-[180px] select-none' />
+                <h3 className='mt-[-16px] text-[1.8rem] lg:text-center'>{item.title}</h3>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -462,14 +489,21 @@ const WorkerBenefitSection = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [onFetching, setOnFetching] = useState<boolean>(false)
   const [onRefresh, setOnRefresh] = useState<boolean>(false)
+
   const [listDataBenefit, setListDataBenefit] = useState<any>([])
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
+
+  const [isMobile, setIsMobile] = useState(false)
+
   const swiperRef = useRef<any>(null)
 
   const _handleFetching = useCallback(async () => {
     try {
-      const data: any = await instance.get(`home/benefit?lang=${locale}`)
+      const data: any = await instance.get(`home/benefit?lang=${onRefresh ? 'en' : locale}`)
       setListDataBenefit([...data])
+      if (!data?.length) {
+        setOnRefresh(true)
+      }
     } catch (error) {
       console.log(error)
     } finally {
@@ -500,59 +534,53 @@ const WorkerBenefitSection = () => {
     }, 30000)
   }
 
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index: any, className: any) {
-      return `<img key="bullet-${index}" alt="image benefits" src="/benefits/mini/${
-        index + 1
-      }.png" class="w-[120px] object-cover rounded-full overflow-hidden paginationBenefit hover:scale-110 active:scale-100 cursor-pointer  ${className}"/>`
-    },
-  }
-
   useEffect(() => {
     return () => clearTimeout(timer)
   }, [timer])
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
-    <div className='relative flex flex-col gap-[20px] '>
-      <div className='ct-container-70 flex flex-col gap-[20px] xl:gap-[40px]'>
+    <div className='relative flex flex-col'>
+      <div className='ct-container-70 flex flex-col'>
         <div className='flex items-center justify-between'>
           <div className='flex flex-col gap-[10px]'>
-            <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
-              {t('benefit')}
-            </h3>
-            <p className='text-[2.4rem] font-bold uppercase text-primary-blue md:text-[3.6rem]'>
-              {t('text')}
-            </p>
+            <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>{t('benefit')}</h3>
+            <p className='text-[2.4rem] font-bold uppercase text-primary-blue md:text-[3.6rem]'>{t('text')}</p>
           </div>
           <div className='rounded-full bg-black px-[24px] py-[8px] text-white'>
-            {currentIndex + 1 <= 9 ? `0${currentIndex + 1}` : currentIndex + 1}/
-            {listDataBenefit.length}
+            {currentIndex + 1 <= 9 ? `0${currentIndex + 1}` : currentIndex + 1}/{listDataBenefit?.length}
           </div>
         </div>
         {onFetching ? (
           <>
-            <div className='flex h-[200px] w-full animate-pulse items-center justify-center bg-gray-300'>
-              <ImageSkeleton style='h-[60px] w-full animate-pulse' />
+            <div className='flex min-h-[400px] w-full animate-pulse items-center justify-center bg-gray-300 md:min-h-[600px] xl:min-h-[800px]'>
+              <ImageSkeleton style='h-[100px] w-full animate-pulse' />
             </div>
             <div className='flex w-full flex-col items-center justify-center gap-[12px] p-[20px]'>
               {Array(4)
                 .fill(1)
                 .map((_, index) => (
-                  <Skeleton
-                    key={`skeleton-text-${index}`}
-                    className='h-[12px] w-full rounded-lg'
-                  />
+                  <Skeleton key={`skeleton-text-${index}`} className='h-[12px] w-full rounded-lg' />
                 ))}
             </div>
-            <div className='flex w-full items-center justify-center gap-[20px]'>
+            <div className='flex w-full items-center justify-center  gap-[20px]'>
               {Array(6)
                 .fill(1)
                 .map((_: any, index: number) => (
-                  <Skeleton
-                    className='h-[32px] w-[32px] flex-shrink-0 rounded-lg'
-                    key={`skeleton-pagination-${index}`}
-                  />
+                  <Skeleton className='h-[32px] w-[32px] flex-shrink-0 rounded-lg' key={`skeleton-pagination-${index}`} />
                 ))}
             </div>
           </>
@@ -574,65 +602,55 @@ const WorkerBenefitSection = () => {
               }}
               navigation
               modules={[Autoplay, EffectFade, FreeMode, Navigation, Thumbs]}
-              className='benefitSwipper z-[5] h-full w-full'
+              className='benefitSwipper z-[5] h-full w-full md:max-h-[420px] 13inch:max-h-[480px]'
               onActiveIndexChange={(swiper: any) => {
                 setCurrentIndex(swiper.realIndex)
               }}
             >
               {listDataBenefit?.map((item: any, index: number) => {
                 return (
-                  <div className='h-full w-full' key={`listDataBenefit-${index}`}>
-                    <SwiperSlide
-                      className={currentIndex === index ? 'visible' : 'invisible'}
-                      onClick={_handleClickSwiper}
-                    >
-                      <div className='relative z-[12] flex items-center justify-between gap-[40px]'>
-                        <h4 className='text-[2rem] font-semibold text-base-black-1'>
-                          {item.title}
-                        </h4>
-                        <div className='likeButton z-[10] hidden md:block'>
-                          <LikeControl item={item} />
-                        </div>
-                      </div>
-                      <div className='likeButtonMobile relative z-[10] my-10 w-auto md:hidden'>
+                  <SwiperSlide key={item.uuid} className={currentIndex === index ? 'visible' : 'invisible'} onClick={_handleClickSwiper}>
+                    <div className='relative z-[12] flex items-center justify-between gap-[40px]'>
+                      <h4 className='text-[2rem] font-semibold '>{item.title}</h4>
+                      <div className='likeButton z-[10] hidden md:block'>
                         <LikeControl item={item} />
                       </div>
-                      <div className='grid w-full grid-cols-2 gap-[20px] rounded-xl'>
-                        <div className='text order-1 col-span-2 h-full w-full text-[1.8rem] md:order-none md:col-span-1'>
-                          <div dangerouslySetInnerHTML={{ __html: item.html }} />
-                        </div>
-                        <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
-                          <ImageFallback
-                            src={`/benefits/${index + 1}.png`}
-                            alt={item.title}
-                            height={400}
-                            width={860}
-                            quality={100}
-                            className='max-h-[250px] w-full object-cover md:max-h-none'
-                          />
-                        </div>
+                    </div>
+                    <div className='likeButtonMobile relative z-[10] my-10 w-auto md:hidden'>
+                      <LikeControl item={item} />
+                    </div>
+                    <div className='grid w-full grid-cols-2 gap-[20px] rounded-xl'>
+                      <div className='text order-1 col-span-2 h-full w-full text-[1.8rem] md:order-none md:col-span-1'>
+                        <div dangerouslySetInnerHTML={{ __html: item.html }} />
                       </div>
-                    </SwiperSlide>
-                  </div>
+                      <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
+                        <ImageFallback
+                          priority
+                          src={`/benefits/${index + 1}.png`}
+                          alt={item.title}
+                          height={400}
+                          width={400}
+                          className='max-h-[400px] w-full object-contain md:max-h-[280px] 13inch:max-h-none'
+                        />
+                      </div>
+                    </div>
+                  </SwiperSlide>
                 )
               })}
             </Swiper>
             <Swiper
               onSwiper={(swiper: any) => setThumbsSwiper(swiper)}
-              slidesPerView={6}
+              slidesPerView={isMobile ? 3 : 6}
               spaceBetween={10}
               freeMode={true}
               modules={[FreeMode, Navigation, Thumbs]}
-              className='swipperPagination z-[-1] mx-auto flex w-full max-w-[90%] items-center justify-between gap-[20px]'
+              className={`swiperPagination z-10 flex w-full max-w-[86%] items-center justify-between ${isMobile ? 'mt-10' : ''}`}
             >
               {listDataBenefit?.map((item: any, index: number) => (
-                <SwiperSlide>
+                <SwiperSlide key={`swipper-slide-${index}`}>
                   <div
-                    className={`${
-                      currentIndex === index
-                        ? ' border-[#FCB713]'
-                        : 'border-transparent opacity-50'
-                    }  relative overflow-hidden rounded-[10px] border-[2px] transition`}
+                    onClick={_handleClickSwiper}
+                    className={`${currentIndex === index ? ' border-[#FCB713]' : 'border-transparent opacity-50'}  relative overflow-hidden rounded-[10px] border-[2px] transition`}
                   >
                     <ImageFallback
                       src={`/benefits/${index + 1}.png`}
@@ -640,11 +658,9 @@ const WorkerBenefitSection = () => {
                       height={400}
                       width={860}
                       quality={100}
-                      className={`h-full w-full cursor-pointer select-none object-cover transition hover:scale-105 ${
-                        currentIndex === index && 'scale-105'
-                      } `}
+                      className={`h-full w-full cursor-pointer select-none object-cover transition hover:scale-105 ${currentIndex === index && 'scale-105'} `}
                     />
-                    <span className='absolute left-[8px] top-[8px] flex size-[24px] items-center justify-center rounded-full bg-black text-[1.2rem] text-white'>
+                    <span className='absolute left-[8px] top-[8px] flex size-12 items-center justify-center rounded-full bg-black text-[1.2rem] text-white md:size-10 lg:size-12'>
                       {index < 9 ? `0${index + 1}` : index + 1}
                     </span>
                   </div>
@@ -690,22 +706,17 @@ const PressHome = () => {
   }, [locale])
 
   return (
-    <div className='ct-container-70 flex flex-col gap-[20px] pb-[40px] md:pb-0'>
+    <div className='ct-container-70 z-10 flex flex-col gap-[20px] pb-[40px] md:pb-0'>
       <div className='flex items-center justify-between'>
-        <h2 className='inline-block text-[1.8rem] font-bold uppercase text-primary-blue md:text-[3.2rem]'>
-          {t('heading')}
-        </h2>
-        <Link
-          href={`/${locale}/press`}
-          className='group inline-flex items-center text-[1.6rem] font-semibold md:text-[1.8rem]'
-        >
+        <h2 className='inline-block text-[1.8rem] font-bold uppercase text-primary-blue md:text-[3.2rem]'>{t('heading')}</h2>
+        <Link href={`/${locale}/press`} className='group inline-flex items-center text-[1.6rem] font-semibold md:text-[1.8rem]'>
           <p>{t('seeAll')}</p>
           <span className='transition group-hover:translate-x-2'>
             <ArrowRight2 />
           </span>
         </Link>
       </div>
-      <div className='blog-home flex flex-nowrap gap-[20px] overflow-x-auto xl:grid xl:grid-cols-4 xl:overflow-x-auto'>
+      <div className='blog-home flex flex-nowrap gap-[10px] overflow-x-auto overflow-y-hidden p-[4px] lg:grid lg:grid-cols-4 lg:gap-[20px]'>
         {onFetching
           ? Array(4)
               .fill(null)
@@ -716,13 +727,7 @@ const PressHome = () => {
               ))
           : listBlog.length > 0
             ? listBlog.map((item: any, index: number) => {
-                return (
-                  <Article
-                    key={`blog-${index}`}
-                    item={item}
-                    style='w-[80%] md:w-[40%] xl:w-full cursor-pointer'
-                  />
-                )
+                return <Article key={index} index={index} item={item} style='w-[80%] md:w-[40%] lg:w-full cursor-pointer' />
               })
             : Array(4)
                 .fill(null)
@@ -737,6 +742,7 @@ const PressHome = () => {
 }
 
 const LikeControl = ({ item }: { item: any }) => {
+  const t = useTranslations('Modal')
   const [checkLike, setCheckLike] = useState({ isLiked: item.isLike, count: item.like })
   const [checkDislike, setCheckDislike] = useState<any>({ isDisliked: item.isDislike })
 
@@ -760,7 +766,7 @@ const LikeControl = ({ item }: { item: any }) => {
         message: dislikeMessage,
       })
       setCheckDislike(data)
-      ToastComponent({ message: 'Cảm ơn bạn đã đóng góp ý kiến', type: 'success' })
+      ToastComponent({ message: t('messageToast'), type: 'success' })
     } catch (error) {
       console.log(error)
     }
@@ -790,114 +796,39 @@ const LikeControl = ({ item }: { item: any }) => {
   return (
     <Tooltip
       isDisabled={!checkDislike.isDisliked}
-      content={'Cảm ơn bạn đã đóng góp ý kiến'}
+      content={t('messageToast')}
       placement='top'
       classNames={{
         content: 'text-[1.8rem] px-[16px] py-[8px]',
       }}
     >
       <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
-        <div className=''>
-          <Like
-            isDislike={checkDislike.isDisliked}
-            isLike={checkLike.isLiked}
-            count={checkLike.count}
-            onClick={() => _HandleAction('like')}
-          />
+        <div>
+          <Like isDislike={checkDislike.isDisliked} isLike={checkLike.isLiked} count={checkLike.count} onClick={() => _HandleAction('like')} />
         </div>
         <div className='mx-[8px] hidden h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1] md:flex' />
-        <div className=''>
-          <UnLike
-            isDislike={checkDislike.isDisliked}
-            setMessage={setDislikeMessage}
-            message={dislikeMessage}
-            onClick={() => _HandleAction('dislike')}
-          />
+        <div>
+          <UnLike isDislike={checkDislike.isDisliked} setMessage={setDislikeMessage} message={dislikeMessage} onClick={() => _HandleAction('dislike')} />
         </div>
       </div>
     </Tooltip>
   )
 }
 
-const Like = ({
-  onClick,
-  isLike,
-  count,
-  isDislike,
-}: {
-  onClick?: any
-  isLike?: boolean
-  count?: number
-  isDislike: boolean
-}) => {
-  const [scope, animate] = useAnimate()
-
-  const handeAnimation = (isLike: boolean) => {
-    const button: any = document.querySelector('.likeButton')
-    const buttonMobile: any = document.querySelector('.likeButtonMobile')
-    const rect = button.getBoundingClientRect()
-    const rect2 = buttonMobile.getBoundingClientRect()
-    const x =
-      (rect.left + rect.width / 2) / window.innerWidth !== 0
-        ? (rect.left + rect.width / 2) / window.innerWidth
-        : (rect2.left + rect2.width / 2) / window.innerWidth
-    const y =
-      (rect.top + rect.height) / window.innerHeight !== 0
-        ? (rect.top + rect.height) / window.innerHeight
-        : (rect2.top + rect2.height) / window.innerHeight
-
-    !isLike &&
-      confetti({
-        gravity: 5,
-        particleCount: 70,
-        spread: 40,
-        origin: { x, y },
-      })
-    animate(
-      isLike
-        ? []
-        : [
-            [scope.current, { y: -28 }, { duration: 0.2 }],
-            [scope.current, { scaleX: -1 }, { duration: 0.2, at: '<' }],
-            [scope.current, { scaleX: 1 }, { duration: 0.2 }],
-            [scope.current, { y: 0 }, { duration: 0.2 }],
-          ],
-    )
-  }
-
+const Like = ({ onClick, isLike, count, isDislike }: { onClick?: any; isLike?: boolean; count?: number; isDislike: boolean }) => {
   return (
-    <button
-      disabled={isDislike}
-      className='like flex items-center gap-[8px] px-[20px] py-[10px]'
-      onClick={onClick}
-    >
+    <button disabled={isDislike} className='like flex items-center gap-[8px] px-[20px] py-[10px]' onClick={onClick}>
       <motion.div>
-        <Like1
-          ref={scope}
-          variant={isLike ? 'Bold' : 'Linear'}
-          size={24}
-          style={{ zIndex: 1000 }}
-          className={isLike ? 'text-[#FCB713]' : 'text-base-black-1'}
-        />
+        <Like1 variant={isLike ? 'Bold' : 'Linear'} size={24} style={{ zIndex: 1000 }} className={isLike ? 'text-[#FCB713]' : ''} />
       </motion.div>
-      <span className='text-base-black-1'>{count}</span>
+      <span>{count}</span>
     </button>
   )
 }
 
 Like.displayName = 'Like'
 
-const UnLike = ({
-  onClick,
-  isDislike,
-  message,
-  setMessage,
-}: {
-  onClick?: any
-  isDislike?: boolean
-  message: string
-  setMessage: any
-}) => {
+const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; isDislike?: boolean; message: string; setMessage: any }) => {
   const t = useTranslations('Modal')
 
   const { isOpen, onOpenChange, onOpen, onClose } = useDisclosure()
@@ -915,16 +846,8 @@ const UnLike = ({
 
   return (
     <>
-      <button
-        onClick={() => _HandleUnLike()}
-        disabled={isDislike}
-        className='unlike flex items-center px-[20px] py-[10px]'
-      >
-        <Dislike
-          size={24}
-          variant={isDislike ? 'Bold' : 'Linear'}
-          className={isDislike ? 'text-[#FCB713]' : 'text-base-black-1'}
-        />
+      <button onClick={() => _HandleUnLike()} disabled={isDislike} className='unlike flex items-center px-[20px] py-[10px]'>
+        <Dislike size={24} variant={isDislike ? 'Bold' : 'Linear'} className={isDislike ? 'text-[#FCB713]' : ''} />
       </button>
       <DefaultModal
         onOpenChange={onOpenChange}
@@ -932,16 +855,10 @@ const UnLike = ({
         modalBody={
           <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
             <div className='flex items-center justify-center'>
-              <Image
-                src={'/benefitCustomer/Fixy-write1.png'}
-                alt='write-mascot'
-                height={174}
-                width={217}
-                className='object-cover'
-              />
+              <Image src={'/benefitCustomer/Fixy-write1.png'} alt='write-mascot' height={174} width={217} className='object-cover' />
             </div>
             <div className='flex flex-col justify-center gap-[8px]'>
-              <p className='font-medium text-base-black-1 '>{t('heading')}</p>
+              <p className='text-[1.8rem]  font-medium'>{t('heading')}</p>
               <Textarea
                 value={message}
                 onChange={(e: any) => setMessage(e.target.value)}
@@ -950,20 +867,16 @@ const UnLike = ({
                 className='w-full'
                 classNames={{
                   input: 'text-[1.8rem]',
-                  inputWrapper:
-                    'px-[16px] py-[12px] text-[#969696] border-1 border-[#E1E1E1] bg-transparent',
+                  inputWrapper: 'px-[16px] py-[12px] text-[#969696] border-1 border-[#E1E1E1] bg-transparent',
                 }}
               />
             </div>
-            <Button
-              onPress={_HandleSendMessage}
-              className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.8rem] font-medium text-base-black-1'
-            >
+            <Button onPress={_HandleSendMessage} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.8rem] font-medium '>
               {t('send')}
             </Button>
           </div>
         }
-      ></DefaultModal>
+      />
     </>
   )
 }

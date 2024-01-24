@@ -32,7 +32,7 @@ const config: Config = {
     },
     screens: {
       xs: '475px',
-      '13inch': '1350px',
+      '13inch': '1300px',
       '2xxl': '1700px',
       '3xl': '1940px',
       ...defaultTheme.screens,

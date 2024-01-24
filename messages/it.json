@@ -29,8 +29,8 @@
     "text2": "Oppure scannerizza il codice QR qui sotto"
   },
   "Footer": {
-    "address": "57 Song Hanh, Quartiere An Phu, Città di Thu Duc,",
-    "location": "Città di Ho Chi Minh, Vietnam.",
+    "address": "Azienda di tecnologia Vua Thợ",
+    "location": "Città di Ho Chi Minh, Vietnam",
     "our_partner": "I Nostri Partner",
     "about_vuatho": "Su Vua Thợ",
     "about_us": "Chi Siamo",
@@ -362,7 +362,7 @@
     "numberGoal": "100.000 +",
     "textGold": "Artigiani e utenti in tutto il paese entro il 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Contattaci",
     "address1": "57 Song Hanh, Quartiere An Phu, Città di Thu Duc,",
     "address2": "Ho Chi Minh City, Vietnam.",
@@ -370,7 +370,7 @@
     "timeDay": "da lunedì a venerdì",
     "text": "Nessun supporto nei giorni sabato, domenica e nei giorni festivi",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "Guida per Registrarsi come Fornitore di Servizi",
@@ -386,6 +386,7 @@
     "text10": "Marchi di legno chiari e distinti",
     "text11": "Carta d'identità nazionale",
     "text12": "Passaporto",
+    "text12-1": "Patente di guida",
     "text13": "Requisiti Generali dei Documenti",
     "text14": "Prepara uno dei due tipi di documenti",
     "text15": "Scarica l'App Vua Thợ",
@@ -398,6 +399,7 @@
     "text22": "Cliente",
     "text23": "Se desideri cercare servizi/fornitori.",
     "text24": "Se desideri fornire servizi e cercare lavori.",
+    "text25": "“Artigiano” Se desideri fornire servizi e cercare lavoro.",
     "text26": "Fornitore di Servizi",
     "text27": "Entrambi questi ruoli sono integrati e utilizzati all'interno dell'app Vua Thợ.",
     "text28": "Come nuovi utenti, dovrebbero selezionare il",
@@ -426,7 +428,24 @@
     "text51": "Dopo aver completato i passaggi precedenti, attendere che il sistema esamini il proprio account e fornisca un feedback il prima possibile.",
     "text52": "La risposta del sistema includerà:",
     "text53": "Gli utenti possono utilizzare tutte le funzionalità e i servizi dell'applicazione",
-    "text54": "Gli utenti devono effettuare nuovamente la verifica dell'identità per accedere a tutte le funzionalità e i servizi dell'applicazione"
+    "text54": "Gli utenti devono effettuare nuovamente la verifica dell'identità per accedere a tutte le funzionalità e i servizi dell'applicazione",
+    "text55": "Preparare tutti i documenti necessari",
+    "text56": "O scanner il codice QR",
+    "text57": "Gli utenti scaricano l'app Vua Thợ su App Store o CH Play.",
+    "text59": "\"Cliente\" se desideri cercare servizi/artigiani.",
+    "text61": "Il sistema richiede l'inserimento del numero di telefono e del codice internazionale del telefono.",
+    "text65": "Gli utenti devono effettuare l'identificazione eKYC una volta con un account, quando si passa da un account all'altro (artigiano → cliente/cliente → artigiano), non è necessario effettuare l'identificazione eKYC per la seconda volta.",
+    "text66": "Gli utenti possono effettuare autonomamente l'eKYC nella sezione Account mostrata nella parte superiore dell'account o il sistema li guiderà durante la visualizzazione dell'app con un account non ancora eKYC.",
+    "text67": "L'app Vua Thợ collabora con SumSub per effettuare l'identificazione dell'account online. L'identificazione richiede che gli utenti forniscono le seguenti informazioni:",
+    "text68": "Paese di residenza",
+    "text69": "Documenti personali correlati (gli utenti scelgono uno tra i documenti per la verifica)",
+    "text70": "Carta d'identità",
+    "text71": "Libretto di famiglia",
+    "text72": "Patente di guida",
+    "text73": "Dopo aver selezionato il paese e il tipo di documento personale correlato, il sistema richiede agli utenti di scattare foto ai due lati del documento scelto (si consiglia l'uso della Carta d'Identità Nazionale - CCCD in Vietnam). Successivamente, verrà richiesto agli utenti di scattare un selfie seguendo le istruzioni di SumSub.",
+    "text74": "Dopo aver completato il processo di identificazione, il sistema fornirà un risultato approssimativo entro 5 minuti, il risultato del sistema includerà:",
+    "text75": "Verifica riuscita: Gli utenti possono utilizzare tutti i servizi e le funzionalità dell'app.",
+    "text76": "Verifica fallita: Gli utenti devono effettuare nuovamente la verifica per poter utilizzare tutti i servizi e le funzionalità dell'app."
   },
   "FindWorker": {
     "heading": "Come Trovare Lavoratori su Vua Thợ",
@@ -459,13 +478,9 @@
     "text27": "Inserire il codice OTP inviato dal sistema via SMS",
     "text28": "Passo 5",
     "text29": "Passo 6",
-    "text30": "Fai clic sull'icona 'trova lavoratori' nella barra di navigazione inferiore per aprire la pagina dei lavoratori disponibili",
-    "text31": "I clienti possono aggiungere dettagli alla loro richiesta di lavoratori",
-    "text32": "Servizio",
-    "text33": "Descrizione dettagliata del lavoro",
-    "text34": "Tempistica",
-    "text35": "Immagini - video - descrizioni (se disponibili)",
-    "text36": "Clicca su Trova Lavoratori e conferma le informazioni",
+    "text30": "Fare clic sull'icona del \"Re degli artigiani AI\" per iniziare a cercare un artigiano con l'assistente AI",
+    "text31": "Chatta con l'IA per confermare l'ordine",
+    "text36": "Conferma le informazioni e premi per cercare un artigiano",
     "text37": "Dopo aver verificato le informazioni, clicca sul pulsante Conferma per iniziare a cercare lavoratori",
     "text38": "Dopo la conferma nel passaggio 3, lo schermo passerà alla mappa per iniziare la ricerca di lavoratori",
     "text39": "Quando un lavoratore invierà un preventivo, il sistema notificherà il cliente. I clienti possono scegliere un lavoratore adatto cliccando su Visualizza Dettagli per vedere le informazioni del lavoratore e il preventivo",
@@ -484,7 +499,7 @@
     "text1": "Abbigliamento Professionale per Artigiani",
     "text2": "Sentiti più sicuro al lavoro",
     "text3": "Contatta per effettuare un ordine",
-    "text4": "ROYAL CRAFTSMAN UNIFORMS",
+    "text4": "ROYAL SERVICE PROVIDER UNIFORMS",
     "text5": "Forniamo uniformi solo per dipendenti interni dell'azienda. Grazie per il tuo interesse e speriamo tu comprenda questo inconveniente.",
     "text6": "Numero di Telefono dell'Artigiano Registrato",
     "text7": "Continua",
@@ -506,7 +521,10 @@
     "text23": "Inserisci un nome",
     "text24": "Inserisci un indirizzo",
     "text25": "Conferma le Informazioni dell'Ordine",
-    "text26": "Indirizzo di Consegna"
+    "text26": "Indirizzo di Consegna",
+    "text27": "Quantità",
+    "text28": "Seleziona la taglia",
+    "text29": "Carrello"
   },
   "Map": {
     "text1": "Utenti dell'App",
@@ -724,12 +742,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -854,7 +872,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -869,5 +887,10 @@
     "worker": "Fornitore di servizi",
     "customer": "Cliente",
     "industry": "Industria"
+  },
+  "Extra": {
+    "text": "impegno",
+    "text1": "ACCORDO",
+    "text2": "collaborazione"
   }
 }

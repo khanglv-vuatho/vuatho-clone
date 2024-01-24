@@ -29,8 +29,8 @@
     "text2": "또는 아래의 QR 코드를 스캔하세요"
   },
   "Footer": {
-    "address": "57 Song Hanh, Ward An Phu, Thu Duc City,",
-    "location": "호치민시, 베트남.",
+    "address": "Vua Thợテクノロジー有限会社",
+    "location": "호치민시, 베트남",
     "our_partner": "우리 파트너",
     "about_vuatho": "Vua Thợ에 대하여",
     "about_us": "회사 소개",
@@ -361,7 +361,7 @@
     "numberGoal": "2024년까지 100,000 명 이상의",
     "textGold": "모든 지역의 장인 및 사용자들을 연결하는 것입니다."
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "문의하기",
     "address1": "베트남 호치민시 슈투둑시 안푸 지구 송한 57번지,",
     "address2": "베트남.",
@@ -369,7 +369,7 @@
     "timeDay": "월요일부터 금요일까지",
     "text": "토요일, 일요일 및 공휴일에는 지원하지 않습니다.",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "서비스 제공자로 등록하는 가이드",
@@ -385,6 +385,7 @@
     "text10": "명확하고 구분되는 워터마크",
     "text11": "국민 신분증",
     "text12": "여권",
+    "text12-1": "운전 면허증",
     "text13": "일반 문서 요구 사항",
     "text14": "두 가지 유형 중 하나의 문서를 준비하세요",
     "text15": "Vua Thợ 앱 다운로드",
@@ -397,6 +398,7 @@
     "text22": "고객",
     "text23": "서비스/공급자를 검색하려면 선택하세요.",
     "text24": "서비스를 제공하고 일자리를 검색하려면 선택하세요.",
+    "text25": "“기사” 당신이 서비스를 제공하고 일자리를 찾고 싶다면.",
     "text26": "서비스 제공자",
     "text27": "이 두 가지 역할은 Vua Thợ 애플리케이션 내에서 통합되어 사용됩니다.",
     "text28": "새로운 사용자로서, 앱에서",
@@ -425,7 +427,24 @@
     "text51": "위의 단계를 완료한 후 시스템이 계정을 검토하고 가능한 빨리 피드백을 제공하기를 기다리세요.",
     "text52": "시스템의 응답은 다음을 포함합니다:",
     "text53": "사용자는 애플리케이션의 모든 기능과 서비스를 사용할 수 있습니다.",
-    "text54": "사용자는 애플리케이션의 모든 기능과 서비스에 액세스하려면 다시 신원 확인을 수행해야 합니다"
+    "text54": "사용자는 애플리케이션의 모든 기능과 서비스에 액세스하려면 다시 신원 확인을 수행해야 합니다",
+    "text55": "문서를 준비하세요",
+    "text56": "또는 QR 코드를 스캔하세요.",
+    "text57": "사용자는 App Store 또는 CH Play에서 Vua Thợ 앱을 다운로드합니다.",
+    "text59": "\"고객\"이라면 서비스/기사를 찾고 싶을 때입니다.",
+    "text61": "시스템은 전화 번호 및 전화 번호 국가 코드를 입력하도록 요청합니다.",
+    "text65": "사용자는 1회의 eKYC 신원 확인을 1 계정으로만 수행하면 계정 전환 시 (기사 → 고객/고객 → 기사) 두 번째 eKYC를 수행할 필요가 없습니다.",
+    "text66": "사용자는 계정 상단에 나타나는 '계정' 섹션에서 또는 아직 eKYC를 수행하지 않은 계정으로 앱을 보고 있을 때 시스템의 안내에 따라 자체적으로 eKYC를 수행할 수 있습니다.",
+    "text67": "Vua Thợ 앱은 온라인 계정 확인을 위해 SumSub와 협력하고 있습니다. 사용자의 계정을 확인하기 위해서는 다음 정보를 제공해야 합니다:",
+    "text68": "거주 국가",
+    "text69": "관련 개인 신분증 (사용자는 확인을 위해 여러 신분증 중 하나를 선택합니다)",
+    "text70": "신분증",
+    "text71": "가족 관계 증명서",
+    "text72": "운전 면허증",
+    "text73": "국가 및 관련 개인 신분증 종류를 선택한 후, 시스템은 사용자에게 선택한 신분증 종류의 양면을 촬영하도록 요청하며 (베트남에서는 국민 신분증을 사용하는 것이 권장됩니다) 그 후에는 SumSub의 안내에 따라 사용자의 셀카를 촬영합니다.",
+    "text74": "신원 확인 작업을 완료한 후 시스템은 예상 결과를 5분 이내에 제공하며, 시스템 결과에는 다음이 포함됩니다:",
+    "text75": "성공적인 확인: 사용자는 앱의 모든 서비스 및 기능을 사용할 수 있습니다.",
+    "text76": "확인 실패: 사용자는 앱의 모든 서비스 및 기능을 사용하려면 확인을 다시 수행해야 합니다."
   },
   "FindWorker": {
     "heading": "Vua Thợ에서 노동자 찾는 방법",
@@ -458,13 +477,9 @@
     "text27": "시스템에서 SMS로 전송된 OTP 코드를 입력하십시오.",
     "text28": "단계 5",
     "text29": "단계 6",
-    "text30": "네비게이션 바 아래에 '노동자 찾기' 아이콘을 클릭하여 노동자 찾기 페이지를 엽니다.",
-    "text31": "고객은 노동자 요청에 세부 정보를 추가할 수 있습니다.",
-    "text32": "서비스",
-    "text33": "작업에 대한 자세한 설명",
-    "text34": "작업 기간",
-    "text35": "이미지 - 비디오 - 설명 (사용 가능한 경우)",
-    "text36": "노동자 찾기를 클릭하고 정보를 확인하십시오.",
+    "text30": "AI 기사 왕 아이콘을 눌러 AI 비서를 통해 기사를 찾아보세요.",
+    "text31": "주문을 확인하려면 AI와 대화하세요.",
+    "text36": "정보를 확인하고 기사를 찾기를 누르세요.",
     "text37": "정보를 두 번 확인한 후 확인 버튼을 클릭하여 노동자 찾기를 시작하십시오.",
     "text38": "단계 3에서 확인한 후, 화면이 노동자 찾기를 시작하기 위해 지도로 전환됩니다.",
     "text39": "노동자가 견적을 제공하면 시스템은 고객에게 알립니다. 고객은 노동자의 정보와 견적을 보려면 '상세 정보'를 클릭하여 적합한 노동자를 선택할 수 있습니다.",
@@ -505,7 +520,10 @@
     "text23": "이름을 입력하세요",
     "text24": "주소를 입력하세요",
     "text25": "주문 정보 확인",
-    "text26": "배송 주소"
+    "text26": "배송 주소",
+    "text27": "수량",
+    "text28": "사이즈 선택",
+    "text29": "장바구니"
   },
   "Map": {
     "text1": "앱 사용자",
@@ -723,12 +741,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -853,7 +871,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -868,5 +886,10 @@
     "worker": "서비스 제공자",
     "customer": "고객",
     "industry": "산업"
+  },
+  "Extra": {
+    "text": "약속",
+    "text1": "합의",
+    "text2": "협력"
   }
 }

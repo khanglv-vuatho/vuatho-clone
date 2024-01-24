@@ -29,8 +29,8 @@
     "text2": "或扫描下方的QR码"
   },
   "Footer": {
-    "address": "57松汗，An Phu區，Thu Duc市，",
-    "location": "胡志明市，越南。",
+    "address": "Vua Thợ科技有限公司",
+    "location": "胡志明市，越南",
     "our_partner": "我們的合作夥伴",
     "about_vuatho": "關於Vua Thợ",
     "about_us": "關於我們",
@@ -360,15 +360,15 @@
     "numberGoal": "100,000 +",
     "textGold": "2024年前全國的工匠和用戶"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "聯繫我們",
-    "address1": "越南胡志明市Thu Duc City, An Phu區, Song Hanh路57號",
+    "address1": "越南胡志明市Thu Duc City, An Phu區, Song Hanh路57號 Ho Chi Minh",
     "address2": "越南胡志明市。",
     "timeNumber": "上午8:30至下午4:30",
     "timeDay": "星期一至星期五",
     "text": "不提供週六、週日和公共假期的支援",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "註冊成為服務提供者指南",
@@ -384,6 +384,7 @@
     "text10": "清晰而明顯的木印",
     "text11": "國民身分證",
     "text12": "護照",
+    "text12-1": "驾驶执照",
     "text13": "一般文件要求",
     "text14": "準備兩種文件中的一種",
     "text15": "下載Vua Thợ應用程式",
@@ -396,6 +397,7 @@
     "text22": "客戶",
     "text23": "如果您想尋找服務提供者。",
     "text24": "如果您想提供服務並尋找工作。",
+    "text25": "“工匠” 如果您想提供服务并寻找工作。",
     "text26": "服務提供者",
     "text27": "這兩個角色集成在Vua Thợ應用程式中並可供使用。",
     "text28": "作為新用戶，他們應選擇",
@@ -424,7 +426,24 @@
     "text51": "完成上述步驟後，請等待系統審查您的帳戶並盡快提供反饋。",
     "text52": "系統的反饋將包括：",
     "text53": "用戶可以使用應用程式的所有功能和服務",
-    "text54": "用戶必須再次進行身份驗證才能訪問應用程式的所有功能和服務"
+    "text54": "用戶必須再次進行身份驗證才能訪問應用程式的所有功能和服務",
+    "text55": "准备足够的文件",
+    "text56": "或者扫描QR码",
+    "text57": "用户可在App Store或CH Play上下载Vua Thợ应用。",
+    "text59": "如果您想寻找服务/技师，请选择“客户”",
+    "text61": "系统要求输入电话号码和电话号码的国家代码。",
+    "text65": "用户只需对一个帐户进行一次eKYC身份验证，当转换帐户（技师→客户/客户→技师）时，无需进行第二次eKYC身份验证。",
+    "text66": "用户可以在上方的帐户部分主动进行eKYC身份验证，或者在使用未进行eKYC身份验证的帐户查看应用程序时，系统会提供操作指南。",
+    "text67": "Vua Thợ应用与SumSub合作进行在线帐户身份验证。身份验证要求用户提供以下信息：",
+    "text68": "居住国家",
+    "text69": "相关个人证件（用户选择一种证件进行验证）",
+    "text70": "身份证",
+    "text71": "户口簿",
+    "text72": "驾驶证",
+    "text73": "选择国家和相关个人证件类型后，系统要求用户拍摄所选证件的两面照片（在越南建议使用公民身份证 - CCCD）。然后，用户需按照SumSub的指示拍摄自拍照。",
+    "text74": "完成身份验证后，系统将在5分钟内返回预计结果，系统的结果将包括：",
+    "text75": "验证成功：用户可使用应用程序的所有服务和功能。",
+    "text76": "验证失败：用户必须重新进行验证，以使用应用程序的所有服务和功能。"
   },
 
   "FindWorker": {
@@ -458,13 +477,9 @@
     "text27": "輸入系統通過短信發送的OTP代碼",
     "text28": "步驟5",
     "text29": "步驟6",
-    "text30": "點擊導航欄下方的'尋找工人'圖標以打開尋找工人頁面",
-    "text31": "客戶可以添加工人請求的詳細信息",
-    "text32": "服務",
-    "text33": "詳細的工作描述",
-    "text34": "時間框架",
-    "text35": "圖片 - 視頻 - 描述（如果有）",
-    "text36": "點擊尋找工人並確認信息",
+    "text30": "点击“AI大师”图标开始通过AI助手寻找技工",
+    "text31": "与AI聊天以确认订单",
+    "text36": "确认信息并点击查找技工",
     "text37": "在仔細檢查信息後，點擊確認按鈕開始尋找工人",
     "text38": "在確認第3步後，屏幕將切換到地圖以開始搜索工人",
     "text39": "當工人提供報價時，系統將通知客戶。客戶可以通過點擊查看詳細信息來選擇合適的工人，查看工人的信息和報價",
@@ -505,7 +520,10 @@
     "text23": "請輸入姓名",
     "text24": "請輸入地址",
     "text25": "確認訂單信息",
-    "text26": "交付地址"
+    "text26": "交付地址",
+    "text27": "数量",
+    "text28": "选择尺寸",
+    "text29": "购物车"
   },
   "Map": {
     "text1": "應用程序用戶",
@@ -723,12 +741,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -853,7 +871,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -868,5 +886,10 @@
     "worker": "工人",
     "customer": "客户",
     "industry": "行业"
+  },
+  "Extra": {
+    "text": "承诺",
+    "text1": "协议",
+    "text2": "合作"
   }
 }

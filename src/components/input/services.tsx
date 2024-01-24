@@ -1,29 +1,33 @@
 'use client'
 
-import Image from 'next/image'
-import React, { useEffect, useState, useCallback, useRef } from 'react'
-import instance from '@/services/axiosConfig'
-import { SearchNormal1 as IconSearchNormal1 } from 'iconsax-react'
+import { SearchNormal1 as SearchNormal1Icon } from 'iconsax-react'
 import { useLocale, useTranslations } from 'next-intl'
-import { useRouter } from '@/navigation'
+import Image from 'next/image'
+import { memo, useCallback, useEffect, useRef, useState } from 'react'
 
-let timerSearch: any = null
-const InputMainSearch = React.memo((props: any) => {
+import { useUnfocusItem } from '@/hook'
+import { useRouter } from '@/navigation'
+import instance from '@/services/axiosConfig'
+
+const InputMainSearch = memo((props: any) => {
   const t = useTranslations('InputMainSearch')
 
-  const [isFocus, sIsFocus] = useState(false)
+  const [isFocus, setIsFocus] = useState(false)
   const [onFetching, sOnFetching] = useState(false)
   const [data, sData] = useState<any>([])
 
-  const [keyword, sKeyword] = useState('')
+  const timerSearch: any = useRef(null)
+  const exclusionRef = useRef(null)
+  const searchAreaRef = useUnfocusItem(() => _HandleOnFocus(false), exclusionRef)
 
-  const _HandleSearching = useCallback(() => {
+  const [keyword, setKeyword] = useState('')
+
+  const _HandleSearching = useCallback(async () => {
     try {
-      instance.get('/services/search', { params: { keyword } }).then((res) => {
-        console.log(res)
-        sData(res)
-      })
+      const data = await instance.get('/services/search', { params: { keyword } })
+      sData(data)
     } catch (error) {
+      console.log(error)
     } finally {
       sOnFetching(false)
     }
@@ -35,80 +39,48 @@ const InputMainSearch = React.memo((props: any) => {
 
   useEffect(() => {
     if (keyword) {
-      timerSearch && clearTimeout(timerSearch)
-      timerSearch = setTimeout(() => {
+      timerSearch.current && clearTimeout(timerSearch.current)
+      timerSearch.current = setTimeout(() => {
         sOnFetching(true)
       }, 250)
     } else {
-      timerSearch && clearTimeout(timerSearch)
+      timerSearch.current && clearTimeout(timerSearch.current)
     }
     return () => {
-      timerSearch && clearTimeout(timerSearch)
+      timerSearch.current && clearTimeout(timerSearch.current)
     }
   }, [keyword])
 
   const _HandleOnFocus = useCallback((isBoolean: any) => {
-    sIsFocus(isBoolean)
+    setIsFocus(isBoolean)
   }, [])
 
   const _HandleOnChangeInput = useCallback((e: any) => {
-    sKeyword(e.target.value)
-  }, [])
-
-  const searchAreaRef = useRef<any>(null)
-
-  const handleClickOutside = (event: any) => {
-    if (searchAreaRef.current && !searchAreaRef.current.contains(event.target)) {
-      _HandleOnFocus(false)
-    }
-  }
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
+    setKeyword(e.target.value)
   }, [])
 
   return (
-    <div
-      ref={searchAreaRef}
-      id='search-area-services'
-      className='relative z-[10] w-full space-y-3 md:w-[70%]'
-    >
+    <div ref={searchAreaRef} id='search-area-services' className='relative z-[10] mt-[20px] w-full space-y-3 md:max-w-[80%]'>
       <div className='flex w-full rounded-full border-2 border-[#f5b500] p-3 outline-none focus:border-[#ffcc3f]'>
         <input
-          onFocus={_HandleOnFocus.bind(this, true)}
-          type='text'
+          onFocus={() => _HandleOnFocus(true)}
           onChange={_HandleOnChangeInput}
           placeholder={t('text1')}
-          className={
-            props.className
-              ? props.className
-              : `w-full rounded-full p-3 px-6 outline-none`
-          }
+          className={props.className ? props.className : 'w-full rounded-full p-3 pl-6 outline-none'}
         />
         <button className='rounded-full bg-[#f5b500] p-3 hover:opacity-75 active:opacity-100'>
-          <IconSearchNormal1 />
+          <SearchNormal1Icon />
         </button>
       </div>
-      <div
-        className={`absolute z-[1] overflow-hidden overflow-y-auto transition ${
-          !isFocus ? 'max-h-[0px]' : 'max-h-[200px]'
-        } w-full rounded-2xl bg-white shadow-xl`}
-      >
+      <div className={`absolute z-[1] overflow-hidden overflow-y-auto transition ${!isFocus ? 'max-h-[0px]' : 'max-h-[200px]'} w-full rounded-2xl bg-white shadow-xl`}>
         {onFetching && <p className='p-3 py-5 text-center text-gray-400'>{t('text2')}</p>}
-        {!onFetching && (
-          <div>
-            {data?.map((x: any) => <ItemRenderService key={x.id?.toString()} {...x} />)}
-          </div>
-        )}
+        {!onFetching && <div>{data?.map((x: any) => <ItemRenderService key={x.id?.toString()} {...x} />)}</div>}
       </div>
     </div>
   )
 })
 
-const ItemRenderService = React.memo((props: any) => {
+const ItemRenderService = memo((props: any) => {
   const locale = useLocale()
   const router = useRouter()
   const [iconSrc, seticonSrc] = useState(props.icon)
@@ -127,17 +99,8 @@ const ItemRenderService = React.memo((props: any) => {
   }
 
   return (
-    <div
-      onClick={_HandleOnClick.bind(this)}
-      className='flex cursor-pointer items-center gap-[10px] p-3 py-4'
-    >
-      <Image
-        src={iconSrc}
-        onError={_HandleOnErrorIcon.bind(this)}
-        alt=''
-        width={48}
-        height={48}
-      />
+    <div onClick={_HandleOnClick.bind(this)} className='flex cursor-pointer items-center gap-[10px] p-3 py-4'>
+      <Image src={iconSrc} onError={_HandleOnErrorIcon.bind(this)} alt='' width={48} height={48} />
       <h3 className='text-[1.8rem] xl:text-[1.8rem]'>{props.name[locale]} </h3>
     </div>
   )

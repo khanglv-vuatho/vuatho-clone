@@ -29,8 +29,8 @@
     "text2": "O i-scan ang QR code sa ibaba"
   },
   "Footer": {
-    "address": "57 Song Hanh, Ward An Phu, Thu Duc City,",
-    "location": "Ho Chi Minh City, Vietnam.",
+    "address": "Kumpanya ng Vua Thợ",
+    "location": "Ho Chi Minh City, Vietnam",
     "our_partner": "Mga Kasosyo Namin",
     "about_vuatho": "Tungkol sa Vua Thợ",
     "about_us": "Tungkol Sa Amin",
@@ -363,7 +363,7 @@
     "numberGoal": "100,000 +",
     "textGold": "Mga Manggagawa at mga tagagamit sa buong bansa ngayong 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Makipag-ugnay Sa Amin",
     "address1": "57 Song Hanh, Ward An Phu, Thu Duc City,",
     "address2": "Ho Chi Minh City, Vietnam.",
@@ -371,7 +371,7 @@
     "timeDay": "Lunes hanggang Biyernes",
     "text": "Walang suporta tuwing Sabado, Linggo, at mga holiday ng publiko",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "Gabay sa Pagpaparehistro bilang Tagapagbigay ng Serbisyo",
@@ -387,6 +387,7 @@
     "text10": "Malinaw at iba't-ibang marka ng kahoy",
     "text11": "National ID Card",
     "text12": "Pasaporte",
+    "text12-1": "Lisensiyang Pamaneho",
     "text13": "Pangkalahatang mga Kinakailangan ng Dokumento",
     "text14": "Ihanda ang isa sa dalawang uri ng mga dokumento",
     "text15": "I-download ang Vua Thợ App",
@@ -399,6 +400,7 @@
     "text22": "Customer",
     "text23": "Kung nais mong maghanap ng mga serbisyo/provider.",
     "text24": "Kung nais mong magbigay ng mga serbisyo at maghanap ng mga trabaho.",
+    "text25": "“Manggagawa” Kung nais mong magbigay ng serbisyo at maghanap ng trabaho.",
     "text26": "Tagapagbigay ng Serbisyo",
     "text27": "Ang parehong mga papel na ito ay naka-integrate at ginagamit sa loob ng aplikasyon ng Vua Thợ.",
     "text28": "Bilang mga bagong tagagamit, dapat nilang piliin ang",
@@ -427,7 +429,24 @@
     "text51": "Matapos ang pagkumpleto ng mga hakbang na ito, maghintay na mag-review ang sistema ng iyong account at magbigay ng feedback sa lalong madaling panahon.",
     "text52": "Kasama sa tugon ng sistema ang mga sumusunod:",
     "text53": "Maaaring gamitin ng mga tagagamit ang lahat ng tampok at serbisyo ng aplikasyon",
-    "text54": "Kailangang mag-verify muli ng pagkakakilanlan ang mga tagagamit upang magamit ang lahat ng tampok at serbisyo ng aplikasyon"
+    "text54": "Kailangang mag-verify muli ng pagkakakilanlan ang mga tagagamit upang magamit ang lahat ng tampok at serbisyo ng aplikasyon",
+    "text55": "Ihanda ang lahat ng mga dokumento.",
+    "text56": "O i-scan ang QR code",
+    "text57": "Ang mga gumagamit ay maaaring mag-download ng Vua Thợ app sa App Store o sa CH Play.",
+    "text59": "Pumili ng 'Guest' kung nais mong maghanap ng serbisyo/o trabahador.",
+    "text61": "Ang sistema ay nangangailangan ng pag-input ng numero ng telepono at country code ng numero ng telepono.",
+    "text65": "Ang mga gumagamit ay kailangang maglakbay lang ng eKYC (Electronic Know Your Customer) isang beses sa isang account. Kapag nag-switch ng account (mula trabahador → guest/guest → trabahador), hindi na kailangang maglakbay ulit ng eKYC pangalawang beses.",
+    "text66": "Ang mga gumagamit ay maaaring gawin ang eKYC nang proactively sa 'Account' na ipinapakita sa itaas o ayon sa mga tagubilin ng sistema habang naka-login gamit ang account na hindi pa na eKYC.",
+    "text67": "Ang Vua Thợ app ay nakipag-partner sa SumSub para sa online account verification. Ang proseso ng account verification ay nangangailangan ng mga sumusunod na impormasyon mula sa mga gumagamit:",
+    "text68": "Bansa ng Residensiya",
+    "text69": "Relevanteng personal na identification (pumili ng isa sa mga uri ng ID para sa pag-verify)",
+    "text70": "ID card",
+    "text71": "Residence certificate",
+    "text72": "Driver's license",
+    "text73": "Pagkatapos pumili ng bansa at uri ng ID, ang sistema ay hihilingin sa mga gumagamit na kumuha ng litrato ng magkabilang mukha ng ID na kanilang pinili (rekomendadong gamitin ang Căn cước công dân - CCCD sa Vietnam). Pagkatapos nito, kinakailangan ang gumagamit na kunan ng selfie ayon sa mga tagubilin ng SumSub.",
+    "text74": "Pagkatapos makumpleto ang proseso ng verification, ang sistema ay magbibigay ng resulta sa loob ng 5 minuto. Ang resulta ng sistema ay maglalaman ng:",
+    "text75": "Matagumpay na Verification: Ang mga gumagamit ay maaaring gamitin ang lahat ng serbisyo at mga feature ng app.",
+    "text76": "Failed Verification: Ang mga gumagamit ay kinakailangang ulitin ang proseso ng verification upang magamit ang lahat ng serbisyo at mga feature ng app."
   },
 
   "FindWorker": {
@@ -460,13 +479,9 @@
     "text27": "Maglagay ng OTP code na ipadadala ng sistema sa pamamagitan ng SMS",
     "text28": "Hakbang 5",
     "text29": "Hakbang 6",
-    "text30": "Mag-click sa 'hanapin ang mga manggagawa' na icon sa ilalim ng navigation bar para buksan ang pahina ng paghahanap ng manggagawa",
-    "text31": "Maaaring magdagdag ng mga detalye sa kanilang kahilingan sa manggagawa",
-    "text32": "Serbisyo",
-    "text33": "Detalyadong paglalarawan ng trabaho",
-    "text34": "Timeframe",
-    "text35": "Mga larawan - mga video - mga paglalarawan (kung mayroon)",
-    "text36": "Mag-click sa Hanapin ang mga Manggagawa at kumpirmahin ang impormasyon",
+    "text30": "I-click ang icon ng 'AI Handyman' upang simulan ang paghahanap ng handyman gamit ang AI assistant",
+    "text31": "Kausapin ang AI upang kumpirmahin ang order",
+    "text36": "Kumpirmahin ang impormasyon at i-click ang hanapin ang handyman",
     "text37": "Pagkatapos ng doble-checking ng impormasyon, mag-click ng Confirm button para simulan ang paghahanap ng mga manggagawa",
     "text38": "Matapos kumpirmahin sa hakbang 3, mag-switch ang screen sa mapa para simulan ang paghahanap ng mga manggagawa",
     "text39": "Kapag nagbigay ng quote ang isang manggagawa, ipapaalam ng sistema sa customer. Ang mga customer ay maaaring pumili ng angkop na manggagawa sa pamamagitan ng pag-click sa View Details para makita ang impormasyon ng manggagawa at ang kanyang quote",
@@ -486,7 +501,7 @@
     "text1": "Mga Kasuotang Propesyonal para sa mga Manggagawa sa Likha",
     "text2": "Maging Mas Kumpiyansa sa Trabaho",
     "text3": "Makipag-ugnay upang Maglagay ng Order",
-    "text4": "ROYAL CRAFTSMAN UNIFORMS",
+    "text4": "ROYAL SERVICE PROVIDER UNIFORMS",
     "text5": "Nagbibigay lamang kami ng mga uniporme para sa mga empleyado ng kumpanya. Salamat sa iyong interes, at sana'y maunawaan mo ang abalang ito.",
     "text6": "Numero ng Inirehistradong Manggagawa sa Likha",
     "text7": "Magpatuloy",
@@ -508,7 +523,10 @@
     "text23": "Mangyaring magbigay ng pangalan",
     "text24": "Mangyaring magbigay ng address",
     "text25": "Kumpirmahin ang Impormasyon ng Order",
-    "text26": "Address ng Paghahatid"
+    "text26": "Address ng Paghahatid",
+    "text27": "Damihan",
+    "text28": "Pumili ng laki",
+    "text29": "Basket"
   },
   "Map": {
     "text1": "Mga Tagagamit ng App",
@@ -726,12 +744,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -856,7 +874,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -871,5 +889,10 @@
     "worker": "Tagapagbigay ng Serbisyo",
     "customer": "Customer",
     "industry": "Industriya"
+  },
+  "Extra": {
+    "text": "pangako",
+    "text1": "kasunduan",
+    "text2": "kooperasyon"
   }
 }

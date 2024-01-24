@@ -1,11 +1,12 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react'
+import { Accordion, AccordionItem } from '@nextui-org/react'
 
 import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'
-import { Accordion, AccordionItem } from '@nextui-org/react'
+import ImageFallback from '@/components/ImageFallback'
 
 const SectionStep = () => {
   const t = useTranslations('BecomeWorker')
@@ -35,12 +36,13 @@ const SectionStep = () => {
       content: <Step5 />,
     },
   ]
+
   const [activeSelect, setActiveSelect] = useState<string>(listAccordion[0].title)
 
-  const handleActiveSelect = (title: any, index: number) => {
+  const handleActiveSelect = useCallback((title: any, index: number) => {
     setActiveSelect(title)
     setContentNumber(index)
-  }
+  }, [])
 
   const handleSelect = () => {
     const activeButton = document.querySelector(`button.menuActive`) as HTMLElement
@@ -52,6 +54,7 @@ const SectionStep = () => {
       ;(highlight as HTMLElement).style.height = `${height}px`
     }
   }
+
   useEffect(() => {
     handleSelect()
   }, [activeSelect])
@@ -70,20 +73,15 @@ const SectionStep = () => {
 
   return (
     <div className='bg-white py-[20px] 13inch:py-[40px] 3xl:py-[80px]'>
-      <div className='ct-container-70 hidden w-full gap-10 md:flex lg:gap-20'>
-        <div className='relative min-w-[28%] lg:min-w-[31%] 2xl:min-w-[28%] '>
-          <div
-            className='absolute w-full rounded-[60px] bg-gradient-to-r from-[#FFB500] to-[#FED32C] transition'
-            ref={highlightRef}
-          />
-          <div className='flex flex-col gap-2'>
+      <div className='ct-container-70 hidden justify-center gap-[20px] md:grid md:grid-cols-5'>
+        <div className='relative col-span-2 min-w-[28%] lg:min-w-[31%] 2xl:min-w-[28%]'>
+          <div className='absolute w-full border-l-[4px] border-[#FCB713] bg-gradient-to-r from-[#FCB71333] to-[#FCB71300] transition' ref={highlightRef} />
+          <div className='flex flex-col'>
             {listAccordion.map((i: any, index: number) => (
               <button
                 onClick={() => handleActiveSelect(i.title, index)}
-                className={`flex w-full items-center justify-start rounded-[60px] px-10 py-6 text-[1.8rem] ${
-                  activeSelect === i.title
-                    ? 'menuActive text-black'
-                    : 'bg-transparent hover:bg-gradient-to-r hover:from-[#FFB500]/5 hover:to-[#FED32C]/5'
+                className={`flex w-full items-center justify-start border-l-[4px] border-transparent px-10 py-6 text-[1.8rem] ${
+                  activeSelect === i.title ? 'menuActive text-black' : 'hover:border-[#FCB713]/5 hover:bg-gradient-to-r hover:from-[#FCB71333]/5 hover:to-[#FCB71300]/5'
                 }`}
                 key={i.title}
               >
@@ -92,11 +90,8 @@ const SectionStep = () => {
             ))}
           </div>
         </div>
-        <div className='w-full border-l-1 border-[#E1E1E1] pl-10 lg:pl-20'>
-          {listAccordion[contentNumber].content}
-        </div>
+        <div className='col-span-3 w-full'>{listAccordion[contentNumber].content}</div>
       </div>
-
       <div className='ct-container-70 block md:hidden'>
         <div className='w-full'>
           <Accordion
@@ -138,318 +133,177 @@ const SectionStep = () => {
   )
 }
 
-const Step1: React.FC = () => {
+const Step1: React.FC = memo(() => {
   const t = useTranslations('BecomeWorker')
 
   const DocRequirements = [t('text6'), t('text7'), t('text8'), t('text9'), t('text10')]
-  const DocType = [t('text11'), t('text12')]
+  const DocType = [t('text11'), t('text12'), t('text12-1')]
 
   return (
-    <>
-      <h3 className='text-[1.8rem] font-bold text-[#0B27B6]'>{t('text13')}</h3>
+    <div className='*:text-[1.8rem] *:font-light'>
+      <h3 className='text-[2rem] !font-bold text-[#0B27B6] md:text-[2.4rem]'>{t('text55')}</h3>
+      <h4 className='mt-[16px] !font-medium'>{t('text13')}</h4>
       <ul className='mt-4 list-inside list-disc'>
         {DocRequirements.map((item) => (
-          <li key={item} className='text-[1.8rem] text-[#555]'>
-            {item}
-          </li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
-      <h4 className='mt-14 text-[1.8rem] font-medium'>{t('text14')}</h4>
+      <h4 className='mt-[16px] !font-medium'>{t('text14')}</h4>
       <ul className='mt-4 list-inside list-disc'>
         {DocType.map((item) => (
-          <li key={item} className='text-[1.8rem] text-[#555]'>
-            {item}
-          </li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
-      <div className='mt-6 flex flex-col items-center gap-6 13inch:flex-row'>
-        <Image
-          src={'/images/cmnd1.png'}
-          alt=''
-          width={324}
-          height={191}
-          className='pointer-events-none'
-        />
-        <Image
-          src={'/images/cmnd2.png'}
-          alt=''
-          width={324}
-          height={191}
-          className='pointer-events-none'
-        />
+      <div className='mt-6 flex flex-col justify-start gap-4 lg:flex-row lg:items-center '>
+        <Image src={'/images/cmnd1.png'} alt='' width={324} height={191} className='pointer-events-none max-w-[240px]' />
+        <Image src={'/images/cmnd2.png'} alt='' width={324} height={191} className='pointer-events-none max-w-[240px]' />
       </div>
-    </>
+    </div>
   )
-}
+})
 
-const Step2: React.FC = () => {
+const Step2: React.FC = memo(() => {
   const t = useTranslations('BecomeWorker')
 
   return (
     <>
-      <h3 className='text-[1.8rem] font-bold text-[#0B27B6]'>{t('text15')}</h3>
-      <div className='flex flex-col items-start gap-10 md:gap-20 lg:flex-row lg:gap-40'>
-        <div className='flex items-center gap-10'>
-          <div className='mt-8 space-y-10'>
-            <div>
-              <h4 className='mb-2 text-[1.8rem]'> {t('text16')}</h4>
-              <AndroidBtn />
-            </div>
-            <div>
-              <h4 className='mb-2 text-[1.8rem]'> {t('text17')}</h4>
-              <IosBtn />
-            </div>
-          </div>
-          <span className='text-[1.8rem] text-black/50'> {t('text18')}</span>
+      <h3 className='mb-[16px] text-[2rem] font-bold text-[#0B27B6] md:text-[2.4rem] '>{t('text15')}</h3>
+      <div className='flex flex-col gap-[16px] lg:flex-row lg:items-center'>
+        <div className='grid grid-cols-1 gap-[16px] xl:grid-cols-2'>
+          <AndroidBtn />
+          <IosBtn />
+        </div>
+        <span className='text-[1.8rem] text-black/50'>{t('text56')}</span>
+        <div>
           <QrCode />
         </div>
       </div>
     </>
   )
-}
+})
 
-const Step3: React.FC = () => {
+const Step3: React.FC = memo(() => {
   const t = useTranslations('BecomeWorker')
+
+  const listItem = [
+    {
+      step: t('text20'),
+      thumb: 'phone1',
+      content: (
+        <div className='*:text-[1.8rem]'>
+          <p>{t('text57')}</p>
+          <p className='mt-[32px]'>{t('text21')}</p>
+          <ul className='list-inside list-disc'>
+            <li>{t('text59')}</li>
+            <li>{t('text25')}</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      step: t('text31'),
+      thumb: 'phone2',
+      content: (
+        <ul className='list-inside list-disc *:text-[1.8rem]'>
+          <li>{t('text32')}</li>
+          <li>{t('text33')}</li>
+        </ul>
+      ),
+    },
+    {
+      step: t('text34'),
+      thumb: 'phone3',
+      content: (
+        <ul className='list-inside list-disc *:text-[1.8rem]'>
+          <li>{t('text35')}</li>
+          <li>{t('text36')}</li>
+        </ul>
+      ),
+    },
+  ]
 
   return (
     <>
-      <h3 className='text-[1.8rem] font-bold text-[#0B27B6]'>{t('text19')}</h3>
-      <h4 className='mt-8 text-[1.8rem] font-bold'> {t('text20')}</h4>
-      <p className='mt-5 text-[1.8rem]'>{t('text21')}</p>
-      <div className='mt-3 flex flex-col gap-10 xl:flex-row'>
-        <div className=' mt-5 w-full space-y-5'>
-          <div className='flex justify-end'>
-            <div className='relative ml-20 flex w-full flex-col justify-center rounded-2xl bg-primary-yellow/10 p-8 pb-[50px] 3xl:ml-28'>
-              <p className='w-[60%] text-[1.8rem]'>
-                <span className='font-bold'> {t('text22')}</span>
-                <br />
-                {t('text23')}
-                <br />
-                {t('text24')}
-              </p>
-              <Image
-                alt='select customer'
-                src='/become-employee/step3/khach.png'
-                width={519}
-                height={615}
-                className='pointer-events-none absolute right-0 top-0 z-[1] h-[200px] w-auto object-contain md:-right-3'
-              />
-            </div>
-          </div>
-          <div className='flex justify-start'>
-            <div className='relative mr-20 flex w-full flex-col justify-center rounded-2xl bg-primary-blue/10 p-8  3xl:mr-28'>
-              <div className='flex justify-end'>
-                <p className='w-[60%] text-right text-[1.8rem]'>
-                  <span className='font-bold'>{t('text26')}</span>
-                  <br /> {t('text25')}
-                </p>
-              </div>
-              <Image
-                alt='select customer'
-                src='/become-employee/step3/tho.png'
-                width={519}
-                height={615}
-                className='pointer-events-none absolute bottom-0 left-0 h-[200px] w-auto object-contain md:-left-3 '
-              />
-            </div>
-          </div>
-          <p className='pt-5 text-center text-[1.5rem] text-black/30'>{t('text27')}</p>
-        </div>
-        <div className='w-full xl:w-1/3'>
-          <Image
-            alt='login screen'
-            src='/become-employee/step3/login.png'
-            width={432}
-            height={599}
-            quality={100}
-            className='w-auto'
-          />
-          <p className='text-[1.8rem]'>
-            {t('text28')}
-            <span className='font-bold'>{t('text29')}</span> {t('text30')}
-          </p>
-        </div>
-      </div>
-      <h4 className='mt-8 text-[1.8rem] font-bold'>{t('text31')}</h4>
-      <p className='text-[1.8rem]'>{t('text32')}</p>
-      <p className='text-[1.8rem]'>{t('text33')}</p>
-      <div className='mt-6 flex flex-col gap-6'>
-        <Image
-          src={'/become-woker/step2-1.webp'}
-          alt=''
-          width={200}
-          height={400}
-          className='pointer-events-none'
-        />
-        <Image
-          src={'/become-woker/step2-2.webp'}
-          alt=''
-          width={405}
-          height={407}
-          className='pointer-events-none'
-        />
-        <Image
-          src={'/become-woker/step2-3.webp'}
-          alt=''
-          width={378}
-          height={407}
-          className='pointer-events-none'
-        />
-      </div>
-      <h4 className='mt-8 text-[1.8rem] font-bold'>{t('text34')}</h4>
-      <p className='text-[1.8rem]'>{t('text35')}</p>
-      <p className='text-[1.8rem]'>{t('text36')}</p>
-      <Image
-        src={'/become-woker/step3-1.webp'}
-        alt=''
-        width={200}
-        height={400}
-        className='my-8'
-      />
-      <strong className='text-[1.8rem]'>{t('text37')}</strong>
-      <p className='text-[1.8rem]'>{t('text38')}</p>
-      <p className='mb-8 text-[1.8rem]'>{t('text39')}</p>
-      <div className='flex flex-col gap-8'>
-        <Image
-          src={'/become-woker/step3-2.webp'}
-          alt=''
-          width={430}
-          height={400}
-          className='pointer-events-none'
-        />
-        <Image
-          src={'/become-woker/step3-3.webp'}
-          alt=''
-          width={410}
-          height={400}
-          className='pointer-events-none'
-        />
-      </div>
-      <p className='my-8'>
-        <strong className='text-[1.8rem]'>{t('text40')}</strong>
-      </p>
-      <Image
-        src={'/become-woker/step3-4.webp'}
-        alt=''
-        width={410}
-        height={400}
-        className='pointer-events-none'
-      />
-    </>
-  )
-}
-
-const Step4: React.FC = () => {
-  const t = useTranslations('BecomeWorker')
-
-  return (
-    <>
-      <h3 className='text-[1.8rem] font-bold text-[#0B27B6]'>{t('text41')}</h3>
-      <p className='mt-8 text-[1.8rem]'>{t('text42')}</p>
-      <p className='mt-5 text-[1.8rem]'>{t('text43')}</p>
-      <div className='mt-5 flex justify-center'>
-        <div className='relative w-fit rounded-xl border-2 border-base-gray p-4'>
-          <p className='absolute -left-1 top-3 rounded-r-full bg-base-gray p-5 pr-10 text-center text-[1.8rem] font-medium shadow-md '>
-            {t('text44')}
-          </p>
-          <Image
-            alt='noti-kyc'
-            src='/become-employee/step4/nation.png'
-            width={640}
-            height={518}
-            quality={100}
-            className='h-auto w-[350px] object-contain 2xl:w-[450px] '
-          />
-        </div>
-      </div>
-      <div className='mt-5 flex justify-center'>
-        <div className='relative w-fit rounded-xl border-2 border-base-gray p-4 pt-32'>
-          <p className='absolute -left-1 top-3 rounded-r-full bg-base-gray p-5 pr-10 text-center text-[1.8rem] font-medium shadow-md'>
-            {t('text45')}
-          </p>
-          <Image
-            alt='noti-kyc'
-            src='/become-employee/step4/docs.png'
-            width={640}
-            height={439}
-            quality={100}
-            className='h-auto w-[350px] object-contain 2xl:w-[450px] '
-          />
-          <p className='mt-2 text-center text-[1.8rem] text-black/30'>
-            {t('text46')}
-            <br />
-            {t('text47')}
-          </p>
-        </div>
-      </div>
-      <p className='mt-8 text-[1.8rem]'>{t('text48')}</p>
-      <div className='mt-8 flex justify-center'>
-        <div className='relative w-fit rounded-xl border-2 border-base-gray p-4 pt-32'>
-          <p className='absolute -left-1 top-3 rounded-r-full bg-base-gray p-5 pr-10 text-center text-[1.8rem] font-medium shadow-md'>
-            {t('text49')}
-          </p>
-          <Image
-            alt='noti-kyc'
-            src='/become-employee/step4/kyc.png'
-            width={640}
-            height={439}
-            quality={100}
-            className='h-auto w-[350px] object-contain 2xl:w-[450px] '
-          />
-        </div>
+      <h3 className='text-[2rem] font-bold text-[#0B27B6] md:text-[2.4rem]'>{t('text19')}</h3>
+      <div className='mt-[16px] flex flex-col gap-[32px]'>
+        {listItem.map((item) => (
+          <Step3Item key={item.thumb} item={item} />
+        ))}
       </div>
     </>
   )
-}
+})
 
-const Step5: React.FC = () => {
-  const t = useTranslations('BecomeWorker')
+const Step3Item = ({ item }: { item: any }) => {
+  const locale = useLocale()
+  const localeImage = locale === 'vi' || locale === 'en' ? locale : 'en'
 
   return (
-    <>
-      <h3 className='text-[1.8rem] font-bold text-[#0B27B6]'>{t('text50')}</h3>
+    <div className='flex flex-col gap-[16px] *:font-light'>
+      <h4 className='text-[2rem] !font-bold'>{item.step}</h4>
+      <div className='flex gap-[20px]'>
+        <Image src={`/become-employee/step3/${item.thumb}-${localeImage}.png`} alt='step-3-1-image' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+        {item.content}
+      </div>
+    </div>
+  )
+}
+
+const Step4: React.FC = memo(() => {
+  const t = useTranslations('BecomeWorker')
+  const locale = useLocale()
+
+  const localeImage = locale === 'vi' || locale === 'en' ? locale : 'en'
+  return (
+    <div className='flex flex-col gap-[16px]'>
+      <h3 className='text-[2rem] font-bold text-[#0B27B6] md:text-[2.4rem]'>{t('text41')}</h3>
+      <div className='flex flex-col gap-[32px] *:text-[1.8rem] *:font-light'>
+        <p>{t('text42')}</p>
+        <p>{t('text65')}</p>
+        <p>{t('text66')}</p>
+        <p>{t('text67')}</p>
+        <div>
+          <p>1. {t('text68')}</p>
+          <p>2. {t('text69')}</p>
+          <ul className='list-inside list-disc'>
+            <li>{t('text70')}</li>
+            <li>{t('text71')}</li>
+            <li>{t('text72')}</li>
+            <li>{t('text12')}</li>
+          </ul>
+        </div>
+        <div className='flex w-full gap-[16px]'>
+          <ImageFallback src={`/become-employee/step4/phone1-${localeImage}.png`} alt='phone1' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+          <ImageFallback src={`/become-employee/step4/phone2-${localeImage}.png`} alt='phone2' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+        </div>
+        <p>{t('text73')}</p>
+      </div>
+    </div>
+  )
+})
+
+const Step5: React.FC = memo(() => {
+  const t = useTranslations('BecomeWorker')
+  const locale = useLocale()
+
+  const localeImage = locale === 'vi' || locale === 'en' ? locale : 'en'
+  return (
+    <div className='*:font-light'>
+      <h3 className='text-[2rem] font-bold text-[#0B27B6] md:text-[2.4rem]'>{t('text50')}</h3>
       <p className='mt-8 text-[1.8rem]'>{t('text51')}</p>
-      <div className='mt-8 flex w-fit flex-col items-center gap-10 rounded-xl bg-black/[0.02] p-8 md:flex-row'>
-        <Image
-          alt='noti-kyc'
-          src='/become-employee/step5/noti.png'
-          width={640}
-          height={492}
-          quality={100}
-          className='pointer-events-none h-[200px] w-auto object-contain lg:h-[250px]'
-        />
-        <p className='text-center text-[1.8rem] md:w-[400px] md:text-left'>
-          {t('text50')}
-        </p>
-      </div>
-      <p className='mt-8 text-[1.8rem]'>{t('text52')}</p>
-      <div className='mt-8 flex flex-col items-center gap-10 xl:flex-row'>
-        <div className='flex w-[300px] flex-col items-center space-y-6 lg:w-[350px] xl:w-[300px] 2xl:w-[400px]'>
-          <Image
-            alt='noti-kyc'
-            src='/become-employee/step5/success.png'
-            width={640}
-            height={492}
-            quality={100}
-            className='h-auto w-[300px] object-contain 2xl:w-[400px] '
-          />
-          <p className='text-center text-[1.8rem] text-black/30'>{t('text53')}</p>
-        </div>
-        <span className='text-[1.8rem] text-black/50'>{t('or')}</span>
-        <div className='flex w-[300px] flex-col items-center space-y-6 lg:w-[350px] xl:w-[300px] 2xl:w-[400px]'>
-          <Image
-            alt='noti-kyc'
-            src='/become-employee/step5/error.png'
-            width={640}
-            height={492}
-            quality={100}
-            className='h-auto w-[300px] object-contain 2xl:w-[400px]'
-          />
-          <p className='text-center text-[1.8rem] text-black/30'>{t('text54')}</p>
+      <div className='mt-8 flex w-full flex-col items-center rounded-xl'>
+        <p className='text-[1.8rem] md:text-left'>{t('text74')} </p>
+        <ul className='list-inside list-disc *:text-[1.8rem]'>
+          <li>{t('text75')}</li>
+          <li>{t('text76')}</li>
+        </ul>
+        <div className='mt-[40px] flex w-full gap-[16px]'>
+          <ImageFallback src={`/become-employee/step5/phone1-${localeImage}.png`} alt='phone1' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+          <ImageFallback src={`/become-employee/step5/phone2-${localeImage}.png`} alt='phone2' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
         </div>
       </div>
-    </>
+    </div>
   )
-}
+})
 
-export default SectionStep
+export default memo(SectionStep)

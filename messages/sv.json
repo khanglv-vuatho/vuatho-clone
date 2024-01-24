@@ -29,8 +29,8 @@
     "text2": "Eller skanna QR-koden nedan"
   },
   "Footer": {
-    "address": "57 Song Hanh, Kv. An Phu, Thu Duc City,",
-    "location": "Ho Chi Minh-staden, Vietnam.",
+    "address": "Vua Thợ Teknologi AB",
+    "location": "Ho Chi Minh-staden, Vietnam",
     "our_partner": "Våra Partners",
     "about_vuatho": "Om Vua Thợ",
     "about_us": "Om Oss",
@@ -361,7 +361,7 @@
     "numberGoal": "100 000 +",
     "textGold": "Hantverkare och användare i hela landet fram till 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Kontakta oss",
     "address1": "57 Song Hanh, An Phu Ward, Thu Duc City,",
     "address2": "Ho Chi Minh City, Vietnam.",
@@ -369,7 +369,7 @@
     "timeDay": "Måndag till fredag",
     "text": "Ingen support på lördagar, söndagar och helgdagar",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "Guide för att Registrera som Tjänsteleverantör",
@@ -385,6 +385,7 @@
     "text10": "Tydliga och distinkta träffmärken",
     "text11": "Nationellt ID-kort",
     "text12": "Pass",
+    "text12-1": "Körkort",
     "text13": "Allmänna Dokumentkrav",
     "text14": "Förbered en av de två typerna av dokument",
     "text15": "Ladda ner Vua Thợ Appen",
@@ -397,6 +398,7 @@
     "text22": "Kund",
     "text23": "Om du vill söka efter tjänster/leverantörer.",
     "text24": "Om du vill erbjuda tjänster och söka efter jobb.",
+    "text25": "“Hantverkare” Om du vill erbjuda tjänster och söka jobb.",
     "text26": "Tjänsteleverantör",
     "text27": "Båda dessa roller är integrerade och används inom Vua Thợ applikationen.",
     "text28": "Som nya användare bör de välja",
@@ -425,7 +427,24 @@
     "text51": "Efter att ha slutfört ovanstående steg, vänta på att systemet granskar ditt konto och ger feedback så snart som möjligt.",
     "text52": "Systemets svar kommer att inkludera:",
     "text53": "Användare kan använda alla funktioner och tjänster i applikationen",
-    "text54": "Användare måste utföra identitetsverifiering igen för att få tillgång till alla funktioner och tjänster i applikationen"
+    "text54": "Användare måste utföra identitetsverifiering igen för att få tillgång till alla funktioner och tjänster i applikationen",
+    "text55": "Förbered alla dokument",
+    "text56": "Eller skanna QR-koden",
+    "text57": "Användare laddar ner Vua Thợ-appen från App Store eller CH Play.",
+    "text59": "\"Gäst\" om du vill söka efter tjänster/tekniker.",
+    "text61": "Systemet begär att du anger ditt telefonnummer och landskod för telefonnumret.",
+    "text65": "Användare behöver bara genomföra eKYC-identifiering en gång med ett konto. Vid kontoväxling (tekniker → gäst/gäst → tekniker) behöver ingen eKYC-identifiering göras en andra gång.",
+    "text66": "Användare kan själva genomföra eKYC i avsnittet Konto, som visas i kontosektionen ovan eller genom att systemet guidar användaren när de tittar på appen med ett konto som inte har eKYC.",
+    "text67": "Vua Thợ-appen samarbetar med SumSub för att genomföra onlinekontoidentifiering. Kontoidentifieringen kräver att användaren tillhandahåller följande information:",
+    "text68": "Landet där de bor",
+    "text69": "Relaterade personliga dokument (användaren väljer ett av dokumenttyperna för verifiering)",
+    "text70": "ID-kort",
+    "text71": "Hushållsregister",
+    "text72": "Körkort",
+    "text73": "Efter att ha valt land och typ av personliga dokument kräver systemet att användaren tar bilder på båda sidorna av det valda dokumentet (rekommendation att använda nationellt ID-kort i Vietnam). Därefter kommer användaren att behöva ta en selfie enligt SumSub:s instruktioner.",
+    "text74": "När identifieringen är klar ger systemet en preliminär resultat inom 5 minuter. Resultatet inkluderar:",
+    "text75": "Lyckad verifiering: Användaren kan använda alla tjänster och funktioner i appen.",
+    "text76": "Misslyckad verifiering: Användaren måste genomföra en ny verifiering för att kunna använda alla tjänster och funktioner i appen."
   },
   "FindWorker": {
     "heading": "Hur man Hittar Arbetare på Vua Thợ",
@@ -458,13 +477,9 @@
     "text27": "Ange OTP-koden som skickats av systemet via SMS",
     "text28": "Steg 5",
     "text29": "Steg 6",
-    "text30": "Klicka på 'hitta arbetare'-ikonen nedanför navigationsfältet för att öppna sidan för att hitta arbetare",
-    "text31": "Kunder kan lägga till detaljer i sin förfrågan om arbetare",
-    "text32": "Tjänst",
-    "text33": "Detaljerad jobbbeskrivning",
-    "text34": "Tidsram",
-    "text35": "Bilder - videor - beskrivningar (om tillgängligt)",
-    "text36": "Klicka på Hitta Arbetare och bekräfta informationen",
+    "text30": "Klicka på 'AI-mästare'-ikonen för att börja söka efter en hantverkare med hjälp av AI-assistenten",
+    "text31": "Chatta med AI för att bekräfta din beställning",
+    "text36": "Verifiera informationen och tryck på sök hantverkare",
     "text37": "Efter att ha dubbelkollat informationen klickar du på Bekräfta-knappen för att börja hitta arbetare",
     "text38": "Efter att ha bekräftat i steg 3 kommer skärmen att byta till kartan för att börja söka arbetare",
     "text39": "När en arbetare lämnar en offert kommer systemet att meddela kunden. Kunden kan välja en lämplig arbetare genom att klicka på Visa Detaljer för att se arbetarens information och offert",
@@ -505,7 +520,10 @@
     "text23": "Vänligen ange ett namn",
     "text24": "Vänligen ange en adress",
     "text25": "Bekräfta Beställningsinformation",
-    "text26": "Leveransadress"
+    "text26": "Leveransadress",
+    "text27": "Antal",
+    "text28": "Välj storlek",
+    "text29": "Varukorg"
   },
   "Map": {
     "text1": "App Användare",
@@ -723,12 +741,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -853,7 +871,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -868,5 +886,10 @@
     "worker": "Tjänsteleverantör",
     "customer": "Kund",
     "industry": "Bransch"
+  },
+  "Extra": {
+    "text": "åtagande",
+    "text1": "AVTAL",
+    "text2": "samarbete"
   }
 }

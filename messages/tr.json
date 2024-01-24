@@ -29,8 +29,8 @@
     "text2": "Ya da aşağıdaki QR kodunu tarayın"
   },
   "Footer": {
-    "address": "57 Song Hanh, An Phu Mahallesi, Thu Duc Şehri,",
-    "location": "Ho Chi Minh Şehri, Vietnam.",
+    "address": "Vua Thợ Teknoloji AŞ",
+    "location": "Ho Chi Minh Şehri, Vietnamư ",
     "our_partner": "İş Ortağımız",
     "about_vuatho": "Vua Thợ Hakkında",
     "about_us": "Hakkımızda",
@@ -361,7 +361,7 @@
     "numberGoal": "100,000 +",
     "textGold": "2024 yılına kadar ulusal çapta işçi ve kullanıcıları bir araya getirmek"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Bize Ulaşın",
     "address1": "57 Song Hanh, An Phu Mahallesi, Thu Duc Şehri,",
     "address2": "Ho Chi Minh Şehri, Vietnam.",
@@ -369,7 +369,7 @@
     "timeDay": "Pazartesi - Cuma",
     "text": "Cumartesi, Pazar ve resmi tatillerde destek verilmemektedir",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "Hizmet Sağlayıcı Olarak Kaydolma Rehberi",
@@ -385,6 +385,7 @@
     "text10": "Net ve açık ahşap damgalara sahip olmalıdır",
     "text11": "Ulusal Kimlik Kartı",
     "text12": "Pasaport",
+    "text12-1": "Sürücü belgesi",
     "text13": "Genel Belgeler Gereksinimleri",
     "text14": "İki tür belge hazırlamalısınız",
     "text15": "Vua Thợ Uygulamasını İndirin",
@@ -397,6 +398,7 @@
     "text22": "Müşteri",
     "text23": "Hizmetleri/sağlayıcıları aramak istiyorsanız.",
     "text24": "Hizmet sağlamak ve iş aramak istiyorsanız.",
+    "text25": "“Usta” Eğer hizmet sağlamak ve iş aramak istiyorsanız.",
     "text26": "Hizmet Sağlayıcı",
     "text27": "Her iki rol de Vua Thợ uygulaması içinde entegre ve kullanılır.",
     "text28": "Yeni kullanıcılar olarak, kullanıcılar uygulamadaki",
@@ -425,7 +427,24 @@
     "text51": "Yukarıdaki adımları tamamladıktan sonra, sistemden hesabınızı gözden geçirmesini ve en kısa sürede geri bildirim sağlamasını bekleyin.",
     "text52": "Sistemin yanıtı şunları içerecektir:",
     "text53": "Kullanıcılar uygulamanın tüm özelliklerini ve hizmetlerini kullanabilirler",
-    "text54": "Kullanıcılar uygulamanın tüm özelliklerini ve hizmetlerini kullanabilmek için kimlik doğrulamasını tekrar yapmalıdırlar"
+    "text54": "Kullanıcılar uygulamanın tüm özelliklerini ve hizmetlerini kullanabilmek için kimlik doğrulamasını tekrar yapmalıdırlar",
+    "text55": "Belgeleri hazırla",
+    "text56": "Ya da QR kodunu tarayın",
+    "text57": "Kullanıcılar Vua Usta uygulamasını App Store veya CH Play'den indirebilirler.",
+    "text59": "\"Misafir\" seçeneğini seçin, eğer hizmet/ustası arıyorsanız.",
+    "text61": "Sistem telefon numarası ve telefon numarasının ülke kodunu girmenizi isteyecektir.",
+    "text65": "Kullanıcılar yalnızca bir kez eKYC kimlik doğrulaması yapmalıdır, bir hesaptan diğerine geçiş yapılırken (usta → müşteri/müşteri → usta) ikinci bir eKYC kimlik doğrulamasına gerek yoktur.",
+    "text66": "Kullanıcılar, eKYC kimlik doğrulamasını hesap bölümünde veya henüz eKYC yapılmamış bir hesapla uygulamayı görüntülerken sistem tarafından yönlendirilecek şekilde etkinleştirebilirler.",
+    "text67": "Vua Usta uygulaması, online hesap kimliği doğrulaması için SumSub ile işbirliği yapmaktadır. Kimlik doğrulaması yapmak için kullanıcılardan aşağıdaki bilgileri sağlamaları istenir:",
+    "text68": "Yaşadıkları ülke",
+    "text69": "İlgili kişisel belgeler (kullanıcı doğrulama için belgelerden birini seçmelidir)",
+    "text70": "Kimlik kartı",
+    "text71": "Aile kitabı",
+    "text72": "Ehliyet",
+    "text73": "Ülke ve kişisel belge türünü seçtikten sonra, sistem kullanıcılardan seçtikleri belgenin her iki yüzünü çekmelerini ve ardından SumSub'un talimatlarına göre bir selfie çekmelerini isteyecektir.",
+    "text74": "Kimlik doğrulama tamamlandıktan sonra, sistem tahmini sonucu 5 dakika içinde bildirecektir. Sistem sonuçları şunları içerecektir:",
+    "text75": "Başarılı doğrulama: Kullanıcı uygulamanın tüm hizmetlerini ve özelliklerini kullanabilir.",
+    "text76": "Doğrulama başarısız: Kullanıcı, uygulamanın tüm hizmetlerini ve özelliklerini kullanabilmek için doğrulamayı tekrar yapmalıdır."
   },
   "FindWorker": {
     "heading": "Vua Thợ'ta İşçi Nasıl Bulunur",
@@ -458,13 +477,9 @@
     "text27": "Sistem tarafından SMS ile gönderilen OTP kodunu girin",
     "text28": "Adım 5",
     "text29": "Adım 6",
-    "text30": "Navigasyon çubuğunun altındaki 'işçi bul' simgesini tıklayarak işçi bulma sayfasını açın",
-    "text31": "Müşteriler işçi taleplerine ayrıntılar ekleyebilir",
-    "text32": "Hizmet",
-    "text33": "Ayrıntılı iş tanımı",
-    "text34": "Zaman çerçevesi",
-    "text35": "Resimler - videolar - açıklamalar (varsa)",
-    "text36": "'İşçileri Bul' düğmesini tıklayın ve bilgileri onaylayın",
+    "text30": "“Yapay Zeka Kralı” simgesine tıklayarak AI asistan ile ustaları bulmaya başlayın",
+    "text31": "Siparişi onaylamak için AI ile sohbet edin",
+    "text36": "Bilgileri tekrar onaylayın ve ustaları aramak için dokunun",
     "text37": "Bilgileri çift kontrol ettikten sonra işçileri bulmaya başlamak için Onay düğmesine tıklayın",
     "text38": "Adım 3'ü onayladıktan sonra, ekran işçileri aramaya başlamak için haritaya geçecektir",
     "text39": "Bir işçi teklif sunduğunda, sistem müşteriyi bilgilendirecektir. Müşteriler uygun bir işçi seçmek için İncele Ayrıntıları'nı tıklayarak işçinin bilgilerini ve teklifini görebilir",
@@ -506,7 +521,10 @@
     "text23": "Lütfen bir isim girin",
     "text24": "Lütfen bir adres girin",
     "text25": "Sipariş Bilgilerini Onayla",
-    "text26": "Teslimat Adresi"
+    "text26": "Teslimat Adresi",
+    "text27": "Miktar",
+    "text28": "Boyut Seç",
+    "text29": "Alışveriş Sepeti"
   },
   "Map": {
     "text1": "Uygulama Kullanıcıları",
@@ -724,12 +742,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -854,7 +872,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -869,5 +887,10 @@
     "worker": "Hizmet Sağlayıcı",
     "customer": "Müşteri",
     "industry": "Endüstri"
+  },
+  "Extra": {
+    "text": "taahhüt",
+    "text1": "ANLAŞMA",
+    "text2": "işbirliği"
   }
 }

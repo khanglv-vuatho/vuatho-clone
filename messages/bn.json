@@ -29,7 +29,7 @@
     "text2": "অথবা নীচের কিউআর কোডটি স্ক্যান করুন"
   },
   "Footer": {
-    "address": "57 সং হান, ওয়ার্ড আন ফু, থু দুক সিটি,",
+    "address": "মাস্টার টেকনোলজি এন্ড টেকনোলজি লিমিটেড",
     "location": "হো চি মিন সিটি, ভিয়েতনাম।",
     "our_partner": "আমাদের সহযোগী",
     "about_vuatho": "ভুয়া থো সম্পর্কে",
@@ -360,7 +360,7 @@
     "numberGoal": "100,000 +",
     "textGold": "2024 সালে বিশেষজ্ঞ এবং ব্যবহারকারীদের সাথে জুড়ে যাওয়া"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "যোগাযোগ করুন",
     "address1": "57 সঙ্গ হান, ওয়ার্ড আন ফু, থু ডুক সিটি,",
     "address2": "হো চি মিন সিটি, ভিয়েতনাম।",
@@ -368,7 +368,7 @@
     "timeDay": "সোমবার থেকে শুক্রবার",
     "text": "শনিবার, রবিবার এবং সর্বজনীন ছুটি সময়ে সাপোর্ট নেই",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "একটি সেবা প্রদানকারী হিসেবে নিবন্ধনের নির্দেশিকা",
@@ -384,6 +384,7 @@
     "text10": "স্পষ্ট এবং বিশেষ কাঠের ছাপ",
     "text11": "ন্যাশনাল আইডি কার্ড",
     "text12": "পাসপোর্ট",
+    "text12-1": "ড্রাইভিং লাইসেন্স",
     "text13": "সাধারণ দলিল প্রয়োজনীয়তা",
     "text14": "দুটি প্রকারের দলিল তৈরি করুন",
     "text15": "Vua Thợ অ্যাপ ডাউনলোড করুন",
@@ -396,6 +397,7 @@
     "text22": "গ্রাহক",
     "text23": "আপনি সেবা/সরবরাহকারী খুঁজে পেতে চান তাহলে।",
     "text24": "আপনি সেবা দেওয়া এবং কাজ খুঁজে পেতে চান তাহলে।",
+    "text25": "“কর্মী” আপনি যদি সেবা প্রদান করতে এবং কাজ খুঁজতে চান।",
     "text26": "সেবা প্রদানকারী",
     "text27": "এই দুটি ভূমিকা Vua Thợ অ্যাপ্লিকেশনের মধ্যে সংযুক্ত এবং ব্যবহৃত হয়।",
     "text28": "নতুন ব্যবহারকারীরা অ্যাপ্লিকেশনে 'নিবন্ধন' বোতামটি নির্বাচন করতে হবে।",
@@ -421,7 +423,24 @@
     "text51": "উপরের পদক্ষেপগুলি সম্পন্ন করার পর, সিস্টেমটি আপনার অ্যাকাউন্ট পর্যালোচনা করার জন্য অপেক্ষা করুন এবং সম্ভবত সত্ত্বর প্রতিক্রিয়া দিবে।",
     "text52": "সিস্টেমের প্রতিক্রিয়া অবশ্যই অধ্যায় হবে:",
     "text53": "ব্যবহারকারীরা অ্যাপ্লিকেশনের সমস্ত বৈশিষ্ট্য এবং সেবাগুলি ব্যবহার করতে পারবে",
-    "text54": "ব্যবহারকারীরা অ্যাপ্লিকেশনের সমস্ত বৈশিষ্ট্য এবং সেবাগুলি ব্যবহার করতে পাওয়ার জন্য আবার পরিচয় যাচাই করতে হবে"
+    "text54": "ব্যবহারকারীরা অ্যাপ্লিকেশনের সমস্ত বৈশিষ্ট্য এবং সেবাগুলি ব্যবহার করতে পাওয়ার জন্য আবার পরিচয় যাচাই করতে হবে",
+    "text55": "সম্পূর্ণ দলিল প্রস্তুত করুন",
+    "text56": "অথবা কিউআর কোড স্ক্যান করুন",
+    "text57": "ব্যবহারকারীরা App Store বা CH Play থেকে 'মাস্টার মেকানিক' অ্যাপটি ডাউনলোড করতে পারেন।",
+    "text59": "আপনি 'অতিথি' হতে চাইলে পরিষেবা/মিস্ত্রি খুঁজতে পারেন।",
+    "text61": "সিস্টেম একটি ফোন নম্বর এবং ফোন নম্বরের দেশ কোড প্রবেশ করতে বলে।",
+    "text65": "ব্যবহারকারীদেরকে একবার eKYC পরিচালনা করতে এবং একটি একক অ্যাকাউন্টে একবার eKYC সম্পন্ন করতে বলা হয়, একবার অ্যাকাউন্ট পাল্টাতে (মিস্ত্রি → অতিথি/অতিথি → মিস্ত্রি) তাদেরকে আবার eKYC করতে হবে না।",
+    "text66": "ব্যবহারকারীরা স্বয়ংক্রিয় eKYC অভিযান চালাতে পারেন, যা একটি একাউন্টের উপরে প্রদর্শিত থাকতে পারে অথবা তাদের যখন তাদের অকাউন্ট দেখছেন যা ই-কোয়িক অভিযান সহ অনুসরণ করতে হয়।",
+    "text67": "মাস্টার মেকানিক অ্যাপ সময় অনলাইন একাউন্ট পরিচালনায় SumSub সহ সহযোগিতা করে। অ্যাকাউন্ট পরিচালনা করতে ব্যবহারকারীদেরকে নিম্নলিখিত তথ্য সরবরাহ করতে বলা হয়:",
+    "text68": "বসবাস করা দেশ",
+    "text69": "সম্পর্কিত ব্যক্তিগত কাগজপত্র (ব্যবহারকারীদের বৈধ কাগজপত্রের মধ্যে 1 টি চয়ন করতে হবে)",
+    "text70": "আইড কার্ড",
+    "text71": "বাড়ির প্রমাণপত্র",
+    "text72": "ড্রাইভিং লাইসেন্স",
+    "text73": "দেশ এবং সংবর্গগুলি চয়ন করার পর, সিস্টেম ব্যবহারকারীদেরকে নির্দিষ্ট কাগজপত্রের 2 পৃষ্ঠা ছবি তুলতে বলবে (ভারতে আমদানির জন্য নাগরিক পরিচয়পত্র ব্যবহার করতে প্রচুর অনুমোদিত)। এরপরে তাদেরকে SumSub এর নির্দেশিকা মোতাবেক নিজের ছবি তুলতে বলা হবে।",
+    "text74": "পরিচালনার পর, সিস্টেম 5 মিনিটের মধ্যে প্রাক্কলিত ফলাফল ফিরে দেবে, সিস্টেমের ফলাফল অবশ্যই অন্তর্নিহিত থাকবে:",
+    "text75": "সফল যাচাই: ব্যবহারকারীরা অ্যাপ এর সমস্ত পরিষেবা এবং বৈশিষ্ট্যগুলি ব্যবহার করতে পারবেন।",
+    "text76": "যাচাই ব্যর্থ: ব্যবহারকারীদেরকে সমস্ত এবং অ্যাপ এর বৈশিষ্ট্যগুলি ব্যবহার করতে পারতে হবে যাচাই পুনরায় করতে হবে।"
   },
   "FindWorker": {
     "heading": "Vua Thợ উপর শ্রমিক কীভাবে খুঁজে পেতে",
@@ -454,13 +473,9 @@
     "text27": "সিস্টেম দ্বারা SMS এর মাধ্যমে প্রেরিত OTP কোড লিখুন",
     "text28": "পদক্ষেপ 5",
     "text29": "পদক্ষেপ 6",
-    "text30": "নেভিগেশন বারের নীচে 'শ্রমিক খুঁজুন' আইকনে ক্লিক করে শ্রমিক খুঁজে নির্ধারণ করুন",
-    "text31": "গ্রাহকরা তাদের শ্রমিক অনুরোধে বিস্তারিত তথ্য যোগ করতে পারেন",
-    "text32": "পরিষেবা",
-    "text33": "বিস্তারিত কাজের বর্ণনা",
-    "text34": "সময়সীমা",
-    "text35": "চিত্র - ভিডিও - বর্ণনা (যদি উপলব্ধ থাকে)",
-    "text36": "শ্রমিক খুঁজুন এবং তথ্য নিশ্চিত করুন",
+    "text30": "AI মাস্টার রাজা আইকনে ট্যাপ করুন শুরু করতে আই স্কিল খোঁজতে",
+    "text31": "আদেশ নিশ্চিত করতে আইয়ের সাথে কথা বলুন",
+    "text36": "তথ্য পুনরায় নিশ্চিত করুন এবং শিক্ষক খোঁজতে ট্যাপ করুন",
     "text37": "তথ্য দ্বারা পুনরায় পরিশোধ নিশ্চিত করার পর, স্ক্রিনটি শ্রমিক খুঁজে নির্ধারণ করতে স্থানান্তরিত হবে",
     "text38": "ধরে নিন যে, পদক্ষেপ 3 অনুমোদন পরে, স্ক্রিনটি শ্রমিক খোঁজার জন্য মানচিত্রে চলে যাবে",
     "text39": "যখন একজন শ্রমিক একটি উদ্ধৃতি সরবরাহ করে, সিস্টেম কাস্টমারকে অবহিত করবে। গ্রাহকরা শ্রমিকের তথ্য এবং উদ্ধৃতি দেখতে 'বিস্তারিত দেখুন' ক্লিক করে একজন উপযোগকারী বেছে নিতে পারেন",
@@ -501,7 +516,10 @@
     "text23": "দয়া করে একটি নাম দিন",
     "text24": "দয়া করে একটি ঠিকানা দিন",
     "text25": "অর্ডার তথ্য নিশ্চিত করুন",
-    "text26": "ডেলিভারি ঠিকানা"
+    "text26": "ডেলিভারি ঠিকানা",
+    "text27": "পরিমাণ",
+    "text28": "সাইজ নির্বাচন",
+    "text29": "কার্ট"
   },
   "Map": {
     "text1": "অ্যাপ ব্যবহারকারী",
@@ -719,12 +737,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -849,7 +867,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -864,5 +882,10 @@
     "worker": "কর্মী",
     "customer": "গ্রাহক",
     "industry": "শিল্প"
+  },
+  "Extra": {
+    "text": "আঙুলভুত",
+    "text1": "চুক্তি",
+    "text2": "সহযোগিতা"
   }
 }

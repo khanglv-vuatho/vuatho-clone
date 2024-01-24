@@ -29,8 +29,8 @@
     "text2": "Vai nolasiet zemāk esošo QR kodu"
   },
   "Footer": {
-    "address": "57 Song Hanh iela, An Phu rajons, Thu Duc pilsēta,",
-    "location": "Hošiminas pilsēta, Vjetnama.",
+    "address": "Vua Thợ tehnoloģiju SIA",
+    "location": "Hošiminas pilsēta, Vjetnama",
     "our_partner": "Mūsu partneri",
     "about_vuatho": "Par Vua Thợ",
     "about_us": "Par mums",
@@ -361,7 +361,7 @@
     "numberGoal": "100 000 +",
     "textGold": "Amatniekus un lietotājus visā valstī līdz 2024. gadam"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Sazinieties ar mums",
     "address1": "57 Song Hanh, An Phu rajons, Thu Duc pilsēta,",
     "address2": "Ho Chi Minh pilsēta, Vjetnama.",
@@ -369,7 +369,7 @@
     "timeDay": "Pirmdien līdz piektdienai",
     "text": "Nav atbalsta sestdienās, svētdienās un svētku dienās",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "Rādītājs reģistrēšanai kā pakalpojumu sniedzējs",
@@ -385,6 +385,7 @@
     "text10": "Skaidras un atšķirīgas koka zīmes",
     "text11": "Nacionālais ID kartes",
     "text12": "Pase",
+    "text12-1": "Autovadītāja apliecība",
     "text13": "Vispārīgie dokumentu prasījumi",
     "text14": "Sagatavojiet vienu no diviem dokumentu veidiem",
     "text15": "Lejupielādējiet Vua Thợ lietotni",
@@ -397,6 +398,7 @@
     "text22": "Klients",
     "text23": "Ja jūs vēlaties meklēt pakalpojumus/sniedzējus.",
     "text24": "Ja jūs vēlaties sniegt pakalpojumus un meklēt darbu.",
+    "text25": "“Rādītājs” Ja jūs vēlaties piedāvāt pakalpojumus un meklēt darbu.",
     "text26": "Pakalpojumu sniedzējs",
     "text27": "Abas šīs lomas ir integrētas un tiek izmantotas Vua Thợ lietotnē.",
     "text28": "Kā jauniem lietotājiem, viņiem jāizvēlas",
@@ -425,7 +427,24 @@
     "text51": "Pabeidzot iepriekšminētos soļus, gaidiet, kamēr sistēma pārskata jūsu kontu un sniedz atsauksmes pēc iespējas ātrāk.",
     "text52": "Sistēmas atbilde ietvers:",
     "text53": "Lietotāji var izmantot visas lietotnes funkcijas un pakalpojumus",
-    "text54": "Lietotājiem ir jāveic identitātes verifikācija vēlreiz, lai piekļūtu visām lietotnes funkcijām un pakalpojumiem"
+    "text54": "Lietotājiem ir jāveic identitātes verifikācija vēlreiz, lai piekļūtu visām lietotnes funkcijām un pakalpojumiem",
+    "text55": "Sagatavojiet pietiekamu dokumentāciju",
+    "text56": "Vai skenēt QR kodu",
+    "text57": "Lietotāji var lejupielādēt Vua Thợ lietotni App Store vai CH Play.",
+    "text59": "Izvēlieties “Viesis”, ja vēlaties meklēt pakalpojumu/meistaru.",
+    "text61": "Sistēma prasa ievadīt telefona numuru un telefona koda valsti.",
+    "text65": "Lietotājam ir jāveic tikai viena reģistrācija ar eKYC vienreiz ar vienu kontu; pārslēdzot kontu (meistars → viesis/viesis → meistars), nav nepieciešams veikt eKYC reģistrāciju otrreiz.",
+    "text66": "Lietotāji var aktīvi veikt eKYC sadaļā Konts, kas ir redzams augšējā konta sadaļā vai arī sistēma var norādīt, kā to izdarīt, skatot lietotni, izmantojot vēl neeKYC apstiprinātu kontu.",
+    "text67": "Vua Thợ lietotne sadarbojas ar SumSub, lai veiktu tiešsaistes konta identifikāciju. Lietotāja identifikācijai ir nepieciešams sniegt šādas informācijas detaļas:",
+    "text68": "Dzīves vieta valstī",
+    "text69": "Attiecīgie personīgie dokumenti (lietotājs izvēlas vienu no dokumentu veidiem, lai veiktu autentifikāciju)",
+    "text70": "ID karte",
+    "text71": "Dzimšanas apliecība",
+    "text72": "Autovadītāja apliecība",
+    "text73": "Izvēloties valsti un attiecīgo personīgo dokumentu veidu, sistēma prasa lietotājam uzņemt 2 dokumentu veida abas puses fotogrāfijas (ieteicams izmantot Pilsoņa apliecību - PA Vietnā). Pēc tam tiks pieprasīta lietotāja paša uzņemta sevis fotoattēla ievietošana, sekojot SumSub norādēm.",
+    "text74": "Pabeidzot identifikācijas procesu, sistēma sniegs aptuvenus rezultātus 5 minūšu laikā, kur rezultāti ietvers:",
+    "text75": "Veiksmīga autentifikācija: Lietotājs var izmantot visas lietotnes pakalpojumus un funkcijas.",
+    "text76": "Autentifikācijas neveiksme: Lietotājam būs jāveic atkārtota autentifikācija, lai varētu izmantot visas lietotnes pakalpojumus un funkcijas."
   },
   "FindWorker": {
     "heading": "Kā atrast darbiniekus uz Vua Thợ",
@@ -458,13 +477,9 @@
     "text27": "Ievadiet sistēmas nosūtīto OTP kodu pa SMS",
     "text28": "5. solis",
     "text29": "6. solis",
-    "text30": "Noklikšķiniet uz 'atrast darbiniekus' ikonas navigācijas joslā, lai atvērtu darbinieku meklēšanas lapu",
-    "text31": "Klienti var pievienot darbinieku pieprasījuma detaļas",
-    "text32": "Pakalpojums",
-    "text33": "Detalizēts darba apraksts",
-    "text34": "Laika ietvars",
-    "text35": "Attēli - video - apraksti (ja ir pieejami)",
-    "text36": "Noklikšķiniet uz Atrast darbiniekus un apstipriniet informāciju",
+    "text30": "Nospiediet AI meistara ikonu, lai sāktu meistara meklēšanu, izmantojot AI palīgu",
+    "text31": "Runājiet ar AI, lai apstiprinātu pasūtījumu",
+    "text36": "Apstipriniet informāciju un nospiediet meistara meklēšanas pogu",
     "text37": "Pēc informācijas pārbaudes dubultklikšķiniet uz Apstiprināt, lai sāktu darbinieku meklēšanu",
     "text38": "Pēc 3. solī apstiprināšanas ekrāns pārslēgsies uz karti, lai sāktu darbinieku meklēšanu",
     "text39": "Kad darbinieks piedāvā piedāvājumu, sistēma paziņos klientam. Klienti var izvēlēties piemērotu darbinieku, noklikšķinot uz Skatīt detaļas, lai redzētu darbinieka informāciju un piedāvājumu",
@@ -505,7 +520,10 @@
     "text23": "Lūdzu, ievadiet vārdu",
     "text24": "Lūdzu, ievadiet adresi",
     "text25": "Apstipriniet pasūtījuma informāciju",
-    "text26": "Piegādes adrese"
+    "text26": "Piegādes adrese",
+    "text27": "Daudzums",
+    "text28": "Izvēlēties izmēru",
+    "text29": "Iepirkumu grozs"
   },
   "Map": {
     "text1": "Lietotāji lietotnē",
@@ -723,12 +741,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -853,7 +871,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -868,5 +886,10 @@
     "worker": "Pakalpojumu sniedzējs",
     "customer": "Klients",
     "industry": "Nozare"
+  },
+  "Extra": {
+    "text": "saistība",
+    "text1": "VIENOŠANĀS",
+    "text2": "sadarbība"
   }
 }

@@ -29,8 +29,8 @@
     "text2": "Або скануйте QR-код нижче"
   },
   "Footer": {
-    "address": "57 Сонг Хань, район Ан Фу, місто Ту Дук,",
-    "location": "Хошимін, В'єтнам.",
+    "address": "Товариство з обмеженою відповідальністю Vua Thợ",
+    "location": "Хошимін, В'єтнам",
     "our_partner": "Наші партнери",
     "about_vuatho": "Про Vua Thợ",
     "promotion": "Програма просування",
@@ -361,7 +361,7 @@
     "numberGoal": "100,000 +",
     "textGold": "Майстрів та користувачів по всій країні до 2024 року"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Зв'яжіться з нами",
     "address1": "57 Сонг Хань, район Ан Фу, місто Ту Дук,",
     "address2": "Хошимін, В'єтнам.",
@@ -369,7 +369,7 @@
     "timeDay": "Понеділок - П'ятниця",
     "text": "Немає підтримки в суботу, неділю та святкові дні",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "Посібник щодо реєстрації як постачальника послуг",
@@ -385,6 +385,7 @@
     "text10": "Чіткий та виразний водяний знак",
     "text11": "Національна посвідчення особи",
     "text12": "Паспорт",
+    "text12-1": "Водійське посвідчення",
     "text13": "Загальні вимоги до документів",
     "text14": "Підготуйте один із двох типів документів",
     "text15": "Завантажте додаток Vua Thợ",
@@ -397,6 +398,7 @@
     "text22": "Клієнт",
     "text23": "Якщо ви хочете шукати послуги/постачальників.",
     "text24": "Якщо ви хочете надавати послуги та шукати роботу.",
+    "text25": "«Майстер» Якщо ви бажаєте надавати послуги та шукаєте роботу.",
     "text26": "Постачальник послуг",
     "text27": "Обидві ці ролі інтегровані та використовуються в додатку Vua Thợ.",
     "text28": "Як новим користувачам, їм слід вибрати кнопку",
@@ -425,7 +427,24 @@
     "text51": "Після завершення вищезазначених кроків очікуйте, коли система перегляне ваш обліковий запис та надасть відгук якомога швидше.",
     "text52": "Відповідь системи буде містити:",
     "text53": "Користувачі можуть використовувати всі можливості та послуги додатка",
-    "text54": "Користувачі повинні повторно пройти верифікацію особи, щоб отримати доступ до всіх можливостей та послуг додатка"
+    "text54": "Користувачі повинні повторно пройти верифікацію особи, щоб отримати доступ до всіх можливостей та послуг додатка",
+    "text55": "Belgeleri hazırla",
+    "text56": "Або скануйте QR-код",
+    "text57": "Користувачі завантажують додаток MasterCraft з App Store або CH Play.",
+    "text59": "“Гість”, якщо ви шукаєте послуги/майстрів.",
+    "text61": "Система вимагає введення номера телефону та коду країни номера телефону.",
+    "text65": "Користувачам потрібно лише здійснити ідентифікацію eKYC 1 раз для 1 облікового запису; при зміні облікового запису (маляр → клієнт/клієнт → майстер) немає потреби здійснювати ідентифікацію eKYC вдруге.",
+    "text66": "Користувачі можуть самостійно здійснювати ідентифікацію eKYC в розділі Обліковий запис, який відображається вище або вказано системою під час перегляду додатка з обліковим записом, який ще не пройшов ідентифікацію eKYC.",
+    "text67": "Додаток MasterCraft співпрацює з SumSub для здійснення онлайн-ідентифікації облікового запису. Для проведення ідентифікації потрібно, щоб користувач надав наступну інформацію:",
+    "text68": "Країна проживання",
+    "text69": "Відповідні особисті документи (користувач обирає один з типів документів для підтвердження)",
+    "text70": "Паспорт",
+    "text71": "Житловий паспорт",
+    "text72": "Права на водіння",
+    "text73": "Після вибору країни та типу відповідного особистого документа система вимагає, щоб користувач зробив фотографії обох сторін обраного документа (рекомендується використовувати Картку облікового номера - КОН в Україні). Потім користувач зробить селфі згідно інструкцій третьої сторони SumSub.",
+    "text74": "Після завершення процесу ідентифікації система надасть приблизний результат протягом 5 хвилин; результат системи включатиме:",
+    "text75": "Успішна ідентифікація: Користувач може використовувати всі послуги та функції додатка.",
+    "text76": "Невдала ідентифікація: Користувач повинен повторно здійснити ідентифікацію, щоб використовувати всі послуги та функції додатка."
   },
   "FindWorker": {
     "heading": "Як знайти робітників на Vua Thợ",
@@ -458,13 +477,9 @@
     "text27": "Ввести OTP-код, надісланий системою за допомогою SMS",
     "text28": "Крок 5",
     "text29": "Крок 6",
-    "text30": "Клацніть на іконку 'знайти робітників' нижче панелі навігації, щоб відкрити сторінку пошуку робітників",
-    "text31": "Клієнти можуть додати деталі до свого запиту на робітника",
-    "text32": "Сервіс",
-    "text33": "Детальний опис роботи",
-    "text34": "Терміни",
-    "text35": "Зображення - відео - описи (якщо доступно)",
-    "text36": "Клацніть 'Знайти робітників' та підтвердіть інформацію",
+    "text30": "Натискайте на іконку «Король майстрів ШІ», щоб почати пошук майстрів за допомогою штучного інтелекту",
+    "text31": "Розмовляйте з ШІ, щоб підтвердити замовлення",
+    "text36": "Перевірте інформацію ще раз та натискайте кнопку пошуку майстрів",
     "text37": "Після перевірки інформації клацніть кнопку 'Підтвердити', щоб розпочати пошук робітників",
     "text38": "Після підтвердження на кроці 3, екран перейде до карти для початку пошуку робітників",
     "text39": "Коли робітник надасть цінову пропозицію, система сповістить клієнта. Клієнти можуть вибрати підходящого робітника, клацнувши 'Деталі', щоб побачити інформацію та цінову пропозицію робітника",
@@ -505,7 +520,10 @@
     "text23": "Будь ласка, введіть ім'я",
     "text24": "Будь ласка, введіть адресу",
     "text25": "Підтвердити інформацію про замовлення",
-    "text26": "Адреса доставки"
+    "text26": "Адреса доставки",
+    "text27": "Кількість",
+    "text28": "Виберіть розмір",
+    "text29": "Кошик"
   },
   "Map": {
     "text1": "Користувачі додатку",
@@ -723,12 +741,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -853,7 +871,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -868,5 +886,10 @@
     "worker": "Постачальник послуг",
     "customer": "Клієнт",
     "industry": "Галузь"
+  },
+  "Extra": {
+    "text": "зобов'язання",
+    "text1": "угода",
+    "text2": "співпраця"
   }
 }

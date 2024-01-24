@@ -23,7 +23,7 @@ function Guides() {
   const t = useTranslations('TermsAndCondition')
 
   return (
-    <div className=''>
+    <div>
       <BackgroundRelative text={t('heading')} />
       <div className=' py-[20px] 13inch:py-[40px] 3xl:py-[80px]'>
         <div className='ct-container-70 gap-10 md:gap-20'>
@@ -159,7 +159,7 @@ const TermsOfService = () => {
         <p className='text-[1.8rem]'>{t('text67')}</p>
         <p className='text-[1.8rem]'>{t('text68')}</p>
         <ul className='list-inside list-disc text-[1.8rem]'>
-          <li className=''>{t('text69')}</li>
+          <li>{t('text69')}</li>
           <li>{t('text70')}</li>
           <li>{t('text71')}</li>
           <li>{t('text72')}</li>

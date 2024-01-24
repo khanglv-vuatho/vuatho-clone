@@ -1,7 +1,7 @@
 {
   "Navbar": {
-    "become_employee": "Become aService Provider",
-    "find_employee": "Find aService Provider",
+    "become_employee": "Become a Service Provider",
+    "find_employee": "Find a Service Provider",
     "store": "Uniforms",
     "language": "Language",
     "download": "Download Now",
@@ -9,7 +9,7 @@
   },
   "ServicesVuaTho": {
     "title": "Impressive Multi-Industry Services",
-    "text": "Born in Vietnam with the spirit of 'Elevating SkilledService Providers' and 'Convenience for Everyone.'"
+    "text": "Born in Vietnam with the spirit of 'Elevating Skilled Service Providers' and 'Convenience for Everyone.'"
   },
   "ToTheMoon": {
     "title": "Continuous Development",
@@ -29,22 +29,22 @@
     "text2": "Or scan the QR code below"
   },
   "Footer": {
-    "address": "57 Song Hanh, Ward An Phu, Thu Duc City,",
-    "location": "Ho Chi Minh City, Vietnam.",
+    "address": "57 Song Hanh, An Phu Ward, Thu Duc City, ",
+    "location": "Ho Chi Minh City, Vietnam",
     "our_partner": "Our Partners",
     "about_vuatho": "About Vua Thợ",
     "about_us": "About Us",
     "faq": "Frequently Asked Questions",
-    "become_worker": "How to Register as aService Provider",
+    "become_worker": "How to Register as a Service Provider",
     "contact_with_vuatho": "Collaborate with Vua Thợ",
     "guides": "Terms and Conditions",
     "private_infomation": "Privacy Policy",
     "contact_us": "Contact Us",
-    "promotion": "Promotional program",
+    "promotion": "Promotional programs",
     "sending": "Sending notifications to",
     "BCT": "Ministry of Industry and Trade",
     "text": "Vua Thợ Technology Limited Liability Company",
-    "text1": "Tax ID: "
+    "text1": "Business code: "
   },
   "NotFound": {
     "text": "Page not found!",
@@ -67,7 +67,7 @@
   },
   "MainSection": {
     "heading1": "App ",
-    "heading1-1": "FindService Providers, Find Jobs ",
+    "heading1-1": "Find Service Providers, Find Jobs ",
     "heading2": "Innovation with AI",
     "listCard": {
       "title1": "Breakthrough",
@@ -78,15 +78,15 @@
       "desc3": "Forms of collaboration"
     },
     "text1": "Supports multiple languages and industries",
-    "text2": "Service Provider are everywhere - EveryService Provider is here"
+    "text2": "Service Providers are everywhere - Every Service Provider is here"
   },
   "AISection": {
     "heading1": "Applying Breakthrough AI Technology ",
     "heading2": "In Our System",
     "title1": "AI Demand Analysis",
-    "desc1": "Intelligent AI system accurately analyzes customer needs, ensuring optimal connections with suitableService Providers.",
+    "desc1": "Intelligent AI system accurately analyzes customer needs, ensuring optimal connections with suitable Service Providers.",
     "title2": "AI Skills Verification",
-    "desc2": "EnhancesService Provider quality and ensures the best possible service for customers",
+    "desc2": "Enhances Service Provider quality and ensures the best possible service for customers",
     "title3": "Language Diversity with AI",
     "desc3": "Never be language-barriered between you and the solution you need",
     "title4": "Breakthrough AI Performance",
@@ -359,17 +359,17 @@
     "text": "At Vua Thợ, we take pride in being a leading technology company and a pioneer in providing a super app ecosystem model in Southeast Asia. Stemming from our passion and mission to improve the lives of millions of users along the path of development, we deliver a top-notch and convenient experience.",
     "goal": "Our goal is to connect",
     "numberGoal": "100,000 +",
-    "textGold": "Service provider and users nationwide by 2024"
+    "textGold": "Service providers and customers nationwide by 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Contact Us",
-    "address1": "57 Song Hanh, Ward An Phu, Thu Duc City,",
+    "address1": "57 Song Hanh, An Phu Ward, Thu Duc City,",
     "address2": "Ho Chi Minh City, Vietnam.",
     "timeNumber": "8:30 AM to 4:30 PM",
     "timeDay": "Monday to Friday",
     "text": "No support on Saturdays, Sundays, and public holidays",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "Guide to Register as a Service Provider",
@@ -385,6 +385,7 @@
     "text10": "Clear and distinct woodmarks",
     "text11": "National ID Card",
     "text12": "Passport",
+    "text12-1": "Driver's License",
     "text13": "General Document Requirements",
     "text14": "Prepare one of the two types of documents",
     "text15": "Download the Vua Thợ App",
@@ -397,6 +398,7 @@
     "text22": "Customer",
     "text23": "If you want to search for services/providers.",
     "text24": "If you want to provide services and search for jobs.",
+    "text25": "“Service Provider” If you want to provide services and search for jobs.",
     "text26": "Service Provider",
     "text27": "Both of these roles are integrated and used within the Vua Thợ application.",
     "text28": "As new users, they should select the",
@@ -425,13 +427,30 @@
     "text51": "After completing the above steps, wait for the system to review your account and provide feedback as soon as possible.",
     "text52": "The system's response will include:",
     "text53": "Users can use all features and services of the application",
-    "text54": "Users must perform identity verification again to access all features and services of the application"
+    "text54": "Users must perform identity verification again to access all features and services of the application",
+    "text55": "Prepare sufficient documents",
+    "text56": "Or scan the QR code",
+    "text57": "Users can download the Vua Thợ app from the App Store or CH Play.",
+    "text59": "\"Guest\" if you want to search for services/craftsmen.",
+    "text61": "The system requires entering the phone number and the country code of the phone number.",
+    "text65": "Users only need to perform eKYC identification once with one account. When switching accounts (craftsman → guest/guest → craftsman), there is no need to perform eKYC identification for the second time.",
+    "text66": "Users can actively perform eKYC in the Account section shown at the top or be guided by the system when viewing the app with an account that has not completed eKYC.",
+    "text67": "Vua Thợ app collaborates with SumSub to conduct online account identification. Account identification requires users to provide the following information:",
+    "text68": "Country of residence",
+    "text69": "Relevant personal documents (users choose one type of document for verification)",
+    "text70": "ID card",
+    "text71": "Household registration book",
+    "text72": "Driver's license",
+    "text73": "After selecting the country and type of relevant personal document, the system requests users to take pictures of both sides of the selected document (it is recommended to use the Citizen Identification Card - CCCD in Vietnam). After that, users will take a selfie according to the instructions of the third-party SumSub.",
+    "text74": "After completing the identification process, the system will provide an estimated result within 5 minutes. The system's result will include:",
+    "text75": "Successful verification: Users can use all services and features of the app.",
+    "text76": "Verification failure: Users must perform the verification again to use all services and features of the app."
   },
   "FindWorker": {
-    "heading": "How to FindService Providers on Vua Thợ",
+    "heading": "How to Find Service Providers on Vua Thợ",
     "text1": "Step 1: Download the App",
     "text2": "Step 2: Register/Login",
-    "text3": "Step 3: FindService Providers",
+    "text3": "Step 3: Find Service Providers",
     "text4": "Download the Vua Thợ App",
     "text5": "Android Operating System",
     "text6": "iOS Operating System",
@@ -458,21 +477,17 @@
     "text27": "Enter the OTP code sent by the system via SMS",
     "text28": "Step 5",
     "text29": "Step 6",
-    "text30": "Click on the 'findService Providers' icon below the navigation bar to open the findService Providers page",
-    "text31": "Customers can add details to theirService Provider request",
-    "text32": "Service",
-    "text33": "Detailed job description",
-    "text34": "Timeframe",
-    "text35": "Images - videos - descriptions (if available)",
-    "text36": "Click FindService Providers and confirm the information",
-    "text37": "After double-checking the information, click the Confirm button to start findingService Providers",
-    "text38": "After confirming in step 3, the screen will switch to the map to begin searching forService Providers",
-    "text39": "When aService Provider provides a quote, the system will notify the customer. Customers can choose a suitableService Provider by clicking View Details to see theService Provider's information and quote",
-    "text40": "After entering the Quote Details page, if the customer agrees to hire theService Provider, click the HireService Provider button",
-    "text41": "The system will wait for theService Provider to confirm and come to the customer's location to finalize the price",
-    "text42": "Customers can make payment after theService Provider completes the job by clicking on Payment on the order details page",
-    "text43": "Customers can apply promo codes (if available), tip theService Provider (if desired), select a payment method, and click Confirm",
-    "text44": "FindService Providers",
+    "text30": "Click on the 'AI Master' icon to begin searching for a technician with AI assistance.",
+    "text31": "Chat with the AI to confirm your order.",
+    "text36": "Verify the information again and press find a technician.",
+    "text37": "After double-checking the information, click the Confirm button to start finding Service Providers",
+    "text38": "After confirming in step 3, the screen will switch to the map to begin searching for Service Providers",
+    "text39": "When a Service Provider provides a quote, the system will notify the customer. Customers can choose a suitable Service Provider by clicking View Details to see the Service Provider's information and quote",
+    "text40": "After entering the Quote Details page, if the customer agrees to hire the Service Provider, click the Hire Service Provider button",
+    "text41": "The system will wait for the Service Provider to confirm and come to the customer's location to finalize the price",
+    "text42": "Customers can make payment after the Service Provider completes the job by clicking on Payment on the order details page",
+    "text43": "Customers can apply promo codes (if available), tip the Service Provider (if desired), select a payment method, and click Confirm",
+    "text44": "Find Service Providers",
     "text45": "To log back into the app, users only need to enter their phone number and the OTP code sent by the system via SMS"
   },
   "PressHome": {
@@ -483,13 +498,13 @@
     "text1": "Professional Attire for Service provider",
     "text2": "Feel More Confident at Work",
     "text3": "Contact to Place an Order",
-    "text4": "ROYAL CRAFTSMAN UNIFORMS",
+    "text4": "UNIFORMS OF SERVICE PROVIDER",
     "text5": "We only provide uniforms for in-house company employees. Thank you for your interest, and we hope you understand this inconvenience.",
-    "text6": "Registered Craftsman Phone Number",
+    "text6": "Registered service provider Phone Number",
     "text7": "Continue",
-    "text8": "We'd be delighted if you'd like to order uniforms. However, you need to become a Craftsman first before you can do so. Thank you for your understanding and cooperation!",
+    "text8": "We'd be delighted if you'd like to order uniforms. However, you need to become a service provider first before you can do so. Thank you for your understanding and cooperation!",
     "text9": "Re-verify",
-    "text10": "Become a Craftsman",
+    "text10": "Become a service provider",
     "text11": "Out of Stock",
     "text12": "Place an Order",
     "text13": "Login Successful!",
@@ -505,7 +520,10 @@
     "text23": "Please enter a name",
     "text24": "Please enter an address",
     "text25": "Confirm Order Information",
-    "text26": "Delivery Address"
+    "text26": "Delivery Address",
+    "text27": "Quantity",
+    "text28": "Select size",
+    "text29": "Shopping cart"
   },
   "Map": {
     "text1": "App Users",
@@ -723,12 +741,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
-    "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
-    "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
+    "text166": "Send an email to us at: admin@vuatho.com",
+    "text167": "Or contact us directly at our office: 57 Song Hanh, An Phu Ward, Thu Duc City, Ho Chi Minh City, Vietnam.",
+    "text168": "Headquarters: 57 Song Hanh, An Phu Ward, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -853,7 +871,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -863,10 +881,15 @@
     "text125": "Regardless of any contrary provisions, any disputes between Partners and Users must be resolved directly between them."
   },
   "InputMainSearch": {
-    "text1": "Every Service Provider is available, it's challenging, but with effort, you can find one...",
+    "text1": "All Service Providers available, tough to find but findable...",
     "text2": "Searching...",
-    "worker": "Service Provider",
-    "customer": "Customer",
-    "industry": "Industry"
+    "worker": "Service Providers",
+    "customer": "Customers",
+    "industry": "Industries"
+  },
+  "Extra": {
+    "text": "commitment",
+    "text1": "agreement",
+    "text2": "cooperation"
   }
 }

@@ -1,7 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-
+import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { Accordion, AccordionItem } from '@nextui-org/react'
 import { useTranslations } from 'next-intl'
 
@@ -227,12 +226,10 @@ function FaqSection() {
             {
               title: t('listAccordion.children5.children2.title2'),
             },
-
             {
               title: t('listAccordion.children5.children2.title3'),
               bold: true,
             },
-
             {
               title: t('listAccordion.children5.children2.title5'),
             },
@@ -323,17 +320,15 @@ function FaqSection() {
     },
   ]
 
-  const [contentActive, setContentActive] = useState(
-    listAccordion.find((i: any) => i.title === activeSelect)?.children,
-  )
+  const [contentActive, setContentActive] = useState(listAccordion.find((i: any) => i.title === activeSelect)?.children)
 
-  const handleActiveSelect = (title: any) => {
+  const handleActiveSelect = useCallback((title: any) => {
     setActiveSelect(title)
     setContentActive(listAccordion.find((i: any) => i.title === title)?.children)
     setChildActive(['0'])
-  }
+  }, [])
 
-  const handleSelect = () => {
+  const handleSelect = useCallback(() => {
     const activeButton = document.querySelector(`button.menuActive`) as HTMLElement
     const highlight = highlightRef.current
 
@@ -342,7 +337,8 @@ function FaqSection() {
       ;(highlight as HTMLElement).style.transform = `translateY(${top}px)`
       ;(highlight as HTMLElement).style.height = `${height}px`
     }
-  }
+  }, [])
+
   useEffect(() => {
     handleSelect()
   }, [activeSelect])
@@ -364,26 +360,19 @@ function FaqSection() {
       <div className='py-[20px] 13inch:py-[40px] 3xl:py-[80px]'>
         <div className='ct-container-70 hidden gap-10 md:flex'>
           <div className='relative w-full max-w-[320px] 3xl:max-w-[400px]'>
-            <div
-              className='absolute min-h-[40px] w-full rounded-[60px] bg-gradient-to-r from-[#FFB500] to-[#FED32C] px-10 py-[10px] transition 13inch:h-[50px] 3xl:h-[60px]'
-              ref={highlightRef}
-            />
+            <div className='absolute w-full border-l-[4px] border-[#FCB713] bg-gradient-to-r from-[#FCB71333] to-[#FCB71300] transition ' ref={highlightRef} />
             <div className='flex flex-col gap-2'>
-              {listAccordion.map((i: any) => {
-                return (
-                  <button
-                    onClick={() => handleActiveSelect(i.title)}
-                    className={`flex min-h-[40px] w-full items-center justify-start rounded-[60px] px-10 py-[10px] text-[1.8rem] 13inch:h-[50px] 3xl:h-[60px] ${
-                      activeSelect === i.title
-                        ? ' menuActive text-black'
-                        : 'bg-transparent hover:bg-gradient-to-r hover:from-[#FFB500]/5 hover:to-[#FED32C]/5'
-                    }`}
-                    key={i.title}
-                  >
-                    <span className='relative z-[1] text-left'>{i.title}</span>
-                  </button>
-                )
-              })}
+              {listAccordion.map((i: any) => (
+                <button
+                  onClick={() => handleActiveSelect(i.title)}
+                  className={`flex w-full items-center justify-start border-l-[4px] border-transparent px-10 py-6 text-[1.8rem] ${
+                    activeSelect === i.title ? ' menuActive text-black' : 'hover:border-[#FCB713]/5 hover:bg-gradient-to-r hover:from-[#FCB71333]/5 hover:to-[#FCB71300]/5'
+                  }`}
+                  key={i.title}
+                >
+                  <span className='relative z-[1] text-left'>{i.title}</span>
+                </button>
+              ))}
             </div>
           </div>
           <div className='w-full'>
@@ -391,9 +380,7 @@ function FaqSection() {
               selectionMode='single'
               variant='splitted'
               selectedKeys={childActive}
-              onSelectionChange={(i): any =>
-                setChildActive(new Set(Array.from(i)) as any)
-              }
+              onSelectionChange={(item): any => setChildActive(new Set(Array.from(item)) as any)}
               className='gap-5'
               itemClasses={{
                 base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]',
@@ -412,12 +399,7 @@ function FaqSection() {
                   }}
                 >
                   {i.children.map((ic: any) => (
-                    <p
-                      key={ic.title}
-                      className={`text-[1.8rem] text-[#555] ${
-                        ic?.bold ? 'font-bold' : ''
-                      }`}
-                    >
+                    <p key={ic.title} className={`text-[1.8rem] text-[#555] ${ic?.bold ? 'font-bold' : ''}`}>
                       {ic.title}
                     </p>
                   ))}
@@ -432,10 +414,10 @@ function FaqSection() {
               selectionMode='single'
               className='gap-5'
               itemClasses={{
-                base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]',
+                base: 'group-[.is-splitted]:shadow-[0px_8px_32px_0px_#00000014]',
               }}
             >
-              {listAccordion.map((item: any, index: any) => (
+              {listAccordion.map((item: any) => (
                 <AccordionItem
                   key={item.title}
                   aria-label={item.title}
@@ -467,8 +449,7 @@ function FaqSection() {
                         title={ic.title}
                         classNames={{
                           content: 'flex flex-col gap-2 pb-2',
-                          title:
-                            'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6] pl-2',
+                          title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6] pl-2',
                           indicator: 'text-[1.8rem]',
                           base: 'group-[.is-splitted]:pl-12',
                         }}
@@ -491,4 +472,4 @@ function FaqSection() {
   )
 }
 
-export default FaqSection
+export default memo(FaqSection)

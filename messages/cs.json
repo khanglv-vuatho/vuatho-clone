@@ -29,8 +29,8 @@
     "text2": "Nebo naskenujte níže uvedený QR kód"
   },
   "Footer": {
-    "address": "57 Song Hanh, obvod An Phu, město Thu Duc,",
-    "location": "Ho Či Minovo město, Vietnam.",
+    "address": "Společnost s ručením omezeným Vua Thợ",
+    "location": "Ho Či Minovo město, Vietnam",
     "our_partner": "Naši partneři",
     "about_vuatho": "O Vua Thợ",
     "about_us": "O nás",
@@ -83,8 +83,8 @@
   "AISection": {
     "heading1": "Použití průlomové technologie AI ",
     "heading2": "v našem systému",
-    "title1": "Analýza poptávky AI",
-    "desc1": "Inteligentní systém AI přesně analyzuje potřeby zákazníka a zajišťuje optimální spojení s vhodnými pracovníky.",
+    "title1": "Analýza Poptávky AI",
+    "desc1": "Inteligentní Systém AI Přesně Analyzuje Potřeby Zákazníka a zajišťuje optimální spojení s vhodnými pracovníky.",
     "title2": "Ověření dovedností AI",
     "desc2": "Zvyšuje kvalitu pracovníků a zajišťuje nejlepší možnou službu pro zákazníky",
     "title3": "Jazyková různorodost s AI",
@@ -361,15 +361,15 @@
     "numberGoal": "100 000 +",
     "textGold": "Řemeslníky a uživatele po celé zemi do roku 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Kontaktujte nás",
-    "address1": "57 Song Hanh, čtvrť An Phu, Thu Duc City,",
+    "address1": "57 Song Hanh, čtvrť An Phu,",
     "address2": "Ho Chi Minh City, Vietnam.",
     "timeNumber": "8:30 dopoledne - 4:30 odpoledne",
     "timeDay": "pondělí až pátek",
     "text": "Žádná podpora v sobotu, neděli a svátcích",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "Průvodce registrací jako poskytovatel služeb",
@@ -385,6 +385,7 @@
     "text10": "Jasné a zřetelné znaky dřeva",
     "text11": "Občanský průkaz",
     "text12": "Pas",
+    "text12-1": "Řidičský průkaz",
     "text13": "Obecné požadavky na dokumenty",
     "text14": "Připravte jeden ze dvou typů dokumentů",
     "text15": "Stáhněte si aplikaci Vua Thợ",
@@ -397,6 +398,7 @@
     "text22": "Zákazník",
     "text23": "Pokud chcete hledat služby / poskytovatele.",
     "text24": "Pokud chcete poskytovat služby a hledat práci.",
+    "text25": "Řemeslník“ Pokud chcete poskytovat služby a hledáte práci.",
     "text26": "Poskytovatel služeb",
     "text27": "Obě tyto role jsou integrovány a používají se v rámci aplikace Vua Thợ.",
     "text28": "Jako noví uživatelé by měli vybrat",
@@ -425,7 +427,24 @@
     "text51": "Po dokončení výše uvedených kroků počkejte, až systém zkontroluje váš účet a co nejdříve poskytne zpětnou vazbu.",
     "text52": "Odpovědí systému budou:",
     "text53": "Uživatelé mohou používat všechny funkce a služby aplikace",
-    "text54": "Uživatelé musí provést znovu ověření totožnosti pro přístup ke všem funkcím a službám aplikace"
+    "text54": "Uživatelé musí provést znovu ověření totožnosti pro přístup ke všem funkcím a službám aplikace",
+    "text55": "Připravte si všechny potřebné doklady",
+    "text56": "Nebo naskenujte QR kód",
+    "text57": "Uživatelé si mohou stáhnout aplikaci Vua Thợ ze Store nebo CH Play.",
+    "text59": "„Zákazník“, pokud chcete hledat služby/řemeslníky.",
+    "text61": "Systém vyžaduje zadání telefonního čísla a mezinárodního kódu telefonního čísla.",
+    "text65": "Uživatelé potřebují provést eKYC jednou pro jeden účet; při přepnutí účtu (řemeslník → zákazník/zákazník → řemeslník) není nutné provádět eKYC znovu.",
+    "text66": "Uživatelé mohou aktivně provést eKYC v sekci Účet v horní části nebo budou systémem provedeni postupem, když budou prohlížet aplikaci s účtem bez eKYC.",
+    "text67": "Aplikace Vua Thợ spolupracuje se SumSub pro online ověření identity účtu. Pro ověření identity musí uživatel poskytnout následující informace:",
+    "text68": "Země bydliště",
+    "text69": "Příslušné osobní doklady (uživatel vybere jeden typ dokladu k ověření)",
+    "text70": "Občanský průkaz",
+    "text71": "Rodinný průkaz",
+    "text72": "Řidičský průkaz",
+    "text73": "Po výběru země a typu příslušného dokladu systém žádá uživatele o fotografování obou stran vybraného typu dokladu (je doporučeno používat Občanský průkaz - CCCD ve Vietnamu). Následně se provede fotografování selfie uživatele podle pokynů od třetí strany SumSub.",
+    "text74": "Po dokončení ověření systém poskytne odhadovaný výsledek do 5 minut, který bude zahrnovat:",
+    "text75": "Úspěšné ověření: Uživatel může používat všechny služby a funkce aplikace.",
+    "text76": "Neúspěšné ověření: Uživatel musí provést ověření znovu, aby mohl využívat všechny služby a funkce aplikace."
   },
   "FindWorker": {
     "heading": "Jak najít pracovníky na Vua Thợ",
@@ -458,13 +477,9 @@
     "text27": "Zadejte kód OTP odeslaný systémem prostřednictvím SMS",
     "text28": "Krok 5",
     "text29": "Krok 6",
-    "text30": "Klikněte na ikonu 'najít pracovníky' pod navigačním pruhem, abyste otevřeli stránku hledání pracovníků",
-    "text31": "Zákazníci mohou přidat podrobnosti k žádosti o pracovníka",
-    "text32": "Služba",
-    "text33": "Podrobný popis práce",
-    "text34": "Časový rámec",
-    "text35": "Obrázky - videa - popisy (pokud jsou k dispozici)",
-    "text36": "Klikněte na Najít pracovníky a potvrďte informace",
+    "text30": "Klikněte na ikonu „Krále AI řemeslníků“ pro začátek hledání řemeslníka pomocí asistenta AI",
+    "text31": "Povídejte si s AI pro potvrzení objednávky",
+    "text36": "Zkontrolujte informace a stiskněte tlačítko pro hledání řemeslníka",
     "text37": "Po důkladném zkontrolování informací stiskněte tlačítko Potvrdit pro zahájení hledání pracovníků",
     "text38": "Po potvrzení v kroku 3 se obrazovka přepne na mapu pro zahájení hledání pracovníků",
     "text39": "Když pracovník poskytne nabídku, systém oznámí zákazníkovi. Zákazníci mohou vybrat vhodného pracovníka kliknutím na Zobrazit podrobnosti, aby viděli informace o pracovníkovi a nabídku",
@@ -505,7 +520,10 @@
     "text23": "Prosím zadejte jméno",
     "text24": "Prosím zadejte adresu",
     "text25": "Potvrzení informací o objednávce",
-    "text26": "Doručovací adresa"
+    "text26": "Doručovací adresa",
+    "text27": "Množství",
+    "text28": "Vybrat velikost",
+    "text29": "Nákupní košík"
   },
   "Map": {
     "text1": "Uživatelé aplikace",
@@ -723,12 +741,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -853,7 +871,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -868,5 +886,10 @@
     "worker": "Dělník",
     "customer": "Zákazník",
     "industry": "Průmysl"
+  },
+  "Extra": {
+    "text": "závazek",
+    "text1": "DOHODA",
+    "text2": "spolupráce"
   }
 }

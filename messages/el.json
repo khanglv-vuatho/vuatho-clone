@@ -29,8 +29,8 @@
     "text2": "Ή σκανάρετε τον παρακάτω κωδικό QR"
   },
   "Footer": {
-    "address": "57 Σονγκ Χαν, Περιοχή Άν Φου, Πόλη Θου Ντουκ,",
-    "location": "Χο Τσι Μινχ Σίτι, Βιετνάμ.",
+    "address": "Εταιρεία Τεχνολογίας Vua Thợ",
+    "location": "Χο Τσι Μινχ Σίτι, Βιετνάμ",
     "our_partner": "Οι συνεργάτες μας",
     "about_vuatho": "Σχετικά με το Vua Thợ",
     "about_us": "Σχετικά με εμάς",
@@ -361,7 +361,7 @@
     "numberGoal": "100.000 +",
     "textGold": "Τεχνίτες και χρήστες σε όλη τη χώρα έως το 2024"
   },
-  "Contact Us": {
+  "ContactUs": {
     "heading": "Επικοινωνήστε μαζί μας",
     "address1": "57 Σονγκ Χαν, Περιοχή Άν Φου, Πόλη Θου Ντουκ,",
     "address2": "Πόλη Χο Τσι Μινχ, Βιετνάμ.",
@@ -369,7 +369,7 @@
     "timeDay": "Δευτέρα έως Παρασκευή",
     "text": "Χωρίς υποστήριξη το Σάββατο, την Κυριακή και τις αργίες",
     "numberPhone": "38 786 688",
-    "gmail": "info@vuatho.com"
+    "gmail": "admin@vuatho.com"
   },
   "BecomeWorker": {
     "heading": "Οδηγός για την εγγραφή ως πάροχος υπηρεσιών",
@@ -385,6 +385,7 @@
     "text10": "Σαφή και διακριτικά σήματα ξυλείας",
     "text11": "Ταυτότητα ταυτότητας",
     "text12": "Διαβατήριο",
+    "text12-1": "Άδεια οδήγησης",
     "text13": "Γενικές απαιτήσεις εγγράφου",
     "text14": "Προετοιμάστε ένα από τα δύο είδη εγγράφων",
     "text15": "Λήψη της εφαρμογής Vua Thợ",
@@ -397,6 +398,7 @@
     "text22": "Πελάτης",
     "text23": "Αν θέλετε να αναζητήσετε υπηρεσίες/παρόχους.",
     "text24": "Αν θέλετε να παρέχετε υπηρεσίες και να αναζητήσετε εργασίες.",
+    "text25": "“Τεχνίτης” Εάν θέλετε να παρέχετε υπηρεσίες και αναζητάτε εργασία.",
     "text26": "Πάροχος υπηρεσιών",
     "text27": "Και οι δύο αυτοί ρόλοι ενσωματώνονται και χρησιμοποιούνται στην εφαρμογή Vua Thợ.",
     "text28": "Ως νέοι χρήστες, πρέπει να επιλέξουν το",
@@ -425,7 +427,24 @@
     "text51": "Μετά την ολοκλήρωση των παραπάνω βημάτων, περιμένετε το σύστημα να ελέγξει τον λογαριασμό σας και να παράσχει ανατροφοδότηση το συντομότερο δυνατό.",
     "text52": "Η απάντηση του συστήματος θα περιλαμβάνει:",
     "text53": "Οι χρήστες μπορούν να χρησιμοποιούν όλες τις λειτουργίες και υπηρεσίες της εφαρμογής",
-    "text54": "Οι χρήστες πρέπει να επαληθεύσουν την ταυτότητά τους ξανά για να έχουν πρόσβαση σε όλες τις λειτουργίες και υπηρεσίες της εφαρμογής"
+    "text54": "Οι χρήστες πρέπει να επαληθεύσουν την ταυτότητά τους ξανά για να έχουν πρόσβαση σε όλες τις λειτουργίες και υπηρεσίες της εφαρμογής",
+    "text55": "Προετοιμαστείτε με όλα τα απαραίτητα έγγραφα",
+    "text56": "Ή σαρώστε τον κωδικό QR",
+    "text57": "Ο χρήστης λήψη της εφαρμογής Master Craftsman από το App Store ή το CH Play.",
+    "text59": "Επιλέξτε \"Πελάτης\" αν θέλετε να βρείτε υπηρεσία/τεχνίτη.",
+    "text61": "Το σύστημα απαιτεί τον αριθμό τηλεφώνου και τον κωδικό χώρας τηλεφώνου.",
+    "text65": "Ο χρήστης χρειάζεται να πραγματοποιήσει ταυτοποίηση eKYC μία φορά με ένα λογαριασμό, χωρίς να χρειάζεται να επαναλάβει τη διαδικασία όταν αλλάξει λογαριασμό (τεχνίτης → πελάτης/πελάτης → τεχνίτης).",
+    "text66": "Ο χρήστης μπορεί να πραγματοποιήσει ενεργά το eKYC στην ενότητα Λογαριασμός που εμφανίζεται στο πάνω μέρος ή να ακολουθήσει τις οδηγίες του συστήματος όταν παρακολουθεί την εφαρμογή με λογαριασμό που δεν έχει εκτελέσει eKYC.",
+    "text67": "Η εφαρμογή Master Craftsman συνεργάζεται με τη SumSub για την εκτέλεση της διαδικασίας ταυτοποίησης λογαριασμού online. Η διαδικασία ταυτοποίησης απαιτεί από τον χρήστη να παράσχει τα εξής στοιχεία:",
+    "text68": "Χώρα κατοικίας",
+    "text69": "Σχετικά προσωπικά έγγραφα (ο χρήστης επιλέγει ένα από τα είδη εγγράφων για επαλήθευση)",
+    "text70": "Ταυτότητα",
+    "text71": "Αρχείο κατοικίας",
+    "text72": "Δίπλωμα οδήγησης",
+    "text73": "Αφού επιλέξει τη χώρα και το είδος του προσωπικού έγγραφου, το σύστημα απαιτεί από τον χρήστη να φωτογραφίσει και τις δύο πλευρές του επιλεγμένου έγγραφου (συνιστάται η χρήση της Ταυτότητας Πολίτη - ΤΠ στη Βιετνάμ). Στη συνέχεια, πρέπει να φωτογραφίσει το πρόσωπό του σύμφωνα με τις οδηγίες του τρίτου μέρους SumSub.",
+    "text74": "Μετά την ολοκλήρωση της διαδικασίας ταυτοποίησης, το σύστημα θα επιστρέψει εκτιμώμενο αποτέλεσμα εντός 5 λεπτών. Τα αποτελέσματα του συστήματος θα περιλαμβάνουν:",
+    "text75": "Επιτυχής επαλήθευση: Ο χρήστης μπορεί να χρησιμοποιήσει όλες τις υπηρεσίες και λειτουργίες της εφαρμογής.",
+    "text76": "Αποτυχημένη επαλήθευση: Ο χρήστης πρέπει να επαναλάβει τη διαδικασία επαλήθευσης για να χρησιμοποιήσει όλες τις υπηρεσίες και λειτουργίες της εφαρμογής."
   },
   "FindWorker": {
     "heading": "Πώς να Βρείτε Εργατικό Δυναμικό στο Vua Thợ",
@@ -458,13 +477,9 @@
     "text27": "Εισαγάγετε τον κωδικό OTP που αποστάλθηκε από το σύστημα μέσω SMS",
     "text28": "Βήμα 5",
     "text29": "Βήμα 6",
-    "text30": "Κάντε κλικ στο εικονίδιο 'εύρεση εργατών' κάτω από τη γραμμή πλοήγησης για να ανοίξετε τη σελίδα εύρεσης εργατών",
-    "text31": "Οι πελάτες μπορούν να προσθέσουν λεπτομέρειες στο αίτημά τους για εργατές",
-    "text32": "Υπηρεσία",
-    "text33": "Λεπτομερής περιγραφή της εργασίας",
-    "text34": "Χρονικό πλαίσιο",
-    "text35": "Εικόνες - βίντεο - περιγραφές (εάν είναι διαθέσιμα)",
-    "text36": "Κάντε κλικ στο 'Εύρεση Εργατών' και επιβεβαιώστε τις πληροφορίες",
+    "text30": "Πατήστε το εικονίδιο του 'Βασιλιά των τεχνικών ΤΝΕ' για να ξεκινήσετε την αναζήτηση τεχνικού με τη βοήθεια του τεχνητού βοηθού",
+    "text31": "Συνομιλήστε με τον τεχνητό νοημοσύνη για να επιβεβαιώσετε την παραγγελία",
+    "text36": "Επαναβεβαιώστε τις πληροφορίες και πατήστε 'Αναζήτηση τεχνικού'",
     "text37": "Μετά τον διπλό έλεγχο των πληροφοριών, κάντε κλικ στο κουμπί Επιβεβαίωση για να αρχίσετε την αναζήτηση εργατών",
     "text38": "Μετά την επιβεβαίωση στο βήμα 3, η οθόνη θα αλλάξει στο χάρτη για να ξεκινήσει η αναζήτηση εργατών",
     "text39": "Όταν ένας εργάτης καταθέσει προσφορά, το σύστημα θα ειδοποιήσει τον πελάτη. Οι πελάτες μπορούν να επιλέξουν έναν κατάλληλο εργάτη κάνοντας κλικ στο Προβολή Λεπτομερειών για να δουν τις πληροφορίες του εργάτη και την προσφορά του",
@@ -505,7 +520,10 @@
     "text23": "Παρακαλώ εισαγάγετε ένα όνομα",
     "text24": "Παρακαλώ εισαγάγετε μια διεύθυνση",
     "text25": "Επιβεβαίωση Πληροφοριών Παραγγελίας",
-    "text26": "Διεύθυνση Παράδοσης"
+    "text26": "Διεύθυνση Παράδοσης",
+    "text27": "Ποσότητα",
+    "text28": "Επιλέξτε μέγεθος",
+    "text29": "Καλάθι αγορών"
   },
   "Map": {
     "text1": "Χρήστες Εφαρμογής",
@@ -723,12 +741,12 @@
     "text163": "In case users have any questions or concerns related to the Personal Data Privacy Policy or if users wish to exercise their rights in",
     "text164": ", users can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
-    "text166": "Send an email to us at: info@vuatho.com",
+    "text166": "Send an email to us at: admin@vuatho.com",
     "text167": "Or contact us directly at our office: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text168": "Headquarters: 57 Song Hanh, Ward An Phu, Thu Duc City, Ho Chi Minh City, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
-    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: info@vuatho.com"
+    "text171": "If users wish to stop receiving advertising from Vua Thợ, please send an email to: admin@vuatho.com"
   },
   "TermsAndCondition": {
     "heading": "Terms & Conditions",
@@ -853,7 +871,7 @@
     "text115": "13. NOTICES",
     "text116": "The Vua Thợ may send notifications in the form of a general notice on the electronic information page, on the Application, by email to Your email address in the Vua Thợ's records, or by sending written notices by registered mail or prepaid mail to Your address stored in the Company's data.",
     "text117": "The Vua Thợ's notice will be considered sent to You 48 hours after being sent by mail (if sent by registered or prepaid mail) or 01 hour after being sent (if sent by email).",
-    "text118": "You may send notices to the Vua Thợ by email to the email address info@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
+    "text118": "You may send notices to the Vua Thợ by email to the email address admin@vuatho.com, by postal mail, or by registered mail to the Company's address as provided on the website or Application. The effective date of this notice will be from the time the Vua Thợ receives the notice.",
     "text119": "14. TRANSFER",
     "text120": "You may not transfer Your rights and obligations arising under these Terms of Use without the prior written consent of the Vua Thợ. Any intentional actions to transfer Your rights and obligations arising under these Terms of Use by You in violation of this provision will be deemed null and void.",
     "text121": "The Vua Thợ may transfer its rights and obligations arising under these Terms of Use without Your consent.",
@@ -880,5 +898,10 @@
     "worker": "Εργάτης",
     "customer": "Πελάτης",
     "industry": "Κλάδος"
+  },
+  "Extra": {
+    "text": "δέσμευση",
+    "text1": "ΣΥΜΦΩΝΙΑ",
+    "text2": "συνεργασία"
   }
 }
