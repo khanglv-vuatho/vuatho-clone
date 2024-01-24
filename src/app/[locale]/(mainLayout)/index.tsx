@@ -93,7 +93,7 @@ const AISection = () => {
               viewport={{ once: true }}
               className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'
             >
-              <ImageFallback src={'/ai-section-1.png'} alt='AI Robot' width={700} height={680} quality={100} className='pointer-events-none select-none' />
+              <ImageFallback src={'/ai-section-1.png'} alt='AI Robot' width={700} height={680} quality={100} className='pointer-events-none w-auto select-none' />
             </motion.div>
           </div>
           <div className='grid grid-cols-1 items-center gap-[20px] py-12 lg:ml-[10%] 13inch:ml-0 13inch:grid-cols-2 13inch:gap-[56px]'>
@@ -306,7 +306,7 @@ const MainSection = () => {
                 delay: 1.5,
               }}
             >
-              <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit relative z-[1] w-auto' />
+              <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit relative z-[1] max-h-[500px] w-auto max-w-[400px]' />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
