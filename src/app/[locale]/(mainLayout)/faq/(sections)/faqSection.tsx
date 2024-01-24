@@ -417,7 +417,7 @@ function FaqSection() {
                 base: 'group-[.is-splitted]:shadow-[0px_8px_32px_0px_#00000014]',
               }}
             >
-              {listAccordion.map((item: any, index: any) => (
+              {listAccordion.map((item: any) => (
                 <AccordionItem
                   key={item.title}
                   aria-label={item.title}

@@ -145,17 +145,13 @@ const Step1: React.FC = memo(() => {
       <h4 className='mt-[16px] !font-medium'>{t('text13')}</h4>
       <ul className='mt-4 list-inside list-disc'>
         {DocRequirements.map((item) => (
-          <li key={item} className=''>
-            {item}
-          </li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
       <h4 className='mt-[16px] !font-medium'>{t('text14')}</h4>
       <ul className='mt-4 list-inside list-disc'>
         {DocType.map((item) => (
-          <li key={item} className=''>
-            {item}
-          </li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
       <div className='mt-6 flex flex-col justify-start gap-4 lg:flex-row lg:items-center '>

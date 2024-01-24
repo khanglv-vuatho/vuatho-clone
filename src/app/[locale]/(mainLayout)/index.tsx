@@ -286,11 +286,11 @@ const MainSection = () => {
               </div>
               <div className='flex flex-col gap-[20px]'>
                 <div className='flex items-center gap-[8px]'>
-                  <Image src={'/storm.svg'} alt='' width={14} height={14} />
+                  <Image src={'/storm.svg'} alt='storm' width={14} height={14} className='w-auto' />
                   <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>{t('text1')}</p>
                 </div>
                 <div className='flex items-center gap-[8px]'>
-                  <Image src={'/storm.svg'} alt='' width={14} height={14} />
+                  <Image src={'/storm.svg'} alt='storm' width={14} height={14} className='w-auto' />
                   <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>{t('text2')}</p>
                 </div>
               </div>
@@ -306,7 +306,7 @@ const MainSection = () => {
                 delay: 1.5,
               }}
             >
-              <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit relative z-[1]' />
+              <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit relative z-[1] w-auto' />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -821,7 +821,7 @@ const Like = ({ onClick, isLike, count, isDislike }: { onClick?: any; isLike?: b
       <motion.div>
         <Like1 variant={isLike ? 'Bold' : 'Linear'} size={24} style={{ zIndex: 1000 }} className={isLike ? 'text-[#FCB713]' : ''} />
       </motion.div>
-      <span className=''>{count}</span>
+      <span>{count}</span>
     </button>
   )
 }
@@ -858,7 +858,7 @@ const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; is
               <Image src={'/benefitCustomer/Fixy-write1.png'} alt='write-mascot' height={174} width={217} className='object-cover' />
             </div>
             <div className='flex flex-col justify-center gap-[8px]'>
-              <p className='font-medium  '>{t('heading')}</p>
+              <p className='text-[1.8rem]  font-medium'>{t('heading')}</p>
               <Textarea
                 value={message}
                 onChange={(e: any) => setMessage(e.target.value)}
@@ -876,7 +876,7 @@ const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; is
             </Button>
           </div>
         }
-      ></DefaultModal>
+      />
     </>
   )
 }

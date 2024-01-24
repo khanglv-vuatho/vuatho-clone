@@ -135,7 +135,7 @@ function PressDetail() {
                         {detailPress?.title}
                       </h1>
                       <div className='flex items-center gap-[16px]'>
-                        <h3 className=''>
+                        <h3>
                           <Link href={`/${paramsData.locale}/press/${detailPress?.category?.slug}`}>{detailPress?.category?.name}</Link>
                         </h3>
                         <time className='font-light text-base-drak-gray'>{detailPress?.created_at}</time>

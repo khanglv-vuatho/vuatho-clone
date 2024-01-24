@@ -27,7 +27,7 @@ const SectionTest = memo(() => {
   ]
   return (
     <div className='flex w-full flex-col'>
-      <div className='hidden md:block'>
+      <div className='hidden lg:block'>
         <Tabs
           aria-label='Find Woker Tabs'
           items={tabs}
@@ -46,7 +46,7 @@ const SectionTest = memo(() => {
           )}
         </Tabs>
       </div>
-      <div className='block md:hidden'>
+      <div className='block lg:hidden'>
         <Accordion
           className='gap-5'
           itemClasses={{

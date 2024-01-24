@@ -240,6 +240,7 @@ const CheckValidWorker = memo(
               isOpen={isOpenModal}
               onOpenChange={onOpenChange}
               hiddenCloseBtn
+              aria-label='modal logic'
               title={
                 <>
                   <Link href={'/'}>
@@ -253,7 +254,7 @@ const CheckValidWorker = memo(
               modalBody={
                 <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
                   <div className='flex items-center justify-center'>
-                    <Image src={'/store/heart1.png'} alt='write-mascot' height={240} width={307} className='object-cover' />
+                    <Image src={'/store/heart1.png'} priority alt='write-mascot' height={240} width={307} className='object-cover' />
                   </div>
                   <div className='flex flex-col justify-center gap-[8px]'>
                     <div className='flex flex-col gap-[4px]'>
@@ -264,6 +265,7 @@ const CheckValidWorker = memo(
                   <form onSubmit={_HandleSubmit.bind(this)}>
                     <div className='flex items-center gap-[16px]'>
                       <Autocomplete
+                        aria-label='phone'
                         defaultItems={phoneSelect}
                         variant='bordered'
                         className='max-w-[120px] '
