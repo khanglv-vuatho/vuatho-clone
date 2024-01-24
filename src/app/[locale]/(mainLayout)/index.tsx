@@ -306,11 +306,7 @@ const MainSection = () => {
                 delay: 1.5,
               }}
             >
-<<<<<<< HEAD
               <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit relative z-[1] w-auto' />
-=======
-              <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit relative z-[1] max-h-[500px] w-auto max-w-[400px]' />
->>>>>>> 910737553a9bf209041691b53f489336c9a6ccab
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}

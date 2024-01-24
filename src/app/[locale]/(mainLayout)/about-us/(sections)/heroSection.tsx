@@ -4,11 +4,6 @@ import Image from 'next/image'
 import { memo, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import lottie from 'lottie-web'
-<<<<<<< HEAD
-=======
-
-import animationData from '@/components/animateJson/aboutUs_banner.json'
->>>>>>> 910737553a9bf209041691b53f489336c9a6ccab
 
 import animationData from '@/components/animateJson/aboutUs_banner1.json'
 
