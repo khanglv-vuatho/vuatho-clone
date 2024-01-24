@@ -117,7 +117,11 @@ export const Store = memo(() => {
           <h3 className='mb-[20px] mt-[36px] text-[2.4rem] font-semibold uppercase '>{t('text4')}</h3>
           {valid && <Bagde cartItems={cartItems} setCartItems={setCartItems} />}
         </div>
+<<<<<<< HEAD
         {!valid && !isOpenModal && !onLoading && (
+=======
+        {!valid && !isOpenModal && !onLoading && !onFetching && (
+>>>>>>> 910737553a9bf209041691b53f489336c9a6ccab
           <div className='flex min-h-[400px] w-full flex-col items-center justify-center gap-[20px]'>
             <div className='max-w-[150px]'>
               <ImageFallback src={'/store/only-services-provider.png'} width={'307'} height={'240'} alt='image' className='object-cover' />
@@ -254,7 +258,11 @@ const CheckValidWorker = memo(
               modalBody={
                 <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
                   <div className='flex items-center justify-center'>
+<<<<<<< HEAD
                     <Image src={'/store/heart1.png'} priority alt='write-mascot' height={240} width={307} className='w-auto object-cover' />
+=======
+                    <Image src={'/store/heart1.png'} priority alt='write-mascot' height={240} width={307} className='object-cover' />
+>>>>>>> 910737553a9bf209041691b53f489336c9a6ccab
                   </div>
                   <div className='flex flex-col justify-center gap-[8px]'>
                     <div className='flex flex-col gap-[4px]'>

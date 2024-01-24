@@ -76,7 +76,11 @@ export const Logo = memo(() => {
   }, [])
   return (
     <Link onClick={_handleClickLogo} href={`/${locale}`} className='block h-fit'>
+<<<<<<< HEAD
       <Image src='/logo/textLogo.png' alt='Logo nav' width={256} height={176} className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[70px]' />
+=======
+      <Image src='/logo/textLogo.png' alt='Logo nav' width={256} height={176} quality={100} className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[70px]' />
+>>>>>>> 910737553a9bf209041691b53f489336c9a6ccab
     </Link>
   )
 })
