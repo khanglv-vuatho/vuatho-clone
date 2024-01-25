@@ -438,7 +438,7 @@ const CustomerBenefitSection = () => {
             }}
             className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'
           >
-            <Image src={'/khach-benefit-7.webp'} alt='khach-benefit-7' quality={100} height={600} width={600} className='pointer-events-none h-full w-full select-none object-contain' />
+            <Image src={'/khach-benefit-7.webp'} alt='khach-benefit-7' height={600} width={600} className='pointer-events-none h-auto w-auto select-none object-cover' />
           </motion.div>
         </div>
         <div className='col-span-1 grid grid-cols-1 md:mx-auto md:max-w-[820px] md:grid-cols-2 xl:col-span-3'>
