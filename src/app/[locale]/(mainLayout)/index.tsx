@@ -298,18 +298,11 @@ const MainSection = () => {
             <QuickDashboard />
           </div>
           <div className='z-[1] col-span-1 mt-32 w-full justify-center xl:col-span-2'>
-            <motion.div
-              initial={{ opacity: 0, y: 200 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 1,
-                delay: 1.5,
-              }}
-            >
+            <div>
               <div className='max-h-[500px] max-w-[400px]'>
                 <ImageFallback priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={500} height={600} className=' relative z-[1] h-auto w-auto' />
               </div>
-            </motion.div>
+            </div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}

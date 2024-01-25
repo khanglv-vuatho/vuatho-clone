@@ -73,6 +73,7 @@ const SectionTest = memo(() => {
                 title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6]',
                 indicator: 'text-[1.8rem]',
                 base: 'group-[.is-splitted]:pl-12',
+                trigger: 'data-[focus-visible=true]:!outline-none',
               }}
             >
               {item.content}

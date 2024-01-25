@@ -396,6 +396,7 @@ function FaqSection() {
                     title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6]',
                     indicator: 'text-[1.8rem]',
                     base: 'group-[.is-splitted]:pl-12',
+                    trigger: 'data-[focus-visible=true]:!outline-none',
                   }}
                 >
                   {i.children.map((ic: any) => (
@@ -432,6 +433,7 @@ function FaqSection() {
                     title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6]',
                     indicator: 'text-[1.8rem]',
                     base: 'group-[.is-splitted]:pl-12',
+                    trigger: 'data-[focus-visible=true]:!outline-none',
                   }}
                 >
                   {item?.children.map((ic: any, index: any) => (
@@ -452,6 +454,7 @@ function FaqSection() {
                           title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6] pl-2',
                           indicator: 'text-[1.8rem]',
                           base: 'group-[.is-splitted]:pl-12',
+                          trigger: 'data-[focus-visible=true]:!outline-none',
                         }}
                       >
                         {ic?.children.map((icc: any) => (

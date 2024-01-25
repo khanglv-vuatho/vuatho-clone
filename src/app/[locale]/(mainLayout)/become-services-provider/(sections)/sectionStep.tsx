@@ -121,6 +121,7 @@ const SectionStep = () => {
                   title: 'text-[1.8rem]',
                   indicator: 'text-[1.8rem]',
                   base: 'group-[.is-splitted]:pl-12',
+                  trigger: 'data-[focus-visible=true]:!outline-none',
                 }}
               >
                 {i.content}
