@@ -628,9 +628,7 @@ const PressHome = () => {
                 </div>
               ))
           : listBlog.length > 0
-            ? listBlog.map((item: any, index: number) => {
-                return <Article key={index} index={index} item={item} style='w-[80%] md:w-[40%] lg:w-full cursor-pointer' />
-              })
+            ? listBlog.map((item: any, index: number) => <Article key={index} index={index} item={item} style='w-[80%] md:w-[40%] lg:w-full cursor-pointer' />)
             : Array(4)
                 .fill(null)
                 .map((_, index) => (
@@ -679,9 +677,8 @@ const LikeControl = ({ item }: { item: any }) => {
       type === 'like' ? _ServerSendingLike() : _ServerSendingDislike()
     } else {
       if (type === 'like') {
-        if (checkDislike.isDisliked === true) {
-          return
-        } else {
+        if (checkDislike.isDisliked === true) return
+        else {
           _ServerSendingLike()
         }
       } else if (type === 'dislike') {

@@ -211,22 +211,14 @@ const LinkList = memo(({ handleToggleMenu }: { handleToggleMenu?: any }) => {
         const isActive = pathname.includes(link.url)
         return (
           <div key={link.id} className='w-full whitespace-nowrap'>
-            <motion.div
-              variants={menuVariantsLinks}
-              initial='initial'
-              animate='open'
-              viewport={{
-                once: true,
-              }}
-              className='text-[1.8rem]'
-            >
+            <div className='text-[1.8rem]'>
               <button onClick={() => handleClick(link.url)} className={`${isActive ? 'text-[#0B27B6] ' : ' hover:text-[#0B27B6]/60'} block duration-300 md:hidden`}>
                 {link.title}
               </button>
               <Link href={link.url} className={`hidden md:block ${isActive ? 'text-[#0B27B6]' : ' hover:text-[#0B27B6]/60'}`}>
                 {link.title}
               </Link>
-            </motion.div>
+            </div>
           </div>
         )
       })}
