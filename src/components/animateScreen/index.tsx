@@ -5,7 +5,7 @@ import { memo, useEffect, useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import animationAboutUs from '@/components/animateJson/aboutUs_banner.json'
-import animationData from '@/components/animateJson/downloadApp1.json'
+import animationData from '@/components/animateJson/downloadApp2.json'
 
 export const Screen = memo(({ style }: { style?: string }) => {
   const container = useRef(null)

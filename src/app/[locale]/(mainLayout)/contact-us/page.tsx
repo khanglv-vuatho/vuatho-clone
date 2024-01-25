@@ -60,7 +60,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <Image alt='background' src='/contact-us/bg.webp' quality={100} width={1920} height={848} className='pointer-events-none absolute bottom-0 right-0 opacity-40 md:opacity-100' />
+        <Image alt='background' src='/contact-us/bg.png' quality={100} width={1920} height={848} className='pointer-events-none absolute bottom-0 right-0 opacity-40 md:opacity-100' />
       </div>
     </div>
   )

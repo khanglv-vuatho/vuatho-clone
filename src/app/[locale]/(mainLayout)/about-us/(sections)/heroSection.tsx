@@ -5,7 +5,7 @@ import { memo, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import lottie from 'lottie-web'
 
-import animationData from '@/components/animateJson/aboutUs_banner.json'
+import animationData from '@/components/animateJson/aboutUs_banner1.json'
 
 const HeroSection = () => {
   const t = useTranslations('AboutUs')

@@ -306,7 +306,9 @@ const MainSection = () => {
                 delay: 1.5,
               }}
             >
-              <Image priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='object-fit relative z-[1] max-h-[500px] w-auto max-w-[400px]' />
+              <div className='max-h-[500px] max-w-[400px]'>
+                <ImageFallback priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={500} height={600} className=' relative z-[1] h-auto w-auto' />
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
