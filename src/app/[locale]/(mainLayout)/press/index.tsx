@@ -60,7 +60,7 @@ export const MostViewed: React.FC<IMostViewed> = memo(({ isHidden, dataDefault, 
                 <div title={item.title} key={item.title} className='block'>
                   <div className='group grid grid-cols-5 items-center bg-white'>
                     <Link href={`/${locale}/${item.slug}`} className='col-span-2 h-full min-h-[130px] w-full overflow-hidden'>
-                      <ImageFallback priority alt='blog' src={item?.thumb} width={256} height={202} className='h-full w-full object-cover transition group-hover:scale-[1.1]' />
+                      <ImageFallback alt='blog' src={item?.thumb} width={256} height={202} className='h-full w-full object-cover transition group-hover:scale-[1.1]' />
                     </Link>
                     <div className='col-span-3 flex h-full flex-col justify-center gap-[4px] p-[16px]'>
                       <Link href={`/${locale}/press/${item.category.slug}`} className='mb-[4px] block text-[1.5rem] text-primary-blue'>
