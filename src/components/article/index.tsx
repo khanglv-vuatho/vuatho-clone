@@ -12,13 +12,7 @@ const Article = ({ item, style, index }: { item: any; style?: string; index: num
   const locale = useLocale()
 
   return (
-    <motion.div
-      initial={{ x: 40, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.2, delay: 0.2 * index }}
-      viewport={{ once: true }}
-      className={twMerge('group flex w-full flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-[8px] bg-white shadow-[0px_4px_8px_0px_#50505029]', style)}
-    >
+    <div className={twMerge('group flex w-full flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-[8px] bg-white shadow-[0px_4px_8px_0px_#50505029]', style)}>
       <Link href={`/${locale}/${item.slug}`} className='h-[206px] w-full overflow-hidden transition hover:scale-105'>
         <ImageFallback src={item.thumb} alt='Article image' height={406} width={800} priority className='h-full w-full object-cover transition' />
       </Link>
@@ -36,7 +30,7 @@ const Article = ({ item, style, index }: { item: any; style?: string; index: num
         </Link>
         <p className='line-clamp-3 text-[1.8rem] font-light text-base-drak-gray'>{item.short_description}</p>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

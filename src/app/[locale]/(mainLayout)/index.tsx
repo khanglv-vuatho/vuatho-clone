@@ -138,23 +138,7 @@ const MinhBach = () => {
       <section className='ct-container-70'>
         <h3 className='font-semibold uppercase tracking-[8px]'>{td('text1')}</h3>
         <h2 className='mb-[40px] inline-block text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>{t('heading')}</h2>
-        <motion.div
-          initial={{
-            y: 60,
-            opacity: 0,
-          }}
-          whileInView={{
-            x: 0,
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.3,
-            delay: 0.5,
-          }}
-          viewport={{ once: true }}
-          className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'
-        >
+        <div className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'>
           {listData.map((item, index) => (
             <div key={`listData-${index}`} className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'>
               <div className='flex items-center gap-[10px]'>
@@ -167,7 +151,7 @@ const MinhBach = () => {
               <p className='text-[1.8rem] font-light'>{item.desc}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
       </section>
     </div>
   )
@@ -263,17 +247,9 @@ const MainSection = () => {
                 <ImageFallback priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={500} height={600} className=' relative z-[1] h-auto w-auto' />
               </div>
             </div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: 2.5,
-              }}
-              className='absolute top-[550px] z-[0] object-contain md:top-0'
-            >
+            <div className='absolute top-[550px] z-[0] object-contain md:top-0'>
               <GlobeComponent />
-            </motion.div>
+            </div>
           </div>
         </div>
         <div className='absolute bottom-0 left-0 right-0 z-[0] -skew-y-0 transform'>
@@ -744,9 +720,9 @@ const LikeControl = ({ item }: { item: any }) => {
 const Like = ({ onClick, isLike, count, isDislike }: { onClick?: any; isLike?: boolean; count?: number; isDislike: boolean }) => {
   return (
     <button disabled={isDislike} className='like flex items-center gap-[8px] px-[20px] py-[10px]' onClick={onClick}>
-      <motion.div>
+      <div>
         <Like1 variant={isLike ? 'Bold' : 'Linear'} size={24} style={{ zIndex: 1000 }} className={isLike ? 'text-[#FCB713]' : ''} />
-      </motion.div>
+      </div>
       <span>{count}</span>
     </button>
   )
