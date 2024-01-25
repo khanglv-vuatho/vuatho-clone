@@ -17,24 +17,24 @@ const SectionStep = () => {
   const listAccordion: any = [
     {
       title: t('text1'),
-      content: <Step1 />,
+      content: <Step1 />
     },
     {
       title: t('text2'),
-      content: <Step2 />,
+      content: <Step2 />
     },
     {
       title: t('text3'),
-      content: <Step3 />,
+      content: <Step3 />
     },
     {
       title: t('text4'),
-      content: <Step4 />,
+      content: <Step4 />
     },
     {
       title: t('text5'),
-      content: <Step5 />,
-    },
+      content: <Step5 />
+    }
   ]
 
   const [activeSelect, setActiveSelect] = useState<string>(listAccordion[0].title)
@@ -97,7 +97,7 @@ const SectionStep = () => {
           <Accordion
             className='gap-5'
             itemClasses={{
-              base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]',
+              base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]'
             }}
           >
             {listAccordion.map((i: any, index: any) => (
@@ -109,7 +109,7 @@ const SectionStep = () => {
                     className='text-[1.8rem]'
                     onClick={() =>
                       window.scrollTo({
-                        top: 30 * (index + 1),
+                        top: 30 * (index + 1)
                       })
                     }
                   >
@@ -121,7 +121,7 @@ const SectionStep = () => {
                   title: 'text-[1.8rem]',
                   indicator: 'text-[1.8rem]',
                   base: 'group-[.is-splitted]:pl-12',
-                  trigger: 'data-[focus-visible=true]:!outline-none',
+                  trigger: 'data-[focus-visible=true]:!outline-none'
                 }}
               >
                 {i.content}
@@ -199,7 +199,7 @@ const Step3: React.FC = memo(() => {
             <li>{t('text25')}</li>
           </ul>
         </div>
-      ),
+      )
     },
     {
       step: t('text31'),
@@ -209,7 +209,7 @@ const Step3: React.FC = memo(() => {
           <li>{t('text32')}</li>
           <li>{t('text33')}</li>
         </ul>
-      ),
+      )
     },
     {
       step: t('text34'),
@@ -219,8 +219,8 @@ const Step3: React.FC = memo(() => {
           <li>{t('text35')}</li>
           <li>{t('text36')}</li>
         </ul>
-      ),
-    },
+      )
+    }
   ]
 
   return (

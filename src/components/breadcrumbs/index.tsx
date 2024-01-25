@@ -10,12 +10,12 @@ export const ListBreadcrumbs = memo(({ list }: { list: IBreadcrumbWithUrl[] }) =
     <Breadcrumbs
       underline='hover'
       classNames={{
-        list: 'gap-[8px]',
+        list: 'gap-[8px]'
       }}
       itemClasses={{
         item: 'text-[1.8rem] text-white font-light',
         base: 'gap-[8px]',
-        separator: 'text-[2.4rem] text-white font-light',
+        separator: 'text-[2.4rem] text-white font-light'
       }}
     >
       {list.map((item) => (
@@ -32,12 +32,12 @@ export const ListBreadcrumbsForDetailPress = memo(({ list }: { list: IBreadcrumb
     <Breadcrumbs
       underline='hover'
       classNames={{
-        list: 'gap-[4px] lg:gap-[16px] flex-nowrap',
+        list: 'gap-[4px] lg:gap-[16px] flex-nowrap'
       }}
       itemClasses={{
         item: 'text-[1.8rem] ',
         base: 'gap-[4px] lg:gap-[16px]',
-        separator: 'text-[2.4rem] text-[#C9C9C9]',
+        separator: 'text-[2.4rem] text-[#C9C9C9]'
       }}
     >
       {list.map((item, index) => (

@@ -4,10 +4,10 @@ export async function generateMetadata({ params }: { params?: any }) {
   try {
     const metadata: any = {
       vi: 'Thợ nào cũng có',
-      en: 'Home',
+      en: 'Home'
     }
     return {
-      title: metadata[params.locale || 'vi'] || metadata.en,
+      title: metadata[params.locale || 'vi'] || metadata.en
     }
   } catch (error) {
     console.log(error)

@@ -11,14 +11,7 @@ type BtnType = {
   type?: 'button' | 'submit' | 'reset'
 }
 
-export const PrimaryBtn: React.FC<BtnType> = ({
-  children,
-  onClick,
-  isLoading,
-  isDisabled,
-  style,
-  title,
-}) => {
+export const PrimaryBtn: React.FC<BtnType> = ({ children, onClick, isLoading, isDisabled, style, title }) => {
   return (
     <Button
       onClick={onClick}
@@ -27,7 +20,7 @@ export const PrimaryBtn: React.FC<BtnType> = ({
       title={title}
       className={twMerge(
         'h-12 min-w-[7rem] rounded-lg bg-gradient-to-r from-[#376AA1] via-[#3748A0] to-[#376AA1] bg-[length:200%_100%] px-6 font-medium text-white transition-[all_0.4s_ease-in-out] hover:bg-[100%_0%] ',
-        style,
+        style
       )}
     >
       {children}
@@ -35,15 +28,7 @@ export const PrimaryBtn: React.FC<BtnType> = ({
   )
 }
 
-export const IconBtn: React.FC<BtnType> = ({
-  children,
-  onClick,
-  isLoading,
-  isDisabled,
-  style,
-  title,
-  type,
-}) => {
+export const IconBtn: React.FC<BtnType> = ({ children, onClick, isLoading, isDisabled, style, title, type }) => {
   return (
     <Button
       onClick={onClick}
@@ -58,24 +43,14 @@ export const IconBtn: React.FC<BtnType> = ({
   )
 }
 
-export const BorderedBtn: React.FC<BtnType> = ({
-  children,
-  onClick,
-  isLoading,
-  isDisabled,
-  style,
-  title,
-}) => {
+export const BorderedBtn: React.FC<BtnType> = ({ children, onClick, isLoading, isDisabled, style, title }) => {
   return (
     <Button
       onClick={onClick}
       title={title}
       isLoading={isLoading}
       isDisabled={isDisabled}
-      className={twMerge(
-        'h-12 min-w-[7rem] rounded-lg border-2 border-primary-blue bg-white px-6 font-medium text-primary-blue ',
-        style,
-      )}
+      className={twMerge('h-12 min-w-[7rem] rounded-lg border-2 border-primary-blue bg-white px-6 font-medium text-primary-blue ', style)}
     >
       {children}
     </Button>

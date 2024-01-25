@@ -21,8 +21,8 @@ const Default = React.memo((props: any) => {
       url: '/provider-world',
       params: {
         country: country,
-        services: servicesID,
-      },
+        services: servicesID
+      }
     })
       .then(function (response: any) {
         setData(response)
@@ -40,22 +40,19 @@ const Default = React.memo((props: any) => {
     onFetching && _ServerFetching()
   }, [onFetching])
 
-  const clickAction = React.useCallback(
-    ({ countryName, countryCode, countryValue }: CountryContext) => {
-      const query: any = {}
-      if (countryCode) {
-        query['country'] = countryCode?.toLowerCase()
-      }
-      if (servicesID) {
-        query['services'] = servicesID
-      }
-      router.push({
-        pathname: '/services',
-        query: query,
-      })
-    },
-    [],
-  )
+  const clickAction = React.useCallback(({ countryName, countryCode, countryValue }: CountryContext) => {
+    const query: any = {}
+    if (countryCode) {
+      query['country'] = countryCode?.toLowerCase()
+    }
+    if (servicesID) {
+      query['services'] = servicesID
+    }
+    router.push({
+      pathname: '/services',
+      query: query
+    })
+  }, [])
 
   const getStyle = (data: any) => {
     const value = data.countryValue || 0
@@ -65,20 +62,13 @@ const Default = React.memo((props: any) => {
       stroke: 'black',
       strokeWidth: 1,
       strokeOpacity: 0.2,
-      cursor: 'pointer',
+      cursor: 'pointer'
     }
   }
 
   return (
     <div className='hidden w-full xl:block'>
-      <WorldMap
-        onClickFunction={clickAction}
-        color='white'
-        value-suffix='people'
-        size='responsive'
-        data={data}
-        styleFunction={getStyle}
-      />
+      <WorldMap onClickFunction={clickAction} color='white' value-suffix='people' size='responsive' data={data} styleFunction={getStyle} />
     </div>
   )
 })

@@ -93,8 +93,8 @@ const ItemRenderService = memo((props: any) => {
     router.push({
       pathname: '/services',
       query: {
-        services: props.id,
-      },
+        services: props.id
+      }
     })
   }
 

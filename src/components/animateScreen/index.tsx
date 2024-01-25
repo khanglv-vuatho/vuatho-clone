@@ -16,7 +16,7 @@ export const Screen = memo(({ style }: { style?: string }) => {
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      animationData: animationData,
+      animationData: animationData
     })
 
     return () => instance.destroy()
@@ -34,7 +34,7 @@ export const AboutUsScreen = memo(({ style }: { style?: string }) => {
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      animationData: animationAboutUs,
+      animationData: animationAboutUs
     })
 
     return () => instance.destroy()

@@ -11,8 +11,7 @@ export function ThemeSwitcher({ props }: { props?: any }) {
 
   const [mounted, setMounted] = useState(false)
 
-  const { Component, slots, isSelected, getBaseProps, getInputProps, getWrapperProps } =
-    useSwitch(props)
+  const { Component, slots, isSelected, getBaseProps, getInputProps, getWrapperProps } = useSwitch(props)
 
   useEffect(() => {
     setMounted(true)
@@ -24,20 +23,12 @@ export function ThemeSwitcher({ props }: { props?: any }) {
     <div className='flex cursor-pointer flex-col gap-2'>
       <Component {...getBaseProps()}>
         <VisuallyHidden>
-          <input
-            {...getInputProps()}
-            value={theme}
-            onChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-          />
+          <input {...getInputProps()} value={theme} onChange={() => setTheme(theme === 'light' ? 'dark' : 'light')} />
         </VisuallyHidden>
         <div
           {...getWrapperProps()}
           className={slots.wrapper({
-            class: [
-              'h-8 w-8',
-              'flex items-center justify-center',
-              'rounded-lg bg-transparent',
-            ],
+            class: ['h-8 w-8', 'flex items-center justify-center', 'rounded-lg bg-transparent']
           })}
         >
           {theme === 'light' ? <SunIcon /> : <MoonIcon />}

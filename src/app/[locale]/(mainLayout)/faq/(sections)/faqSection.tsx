@@ -20,34 +20,34 @@ function FaqSection() {
           title: t('listAccordion.children1.title1'),
           children: [
             {
-              title: t('listAccordion.children1.children1.title1'),
+              title: t('listAccordion.children1.children1.title1')
             },
             {
-              title: t('listAccordion.children1.children1.title2'),
+              title: t('listAccordion.children1.children1.title2')
             },
             {
-              title: t('listAccordion.children1.children1.title3'),
-            },
-          ],
+              title: t('listAccordion.children1.children1.title3')
+            }
+          ]
         },
         {
           title: t('listAccordion.children1.title2'),
           children: [
             {
-              title: t('listAccordion.children1.children2.title1'),
+              title: t('listAccordion.children1.children2.title1')
             },
             {
-              title: t('listAccordion.children1.children2.title2'),
+              title: t('listAccordion.children1.children2.title2')
             },
             {
-              title: t('listAccordion.children1.children2.title3'),
+              title: t('listAccordion.children1.children2.title3')
             },
             {
-              title: t('listAccordion.children1.children2.title4'),
-            },
-          ],
-        },
-      ],
+              title: t('listAccordion.children1.children2.title4')
+            }
+          ]
+        }
+      ]
     },
     {
       title: t('listAccordion.title2'),
@@ -56,96 +56,96 @@ function FaqSection() {
           title: t('listAccordion.children2.title1'),
           children: [
             {
-              title: t('listAccordion.children2.children1.title1'),
-            },
-          ],
+              title: t('listAccordion.children2.children1.title1')
+            }
+          ]
         },
         {
           title: t('listAccordion.children2.title2'),
           children: [
             {
-              title: t('listAccordion.children2.children2.title1'),
-            },
-          ],
+              title: t('listAccordion.children2.children2.title1')
+            }
+          ]
         },
         {
           title: t('listAccordion.children2.title3'),
           children: [
             {
-              title: t('listAccordion.children2.children3.title1'),
-            },
-          ],
+              title: t('listAccordion.children2.children3.title1')
+            }
+          ]
         },
 
         {
           title: t('listAccordion.children2.title4'),
           children: [
             {
-              title: t('listAccordion.children2.children4.title1'),
-            },
-          ],
+              title: t('listAccordion.children2.children4.title1')
+            }
+          ]
         },
         {
           title: t('listAccordion.children2.title5'),
           children: [
             {
-              title: t('listAccordion.children2.children5.title1'),
-            },
-          ],
+              title: t('listAccordion.children2.children5.title1')
+            }
+          ]
         },
         {
           title: t('listAccordion.children2.title6'),
           children: [
             {
-              title: t('listAccordion.children2.children6.title1'),
-            },
-          ],
+              title: t('listAccordion.children2.children6.title1')
+            }
+          ]
         },
         {
           title: t('listAccordion.children2.title7'),
           children: [
             {
-              title: t('listAccordion.children2.children7.title1'),
-            },
-          ],
+              title: t('listAccordion.children2.children7.title1')
+            }
+          ]
         },
         {
           title: t('listAccordion.children2.title8'),
           children: [
             {
-              title: t('listAccordion.children2.children8.title1'),
-            },
-          ],
+              title: t('listAccordion.children2.children8.title1')
+            }
+          ]
         },
         {
           title: t('listAccordion.children2.title9'),
           children: [
             {
-              title: t('listAccordion.children2.children9.title1'),
+              title: t('listAccordion.children2.children9.title1')
             },
             {
-              title: t('listAccordion.children2.children9.title2'),
+              title: t('listAccordion.children2.children9.title2')
             },
             {
-              title: t('listAccordion.children2.children9.title3'),
+              title: t('listAccordion.children2.children9.title3')
             },
             {
-              title: t('listAccordion.children2.children9.title4'),
+              title: t('listAccordion.children2.children9.title4')
             },
             {
-              title: t('listAccordion.children2.children9.title5'),
-            },
-          ],
+              title: t('listAccordion.children2.children9.title5')
+            }
+          ]
         },
         {
           title: t('listAccordion.children2.title10'),
           children: [
             {
-              title: t('listAccordion.children2.children10.title1'),
-            },
-          ],
-        },
-      ],
+              title: t('listAccordion.children2.children10.title1')
+            }
+          ]
+        }
+      ]
     },
     {
       title: t('listAccordion.title4'),
@@ -154,31 +154,31 @@ function FaqSection() {
           title: t('listAccordion.children4.title1'),
           children: [
             {
-              title: t('listAccordion.children4.children1.title1'),
+              title: t('listAccordion.children4.children1.title1')
             },
             { title: t('listAccordion.children4.children1.title2') },
             {
-              title: t('listAccordion.children4.children1.title3'),
-            },
-          ],
+              title: t('listAccordion.children4.children1.title3')
+            }
+          ]
         },
         {
           title: t('listAccordion.children4.title2'),
           children: [
             {
-              title: t('listAccordion.children4.children2.title1'),
-            },
-          ],
+              title: t('listAccordion.children4.children2.title1')
+            }
+          ]
         },
         {
           title: t('listAccordion.children4.title3'),
           children: [
             {
-              title: t('listAccordion.children4.children3.title1'),
-            },
-          ],
-        },
-      ],
+              title: t('listAccordion.children4.children3.title1')
+            }
+          ]
+        }
+      ]
     },
     {
       title: t('listAccordion.title5'),
@@ -188,54 +188,54 @@ function FaqSection() {
           children: [
             {
               title: t('listAccordion.children5.children1.title1'),
-              bold: true,
+              bold: true
             },
             {
-              title: t('listAccordion.children5.children1.title2'),
+              title: t('listAccordion.children5.children1.title2')
             },
             {
               title: t('listAccordion.children5.children1.title3'),
-              bold: true,
+              bold: true
             },
             {
-              title: t('listAccordion.children5.children1.title4'),
+              title: t('listAccordion.children5.children1.title4')
             },
             {
               title: t('listAccordion.children5.children1.title5'),
-              bold: true,
+              bold: true
             },
             {
-              title: t('listAccordion.children5.children1.title6'),
+              title: t('listAccordion.children5.children1.title6')
             },
             {
               title: t('listAccordion.children5.children1.title7'),
-              bold: true,
+              bold: true
             },
             {
-              title: t('listAccordion.children5.children1.title8'),
-            },
-          ],
+              title: t('listAccordion.children5.children1.title8')
+            }
+          ]
         },
         {
           title: t('listAccordion.children5.title2'),
           children: [
             {
               title: t('listAccordion.children5.children2.title1'),
-              bold: true,
+              bold: true
             },
             {
-              title: t('listAccordion.children5.children2.title2'),
+              title: t('listAccordion.children5.children2.title2')
             },
             {
               title: t('listAccordion.children5.children2.title3'),
-              bold: true,
+              bold: true
             },
             {
-              title: t('listAccordion.children5.children2.title5'),
-            },
-          ],
-        },
-      ],
+              title: t('listAccordion.children5.children2.title5')
+            }
+          ]
+        }
+      ]
     },
     {
       title: t('listAccordion.title6'),
@@ -244,80 +244,80 @@ function FaqSection() {
           title: t('listAccordion.children6.title1'),
           children: [
             {
-              title: t('listAccordion.children6.children1.title1'),
+              title: t('listAccordion.children6.children1.title1')
             },
             {
-              title: t('listAccordion.children6.children1.title2'),
+              title: t('listAccordion.children6.children1.title2')
             },
             {
-              title: t('listAccordion.children6.children1.title3'),
+              title: t('listAccordion.children6.children1.title3')
             },
             {
-              title: t('listAccordion.children6.children1.title4'),
-            },
-          ],
+              title: t('listAccordion.children6.children1.title4')
+            }
+          ]
         },
         {
           title: t('listAccordion.children6.title2'),
           children: [
             {
-              title: t('listAccordion.children6.children2.title1'),
+              title: t('listAccordion.children6.children2.title1')
             },
             {
-              title: t('listAccordion.children6.children2.title2'),
+              title: t('listAccordion.children6.children2.title2')
             },
 
             { title: t('listAccordion.children6.children2.title3') },
             {
-              title: t('listAccordion.children6.children2.title4'),
-            },
-          ],
+              title: t('listAccordion.children6.children2.title4')
+            }
+          ]
         },
         {
           title: t('listAccordion.children6.title3'),
           children: [
             {
-              title: t('listAccordion.children6.children3.title1'),
+              title: t('listAccordion.children6.children3.title1')
             },
             {
-              title: t('listAccordion.children6.children3.title2'),
+              title: t('listAccordion.children6.children3.title2')
             },
             {
-              title: t('listAccordion.children6.children3.title3'),
+              title: t('listAccordion.children6.children3.title3')
             },
             {
-              title: t('listAccordion.children6.children3.title4'),
-            },
-          ],
+              title: t('listAccordion.children6.children3.title4')
+            }
+          ]
         },
         {
           title: t('listAccordion.children6.title4'),
           children: [
             {
-              title: t('listAccordion.children6.children4.title1'),
+              title: t('listAccordion.children6.children4.title1')
             },
 
             {
-              title: t('listAccordion.children6.children4.title2'),
+              title: t('listAccordion.children6.children4.title2')
             },
             {
-              title: t('listAccordion.children6.children4.title3'),
+              title: t('listAccordion.children6.children4.title3')
             },
             {
-              title: t('listAccordion.children6.children4.title4'),
-            },
-          ],
+              title: t('listAccordion.children6.children4.title4')
+            }
+          ]
         },
         {
           title: t('listAccordion.children6.title5'),
           children: [
             {
-              title: t('listAccordion.children6.children5.title1'),
-            },
-          ],
-        },
-      ],
-    },
+              title: t('listAccordion.children6.children5.title1')
+            }
+          ]
+        }
+      ]
+    }
   ]
 
   const [contentActive, setContentActive] = useState(listAccordion.find((i: any) => i.title === activeSelect)?.children)
@@ -383,7 +383,7 @@ function FaqSection() {
               onSelectionChange={(item): any => setChildActive(new Set(Array.from(item)) as any)}
               className='gap-5'
               itemClasses={{
-                base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]',
+                base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]'
               }}
             >
               {contentActive?.map((i: any, index: any) => (
@@ -396,7 +396,7 @@ function FaqSection() {
                     title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6]',
                     indicator: 'text-[1.8rem]',
                     base: 'group-[.is-splitted]:pl-12',
-                    trigger: 'data-[focus-visible=true]:!outline-none',
+                    trigger: 'data-[focus-visible=true]:!outline-none'
                   }}
                 >
                   {i.children.map((ic: any) => (
@@ -415,7 +415,7 @@ function FaqSection() {
               selectionMode='single'
               className='gap-5'
               itemClasses={{
-                base: 'group-[.is-splitted]:shadow-[0px_8px_32px_0px_#00000014]',
+                base: 'group-[.is-splitted]:shadow-[0px_8px_32px_0px_#00000014]'
               }}
             >
               {listAccordion.map((item: any) => (
@@ -433,7 +433,7 @@ function FaqSection() {
                     title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6]',
                     indicator: 'text-[1.8rem]',
                     base: 'group-[.is-splitted]:pl-12',
-                    trigger: 'data-[focus-visible=true]:!outline-none',
+                    trigger: 'data-[focus-visible=true]:!outline-none'
                   }}
                 >
                   {item?.children.map((ic: any, index: any) => (
@@ -442,7 +442,7 @@ function FaqSection() {
                       key={ic.title}
                       className='gap-5'
                       itemClasses={{
-                        base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]',
+                        base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]'
                       }}
                     >
                       <AccordionItem
@@ -454,7 +454,7 @@ function FaqSection() {
                           title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6] pl-2',
                           indicator: 'text-[1.8rem]',
                           base: 'group-[.is-splitted]:pl-12',
-                          trigger: 'data-[focus-visible=true]:!outline-none',
+                          trigger: 'data-[focus-visible=true]:!outline-none'
                         }}
                       >
                         {ic?.children.map((icc: any) => (

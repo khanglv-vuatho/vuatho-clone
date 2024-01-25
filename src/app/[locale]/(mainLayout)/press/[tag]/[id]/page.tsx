@@ -3,31 +3,28 @@ import PressDetail from '.'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
-    const { data } = await axios.get(
-      'https://sandbox-api-website.vuatho.com/blog/detail',
-      {
-        params: {
-          slug: params.id,
-          lang: params.locale,
-        },
-      },
-    )
+    const { data } = await axios.get('https://sandbox-api-website.vuatho.com/blog/detail', {
+      params: {
+        slug: params.id,
+        lang: params.locale
+      }
+    })
 
     return {
       title: data?.data.title,
       description: data?.data.description || data?.data.content,
       keywords: data?.data.keywords,
-      robots: data?.data.robots,
+      robots: data?.data.robots
     }
   } catch (error) {
     console.log(error)
 
     const metadata: any = {
       vi: 'Không có bài viết',
-      en: 'Article not found',
+      en: 'Article not found'
     }
     return {
-      title: metadata[params.locale || 'vi'] || metadata.en,
+      title: metadata[params.locale || 'vi'] || metadata.en
     }
   }
 }

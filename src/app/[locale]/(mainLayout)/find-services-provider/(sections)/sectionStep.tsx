@@ -12,18 +12,18 @@ const SectionTest = memo(() => {
     {
       id: '1',
       label: t('text1'),
-      content: <Step1 />,
+      content: <Step1 />
     },
     {
       id: '2',
       label: t('text2'),
-      content: <Step2 />,
+      content: <Step2 />
     },
     {
       id: '3',
       label: t('text3'),
-      content: <Step3 />,
-    },
+      content: <Step3 />
+    }
   ]
   return (
     <div className='flex w-full flex-col'>
@@ -36,7 +36,7 @@ const SectionTest = memo(() => {
             tabList: 'gap-6 w-full relative rounded-none py-2',
             cursor: 'w-full bg-[#405AB7]',
             tab: 'max-w-fit px-[20px] py-[30px] flex items-center justify-center bg-[#F8F8F8]',
-            tabContent: 'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
+            tabContent: 'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold'
           }}
         >
           {(item) => (
@@ -50,7 +50,7 @@ const SectionTest = memo(() => {
         <Accordion
           className='gap-5'
           itemClasses={{
-            base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]',
+            base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]'
           }}
         >
           {tabs.map((item: any, index: any) => (
@@ -61,7 +61,7 @@ const SectionTest = memo(() => {
                 <p
                   onClick={() =>
                     window.scrollTo({
-                      top: 30 * (index + 1),
+                      top: 30 * (index + 1)
                     })
                   }
                 >
@@ -73,7 +73,7 @@ const SectionTest = memo(() => {
                 title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6]',
                 indicator: 'text-[1.8rem]',
                 base: 'group-[.is-splitted]:pl-12',
-                trigger: 'data-[focus-visible=true]:!outline-none',
+                trigger: 'data-[focus-visible=true]:!outline-none'
               }}
             >
               {item.content}
@@ -118,13 +118,13 @@ const Step2 = memo(() => {
     {
       id: '4',
       label: t('text8'),
-      content: <Register />,
+      content: <Register />
     },
     {
       id: '5',
       label: t('text9'),
-      content: <Login />,
-    },
+      content: <Login />
+    }
   ]
   return (
     <div className='flex flex-col gap-[20px] rounded-lg border-2 border-base-gray p-6 md:border-none md:p-0'>
@@ -138,7 +138,7 @@ const Step2 = memo(() => {
             tabList: 'gap-6 w-full relative rounded-none py-2 flex-col',
             cursor: 'w-full bg-[#405AB7]',
             tab: 'xl:min-w-[300px] min-w-[100px] p-[24px] flex items-center justify-start border-[1px] border-[#E1E1E1]',
-            tabContent: 'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
+            tabContent: 'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold'
           }}
         >
           {(item) => (
@@ -167,7 +167,7 @@ const Step3 = memo(() => {
           <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text11')}</p>
           <p className='text-[1.8rem]'>{t('text30')}</p>
         </>
-      ),
+      )
     },
     {
       thumb: 'findWorker2.png',
@@ -176,7 +176,7 @@ const Step3 = memo(() => {
           <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text14')}</p>
           <p className='text-[1.8rem]'>{t('text31')}</p>
         </>
-      ),
+      )
     },
     {
       thumb: 'findWorker3.png',
@@ -185,7 +185,7 @@ const Step3 = memo(() => {
           <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text17')}</p>
           <p className='text-[1.8rem]'>{t('text36')}</p>
         </>
-      ),
+      )
     },
     {
       thumb: 'findWorker4.png',
@@ -195,7 +195,7 @@ const Step3 = memo(() => {
           <p className='text-[1.8rem]'>{t('text38')}</p>
           <p className='text-[1.8rem]'>{t('text39')}</p>
         </>
-      ),
+      )
     },
     {
       thumb: 'findWorker5-1.png',
@@ -206,7 +206,7 @@ const Step3 = memo(() => {
           <p className='text-[1.8rem]'>{t('text40')}</p>
           <p className='text-[1.8rem]'>{t('text41')}</p>
         </>
-      ),
+      )
     },
     {
       thumb: 'findWorker6-1.png',
@@ -217,8 +217,8 @@ const Step3 = memo(() => {
           <p className='text-[1.8rem]'>{t('text42')}</p>
           <p className='text-[1.8rem]'>{t('text43')}</p>
         </>
-      ),
-    },
+      )
+    }
   ]
 
   return (
@@ -248,7 +248,7 @@ const Register: any = memo(() => {
           <p className='text-[1.8rem]'>{t('text12')}</p>
           <p className='text-[1.8rem]'>{t('text13')}</p>
         </>
-      ),
+      )
     },
     {
       thumb: 'screen2.png',
@@ -258,7 +258,7 @@ const Register: any = memo(() => {
           <p className='text-[1.8rem]'>{t('text15')}</p>
           <p className='text-[1.8rem]'>{t('text16')}</p>
         </>
-      ),
+      )
     },
     {
       thumb: 'screen3.png',
@@ -270,7 +270,7 @@ const Register: any = memo(() => {
             <span className='text-[#FF4343]'>{t('text19')}</span>
           </p>
         </>
-      ),
+      )
     },
     {
       thumb: 'screen4.png',
@@ -279,8 +279,8 @@ const Register: any = memo(() => {
           <p className='text-[1.8rem] font-semibold'>{t('text20')}</p>
           <p className='text-[1.8rem]'>{t('text21')}</p>
         </>
-      ),
-    },
+      )
+    }
   ]
 
   return (

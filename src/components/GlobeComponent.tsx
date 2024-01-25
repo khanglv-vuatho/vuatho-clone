@@ -40,7 +40,7 @@ const GlobeComponent = React.memo((props: any) => {
       'plum',
       'lavender',
       'peru',
-      'sienna',
+      'sienna'
     ]
 
     const arcsData: any = Array.from(Array(10).keys()).map(() => ({
@@ -48,13 +48,13 @@ const GlobeComponent = React.memo((props: any) => {
       startLng: (Math.random() - 0.5) * 360,
       endLat: (Math.random() - 0.5) * 180,
       endLng: (Math.random() - 0.5) * 360,
-      color: [colors[Math.floor(Math.random() * colors.length)], colors[Math.floor(Math.random() * colors.length)]],
+      color: [colors[Math.floor(Math.random() * colors.length)], colors[Math.floor(Math.random() * colors.length)]]
     }))
 
     const globe = Globe()(globeEl.current)
     const pointsData = arcsData.flatMap((arc: any) => [
       { lat: arc.startLat, lng: arc.startLng },
-      { lat: arc.endLat, lng: arc.endLng },
+      { lat: arc.endLat, lng: arc.endLng }
     ])
 
     globe
@@ -99,8 +99,8 @@ const GlobeComponent = React.memo((props: any) => {
       new THREE.SphereGeometry(globe.getGlobeRadius() * 1.01, 75, 75),
       new THREE.MeshPhongMaterial({
         map: new THREE.TextureLoader().load(CLOUDS_IMG_URL),
-        transparent: true,
-      }),
+        transparent: true
+      })
     )
     globe.scene().add(clouds)
 

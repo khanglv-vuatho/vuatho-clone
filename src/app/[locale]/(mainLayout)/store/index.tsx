@@ -55,8 +55,8 @@ export const Store = memo(() => {
         params: {
           lang: locale,
           currency: currencyCurrent?.code,
-          token,
-        },
+          token
+        }
       })
       setValid(true)
       setListItem(data.list)
@@ -167,7 +167,7 @@ const CheckValidWorker = memo(
     setValid,
     setToken,
     isOpenModal,
-    setIsOpenModal,
+    setIsOpenModal
   }: {
     setOnFetching: any
     onLoading: boolean
@@ -190,12 +190,12 @@ const CheckValidWorker = memo(
       try {
         console.log({
           phone,
-          phone_code: phoneCountry,
+          phone_code: phoneCountry
         })
 
         const data: any = await instance.post('/uniforms/confirm_worker', {
           phone,
-          phone_code: phoneCountry,
+          phone_code: phoneCountry
         })
 
         if (data.status == 200) {
@@ -276,25 +276,25 @@ const CheckValidWorker = memo(
                         defaultSelectedKey={phoneCountry}
                         onSelectionChange={(e: any) => setPhoneCountry(e)}
                         scrollShadowProps={{
-                          isEnabled: false,
+                          isEnabled: false
                         }}
                         popoverProps={{
                           classNames: {
-                            content: 'text-[1.2rem] whitespace-nowrap',
-                          },
+                            content: 'text-[1.2rem] whitespace-nowrap'
+                          }
                         }}
                         inputProps={{
                           classNames: {
                             input: 'text-[1.4rem] text-[#A5A5A5]',
-                            inputWrapper: 'border-[#BABEF4] data-[hover=true]:border-[#BABEF4] group-data-[focus=true]:border-[#BABEF4] border-1 h-[44px] pl-[16px]',
-                          },
+                            inputWrapper: 'border-[#BABEF4] data-[hover=true]:border-[#BABEF4] group-data-[focus=true]:border-[#BABEF4] border-1 h-[44px] pl-[16px]'
+                          }
                         }}
                       >
                         {(item: any) => (
                           <AutocompleteItem
                             key={item.value}
                             classNames={{
-                              title: 'text-[1.4rem] py-[8px]',
+                              title: 'text-[1.4rem] py-[8px]'
                             }}
                           >
                             {item.label}
@@ -308,7 +308,7 @@ const CheckValidWorker = memo(
                         radius='full'
                         classNames={{
                           input: 'text-[1.4rem]',
-                          inputWrapper: 'h-[44px] pl-[16px] bg-white border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1',
+                          inputWrapper: 'h-[44px] pl-[16px] bg-white border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1'
                         }}
                       />
                     </div>
@@ -329,7 +329,7 @@ const CheckValidWorker = memo(
         )}
       </>
     )
-  },
+  }
 )
 
 const ItemClothe = memo(({ cartItems, setCartItems, item }: { item: IItemClothes; cartItems: any; setCartItems: any }) => {
@@ -384,9 +384,9 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: an
         { name: 'L', isActive: false },
         { name: 'XL', isActive: false },
         { name: '2XL', isActive: false },
-        { name: '3XL', isActive: false },
-      ],
-    })),
+        { name: '3XL', isActive: false }
+      ]
+    }))
   })
 
   const _handleBookNow = () => {
@@ -414,7 +414,7 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: an
       })
       setItem({ ...item, package: newData })
     },
-    [item],
+    [item]
   )
 
   const handleChangeCurrentImage = (thumb: string) => {
@@ -582,14 +582,14 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
     name: workerInfo?.full_name || 'full name',
     phone: workerInfo?.phone?.phone_number || '0123456789',
     phoneCountry: workerInfo?.phone?.phone_code || '+84',
-    address: '',
+    address: ''
   }
   const [infoCustomer, setInfoCustomer] = useState(initalInfo)
 
   const initalErrorInfo = {
     name: false,
     phoneCountry: false,
-    address: false,
+    address: false
   }
 
   const [errorInfo, setInfoError] = useState(initalErrorInfo)
@@ -612,7 +612,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
     const checkError = {
       name: infoCustomer.name === '' ? true : false,
       phoneCountry: !infoCustomer.phoneCountry ? true : false,
-      address: infoCustomer.address === '' ? true : false,
+      address: infoCustomer.address === '' ? true : false
     }
 
     setInfoError(checkError)
@@ -641,8 +641,8 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
           ...infoCustomer,
           phoneNumber: {
             phone: infoCustomer.phone,
-            phone_code: infoCustomer.phoneCountry,
-          },
+            phone_code: infoCustomer.phoneCountry
+          }
         },
         detailsOrder: {
           packageID: cartItems?.[0]?.uuid,
@@ -651,8 +651,8 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
             const { uuid, sizes } = item
             const size = sizes.find((s: any) => s.isActive)?.name || ''
             return { uuid, size }
-          }),
-        },
+          })
+        }
       }
 
       const data = await instance.post('/uniforms/order', payload)
@@ -726,7 +726,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
                   radius='full'
                   classNames={{
                     input: ' text-[1.4rem]',
-                    inputWrapper: 'border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 h-[44px] pl-[16px]',
+                    inputWrapper: 'border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 h-[44px] pl-[16px]'
                   }}
                 />
                 <span className={`${errorInfo.name && infoCustomer.name === '' ? 'h-[10px] text-[1.2rem] text-red-500 opacity-100' : 'h-[10px] opacity-0'} `}>{t('text23')}</span>
@@ -751,7 +751,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
                 radius='full'
                 classNames={{
                   input: 'text-[1.4rem]',
-                  inputWrapper: 'border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 h-[44px] pl-[16px]',
+                  inputWrapper: 'border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 h-[44px] pl-[16px]'
                 }}
               />
               <span className={`${errorInfo.address && infoCustomer.address === '' ? 'h-[10px] text-[1.2rem] text-red-500 opacity-100' : 'h-[10px] opacity-0'} `}>{t('text24')}</span>
@@ -784,7 +784,7 @@ const Bagde = memo(({ cartItems, setCartItems }: { cartItems: any[]; setCartItem
             content={!!cartItems?.length || 0}
             placement='top-right'
             classNames={{
-              badge: 'bg-[#FF4343] text-white h-[16px] w-[16px] text-[1rem] right-[20%] top-[20%] border-0',
+              badge: 'bg-[#FF4343] text-white h-[16px] w-[16px] text-[1rem] right-[20%] top-[20%] border-0'
             }}
           >
             <Bag2 size={24} />

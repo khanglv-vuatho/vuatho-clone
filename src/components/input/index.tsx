@@ -88,7 +88,7 @@ export const InputSearch = ({ onRefresh }: { onRefresh: any }) => {
         innerWrapper: 'py-[16px] px-[8px] data-[hover=true]:bg-white group-data-[focus=true]:bg-white bg-white ',
         input: 'text-[1.8rem] placeholder:font-light data-[has-start-content=true]:ps-[10px]',
         inputWrapper:
-          'bg-white rounded rounded-full overflow-hidden data-[hover=true]:bg-white group-data-[focus=true]:bg-white h-[58px] shadow-[0px_4px_8px_0px_#ACACAC29] group-data-[focus=true]:border-none border-none',
+          'bg-white rounded rounded-full overflow-hidden data-[hover=true]:bg-white group-data-[focus=true]:bg-white h-[58px] shadow-[0px_4px_8px_0px_#ACACAC29] group-data-[focus=true]:border-none border-none'
       }}
     />
   )

@@ -37,7 +37,7 @@ import InputSearch from '@/components/input/services'
 import dynamic from 'next/dynamic'
 
 const GlobeComponent = dynamic(() => import('@/components/GlobeComponent'), {
-  ssr: false,
+  ssr: false
 })
 
 function HomePage() {
@@ -69,7 +69,7 @@ const AISection = () => {
     { title: t('title1'), desc: t('desc1') },
     { title: t('title2'), desc: t('desc2') },
     { title: t('title3'), desc: t('desc3') },
-    { title: t('title4'), desc: t('desc4') },
+    { title: t('title4'), desc: t('desc4') }
   ]
 
   return (
@@ -81,19 +81,43 @@ const AISection = () => {
         </h4>
         <div className='flex flex-col'>
           <div className='bottom-2 flex h-full w-full items-center justify-center md:absolute md:justify-end 13inch:justify-center'>
-            <div className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'>
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0
+              }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1
+              }}
+              viewport={{ once: true }}
+              className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'
+            >
               <ImageFallback src={'/ai-section-1.png'} alt='AI Robot' width={700} height={680} quality={100} className='pointer-events-none w-auto select-none' />
-            </div>
+            </motion.div>
           </div>
           <div className='grid grid-cols-1 items-center gap-[20px] py-12 lg:ml-[10%] 13inch:ml-0 13inch:grid-cols-2 13inch:gap-[56px]'>
             {listAI.map((item, index) => (
-              <div key={`listAI-${index}`} className={`relative z-[10] flex w-full flex-col gap-[10px] p-[20px] text-baseBlack md:max-w-[400px]  ${index % 2 !== 0 && '13inch:ml-[36%]'}`}>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 100
+                }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 1 * ((index + 1) * 0.25)
+                }}
+                viewport={{ once: true }}
+                key={`listAI-${index}`}
+                className={`relative z-[10] flex w-full flex-col gap-[10px] p-[20px] text-baseBlack md:max-w-[400px]  ${index % 2 !== 0 && '13inch:ml-[36%]'}`}
+              >
                 <div
                   className={`absolute inset-0 z-[2] rounded-[20px] border-b-[2px] border-[#fbac47] bg-gradient-to-br from-[#ffffff] via-[#ffffff] to-[#e7e7e7] shadow-[0px_8px_16px_0px_#A2BAF366]`}
                 ></div>
                 <h5 className=' z-[4] text-[1.8rem] font-bold'>{item.title.replace(/(^|\s)\S/g, (match) => match.toUpperCase())}</h5>
                 <p className='z-[4] text-[1.8rem]'>{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -109,28 +133,28 @@ const MinhBach = () => {
   const listData = [
     {
       title: t('listData.title1'),
-      desc: t('listData.desc1'),
+      desc: t('listData.desc1')
     },
     {
       title: t('listData.title2'),
-      desc: t('listData.desc2'),
+      desc: t('listData.desc2')
     },
     {
       title: t('listData.title3'),
-      desc: t('listData.desc3'),
+      desc: t('listData.desc3')
     },
     {
       title: t('listData.title4'),
-      desc: t('listData.desc4'),
+      desc: t('listData.desc4')
     },
     {
       title: t('listData.title5'),
-      desc: t('listData.desc5'),
+      desc: t('listData.desc5')
     },
     {
       title: t('listData.title6'),
-      desc: t('listData.desc6'),
-    },
+      desc: t('listData.desc6')
+    }
   ]
 
   return (
@@ -138,7 +162,23 @@ const MinhBach = () => {
       <section className='ct-container-70'>
         <h3 className='font-semibold uppercase tracking-[8px]'>{td('text1')}</h3>
         <h2 className='mb-[40px] inline-block text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>{t('heading')}</h2>
-        <div className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'>
+        <motion.div
+          initial={{
+            y: 60,
+            opacity: 0
+          }}
+          whileInView={{
+            x: 0,
+            y: 0,
+            opacity: 1
+          }}
+          transition={{
+            duration: 0.3,
+            delay: 0.5
+          }}
+          viewport={{ once: true }}
+          className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'
+        >
           {listData.map((item, index) => (
             <div key={`listData-${index}`} className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'>
               <div className='flex items-center gap-[10px]'>
@@ -151,7 +191,7 @@ const MinhBach = () => {
               <p className='text-[1.8rem] font-light'>{item.desc}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </div>
   )
@@ -164,28 +204,28 @@ const HinhThucKetNoi = () => {
   const DataLabel: any = [
     {
       label: t('listData.label1'),
-      description: t('listData.description1'),
+      description: t('listData.description1')
     },
     {
       label: t('listData.label2'),
-      description: t('listData.description2'),
+      description: t('listData.description2')
     },
     {
       label: t('listData.label3'),
-      description: t('listData.description3'),
+      description: t('listData.description3')
     },
     {
       label: t('listData.label4'),
-      description: t('listData.description4'),
+      description: t('listData.description4')
     },
     {
       label: t('listData.label5'),
-      description: t('listData.description5'),
+      description: t('listData.description5')
     },
     {
       label: t('listData.label6'),
-      description: t('listData.description6'),
-    },
+      description: t('listData.description6')
+    }
   ]
 
   return (
@@ -193,7 +233,23 @@ const HinhThucKetNoi = () => {
       <section className='ct-container-70'>
         <h3 className='font-semibold uppercase tracking-[8px]'>{td('text2')}</h3>
         <h2 className='mb-[40px] inline-block  text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>{t('heading')}</h2>
-        <div className='grid grid-cols-1 gap-[20px] pb-[40px] lg:grid-cols-2 lg:gap-[40px]'>
+        <motion.div
+          initial={{
+            y: 60,
+            opacity: 0
+          }}
+          whileInView={{
+            x: 0,
+            y: 0,
+            opacity: 1
+          }}
+          transition={{
+            duration: 0.3,
+            delay: 0.5
+          }}
+          viewport={{ once: true }}
+          className='grid grid-cols-1 gap-[20px] pb-[40px] lg:grid-cols-2 lg:gap-[40px]'
+        >
           {DataLabel.map((item: any, index: number) => (
             <div key={`datalabel-${index}`} className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'>
               <div className='flex items-center gap-[10px]'>
@@ -206,7 +262,7 @@ const HinhThucKetNoi = () => {
               <p className=' text-[1.8rem] font-light'>{item.description}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </section>
   )
@@ -242,14 +298,29 @@ const MainSection = () => {
             <QuickDashboard />
           </div>
           <div className='z-[1] col-span-1 mt-32 w-full justify-center xl:col-span-2'>
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 200 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+                delay: 1.5
+              }}
+            >
               <div className='max-h-[500px] max-w-[400px]'>
                 <ImageFallback priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={500} height={600} className=' relative z-[1] h-auto w-auto' />
               </div>
-            </div>
-            <div className='absolute top-[550px] z-[0] object-contain md:top-0'>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 2.5
+              }}
+              className='absolute top-[550px] z-[0] object-contain md:top-0'
+            >
               <GlobeComponent />
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className='absolute bottom-0 left-0 right-0 z-[0] -skew-y-0 transform'>
@@ -266,7 +337,7 @@ const QuickDashboard = React.memo(() => {
   const [objectData, setObjectData] = useState({
     customers: 0,
     providers: 0,
-    services: 0,
+    services: 0
   })
 
   const [onFetching, setOnFetching] = useState(false)
@@ -350,7 +421,7 @@ const CustomerBenefitSection = () => {
     { title: t('listBenefit.title2'), id: 2 },
     { title: t('listBenefit.title3'), id: 3 },
     { title: t('listBenefit.title4'), id: 4 },
-    { title: t('listBenefit.title5'), id: 5 },
+    { title: t('listBenefit.title5'), id: 5 }
   ]
 
   return (
@@ -365,18 +436,47 @@ const CustomerBenefitSection = () => {
             <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>{t('benefit')}</h3>
             <p className='whitespace-nowrap text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[3.2rem]'>{t('text')}</p>
           </div>
-          <div className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'>
+          <motion.div
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{
+              once: true
+            }}
+            className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'
+          >
             <Image src={'/khach-benefit-7.webp'} alt='khach-benefit-7' quality={100} height={600} width={600} className='pointer-events-none h-full w-full select-none object-contain' />
-          </div>
+          </motion.div>
         </div>
         <div className='col-span-1 grid grid-cols-1 md:mx-auto md:max-w-[820px] md:grid-cols-2 xl:col-span-3'>
           {listBenefit.map((item, index) => (
-            <div className='col-span-1' key={item.id}>
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: (index + 1) % 2 === 0 ? -200 : 200,
+                y: -200
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                y: 0
+              }}
+              transition={{
+                duration: 0.2,
+                ease: 'easeOut',
+                delay: 1 * ((index + 1) * 0.25)
+              }}
+              viewport={{
+                once: true
+              }}
+              className='col-span-1'
+              key={item.id}
+            >
               <div className='items-left flex items-center gap-[20px] md:flex-col lg:justify-center xl:gap-[6px]'>
                 <ImageFallback src={`/numbers/${index + 1}.png`} alt='AI Robot' width={200} height={200} className='pointer-events-none size-[180px] select-none' />
                 <h3 className='mt-[-16px] text-[1.8rem] lg:text-center'>{item.title}</h3>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -496,11 +596,11 @@ const WorkerBenefitSection = () => {
               autoplay={{
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
-                delay: 15000,
+                delay: 15000
               }}
               slidesPerView={1}
               thumbs={{
-                swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+                swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
               }}
               navigation
               modules={[Autoplay, EffectFade, FreeMode, Navigation, Thumbs]}
@@ -587,8 +687,8 @@ const PressHome = () => {
     try {
       const { data } = await instance.get('/home/blogs', {
         params: {
-          lang: locale,
-        },
+          lang: locale
+        }
       })
       setListBlog(data)
     } catch (error) {
@@ -628,7 +728,9 @@ const PressHome = () => {
                 </div>
               ))
           : listBlog.length > 0
-            ? listBlog.map((item: any, index: number) => <Article key={index} index={index} item={item} style='w-[80%] md:w-[40%] lg:w-full cursor-pointer' />)
+            ? listBlog.map((item: any, index: number) => {
+                return <Article key={index} index={index} item={item} style='w-[80%] md:w-[40%] lg:w-full cursor-pointer' />
+              })
             : Array(4)
                 .fill(null)
                 .map((_, index) => (
@@ -651,7 +753,7 @@ const LikeControl = ({ item }: { item: any }) => {
   const _ServerSendingLike = async () => {
     try {
       const data: any = await instance.post(`/home/benefit`, {
-        uuid: item.uuid,
+        uuid: item.uuid
       })
       setCheckLike(data)
     } catch (error) {
@@ -663,7 +765,7 @@ const LikeControl = ({ item }: { item: any }) => {
     try {
       const data = await instance.post('/home/benefit/dislike', {
         uuid: item.uuid,
-        message: dislikeMessage,
+        message: dislikeMessage
       })
       setCheckDislike(data)
       ToastComponent({ message: t('messageToast'), type: 'success' })
@@ -677,8 +779,9 @@ const LikeControl = ({ item }: { item: any }) => {
       type === 'like' ? _ServerSendingLike() : _ServerSendingDislike()
     } else {
       if (type === 'like') {
-        if (checkDislike.isDisliked === true) return
-        else {
+        if (checkDislike.isDisliked === true) {
+          return
+        } else {
           _ServerSendingLike()
         }
       } else if (type === 'dislike') {
@@ -698,7 +801,7 @@ const LikeControl = ({ item }: { item: any }) => {
       content={t('messageToast')}
       placement='top'
       classNames={{
-        content: 'text-[1.8rem] px-[16px] py-[8px]',
+        content: 'text-[1.8rem] px-[16px] py-[8px]'
       }}
     >
       <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
@@ -717,9 +820,9 @@ const LikeControl = ({ item }: { item: any }) => {
 const Like = ({ onClick, isLike, count, isDislike }: { onClick?: any; isLike?: boolean; count?: number; isDislike: boolean }) => {
   return (
     <button disabled={isDislike} className='like flex items-center gap-[8px] px-[20px] py-[10px]' onClick={onClick}>
-      <div>
+      <motion.div>
         <Like1 variant={isLike ? 'Bold' : 'Linear'} size={24} style={{ zIndex: 1000 }} className={isLike ? 'text-[#FCB713]' : ''} />
-      </div>
+      </motion.div>
       <span>{count}</span>
     </button>
   )
@@ -766,7 +869,7 @@ const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; is
                 className='w-full'
                 classNames={{
                   input: 'text-[1.8rem]',
-                  inputWrapper: 'px-[16px] py-[12px] text-[#969696] border-1 border-[#E1E1E1] bg-transparent',
+                  inputWrapper: 'px-[16px] py-[12px] text-[#969696] border-1 border-[#E1E1E1] bg-transparent'
                 }}
               />
             </div>

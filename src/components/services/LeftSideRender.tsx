@@ -43,18 +43,12 @@ const LeftRenderSearch = memo(() => {
   return (
     <div className='flex flex-col gap-[10px]'>
       <div className='mb-3'>
-        <input
-          onChange={_HandleOnChangeKeySearch}
-          placeholder={td('search')}
-          className='w-full rounded-full border p-3 px-6 py-5 focus-within:outline-none'
-        />
+        <input onChange={_HandleOnChangeKeySearch} placeholder={td('search')} className='w-full rounded-full border p-3 px-6 py-5 focus-within:outline-none' />
       </div>
       <div className='grid max-h-[480px] w-full gap-6 overflow-y-auto overflow-x-hidden md:grid-cols-2 xl:grid-cols-4'>
         {dataRender
-          ?.filter((x: any) =>
-            keyword ? x.keysearch?.toLowerCase().includes(keyword?.toLowerCase()) : x,
-          )
-          ?.map((item: any, index: number) => {
+          ?.filter((x: any) => (keyword ? x.keysearch?.toLowerCase().includes(keyword?.toLowerCase()) : x))
+          ?.map((item: any) => {
             return <ItemService key={item?.id?.toString()} {...item} />
           })}
       </div>
@@ -81,7 +75,7 @@ const ItemService = memo((props: any) => {
 
     router.replace({
       pathname: '/services',
-      query: query,
+      query: query
     })
   }
 
@@ -89,18 +83,10 @@ const ItemService = memo((props: any) => {
     <div
       onClick={_HandleClick.bind(this)}
       className={`flex select-none items-center gap-[10px] rounded-[8px] px-6 py-8 transition hover:cursor-pointer ${
-        services == props.id
-          ? 'bg-primary-blue-2 text-primary-blue'
-          : 'hover:bg-base-gray'
+        services == props.id ? 'bg-primary-blue-2 text-primary-blue' : 'hover:bg-base-gray'
       }`}
     >
-      <Image
-        src={props.icon}
-        alt=''
-        width={68}
-        height={68}
-        className='max-h-[50px] max-w-[50px]'
-      />
+      <Image src={props.icon} alt='' width={68} height={68} className='max-h-[50px] max-w-[50px]' />
       <div>
         <h3 className='text-[1.8rem] xl:text-[1.8rem]'>{props.name[locale]} </h3>
       </div>

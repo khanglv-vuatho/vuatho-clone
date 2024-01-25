@@ -13,7 +13,7 @@ import './global.css'
 export const metadata: Metadata = {
   title: {
     default: 'Trang chủ',
-    template: '%s | Vua Thợ',
+    template: '%s | Vua Thợ'
   },
   description: 'Ứng dụng số 1 Việt Nam',
   openGraph: {
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     title: 'Vua Thợ',
     description: 'Thợ nào cũng có',
     siteName: 'Vua Thợ',
-    images: ['https://cdn.vuatho.com/7e73936c9eff8e7c54c018b225ec224b'],
-  },
+    images: ['https://cdn.vuatho.com/7e73936c9eff8e7c54c018b225ec224b']
+  }
 }
 
 const lexend = Lexend({
   subsets: ['latin'],
-  display: 'swap',
+  display: 'swap'
 })
 
 const timeZone = 'Asia/Ho_Chi_Minh'

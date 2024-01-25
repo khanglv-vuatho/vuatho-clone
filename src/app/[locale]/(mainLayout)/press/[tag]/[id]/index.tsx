@@ -40,8 +40,8 @@ function PressDetail() {
       const data = await instance.get('/blog/detail', {
         params: {
           slug: paramsData.id,
-          lang: paramsData.locale,
-        },
+          lang: paramsData.locale
+        }
       })
       setIsSuccess(data.status === 200)
       setDetailPress(data.data)
@@ -57,8 +57,8 @@ function PressDetail() {
     try {
       const data = await instance.get('/blog/mostViewByWeek', {
         params: {
-          lang: locale,
-        },
+          lang: locale
+        }
       })
       setListMostView(data)
     } catch (error) {

@@ -43,7 +43,7 @@ function LangsComp() {
       const newListCurrency = cloneData.map((currency) => ({
         ...currency,
         label: `${currency.code} - ${currency.symbol}`,
-        active: true,
+        active: true
       }))
       dispatch({ type: 'currency', payload: newListCurrency })
     } catch (error) {
@@ -97,10 +97,10 @@ function LangsComp() {
         .join('&')
 
       router.replace(urlReplace + (queryString !== null ? `?${queryString}` : ''), {
-        scroll: false,
+        scroll: false
       })
     },
-    [isSmallScreen, pathName],
+    [isSmallScreen, pathName]
   )
 
   const _HandleChangeCurrency = useCallback(
@@ -109,7 +109,7 @@ function LangsComp() {
       localStorage.setItem('currency', JSON.stringify(value))
       dispatch({ type: 'currencyCurrent', payload: { ...value } })
     },
-    [isSmallScreen, pathName],
+    [isSmallScreen, pathName]
   )
 
   useEffect(() => {
@@ -134,7 +134,7 @@ function LangsComp() {
           isOpen={isOpen}
           onOpenChange={(open: boolean) => setIsOpen(open)}
           classNames={{
-            content: 'p-[16px] rounded-none',
+            content: 'p-[16px] rounded-none'
           }}
         >
           <PopoverTrigger>
@@ -190,7 +190,7 @@ const LangSelect = memo(({ lang, onClick }: { lang: any; onClick: any }) => {
             base: 'w-full',
             input: 'text-[1.4rem] text-[#C9C9C9]',
             inputWrapper: 'h-[40px] pl-[12px]',
-            innerWrapper: 'gap-[4px]',
+            innerWrapper: 'gap-[4px]'
           }}
         />
       </div>
@@ -235,7 +235,7 @@ const CurrencySelect = memo(({ currency, selectCurrency, onClick }: { currency: 
             base: 'w-full',
             input: 'text-[1.4rem] text-[#C9C9C9]',
             inputWrapper: 'h-[40px] pl-[12px]',
-            innerWrapper: 'gap-[4px]',
+            innerWrapper: 'gap-[4px]'
           }}
         />
       </div>
@@ -244,7 +244,7 @@ const CurrencySelect = memo(({ currency, selectCurrency, onClick }: { currency: 
           .filter((item: any) => `${item.code} ${item.name} ${item.symbol}`.toLowerCase().includes(searchCurrency.toLowerCase().trim()))
           ?.map((x: any) => ({
             ...x,
-            priority: x.code === selectCurrency.code ? 1 : 0,
+            priority: x.code === selectCurrency.code ? 1 : 0
           }))
           .sort((a: any, b: any) => b.priority - a.priority)
           .map((item: any) => (
@@ -275,7 +275,7 @@ const ItemSelect = memo(
         {customLabel ? customLabel : <span className={`${canActive ? '' : ''}`}>{label}</span>}
       </button>
     )
-  },
+  }
 )
 
 export default memo(LangsComp)

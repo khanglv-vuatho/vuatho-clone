@@ -31,7 +31,7 @@ export const DefaultModal: React.FC<DefaultModal> = ({ isOpen, onOpenChange, mod
         classNames={{
           body: 'p-0',
           header: 'p-0 pl-8 ',
-          base: 'rounded-[16px] max-w-[900px]',
+          base: 'rounded-[16px] max-w-[900px]'
         }}
       >
         <ModalContent>

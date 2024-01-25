@@ -11,9 +11,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: {
     default: 'Trang chủ | Vua Thợ',
-    template: '%s | Vua Thợ',
+    template: '%s | Vua Thợ'
   },
-  description: 'Ứng dụng số 1 Việt Nam',
+  description: 'Ứng dụng số 1 Việt Nam'
 }
 
 export default async function RootLayout({ children, params }: any) {

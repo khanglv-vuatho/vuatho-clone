@@ -98,7 +98,7 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
     limit: 6,
     page: 1,
     totalPages: 6,
-    total: 10,
+    total: 10
   })
 
   const pathname = usePathname()
@@ -126,8 +126,8 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
           params: {
             slug: pathname.split('/')?.[3],
             lang: locale,
-            page: searchParams.page || 1,
-          },
+            page: searchParams.page || 1
+          }
         })
 
         setListBlog(data)
@@ -147,8 +147,8 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
             params: {
               keyword: searchParams.search,
               page: meta.page,
-              lang: locale,
-            },
+              lang: locale
+            }
           })
         : await instance.get('/blog/newest', {
             // params: {
@@ -161,8 +161,8 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
           limit: 6,
           page: 1,
           totalPages: 1,
-          total: 0,
-        },
+          total: 0
+        }
       )
     } catch (error) {
       console.log(error)
@@ -266,7 +266,7 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
                       page={meta.page}
                       classNames={{
                         cursor: 'h-[44px] w-[44px] text-[1.6rem] bg-[#282828] text-white',
-                        item: 'h-[44px] w-[44px] text-[1.6rem] text-[#282828] bg-white',
+                        item: 'h-[44px] w-[44px] text-[1.6rem] text-[#282828] bg-white'
                       }}
                     />
                   </div>
@@ -299,20 +299,20 @@ const SwiperPress = memo(({ renderBreadcums }: { renderBreadcums: any }) => {
           title: 'Quần dài thời gian cho Thợ',
           img: '/',
           url: '#',
-          titleLink: 'Xem ngay',
+          titleLink: 'Xem ngay'
         },
         {
           title: 'Áo tay dài tăng thêm phong cách chuyên nghiệp',
           img: '/',
           url: '#',
-          titleLink: 'Xem ngay',
+          titleLink: 'Xem ngay'
         },
         {
           title: 'Trang phục chuyên nghiệp cho Thợ tự tin hơn khi làm việc',
           img: '/',
           url: '#',
-          titleLink: 'Xem ngay',
-        },
+          titleLink: 'Xem ngay'
+        }
       ])
     } catch (error) {
       console.log(error)
@@ -346,12 +346,12 @@ const SwiperPress = memo(({ renderBreadcums }: { renderBreadcums: any }) => {
           autoHeight
           autoplay={{
             delay: 3000,
-            disableOnInteraction: false,
+            disableOnInteraction: false
           }}
           slidesPerView={1}
           navigation
           pagination={{
-            clickable: true,
+            clickable: true
           }}
           modules={[Autoplay, Navigation, Pagination, EffectFade]}
           className='pressSwiper w-full'

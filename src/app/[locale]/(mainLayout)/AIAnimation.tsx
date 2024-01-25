@@ -21,7 +21,7 @@ const AnimationAI = () => {
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      animationData: animationData1,
+      animationData: animationData1
     })
 
     return () => instance.destroy()

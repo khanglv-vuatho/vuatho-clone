@@ -6,20 +6,20 @@ export async function generateMetadata({ params }: { params?: any }) {
     const { data } = await axios.get(`https://sandbox-api-website.vuatho.com/blog/byCategory?slug=${params.tag}`)
     const description: any = {
       vi: 'Ứng dụng số 1 Việt Nam',
-      en: 'Leading App in Vietnam',
+      en: 'Leading App in Vietnam'
     }
     return {
       title: data?.data?.[0].category?.title,
-      description: description[params.locale || 'vi'],
+      description: description[params.locale || 'vi']
     }
   } catch (error) {
     console.log(error)
     const metadata: any = {
       vi: 'Không tìm thấy thẻ tag',
-      en: 'Tag not found',
+      en: 'Tag not found'
     }
     return {
-      title: metadata[params.locale || 'vi'] || metadata.en,
+      title: metadata[params.locale || 'vi'] || metadata.en
     }
   }
 }

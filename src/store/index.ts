@@ -7,7 +7,7 @@ const DefaultValueState: any = {
   languages: [],
   currencyCurrent: { code: 'VND', name: 'Vietnamese Đồng', symbol: '₫' },
   services: [],
-  openMenu: null,
+  openMenu: null
 }
 
 function counterReducer(state: any = DefaultValueState, action: any) {
