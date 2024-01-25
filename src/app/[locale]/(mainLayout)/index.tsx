@@ -81,43 +81,19 @@ const AISection = () => {
         </h4>
         <div className='flex flex-col'>
           <div className='bottom-2 flex h-full w-full items-center justify-center md:absolute md:justify-end 13inch:justify-center'>
-            <motion.div
-              initial={{
-                opacity: 0,
-                scale: 0,
-              }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-              }}
-              viewport={{ once: true }}
-              className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'
-            >
+            <div className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'>
               <ImageFallback src={'/ai-section-1.png'} alt='AI Robot' width={700} height={680} quality={100} className='pointer-events-none w-auto select-none' />
-            </motion.div>
+            </div>
           </div>
           <div className='grid grid-cols-1 items-center gap-[20px] py-12 lg:ml-[10%] 13inch:ml-0 13inch:grid-cols-2 13inch:gap-[56px]'>
             {listAI.map((item, index) => (
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 100,
-                }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: 1 * ((index + 1) * 0.25),
-                }}
-                viewport={{ once: true }}
-                key={`listAI-${index}`}
-                className={`relative z-[10] flex w-full flex-col gap-[10px] p-[20px] text-baseBlack md:max-w-[400px]  ${index % 2 !== 0 && '13inch:ml-[36%]'}`}
-              >
+              <div key={`listAI-${index}`} className={`relative z-[10] flex w-full flex-col gap-[10px] p-[20px] text-baseBlack md:max-w-[400px]  ${index % 2 !== 0 && '13inch:ml-[36%]'}`}>
                 <div
                   className={`absolute inset-0 z-[2] rounded-[20px] border-b-[2px] border-[#fbac47] bg-gradient-to-br from-[#ffffff] via-[#ffffff] to-[#e7e7e7] shadow-[0px_8px_16px_0px_#A2BAF366]`}
                 ></div>
                 <h5 className=' z-[4] text-[1.8rem] font-bold'>{item.title.replace(/(^|\s)\S/g, (match) => match.toUpperCase())}</h5>
                 <p className='z-[4] text-[1.8rem]'>{item.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -233,23 +209,7 @@ const HinhThucKetNoi = () => {
       <section className='ct-container-70'>
         <h3 className='font-semibold uppercase tracking-[8px]'>{td('text2')}</h3>
         <h2 className='mb-[40px] inline-block  text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>{t('heading')}</h2>
-        <motion.div
-          initial={{
-            y: 60,
-            opacity: 0,
-          }}
-          whileInView={{
-            x: 0,
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.3,
-            delay: 0.5,
-          }}
-          viewport={{ once: true }}
-          className='grid grid-cols-1 gap-[20px] pb-[40px] lg:grid-cols-2 lg:gap-[40px]'
-        >
+        <div className='grid grid-cols-1 gap-[20px] pb-[40px] lg:grid-cols-2 lg:gap-[40px]'>
           {DataLabel.map((item: any, index: number) => (
             <div key={`datalabel-${index}`} className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'>
               <div className='flex items-center gap-[10px]'>
@@ -262,7 +222,7 @@ const HinhThucKetNoi = () => {
               <p className=' text-[1.8rem] font-light'>{item.description}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
       </section>
     </section>
   )
@@ -429,47 +389,18 @@ const CustomerBenefitSection = () => {
             <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>{t('benefit')}</h3>
             <p className='whitespace-nowrap text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[3.2rem]'>{t('text')}</p>
           </div>
-          <motion.div
-            initial={{ opacity: 0, x: -200 }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            viewport={{
-              once: true,
-            }}
-            className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'
-          >
+          <div className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'>
             <Image src={'/khach-benefit-7.webp'} alt='khach-benefit-7' height={600} width={600} className='pointer-events-none h-auto w-auto select-none object-cover' />
-          </motion.div>
+          </div>
         </div>
         <div className='col-span-1 grid grid-cols-1 md:mx-auto md:max-w-[820px] md:grid-cols-2 xl:col-span-3'>
           {listBenefit.map((item, index) => (
-            <motion.div
-              initial={{
-                opacity: 0,
-                x: (index + 1) % 2 === 0 ? -200 : 200,
-                y: -200,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.2,
-                ease: 'easeOut',
-                delay: 1 * ((index + 1) * 0.25),
-              }}
-              viewport={{
-                once: true,
-              }}
-              className='col-span-1'
-              key={item.id}
-            >
+            <div className='col-span-1' key={item.id}>
               <div className='items-left flex items-center gap-[20px] md:flex-col lg:justify-center xl:gap-[6px]'>
                 <ImageFallback src={`/numbers/${index + 1}.png`} alt='AI Robot' width={200} height={200} className='pointer-events-none size-[180px] select-none' />
                 <h3 className='mt-[-16px] text-[1.8rem] lg:text-center'>{item.title}</h3>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
