@@ -7,7 +7,8 @@ const DefaultValueState: any = {
   languages: [],
   currencyCurrent: { code: 'VND', name: 'Vietnamese Đồng', symbol: '₫' },
   services: [],
-  openMenu: null
+  openMenu: null,
+  typeOpenFinalPopupStore: null
 }
 
 function counterReducer(state: any = DefaultValueState, action: any) {
@@ -24,6 +25,8 @@ function counterReducer(state: any = DefaultValueState, action: any) {
       return { ...state, services: [...action.payload] }
     case 'toggle_menu':
       return { ...state, openMenu: !action.payload }
+    case 'typeOpenFinalPopupStore':
+      return { ...state, typeOpenFinalPopupStore: action.payload }
     default:
       return state
   }

@@ -24,6 +24,8 @@ export const Store = memo(() => {
   const dispatch = useDispatch()
   const locale = useLocale()
 
+  const typeOpenFinalPopupStore = useSelector((state: any) => state.typeOpenFinalPopupStore)
+
   const currencyCurrent = useSelector((state: any) => state.currencyCurrent)
 
   const [onLoading, setOnLoading] = useState<boolean>(true)
@@ -155,6 +157,7 @@ export const Store = memo(() => {
           </div>
         )}
       </div>
+      <FinnalPopup typeOpenFinalPopupStore={typeOpenFinalPopupStore} />
     </div>
   )
 })
@@ -200,7 +203,6 @@ const CheckValidWorker = memo(
 
         if (data.status == 200) {
           localStorage.setItem('token', data.token)
-          ToastComponent({ message: t('text13'), type: 'success' })
           setToken(data.token)
           setValid(true)
           setOnFetching(false)
@@ -584,6 +586,7 @@ const QuantityControl = memo(({ minQuanlity, quantity, setQuantity }: { quantity
 
 const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: { cartItems: any; setCartItems: any; onCloseCart: any; onCloseDetail?: any }) => {
   const t = useTranslations('Store')
+  const dispatch = useDispatch()
 
   const workerInfo = useSelector((state: any) => state.workerInfo)
   const currencyCurrent = useSelector((state: any) => state.currencyCurrent)
@@ -667,16 +670,20 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
         }
       }
 
-      await instance.post('/uniforms/order', payload)
+      const data = await instance.post('/uniforms/order', payload)
 
-      setInfoError(initalErrorInfo)
-      setInfoCustomer(initalInfo)
-      ToastComponent({ message: t('text18'), type: 'success' })
-      onCloseCart()
-      cartItems[0].quantity = 1
-      setCartItems([...cartItems])
+      if (data?.status === 200) {
+        setInfoError(initalErrorInfo)
+        setInfoCustomer(initalInfo)
+        dispatch({ type: 'typeOpenFinalPopupStore', payload: 'isSuccess' })
+
+        onCloseCart()
+        cartItems[0].quantity = 1
+        setCartItems([...cartItems])
+      }
     } catch (error) {
       console.log(error)
+      dispatch({ type: 'typeOpenFinalPopupStore', payload: 'soldout' })
     } finally {
       setOnSending(false)
       onCloseDetail()
@@ -810,3 +817,38 @@ const Bagde = memo(({ cartItems, setCartItems }: { cartItems: any[]; setCartItem
     </>
   )
 })
+
+const FinnalPopup = ({ typeOpenFinalPopupStore }: { typeOpenFinalPopupStore: any }) => {
+  const t = useTranslations('Store')
+
+  const { onOpenChange } = useDisclosure()
+  const dispatch = useDispatch()
+
+  const _handleClose = () => {
+    dispatch({ type: 'typeOpenFinalPopupStore', payload: false })
+  }
+
+  const isSuccess = typeOpenFinalPopupStore === 'isSuccess'
+  return (
+    <DefaultModal
+      isOpen={!!typeOpenFinalPopupStore}
+      onOpenChange={onOpenChange}
+      size='5xl'
+      hiddenCloseBtn
+      hiddenHeader
+      modalBody={
+        <div className='flex flex-col gap-[16px] p-[16px]'>
+          <div className='flex items-center justify-end'>
+            <Button radius='full' isIconOnly onPress={_handleClose} variant='light' className='absolute right-0 top-0 h-[48px] w-[48px]'>
+              <Add className='rotate-45 ' size={24} />
+            </Button>
+          </div>
+          <div className='flex flex-col items-center gap-[16px]'>
+            <ImageFallback src={isSuccess ? '/store/success-order.png' : '/store/soldout.png'} width={307} height={240} alt='image' />
+            <p className='text-[2rem] font-light'>{isSuccess ? t('text18') : t('text30')}</p>
+          </div>
+        </div>
+      }
+    />
+  )
+}
