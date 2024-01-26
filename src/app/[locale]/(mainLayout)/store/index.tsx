@@ -333,7 +333,7 @@ const CheckValidWorker = memo(
 )
 
 const ItemClothe = memo(({ cartItems, setCartItems, item }: { item: IItemClothes; cartItems: any; setCartItems: any }) => {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure()
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
 
   const handleClick = useCallback((item: IItemClothes) => {
     item.thumb && onOpen()
@@ -343,7 +343,7 @@ const ItemClothe = memo(({ cartItems, setCartItems, item }: { item: IItemClothes
     <>
       <div className='group flex h-full cursor-pointer flex-col overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]' onClick={() => handleClick(item)}>
         <div className='h-[200px] min-h-[200px] w-full overflow-hidden'>
-          <ImageFallback src={item?.thumb} alt='image' height={300} width={600} priority className='w-auto object-cover duration-300 group-hover:scale-[1.1]' />
+          <ImageFallback src={item?.thumb} alt='image' height={300} width={600} priority className='h-ful max-h-[200px] w-full object-cover duration-300 group-hover:scale-[1.1]' />
         </div>
         <div className='flex h-full flex-col justify-between gap-[8px] bg-white p-[16px]'>
           <p className='line-clamp-2 min-h-[54px] text-[1.8rem] font-semibold '>{item.title}</p>
@@ -358,13 +358,13 @@ const ItemClothe = memo(({ cartItems, setCartItems, item }: { item: IItemClothes
         onOpenChange={onOpenChange}
         styleHeader='pt-[12px] pl-[24px]'
         title={<h3 className='max-w-[90%] text-[1.6rem] font-semibold leading-normal  md:text-[2.4rem]'>{item?.title}</h3>}
-        modalBody={<RenderBodyItemDetail data={item} cartItems={cartItems} setCartItems={setCartItems} />}
+        modalBody={<RenderBodyItemDetail data={item} cartItems={cartItems} setCartItems={setCartItems} onCloseDetail={onClose} />}
       />
     </>
   )
 })
 
-const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: any; cartItems: any; setCartItems: any }) => {
+const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems, onCloseDetail }: { data: any; cartItems: any; setCartItems: any; onCloseDetail: any }) => {
   const t = useTranslations('Store')
 
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
@@ -375,9 +375,8 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: an
 
   const [item, setItem] = useState({
     ...data,
-    package: data.package.map((e: any, index: number) => ({
+    package: data.package.map((e: any) => ({
       ...e,
-      uuid: `${index}-${e.title}`,
       sizes: [
         { name: 'S', isActive: true },
         { name: 'M', isActive: false },
@@ -451,7 +450,13 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: an
           <Button onPress={_handleBookNow} variant='bordered' radius='full' className='h-[44px] w-full border-0 bg-[#FCB813] text-[1.5rem] font-medium text-[#282828]'>
             {t('text12')}
           </Button>
-          <DefaultModal isOpen={isOpen} onOpenChange={onOpenChange} hiddenHeader hiddenCloseBtn modalBody={<BodyCard cartItems={cartItems} setCartItems={setCartItems} onCloseCart={onClose} />} />
+          <DefaultModal
+            isOpen={isOpen}
+            onOpenChange={onOpenChange}
+            hiddenHeader
+            hiddenCloseBtn
+            modalBody={<BodyCard cartItems={cartItems} setCartItems={setCartItems} onCloseCart={onClose} onCloseDetail={onCloseDetail} />}
+          />
         </div>
       </div>
     </div>
@@ -577,7 +582,7 @@ const QuantityControl = memo(({ minQuanlity, quantity, setQuantity }: { quantity
   )
 })
 
-const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: any; setCartItems: any; onCloseCart: any }) => {
+const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: { cartItems: any; setCartItems: any; onCloseCart: any; onCloseDetail?: any }) => {
   const t = useTranslations('Store')
 
   const workerInfo = useSelector((state: any) => state.workerInfo)
@@ -638,13 +643,14 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
   }
 
   const _HandlePostCart = async () => {
-    console.log(token)
+    const { address, name } = infoCustomer
 
     try {
       const payload = {
         token,
         deliveryInformation: {
-          ...infoCustomer,
+          address,
+          name,
           phoneNumber: {
             phone: infoCustomer.phone,
             phone_code: infoCustomer.phoneCountry
@@ -661,7 +667,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
         }
       }
 
-      const data = await instance.post('/uniforms/order', payload)
+      await instance.post('/uniforms/order', payload)
 
       setInfoError(initalErrorInfo)
       setInfoCustomer(initalInfo)
@@ -673,6 +679,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
       console.log(error)
     } finally {
       setOnSending(false)
+      onCloseDetail()
     }
   }
 

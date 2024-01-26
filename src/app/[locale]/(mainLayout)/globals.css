@@ -2,21 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-#nprogress {
-  position: relative;
-  z-index: 9999999;
-}
-
 .flex-center {
   @apply flex items-center justify-center;
-}
-
-.ct-container {
-  @apply mx-auto w-full px-8 3xl:max-w-[1920px];
-}
-
-.ct-container-3xl {
-  @apply mx-auto max-w-[90%] md:px-16;
 }
 
 html {

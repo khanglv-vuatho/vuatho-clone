@@ -65,7 +65,7 @@ function HomePage() {
 const AISection = () => {
   const t = useTranslations('AISection')
 
-  const listAI = [
+  const listAI: { title: string; desc: string }[] = [
     { title: t('title1'), desc: t('desc1') },
     { title: t('title2'), desc: t('desc2') },
     { title: t('title3'), desc: t('desc3') },
@@ -626,14 +626,9 @@ const WorkerBenefitSection = () => {
                         <div dangerouslySetInnerHTML={{ __html: item.html }} />
                       </div>
                       <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
-                        <ImageFallback
-                          priority
-                          src={`/benefits/${index + 1}.png`}
-                          alt={item.title}
-                          height={400}
-                          width={400}
-                          className='max-h-[400px] w-full object-contain md:max-h-[280px] 13inch:max-h-none'
-                        />
+                        <div className='max-h-[400px] md:max-h-[280px] 13inch:max-h-none'>
+                          <ImageFallback priority src={`/benefits/${index + 1}.png`} alt={item.title} height={620} width={620} className='w-auto' />
+                        </div>
                       </div>
                     </div>
                   </SwiperSlide>
@@ -652,7 +647,7 @@ const WorkerBenefitSection = () => {
                 <SwiperSlide key={`swipper-slide-${index}`}>
                   <div
                     onClick={_handleClickSwiper}
-                    className={`${currentIndex === index ? ' border-[#FCB713]' : 'border-transparent opacity-50'}  relative overflow-hidden rounded-[10px] border-[2px] transition`}
+                    className={`${currentIndex === index ? ' border-[#FCB713]' : 'scale-90 border-transparent opacity-70'}  relative overflow-hidden rounded-[10px] border-[2px] transition`}
                   >
                     <ImageFallback
                       src={`/benefits/${index + 1}.png`}

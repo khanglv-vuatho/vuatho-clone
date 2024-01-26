@@ -19,15 +19,15 @@ const SectionDownload = () => {
           whileInView={{
             opacity: 1,
             x: 0,
-            y: 0,
+            y: 0
           }}
           initial={{
             opacity: 0,
-            y: -100,
+            y: -100
           }}
           transition={{
             delay: 1,
-            duration: 0.5,
+            duration: 0.5
           }}
           viewport={{ once: true }}
           className='md:absolute md:left-[20px] 13inch:left-0'
@@ -40,15 +40,15 @@ const SectionDownload = () => {
           whileInView={{
             opacity: 1,
             x: 0,
-            y: 0,
+            y: 0
           }}
           initial={{
             opacity: 0,
-            x: 200,
+            x: 200
           }}
           transition={{
             delay: 0.5,
-            duration: 0.5,
+            duration: 0.5
           }}
           viewport={{ once: true }}
           className='ct-container-70 flex items-center justify-start gap-4 overflow-hidden py-[20px] md:justify-center md:py-[60px]'
