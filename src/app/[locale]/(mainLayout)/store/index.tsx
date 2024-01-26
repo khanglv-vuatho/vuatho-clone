@@ -343,7 +343,7 @@ const ItemClothe = memo(({ cartItems, setCartItems, item }: { item: IItemClothes
     <>
       <div className='group flex h-full cursor-pointer flex-col overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]' onClick={() => handleClick(item)}>
         <div className='h-[200px] min-h-[200px] w-full overflow-hidden'>
-          <ImageFallback src={item?.thumb} alt='image' height={300} width={600} className='h-full w-full object-cover duration-300 group-hover:scale-[1.1]' />
+          <ImageFallback src={item?.thumb} alt='image' height={300} width={600} priority className='w-auto object-cover duration-300 group-hover:scale-[1.1]' />
         </div>
         <div className='flex h-full flex-col justify-between gap-[8px] bg-white p-[16px]'>
           <p className='line-clamp-2 min-h-[54px] text-[1.8rem] font-semibold '>{item.title}</p>
@@ -445,7 +445,7 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems }: { data: an
         </div>
         <div className='flex items-center gap-[24px]'>
           <div className='flex items-center gap-[16px]'>
-            <p className='select-none whitespace-nowrap text-[#969696]'>Số lượng</p>
+            <p className='select-none whitespace-nowrap text-[#969696]'>{t('text27')}</p>
             <QuantityControl quantity={quantity} setQuantity={setQuantity} minQuanlity />
           </div>
           <Button onPress={_handleBookNow} variant='bordered' radius='full' className='h-[44px] w-full border-0 bg-[#FCB813] text-[1.5rem] font-medium text-[#282828]'>
@@ -464,7 +464,14 @@ const PackageItem = memo(({ itemPackage, HandleChangeSize, handleChangeCurrentIm
     <div className='grid grid-cols-3 gap-[16px] md:gap-0' key={itemPackage.uuid}>
       <div className='col-span-3 flex items-center gap-[16px] md:col-span-1'>
         <div className='max-h-[60px] min-w-[60px] max-w-[60px] overflow-hidden rounded-[8px]'>
-          <ImageFallback src={itemPackage.thumb} alt='image' width={60} height={40} className='aspect-square max-h-[320px] object-cover' onClick={() => handleChangeCurrentImage(itemPackage.thumb)} />
+          <ImageFallback
+            src={itemPackage.thumb}
+            alt='image'
+            width={60}
+            height={40}
+            className='aspect-square max-h-[320px] w-auto object-cover'
+            onClick={() => handleChangeCurrentImage(itemPackage.thumb)}
+          />
         </div>
         <p className='font-light '>{itemPackage.title || ''}</p>
         <p className='font-light '>x {itemPackage.quantity || '1'}</p>
@@ -486,8 +493,6 @@ const PackageItem = memo(({ itemPackage, HandleChangeSize, handleChangeCurrentIm
 })
 
 const CartItem = memo(({ item, cartItems, setCartItems }: { item: any; cartItems: any[]; setCartItems: any }) => {
-  const t = useTranslations('Store')
-
   const [quantity, setQuantity] = useState(item.quantity)
 
   const _handleChangeQuantity = useCallback((newQuantity: number) => {
@@ -579,11 +584,12 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
   const currencyCurrent = useSelector((state: any) => state.currencyCurrent)
 
   const initalInfo = {
-    name: workerInfo?.full_name || 'full name',
+    name: workerInfo?.name || 'full name',
     phone: workerInfo?.phone?.phone_number || '0123456789',
     phoneCountry: workerInfo?.phone?.phone_code || '+84',
     address: ''
   }
+
   const [infoCustomer, setInfoCustomer] = useState(initalInfo)
 
   const initalErrorInfo = {
@@ -737,7 +743,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart }: { cartItems: an
                     <input readOnly={true} value={infoCustomer.phoneCountry} className='max-w-[46px] bg-transparent text-[1.4rem] focus:outline-none' />
                   </div>
                   <div className='flex h-[46px] w-full justify-center rounded-e-full border-1 border-l-0 border-[#E1E1E1] pl-[16px] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1]'>
-                    <input readOnly={true} value={`0${infoCustomer.phone}`} className='w-full bg-transparent text-[1.4rem] focus:outline-none' />
+                    <input readOnly={true} value={`${infoCustomer.phone}`} className='w-full bg-transparent text-[1.4rem] focus:outline-none' />
                   </div>
                 </div>
               </div>

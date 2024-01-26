@@ -848,7 +848,7 @@ const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; is
 
   return (
     <>
-      <button onClick={() => _HandleUnLike()} disabled={isDislike} className='unlike flex items-center px-[20px] py-[10px]'>
+      <button aria-label='unlike' onClick={() => _HandleUnLike()} disabled={isDislike} className='unlike flex items-center px-[20px] py-[10px]'>
         <Dislike size={24} variant={isDislike ? 'Bold' : 'Linear'} className={isDislike ? 'text-[#FCB713]' : ''} />
       </button>
       <DefaultModal

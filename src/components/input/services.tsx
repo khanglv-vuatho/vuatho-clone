@@ -68,7 +68,7 @@ const InputMainSearch = memo((props: any) => {
           placeholder={t('text1')}
           className={props.className ? props.className : 'w-full rounded-full p-3 pl-6 outline-none'}
         />
-        <button className='rounded-full bg-[#f5b500] p-3 hover:opacity-75 active:opacity-100'>
+        <button className='rounded-full bg-[#f5b500] p-3 hover:opacity-75 active:opacity-100' aria-label='search'>
           <SearchNormal1Icon />
         </button>
       </div>

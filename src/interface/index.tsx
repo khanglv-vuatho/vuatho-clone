@@ -22,23 +22,6 @@ export interface TlistBenefit {
   imageContent?: React.ReactNode
 }
 
-export interface IItemClothe {
-  title: string
-  thumb: string
-  currency: string
-}
-
-export interface IItemClothes {
-  title: string
-  price: string | any
-  thumb: string
-  version: number
-  currency: string
-  isInStock: boolean
-  package: IItemClothe[]
-  uuid: string
-}
-
 export interface IMeta {
   limit: number
   page: number
