@@ -95,7 +95,7 @@ function Footer() {
         </div>
         <div className='grid grid-cols-9 gap-[20px] 3xl:gap-[40px]'>
           <div className='col-span-9 flex flex-col gap-[20px] lg:col-span-3'>
-            <h5 className='text-[1.8rem] font-semibold md:text-[2rem]'>{t('contact_us')}</h5>
+            <p className='text-[1.8rem] font-semibold md:text-[2rem]'>{t('contact_us')}</p>
             <div className='flex flex-col gap-[20px]'>
               <div className='flex items-center gap-4'>
                 <PhoneIcon className='text-primary-blue' variant='Bold' />
@@ -122,7 +122,7 @@ function Footer() {
           </div>
           <div className='col-span-9 grid grid-cols-8 gap-[8px] lg:col-span-6'>
             <div className='col-span-8 flex flex-col gap-[20px] md:col-span-3'>
-              <h5 className='text-[1.8rem] font-semibold md:text-[2rem]'>{t('about_vuatho')}</h5>
+              <p className='text-[1.8rem] font-semibold md:text-[2rem]'>{t('about_vuatho')}</p>
               <div className='flex flex-col gap-[20px]'>
                 {listSubFooter.info.map((item) => (
                   <LinkItem key={item.title} item={item} />
@@ -130,7 +130,7 @@ function Footer() {
               </div>
             </div>
             <div className='col-span-8 flex flex-col gap-[20px] md:col-span-3 '>
-              <h5 className='text-[1.8rem] font-semibold md:text-[2rem]'>{t('contact_with_vuatho')}</h5>
+              <p className='text-[1.8rem] font-semibold md:text-[2rem]'>{t('contact_with_vuatho')}</p>
               <div className='flex flex-col gap-[20px]'>
                 {listSubFooter.policy.map((item) => (
                   <LinkItem key={item.title} item={item} />
@@ -138,7 +138,7 @@ function Footer() {
               </div>
             </div>
             <div className='col-span-8 flex flex-col gap-[20px] md:col-span-2'>
-              <h5 className='whitespace-nowrap text-[1.8rem] font-semibold md:text-[2rem]'>{td('download')}</h5>
+              <p className='whitespace-nowrap text-[1.8rem] font-semibold md:text-[2rem]'>{td('download')}</p>
               <div className='flex flex-row gap-[10px] md:flex-col'>
                 <AndroidBtn />
                 <IosBtn />
@@ -148,7 +148,7 @@ function Footer() {
         </div>
         {/* doi tac */}
         <div className='col-span-8 flex flex-col gap-4 md:col-span-5 xl:col-span-8 xl:mt-20 xl:flex-row xl:items-center xl:justify-between xl:gap-0'>
-          <h5 className='min-w-fit text-left text-[1.8rem] font-semibold md:text-[2rem]'>{t('our_partner')}</h5>
+          <p className='min-w-fit text-left text-[1.8rem] font-semibold md:text-[2rem]'>{t('our_partner')}</p>
           <div className='grid w-full grid-cols-2 items-center gap-10 xl:flex xl:justify-end xl:gap-20'>
             {partnerList.map((item) => (
               <Image key={`partner-${item.id}`} alt={`partner-${item.id}`} width={194} height={64} quality={100} src={item.url} className='pointer-events-none h-20 w-auto object-contain xl:h-16' />
@@ -174,9 +174,9 @@ const SubFooter = () => {
   return (
     <div className='ct-container-70 grid grid-cols-2 flex-col items-center justify-between gap-[10px] py-10 text-[1.4rem] md:flex md:flex-row md:gap-2'>
       <div>
-        <h4 className='text-slate-500'>
+        <p className='text-slate-500'>
           {t('sending')} <br /> <span className='uppercase'>{t('BCT')}</span>
-        </h4>
+        </p>
       </div>
       {/* <Image alt='bo cong thuong' src='/daThongBao1.webp' width={188} height={71} className='h-32 w-auto object-contain md:h-auto' /> */}
       <p className='text-[1.8rem] text-baseBlack'>{t('text')}</p>

@@ -75,7 +75,7 @@ const AISection = () => {
   return (
     <div id='AI' className='relative bg-white py-[40px] md:py-[80px] xl:py-[100px]'>
       <div className='ct-container-70 relative'>
-        <h5 className='text-center font-semibold uppercase leading-[30px] tracking-[8px]'>{t('text')}</h5>
+        <p className='text-center font-semibold uppercase leading-[30px] tracking-[8px]'>{t('text')}</p>
         <h4 className='relative z-10 mb-[60px] inline-block w-full text-center text-[2.4rem] font-semibold uppercase text-primary-blue drop-shadow-sm md:text-[4.2rem] 2xl:mb-[100px] '>
           {t('heading1')}
         </h4>
@@ -306,9 +306,7 @@ const MainSection = () => {
                 delay: 1.5
               }}
             >
-              <div className='max-h-[500px] max-w-[400px]'>
-                <ImageFallback loading='lazy' src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className=' relative z-[1] h-auto w-auto' />
-              </div>
+              <ImageFallback src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className=' relative z-[1] max-h-[500px] w-auto max-w-[400px]' />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -433,7 +431,7 @@ const CustomerBenefitSection = () => {
       <div className='mt-[40px] grid grid-cols-1 gap-[20px] xl:grid-cols-5'>
         <div className='col-span-1 xl:col-span-2'>
           <div className='hidden flex-col gap-[10px] md:flex'>
-            <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>{t('benefit')}</h3>
+            <h2 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>{t('benefit')}</h2>
             <p className='whitespace-nowrap text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[3.2rem]'>{t('text')}</p>
           </div>
           <motion.div
@@ -559,7 +557,7 @@ const WorkerBenefitSection = () => {
       <div className='ct-container-70 flex flex-col'>
         <div className='flex items-center justify-between'>
           <div className='flex flex-col gap-[10px]'>
-            <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>{t('benefit')}</h3>
+            <h2 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>{t('benefit')}</h2>
             <p className='text-[2.4rem] font-bold uppercase text-primary-blue md:text-[3.6rem]'>{t('text')}</p>
           </div>
           <div className='rounded-full bg-black px-[24px] py-[8px] text-white'>
@@ -613,7 +611,7 @@ const WorkerBenefitSection = () => {
                 return (
                   <SwiperSlide key={item.uuid} className={currentIndex === index ? 'visible' : 'invisible'} onClick={_handleClickSwiper}>
                     <div className='relative z-[12] flex items-center justify-between gap-[40px]'>
-                      <h4 className='text-[2rem] font-semibold '>{item.title}</h4>
+                      <h3 className='text-[2rem] font-semibold '>{item.title}</h3>
                       <div className='likeButton z-[10] hidden md:block'>
                         <LikeControl item={item} />
                       </div>
@@ -626,9 +624,14 @@ const WorkerBenefitSection = () => {
                         <div dangerouslySetInnerHTML={{ __html: item.html }} />
                       </div>
                       <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
-                        <div className='max-h-[400px] md:max-h-[280px] 13inch:max-h-none'>
-                          <ImageFallback priority src={`/benefits/${index + 1}.webp`} alt={item.title} height={600} width={600} className='h-full w-full object-cover' />
-                        </div>
+                        <ImageFallback
+                          priority
+                          src={`/benefits/${index + 1}.webp`}
+                          alt={item.title}
+                          height={400}
+                          width={600}
+                          className='h-auto max-h-[400px] w-auto object-cover md:max-h-[280px] 13inch:max-h-none'
+                        />
                       </div>
                     </div>
                   </SwiperSlide>

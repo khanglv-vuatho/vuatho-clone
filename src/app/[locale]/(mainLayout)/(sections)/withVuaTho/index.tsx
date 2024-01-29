@@ -15,9 +15,9 @@ function SectionWithVuaTho() {
           <div className='absolute right-[50%] top-[-10%] hidden scale-x-[-1] text-[16rem] text-[white]/30 md:top-0 lg:block'>“</div>
           <div className='lg:w-[50%] xl:w-[60%]'>
             <div className='flex flex-col justify-end gap-[8px] text-[#f5b500] md:gap-[20px]'>
-              <h5 className='text-[3.2rem] font-bold text-white'>
+              <h2 className='text-[3.2rem] font-bold text-white'>
                 {t('title')} {t('title1')}
-              </h5>
+              </h2>
               <p className='flex justify-start text-[1.4rem] text-white md:text-[1.8rem]'>{t('text')}</p>
             </div>
           </div>
