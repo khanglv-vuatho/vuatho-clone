@@ -24,7 +24,7 @@ function SectionWithVuaTho() {
         </div>
       </div>
       <div className='absolute bottom-0 right-0 top-0 z-[10] hidden lg:block 2xl:right-[16%]'>
-        <ImageFallback alt='with-us' src='/with-us.png' height={522} width={522} className='h-full w-auto' />
+        <ImageFallback alt='with-us' src='/with-us.webp' height={522} width={522} className='h-full w-auto' />
       </div>
     </div>
   )

@@ -122,7 +122,7 @@ export const Store = memo(() => {
         {!valid && !isOpenModal && !onLoading && (
           <div className='flex min-h-[400px] w-full flex-col items-center justify-center gap-[20px]'>
             <div className='max-w-[150px]'>
-              <ImageFallback src={'/store/only-services-provider.png'} width={'307'} height={'240'} alt='image' className='object-cover' />
+              <ImageFallback src={'/store/only-services-provider.webp'} width={'307'} height={'240'} alt='image' className='object-cover' />
             </div>
             <p className='max-w-[500px] text-center text-[1.8rem] '>{t('text8')}</p>
             <div className='flex items-center gap-[16px]'>
@@ -256,7 +256,7 @@ const CheckValidWorker = memo(
               modalBody={
                 <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
                   <div className='flex items-center justify-center'>
-                    <Image src={'/store/heart1.png'} priority alt='write-mascot' height={240} width={307} className='w-auto object-cover' />
+                    <Image src={'/store/heart1.webp'} priority alt='write-mascot' height={240} width={307} className='w-auto object-cover' />
                   </div>
                   <div className='flex flex-col justify-center gap-[8px]'>
                     <div className='flex flex-col gap-[4px]'>
@@ -718,7 +718,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
         ) : (
           <div className='flex min-h-[300px] flex-col items-center justify-center gap-[16px]'>
             <div className='max-w-[150px]'>
-              <ImageFallback src={'/store/emptyCart.png'} alt='image' width={307} height={240} className='object-cover' />
+              <ImageFallback src={'/store/emptyCart.webp'} alt='image' width={307} height={240} className='object-cover' />
             </div>
             <p>{t('text20')}</p>
           </div>
@@ -845,7 +845,7 @@ const FinnalPopup = ({ typeOpenFinalPopupStore }: { typeOpenFinalPopupStore: any
             </Button>
           </div>
           <div className='flex flex-col items-center gap-[16px]'>
-            <ImageFallback src={isSuccess ? '/store/success-order.png' : '/store/soldout.png'} width={307} height={240} alt='image' />
+            <ImageFallback src={isSuccess ? '/store/success-order.webp' : '/store/soldout.webp'} width={307} height={240} alt='image' />
             <p className='text-[2rem] font-light'>{isSuccess ? t('text18') : t('text30')}</p>
           </div>
         </div>

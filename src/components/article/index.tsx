@@ -20,7 +20,7 @@ const Article = ({ item, style, index }: { item: any; style?: string; index: num
       className={twMerge('group flex w-full flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-[8px] bg-white shadow-[0px_4px_8px_0px_#50505029]', style)}
     >
       <Link href={`/${locale}/${item?.slug}`} className='h-[206px] w-full overflow-hidden transition hover:scale-105'>
-        <ImageFallback loading='lazy' src={item?.thumb} alt='Article image' height={406} width={800} className='h-full w-full object-cover transition' />
+        <ImageFallback loading='lazy' src={item?.thumb} alt='Article image' height={210} width={350} className='h-full w-full object-cover transition' />
       </Link>
       <div className='flex flex-col gap-[8px] p-[16px]'>
         <div className='flex items-center justify-between text-[1.4rem]'>

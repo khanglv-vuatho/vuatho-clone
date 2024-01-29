@@ -1,10 +1,12 @@
 'use client'
 
+import { memo } from 'react'
 import { useTranslations } from 'next-intl'
-import { Accordion, AccordionItem, Image, Tab, Tabs } from '@nextui-org/react'
+import { Accordion, AccordionItem, Tab, Tabs } from '@nextui-org/react'
 
 import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'
-import { memo } from 'react'
+
+import ImageFallback from '@/components/ImageFallback'
 
 const SectionTest = memo(() => {
   const t = useTranslations('FindWorker')
@@ -161,7 +163,7 @@ const Step3 = memo(() => {
 
   const listRegisterItem = [
     {
-      thumb: 'findWorker1.png',
+      thumb: 'findWorker1.webp',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text11')}</p>
@@ -170,7 +172,7 @@ const Step3 = memo(() => {
       )
     },
     {
-      thumb: 'findWorker2.png',
+      thumb: 'findWorker2.webp',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text14')}</p>
@@ -179,7 +181,7 @@ const Step3 = memo(() => {
       )
     },
     {
-      thumb: 'findWorker3.png',
+      thumb: 'findWorker3.webp',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text17')}</p>
@@ -188,7 +190,7 @@ const Step3 = memo(() => {
       )
     },
     {
-      thumb: 'findWorker4.png',
+      thumb: 'findWorker4.webp',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text20')}</p>
@@ -198,8 +200,8 @@ const Step3 = memo(() => {
       )
     },
     {
-      thumb: 'findWorker5-1.png',
-      thumb2: 'findWorker5-2.png',
+      thumb: 'findWorker5-1.webp',
+      thumb2: 'findWorker5-2.webp',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text28')}</p>
@@ -209,8 +211,8 @@ const Step3 = memo(() => {
       )
     },
     {
-      thumb: 'findWorker6-1.png',
-      thumb2: 'findWorker6-2.png',
+      thumb: 'findWorker6-1.webp',
+      thumb2: 'findWorker6-2.webp',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text29')}</p>
@@ -241,7 +243,7 @@ const Register: any = memo(() => {
 
   const listRegisterItem = [
     {
-      thumb: 'screen1.png',
+      thumb: 'screen1.webp',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold'>{t('text11')}</p>
@@ -251,7 +253,7 @@ const Register: any = memo(() => {
       )
     },
     {
-      thumb: 'screen2.png',
+      thumb: 'screen2.webp',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold'>{t('text14')}</p>
@@ -261,7 +263,7 @@ const Register: any = memo(() => {
       )
     },
     {
-      thumb: 'screen3.png',
+      thumb: 'screen3.webp',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold'>{t('text17')}</p>
@@ -273,7 +275,7 @@ const Register: any = memo(() => {
       )
     },
     {
-      thumb: 'screen4.png',
+      thumb: 'screen4.webp',
       content: (
         <>
           <p className='text-[1.8rem] font-semibold'>{t('text20')}</p>
@@ -314,9 +316,9 @@ const Login = memo(() => {
         <li> {t('text27')}</li>
       </ul>
       <div className='mt-[20px] flex'>
-        <Image src='/find-worker/loginScreen1.png' alt={`find-worker-loginScreen1`} width={220} height={420} className='pointer-events-none' />
-        <Image src='/find-worker/loginScreen2.png' alt={`find-worker-loginScreen2`} width={220} height={420} className='pointer-events-none' />
-        <Image src='/find-worker/loginScreen3.png' alt={`find-worker-loginScreen3`} width={220} height={420} className='pointer-events-none' />
+        <ImageFallback src='/find-worker/loginScreen1.webp' alt={`find-worker-loginScreen1`} width={220} height={420} className='pointer-events-none' />
+        <ImageFallback src='/find-worker/loginScreen2.webp' alt={`find-worker-loginScreen2`} width={220} height={420} className='pointer-events-none' />
+        <ImageFallback src='/find-worker/loginScreen3.webp' alt={`find-worker-loginScreen3`} width={220} height={420} className='pointer-events-none' />
       </div>
     </>
   )
@@ -329,16 +331,16 @@ const RegisterItem = memo(({ children, thumb, thumb2 }: { children: any; thumb: 
       {thumb2 ? (
         <div className='flex w-fit flex-col gap-10 md:flex-row md:gap-2'>
           <div className='w-[180px]'>
-            <Image src={`/find-worker/${thumb}`} alt={`find-worker-${thumb}`} width={220} height={300} className='pointer-events-none h-full w-full' />
+            <ImageFallback src={`/find-worker/${thumb}`} alt={`find-worker-${thumb}`} width={220} height={300} className='pointer-events-none h-full w-full' />
           </div>
           <div className='w-[180px]'>
-            <Image src={`/find-worker/${thumb2}`} alt={`find-worker-${thumb2}`} width={220} height={300} className='pointer-events-none h-full w-full' />
+            <ImageFallback src={`/find-worker/${thumb2}`} alt={`find-worker-${thumb2}`} width={220} height={300} className='pointer-events-none h-full w-full' />
           </div>
         </div>
       ) : (
         <div className='flex w-fit justify-start md:justify-end'>
           <div className='w-[180px]'>
-            <Image src={`/find-worker/${thumb}`} alt={`find-worker-${thumb}`} width={220} height={300} className='pointer-events-none h-full w-full' />
+            <ImageFallback src={`/find-worker/${thumb}`} alt={`find-worker-${thumb}`} width={220} height={300} className='pointer-events-none h-full w-full' />
           </div>
         </div>
       )}

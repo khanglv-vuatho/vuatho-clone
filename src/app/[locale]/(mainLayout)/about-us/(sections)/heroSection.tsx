@@ -31,7 +31,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div className='absolute bottom-[-10%] w-full '>
-        <Image src={'/images/about-us/bottom.png'} height={149} width={2700} quality={100} alt='bottom' className='pointer-events-none h-full w-full' />
+        <Image src={'/images/about-us/bottom.webp'} height={149} width={2700} quality={100} alt='bottom' className='pointer-events-none h-full w-full' />
       </div>
     </div>
   )
@@ -46,7 +46,7 @@ const AnimatePhone = memo(() => {
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      animationData: animationData,
+      animationData: animationData
     })
 
     return () => instance.destroy()

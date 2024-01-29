@@ -93,7 +93,7 @@ const AISection = () => {
               viewport={{ once: true }}
               className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'
             >
-              <ImageFallback src={'/ai-section-1.png'} alt='AI Robot' width={700} height={680} quality={100} className='pointer-events-none w-auto select-none' />
+              <ImageFallback src={'/ai-section-1.webp'} alt='AI Robot' loading='lazy' width={700} height={680} quality={100} className='pointer-events-none w-auto select-none' />
             </motion.div>
           </div>
           <div className='grid grid-cols-1 items-center gap-[20px] py-12 lg:ml-[10%] 13inch:ml-0 13inch:grid-cols-2 13inch:gap-[56px]'>
@@ -299,7 +299,7 @@ const MainSection = () => {
           </div>
           <div className='z-[1] col-span-1 mt-32 w-full justify-center xl:col-span-2'>
             <motion.div
-              initial={{ opacity: 0, y: 200 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 1,
@@ -307,7 +307,7 @@ const MainSection = () => {
               }}
             >
               <div className='max-h-[500px] max-w-[400px]'>
-                <ImageFallback loading='lazy' src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={500} height={600} className=' relative z-[1] h-auto w-auto' />
+                <ImageFallback loading='lazy' src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className=' relative z-[1] h-auto w-auto' />
               </div>
             </motion.div>
             <motion.div
@@ -437,7 +437,7 @@ const CustomerBenefitSection = () => {
             <p className='whitespace-nowrap text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[3.2rem]'>{t('text')}</p>
           </div>
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             viewport={{
@@ -453,8 +453,8 @@ const CustomerBenefitSection = () => {
             <motion.div
               initial={{
                 opacity: 0,
-                x: (index + 1) % 2 === 0 ? -200 : 200,
-                y: -200
+                x: (index + 1) % 2 === 0 ? -40 : 40,
+                y: -40
               }}
               whileInView={{
                 opacity: 1,
@@ -473,7 +473,7 @@ const CustomerBenefitSection = () => {
               key={item.id}
             >
               <div className='items-left flex items-center gap-[20px] md:flex-col lg:justify-center xl:gap-[6px]'>
-                <ImageFallback src={`/numbers/${index + 1}.png`} alt='AI Robot' width={200} height={200} className='pointer-events-none size-[180px] select-none' />
+                <ImageFallback src={`/numbers/${index + 1}.webp`} alt={`benefit-numbers-${index + 1}`} width={200} height={200} className='pointer-events-none size-[180px] select-none' />
                 <h3 className='mt-[-16px] text-[1.8rem] lg:text-center'>{item.title}</h3>
               </div>
             </motion.div>
@@ -627,7 +627,7 @@ const WorkerBenefitSection = () => {
                       </div>
                       <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
                         <div className='max-h-[400px] md:max-h-[280px] 13inch:max-h-none'>
-                          <ImageFallback priority src={`/benefits/${index + 1}.png`} alt={item.title} height={400} width={400} className='w-auto' />
+                          <ImageFallback priority src={`/benefits/${index + 1}.webp`} alt={item.title} height={600} width={600} className='h-full w-full object-cover' />
                         </div>
                       </div>
                     </div>
@@ -650,7 +650,7 @@ const WorkerBenefitSection = () => {
                     className={`${currentIndex === index ? ' border-[#FCB713]' : 'scale-90 border-transparent opacity-70'}  relative overflow-hidden rounded-[10px] border-[2px] transition`}
                   >
                     <ImageFallback
-                      src={`/benefits/${index + 1}.png`}
+                      src={`/benefits/${index + 1}.webp`}
                       alt={item.title}
                       height={200}
                       width={200}
@@ -851,7 +851,7 @@ const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; is
         modalBody={
           <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
             <div className='flex items-center justify-center'>
-              <Image src={'/benefitCustomer/Fixy-write1.png'} alt='write-mascot' height={174} width={217} className='object-cover' />
+              <Image src={'/benefitCustomer/Fixy-write1.webp'} alt='write-mascot' height={174} width={217} className='object-cover' />
             </div>
             <div className='flex flex-col justify-center gap-[8px]'>
               <p className='text-[1.8rem]  font-medium'>{t('heading')}</p>

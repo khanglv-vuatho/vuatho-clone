@@ -32,7 +32,7 @@ const SectionDownload = () => {
           viewport={{ once: true }}
           className='md:absolute md:left-[20px] 13inch:left-0'
         >
-          <ImageFallback src={'/downloadApp/download-person.png'} alt='' height={605} width={605} className='size-full md:size-[450px] lg:size-[500px] xl:size-[605px]' />
+          <ImageFallback src={'/downloadApp/download-person.webp'} alt='' height={605} width={605} className='size-full md:size-[450px] lg:size-[500px] xl:size-[605px]' />
         </motion.div>
       </div>
       <div className='relative z-10'>

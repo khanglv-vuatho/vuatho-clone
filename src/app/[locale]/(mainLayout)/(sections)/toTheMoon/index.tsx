@@ -20,15 +20,15 @@ function SectionToTheMoon() {
         <motion.p
           initial={{
             opacity: 0,
-            x: -200,
+            x: -200
           }}
           whileInView={{
             opacity: 1,
-            x: 0,
+            x: 0
           }}
           transition={{
             delay: 0.5,
-            duration: 0.3,
+            duration: 0.3
           }}
           viewport={{ once: true }}
           className='text-[1.8rem] font-light'
@@ -39,20 +39,22 @@ function SectionToTheMoon() {
       <motion.div
         initial={{
           opacity: 0,
-          y: 200,
+          y: 200
         }}
         whileInView={{
           opacity: 1,
-          y: 0,
+          y: 0
         }}
         transition={{
           delay: 0.5,
-          duration: 0.3,
+          duration: 0.3
         }}
         viewport={{ once: true }}
-        className='z-[-1] order-none lg:relative lg:right-[20%] lg:order-2 lg:min-h-[570px] lg:min-w-[680px]'
+        className='z-[-1] order-none lg:relative lg:right-[10%] lg:order-2 lg:min-h-[570px] lg:min-w-[680px]'
       >
-        <ImageFallback src={'/home/test12.webp'} alt='' height={280} quality={100} width={1028} className='size-full object-contain lg:absolute' />
+        <div className='lg:absolute'>
+          <ImageFallback src={'/to-the-moon/to-the-moon.webp'} alt='to-the-moon' loading='lazy' height={280} width={1028} className='w-auto object-contain ' />
+        </div>
       </motion.div>
     </div>
   )

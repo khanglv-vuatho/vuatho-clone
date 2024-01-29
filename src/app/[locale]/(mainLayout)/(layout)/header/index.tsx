@@ -71,12 +71,12 @@ export const Logo = memo(() => {
   const locale = useLocale()
   const _handleClickLogo = useCallback(() => {
     window.scrollTo({
-      top: 0,
+      top: 0
     })
   }, [])
   return (
     <Link onClick={_handleClickLogo} href={`/${locale}`} className='block h-fit'>
-      <Image src='/logo/textLogo.png' alt='Logo nav' width={256} height={176} className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[70px]' />
+      <Image src='/logo/textLogo.webp' alt='Logo nav' width={256} height={176} className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[70px]' />
     </Link>
   )
 })
@@ -96,14 +96,14 @@ const RightNav = memo(() => {
 
   const menuVariants = {
     initial: {
-      scaleY: 0,
+      scaleY: 0
     },
     animate: {
-      scaleY: 1,
+      scaleY: 1
     },
     exit: {
-      scaleY: 0,
-    },
+      scaleY: 0
+    }
   }
 
   useEffect(() => {
@@ -169,18 +169,18 @@ const LinkList = memo(({ handleToggleMenu }: { handleToggleMenu?: any }) => {
     {
       id: 2,
       title: t('become_employee'),
-      url: `/${locale}/become-services-provider`,
+      url: `/${locale}/become-services-provider`
     },
     {
       id: 3,
       title: t('find_employee'),
-      url: `/${locale}/find-services-provider`,
+      url: `/${locale}/find-services-provider`
     },
     {
       id: 4,
       title: t('store'),
-      url: `/${locale}/store`,
-    },
+      url: `/${locale}/store`
+    }
   ]
 
   const menuVariantsLinks = {
@@ -188,16 +188,16 @@ const LinkList = memo(({ handleToggleMenu }: { handleToggleMenu?: any }) => {
       opacity: 0,
       y: '10vh',
       transiton: {
-        duration: 0.5,
-      },
+        duration: 0.5
+      }
     },
     open: {
       opacity: 1,
       y: 0,
       transiton: {
-        duration: 0.7,
-      },
-    },
+        duration: 0.7
+      }
+    }
   }
 
   const handleClick = (url: any) => {
@@ -216,7 +216,7 @@ const LinkList = memo(({ handleToggleMenu }: { handleToggleMenu?: any }) => {
               initial='initial'
               animate='open'
               viewport={{
-                once: true,
+                once: true
               }}
               className='text-[1.8rem]'
             >

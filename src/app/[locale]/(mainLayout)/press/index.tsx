@@ -274,7 +274,7 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
               ) : (
                 <div className='flex h-full min-h-[400px] w-full flex-col items-center justify-center'>
                   <div className='h-[126px] w-[158px]'>
-                    <Image src={'/empty.png'} alt='empty' height={126} width={158} className='h-full w-full object-contain' />
+                    <Image src={'/empty.webp'} alt='empty' height={126} width={158} className='h-full w-full object-contain' />
                   </div>
                   <p className='font-light text-[#969696]'>{td('oops')}</p>
                 </div>
@@ -358,7 +358,7 @@ const SwiperPress = memo(({ renderBreadcums }: { renderBreadcums: any }) => {
         >
           {slidersData?.map((item: any, index: number) => (
             <SwiperSlide key={index}>
-              <Image src={'/press/pressBanner1.png'} alt='' height={419} width={3000} className={`absolute h-full rotate-180 object-cover`} />
+              <Image src={'/press/pressBanner1.webp'} alt='' height={419} width={3000} className={`absolute h-full rotate-180 object-cover`} />
               <div className='relative inset-0 h-[420px]'>
                 <div className='ct-container-70 relative flex h-full flex-col p-12'>
                   <div className='max-w-[50%] space-y-6'>

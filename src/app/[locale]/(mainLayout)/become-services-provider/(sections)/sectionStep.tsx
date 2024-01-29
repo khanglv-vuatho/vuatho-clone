@@ -156,8 +156,8 @@ const Step1: React.FC = memo(() => {
         ))}
       </ul>
       <div className='mt-6 flex flex-col justify-start gap-4 lg:flex-row lg:items-center '>
-        <Image src={'/images/cmnd1.png'} alt='' width={324} height={191} className='pointer-events-none max-w-[240px]' />
-        <Image src={'/images/cmnd2.png'} alt='' width={324} height={191} className='pointer-events-none max-w-[240px]' />
+        <Image src={'/images/cmnd1.webp'} alt='' width={324} height={191} className='pointer-events-none max-w-[240px]' />
+        <Image src={'/images/cmnd2.webp'} alt='' width={324} height={191} className='pointer-events-none max-w-[240px]' />
       </div>
     </div>
   )
@@ -243,7 +243,7 @@ const Step3Item = ({ item }: { item: any }) => {
     <div className='flex flex-col gap-[16px] *:font-light'>
       <h4 className='text-[2rem] !font-bold'>{item.step}</h4>
       <div className='flex gap-[20px]'>
-        <Image src={`/become-employee/step3/${item.thumb}-${localeImage}.png`} alt='step-3-1-image' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+        <Image src={`/become-employee/step3/${item.thumb}-${localeImage}.webp`} alt='step-3-1-image' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
         {item.content}
       </div>
     </div>
@@ -274,8 +274,8 @@ const Step4: React.FC = memo(() => {
           </ul>
         </div>
         <div className='flex w-full gap-[16px]'>
-          <ImageFallback src={`/become-employee/step4/phone1-${localeImage}.png`} alt='phone1' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
-          <ImageFallback src={`/become-employee/step4/phone2-${localeImage}.png`} alt='phone2' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+          <ImageFallback src={`/become-employee/step4/phone1-${localeImage}.webp`} alt='phone1' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+          <ImageFallback src={`/become-employee/step4/phone2-${localeImage}.webp`} alt='phone2' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
         </div>
         <p>{t('text73')}</p>
       </div>
@@ -299,8 +299,8 @@ const Step5: React.FC = memo(() => {
           <li>{t('text76')}</li>
         </ul>
         <div className='mt-[40px] flex w-full gap-[16px]'>
-          <ImageFallback src={`/become-employee/step5/phone1-${localeImage}.png`} alt='phone1' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
-          <ImageFallback src={`/become-employee/step5/phone2-${localeImage}.png`} alt='phone2' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+          <ImageFallback src={`/become-employee/step5/phone1-${localeImage}.webp`} alt='phone1' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+          <ImageFallback src={`/become-employee/step5/phone2-${localeImage}.webp`} alt='phone2' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
         </div>
       </div>
     </div>
