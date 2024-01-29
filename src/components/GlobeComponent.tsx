@@ -1,18 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Globe from 'globe.gl'
 import * as THREE from 'three'
 import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls'
 
+import country from '@/constants/countries.json'
+
 const GlobeComponent = React.memo((props: any) => {
-  const [mounted, setMounted] = useState(false)
   const globeEl = useRef<any>()
-
   useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  useEffect(() => {
-    if (!mounted) return
+    // Initialize the globe
 
     Object.assign(THREE, { TrackballControls })
 
@@ -47,7 +43,7 @@ const GlobeComponent = React.memo((props: any) => {
       'sienna'
     ]
 
-    const arcsData = Array.from(Array(10).keys()).map(() => ({
+    const arcsData: any = Array.from(Array(10).keys()).map(() => ({
       startLat: (Math.random() - 0.5) * 180,
       startLng: (Math.random() - 0.5) * 360,
       endLat: (Math.random() - 0.5) * 180,
@@ -55,10 +51,10 @@ const GlobeComponent = React.memo((props: any) => {
       color: [colors[Math.floor(Math.random() * colors.length)], colors[Math.floor(Math.random() * colors.length)]]
     }))
 
-    const globe = Globe()(globeEl?.current)
+    const globe = Globe()(globeEl.current)
     const pointsData = arcsData.flatMap((arc: any) => [
-      { lat: arc.startLat, lng: arc.startLng },
-      { lat: arc.endLat, lng: arc.endLng }
+      // { lat: arc.startLat, lng: arc.startLng },
+      // { lat: arc.endLat, lng: arc.endLng },
     ])
 
     globe
@@ -77,12 +73,28 @@ const GlobeComponent = React.memo((props: any) => {
       .pointsData(pointsData)
       .pointLat('lat')
       .pointLng('lng')
-      .pointColor(() => '#FDFDFDDE')
-      .pointAltitude(0)
-      .pointRadius(0.5)
+      .pointColor(() => '#FDFDFDDE') // Set the color of the points
+      .pointAltitude(0) // Points should be at the surface
+      .pointRadius(0.5) // Set the radius for the points, adjust as needed
       .showAtmosphere(false)
+    //   .hexPolygonsData(country.features)
+    //   .hexPolygonResolution(3)
+    //   .hexPolygonMargin(0.3)
+    //   .hexPolygonUseDots(true)
+    //   .hexPolygonColor(
+    //     () =>
+    //       `#${Math.round(Math.random() * Math.pow(2, 24))
+    //         .toString(16)
+    //         .padStart(6, '0')}`,
+    //   )
+    //   .hexPolygonLabel(
+    //     ({ properties: d }: any) => `
+    //       <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
+    //       Population: <i>${d.POP_EST}</i>
+    //     `,
+    //   )
 
-    const CLOUDS_IMG_URL = 'https://vasturiano.github.io/three-globe/example/clouds/clouds.png'
+    const CLOUDS_IMG_URL = 'https://vasturiano.github.io/three-globe/example/clouds/clouds.png' // Path to your clouds image
     const clouds = new THREE.Mesh(
       new THREE.SphereGeometry(globe.getGlobeRadius() * 1.01, 75, 75),
       new THREE.MeshPhongMaterial({
@@ -108,19 +120,14 @@ const GlobeComponent = React.memo((props: any) => {
     // Handle window resize
     window.addEventListener('resize', onWindowResize, false)
     function onWindowResize() {
-      globe.camera().aspect = window.innerWidth / window.innerHeight
-      globe.camera().updateProjectionMatrix()
-      globe.renderer().setSize(window.innerWidth, window.innerHeight)
+      //   globe.camera().aspect = window.innerWidth / window.innerHeight
+      //   globe.camera().updateProjectionMatrix()
+      //   globe.renderer().setSize(window.innerWidth, window.innerHeight)
     }
-
-    // Cleanup
     return () => {
       window.removeEventListener('resize', onWindowResize)
     }
-  }, [mounted])
-
-  if (!mounted) return null
-
+  }, [])
   return (
     <div style={{ width: '100%', height: '400px' }}>
       <div ref={globeEl} style={{ width: '100%', height: '100%' }} />

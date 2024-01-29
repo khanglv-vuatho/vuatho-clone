@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: { params?: any }) {
 const ContactUs = () => {
   const t = useTranslations('ContactUs')
   return (
-    <div className='overflow-hidden pt-10 xl:pt-20 2xl:pt-32'>
-      <div className='relative flex min-h-[70vh] w-screen flex-col justify-center xl:min-h-[80vh] 2xl:min-h-[90vh]'>
+    <div className='overflow-hidden '>
+      <div className='relative flex min-h-[600px] flex-col justify-center xs:min-h-[500px] md:min-h-[700px]'>
         <div className='ct-container-70 relative z-[1] pt-[40px] xl:pt-[80px]'>
           <h3 className='text-[3.5rem] font-semibold'>{t('heading')}</h3>
           <div className='mt-10 space-y-10 lg:mt-20 xl:space-y-20'>
