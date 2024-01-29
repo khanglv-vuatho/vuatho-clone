@@ -50,21 +50,6 @@
     "text": "Page not found!",
     "button": "BACK TO HOME"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Whatever is difficult",
-      "text1": "Vua Thợ has it"
-    },
-    "SubCard2": {
-      "text": "Repair",
-      "text1": "Electrical and Plumbing",
-      "text2": "at home"
-    },
-    "SubCard3": {
-      "text": "Household help",
-      "text1": "quickly"
-    }
-  },
   "MainSection": {
     "heading1": "App ",
     "heading1-1": "Find Service Providers, Find Jobs ",

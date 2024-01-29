@@ -50,20 +50,7 @@
     "text": "找不到頁面！",
     "button": "返回首頁"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "無論多困難",
-      "text1": "Vua Thợ都有"
-    },
-    "SubCard2": {
-      "text": "在家修理",
-      "text1": "電器和水暖"
-    },
-    "SubCard3": {
-      "text": "家居幫助",
-      "text1": "迅速"
-    }
-  },
+
   "MainSection": {
     "heading1": "應用程序",
     "heading1-1": "找工人，找工作",

@@ -50,21 +50,6 @@
     "text": "페이지를 찾을 수 없습니다!",
     "button": "홈으로 돌아가기"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "어떤 일이든",
-      "text1": "Vua Thợ가 해결합니다"
-    },
-    "SubCard2": {
-      "text": "가정에서의",
-      "text1": "전기 및 배관 수리",
-      "text2": "수리"
-    },
-    "SubCard3": {
-      "text": "가사 도움",
-      "text1": "빠르게"
-    }
-  },
   "MainSection": {
     "heading1": "앱",
     "heading1-1": "노동자 찾기, 일자리 찾기",

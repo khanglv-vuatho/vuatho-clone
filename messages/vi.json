@@ -50,21 +50,7 @@
     "text": "Không tìm thấy trang bạn cần tìm !",
     "button": "VỀ TRANG CHỦ"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Việc gì khó",
-      "text1": "có Vua Thợ"
-    },
-    "SubCard2": {
-      "text": "Sửa chữa",
-      "text1": "Điện Nước",
-      "text2": "tại nhà"
-    },
-    "SubCard3": {
-      "text": "Giúp việc nhà",
-      "text1": "nhanh chóng"
-    }
-  },
+
   "MainSection": {
     "heading1": "Ứng dụng ",
     "heading1-1": "Kết Nối Thợ Gần Nhất",

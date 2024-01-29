@@ -50,21 +50,6 @@
     "text": "Sayfa bulunamadı!",
     "button": "ANA SAYFAYA DÖN"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Ne zor olursa olsun",
-      "text1": "Vua Thợ'da var"
-    },
-    "SubCard2": {
-      "text": "Evde",
-      "text1": "Elektrik ve Tesisat Onarımı",
-      "text2": "tamiri"
-    },
-    "SubCard3": {
-      "text": "Ev işleri yardımı",
-      "text1": "hızlıca"
-    }
-  },
   "MainSection": {
     "heading1": "Uygulama ",
     "heading1-1": "İşçileri Bul, İşleri Bul ",

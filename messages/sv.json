@@ -50,21 +50,6 @@
     "text": "Sidan hittades inte!",
     "button": "TILLBAKA TILL STARTSIDA"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Vad som än är svårt",
-      "text1": "Vua Thợ har det"
-    },
-    "SubCard2": {
-      "text": "Reparation",
-      "text1": "Elektrisk och VVS",
-      "text2": "hemma"
-    },
-    "SubCard3": {
-      "text": "Hemhjälp",
-      "text1": "snabbt"
-    }
-  },
   "MainSection": {
     "heading1": "App ",
     "heading1-1": "Hitta Arbetare, Hitta Jobb ",

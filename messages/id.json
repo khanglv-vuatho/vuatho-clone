@@ -50,21 +50,6 @@
     "text": "Halaman tidak ditemukan!",
     "button": "KEMBALI KE HALAMAN UTAMA"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Apa pun yang sulit",
-      "text1": "Vua Thợ memiliki itu"
-    },
-    "SubCard2": {
-      "text": "Perbaikan",
-      "text1": "Kelistrikan dan Perpipaan",
-      "text2": "di rumah"
-    },
-    "SubCard3": {
-      "text": "Bantuan rumah tangga",
-      "text1": "dengan cepat"
-    }
-  },
   "MainSection": {
     "heading1": "Aplikasi ",
     "heading1-1": "Temukan Pekerja, Temukan Pekerjaan ",

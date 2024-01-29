@@ -50,21 +50,6 @@
     "text": "Page non trouvée !",
     "button": "RETOUR À LA PAGE D'ACCUEIL"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Quoi que ce soit de difficile",
-      "text1": "Vua Thợ l'a"
-    },
-    "SubCard2": {
-      "text": "Réparation",
-      "text1": "Électrique et Plomberie",
-      "text2": "à domicile"
-    },
-    "SubCard3": {
-      "text": "Aide domestique",
-      "text1": "rapide"
-    }
-  },
   "MainSection": {
     "heading1": "Application ",
     "heading1-1": "Trouvez des Travailleurs, Trouvez des Emplois ",

@@ -50,21 +50,6 @@
     "text": "Stran ni najdena!",
     "button": "NAZAJ NA DOMOV"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Karkoli je težko",
-      "text1": "Vua Thợ to ima"
-    },
-    "SubCard2": {
-      "text": "Popravilo",
-      "text1": "Električnih in vodovodnih napeljav",
-      "text2": "doma"
-    },
-    "SubCard3": {
-      "text": "Pomoč v gospodinjstvu",
-      "text1": "hitro"
-    }
-  },
   "MainSection": {
     "heading1": "Aplikacija ",
     "heading1-1": "Najdite delavce, najdite službe ",

@@ -50,21 +50,6 @@
     "text": "Pagina non trovata!",
     "button": "TORNA ALLA HOMEPAGE"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Qualsiasi cosa sia difficile",
-      "text1": "Vua Thợ ce l'ha"
-    },
-    "SubCard2": {
-      "text": "Riparazione",
-      "text1": "Elettrica e Idraulica",
-      "text2": "a casa"
-    },
-    "SubCard3": {
-      "text": "Aiuto domestico",
-      "text1": "veloce"
-    }
-  },
   "MainSection": {
     "heading1": "App ",
     "heading1-1": "Trova Lavoratori, Trova Lavori ",

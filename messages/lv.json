@@ -50,21 +50,6 @@
     "text": "Lapa nav atrasta!",
     "button": "ATPAKAĻ UZ SĀKUMU"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Jebkura grūtība",
-      "text1": "Ir pieejama Vua Thợ"
-    },
-    "SubCard2": {
-      "text": "Remonts",
-      "text1": "Elektriskie un santehniskie darbi",
-      "text2": "mājā"
-    },
-    "SubCard3": {
-      "text": "Mājsaimniecības palīdzība",
-      "text1": "Ātri"
-    }
-  },
   "MainSection": {
     "heading1": "Mobilā lietotne ",
     "heading1-1": "Atrast darbiniekus, atrast darbu ",

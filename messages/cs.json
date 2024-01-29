@@ -50,21 +50,6 @@
     "text": "Stránka nenalezena!",
     "button": "ZPĚT NA DOMOVSKOU STRÁNKU"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Cokoli je obtížné",
-      "text1": "Vua Thợ to má"
-    },
-    "SubCard2": {
-      "text": "Oprava",
-      "text1": "Elektrika a vodoinstalace",
-      "text2": "doma"
-    },
-    "SubCard3": {
-      "text": "Pomoc v domácnosti",
-      "text1": "rychle"
-    }
-  },
   "MainSection": {
     "heading1": "Aplikace ",
     "heading1-1": "Najděte pracovníky, najděte práci ",

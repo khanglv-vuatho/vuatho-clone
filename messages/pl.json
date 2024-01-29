@@ -50,21 +50,6 @@
     "text": "Strona nie znaleziona!",
     "button": "WRÓĆ NA STRONĘ GŁÓWNĄ"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Cokolwiek jest trudne",
-      "text1": "Vua Thợ ma to"
-    },
-    "SubCard2": {
-      "text": "Naprawa",
-      "text1": "Elektryka i Hydraulika",
-      "text2": "w domu"
-    },
-    "SubCard3": {
-      "text": "Pomoc domowa",
-      "text1": "szybko"
-    }
-  },
   "MainSection": {
     "heading1": "Aplikacja ",
     "heading1-1": "Znajdź Pracowników, Znajdź Prace ",

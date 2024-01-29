@@ -306,7 +306,7 @@ const MainSection = () => {
                 delay: 1.5
               }}
             >
-              <ImageFallback src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className=' relative z-[1] max-h-[500px] w-auto max-w-[400px]' />
+              <ImageFallback priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='z-[1] h-auto max-h-[500px] w-auto max-w-[400px]' />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -315,7 +315,7 @@ const MainSection = () => {
                 duration: 0.5,
                 delay: 2.5
               }}
-              className='absolute top-[550px] z-[0] object-contain md:top-0'
+              className='absolute top-[550px] z-[-3] object-contain md:top-0'
             >
               <GlobeComponent />
             </motion.div>

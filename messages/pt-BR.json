@@ -50,21 +50,6 @@
     "text": "Página não encontrada!",
     "button": "VOLTAR PARA A PÁGINA INICIAL"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Qualquer que seja a dificuldade",
-      "text1": "A Vua Thợ tem"
-    },
-    "SubCard2": {
-      "text": "Reparo",
-      "text1": "Elétrico e Hidráulico",
-      "text2": "em casa"
-    },
-    "SubCard3": {
-      "text": "Ajuda Doméstica",
-      "text1": "rápida"
-    }
-  },
   "MainSection": {
     "heading1": "Aplicativo ",
     "heading1-1": "Encontre Trabalhadores, Encontre Empregos ",

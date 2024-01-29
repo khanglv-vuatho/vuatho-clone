@@ -50,21 +50,6 @@
     "text": "Hindi Maipagpalagay ang Pahina!",
     "button": "BALIK SA TAHANAN"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "Anuman ang mahirap",
-      "text1": "Nasa Vua Thợ ito"
-    },
-    "SubCard2": {
-      "text": "Ayusin",
-      "text1": "Kagamitan Elektriko at Tubero",
-      "text2": "sa bahay"
-    },
-    "SubCard3": {
-      "text": "Tulong sa Bahay",
-      "text1": "nang mabilis"
-    }
-  },
   "MainSection": {
     "heading1": "App ",
     "heading1-1": "Hanapin ang mga Manggagawa, Hanapin ang mga Trabaho ",

@@ -50,20 +50,6 @@
     "text": "ページが見つかりません！",
     "button": "ホームに戻る"
   },
-  "Card": {
-    "SubCard1": {
-      "text": "難しいことは何でも",
-      "text1": "Vua Thợが持っています"
-    },
-    "SubCard2": {
-      "text": "家の修理",
-      "text1": "電気と配管"
-    },
-    "SubCard3": {
-      "text": "家事助手",
-      "text1": "迅速に"
-    }
-  },
   "MainSection": {
     "heading1": "アプリ ",
     "heading1-1": "ワーカーを見つけ、仕事を見つける ",
