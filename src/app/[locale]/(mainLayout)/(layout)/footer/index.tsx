@@ -42,8 +42,8 @@ function Footer() {
   const partnerList = [
     { id: 1, url: '/partner/sieuthimaylanh.png' },
     { id: 2, url: '/partner/dienmaygiagoc.png' },
-    { id: 3, url: '/partner/maylanhmitsu.png' },
     { id: 4, url: '/partner/vuamaylanh.png' },
+    { id: 3, url: '/partner/maylanhmitsu.png' },
   ]
 
   const socialNetworkList = [

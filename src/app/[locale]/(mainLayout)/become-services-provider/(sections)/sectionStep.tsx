@@ -290,7 +290,7 @@ const Step5: React.FC = memo(() => {
   const localeImage = locale === 'vi' || locale === 'en' ? locale : 'en'
   return (
     <div className='*:font-light'>
-      <h3 className='text-[2rem] font-bold text-[#0B27B6] md:text-[2.4rem]'>{t('text50')}</h3>
+      <h3 className='text-[2rem] !font-bold text-[#0B27B6] md:text-[2.4rem]'>{t('text50')}</h3>
       <p className='mt-8 text-[1.8rem]'>{t('text51')}</p>
       <div className='mt-8 flex w-full flex-col items-center rounded-xl'>
         <p className='text-[1.8rem] md:text-left'>{t('text74')} </p>

@@ -52,7 +52,7 @@ export default async function RootLayout({ children, params }: any) {
   return (
     <html lang={locale} className={lexend.className + ' '}>
       <body>
-        <Script src='https://www.googletagmanager.com/gtag/js?id=G-Z8JD7Z5934' />
+        {/* <Script src='https://www.googletagmanager.com/gtag/js?id=G-Z8JD7Z5934' />
         <Script id='google-analytics'>
           {`
           window.dataLayer = window.dataLayer || [];
@@ -61,7 +61,7 @@ export default async function RootLayout({ children, params }: any) {
  
           gtag('config', 'G-Z8JD7Z5934');
         `}
-        </Script>
+        </Script> */}
         <ToastContainer />
         <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
           <Providers>{children}</Providers>

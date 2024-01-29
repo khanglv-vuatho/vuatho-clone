@@ -307,7 +307,7 @@ const MainSection = () => {
               }}
             >
               <div className='max-h-[500px] max-w-[400px]'>
-                <ImageFallback priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={500} height={600} className=' relative z-[1] h-auto w-auto' />
+                <ImageFallback loading='lazy' src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={500} height={600} className=' relative z-[1] h-auto w-auto' />
               </div>
             </motion.div>
             <motion.div
@@ -445,7 +445,7 @@ const CustomerBenefitSection = () => {
             }}
             className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'
           >
-            <Image src={'/khach-benefit-7.webp'} alt='khach-benefit-7' quality={100} height={600} width={600} className='pointer-events-none h-full w-full select-none object-contain' />
+            <Image src={'/khach-benefit-7.webp'} alt='khach-benefit-7' loading='lazy' height={600} width={600} className='pointer-events-none h-full w-full select-none object-contain' />
           </motion.div>
         </div>
         <div className='col-span-1 grid grid-cols-1 md:mx-auto md:max-w-[820px] md:grid-cols-2 xl:col-span-3'>
@@ -627,7 +627,7 @@ const WorkerBenefitSection = () => {
                       </div>
                       <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
                         <div className='max-h-[400px] md:max-h-[280px] 13inch:max-h-none'>
-                          <ImageFallback priority src={`/benefits/${index + 1}.png`} alt={item.title} height={620} width={620} className='w-auto' />
+                          <ImageFallback priority src={`/benefits/${index + 1}.png`} alt={item.title} height={400} width={400} className='w-auto' />
                         </div>
                       </div>
                     </div>
@@ -652,10 +652,9 @@ const WorkerBenefitSection = () => {
                     <ImageFallback
                       src={`/benefits/${index + 1}.png`}
                       alt={item.title}
-                      height={400}
-                      width={860}
-                      quality={100}
-                      className={`h-full w-full cursor-pointer select-none object-cover transition hover:scale-105 ${currentIndex === index && 'scale-105'} `}
+                      height={200}
+                      width={200}
+                      className={`w-auto cursor-pointer select-none object-cover transition hover:scale-105 ${currentIndex === index && 'scale-105'} `}
                     />
                     <span className='absolute left-[8px] top-[8px] flex size-12 items-center justify-center rounded-full bg-black text-[1.2rem] text-white md:size-10 lg:size-12'>
                       {index < 9 ? `0${index + 1}` : index + 1}

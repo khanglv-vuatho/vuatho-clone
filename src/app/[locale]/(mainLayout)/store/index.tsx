@@ -480,8 +480,8 @@ const PackageItem = memo(({ itemPackage, HandleChangeSize, handleChangeCurrentIm
             onClick={() => handleChangeCurrentImage(itemPackage.thumb)}
           />
         </div>
-        <p className='font-light '>{itemPackage.title || ''}</p>
-        <p className='font-light '>x {itemPackage.quantity || '1'}</p>
+        <p className='font-light'>{itemPackage.title || ''}</p>
+        <p className='font-light'>x {itemPackage.quantity || '1'}</p>
       </div>
       <div className='col-span-3 flex items-center gap-[8px] pr-[8px] md:col-span-2 md:justify-end md:gap-[16px]'>
         <p className='text-[#969696]'>{t('text28')}</p>
@@ -829,6 +829,7 @@ const FinnalPopup = ({ typeOpenFinalPopupStore }: { typeOpenFinalPopupStore: any
   }
 
   const isSuccess = typeOpenFinalPopupStore === 'isSuccess'
+
   return (
     <DefaultModal
       isOpen={!!typeOpenFinalPopupStore}
@@ -837,7 +838,7 @@ const FinnalPopup = ({ typeOpenFinalPopupStore }: { typeOpenFinalPopupStore: any
       hiddenCloseBtn
       hiddenHeader
       modalBody={
-        <div className='flex flex-col gap-[16px] p-[16px]'>
+        <div className='flex flex-col gap-[16px] p-[20px]'>
           <div className='flex items-center justify-end'>
             <Button radius='full' isIconOnly onPress={_handleClose} variant='light' className='absolute right-0 top-0 h-[48px] w-[48px]'>
               <Add className='rotate-45 ' size={24} />
