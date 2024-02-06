@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Viaggio",
     "title1": "con Vua Thợ",
-    "text": "Con Vua Thợ, non solo troverai servizi convenienti, ma farai anche parte di una comunità appassionata e creativa. Inizia il tuo viaggio con Vua Thợ oggi per una vita migliore."
+    "text": "\"Niente è difficile - c'è il Re Vua Thợ\", il team dell'App Sovrano Vua Thợ si impegna a fornire soluzioni ottimali attraverso tecnologie avanzate e intelligenza artificiale, facilitando ogni connessione tra gli artigiani di ogni settore e i clienti, rendendola semplice ed efficiente. Con il contributo di un team giovane e talentuoso, sempre pronto ad accettare sfide e innovare incessantemente."
   },
   "Download": {
     "download": "Scarica Ora",
@@ -478,7 +478,8 @@
   },
   "PressHome": {
     "heading": "Articoli per Te",
-    "seeAll": "Vedi Tutti"
+    "seeAll": "Vedi Tutti",
+    "noData": "Segui Vua Thợ per gli ultimi aggiornamenti"
   },
   "Store": {
     "text1": "Abbigliamento Professionale per Artigiani",

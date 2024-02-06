@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Resa",
     "title1": "med Vua Thợ",
-    "text": "Med Vua Thợ hittar du inte bara bekväma tjänster utan blir också en del av en passionerad och kreativ gemenskap. Påbörja din resa med Vua Thợ idag för ett bättre liv."
+    "text": "\"Ingenting är svårt - med Vua Thợ\", det dedikerade teamet av Vua Thợ-appen åtar sig att leverera optimala lösningar genom avancerad teknik och AI, för att underlätta och effektivisera alla kopplingar mellan hantverkare inom alla branscher och kunder. Med det talangfulla unga teamets bidrag, redo att ta sig an utmaningar och ständigt förnya sig."
   },
   "Download": {
     "download": "Ladda ner nu",
@@ -477,7 +477,8 @@
   },
   "PressHome": {
     "heading": "Artiklar för Dig",
-    "seeAll": "Se Alla"
+    "seeAll": "Se Alla",
+    "noData": "Följ Vua Thợ för att få de senaste uppdateringarna."
   },
   "Store": {
     "text1": "Professionell Arbetskläder för Hantverkare",

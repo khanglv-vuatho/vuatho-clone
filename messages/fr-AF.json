@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Voyage",
     "title1": "avec Vua Thợ",
-    "text": "Avec Vua Thợ, vous ne trouverez pas seulement des services pratiques, mais vous ferez également partie d'une communauté passionnée et créative. Commencez votre voyage avec Vua Thợ aujourd'hui pour une vie meilleure."
+    "text": "\"Rien n'est difficile - avec le Vua Thợ\", l'équipe d'experts de l'application Roi des Artisans s'engage à fournir des solutions optimales grâce à une technologie de pointe et à l'IA, facilitant toutes les connexions entre les artisans de tous les secteurs et les clients, de manière simple et efficace. Avec la contribution d'une équipe de jeunes talents toujours prêts à relever les défis et à innover sans cesse."
   },
   "Download": {
     "download": "Télécharger maintenant",
@@ -478,7 +478,8 @@
   },
   "PressHome": {
     "heading": "Articles pour Vous",
-    "seeAll": "Voir Tout"
+    "seeAll": "Voir Tout",
+    "noData": "Suivez Vua Thợ pour les dernières mises à jour, s'il vous plaît."
   },
   "Store": {
     "text1": "Tenues Professionnelles pour Artisans",

@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Paglalakbay",
     "title1": "kasama ang Vua Thợ",
-    "text": "Sa Vua Thợ, hindi ka lamang makakahanap ng mga kaginhawahan na serbisyo kundi makakasama mo rin ang isang mapagkumbabang komunidad na puno ng pagmamahal at kreatibo. Simulan ang iyong paglalakbay kasama ang Vua Thợ ngayon para sa mas magandang buhay."
+    "text": "\"Anong mahirap - may Vua Thợ\" ang koponan ng Vua Thợ apps ay nangangakong magdudulot ng pinakamahusay na solusyon sa pamamagitan ng advanced technology at AI, na tutulong sa bawat koneksyon ng Manggagawa sa bawat larangan at gawing madali at epektibo para sa mga Customer. Sa ambag ng isang grupo ng mga kabataang puno ng talento, laging handang harapin ang hamon at patuloy na mag-inobasyon."
   },
   "Download": {
     "download": "I-download Ngayon",
@@ -480,7 +480,8 @@
 
   "PressHome": {
     "heading": "Mga Artikulo para sa Iyo",
-    "seeAll": "Tingnan Lahat"
+    "seeAll": "Tingnan Lahat",
+    "noData": "I-follow ang Vua Thợ para sa pinakabagong balita."
   },
   "Store": {
     "text1": "Mga Kasuotang Propesyonal para sa mga Manggagawa sa Likha",

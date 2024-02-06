@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Ceļojums",
     "title1": "ar Vua Thợ",
-    "text": "Ar Vua Thợ tu ne tikai atradīsi ērtus pakalpojumus, bet arī kļūsi par aizrautīgas un radošas kopienas dalībnieku. Sāc savu ceļojumu ar Vua Thợ šodien, lai iegūtu labāku dzīvi."
+    "text": "\"Kas ir grūti - ir Vua Thợ\", Vua Thợ Superlietojumu komanda apņemas piedāvāt optimālus risinājumus, izmantojot jaunākās tehnoloģijas un mākslīgo intelektu, lai palīdzētu veidot efektīvas saiknes starp dažādām nozarēm un klientiem. Ar jauniešu talantīgo komandas ieguldījumu, vienmēr gatavi uzņemties izaicinājumus un nepārtraukti inovēt."
   },
   "Download": {
     "download": "Lejupielādēt tagad",
@@ -477,7 +477,8 @@
   },
   "PressHome": {
     "heading": "Raksti Tev",
-    "seeAll": "Skatīt visus"
+    "seeAll": "Skatīt visus",
+    "noData": "Lūdzu, sekot Vua Thợ jaunākajām ziņām."
   },
   "Store": {
     "text1": "Profesionāla apģērbs amatniekiem",

@@ -48,6 +48,7 @@ function HomePage() {
     <>
       <div className={`flex flex-col overflow-hidden  ${hiddenHeaderAndFooter ? 'gap-[40px] md:gap-[100px]' : 'gap-[40px] pt-[70px] md:gap-[100px] 3xl:pt-[80px]'}`}>
         <MainSection />
+        <SectionWithVuaTho />
         <WorkerBenefitSection />
         <CustomerBenefitSection />
         <AISection />
@@ -56,7 +57,6 @@ function HomePage() {
         <SectionToTheMoon />
         <SectionDownload />
         <PressHome />
-        <SectionWithVuaTho />
       </div>
     </>
   )
@@ -115,7 +115,7 @@ const AISection = () => {
                 <div
                   className={`absolute inset-0 z-[2] rounded-[20px] border-b-[2px] border-[#fbac47] bg-gradient-to-br from-[#ffffff] via-[#ffffff] to-[#e7e7e7] shadow-[0px_8px_16px_0px_#A2BAF366]`}
                 ></div>
-                <h5 className=' z-[4] text-[1.8rem] font-bold'>{item.title.replace(/(^|\s)\S/g, (match) => match.toUpperCase())}</h5>
+                <h5 className='z-[4] text-[1.8rem] font-bold'>{item.title.replace(/(^|\s)\S/g, (match) => match.toUpperCase())}</h5>
                 <p className='z-[4] text-[1.8rem]'>{item.desc}</p>
               </motion.div>
             ))}
@@ -602,14 +602,14 @@ const WorkerBenefitSection = () => {
               }}
               navigation
               modules={[Autoplay, EffectFade, FreeMode, Navigation, Thumbs]}
-              className='benefitSwipper z-[5] h-full w-full md:max-h-[420px] 13inch:max-h-[480px]'
+              className={`benefitSwipper z-[5] h-full w-full md:max-h-[420px] md:min-h-[400px] 13inch:max-h-[480px]`}
               onActiveIndexChange={(swiper: any) => {
                 setCurrentIndex(swiper.realIndex)
               }}
             >
               {listDataBenefit?.map((item: any, index: number) => {
                 return (
-                  <SwiperSlide key={item.uuid} className={currentIndex === index ? 'visible' : 'invisible'} onClick={_handleClickSwiper}>
+                  <SwiperSlide key={item.uuid} className={`${currentIndex === index ? 'visible' : 'invisible'}`} onClick={_handleClickSwiper}>
                     <div className='relative z-[12] flex items-center justify-between gap-[40px]'>
                       <h3 className='text-[2rem] font-semibold '>{item.title}</h3>
                       <div className='likeButton z-[10] hidden md:block'>
@@ -626,11 +626,12 @@ const WorkerBenefitSection = () => {
                       <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
                         <ImageFallback
                           priority
-                          src={`/benefits/${index + 1}.webp`}
+                          // src={`/benefits/${index + 1}.webp`}
+                          src={item.img}
                           alt={item.title}
-                          height={400}
-                          width={600}
-                          className='h-auto max-h-[400px] w-auto object-cover md:max-h-[280px] 13inch:max-h-none'
+                          height={600}
+                          width={900}
+                          className='h-auto max-h-[400px] w-auto md:max-h-[280px] 13inch:max-h-none'
                         />
                       </div>
                     </div>
@@ -653,7 +654,8 @@ const WorkerBenefitSection = () => {
                     className={`${currentIndex === index ? ' border-[#FCB713]' : 'scale-90 border-transparent opacity-70'}  relative overflow-hidden rounded-[10px] border-[2px] transition`}
                   >
                     <ImageFallback
-                      src={`/benefits/${index + 1}.webp`}
+                      // src={`/benefits/${index + 1}.webp`}
+                      src={item.img}
                       alt={item.title}
                       height={200}
                       width={200}
@@ -716,25 +718,26 @@ const PressHome = () => {
         </Link>
       </div>
       <div className='blog-home flex flex-nowrap gap-[10px] overflow-x-auto overflow-y-hidden p-[4px] lg:grid lg:grid-cols-4 lg:gap-[20px]'>
-        {onFetching
-          ? Array(4)
-              .fill(null)
-              .map((_, index: number) => (
-                <div className='w-full' key={`skeleton-blog-${index}`}>
-                  <SkeletonBlog />
-                </div>
-              ))
-          : listBlog.length > 0
-            ? listBlog.map((item: any, index: number) => {
-                return <Article key={index} index={index} item={item} style='w-[80%] md:w-[40%] lg:w-full cursor-pointer' />
-              })
-            : Array(4)
-                .fill(null)
-                .map((_, index) => (
-                  <div className='w-full' key={`skeleton-blog1-${index}`}>
-                    <SkeletonBlog />
-                  </div>
-                ))}
+        {onFetching ? (
+          Array(4)
+            .fill(null)
+            .map((_, index: number) => (
+              <div className='w-full' key={`skeleton-blog-${index}`}>
+                <SkeletonBlog />
+              </div>
+            ))
+        ) : !!listBlog?.length ? (
+          listBlog.map((item: any, index: number) => {
+            return <Article key={index} index={index} item={item} style='w-[80%] md:w-[40%] lg:w-full cursor-pointer' />
+          })
+        ) : (
+          <div className='col-span-4 flex flex-col items-center gap-[16px]'>
+            <div className=''>
+              <ImageFallback src={'/press/no-data.png'} alt='no-data' height={200} width={200} className='size-[200px] w-auto' />
+            </div>
+            <p className='text-[2rem] text-[#282828]'>{t('noData')}</p>
+          </div>
+        )}
       </div>
     </div>
   )
@@ -753,9 +756,7 @@ const LikeControl = ({ item }: { item: any }) => {
         uuid: item.uuid
       })
       setCheckLike(data)
-    } catch (error) {
-      console.log(error)
-    }
+    } catch (error) {}
   }
 
   const _ServerSendingDislike = async () => {
@@ -766,9 +767,7 @@ const LikeControl = ({ item }: { item: any }) => {
       })
       setCheckDislike(data)
       ToastComponent({ message: t('messageToast'), type: 'success' })
-    } catch (error) {
-      console.log(error)
-    }
+    } catch (error) {}
   }
 
   const _HandleAction = (type: string) => {

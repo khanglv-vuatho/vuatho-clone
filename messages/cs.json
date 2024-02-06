@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Cesta",
     "title1": "s Vua Thợ",
-    "text": "S Vua Thợ nejenže najdete pohodlné služby, ale také se stanete součástí vášnivé a kreativní komunity. Začněte svou cestu s Vua Thợ ještě dnes pro lepší život."
+    "text": "\"Cokoli složitého - je tam Král Řemesel\", tým Superaplikace Král Řemesel slibuje poskytovat optimální řešení prostřednictvím pokročilých technologií a umělé inteligence, usnadňující každé propojení mezi Řemeslníky ve všech odvětvích a zákazníky, aby bylo snadné a efektivní. S přispěním mladé a talentované skupiny, vždy připravené přijmout výzvu a neustále inovovat."
   },
   "Download": {
     "download": "Stáhnout nyní",
@@ -477,7 +477,8 @@
   },
   "PressHome": {
     "heading": "Články pro vás",
-    "seeAll": "Zobrazit vše"
+    "seeAll": "Zobrazit vše",
+    "noData": "Sledujte Vua Thợ pro nejnovější aktualizace zpráv."
   },
   "Store": {
     "text1": "Profesionální oblečení pro řemeslníky",

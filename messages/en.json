@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Journey",
     "title1": "with Vua Thợ",
-    "text": "With Vua Thợ, you'll not only find convenient services but also be part of a passionate and creative community. Start your journey with Vua Thợ today for a better life."
+    "text": "\"What is difficult - has the Vua Thợ\", the Vua Thợ application team is committed to providing optimal solutions through advanced technology and AI, facilitating seamless and efficient connections between craftsmen in all industries and customers. With the contribution of a talented young team, always ready to take on challenges and constantly innovate."
   },
   "Download": {
     "download": "Download Now",
@@ -477,7 +477,8 @@
   },
   "PressHome": {
     "heading": "Articles for You",
-    "seeAll": "See All"
+    "seeAll": "See All",
+    "noData": "Please follow Vua Thợ for the latest updates."
   },
   "Store": {
     "text1": "Professional Attire for Service provider",

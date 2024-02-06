@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Potovanje",
     "title1": "z Vua Thợ",
-    "text": "Z Vua Thợ ne boste le našli udobnih storitev, ampak boste tudi del strastne in ustvarjalne skupnosti. Začnite svoje potovanje z Vua Thợ še danes za boljše življenje."
+    "text": "\"Karkoli težkega - ima Vua Thợ\", ekipa Super aplikacij Vua Thợ se zavezuje, da bo zagotovila optimalne rešitve s pomočjo napredne tehnologije in umetne inteligence, ki olajšujejo povezovanje med mojstri v vseh panogah ter strankami, da postane bolj preprosto in učinkovito. S prispevkom mlade in nadarjene ekipe, ki je vedno pripravljena sprejeti izzive in nenehno inovirati."
   },
   "Download": {
     "download": "Prenesi zdaj",
@@ -478,7 +478,8 @@
   },
   "PressHome": {
     "heading": "Članki za vas",
-    "seeAll": "Oglejte si vse"
+    "seeAll": "Oglejte si vse",
+    "noData": "Sledite Vua Thợ za najnovejšimi novicami."
   },
   "Store": {
     "text1": "Poklicna oblačila za obrtnike",

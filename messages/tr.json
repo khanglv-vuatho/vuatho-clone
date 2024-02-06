@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Yolculuk",
     "title1": "ile Vua Thợ",
-    "text": "Vua Thợ ile sadece pratik hizmetler bulmakla kalmayacak, aynı zamanda tutkulu ve yaratıcı bir topluluğun bir parçası olacaksınız. Daha iyi bir yaşam için bugün Vua Thợ ile yolculuğunuza başlayın."
+    "text": "\"Zor olan şey neyse - Vua Thợ'da vardır\", Vua Thợ Süper Uygulama ekibi, ileri teknoloji ve yapay zeka ile en iyi çözümleri sunma taahhüdünde bulunur, her meslek dalındaki Ustalar ile Müşteriler arasındaki her bağlantıyı kolay ve etkili hale getirmeye yardımcı olur. Genç ve yetenek dolu ekibin katkısıyla, her zaman zorlukları kabul etmeye ve sürekli olarak yenilik yapmaya hazırdır."
   },
   "Download": {
     "download": "Şimdi İndir",
@@ -477,7 +477,8 @@
   },
   "PressHome": {
     "heading": "Size Özel Makaleler",
-    "seeAll": "Tümünü Gör"
+    "seeAll": "Tümünü Gör",
+    "noData": "Yeni güncellemeleri takip etmek için Vua Thợ'yu izleyin lütfen"
   },
 
   "Store": {

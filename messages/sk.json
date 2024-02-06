@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Cesta",
     "title1": "s Vua Thợ",
-    "text": "S Vua Thợ nebudete len nájsť pohodlné služby, ale budete súčasťou vášnivej a kreatívnej komunity. Začnite svoju cestu s Vua Thợ ešte dnes pre lepší život."
+    "text": "\"Čo je ťažké - má Vua Thợ\", tímto záväzkom Siene Aplikácie Vua Thợ sľubujú prinášať optimálne riešenia prostredníctvom pokročilej technológie a umelej inteligencie, pomáhajúce v každom spojení medzi Thợ v každom odvetví a Zákazníkmi, aby sa stali jednoduchšími, pohodlnejšími a efektívnejšími. S príspevkom talentovaného tímu mladých jednotlivcov, ktorí sú vždy pripravení prijať výzvy a neustále inovovať."
   },
   "Download": {
     "download": "Stiahnuť teraz",
@@ -477,7 +477,8 @@
   },
   "PressHome": {
     "heading": "Články pre vás",
-    "seeAll": "Zobraziť všetko"
+    "seeAll": "Zobraziť všetko",
+    "noData": "Sledujte Vua Thợ pre najnovšie aktualizácie noviniek."
   },
   "Store": {
     "text1": "Profesionálny odev pre remeselníkov",

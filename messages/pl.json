@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Podróż",
     "title1": "z Vua Thợ",
-    "text": "Z Vua Thợ nie tylko znajdziesz wygodne usługi, ale także staniesz się częścią pasjonującej i kreatywnej społeczności. Rozpocznij swoją podróż z Vua Thợ już dziś, aby poprawić swoje życie."
+    "text": "\"Coś trudnego - jest Król Rzemieślników\", zespół Aplikacji Mistrza Rzemiosła zobowiązuje się dostarczyć optymalne rozwiązania poprzez zaawansowane technologie i sztuczną inteligencję, pomagając w łatwym i efektywnym nawiązywaniu połączeń między Rzemieślnikami we wszystkich branżach a Klientami. Dzięki zaangażowaniu utalentowanego zespołu młodych ludzi, zawsze gotowego na przyjęcie wyzwań i nieustanną innowację."
   },
   "Download": {
     "download": "Pobierz Teraz",
@@ -477,7 +477,8 @@
   },
   "PressHome": {
     "heading": "Artykuły dla Ciebie",
-    "seeAll": "Zobacz wszystko"
+    "seeAll": "Zobacz wszystko",
+    "noData": "Obserwuj Vua Thợ, aby być na bieżąco z najnowszymi wiadomościami."
   },
   "Store": {
     "text1": "Profesjonalny Strój dla Rzemieślników",

@@ -9,7 +9,7 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
@@ -18,25 +18,25 @@ const config: Config = {
         bounce: {
           '0%, 100%': {
             transform: 'translateY(-5%)',
-            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
           },
           '50%': {
             transform: 'translateY(0)',
-            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
-          },
-        },
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+          }
+        }
       },
       animation: {
-        'bounce-slow': 'bounce 2s infinite',
-      },
+        'bounce-slow': 'bounce 2s infinite'
+      }
     },
     screens: {
       xs: '475px',
       '13inch': '1300px',
       '2xxl': '1700px',
       '3xl': '1940px',
-      ...defaultTheme.screens,
-    },
+      ...defaultTheme.screens
+    }
   },
   darkMode: 'class',
   plugins: [
@@ -54,9 +54,8 @@ const config: Config = {
             primaryBlue: '#f5b500',
             primaryText: '#1F2326',
             baseBlack: '#282828',
-            primaryBlue1: '#f5b500',
-            primaryYellow1: '#FCB713',
-          },
+            primaryYellow1: '#FCB713'
+          }
         },
         dark: {
           colors: {
@@ -70,12 +69,11 @@ const config: Config = {
             primaryBlue: '#27377d',
             primaryText: '#1F2326',
             baseBlack: '#282828',
-            primaryBlue1: '#405AB7',
-            primaryYellow1: '#FCB713',
-          },
-        },
-      },
-    }),
-  ],
+            primaryYellow1: '#FCB713'
+          }
+        }
+      }
+    })
+  ]
 }
 export default config

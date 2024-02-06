@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Đồng hành",
     "title1": "cùng Vua Thợ",
-    "text": "Với Vua Thợ, bạn không chỉ tìm thấy các dịch vụ tiện ích mà còn được đồng hành cùng một cộng đồng đam mê và sáng tạo. Hãy bắt đầu cuộc hành trình với Vua Thợ ngay hôm nay vì cuộc sống tốt đẹp hơn."
+    "text": "\"Việc gì khó - có Vua Thợ\", đội ngũ Siêu ứng dụng Vua Thợ cam kết đem đến giải pháp tối ưu qua công nghệ tiên tiến và AI, giúp mọi kết nối giữa Thợ trong mọi ngành nghề và Khách hàng trở nên, dễ dàng và hiệu quả. Với sự đóng góp đội ngũ trẻ đầy tài năng, luôn sẵn lòng đón nhận thách thức và đổi mới không ngừng."
   },
   "Download": {
     "download": "Tải ngay",
@@ -477,7 +477,8 @@
   },
   "PressHome": {
     "heading": "Bài viết dành cho bạn",
-    "seeAll": "Xem tất cả"
+    "seeAll": "Xem tất cả",
+    "noData": "Hãy theo dõi Vua Thợ để cập nhật tin tức mới nhất nhé"
   },
   "Store": {
     "text1": "Trang phục chuyên nghiệp cho Thợ",

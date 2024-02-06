@@ -9,6 +9,7 @@ import { locales } from '@/constants'
 import { Providers } from './providers'
 
 import './global.css'
+import ScrollToTop from '@/components/ScrollToTop'
 
 export const metadata: Metadata = {
   title: {
@@ -65,6 +66,7 @@ export default async function RootLayout({ children, params }: any) {
         <ToastContainer />
         <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
           <Providers>{children}</Providers>
+          <ScrollToTop />
         </NextIntlClientProvider>
       </body>
     </html>

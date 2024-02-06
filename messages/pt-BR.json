@@ -18,7 +18,7 @@
   "WithVuaTho": {
     "title": "Jornada",
     "title1": "com a Vua Thợ",
-    "text": "Com a Vua Thợ, você não só encontrará serviços convenientes, mas também fará parte de uma comunidade apaixonada e criativa. Comece sua jornada com a Vua Thợ hoje para uma vida melhor."
+    "text": "\"O que é difícil - tem Rei Vua Thợ\", a equipe de Super Aplicativos Rei Vua Thợ compromete-se a fornecer soluções otimizadas por meio de tecnologia avançada e IA, facilitando todas as conexões entre os Trabalhadores em todas as profissões e os Clientes, tornando-se fácil e eficiente. Com a contribuição de uma equipe jovem e talentosa, sempre pronta para aceitar desafios e inovar incessantemente."
   },
   "Download": {
     "download": "Baixar Agora",
@@ -477,7 +477,8 @@
   },
   "PressHome": {
     "heading": "Artigos para Você",
-    "seeAll": "Ver Todos"
+    "seeAll": "Ver Todos",
+    "noData": "Siga Vua Thợ para as últimas atualizações de notícias."
   },
 
   "Store": {
