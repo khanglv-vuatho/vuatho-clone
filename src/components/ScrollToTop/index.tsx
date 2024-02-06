@@ -26,9 +26,10 @@ function ScrollToTop() {
 
   return (
     <Button
+      aria-label='scroll-to-top'
       onPress={_scrollToTop}
       isIconOnly
-      className={`fixed bottom-10 right-10 flex min-h-[44px] min-w-[44px] translate-y-10 cursor-pointer items-center justify-center rounded-full bg-[#282828] text-white transition  ${
+      className={`fixed bottom-10 right-10 z-50 flex min-h-[44px] min-w-[44px] translate-y-10 cursor-pointer items-center justify-center rounded-full bg-[#282828] text-white transition  ${
         showTopBtn ? 'translate-y-0' : 'translate-y-[70px]'
       }`}
     >
