@@ -686,7 +686,7 @@ const PressHome = () => {
 
   return (
     <div className='ct-container-70 z-10 mb-[40px] flex flex-col gap-[20px] md:pb-0'>
-      <div className='flex items-center justify-between'>
+      <div className='flex flex-col items-center justify-between xs:flex-row'>
         <h2 className='text-[2.4rem] font-bold uppercase text-primary-blue lg:text-[3.6rem]'>{t('heading')}</h2>
         <Link href={`/${locale}/press`} className='group inline-flex items-center text-[1.6rem] font-semibold md:text-[1.8rem]'>
           <p>{t('seeAll')}</p>

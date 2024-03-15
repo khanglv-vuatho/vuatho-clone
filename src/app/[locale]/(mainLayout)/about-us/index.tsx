@@ -48,7 +48,7 @@ function AboutUsPage() {
                 ?.map((item, index) => <Letter durationChar={DURATION_CHAR} duration={0.2} key={index} index={index} character={item} />)}
             </div>
             <div className='flex items-center justify-end gap-[12px] whitespace-nowrap tracking-[2px]'>
-              <div className='font-bold uppercase text-primary-yellow'>
+              <div className='uppercase text-primary-yellow'>
                 {t('text8')
                   ?.split('')
                   ?.map((item, index) => (
@@ -101,10 +101,6 @@ function AboutUsPage() {
         </div>
       </div>
       <ImageScrollZoom thumb='/to-the-moon/to-the-moon-3-1.jpeg' />
-      {/* <StairGird cols={3} />
-      <div className='translate-y-[-20px]'>
-        <StairGird cols={3} />
-      </div> */}
       <div className='w-full overflow-hidden  md:pb-[100px] '>
         <div className='ct-container-70 flex flex-col md:mt-[40px] lg:flex-row'>
           <div className='flex flex-col justify-center gap-[4px] md:w-[80%] md:py-[40px]'>
@@ -116,7 +112,7 @@ function AboutUsPage() {
               {t('heading')}
             </p>
             <div className='w-full'>
-              <div className='text-[1.8rem] font-bold'>
+              <div className='text-[1.8rem] font-light'>
                 {t('text')
                   .split('')
                   ?.map((char: any, index: number) => <Letter key={index} character={char} index={index} />)}
@@ -210,7 +206,7 @@ function AboutUsPage() {
               priority
             />
 
-            <div className='text-[1.8rem] font-bold'>
+            <div className='text-[1.8rem] font-light'>
               {t('text2')
                 .split('')
                 ?.map((char: any, index: number) => <Letter key={index} character={char} index={index} />)}
