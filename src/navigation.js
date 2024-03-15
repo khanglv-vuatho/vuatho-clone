@@ -1,4 +1,4 @@
-import { createLocalizedPathnamesNavigation, Pathnames } from 'next-intl/navigation'
+import { createLocalizedPathnamesNavigation } from 'next-intl/navigation'
 import { locales } from './constants'
 
 export const pathnames = {

@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { Lexend } from 'next/font/google'
 import { redirect } from 'next/navigation'
-import Script from 'next/script'
 import { ToastContainer } from 'react-toastify'
+import Script from 'next/script'
 
 import { locales } from '@/constants'
 import { Providers } from './providers'
@@ -51,9 +51,9 @@ export default async function RootLayout({ children, params }: any) {
     console.log(error)
   }
   return (
-    <html lang={locale} className={lexend.className + ' '}>
+    <html lang={locale} className={lexend.className}>
       <body>
-        {/* <Script src='https://www.googletagmanager.com/gtag/js?id=G-Z8JD7Z5934' />
+        <Script src='https://www.googletagmanager.com/gtag/js?id=G-Z8JD7Z5934' />
         <Script id='google-analytics'>
           {`
           window.dataLayer = window.dataLayer || [];
@@ -62,7 +62,7 @@ export default async function RootLayout({ children, params }: any) {
  
           gtag('config', 'G-Z8JD7Z5934');
         `}
-        </Script> */}
+        </Script>
         <ToastContainer />
         <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
           <Providers>{children}</Providers>

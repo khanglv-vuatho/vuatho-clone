@@ -32,8 +32,8 @@ function PressDetail() {
   const [detailPress, setDetailPress] = useState<any>({})
 
   const listBreadcrumbs: IBreadcrumbWithUrl[] = useMemo(() => {
-    return [{ title: t('home'), url: '/' }, { title: t('acrticle'), url: `/${locale}/press` }, { title: detailPress?.title }]
-  }, [])
+    return [{ title: t('home'), url: '/' }, { title: detailPress?.category?.name, url: `/${locale}/press/${detailPress?.category?.slug}` }, { title: t('acrticle') }]
+  }, [detailPress])
 
   const ServerFetching = async () => {
     try {

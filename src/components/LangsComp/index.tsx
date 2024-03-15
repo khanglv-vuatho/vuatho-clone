@@ -13,6 +13,7 @@ import { Add, Global, SearchNormal1 } from 'iconsax-react'
 import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
 import instance from '@/services/axiosConfig'
 import { normalizeKeyword } from '@/utils'
+import { useSmallScreen } from '@/hook'
 
 function LangsComp() {
   const locale = useLocale()
@@ -30,7 +31,7 @@ function LangsComp() {
 
   const [isOpen, setIsOpen] = useState(false)
 
-  const [isSmallScreen, setIsSmallScreen] = useState(false)
+  const isSmallScreen = useSmallScreen()
 
   const currency = useSelector((state: any) => state.currency)
   const selectCurrency = useSelector((state: any) => state.currencyCurrent)
@@ -111,20 +112,6 @@ function LangsComp() {
     },
     [isSmallScreen, pathName]
   )
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window?.innerWidth < 1024)
-    }
-
-    handleResize()
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
 
   return (
     <>

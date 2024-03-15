@@ -3,7 +3,7 @@ import PressDetail from '.'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
-    const { data } = await axios.get('https://sandbox-api-website.vuatho.com/blog/detail', {
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/blog/detail`, {
       params: {
         slug: params.id,
         lang: params.locale

@@ -44,7 +44,8 @@
     "sending": "Invio notifiche a",
     "BCT": "Ministero dell'Industria e del Commercio",
     "text": "Azienda di servizi Vua Thợ",
-    "text1": "Codice fiscale: "
+    "text1": "Codice fiscale: ",
+    "text2": "0318063280 issued for the first time on September 25, 2023 by the Department of Planning and Investment of Ho Chi Minh City"
   },
   "NotFound": {
     "text": "Pagina non trovata!",
@@ -343,9 +344,14 @@
     "heading2": "Tecnologia ed Ecosistema",
     "heading": "Super App",
     "text": "Da Vua Thợ, siamo orgogliosi di essere un'azienda leader nel settore tecnologico e pionieri nell'offrire un modello di ecosistema Super App nel Sud-est asiatico. Provenendo dalla nostra passione e missione di migliorare la vita di milioni di utenti lungo il percorso di sviluppo, offriamo un'esperienza di alta qualità e convenienza.",
-    "goal": "Il nostro obiettivo è connettere",
-    "numberGoal": "100.000 +",
-    "textGold": "Artigiani e utenti in tutto il paese entro il 2024"
+    "text1": "SCATENA IL TUO POTENZIALE",
+    "text2": "L'obiettivo di 100.000 connessioni è solo l'inizio del viaggio di sviluppo sostenibile di Vua Thợ. Con una visione strategica e una direzione chiara, Vua Thợ amplierà gradualmente la sua rete, connettendo i cuori che amano la professione, soddisfacendo le esigenze del mercato e creando un ecosistema dinamico in cui ogni individuo ha l'opportunità di crescere e avere successo.",
+    "text3": "Unisciti a noi ora",
+    "text4": "POTENZIALE",
+    "text5": "GIOVANE",
+    "text6": "CONTINUO",
+    "text7": "TALENTO",
+    "text8": "SVILUPPO"
   },
   "ContactUs": {
     "heading": "Contattaci",
@@ -355,7 +361,14 @@
     "timeDay": "da lunedì a venerdì",
     "text": "Nessun supporto nei giorni sabato, domenica e nei giorni festivi",
     "numberPhone": "38 786 688",
-    "gmail": "admin@vuatho.com"
+    "text4": "32/28, 35 Street, An Khanh Ward, Thu Duc City, Ho Chi Minh City",
+    "gmail": "admin@vuatho.com",
+    "text1": "Visualizza su Google Maps",
+    "text2": "Orari di apertura",
+    "text3": "Ufficio del Vua Thợ",
+    "text6": "Indirizzo",
+    "text5": "Numero di telefono",
+    "desc": "Con il desiderio di offrire ai nostri clienti la migliore esperienza possibile, siamo sempre pronti ad accogliere ogni suggerimento e commento da parte vostra. Non permettete che i vostri dubbi ostacolino la vostra esperienza. Contattaci per condividere idee e contribuire a migliorare la qualità dei nostri servizi."
   },
   "BecomeWorker": {
     "heading": "Guida per Registrarsi come Fornitore di Servizi",
@@ -430,7 +443,14 @@
     "text73": "Dopo aver selezionato il paese e il tipo di documento personale correlato, il sistema richiede agli utenti di scattare foto ai due lati del documento scelto (si consiglia l'uso della Carta d'Identità Nazionale - CCCD in Vietnam). Successivamente, verrà richiesto agli utenti di scattare un selfie seguendo le istruzioni di SumSub.",
     "text74": "Dopo aver completato il processo di identificazione, il sistema fornirà un risultato approssimativo entro 5 minuti, il risultato del sistema includerà:",
     "text75": "Verifica riuscita: Gli utenti possono utilizzare tutti i servizi e le funzionalità dell'app.",
-    "text76": "Verifica fallita: Gli utenti devono effettuare nuovamente la verifica per poter utilizzare tutti i servizi e le funzionalità dell'app."
+    "text76": "Verifica fallita: Gli utenti devono effettuare nuovamente la verifica per poter utilizzare tutti i servizi e le funzionalità dell'app.",
+    "text77": "Guida per il controllo delle attività",
+    "text78": "Video guida per il controllo delle attività",
+    "text79": "Video guida per la registrazione",
+    "text80": "Passo 6: Guida per il controllo delle attività"
+  },
+  "PressComunication": {
+    "heading": "COMUNICAZIONE STAMPA SU VUA THỢ"
   },
   "FindWorker": {
     "heading": "Come Trovare Lavoratori su Vua Thợ",
@@ -511,7 +531,24 @@
     "text27": "Quantità",
     "text28": "Seleziona la taglia",
     "text29": "Carrello",
-    "text30": "Il prodotto è esaurito, si prega di scegliere un altro prodotto"
+    "text30": "Il prodotto è esaurito, si prega di scegliere un altro prodotto",
+    "text31": "Pagamento alla consegna",
+    "text32": "L'artigiano può scegliere il metodo di pagamento al ricevimento dell'uniforme dal corriere partner",
+    "text33": "Dopo aver ordinato con successo l'uniforme, l'artigiano partner riceverà l'uniforme entro 7-10 giorni lavorativi, a seconda del servizio di corriere",
+    "text34": "Pagamento tramite bonifico bancario",
+    "text35": "Informazioni sul bonifico",
+    "text36": "Nome del Titolare",
+    "text37": "Numero di conto",
+    "text38": "Banca: Banca commerciale per azioni Asia - ACB",
+    "text39": "Causale del bonifico: Numero di telefono registrato sull'app - Pagamento uniforme Vua Tho",
+    "text40": "Esempio: 0122334455 Pagamento uniforme Vua Tho",
+    "text41": "Pagamento diretto presso l'ufficio aziendale",
+    "text42": "Indirizzo: n. 57 Song Hành, Phường An Phú, TP. Thủ Đức, TP. Hồ Chí Minh",
+    "text43": "Orario di apertura: 8:30 - 18:00 tutti i giorni della settimana (tranne festivi)",
+    "text44": "Bonifico bancario",
+    "text45": "Pagamento diretto presso l'ufficio",
+    "text46": "Scegli metodo di pagamento",
+    "text47": "Scegli"
   },
   "Map": {
     "text1": "Utenti dell'App",

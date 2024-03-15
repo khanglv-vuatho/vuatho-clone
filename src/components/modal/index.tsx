@@ -34,7 +34,7 @@ export const DefaultModal: React.FC<DefaultModal> = ({ isOpen, onOpenChange, mod
           base: 'rounded-[16px] max-w-[900px]'
         }}
       >
-        <ModalContent className='mx-auto max-w-[90%] md:max-w-[900px]'>
+        <ModalContent className={`mx-auto ${size == 'full' ? '' : 'max-w-[90%]'}  md:max-w-[900px]`}>
           {(onClose) => (
             <>
               {!hiddenHeader && (

@@ -44,7 +44,8 @@
     "sending": "Sending notifications to",
     "BCT": "Ministry of Industry and Trade",
     "text": "Vua Thợ Technology Limited Liability Company",
-    "text1": "Business code: "
+    "text1": "Business code: ",
+    "text2": "0318063280 issued for the first time on September 25, 2023 by the Department of Planning and Investment of Ho Chi Minh City"
   },
   "NotFound": {
     "text": "Page not found!",
@@ -342,9 +343,14 @@
     "heading2": "Technology & Ecosystem",
     "heading": "Super App",
     "text": "At Vua Thợ, we take pride in being a leading technology company and a pioneer in providing a super app ecosystem model in Southeast Asia. Stemming from our passion and mission to improve the lives of millions of users along the path of development, we deliver a top-notch and convenient experience.",
-    "goal": "Our goal is to connect",
-    "numberGoal": "100,000 +",
-    "textGold": "Service providers and customers nationwide by 2024"
+    "text1": "EXPLODING POTENTIAL",
+    "text2": "The goal of 100,000 connections is just the beginning of Vua Thợ's sustainable development journey. With a clear strategic vision and direction, Vua Thợ will gradually expand its network, connect hearts that love the profession, meet market needs and create a dynamic ecosystem where everyone has the opportunity to develop and succeed.",
+    "text3": "Join now",
+    "text4": "POTENTIAL",
+    "text5": "YOUNG",
+    "text6": "CONTINUOUS",
+    "text7": "TALENT",
+    "text8": "DEVELOPMENT"
   },
   "ContactUs": {
     "heading": "Contact Us",
@@ -354,7 +360,14 @@
     "timeDay": "Monday to Friday",
     "text": "No support on Saturdays, Sundays, and public holidays",
     "numberPhone": "38 786 688",
-    "gmail": "admin@vuatho.com"
+    "text4": "32/28, 35 Street, An Khanh Ward, Thu Duc City, Ho Chi Minh City",
+    "gmail": "admin@vuatho.com",
+    "text1": "View on Google Maps",
+    "text2": "Working hours",
+    "text3": "Vua Thợ Office",
+    "text6": "Address",
+    "text5": "Phone number",
+    "desc": "With the desire to bring the best experience to our customers, we are always ready to receive any feedback from you. Don't let your questions hinder your experience. Please contact us to share your ideas and contribute to improving the quality of our services."
   },
   "BecomeWorker": {
     "heading": "Guide to Register as a Service Provider",
@@ -429,7 +442,14 @@
     "text73": "After selecting the country and type of relevant personal document, the system requests users to take pictures of both sides of the selected document (it is recommended to use the Citizen Identification Card - CCCD in Vietnam). After that, users will take a selfie according to the instructions of the third-party SumSub.",
     "text74": "After completing the identification process, the system will provide an estimated result within 5 minutes. The system's result will include:",
     "text75": "Successful verification: Users can use all services and features of the app.",
-    "text76": "Verification failure: Users must perform the verification again to use all services and features of the app."
+    "text76": "Verification failure: Users must perform the verification again to use all services and features of the app.",
+    "text77": "Business Operation Inspection Guide",
+    "text78": "Business Operation Inspection Video Guide",
+    "text79": "Registration Guide Video",
+    "text80": "Step 6: Business Operation Inspection Guide"
+  },
+  "PressComunication": {
+    "heading": "PRESS COMMUNICATION ABOUT VUA THỢ"
   },
   "FindWorker": {
     "heading": "How to Find Service Providers on Vua Thợ",
@@ -510,7 +530,24 @@
     "text27": "Quantity",
     "text28": "Select size",
     "text29": "Shopping cart",
-    "text30": "The product is out of stock, please choose another product."
+    "text30": "The product is out of stock, please choose another product.",
+    "text31": "Cash on Delivery",
+    "text32": "Worker can choose the payment method upon receiving the uniform from the shipping partner.",
+    "text33": "After successfully placing a uniform order, the Worker partner will receive the uniform within 7-10 working days depending on the shipping unit.",
+    "text34": "Payment by bank transfer",
+    "text35": "Bank transfer information",
+    "text36": "Account name",
+    "text37": "Account number",
+    "text38": "Bank: Asia Commercial Joint Stock Bank - ACB",
+    "text39": "Transfer content: Phone number registered on the application - Payment for Vua Tho uniform",
+    "text40": "Example: 0122334455 Payment for Vua Tho uniform",
+    "text41": "Direct payment at the company office",
+    "text42": "Address: No. 57 Song Hanh, An Phu Ward, Thu Duc City, Ho Chi Minh City",
+    "text43": "Opening hours: 8:30 AM - 6:00 PM all days of the week (except holidays)",
+    "text44": "Bank transfer",
+    "text45": "Direct payment at the office",
+    "text46": "Choose payment method",
+    "text47": "Select"
   },
   "Map": {
     "text1": "App Users",

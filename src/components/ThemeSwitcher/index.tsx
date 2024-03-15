@@ -11,7 +11,7 @@ export function ThemeSwitcher({ props }: { props?: any }) {
 
   const [mounted, setMounted] = useState(false)
 
-  const { Component, slots, isSelected, getBaseProps, getInputProps, getWrapperProps } = useSwitch(props)
+  const { Component, slots, getBaseProps, getInputProps, getWrapperProps } = useSwitch(props)
 
   useEffect(() => {
     setMounted(true)

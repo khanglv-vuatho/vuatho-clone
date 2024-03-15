@@ -1,12 +1,15 @@
 'use client'
 
 import Image from 'next/image'
-import { memo, useCallback, useEffect, useState } from 'react'
+import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { v4 as uuidv4 } from 'uuid'
+import { Autoplay, FreeMode, Navigation, Thumbs, Zoom } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Autocomplete, AutocompleteItem, Badge, Button, Input, Skeleton, useDisclosure } from '@nextui-org/react'
+import { Autocomplete, AutocompleteItem, Badge, Button, Input, Radio, RadioGroup, Skeleton, Textarea, useDisclosure } from '@nextui-org/react'
 import { Add, ArrowLeft, Bag2, Minus, Trash } from 'iconsax-react'
 
 import ImageFallback from '@/components/ImageFallback'
@@ -16,17 +19,25 @@ import { DefaultModal } from '@/components/modal'
 import { phoneSelect } from '@/constants'
 import { IBreadcrumbWithUrl, IItemClothes, IUniform } from '@/interface'
 import instance from '@/services/axiosConfig'
-import { formatMoney } from '@/utils'
+import { convertToLowerCase, formatMoney } from '@/utils'
+
+import { ImageZoom } from '@/components/ImageZoom'
+import { useSmallScreen } from '@/hook'
+
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import 'swiper/css/free-mode'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/thumbs'
+import 'swiper/css/zoom'
+
+import './storeSwiper.scss'
 
 export const Store = memo(() => {
   const td = useTranslations('listBreadcrumbs')
   const t = useTranslations('Store')
-  const dispatch = useDispatch()
   const locale = useLocale()
-
-  const typeOpenFinalPopupStore = useSelector((state: any) => state.typeOpenFinalPopupStore)
-
-  const currencyCurrent = useSelector((state: any) => state.currencyCurrent)
 
   const [onLoading, setOnLoading] = useState<boolean>(true)
   const [onFetching, setOnFetching] = useState<boolean>(false)
@@ -39,10 +50,15 @@ export const Store = memo(() => {
   const [listItem, setListItem] = useState<any[]>([])
   const [cartItems, setCartItems] = useState<any>([])
 
+  const dispatch = useDispatch()
+
+  const typeOpenFinalPopupStore = useSelector((state: any) => state.typeOpenFinalPopupStore)
+
+  const currencyCurrent = useSelector((state: any) => state.currencyCurrent)
+
   useEffect(() => {
     setToken(localStorage.getItem('token') || '')
   }, [])
-
   const listBreadcrumbs: IBreadcrumbWithUrl[] = [{ title: td('home'), url: '/' }, { title: td('store') }]
 
   useEffect(() => {
@@ -61,7 +77,21 @@ export const Store = memo(() => {
         }
       })
       setValid(true)
-      setListItem(data.list)
+      const updatedData = data.list?.map((item: any) => ({
+        ...item,
+        package: item.package.map((packageItem: any) => ({
+          ...packageItem,
+          attributes: packageItem.attributes
+            ? packageItem.attributes.map((attribute: any) => ({
+                ...attribute,
+                selected: attribute.values ? attribute.values[0] : null
+              }))
+            : null
+        }))
+      }))
+
+      setListItem([...updatedData])
+
       setIsOpenModal(false)
       dispatch({ type: 'worker/info', payload: data.info })
     } catch (error) {
@@ -122,7 +152,7 @@ export const Store = memo(() => {
         {!valid && !isOpenModal && !onLoading && (
           <div className='flex min-h-[400px] w-full flex-col items-center justify-center gap-[20px]'>
             <div className='max-w-[150px]'>
-              <ImageFallback src={'/store/only-services-provider.webp'} width={'307'} height={'240'} alt='image' className='object-cover' />
+              <ImageFallback src={'/store/only-services-provider.webp'} width={307} height={240} alt='image' className='object-cover' />
             </div>
             <p className='max-w-[500px] text-center text-[1.8rem] '>{t('text8')}</p>
             <div className='flex items-center gap-[16px]'>
@@ -162,180 +192,169 @@ export const Store = memo(() => {
   )
 })
 
-const CheckValidWorker = memo(
-  ({
-    setOnFetching,
-    onLoading,
-    setOnLoading,
-    setValid,
-    setToken,
-    isOpenModal,
-    setIsOpenModal
-  }: {
-    setOnFetching: any
-    onLoading: boolean
-    setOnLoading: any
-    setValid: any
-    setToken: any
-    isOpenModal: any
-    setIsOpenModal: any
-  }) => {
-    const t = useTranslations('Store')
+type TCheckValidWorker = {
+  setOnFetching: any
+  onLoading: boolean
+  setOnLoading: any
+  setValid: any
+  setToken: any
+  isOpenModal: any
+  setIsOpenModal: any
+}
 
-    const { onOpenChange } = useDisclosure()
+const CheckValidWorker = memo(({ setOnFetching, onLoading, setOnLoading, setValid, setToken, isOpenModal, setIsOpenModal }: TCheckValidWorker) => {
+  const t = useTranslations('Store')
 
-    const [onSending, setOnSending] = useState<boolean>(false)
+  const { onOpenChange } = useDisclosure()
 
-    const [phone, setPhone] = useState('')
-    const [phoneCountry, setPhoneCountry] = useState('+84')
+  const [onSending, setOnSending] = useState<boolean>(false)
 
-    const _handleCheckValid = async () => {
-      try {
-        console.log({
-          phone,
-          phone_code: phoneCountry
-        })
+  const [phone, setPhone] = useState('')
+  const [phoneCountry, setPhoneCountry] = useState('+84')
 
-        const data: any = await instance.post('/uniforms/confirm_worker', {
-          phone,
-          phone_code: phoneCountry
-        })
+  const _handleCheckValid = async () => {
+    try {
+      const data: any = await instance.post('/uniforms/confirm_worker', {
+        phone,
+        phone_code: phoneCountry
+      })
 
-        if (data.status == 200) {
-          localStorage.setItem('token', data.token)
-          setToken(data.token)
-          setValid(true)
-          setOnFetching(false)
-          setIsOpenModal(false)
-        } else {
-          setIsOpenModal(false)
-        }
-      } catch (error: any) {
+      if (data.status == 200) {
+        localStorage.setItem('token', data.token)
+        setToken(data.token)
+        setValid(true)
+        setOnFetching(false)
         setIsOpenModal(false)
-      } finally {
-        setOnSending(false)
+      } else {
         setIsOpenModal(false)
-        setOnLoading(false)
       }
+    } catch (error: any) {
+      setIsOpenModal(false)
+    } finally {
+      setOnSending(false)
+      setIsOpenModal(false)
+      setOnLoading(false)
     }
-
-    useEffect(() => {
-      onSending && _handleCheckValid()
-    }, [onSending])
-
-    const _HandeleCheckValid = () => {
-      setOnSending(true)
-    }
-
-    const _HandleSubmit = (e: any) => {
-      e.preventDefault()
-      _HandeleCheckValid
-    }
-
-    return (
-      <>
-        {onLoading ? (
-          <></>
-        ) : (
-          <div tabIndex={0}>
-            <DefaultModal
-              isOpen={isOpenModal}
-              onOpenChange={onOpenChange}
-              hiddenCloseBtn
-              aria-label='modal logic'
-              title={
-                <>
-                  <Link href={'/'}>
-                    <Button startContent={<ArrowLeft size={24} />} className='h-[44px] gap-[12px] bg-transparent hover:bg-base-gray-2'>
-                      <p className='text-[1.6rem]'>{t('text14')}</p>
-                    </Button>
-                  </Link>
-                </>
-              }
-              size='5xl'
-              modalBody={
-                <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
-                  <div className='flex items-center justify-center'>
-                    <Image src={'/store/heart1.webp'} priority alt='write-mascot' height={240} width={307} className='w-auto object-cover' />
-                  </div>
-                  <div className='flex flex-col justify-center gap-[8px]'>
-                    <div className='flex flex-col gap-[4px]'>
-                      <h3 className='text-[2.4rem] font-semibold '>{t('text6')}</h3>
-                      <p className='font-light  '>{t('text5')}</p>
-                    </div>
-                  </div>
-                  <form onSubmit={_HandleSubmit.bind(this)}>
-                    <div className='flex items-center gap-[16px]'>
-                      <Autocomplete
-                        aria-label='phone'
-                        defaultItems={phoneSelect}
-                        variant='bordered'
-                        className='max-w-[120px] '
-                        value={phoneCountry}
-                        radius='full'
-                        isRequired
-                        isClearable={false}
-                        defaultSelectedKey={phoneCountry}
-                        onSelectionChange={(e: any) => setPhoneCountry(e)}
-                        scrollShadowProps={{
-                          isEnabled: false
-                        }}
-                        popoverProps={{
-                          classNames: {
-                            content: 'text-[1.2rem] whitespace-nowrap'
-                          }
-                        }}
-                        inputProps={{
-                          classNames: {
-                            input: 'text-[1.4rem] text-[#A5A5A5]',
-                            inputWrapper: 'border-[#BABEF4] data-[hover=true]:border-[#BABEF4] group-data-[focus=true]:border-[#BABEF4] border-1 h-[44px] pl-[16px]'
-                          }
-                        }}
-                      >
-                        {(item: any) => (
-                          <AutocompleteItem
-                            key={item.value}
-                            classNames={{
-                              title: 'text-[1.4rem] py-[8px]'
-                            }}
-                          >
-                            {item.label}
-                          </AutocompleteItem>
-                        )}
-                      </Autocomplete>
-                      <Input
-                        value={phone}
-                        onChange={(e: any) => setPhone(e.target.value)}
-                        placeholder={t('text15')}
-                        radius='full'
-                        classNames={{
-                          input: 'text-[1.4rem]',
-                          inputWrapper: 'h-[44px] pl-[16px] bg-white border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1'
-                        }}
-                      />
-                    </div>
-                    <Button
-                      onPress={_HandeleCheckValid}
-                      isDisabled={!phone.length || onSending}
-                      type='submit'
-                      isLoading={onSending}
-                      className='mt-6 flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium '
-                    >
-                      {t('text7')}
-                    </Button>
-                  </form>
-                </div>
-              }
-            />
-          </div>
-        )}
-      </>
-    )
   }
-)
+
+  useEffect(() => {
+    onSending && _handleCheckValid()
+  }, [onSending])
+
+  const _HandeleCheckValid = () => {
+    setOnSending(true)
+  }
+
+  const _HandleSubmit = (e: any) => {
+    e.preventDefault()
+    _HandeleCheckValid
+  }
+
+  return (
+    <>
+      {onLoading ? (
+        <></>
+      ) : (
+        <div tabIndex={0}>
+          <DefaultModal
+            isOpen={isOpenModal}
+            onOpenChange={onOpenChange}
+            hiddenCloseBtn
+            aria-label='modal logic'
+            title={
+              <>
+                <Link href={'/'}>
+                  <Button startContent={<ArrowLeft size={24} />} className='h-[44px] gap-[12px] bg-transparent hover:bg-base-gray-2'>
+                    <p className='text-[1.6rem]'>{t('text14')}</p>
+                  </Button>
+                </Link>
+              </>
+            }
+            size='5xl'
+            modalBody={
+              <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
+                <div className='flex items-center justify-center'>
+                  <Image src={'/store/heart1.webp'} priority alt='write-mascot' height={240} width={307} className='w-auto object-cover' />
+                </div>
+                <div className='flex flex-col justify-center gap-[8px]'>
+                  <div className='flex flex-col gap-[4px]'>
+                    <h3 className='text-[2.4rem] font-semibold '>{t('text6')}</h3>
+                    <p className='font-light  '>{t('text5')}</p>
+                  </div>
+                </div>
+                <form onSubmit={_HandleSubmit.bind(this)}>
+                  <div className='flex items-center gap-[16px]'>
+                    <Autocomplete
+                      aria-label='phone'
+                      defaultItems={phoneSelect}
+                      variant='bordered'
+                      className='max-w-[120px]'
+                      value={phoneCountry}
+                      radius='full'
+                      isRequired
+                      isClearable={false}
+                      defaultSelectedKey={phoneCountry}
+                      onSelectionChange={(e: any) => setPhoneCountry(e)}
+                      scrollShadowProps={{
+                        isEnabled: false
+                      }}
+                      popoverProps={{
+                        classNames: {
+                          content: 'text-[1.2rem] whitespace-nowrap'
+                        }
+                      }}
+                      inputProps={{
+                        classNames: {
+                          input: 'text-[1.4rem] text-[#A5A5A5]',
+                          inputWrapper: 'border-[#BABEF4] data-[hover=true]:border-[#BABEF4] group-data-[focus=true]:border-[#BABEF4] border-1 h-[44px] pl-[16px]'
+                        }
+                      }}
+                    >
+                      {(item: any) => (
+                        <AutocompleteItem
+                          key={item.value}
+                          classNames={{
+                            title: 'text-[1.4rem] py-[8px]'
+                          }}
+                        >
+                          {item.label}
+                        </AutocompleteItem>
+                      )}
+                    </Autocomplete>
+                    <Input
+                      value={phone}
+                      onChange={(e: any) => setPhone(e.target.value)}
+                      placeholder={t('text15')}
+                      radius='full'
+                      classNames={{
+                        input: 'text-[1.4rem]',
+                        inputWrapper: 'h-[44px] pl-[16px] bg-white border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1'
+                      }}
+                    />
+                  </div>
+                  <Button
+                    onPress={_HandeleCheckValid}
+                    isDisabled={!phone.length || onSending}
+                    type='submit'
+                    isLoading={onSending}
+                    className='mt-6 flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium '
+                  >
+                    {t('text7')}
+                  </Button>
+                </form>
+              </div>
+            }
+          />
+        </div>
+      )}
+    </>
+  )
+})
 
 const ItemClothe = memo(({ cartItems, setCartItems, item }: { item: IItemClothes; cartItems: any; setCartItems: any }) => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
+
+  const isSmallScreen = useSmallScreen()
 
   const handleClick = useCallback((item: IItemClothes) => {
     item.thumb && onOpen()
@@ -344,8 +363,15 @@ const ItemClothe = memo(({ cartItems, setCartItems, item }: { item: IItemClothes
   return (
     <>
       <div className='group flex h-full cursor-pointer flex-col overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]' onClick={() => handleClick(item)}>
-        <div className='h-[200px] min-h-[200px] w-full overflow-hidden'>
-          <ImageFallback src={item?.thumb} alt='image' height={300} width={600} priority className='h-ful max-h-[200px] w-full object-cover duration-300 group-hover:scale-[1.1]' />
+        <div className='flex max-h-[280px] min-h-[260px] w-full items-center justify-center'>
+          <ImageFallback
+            src={item?.thumb}
+            alt='image'
+            height={500}
+            width={500}
+            priority
+            className='max-h-[260px] w-full object-contain duration-300 group-hover:scale-[1.1] group-hover:overflow-hidden'
+          />
         </div>
         <div className='flex h-full flex-col justify-between gap-[8px] bg-white p-[16px]'>
           <p className='line-clamp-2 min-h-[54px] text-[1.8rem] font-semibold '>{item.title}</p>
@@ -358,8 +384,9 @@ const ItemClothe = memo(({ cartItems, setCartItems, item }: { item: IItemClothes
       <DefaultModal
         isOpen={isOpen}
         onOpenChange={onOpenChange}
+        size={isSmallScreen ? 'full' : '5xl'}
         styleHeader='pt-[12px] pl-[24px]'
-        title={<h3 className='max-w-[90%] text-[1.6rem] font-semibold leading-normal  md:text-[2.4rem]'>{item?.title}</h3>}
+        title={<h3 className='max-w-[90%] text-[1.6rem] font-semibold leading-normal md:text-[2.4rem]'>{item?.title}</h3>}
         modalBody={<RenderBodyItemDetail data={item} cartItems={cartItems} setCartItems={setCartItems} onCloseDetail={onClose} />}
       />
     </>
@@ -370,81 +397,55 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems, onCloseDetai
   const t = useTranslations('Store')
 
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
-
+  const [noted, setNoted] = useState('')
   const [quantity, setQuantity] = useState(1)
 
-  const [currentImage, setCurrentImage] = useState(data?.thumb || '')
-
   const [item, setItem] = useState({
-    ...data,
-    package: data.package.map((e: any) => ({
-      ...e,
-      sizes: [
-        { name: 'S', isActive: true },
-        { name: 'M', isActive: false },
-        { name: 'L', isActive: false },
-        { name: 'XL', isActive: false },
-        { name: '2XL', isActive: false },
-        { name: '3XL', isActive: false }
-      ]
-    }))
+    ...data
   })
+
+  const dispatch = useDispatch()
 
   const _handleBookNow = () => {
     onOpen()
-    const cloneItem = [{ ...item, quantity }]
+    const cloneItem = [{ ...item, quantity, noted }]
+    dispatch({ type: 'cards_store', payload: cloneItem?.[0] })
+
     setCartItems(cloneItem)
   }
 
-  const HandleChangeSize = useCallback(
-    (uuid: string, sizeCheck: string) => {
-      const newData = item.package.map((item: any) => {
-        if (item.uuid === uuid) {
-          const sizeActive = item.sizes.map((size: any) => {
-            if (size.name === sizeCheck) {
-              return { ...size, isActive: true }
-            } else {
-              return { ...size, isActive: false }
-            }
-          })
-
-          return { ...item, sizes: sizeActive }
-        } else {
-          return item
-        }
-      })
-      setItem({ ...item, package: newData })
-    },
-    [item]
-  )
-
-  const handleChangeCurrentImage = (thumb: string) => {
-    console.log(thumb)
-    setCurrentImage(thumb)
-  }
+  const images = item.package.flatMap((item: any) => item.images)
 
   return (
-    <div className='flex flex-col gap-[24px] p-[16px] pt-0 md:p-[24px]'>
-      <div className='h-full max-h-[320px] w-full overflow-hidden rounded-[8px]'>
-        <ImageFallback src={currentImage} alt='image' width={800} height={600} className='max-h-[320px] w-full object-cover' />
+    <div className='flex h-screen flex-col gap-[24px] overflow-y-auto p-[16px] pt-0 md:h-fit md:p-[24px]'>
+      <div className='w-full rounded-[8px]'>
+        <SwiperCloth data={[...images]} />
       </div>
       <div className='flex flex-col gap-[16px]'>
         <p className='text-[2.4rem] font-semibold text-[#405AB7]'>
           {formatMoney(item?.price * quantity)}
           {item?.currency}
         </p>
-        <div className='flex max-h-[200px] flex-col gap-[16px] overflow-y-auto'>
-          {!!item?.package?.length &&
-            item?.package.map((itemPackage: any) => (
-              <PackageItem
-                key={itemPackage.uuid}
-                itemPackage={itemPackage}
-                HandleChangeSize={(sizeCheck: string) => HandleChangeSize(itemPackage.uuid, sizeCheck)}
-                handleChangeCurrentImage={(thumb: string) => handleChangeCurrentImage(thumb)}
-              />
-            ))}
+        <div className='flex flex-col gap-[16px] divide-y *:pt-[16px] md:max-h-[320px] md:overflow-y-auto'>
+          {!!item?.package?.length && item?.package.map((itemPackage: any) => <PackageItem key={itemPackage.uuid} bigItem={{ ...item, quantity }} itemPackage={itemPackage} />)}
         </div>
-        <div className='flex items-center gap-[24px]'>
+        <div className=''>
+          <Textarea
+            classNames={{
+              label: 'text-[1.6rem]',
+              input: 'text-[1.4rem] placeholder:font-light',
+              inputWrapper: 'border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 min-h-[40px] pl-[12px]'
+            }}
+            variant='bordered'
+            label='Ghi chú'
+            labelPlacement='outside'
+            placeholder='1 áo xanh, 1 áo trắng, ...'
+            value={noted}
+            onChange={(e) => setNoted(e.target.value)}
+            minRows={1}
+          />
+        </div>
+        <div className='flex items-center gap-[24px] pb-[30px] md:pb-0'>
           <div className='flex items-center gap-[16px]'>
             <p className='select-none whitespace-nowrap text-[#969696]'>{t('text27')}</p>
             <QuantityControl quantity={quantity} setQuantity={setQuantity} minQuanlity />
@@ -465,42 +466,41 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems, onCloseDetai
   )
 })
 
-const PackageItem = memo(({ itemPackage, HandleChangeSize, handleChangeCurrentImage }: { itemPackage: any; HandleChangeSize: any; handleChangeCurrentImage: any }) => {
-  const t = useTranslations('Store')
+const PackageItem = memo(({ itemPackage, bigItem }: { itemPackage: any; bigItem: any }) => {
   return (
     <div className='grid grid-cols-3 gap-[16px] md:gap-0' key={itemPackage.uuid}>
       <div className='col-span-3 flex items-center gap-[16px] md:col-span-1'>
         <div className='max-h-[60px] min-w-[60px] max-w-[60px] overflow-hidden rounded-[8px]'>
-          <ImageFallback
-            src={itemPackage.thumb}
-            alt='image'
-            width={60}
-            height={40}
-            className='aspect-square max-h-[320px] w-auto object-cover'
-            onClick={() => handleChangeCurrentImage(itemPackage.thumb)}
-          />
+          <ImageFallback src={itemPackage.thumb} alt='image' width={60} height={40} className='aspect-square max-h-[320px] w-auto object-contain' />
         </div>
         <p className='font-light'>{itemPackage.title || ''}</p>
-        <p className='font-light'>x {itemPackage.quantity || '1'}</p>
+        <div className='flex items-center gap-[4px]'>
+          <p>x</p>
+          <p>{itemPackage.quantity || '1'}</p>
+        </div>
       </div>
-      <div className='col-span-3 flex items-center gap-[8px] pr-[8px] md:col-span-2 md:justify-end md:gap-[16px]'>
-        <p className='text-[#969696]'>{t('text28')}</p>
-        {itemPackage.sizes.map((itemSize: any) => (
-          <button
-            key={itemSize.name}
-            onClick={() => HandleChangeSize(itemSize.name)}
-            className={`flex-center h-[40px] w-[40px] flex-shrink-0 cursor-pointer rounded-full text-[#222] duration-200 ${itemSize.isActive ? 'bg-[#FCB713]' : 'bg-[#E1E1E1]'}`}
-          >
-            {itemSize.name}
-          </button>
-        ))}
-      </div>
+      {!!itemPackage?.attributes ? (
+        <div className='col-span-3 flex items-center gap-[8px] pr-[8px] md:col-span-2 md:justify-end md:gap-[16px]'>
+          <div className='flex justify-end'>
+            <div className='flex flex-col gap-[10px]'>
+              {itemPackage?.attributes?.map((attr: any) => {
+                return attr.type === 'COLOR' ? (
+                  <PickColor bigItem={bigItem} key={uuidv4()} itemPackage={itemPackage} itemAttr={attr} name={attr?.name} colors={attr?.values} />
+                ) : (
+                  <PickText bigItem={bigItem} key={uuidv4()} texts={attr?.values} itemPackage={itemPackage} itemAttr={attr} name={attr?.name} />
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   )
 })
 
 const CartItem = memo(({ item, cartItems, setCartItems }: { item: any; cartItems: any[]; setCartItems: any }) => {
   const [quantity, setQuantity] = useState(item.quantity)
+  const dispatch = useDispatch()
 
   const _handleChangeQuantity = useCallback((newQuantity: number) => {
     setQuantity(newQuantity)
@@ -508,6 +508,7 @@ const CartItem = memo(({ item, cartItems, setCartItems }: { item: any; cartItems
     const findIndexItem = cloneItems.findIndex((cartItem: any) => cartItem.uuid === item.uuid)
     if (findIndexItem !== -1) {
       cloneItems[findIndexItem].quantity = newQuantity
+      dispatch({ type: 'cards_store', payload: cloneItems?.[0] })
       setCartItems(cloneItems)
     }
   }, [])
@@ -520,7 +521,7 @@ const CartItem = memo(({ item, cartItems, setCartItems }: { item: any; cartItems
   }
 
   return (
-    <div className='flex flex-col gap-[24px]'>
+    <div className='flex max-h-[30vh] flex-col gap-[24px] overflow-y-auto'>
       <div className='grid grid-cols-3'>
         <div className='col-span-3 flex space-x-3 md:col-span-2'>
           <div className='image w-[128px]'>
@@ -530,11 +531,25 @@ const CartItem = memo(({ item, cartItems, setCartItems }: { item: any; cartItems
             <h3 className='text-[1.8rem] uppercase '>{item.title}</h3>
             <div className='text-[1.6rem]'>
               {item.package.map((item: any) => (
-                <div className='grid grid-cols-2' key={item.title}>
-                  <div className='flex items-center'>
-                    <h3>
-                      {item.title} ({item.sizes.find((i: any) => i.isActive === true).name})
-                    </h3>
+                <div className='grid grid-cols-2 ' key={item.title}>
+                  <div className='flex flex-col justify-center gap-[4px]'>
+                    <p>{item.title} </p>
+                    {item?.attributes?.map((itemAttr: any, idx: any) => {
+                      return itemAttr.type == 'COLOR' ? (
+                        <div className='flex items-center gap-[4px] text-[1.4rem] font-light'>
+                          &bull; Màu sắc{' '}
+                          <div
+                            style={{ background: itemAttr?.selected ? itemAttr?.selected : itemAttr.values?.[0] }}
+                            className='size-[24px] rounded-full ring-[2px] ring-inset ring-primary-yellow'
+                            key={idx}
+                          />
+                        </div>
+                      ) : (
+                        <span key={idx} className='text-[1.4rem] font-light '>
+                          &bull; Kích thước {itemAttr?.selected ? itemAttr?.selected : itemAttr?.values?.[0]}
+                        </span>
+                      )
+                    })}
                   </div>
                   <div className='flex items-center justify-end gap-[48px]'>x{item?.quantity || 1}</div>
                 </div>
@@ -568,14 +583,14 @@ const QuantityControl = memo(({ minQuanlity, quantity, setQuantity }: { quantity
     <div className='flex items-center gap-[16px]'>
       <Button
         disabled={minQuanlity && quantity === 1}
-        className='flex-center h-[44px]  w-[44px] min-w-[unset] flex-shrink-0 cursor-pointer rounded-full border-1 border-[#A5A5A5] bg-white p-0 transition-all active:scale-[1.05]'
+        className='flex size-[44px]  min-h-[44px] min-w-[44px] flex-shrink-0 cursor-pointer items-center justify-center rounded-full border-1 border-[#A5A5A5] bg-white p-0 transition-all active:scale-[1.05]'
         onClick={_HandleDecrease}
       >
         <Minus size={24} className='#292D32' />
       </Button>
       <span className='select-none font-semibold text-[#222222]'>{quantity}</span>
       <Button
-        className='flex-center  h-[44px] w-[44px] min-w-[unset] flex-shrink-0 cursor-pointer rounded-full border-1 border-[#222222] bg-white p-0 transition-all active:scale-[1.05]'
+        className='flex size-[44px] min-h-[44px] min-w-[44px]  flex-shrink-0 cursor-pointer items-center justify-center rounded-full border-1 border-[#222222] bg-white p-0 transition-all active:scale-[1.05]'
         onClick={_HandleIncrease}
       >
         <Add size={24} className='#292D32' />
@@ -595,7 +610,8 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
     name: workerInfo?.name || 'full name',
     phone: workerInfo?.phone?.phone_number || '0123456789',
     phoneCountry: workerInfo?.phone?.phone_code || '+84',
-    address: ''
+    address: '',
+    transport: ''
   }
 
   const [infoCustomer, setInfoCustomer] = useState(initalInfo)
@@ -603,7 +619,8 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
   const initalErrorInfo = {
     name: false,
     phoneCountry: false,
-    address: false
+    address: false,
+    transport: false
   }
 
   const [errorInfo, setInfoError] = useState(initalErrorInfo)
@@ -611,6 +628,39 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
   const [totalPrice, setTotalPrice] = useState('')
 
   const [token, setToken] = useState('')
+  const isSmallScreen = useSmallScreen()
+
+  const paymentMethodContentInit: any = {
+    '0': (
+      <div className='flex flex-col gap-[10px]'>
+        <div>
+          <p>{t('text31')}:</p>
+          <p className='font-light'>{t('text32')}.</p>
+        </div>
+        <i className='font-light'>{t('text33')}.</i>
+      </div>
+    ),
+    '1': (
+      <div>
+        <p>{t('text34')}:</p>
+        <p className='font-light'>{t('text35')}:</p>
+        <ul className='list-inside list-disc font-light'>
+          <li>{t('text36')}: TONG PHUOC DAI</li>
+          <li>{t('text37')}: 333 6666 88</li>
+          <li>{t('text38')}</li>
+          <li>{t('text39')}</li>
+          <li>{t('text40')}</li>
+        </ul>
+      </div>
+    ),
+    '2': (
+      <div>
+        <p>{t('text41')}:</p>
+        <p className='font-light'>{t('text42')}.</p>
+        <p className='font-light'>{t('text43')}.</p>
+      </div>
+    )
+  }
 
   const _HandleChangeValue = (type: string, value?: any) => {
     if (type === 'name') {
@@ -619,14 +669,18 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
       setInfoCustomer({ ...infoCustomer, [type]: value })
     } else if (type === 'address') {
       setInfoCustomer({ ...infoCustomer, [type]: value?.target.value })
+    } else if (type === 'transport') {
+      console.log(value?.target.value)
+      setInfoCustomer({ ...infoCustomer, [type]: value?.target.value })
     }
   }
 
   const handleSubmit = () => {
     const checkError = {
-      name: infoCustomer.name === '' ? true : false,
+      name: infoCustomer.name === '',
       phoneCountry: !infoCustomer.phoneCountry ? true : false,
-      address: infoCustomer.address === '' ? true : false
+      address: infoCustomer.address === '',
+      transport: infoCustomer.transport === ''
     }
 
     setInfoError(checkError)
@@ -645,9 +699,10 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
     }
   }
 
+  const cartItemFromRedux = useSelector((state: any) => state.cards_store)
+
   const _HandlePostCart = async () => {
     const { address, name } = infoCustomer
-
     try {
       const payload = {
         token,
@@ -660,13 +715,11 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
           }
         },
         detailsOrder: {
-          packageID: cartItems?.[0]?.uuid,
-          quantity: cartItems?.[0]?.quantity,
-          items: cartItems?.[0]?.package.map((item: any) => {
-            const { uuid, sizes } = item
-            const size = sizes.find((s: any) => s.isActive)?.name || ''
-            return { uuid, size }
-          })
+          packageID: cartItemFromRedux?.uuid,
+          quantity: cartItemFromRedux?.quantity,
+          items: cartItemFromRedux?.package,
+          note: cartItemFromRedux?.noted,
+          payment_method: infoCustomer.transport
         }
       }
 
@@ -676,6 +729,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
         setInfoError(initalErrorInfo)
         setInfoCustomer(initalInfo)
         dispatch({ type: 'typeOpenFinalPopupStore', payload: 'isSuccess' })
+        dispatch({ type: 'cards_store', payload: {} })
 
         onCloseCart()
         cartItems[0].quantity = 1
@@ -686,7 +740,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
       dispatch({ type: 'typeOpenFinalPopupStore', payload: 'soldout' })
     } finally {
       setOnSending(false)
-      onCloseDetail()
+      onCloseDetail && onCloseDetail()
     }
   }
 
@@ -705,11 +759,11 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
   }, [])
 
   return (
-    <div className='flex flex-col gap-[24px] p-[24px]'>
+    <div className='flex max-h-[90vh] flex-col gap-[24px] overflow-y-auto p-[24px]'>
       <div className='flex items-center justify-between'>
         <h3 className='font-semibold  md:text-[2.4rem]'>{t('text19')}</h3>
         <Button isIconOnly onPress={onCloseCart} variant='light' className='absolute right-0 top-0 h-[48px] w-[56px]'>
-          <Add className='rotate-45 ' size={24} />
+          <Add className='rotate-45' size={24} />
         </Button>
       </div>
       <div className='flex max-h-[300px] flex-col gap-[24px] overflow-y-auto pr-12'>
@@ -725,7 +779,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
         )}
       </div>
       {!!cartItems?.length ? (
-        <div className='flex flex-col gap-[24px]'>
+        <div className='flex flex-col gap-[10px]'>
           <div className='flex w-full items-center justify-between bg-[#F8F8F8] p-[16px]'>
             <p className='text-[1.6rem] text-[#969696]'>{t('text21')}</p>
             <span className='text-[2.4rem] font-semibold text-primary-blue'>
@@ -735,11 +789,11 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
           </div>
           <div className='flex flex-col'>
             <p className='text-[2.4rem] font-semibold '>{t('text22')}</p>
-            <div className='mt-[16px] grid grid-cols-2 gap-[16px]'>
-              <div>
+            <div className='mb-[10px] flex flex-col gap-[10px]'>
+              <div className='mt-[16px] grid grid-cols-2 gap-[16px]'>
                 <Input
                   variant='bordered'
-                  readOnly={true}
+                  readOnly
                   value={infoCustomer.name}
                   onChange={(e: any) => _HandleChangeValue('name', e)}
                   placeholder='Họ tên'
@@ -749,20 +803,17 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
                     inputWrapper: 'border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 h-[44px] pl-[16px]'
                   }}
                 />
-                <span className={`${errorInfo.name && infoCustomer.name === '' ? 'h-[10px] text-[1.2rem] text-red-500 opacity-100' : 'h-[10px] opacity-0'} `}>{t('text23')}</span>
-              </div>
-              <div>
-                <div className='flex items-center'>
-                  <div className='flex h-[46px] justify-center rounded-s-full border-1 border-[#E1E1E1] pl-[16px] focus:outline-none data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1]'>
-                    <input readOnly={true} value={infoCustomer.phoneCountry} className='max-w-[46px] bg-transparent text-[1.4rem] focus:outline-none' />
-                  </div>
-                  <div className='flex h-[46px] w-full justify-center rounded-e-full border-1 border-l-0 border-[#E1E1E1] pl-[16px] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1]'>
-                    <input readOnly={true} value={`${infoCustomer.phone}`} className='w-full bg-transparent text-[1.4rem] focus:outline-none' />
+                <div>
+                  <div className='flex items-center'>
+                    <div className='flex h-[46px] justify-center rounded-s-full border-1 border-[#E1E1E1] pl-[16px] focus:outline-none data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1]'>
+                      <input readOnly value={infoCustomer.phoneCountry} className='max-w-[46px] bg-transparent text-[1.4rem] focus:outline-none' />
+                    </div>
+                    <div className='flex h-[46px] w-full justify-center rounded-e-full border-1 border-l-0 border-[#E1E1E1] pl-[16px] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1]'>
+                      <input readOnly value={`${infoCustomer.phone}`} className='w-full bg-transparent text-[1.4rem] focus:outline-none' />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className='mt-[4px]'>
               <Input
                 variant='bordered'
                 placeholder={t('text26')}
@@ -774,7 +825,29 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
                   inputWrapper: 'border-[#E1E1E1] data-[hover=true]:border-[#E1E1E1] group-data-[focus=true]:border-[#E1E1E1] border-1 h-[44px] pl-[16px]'
                 }}
               />
-              <span className={`${errorInfo.address && infoCustomer.address === '' ? 'h-[10px] text-[1.2rem] text-red-500 opacity-100' : 'h-[10px] opacity-0'} `}>{t('text24')}</span>
+            </div>
+            <div className='max-h-[20vh] overflow-y-auto'>
+              <RadioGroup
+                isInvalid={errorInfo.transport && infoCustomer.transport == ''}
+                label={t('text46')}
+                orientation={isSmallScreen ? 'vertical' : 'horizontal'}
+                onChange={(e) => _HandleChangeValue('transport', e)}
+                classNames={{
+                  label: 'text-[1.6rem] font-bold text-black',
+                  wrapper: 'gap-[10px] lg:gap-[20px]'
+                }}
+              >
+                <Radio value='0' classNames={{ label: 'text-[1.6rem]' }}>
+                  COD
+                </Radio>
+                <Radio classNames={{ label: 'text-[1.6rem]' }} value='1'>
+                  {t('text44')}
+                </Radio>
+                <Radio classNames={{ label: 'text-[1.6rem]' }} value='2'>
+                  {t('text45')}
+                </Radio>
+              </RadioGroup>
+              {infoCustomer.transport !== '' ? <div className='mt-[10px]'>{paymentMethodContentInit[infoCustomer.transport]}</div> : ''}
             </div>
           </div>
           <Button onPress={handleSubmit} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium '>
@@ -851,5 +924,187 @@ const FinnalPopup = ({ typeOpenFinalPopupStore }: { typeOpenFinalPopupStore: any
         </div>
       }
     />
+  )
+}
+
+const SwiperCloth = ({ data }: { data?: any }) => {
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+
+  const swiperRef = useRef<any>(null)
+
+  const isSmallScreen = useSmallScreen()
+
+  return (
+    <div className='flex flex-col gap-[10px]'>
+      <Swiper
+        ref={swiperRef}
+        effect={'fade'}
+        loop
+        autoHeight
+        autoplay={{
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+          delay: 15000
+        }}
+        slidesPerView={1}
+        thumbs={{
+          swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
+        }}
+        zoom={true}
+        navigation
+        modules={[Autoplay, Zoom, Navigation, Thumbs]}
+        className={`swiperStore z-[5] h-full w-full`}
+        onActiveIndexChange={(swiper: any) => {
+          setCurrentIndex(swiper.realIndex)
+        }}
+      >
+        {data?.map((item: any, index: number) => {
+          return (
+            <SwiperSlide key={item.uuid} className={`${currentIndex === index ? 'visible' : 'invisible'}`}>
+              <div className='flex h-[400px] w-auto items-center justify-center md:h-[300px]'>
+                {isSmallScreen ? (
+                  <ImageFallback src={item?.thumb} alt={item.title} height={800} width={900} className='w-auto object-contain' />
+                ) : (
+                  <ImageZoom src={item?.thumb} alt={item.title} height={800} width={900} style='w-auto' />
+                )}
+              </div>
+            </SwiperSlide>
+          )
+        })}
+      </Swiper>
+      <Swiper
+        onSwiper={(swiper: any) => setThumbsSwiper(swiper)}
+        breakpoints={{
+          300: {
+            slidesPerView: 2.5
+          },
+          600: {
+            slidesPerView: 5.5
+          },
+          1024: {
+            slidesPerView: 7.5
+          }
+        }}
+        freeMode
+        modules={[FreeMode, Navigation, Thumbs]}
+        className={`swiperPagination z-10 flex w-full max-w-[86%] items-center justify-between`}
+      >
+        {data?.map((item: any, index: number) => (
+          <SwiperSlide key={`swipper-slide-${index}`}>
+            <div
+              className={`${
+                currentIndex === index ? ' border-[#FCB713]' : 'scale-90 border-transparent opacity-70'
+              } flex items-center justify-center overflow-hidden rounded-[4px] border-[3px] transition`}
+            >
+              <ImageFallback
+                src={item?.thumb}
+                alt={item.title}
+                height={200}
+                width={200}
+                className={`aspect-square max-h-[80px] min-h-[60px] w-auto min-w-[60px] cursor-pointer select-none object-contain transition hover:scale-105 ${currentIndex === index && 'scale-105'} `}
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  )
+}
+
+const PickColor = ({ colors, name, itemPackage, itemAttr, bigItem }: { colors: any; name: any[]; itemPackage: any; itemAttr: any; bigItem: any }) => {
+  const t = useTranslations('Store')
+
+  const [currentColor, setCurrentColor] = useState<string>(itemAttr?.selected ? itemAttr?.selected : colors[0])
+
+  const locale: any = useLocale()
+
+  const localeText = locale === 'vi' || locale === 'en' ? locale : 'en'
+  const dispatch = useDispatch()
+
+  const _handlePickColor = (color: string) => {
+    if (color == currentColor) return
+
+    setCurrentColor(color)
+    bigItem.package.forEach((item: any) => {
+      if (item.uuid === itemPackage.uuid) {
+        itemPackage?.attributes?.forEach((itemAttrib: any) => {
+          if (itemAttrib.uuid === itemAttr.uuid) {
+            itemAttrib.selected = color
+          }
+        })
+      }
+    })
+
+    dispatch({ type: 'cards_store', payload: bigItem })
+
+    // setItem(bigItem)
+  }
+
+  return (
+    <div className='grid items-center gap-[10px] xs:grid-cols-3 xs:gap-[20px]'>
+      <p>
+        {t('text47')} {convertToLowerCase(name[localeText])}
+      </p>
+      <div className='col-span-2 flex w-fit items-center gap-[12px] rounded-[4px] bg-[#f8f8f8] p-[6px]'>
+        {colors?.map((color: any) => (
+          <div
+            onClick={() => _handlePickColor(color)}
+            style={{ background: color }}
+            key={color.uuid}
+            className={`flex size-[40px] h-[40px] w-[40px] cursor-pointer rounded-full ring-[2px] ring-offset-2 transition ${
+              color === currentColor ? 'ring-primary-yellow' : 'ring-transparent  hover:ring-primary-yellow/30'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const PickText = ({ texts, name, itemPackage, itemAttr, bigItem }: { texts: any; name: string; itemPackage: any; itemAttr: any; bigItem: any }) => {
+  const t = useTranslations('Store')
+
+  const [currentText, setCurrentText] = useState(itemAttr?.selected ? itemAttr?.selected : texts[0])
+  const locale: any = useLocale()
+
+  const dispatch = useDispatch()
+
+  const _handleChangeText = (text: string) => {
+    if (text == currentText) return
+
+    setCurrentText(text)
+
+    bigItem.package.forEach((item: any) => {
+      if (item.uuid === itemPackage.uuid) {
+        itemPackage?.attributes?.forEach((itemAttrib: any) => {
+          if (itemAttrib.uuid === itemAttr.uuid) {
+            itemAttrib.selected = text
+          }
+        })
+      }
+    })
+    dispatch({ type: 'cards_store', payload: bigItem })
+    // setItem(bigItem)
+  }
+
+  const localeText = locale === 'vi' || locale === 'en' ? locale : 'en'
+  return (
+    <div className='grid items-center gap-[10px] xs:grid-cols-3 xs:gap-[20px]'>
+      <p>
+        {t('text47')} {convertToLowerCase(name[localeText])}
+      </p>
+      <div className='col-span-2 flex items-center gap-[8px]'>
+        {texts?.map((text: any) => (
+          <button
+            key={text}
+            onClick={() => _handleChangeText(text)}
+            className={`flex size-[40px] flex-shrink-0 cursor-pointer items-center justify-center rounded-full text-[#222] duration-200 ${text === currentText ? 'bg-[#FCB713]' : 'bg-[#ededed]'}`}
+          >
+            {text}
+          </button>
+        ))}
+      </div>
+    </div>
   )
 }

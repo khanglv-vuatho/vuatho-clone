@@ -44,7 +44,8 @@
     "sending": "Bildirim gönderiliyor:",
     "BCT": "Sanayi ve Ticaret Bakanlığı",
     "text": "Vua Usta LLC",
-    "text1": "Vergi Numarası: "
+    "text1": "Vergi Numarası: ",
+    "text2": "0318063280 issued for the first time on September 25, 2023 by the Department of Planning and Investment of Ho Chi Minh City"
   },
   "NotFound": {
     "text": "Sayfa bulunamadı!",
@@ -342,9 +343,14 @@
     "heading2": "Teknoloji ve Ekosistem",
     "heading": "Süper Uygulama",
     "text": "Vua Thợ olarak, Güneydoğu Asya'da bir süper uygulama ekosistem modeli sunmada öncü bir teknoloji şirketi olmaktan gurur duyuyoruz. Milyonlarca kullanıcının yaşamını geliştirme tutkusundan ve misyonumuzdan kaynaklanan, üstün ve kullanıcı dostu bir deneyim sunuyoruz.",
-    "goal": "Amacımız",
-    "numberGoal": "100,000 +",
-    "textGold": "2024 yılına kadar ulusal çapta işçi ve kullanıcıları bir araya getirmek"
+    "text1": "POTANSİYELİN Kilidini Açın",
+    "text2": "100.000 bağlantı hedefi, Vua Thợ'nun sürdürülebilir kalkınma yolculuğunun sadece başlangıcıdır. Vizyoner bir strateji ve net bir odaklanma ile Vua Thợ, ağını kademeli olarak genişletecek, mesleğini seven kalpleri birbirine bağlayacak, pazarın ihtiyaçlarını karşılayacak ve her bireyin gelişme ve başarı elde etme fırsatı bulduğu dinamik bir ekosistem yaratacaktır.",
+    "text3": "Hemen Katılın",
+    "text4": "POTANSIYEL",
+    "text5": "GENÇ",
+    "text6": "KESİNTİSİZ",
+    "text7": "YETENEK",
+    "text8": "GELİŞİM"
   },
   "ContactUs": {
     "heading": "Bize Ulaşın",
@@ -354,7 +360,14 @@
     "timeDay": "Pazartesi - Cuma",
     "text": "Cumartesi, Pazar ve resmi tatillerde destek verilmemektedir",
     "numberPhone": "38 786 688",
-    "gmail": "admin@vuatho.com"
+    "text4": "32/28, 35 Street, An Khanh Ward, Thu Duc City, Ho Chi Minh City",
+    "gmail": "admin@vuatho.com",
+    "text1": "Google Haritalar'da Görüntüle",
+    "text2": "Çalışma Saatleri",
+    "text3": "Vua Thợ Ofisi",
+    "text6": "Adres",
+    "text5": "Telefon Numarası",
+    "desc": "Değerli müşterilerimize en iyi deneyimi sunmak amacıyla, her türlü geri bildiriminizi dikkate alıyoruz. Sorularınız deneyiminizi engellemesine izin vermeyin. Fikirlerinizi paylaşmak ve hizmet kalitemizi artırmak için bizimle iletişime geçin."
   },
   "BecomeWorker": {
     "heading": "Hizmet Sağlayıcı Olarak Kaydolma Rehberi",
@@ -429,7 +442,14 @@
     "text73": "Ülke ve kişisel belge türünü seçtikten sonra, sistem kullanıcılardan seçtikleri belgenin her iki yüzünü çekmelerini ve ardından SumSub'un talimatlarına göre bir selfie çekmelerini isteyecektir.",
     "text74": "Kimlik doğrulama tamamlandıktan sonra, sistem tahmini sonucu 5 dakika içinde bildirecektir. Sistem sonuçları şunları içerecektir:",
     "text75": "Başarılı doğrulama: Kullanıcı uygulamanın tüm hizmetlerini ve özelliklerini kullanabilir.",
-    "text76": "Doğrulama başarısız: Kullanıcı, uygulamanın tüm hizmetlerini ve özelliklerini kullanabilmek için doğrulamayı tekrar yapmalıdır."
+    "text76": "Doğrulama başarısız: Kullanıcı, uygulamanın tüm hizmetlerini ve özelliklerini kullanabilmek için doğrulamayı tekrar yapmalıdır.",
+    "text77": "İşlem doğrulaması hatalı",
+    "text78": "İşlem doğrulaması için video kılavuzu",
+    "text79": "Kayıt için video kılavuzu",
+    "text80": "Adım 6: İşlem doğrulama kılavuzu"
+  },
+  "PressComunication": {
+    "heading": "KRAL USTA HAKKINDA BASIN KONUŞMASI"
   },
   "FindWorker": {
     "heading": "Vua Thợ'ta İşçi Nasıl Bulunur",
@@ -511,7 +531,25 @@
     "text27": "Miktar",
     "text28": "Boyut Seç",
     "text29": "Alışveriş Sepeti",
-    "text30": "Ürün tükenmiştir, lütfen başka bir ürün seçiniz"
+    "text30": "Ürün tükenmiştir, lütfen başka bir ürün seçiniz",
+
+    "text31": "Kapıda Ödeme",
+    "text32": "Usta, teslimat partnerine üniformayı teslim aldığında ödeme şeklini seçebilir.",
+    "text33": "Üniforma siparişi başarıyla tamamlandıktan sonra, Usta partneri, nakliye şirketine bağlı olarak 7-10 iş günü içinde üniformayı alacaktır.",
+    "text34": "Havale ile Ödeme",
+    "text35": "Havale Bilgileri",
+    "text36": "Hesap Adı",
+    "text37": "Hesap Numarası",
+    "text38": "Banka: Asya Ticaret Bankası - ACB",
+    "text39": "Havale Açıklaması: Uygulamaya kayıtlı telefon numarası - Vua Tho üniforması ödemesi",
+    "text40": "Örnek: 0122334455 Vua Tho üniforması ödemesi",
+    "text41": "Şirket Ofisinde Yüz Yüze Ödeme",
+    "text42": "Adres: 57 Song Hành, An Phú Ward, Thủ Đức City, Ho Chi Minh City",
+    "text43": "Çalışma Saatleri: Hafta içi her gün 8:30 - 18:00 (Tatiller hariç)",
+    "text44": "Havale",
+    "text45": "Ofiste Yüz Yüze Ödeme",
+    "text46": "Ödeme Yöntemini Seçin",
+    "text47": "Seç"
   },
   "Map": {
     "text1": "Uygulama Kullanıcıları",

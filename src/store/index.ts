@@ -8,13 +8,16 @@ const DefaultValueState: any = {
   currencyCurrent: { code: 'VND', name: 'Vietnamese Đồng', symbol: '₫' },
   services: [],
   openMenu: null,
-  typeOpenFinalPopupStore: null
+  typeOpenFinalPopupStore: null,
+  cards_store: {}
 }
 
 function counterReducer(state: any = DefaultValueState, action: any) {
   switch (action.type) {
     case 'access_token':
       return { ...state, access_token: action.payload }
+    case 'cards_store':
+      return { ...state, cards_store: action.payload }
     case 'worker/info':
       return { ...state, workerInfo: action.payload }
     case 'currency':

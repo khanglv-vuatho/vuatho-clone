@@ -35,7 +35,7 @@ export const ListBreadcrumbsForDetailPress = memo(({ list }: { list: IBreadcrumb
         list: 'gap-[4px] lg:gap-[16px] flex-nowrap'
       }}
       itemClasses={{
-        item: 'text-[1.8rem] ',
+        item: 'text-[1.8rem]',
         base: 'gap-[4px] lg:gap-[16px]',
         separator: 'text-[2.4rem] text-[#C9C9C9]'
       }}

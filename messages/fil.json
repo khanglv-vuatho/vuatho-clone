@@ -44,7 +44,8 @@
     "sending": "Pagsusumite ng mga Abiso sa",
     "BCT": "Ministry of Industry and Trade",
     "text": "Kompanyang Responsibilidad na may Limitadong Teknolohiya ng Hari ng Mekaniko",
-    "text1": "Numero ng BIR: "
+    "text1": "Numero ng BIR: ",
+    "text2": "0318063280 issued for the first time on September 25, 2023 by the Department of Planning and Investment of Ho Chi Minh City"
   },
   "NotFound": {
     "text": "Hindi Maipagpalagay ang Pahina!",
@@ -344,9 +345,14 @@
     "heading2": "Teknolohiya at Ecosystem",
     "heading": "Super App",
     "text": "Sa Vua Thợ, kami ay may pagmamalasakit sa pagiging pangunahing kumpanya sa teknolohiya at tagapagtatag sa pagbibigay ng modelo ng ekosistema ng super app sa Timog-silangang Asya. Dahil sa aming pagmamahal at misyon na mapabuti ang buhay ng milyon-milyong mga tagagamit sa landas ng pag-unlad, kami ay nagdadala ng de-kalidad at kumportableng karanasan.",
-    "goal": "Ang aming layunin ay kumonekta sa",
-    "numberGoal": "100,000 +",
-    "textGold": "Mga Manggagawa at mga tagagamit sa buong bansa ngayong 2024"
+    "text1": "SUMIKLAB NG POTENSYAL",
+    "text2": "Ang layuning 100,000 na koneksyon ay ang simula lamang ng paglalakbay ng Vua Thợ tungo sa napapanatiling pag-unlad. Sa pamamagitan ng estratehikong pananaw at malinaw na direksyon, ang Vua Thợ ay unti-unting magpapalawak ng network, magkokonekta sa mga pusong mahilig sa trabaho, tutugon sa mga pangangailangan ng merkado at magtatayo ng isang dynamic na ecosystem kung saan ang bawat indibidwal ay may pagkakataong umunlad at magtagumpay.",
+    "text3": "Sumali kaagad",
+    "text4": "POTENSYAL",
+    "text5": "BATA",
+    "text6": "PATULOY",
+    "text7": "TALENTO",
+    "text8": "PAG-UNLAD"
   },
   "ContactUs": {
     "heading": "Makipag-ugnay Sa Amin",
@@ -356,7 +362,14 @@
     "timeDay": "Lunes hanggang Biyernes",
     "text": "Walang suporta tuwing Sabado, Linggo, at mga holiday ng publiko",
     "numberPhone": "38 786 688",
-    "gmail": "admin@vuatho.com"
+    "text4": "32/28, 35 Street, An Khanh Ward, Thu Duc City, Ho Chi Minh City",
+    "gmail": "admin@vuatho.com",
+    "text1": "Tanawon sa Google Maps",
+    "text2": "Oras sa Trabaho",
+    "text3": "Opisina sa Vua Thợ",
+    "text6": "Address",
+    "text5": "Numero ng Telepono",
+    "desc": "Sa hangaring maghatid ng pinakamahusay na karanasan sa aming mga kostumer, kami ay laging handang tumanggap ng lahat ng inyong mga opinyon at suhestiyon. Huwag hayaang ang inyong mga katanungan ay hadlang sa inyong karanasan. Mangyaring makipag-ugnayan sa amin upang ibahagi ang inyong mga ideya at makatulong sa pagpapabuti ng kalidad ng aming serbisyo."
   },
   "BecomeWorker": {
     "heading": "Gabay sa Pagpaparehistro bilang Tagapagbigay ng Serbisyo",
@@ -431,9 +444,15 @@
     "text73": "Pagkatapos pumili ng bansa at uri ng ID, ang sistema ay hihilingin sa mga gumagamit na kumuha ng litrato ng magkabilang mukha ng ID na kanilang pinili (rekomendadong gamitin ang Căn cước công dân - CCCD sa Vietnam). Pagkatapos nito, kinakailangan ang gumagamit na kunan ng selfie ayon sa mga tagubilin ng SumSub.",
     "text74": "Pagkatapos makumpleto ang proseso ng verification, ang sistema ay magbibigay ng resulta sa loob ng 5 minuto. Ang resulta ng sistema ay maglalaman ng:",
     "text75": "Matagumpay na Verification: Ang mga gumagamit ay maaaring gamitin ang lahat ng serbisyo at mga feature ng app.",
-    "text76": "Failed Verification: Ang mga gumagamit ay kinakailangang ulitin ang proseso ng verification upang magamit ang lahat ng serbisyo at mga feature ng app."
+    "text76": "Failed Verification: Ang mga gumagamit ay kinakailangang ulitin ang proseso ng verification upang magamit ang lahat ng serbisyo at mga feature ng app.",
+    "text77": "Gabay sa Pagsusuri ng Negosyo",
+    "text78": "Gabay sa Pagpaparehistro ng Video ng Negosyo",
+    "text79": "Gabay sa Pagpaparehistro ng Video",
+    "text80": "Hakbang 6: Gabay sa Pagsusuri ng Negosyo"
   },
-
+  "PressComunication": {
+    "heading": "PANAYAM NG MIDYA TUNGKOL SA VUA THỢ"
+  },
   "FindWorker": {
     "heading": "Paano Hanapin ang mga Manggagawa sa Vua Thợ",
     "text1": "Hakbang 1: I-download ang App",
@@ -513,7 +532,24 @@
     "text27": "Damihan",
     "text28": "Pumili ng laki",
     "text29": "Basket",
-    "text30": "Ang kalakal ay naubos na, mangyaring pumili ng ibang kalakal"
+    "text30": "Ang kalakal ay naubos na, mangyaring pumili ng ibang kalakal",
+    "text31": "Magbayad sa Paghahatid",
+    "text32": "Maaaring piliin ng Handyman ang paraan ng pagbabayad sa pagtanggap ng uniporme para sa kasosyo sa paghahatid",
+    "text33": "Matapos matagumpay na mailagay ang order ng uniporme, ang kasosyong Handyman ay tatanggap ng uniporme sa loob ng 7-10 araw ng trabaho depende sa carrier",
+    "text34": "Magbayad sa pamamagitan ng Bank Transfer",
+    "text35": "Impormasyon ng Bank Transfer",
+    "text36": "Pangalan ng Account",
+    "text37": "Numero ng Account",
+    "text38": "Bangko: Asia Commercial Bank - ACB",
+    "text39": "Nilalaman ng Bank Transfer: Numero ng teleponong nakarehistro sa app - Bayaran ang uniporme ng Handyman",
+    "text40": "Halimbawa: 0122334455 Bayaran ang uniporme ng Handyman",
+    "text41": "Magbayad nang direkta sa opisina ng kumpanya",
+    "text42": "Address: No. 57 Song Hanh, An Phu Ward, Thu Duc City, Ho Chi Minh City",
+    "text43": "Oras ng pagbubukas: 8:30 - 18:00 sa lahat ng araw ng linggo (maliban sa mga pista opisyal)",
+    "text44": "Bank Transfer",
+    "text45": "Magbayad nang direkta sa opisina",
+    "text46": "Pumili ng paraan ng pagbabayad",
+    "text47": "Pumili"
   },
   "Map": {
     "text1": "Mga Tagagamit ng App",

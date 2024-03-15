@@ -1,6 +1,9 @@
-const withNextIntl = require('next-intl/plugin')();
+const withNextIntl = require('next-intl/plugin')()
 
 module.exports = withNextIntl({
+  compiler: {
+    styledComponents: true
+  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'flagcdn.com' },
@@ -10,7 +13,7 @@ module.exports = withNextIntl({
       { protocol: 'https', hostname: 'api.vuatho.com' },
       { protocol: 'http', hostname: 'localhost' },
       { protocol: 'https', hostname: 'sandbox-api-cms.vuatho.com' },
-      { protocol: 'http', hostname: '192.168.1.72' },
-    ],
-  },
-});
+      { protocol: 'http', hostname: '192.168.1.72' }
+    ]
+  }
+})

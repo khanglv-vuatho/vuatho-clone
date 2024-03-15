@@ -35,7 +35,8 @@ function Footer() {
     policy: [
       { title: t('guides'), url: `/${locale}/terms-and-condition` },
       { title: t('private_infomation'), url: `/${locale}/privacy-policy` },
-      { title: t('contact_us'), url: `/${locale}/contact-us` }
+      { title: t('contact_us'), url: `/${locale}/contact-us` },
+      { title: 'White Paper', url: './VT-White-Paper.pdf', blank: true }
     ]
   }
 
@@ -84,10 +85,10 @@ function Footer() {
     <footer className='divide-y-2 divide-base-gray bg-[#fff]/20'>
       <div className='ct-container-70 space-y-10 pb-20 pt-10'>
         <div className='flex items-center justify-between'>
-          <Image src='/logo/textLogo.webp' alt='Logo footer' width={256} height={176} quality={100} className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[80px]' />
+          <Image src='/logo/textLogo.webp' alt='Logo footer' width={256} height={176} className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[80px]' />
           <div className='flex items-center gap-4'>
             {socialNetworkList.map((e) => (
-              <a rel='noopener' key={e.id} href={e.link} target='_blank' title={e.id} className='flex-center aspect-square h-20 w-fit rounded-full bg-primary-blue-2'>
+              <a rel='noopener' key={e.id} href={e.link} target='_blank' title={e.id} className='flex aspect-square h-20 w-fit items-center justify-center rounded-full bg-primary-blue-2'>
                 {e.icon}
               </a>
             ))}
@@ -116,7 +117,7 @@ function Footer() {
               </div>
               <p className='text-[1.8rem] font-light md:text-[2rem]'>
                 <span className='font-semibold'>{t('text1')}</span>
-                <span>0318063280</span>
+                <span className='font-light'>{t('text2')}</span>
               </p>
             </div>
           </div>
@@ -124,17 +125,17 @@ function Footer() {
             <div className='col-span-8 flex flex-col gap-[20px] md:col-span-3'>
               <p className='text-[1.8rem] font-semibold md:text-[2rem]'>{t('about_vuatho')}</p>
               <div className='flex flex-col gap-[20px]'>
-                {listSubFooter.info.map((item) => (
-                  <LinkItem key={item.title} item={item} />
-                ))}
+                {listSubFooter.info.map((item) => {
+                  return <LinkItem key={item.title} item={item} />
+                })}
               </div>
             </div>
-            <div className='col-span-8 flex flex-col gap-[20px] md:col-span-3 '>
+            <div className='col-span-8 mt-[20px] flex flex-col gap-[20px] md:col-span-3 md:mt-0'>
               <p className='text-[1.8rem] font-semibold md:text-[2rem]'>{t('contact_with_vuatho')}</p>
               <div className='flex flex-col gap-[20px]'>
-                {listSubFooter.policy.map((item) => (
-                  <LinkItem key={item.title} item={item} />
-                ))}
+                {listSubFooter.policy.map((item) => {
+                  return <LinkItem key={item.title} item={item} blank={item.blank} />
+                })}
               </div>
             </div>
             <div className='col-span-8 flex flex-col gap-[20px] md:col-span-2'>
@@ -151,7 +152,7 @@ function Footer() {
           <p className='min-w-fit text-left text-[1.8rem] font-semibold md:text-[2rem]'>{t('our_partner')}</p>
           <div className='grid w-full grid-cols-2 items-center gap-10 xl:flex xl:justify-end xl:gap-20'>
             {partnerList.map((item) => (
-              <Image key={`partner-${item.id}`} alt={`partner-${item.id}`} width={194} height={64} quality={100} src={item.url} className='pointer-events-none h-20 w-auto object-contain xl:h-16' />
+              <Image key={`partner-${item.id}`} alt={`partner-${item.id}`} width={194} height={64} src={item.url} className='pointer-events-none h-20 w-auto object-contain xl:h-16' />
             ))}
           </div>
         </div>
@@ -161,9 +162,9 @@ function Footer() {
   )
 }
 
-const LinkItem = ({ item }: { item: any }) => {
+const LinkItem = ({ item, blank }: { item: any; blank?: boolean }) => {
   return (
-    <Link href={item.url} key={item.title} title={item.title} target={item.url.startsWith('https') ? '_blank' : ''}>
+    <Link href={item.url} key={item.title} title={item.title} target={item.url.startsWith('https') || blank ? '_blank' : ''}>
       <p className='text-[1.8rem] font-light hover:text-primary-blue md:text-[2rem]'>{item.title}</p>
     </Link>
   )

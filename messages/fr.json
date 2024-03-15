@@ -44,7 +44,8 @@
     "sending": "Envoi de notifications à",
     "BCT": "Ministère de l'Industrie et du Commerce",
     "text": "Société à responsabilité limitée Vua Thợ",
-    "text1": "Numéro fiscal: "
+    "text1": "Numéro fiscal: ",
+    "text2": "0318063280 issued for the first time on September 25, 2023 by the Department of Planning and Investment of Ho Chi Minh City"
   },
   "NotFound": {
     "text": "Page non trouvée !",
@@ -343,9 +344,14 @@
     "heading2": "Technologie & Écosystème",
     "heading": "Super Application",
     "text": "Chez Vua Thợ, nous sommes fiers d'être une entreprise technologique de premier plan et un pionnier dans la fourniture d'un modèle d'écosystème de super application en Asie du Sud-Est. Découlant de notre passion et de notre mission d'améliorer la vie de millions d'utilisateurs sur la voie du développement, nous offrons une expérience de haute qualité et pratique.",
-    "goal": "Notre objectif est de connecter",
-    "numberGoal": "100 000 +",
-    "textGold": "Artisans et utilisateurs à l'échelle nationale d'ici 2024"
+    "text1": "EXPLOSION DE POTENTIEL",
+    "text2": "L'objectif de 100 000 connexions n'est que le début du voyage de développement durable de Vua Thợ. Avec une vision stratégique et une orientation claire, Vua Thợ élargira progressivement son réseau, connectera les cœurs passionnés par le métier, répondra aux besoins du marché et construira un écosystème dynamique où chaque individu a l'opportunité de se développer et de réussir.",
+    "text3": "Rejoignez-nous dès maintenant",
+    "text4": "POTENTIEL",
+    "text5": "JEUNE",
+    "text6": "CONTINU",
+    "text7": "TALENT",
+    "text8": "DÉVELOPPEMENT"
   },
   "ContactUs": {
     "heading": "Contactez-nous",
@@ -355,7 +361,14 @@
     "timeDay": "Du lundi au vendredi",
     "text": "Pas de support les samedis, dimanches et jours fériés",
     "numberPhone": "38 786 688",
-    "gmail": "admin@vuatho.com"
+    "text4": "32/28, 35 Street, An Khanh Ward, Thu Duc City, Ho Chi Minh City",
+    "gmail": "admin@vuatho.com",
+    "text1": "Voir sur Google Maps",
+    "text2": "Heures d'ouverture",
+    "text3": "Bureau du Roi Vua Thợ",
+    "text6": "Adresse",
+    "text5": "Numéro de téléphone",
+    "desc": "Dans le but d'offrir à nos clients la meilleure expérience possible, nous sommes toujours prêts à recevoir tous vos commentaires et suggestions. Ne laissez pas vos questions entraver votre expérience. Contactez-nous pour partager vos idées et contribuer à améliorer la qualité de nos services."
   },
   "BecomeWorker": {
     "heading": "Guide pour s'inscrire en tant que prestataire de services",
@@ -430,7 +443,14 @@
     "text73": "Après avoir sélectionné le pays et le type de pièce d'identité pertinent, le système demande aux utilisateurs de prendre des photos des deux côtés de la pièce d'identité choisie (l'utilisation de la Carte d'identité nationale - CCCD est recommandée au Vietnam). Ensuite, les utilisateurs doivent prendre un selfie conformément aux instructions de SumSub.",
     "text74": "Une fois l'identification terminée, le système fournira un résultat estimatif dans les 5 minutes, le résultat du système inclura :",
     "text75": "Vérification réussie : Les utilisateurs peuvent utiliser tous les services et fonctionnalités de l'application.",
-    "text76": "Échec de la vérification : Les utilisateurs doivent refaire la vérification pour pouvoir utiliser tous les services et fonctionnalités de l'application."
+    "text76": "Échec de la vérification : Les utilisateurs doivent refaire la vérification pour pouvoir utiliser tous les services et fonctionnalités de l'application.",
+    "text77": "Guide de vérification des transactions",
+    "text78": "Vidéo guide de vérification des transactions",
+    "text79": "Vidéo guide d'inscription",
+    "text80": "Étape 6: Guide de vérification des transactions"
+  },
+  "PressComunication": {
+    "heading": "TRUYỀN THÔNG NÓI VỀ VUA THỢ"
   },
   "FindWorker": {
     "heading": "Comment trouver des travailleurs sur Vua Thợ",
@@ -511,7 +531,24 @@
     "text27": "Quantité",
     "text28": "Choisissez la taille",
     "text29": "Panier",
-    "text30": "Le produit est en rupture de stock, veuillez choisir un autre produit"
+    "text30": "Le produit est en rupture de stock, veuillez choisir un autre produit",
+    "text31": "Paiement à la réception",
+    "text32": "Le Handyman peut choisir le mode de paiement lors de la réception de l'uniforme pour le partenaire de livraison",
+    "text33": "Après avoir passé commande avec succès de l'uniforme, le partenaire Handyman recevra l'uniforme dans les 7 à 10 jours ouvrables selon le transporteur",
+    "text34": "Paiement par virement bancaire",
+    "text35": "Informations de virement bancaire",
+    "text36": "Nom du compte",
+    "text37": "Numéro de compte",
+    "text38": "Banque: Asia Commercial Bank - ACB",
+    "text39": "Contenu du virement bancaire: Numéro de téléphone enregistré sur l'application - Paiement de l'uniforme Handyman",
+    "text40": "Exemple: 0122334455 Paiement de l'uniforme Handyman",
+    "text41": "Paiement direct au bureau de l'entreprise",
+    "text42": "Adresse: No. 57 Song Hanh, An Phu Ward, Thu Duc City, Ho Chi Minh City",
+    "text43": "Heures d'ouverture: 8h30 - 18h00 tous les jours de la semaine (sauf jours fériés)",
+    "text44": "Virement bancaire",
+    "text45": "Paiement direct au bureau",
+    "text46": "Choisissez le mode de paiement",
+    "text47": "Choisir"
   },
   "Map": {
     "text1": "Utilisateurs de l'Application",

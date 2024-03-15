@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export const useUnfocusItem = (callback: () => void, exclusionRef?: React.RefObject<HTMLElement | null>): React.RefObject<any> => {
   const itemRef = useRef<any>(null)
@@ -24,4 +24,23 @@ export const useUnfocusItem = (callback: () => void, exclusionRef?: React.RefObj
   }, [callback, exclusionRef])
 
   return itemRef
+}
+
+export const useSmallScreen = (px?: number) => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+  const handleResize = () => {
+    setIsSmallScreen(window?.innerWidth < (px ? px : 768))
+  }
+  useEffect(() => {
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  return isSmallScreen
 }

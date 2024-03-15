@@ -61,7 +61,7 @@ const InputMainSearch = memo((props: any) => {
 
   return (
     <div ref={searchAreaRef} id='search-area-services' className='relative z-[10] mt-[20px] w-full space-y-3 md:max-w-[80%]'>
-      <div className='flex w-full rounded-full border-2 border-[#f5b500] p-3 outline-none focus:border-[#ffcc3f]'>
+      <div className='flex w-full rounded-full border-2 border-[#f5b500] bg-white p-3 outline-none focus:border-[#ffcc3f]'>
         <input
           onFocus={() => _HandleOnFocus(true)}
           onChange={_HandleOnChangeInput}

@@ -6,6 +6,7 @@ import { memo, useEffect, useState } from 'react'
 
 function ScrollToTop() {
   const [showTopBtn, setShowTopBtn] = useState(false)
+  const [isScrollToTop, setIsScrollToTop] = useState(false)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -13,11 +14,13 @@ function ScrollToTop() {
         setShowTopBtn(true)
       } else {
         setShowTopBtn(false)
+        setIsScrollToTop(false)
       }
     })
   }, [])
 
   const _scrollToTop = () => {
+    setIsScrollToTop(true)
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -29,11 +32,11 @@ function ScrollToTop() {
       aria-label='scroll-to-top'
       onPress={_scrollToTop}
       isIconOnly
-      className={`fixed bottom-10 right-10 z-50 flex min-h-[44px] min-w-[44px] translate-y-10 cursor-pointer items-center justify-center rounded-full bg-[#282828] text-white transition  ${
+      className={`fixed bottom-10 right-10 z-50 flex min-h-[44px] min-w-[44px] cursor-pointer items-center justify-center rounded-full bg-[#282828] text-white transition  ${
         showTopBtn ? 'translate-y-0' : 'translate-y-[70px]'
       }`}
     >
-      <ArrowUp size={24} />
+      <ArrowUp size={24} className={`${isScrollToTop ? 'duration-300 hover:-translate-y-[20%]' : ''} `} />
     </Button>
   )
 }

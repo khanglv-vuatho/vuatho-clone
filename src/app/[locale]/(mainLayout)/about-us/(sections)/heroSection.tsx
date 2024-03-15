@@ -1,58 +1,41 @@
 'use client'
 
-import Image from 'next/image'
-import { memo, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
-import lottie from 'lottie-web'
+import { memo } from 'react'
 
-import animationData from '@/components/animateJson/aboutUs_banner1.json'
+import ImageFallback from '@/components/ImageFallback'
 
 const HeroSection = () => {
   const t = useTranslations('AboutUs')
-
   return (
-    <div className='relative w-full bg-[#FED32C] pb-[100px] pt-[64px] 3xl:pt-[80px]'>
-      <div className='ct-container-70 flex flex-col items-center justify-center pt-10 md:flex-row'>
-        <div className=' order-2 w-full'>
-          <h3 className='text-[2.4rem] font-semibold'>
+    <div className='w-full pt-[100px] md:pb-[100px] 3xl:pt-[80px]'>
+      <div className='ct-container-70 flex flex-col md:mt-[40px] md:flex-row'>
+        <div className='col-span-2 md:mt-[100px] md:w-[80%]'>
+          <h3 className='text-[1.8rem] font-semibold uppercase tracking-[4px] md:text-[2rem]'>
             {t('heading1')} <br />
             {t('heading2')}
           </h3>
-          <p className='hidden text-[3.2rem] font-bold md:block'> {t('heading')}</p>
+          <p className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-left text-[2.4rem] font-bold uppercase text-[#f5b500] text-transparent xl:text-[3.2rem]'>
+            {t('heading')}
+          </p>
           <div className='w-full'>
-            <p className='w-full py-4 text-[1.8rem]'>{t('text')}</p>
+            <p className='text-[1.8rem] font-light'>{t('text')}</p>
           </div>
         </div>
-        <div className='order-1 mb-[35px] w-full md:order-3'>
-          <p className='my-4 block w-full whitespace-nowrap text-center text-[3.2rem] font-bold md:hidden '>{t('heading')}</p>
-          <div className='mx-auto max-w-[400px]'>
+        <div className='relative mb-[35px] mt-[40px] w-full md:mt-0'>
+          {/* <div className='mx-auto max-w-[400px]'>
             <AnimatePhone />
+          </div> */}
+          <div className='absolute right-0 h-full w-[520px] bg-red-200'>
+            <ImageFallback src={'/contact-us/hero-1.jpeg'} alt='hero-1' height={600} width={800} className='h-full w-full object-cover' />
+          </div>
+          <div className='absolute bottom-[-30%] left-[10%] w-[300px] bg-white p-[10px]'>
+            <ImageFallback src={'/to-the-moon/to-the-moon-2.jpeg'} alt='to-the-moon-2' height={300} width={300} className='w-auto' />
           </div>
         </div>
-      </div>
-      <div className='absolute bottom-[-10%] w-full '>
-        <Image src={'/images/about-us/bottom.webp'} height={149} width={2700} quality={100} alt='bottom' className='pointer-events-none h-full w-full' />
       </div>
     </div>
   )
 }
-
-const AnimatePhone = memo(() => {
-  const container = useRef(null)
-
-  useEffect(() => {
-    const instance = lottie.loadAnimation({
-      container: container.current!,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      animationData: animationData
-    })
-
-    return () => instance.destroy()
-  }, [])
-
-  return <div ref={container} />
-})
 
 export default memo(HeroSection)

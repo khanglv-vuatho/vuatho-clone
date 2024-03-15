@@ -19,7 +19,6 @@ export const ToastComponent = ({
   pauseOnHover?: boolean
   draggable?: boolean
   type?: 'info' | 'success' | 'warning' | 'error' | 'default'
-  propsStyleBtn?: any
 }) => {
   toast(message, {
     position: position || 'top-right',

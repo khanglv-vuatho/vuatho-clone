@@ -44,7 +44,8 @@
     "sending": "Skickar meddelanden till",
     "BCT": "Ministeriet för Industri och Handel",
     "text": "Företaget med begränsat ansvar Vua Thợ",
-    "text1": "Skatte-ID: "
+    "text1": "Skatte-ID: ",
+    "text2": "0318063280 issued for the first time on September 25, 2023 by the Department of Planning and Investment of Ho Chi Minh City"
   },
   "NotFound": {
     "text": "Sidan hittades inte!",
@@ -342,9 +343,14 @@
     "heading2": "Teknologi & Ekosystem",
     "heading": "Superapp",
     "text": "På Vua Thợ är vi stolta över att vara ett ledande teknikföretag och en pionjär inom att tillhandahålla en modell för superapp-ekosystem i Sydostasien. Utifrån vår passion och vårt uppdrag att förbättra miljoner användares liv längs utvecklingsvägen levererar vi en toppklassig och bekväm upplevelse.",
-    "goal": "Vårt mål är att koppla samman",
-    "numberGoal": "100 000 +",
-    "textGold": "Hantverkare och användare i hela landet fram till 2024"
+    "text1": "UTSLÄPP POTENTIALEN",
+    "text2": "Målet på 100 000 anslutningar är bara början på Vua Thợs resa mot hållbar utveckling. Med en visionär strategi och en tydlig inriktning kommer Vua Thợ gradvis att utöka sitt nätverk, koppla samman yrkesstolta hjärtan, tillgodose marknadens behov och skapa ett dynamiskt ekosystem där varje individ har möjlighet att växa och bli framgångsrik.",
+    "text3": "Gå med nu",
+    "text4": "POTENTIAL",
+    "text5": "UNG",
+    "text6": "OAVBRUTEN",
+    "text7": "TALANG",
+    "text8": "UTVECKLING"
   },
   "ContactUs": {
     "heading": "Kontakta oss",
@@ -354,7 +360,14 @@
     "timeDay": "Måndag till fredag",
     "text": "Ingen support på lördagar, söndagar och helgdagar",
     "numberPhone": "38 786 688",
-    "gmail": "admin@vuatho.com"
+    "text4": "32/28, 35 Street, An Khanh Ward, Thu Duc City, Ho Chi Minh City",
+    "gmail": "admin@vuatho.com",
+    "text1": "Visa på Google Maps",
+    "text2": "Öppettider",
+    "text3": "Vua Thợ kontor",
+    "text6": "Adress",
+    "text5": "Telefonnummer",
+    "desc": "Med målet att ge våra kunder den bästa upplevelsen är vi alltid redo att ta emot alla era synpunkter och förslag. Låt inte dina frågor hindra din upplevelse. Kontakta oss för att dela med dig av dina idéer och bidra till att förbättra vår servicekvalitet."
   },
   "BecomeWorker": {
     "heading": "Guide för att Registrera som Tjänsteleverantör",
@@ -429,7 +442,14 @@
     "text73": "Efter att ha valt land och typ av personliga dokument kräver systemet att användaren tar bilder på båda sidorna av det valda dokumentet (rekommendation att använda nationellt ID-kort i Vietnam). Därefter kommer användaren att behöva ta en selfie enligt SumSub:s instruktioner.",
     "text74": "När identifieringen är klar ger systemet en preliminär resultat inom 5 minuter. Resultatet inkluderar:",
     "text75": "Lyckad verifiering: Användaren kan använda alla tjänster och funktioner i appen.",
-    "text76": "Misslyckad verifiering: Användaren måste genomföra en ny verifiering för att kunna använda alla tjänster och funktioner i appen."
+    "text76": "Misslyckad verifiering: Användaren måste genomföra en ny verifiering för att kunna använda alla tjänster och funktioner i appen.",
+    "text77": "Kako najti delavce na nivoju podjetja",
+    "text78": "Video vodič za preverjanje poklicnih veščin",
+    "text79": "Video vodič za registracijo",
+    "text80": "Korak 6: Vodnik za preverjanje poklicnih veščin"
+  },
+  "PressComunication": {
+    "heading": "TRGOVSKA KOMUNIKACIJA O Vua Thợ"
   },
   "FindWorker": {
     "heading": "Hur man Hittar Arbetare på Vua Thợ",
@@ -510,7 +530,24 @@
     "text27": "Antal",
     "text28": "Välj storlek",
     "text29": "Varukorg",
-    "text30": "Arbetaren har slut på produkten, vänligen välj en annan produkt"
+    "text30": "Arbetaren har slut på produkten, vänligen välj en annan produkt",
+    "text31": "Betalning vid leverans",
+    "text32": "Hantverkare kan välja betalningsmetod när de får arbetskläder för transportpartnern",
+    "text33": "Efter att ha beställt arbetskläder framgångsrikt kommer partnerhantverkaren att ta emot arbetskläderna inom 7-10 arbetsdagar beroende på transportföretaget",
+    "text34": "Betalning via banköverföring",
+    "text35": "Banköverföringsinformation",
+    "text36": "Kontonamn",
+    "text37": "Kontonummer",
+    "text38": "Bank: Asia Commercial Joint Stock Bank - ACB",
+    "text39": "Innehåll i överföringen: Mobiltelefonnummer registrerat i applikationen - Betalning för arbetskläder",
+    "text40": "Exempel: 0122334455 Betalning för arbetskläder",
+    "text41": "Direkt betalning på kontoret",
+    "text42": "Adress: 57 Song Hành, An Phu Ward, Thu Duc City, Ho Chi Minh City",
+    "text43": "Öppettider: 8:30 - 18:00 alla dagar i veckan (förutom helgdagar)",
+    "text44": "Banköverföring",
+    "text45": "Direkt betalning på kontoret",
+    "text46": "Välj betalningsmetod",
+    "text47": "Välj"
   },
   "Map": {
     "text1": "App Användare",

@@ -11,13 +11,13 @@ import { Button, Skeleton, Textarea, Tooltip, useDisclosure } from '@nextui-org/
 import { useLocale, useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 import CountUp from 'react-countup'
-import { Autoplay, EffectFade, FreeMode, Navigation, Thumbs } from 'swiper/modules'
+import { Autoplay, EffectFade, FreeMode, Navigation, Thumbs, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { ImageSkeleton, Wave } from '@/components/Icons'
 import ImageFallback from '@/components/ImageFallback'
 import { ToastComponent } from '@/components/ToastComponent'
-import Article from '@/components/article'
+import Article, { ArticleFollowCommunication, ArticleOtherUrl } from '@/components/article'
 import { DefaultModal } from '@/components/modal'
 import { SkeletonBlog } from '@/components/skeleton'
 import instance from '@/services/axiosConfig'
@@ -35,6 +35,7 @@ import './swipper.scss'
 
 import InputSearch from '@/components/input/services'
 import dynamic from 'next/dynamic'
+import { useSmallScreen } from '@/hook'
 
 const GlobeComponent = dynamic(() => import('@/components/GlobeComponent'), {
   ssr: false
@@ -49,6 +50,7 @@ function HomePage() {
       <div className={`flex flex-col overflow-hidden  ${hiddenHeaderAndFooter ? 'gap-[40px] md:gap-[100px]' : 'gap-[40px] pt-[70px] md:gap-[100px] 3xl:pt-[80px]'}`}>
         <MainSection />
         <SectionWithVuaTho />
+        <OtherPress />
         <WorkerBenefitSection />
         <CustomerBenefitSection />
         <AISection />
@@ -76,7 +78,7 @@ const AISection = () => {
     <div id='AI' className='relative bg-white py-[40px] md:py-[80px] xl:py-[100px]'>
       <div className='ct-container-70 relative'>
         <p className='text-center font-semibold uppercase leading-[30px] tracking-[8px]'>{t('text')}</p>
-        <h4 className='relative z-10 mb-[60px] inline-block w-full text-center text-[2.4rem] font-semibold uppercase text-primary-blue drop-shadow-sm md:text-[4.2rem] 2xl:mb-[100px] '>
+        <h4 className='relative z-10 mb-[60px] inline-block w-full text-center text-[2.4rem] font-semibold uppercase text-primary-blue drop-shadow-sm lg:text-[3.6rem] 2xl:mb-[100px] '>
           {t('heading1')}
         </h4>
         <div className='flex flex-col'>
@@ -93,7 +95,7 @@ const AISection = () => {
               viewport={{ once: true }}
               className='flex w-full items-center justify-center md:w-1/2 xl:mt-[200px] 13inch:w-auto'
             >
-              <ImageFallback src={'/ai-section-1.webp'} alt='AI Robot' loading='lazy' width={700} height={680} quality={100} className='pointer-events-none w-auto select-none' />
+              <ImageFallback src={'/ai-section-1.webp'} alt='AI Robot' loading='lazy' width={700} height={680} className='pointer-events-none w-auto select-none' />
             </motion.div>
           </div>
           <div className='grid grid-cols-1 items-center gap-[20px] py-12 lg:ml-[10%] 13inch:ml-0 13inch:grid-cols-2 13inch:gap-[56px]'>
@@ -106,7 +108,7 @@ const AISection = () => {
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 transition={{
                   duration: 0.3,
-                  delay: 1 * ((index + 1) * 0.25)
+                  delay: 0.2 + index * 0.25
                 }}
                 viewport={{ once: true }}
                 key={`listAI-${index}`}
@@ -114,7 +116,7 @@ const AISection = () => {
               >
                 <div
                   className={`absolute inset-0 z-[2] rounded-[20px] border-b-[2px] border-[#fbac47] bg-gradient-to-br from-[#ffffff] via-[#ffffff] to-[#e7e7e7] shadow-[0px_8px_16px_0px_#A2BAF366]`}
-                ></div>
+                />
                 <h5 className='z-[4] text-[1.8rem] font-bold'>{item.title.replace(/(^|\s)\S/g, (match) => match.toUpperCase())}</h5>
                 <p className='z-[4] text-[1.8rem]'>{item.desc}</p>
               </motion.div>
@@ -161,7 +163,7 @@ const MinhBach = () => {
     <div id='trade'>
       <section className='ct-container-70'>
         <h3 className='font-semibold uppercase tracking-[8px]'>{td('text1')}</h3>
-        <h2 className='mb-[40px] inline-block text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>{t('heading')}</h2>
+        <h2 className='mb-[40px] inline-block text-[2.4rem] font-semibold uppercase text-primary-blue lg:text-[3.6rem]'>{t('heading')}</h2>
         <motion.div
           initial={{
             y: 60,
@@ -201,7 +203,7 @@ const HinhThucKetNoi = () => {
   const t = useTranslations('HinhThucKetNoi')
   const td = useTranslations('Extra')
 
-  const DataLabel: any = [
+  const DataLabel: { label: string; description: string }[] = [
     {
       label: t('listData.label1'),
       description: t('listData.description1')
@@ -232,7 +234,7 @@ const HinhThucKetNoi = () => {
     <section id='multi'>
       <section className='ct-container-70'>
         <h3 className='font-semibold uppercase tracking-[8px]'>{td('text2')}</h3>
-        <h2 className='mb-[40px] inline-block  text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[4.2rem]'>{t('heading')}</h2>
+        <h2 className='mb-[40px] inline-block  text-[2.4rem] font-semibold uppercase text-primary-blue lg:text-[3.6rem]'>{t('heading')}</h2>
         <motion.div
           initial={{
             y: 60,
@@ -272,58 +274,56 @@ const MainSection = () => {
   const t = useTranslations('MainSection')
 
   return (
-    <div>
-      <div className='relative overflow-hidden bg-[white]'>
-        <div className='ct-container-70 z-1 relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5'>
-          <div className='col-span-1 xl:col-span-3'>
-            <div className='relative z-10 flex max-w-max flex-col justify-between gap-[20px] pt-10 xl:mx-0  xl:w-full xl:pt-20'>
-              <div className='mx-auto flex max-w-max flex-col  xl:mx-0 xl:w-full'>
-                <h3 className='text-[2.8rem] font-bold uppercase'>{t('heading1')}</h3>
-                <h3 className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-left text-[2.4rem] font-bold uppercase text-[#f5b500] text-transparent xl:text-[3.2rem]'>
-                  {t('heading1-1')}
-                </h3>
-                <h3 className='text-[2.8rem] font-bold uppercase'>{t('heading2')}</h3>
+    <div className='relative overflow-hidden bg-[white]'>
+      <div className='ct-container-70 z-1 relative grid grid-cols-1 items-center md:grid-cols-2 xl:grid-cols-5'>
+        <div className='col-span-1 xl:col-span-3'>
+          <div className='relative z-10 flex max-w-max flex-col justify-between gap-[20px] pt-10 xl:mx-0  xl:w-full xl:pt-20'>
+            <div className='mx-auto flex max-w-max flex-col  xl:mx-0 xl:w-full'>
+              <h2 className='text-[3.2rem] font-bold uppercase'>{t('heading1')}</h2>
+              <h1 className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-left text-[2.4rem] font-bold uppercase text-[#f5b500] text-transparent xl:text-[3.6rem]'>
+                {t('heading1-1')}
+              </h1>
+              <h3 className='text-[3.2rem] font-bold uppercase'>{t('heading2')}</h3>
+            </div>
+            <div className='flex flex-col gap-[20px]'>
+              <div className='flex items-center gap-[8px]'>
+                <Image src={'/storm.svg'} alt='storm' width={14} height={14} className='w-auto' />
+                <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>{t('text1')}</p>
               </div>
-              <div className='flex flex-col gap-[20px]'>
-                <div className='flex items-center gap-[8px]'>
-                  <Image src={'/storm.svg'} alt='storm' width={14} height={14} className='w-auto' />
-                  <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>{t('text1')}</p>
-                </div>
-                <div className='flex items-center gap-[8px]'>
-                  <Image src={'/storm.svg'} alt='storm' width={14} height={14} className='w-auto' />
-                  <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>{t('text2')}</p>
-                </div>
+              <div className='flex items-center gap-[8px]'>
+                <Image src={'/storm.svg'} alt='storm' width={14} height={14} className='w-auto' />
+                <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>{t('text2')}</p>
               </div>
             </div>
-            <QuickDashboard />
           </div>
-          <div className='z-[1] col-span-1 mt-32 w-full justify-center xl:col-span-2'>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 1,
-                delay: 1.5
-              }}
-            >
-              <ImageFallback priority src={'/hand-hold-phone-1.webp'} alt='hand-hold-phone-1' width={400} height={500} className='z-[1] h-auto max-h-[500px] w-auto max-w-[400px]' />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: 2.5
-              }}
-              className='absolute top-[550px] z-[-3] object-contain md:top-0'
-            >
-              <GlobeComponent />
-            </motion.div>
-          </div>
+          <QuickDashboard />
         </div>
-        <div className='absolute bottom-0 left-0 right-0 z-[0] -skew-y-0 transform'>
-          <Wave />
+        <div className='z-[1] col-span-1 mt-32 w-full justify-center xl:col-span-2'>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              delay: 1.5
+            }}
+          >
+            <ImageFallback priority src={'/hand-hold-phone-1.png'} alt='hand-hold-phone-1' width={800} height={1000} className='z-[1] h-auto max-h-[500px] w-auto max-w-[400px]' />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: 2.5
+            }}
+            className='absolute top-[550px] z-[-3] object-contain md:top-0'
+          >
+            <GlobeComponent />
+          </motion.div>
         </div>
+      </div>
+      <div className='absolute bottom-0 left-0 right-0 z-[0] -skew-y-0 transform'>
+        <Wave />
       </div>
     </div>
   )
@@ -362,7 +362,7 @@ const QuickDashboard = React.memo(() => {
   return (
     <div className='relative z-[10] mb-[40px] mt-[10px] space-y-16'>
       <InputSearch />
-      <div className='grid gap-[20px] md:grid-cols-3 md:gap-0'>
+      {/* <div className='grid gap-[20px] md:grid-cols-3 md:gap-0'>
         <div className='flex items-center justify-between md:block'>
           <h1>{t('worker')}</h1>
           <h1 className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-7xl font-bold text-transparent'>
@@ -378,7 +378,7 @@ const QuickDashboard = React.memo(() => {
         <div>
           <ServcesModal value={objectData?.services} />
         </div>
-      </div>
+      </div> */}
     </div>
   )
 })
@@ -432,18 +432,18 @@ const CustomerBenefitSection = () => {
         <div className='col-span-1 xl:col-span-2'>
           <div className='hidden flex-col gap-[10px] md:flex'>
             <h2 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>{t('benefit')}</h2>
-            <p className='whitespace-nowrap text-[2.4rem] font-semibold uppercase text-primary-blue md:text-[3.2rem]'>{t('text')}</p>
+            <p className='whitespace-nowrap text-[2.4rem] font-bold uppercase text-primary-blue lg:text-[3.6rem]'>{t('text')}</p>
           </div>
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{
               once: true
             }}
             className='mx-auto mt-6 size-full max-h-[800px] max-w-[800px] xl:mx-0'
           >
-            <Image src={'/khach-benefit-7.webp'} alt='khach-benefit-7' loading='lazy' height={600} width={600} className='pointer-events-none h-full w-full select-none object-contain' />
+            <Image src={'/khach-benefit-7.webp'} alt='khach-benefit-7' loading='lazy' height={1200} width={1200} className='pointer-events-none h-full w-full select-none object-contain' />
           </motion.div>
         </div>
         <div className='col-span-1 grid grid-cols-1 md:mx-auto md:max-w-[820px] md:grid-cols-2 xl:col-span-3'>
@@ -462,7 +462,7 @@ const CustomerBenefitSection = () => {
               transition={{
                 duration: 0.2,
                 ease: 'easeOut',
-                delay: 1 * ((index + 1) * 0.25)
+                delay: 0.2 + index * 0.1
               }}
               viewport={{
                 once: true
@@ -493,7 +493,7 @@ const WorkerBenefitSection = () => {
   const [listDataBenefit, setListDataBenefit] = useState<any>([])
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
 
-  const [isMobile, setIsMobile] = useState(false)
+  const isMobile = useSmallScreen()
 
   const swiperRef = useRef<any>(null)
 
@@ -538,27 +538,13 @@ const WorkerBenefitSection = () => {
     return () => clearTimeout(timer)
   }, [timer])
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    handleResize()
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
   return (
     <div className='relative flex flex-col'>
       <div className='ct-container-70 flex flex-col'>
         <div className='flex items-center justify-between'>
           <div className='flex flex-col gap-[10px]'>
             <h2 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>{t('benefit')}</h2>
-            <p className='text-[2.4rem] font-bold uppercase text-primary-blue md:text-[3.6rem]'>{t('text')}</p>
+            <p className='text-[2.4rem] font-bold uppercase text-primary-blue lg:text-[3.6rem]'>{t('text')}</p>
           </div>
           <div className='rounded-full bg-black px-[24px] py-[8px] text-white'>
             {currentIndex + 1 <= 9 ? `0${currentIndex + 1}` : currentIndex + 1}/{listDataBenefit?.length}
@@ -576,11 +562,11 @@ const WorkerBenefitSection = () => {
                   <Skeleton key={`skeleton-text-${index}`} className='h-[12px] w-full rounded-lg' />
                 ))}
             </div>
-            <div className='flex w-full items-center justify-center  gap-[20px]'>
+            <div className='flex w-full items-center justify-center gap-[20px]'>
               {Array(6)
                 .fill(1)
-                .map((_: any, index: number) => (
-                  <Skeleton className='h-[32px] w-[32px] flex-shrink-0 rounded-lg' key={`skeleton-pagination-${index}`} />
+                .map((_, index: number) => (
+                  <Skeleton className='size-[32px] flex-shrink-0 rounded-lg' key={`skeleton-pagination-${index}`} />
                 ))}
             </div>
           </>
@@ -624,15 +610,7 @@ const WorkerBenefitSection = () => {
                         <div dangerouslySetInnerHTML={{ __html: item.html }} />
                       </div>
                       <div className='relative order-none col-span-2 h-full w-full md:order-1 md:col-span-1'>
-                        <ImageFallback
-                          priority
-                          // src={`/benefits/${index + 1}.webp`}
-                          src={item.img}
-                          alt={item.title}
-                          height={600}
-                          width={900}
-                          className='h-auto max-h-[400px] w-auto md:max-h-[280px] 13inch:max-h-none'
-                        />
+                        <ImageFallback priority src={item.img} alt={item.title} height={600} width={900} className='h-auto max-h-[400px] w-auto md:max-h-[280px] 13inch:max-h-none' />
                       </div>
                     </div>
                   </SwiperSlide>
@@ -643,7 +621,7 @@ const WorkerBenefitSection = () => {
               onSwiper={(swiper: any) => setThumbsSwiper(swiper)}
               slidesPerView={isMobile ? 3 : 6}
               spaceBetween={10}
-              freeMode={true}
+              freeMode
               modules={[FreeMode, Navigation, Thumbs]}
               className={`swiperPagination z-10 flex w-full max-w-[86%] items-center justify-between ${isMobile ? 'mt-10' : ''}`}
             >
@@ -676,8 +654,8 @@ const WorkerBenefitSection = () => {
 }
 
 const PressHome = () => {
-  const locale = useLocale()
   const t = useTranslations('PressHome')
+  const locale = useLocale()
 
   const [onFetching, setOnFetching] = useState<boolean>()
   const [listBlog, setListBlog] = useState([])
@@ -707,9 +685,9 @@ const PressHome = () => {
   }, [locale])
 
   return (
-    <div className='ct-container-70 z-10 flex flex-col gap-[20px] pb-[40px] md:pb-0'>
+    <div className='ct-container-70 z-10 mb-[40px] flex flex-col gap-[20px] md:pb-0'>
       <div className='flex items-center justify-between'>
-        <h2 className='inline-block text-[1.8rem] font-bold uppercase text-primary-blue md:text-[3.2rem]'>{t('heading')}</h2>
+        <h2 className='text-[2.4rem] font-bold uppercase text-primary-blue lg:text-[3.6rem]'>{t('heading')}</h2>
         <Link href={`/${locale}/press`} className='group inline-flex items-center text-[1.6rem] font-semibold md:text-[1.8rem]'>
           <p>{t('seeAll')}</p>
           <span className='transition group-hover:translate-x-2'>
@@ -722,19 +700,21 @@ const PressHome = () => {
           Array(4)
             .fill(null)
             .map((_, index: number) => (
-              <div className='w-full' key={`skeleton-blog-${index}`}>
+              <div className='w-[80%] md:w-[40%] lg:w-full' key={`skeleton-blog-${index}`}>
                 <SkeletonBlog />
               </div>
             ))
         ) : !!listBlog?.length ? (
           listBlog.map((item: any, index: number) => {
-            return <Article key={index} index={index} item={item} style='w-[80%] md:w-[40%] lg:w-full cursor-pointer' />
+            return !!item?.redirect_url?.length ? (
+              <ArticleOtherUrl key={index} index={index} item={item} style='block w-[80%] md:w-[40%] lg:w-full cursor-pointer' />
+            ) : (
+              <Article key={index} index={index} item={item} style='w-[80%] md:w-[40%] lg:w-full cursor-pointer' />
+            )
           })
         ) : (
-          <div className='col-span-4 flex flex-col items-center gap-[16px]'>
-            <div className=''>
-              <ImageFallback src={'/press/no-data.png'} alt='no-data' height={200} width={200} className='size-[200px] w-auto' />
-            </div>
+          <div className='col-span-4 flex w-full flex-col items-center gap-[16px]'>
+            <ImageFallback src={'/press/no-data.png'} alt='no-data' height={400} width={400} className='size-[200px] w-auto' />
             <p className='text-[2rem] text-[#282828]'>{t('noData')}</p>
           </div>
         )}
@@ -745,9 +725,9 @@ const PressHome = () => {
 
 const LikeControl = ({ item }: { item: any }) => {
   const t = useTranslations('Modal')
+
   const [checkLike, setCheckLike] = useState({ isLiked: item.isLike, count: item.like })
   const [checkDislike, setCheckDislike] = useState<any>({ isDisliked: item.isDislike })
-
   const [dislikeMessage, setDislikeMessage] = useState<string>('')
 
   const _ServerSendingLike = async () => {
@@ -831,11 +811,11 @@ const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; is
 
   const { isOpen, onOpenChange, onOpen, onClose } = useDisclosure()
 
-  const _HandleUnLike = () => {
+  const _HandleUnLike = (): void => {
     isDislike !== true && onOpen()
   }
 
-  const _HandleSendMessage = () => {
+  const _HandleSendMessage = (): void => {
     if (!!message.length) {
       onClick()
       onClose()
@@ -856,10 +836,10 @@ const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; is
               <Image src={'/benefitCustomer/Fixy-write1.webp'} alt='write-mascot' height={174} width={217} className='object-cover' />
             </div>
             <div className='flex flex-col justify-center gap-[8px]'>
-              <p className='text-[1.8rem]  font-medium'>{t('heading')}</p>
+              <p className='text-[1.8rem] font-medium'>{t('heading')}</p>
               <Textarea
                 value={message}
-                onChange={(e: any) => setMessage(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setMessage(e.target.value)}
                 placeholder={t('type')}
                 minRows={2}
                 className='w-full'
@@ -876,6 +856,101 @@ const UnLike = ({ onClick, isDislike, message, setMessage }: { onClick?: any; is
         }
       />
     </>
+  )
+}
+
+const OtherPress = () => {
+  const t = useTranslations('PressComunication')
+  const [listArticleFollowCommunication, setListArticleFollowCommunication] = useState([])
+  const [listArticleFollowCommunicationVideo, setListArticleFollowCommunicationVideo] = useState([])
+  const [onFetching, setOnFetching] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  const locale = useLocale()
+  const serverFetching = useCallback(async () => {
+    try {
+      const { data } = await instance.get('/communication-activities')
+      const { data: videoData } = await instance.get('/communication-activities', {
+        params: {
+          type: 1
+        }
+      })
+      setListArticleFollowCommunication(data)
+      setListArticleFollowCommunicationVideo(videoData)
+    } catch (error) {
+      console.log(error)
+      setOnFetching(false)
+    } finally {
+      setOnFetching(false)
+    }
+  }, [locale])
+
+  useEffect(() => {
+    onFetching && serverFetching()
+  }, [onFetching])
+
+  useEffect(() => {
+    setOnFetching(true)
+  }, [])
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  return (
+    <div className='ct-container-70 flex flex-col gap-[20px]'>
+      <h2 className='text-[2.4rem] font-bold uppercase text-primary-blue lg:text-[3.6rem]'>{t('heading')}</h2>
+      <div className=''>
+        {mounted ? (
+          <>
+            <SwipperBlog data={listArticleFollowCommunicationVideo} />
+            <SwipperBlog data={listArticleFollowCommunication} />
+          </>
+        ) : (
+          <div className='flex flex-nowrap gap-[10px] overflow-x-auto overflow-y-hidden p-[4px]'>
+            {Array(4)
+              .fill(null)
+              .map((_, index) => {
+                return (
+                  <div className='w-[80%] min-w-[250px] md:w-[40%] lg:w-full' key={`skeleton-listOtherPress-${index}`}>
+                    <SkeletonBlog />
+                  </div>
+                )
+              })}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+const SwipperBlog = ({ data }: { data: any }) => {
+  return (
+    <Swiper
+      breakpoints={{
+        300: {
+          slidesPerView: 1.5
+        },
+        600: {
+          slidesPerView: 2.5
+        },
+        1024: {
+          slidesPerView: 4
+        }
+      }}
+      spaceBetween={20}
+      modules={[Pagination]}
+      pagination={{
+        clickable: true
+      }}
+      className={'swipperListOtherPress z-[5] h-full w-full overflow-x-hidden'}
+    >
+      {data.map((item: any) => (
+        <SwiperSlide key={item?.id} className='p-[2px] pb-[30px]'>
+          <ArticleFollowCommunication item={item} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   )
 }
 

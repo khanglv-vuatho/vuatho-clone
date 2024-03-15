@@ -14,3 +14,6 @@ export const normalizeKeyword = (keyword: string) => {
     .replace(/[\u0300-\u036f\s]/g, '')
     .replace('đ', 'd')
 }
+export const convertToLowerCase = (str: string) => {
+  return str.toLowerCase()
+}

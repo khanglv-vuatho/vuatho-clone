@@ -44,7 +44,8 @@
     "sending": "Wysyłanie powiadomień do",
     "BCT": "Ministerstwo Przemysłu i Handlu",
     "text": "Firma z ograniczoną odpowiedzialnością Vua Thợ",
-    "text1": "Numer podatkowy: "
+    "text1": "Numer podatkowy: ",
+    "text2": "0318063280 issued for the first time on September 25, 2023 by the Department of Planning and Investment of Ho Chi Minh City"
   },
   "NotFound": {
     "text": "Strona nie znaleziona!",
@@ -342,9 +343,14 @@
     "heading2": "Technologii i Ekosystemie",
     "heading": "Super Aplikacja",
     "text": "W Vua Thợ jesteśmy dumni z bycia wiodącą firmą technologiczną i pionierem w dostarczaniu modelu ekosystemu super aplikacji w Azji Południowo-Wschodniej. Wynikający z naszej pasji i misji polepszenia życia milionów użytkowników na ścieżce rozwoju, dostarczamy najlepsze doświadczenie i wygodę.",
-    "goal": "Nasz cel to połączenie",
-    "numberGoal": "100 000 +",
-    "textGold": "Rzemieślników i użytkowników na całym kraju do 2024 roku"
+    "text1": "WYBUCH POTENCJAŁU",
+    "text2": "Cel 100 000 połączeń to tylko początek zrównoważonego rozwoju Vua Thợ. Dzięki strategicznej wizji i jasnej orientacji Vua Thợ będzie stopniowo rozszerzać sieć, łączyć serca kochające zawód, odpowiadać na potrzeby rynku i tworzyć dynamiczny ekosystem, w którym każdy ma szansę na rozwój i sukces.",
+    "text3": "Dołącz teraz",
+    "text4": "POTENCJAŁ",
+    "text5": "MŁODY",
+    "text6": "NIEUSTAJĄCY",
+    "text7": "TALENT",
+    "text8": "ROZWÓJ"
   },
   "ContactUs": {
     "heading": "Kontakt",
@@ -354,7 +360,14 @@
     "timeDay": "od poniedziałku do piątku",
     "text": "Brak wsparcia w soboty, niedziele i dni świąteczne",
     "numberPhone": "38 786 688",
-    "gmail": "admin@vuatho.com"
+    "text4": "32/28, 35 Street, An Khanh Ward, Thu Duc City, Ho Chi Minh City",
+    "gmail": "admin@vuatho.com",
+    "text1": "Zobacz na mapach Google",
+    "text2": "Godziny otwarcia",
+    "text3": "Biuro Króla Vua Thợ",
+    "text6": "Adres",
+    "text5": "Numer telefonu",
+    "desc": "Z myślą o zapewnieniu naszym klientom jak najlepszych doświadczeń jesteśmy zawsze otwarci na wszelkie sugestie i opinie. Nie pozwól, by Twoje pytania zakłócały Twoje doświadczenia. Skontaktuj się z nami, aby podzielić się swoimi pomysłami i przyczynić się do poprawy jakości naszych usług."
   },
   "BecomeWorker": {
     "heading": "Przewodnik po rejestracji jako dostawca usług",
@@ -429,7 +442,14 @@
     "text73": "Po wybraniu kraju i rodzaju dokumentu tożsamości system wymaga od użytkownika zrobienia zdjęć obu stron wybranego dokumentu (zaleca się użycie Karty Dużej Rodziny - KDR w Wietnamie). Następnie użytkownik musi zrobić selfie zgodnie z instrukcjami od SumSub.",
     "text74": "Po zakończeniu procesu identyfikacji system zwróci szacunkowy wynik w ciągu 5 minut. Wynik systemu obejmie:",
     "text75": "Udane potwierdzenie: Użytkownik może korzystać z wszystkich usług i funkcji aplikacji.",
-    "text76": "Nieudane potwierdzenie: Użytkownik musi ponownie przeprowadzić proces potwierdzenia, aby móc korzystać z wszystkich usług i funkcji aplikacji."
+    "text76": "Nieudane potwierdzenie: Użytkownik musi ponownie przeprowadzić proces potwierdzenia, aby móc korzystać z wszystkich usług i funkcji aplikacji.",
+    "text77": "Instrukcja sprawdzania działalności",
+    "text78": "Wideo instruktażowe dotyczące sprawdzania działalności",
+    "text79": "Wideo instruktażowe dotyczące rejestracji",
+    "text80": "Krok 6: Instrukcja sprawdzania działalności"
+  },
+  "PressComunication": {
+    "heading": "PRASA MÓWI O Vua Thợ"
   },
   "FindWorker": {
     "heading": "Jak znaleźć pracowników na Vua Thợ",
@@ -510,7 +530,24 @@
     "text27": "Ilość",
     "text28": "Wybierz rozmiar",
     "text29": "Koszyk",
-    "text30": "Produkt jest niedostępny, prosimy wybrać inny produkt"
+    "text30": "Produkt jest niedostępny, prosimy wybrać inny produkt",
+    "text31": "Płatność przy odbiorze",
+    "text32": "Mistrz może wybrać formę płatności po otrzymaniu munduru dla partnera transportowego",
+    "text33": "Po pomyślnym złożeniu zamówienia na mundur, partner Mistrz otrzyma mundur w ciągu 7-10 dni roboczych w zależności od przewoźnika",
+    "text34": "Płatność przelewem",
+    "text35": "Informacje o przelewie",
+    "text36": "Nazwa konta",
+    "text37": "Numer konta",
+    "text38": "Bank: Azjatycki Bank Handlowy - ACB",
+    "text39": "Tytuł przelewu: Numer telefonu rejestracyjnego w aplikacji - Płatność za mundur Vua Tho",
+    "text40": "Przykład: 0122334455 Płatność za mundur Vua Tho",
+    "text41": "Płatność bezpośrednia w biurze firmy",
+    "text42": "Adres: 57 Song Hành, dzielnica An Phú, miasto Thủ Đức, miasto Ho Chi Minh",
+    "text43": "Godziny otwarcia: 8:30 - 18:00 przez cały tydzień (z wyjątkiem świąt)",
+    "text44": "Przelew",
+    "text45": "Płatność bezpośrednia w biurze",
+    "text46": "Wybierz metodę płatności",
+    "text47": "Wybierz"
   },
   "Map": {
     "text1": "Użytkownicy aplikacji",

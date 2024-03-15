@@ -3,10 +3,12 @@
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react'
-import { Accordion, AccordionItem } from '@nextui-org/react'
+import { Accordion, AccordionItem, Button, useDisclosure } from '@nextui-org/react'
 
 import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'
 import ImageFallback from '@/components/ImageFallback'
+import { DefaultModal } from '@/components/modal'
+import { PlayIcon } from '@/components/Icons'
 
 const SectionStep = () => {
   const t = useTranslations('BecomeWorker')
@@ -14,7 +16,7 @@ const SectionStep = () => {
 
   const highlightRef = useRef(null)
 
-  const listAccordion: any = [
+  const listAccordion: { title: string; content: React.ReactNode }[] = [
     {
       title: t('text1'),
       content: <Step1 />
@@ -34,6 +36,10 @@ const SectionStep = () => {
     {
       title: t('text5'),
       content: <Step5 />
+    },
+    {
+      title: t('text80'),
+      content: <Step6 />
     }
   ]
 
@@ -77,7 +83,7 @@ const SectionStep = () => {
         <div className='relative col-span-2 min-w-[28%] lg:min-w-[31%] 2xl:min-w-[28%]'>
           <div className='absolute w-full border-l-[4px] border-[#FCB713] bg-gradient-to-r from-[#FCB71333] to-[#FCB71300] transition' ref={highlightRef} />
           <div className='flex flex-col'>
-            {listAccordion.map((i: any, index: number) => (
+            {listAccordion.map((i, index) => (
               <button
                 onClick={() => handleActiveSelect(i.title, index)}
                 className={`flex w-full items-center justify-start border-l-[4px] border-transparent px-10 py-6 text-[1.8rem] ${
@@ -100,7 +106,7 @@ const SectionStep = () => {
               base: 'group-[.is-splitted]:shadow-[0px_0px_12px_2px_rgba(0,0,0,0.20)]'
             }}
           >
-            {listAccordion.map((i: any, index: any) => (
+            {listAccordion.map((i, index) => (
               <AccordionItem
                 key={i.title}
                 aria-label={i.title}
@@ -140,6 +146,21 @@ const Step1: React.FC = memo(() => {
   const DocRequirements = [t('text6'), t('text7'), t('text8'), t('text9'), t('text10')]
   const DocType = [t('text11'), t('text12'), t('text12-1')]
 
+  const imageDemoPaper: { desc: string; thumbs: string[] }[] = [
+    {
+      desc: t('text70'),
+      thumbs: ['cmnd1.webp', 'cmnd2.webp']
+    },
+    {
+      desc: t('text72'),
+      thumbs: ['mat-truoc-bang-lai.webp', 'mat-sau-bang-lai.jpeg']
+    },
+    {
+      desc: t('text12'),
+      thumbs: ['ho-chieu.jpeg']
+    }
+  ]
+
   return (
     <div className='*:text-[1.8rem] *:font-light'>
       <h3 className='text-[2rem] !font-bold text-[#0B27B6] md:text-[2.4rem]'>{t('text55')}</h3>
@@ -155,10 +176,16 @@ const Step1: React.FC = memo(() => {
           <li key={item}>{item}</li>
         ))}
       </ul>
-      <div className='mt-6 flex flex-col justify-start gap-4 lg:flex-row lg:items-center '>
-        <Image src={'/images/cmnd1.webp'} alt='' width={324} height={191} className='pointer-events-none max-w-[240px]' />
-        <Image src={'/images/cmnd2.webp'} alt='' width={324} height={191} className='pointer-events-none max-w-[240px]' />
-      </div>
+      {imageDemoPaper.map((item: any, index: number) => (
+        <div key={index} className='flex flex-col gap-[4px] xs:items-center'>
+          <div className='mt-[20px] flex flex-col justify-start gap-[16px] lg:flex-row lg:items-center '>
+            {item.thumbs.map((thumb: any, index: number) => (
+              <ImageFallback key={`${thumb}-${index}`} src={`/images/${thumb}`} alt={thumb} width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+            ))}
+          </div>
+          <p className='text-[1.4rem] font-light text-gray-400 md:text-center'>{item.desc}</p>
+        </div>
+      ))}
     </div>
   )
 })
@@ -170,7 +197,7 @@ const Step2: React.FC = memo(() => {
     <>
       <h3 className='mb-[16px] text-[2rem] font-bold text-[#0B27B6] md:text-[2.4rem] '>{t('text15')}</h3>
       <div className='flex flex-col gap-[16px] lg:flex-row lg:items-center'>
-        <div className='grid grid-cols-1 gap-[16px] xl:grid-cols-2'>
+        <div className='flex flex-col gap-[16px]'>
           <AndroidBtn />
           <IosBtn />
         </div>
@@ -185,6 +212,11 @@ const Step2: React.FC = memo(() => {
 
 const Step3: React.FC = memo(() => {
   const t = useTranslations('BecomeWorker')
+  const { isOpen, onOpenChange, onOpen } = useDisclosure()
+
+  const handlePlayVideo = () => {
+    onOpen()
+  }
 
   const listItem = [
     {
@@ -230,6 +262,36 @@ const Step3: React.FC = memo(() => {
         {listItem.map((item) => (
           <Step3Item key={item.thumb} item={item} />
         ))}
+        <div onClick={handlePlayVideo} className='relative col-span-1 text-center md:row-span-1'>
+          <Button
+            aria-label='play'
+            onClick={handlePlayVideo}
+            isIconOnly
+            className='absolute left-1/2 top-1/2 flex min-h-[64px] min-w-[64px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/40'
+          >
+            <PlayIcon className='size-[24px]' />
+          </Button>
+          <ImageFallback
+            src={'/become-employee/step3/huong-dan-dang-ky.png'}
+            alt='huong-dan-dang-ky'
+            height={350}
+            width={1000}
+            className='pointer-events-none mb-[10px] w-full cursor-pointer select-none overflow-hidden rounded-[20px]'
+            priority
+          />
+          <i className='font-light'>{t('text79')}</i>
+        </div>
+        <DefaultModal
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          hiddenCloseBtn
+          aria-label='modal video'
+          hiddenHeader
+          size='5xl'
+          modalBody={
+            <iframe className='min-h-[200px] w-full object-cover xs:min-h-[400px] lg:min-h-[500px] 2xl:min-h-[600px]' src='https://www.youtube.com/embed/Q2sh1pOaUuk' title='YouTube video player' />
+          }
+        />
       </div>
     </>
   )
@@ -268,14 +330,14 @@ const Step4: React.FC = memo(() => {
           <p>2. {t('text69')}</p>
           <ul className='list-inside list-disc'>
             <li>{t('text70')}</li>
-            <li>{t('text71')}</li>
             <li>{t('text72')}</li>
             <li>{t('text12')}</li>
           </ul>
         </div>
+
         <div className='flex w-full gap-[16px]'>
-          <ImageFallback src={`/become-employee/step4/phone1-${localeImage}.webp`} alt='phone1' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
-          <ImageFallback src={`/become-employee/step4/phone2-${localeImage}.webp`} alt='phone2' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+          <ImageFallback src={`/become-employee/step4/phone1-${localeImage}.png`} alt='phone1' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
+          <ImageFallback src={`/become-employee/step4/phone2-${localeImage}.png`} alt='phone2' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
         </div>
         <p>{t('text73')}</p>
       </div>
@@ -303,6 +365,51 @@ const Step5: React.FC = memo(() => {
           <ImageFallback src={`/become-employee/step5/phone2-${localeImage}.webp`} alt='phone2' width={335} height={153} className='max-h-[500px] max-w-[200px]' />
         </div>
       </div>
+    </div>
+  )
+})
+
+const Step6: React.FC = memo(() => {
+  const t = useTranslations('BecomeWorker')
+
+  const { isOpen, onOpenChange, onOpen } = useDisclosure()
+
+  const handlePlayVideo = () => {
+    onOpen()
+  }
+
+  return (
+    <div className='flex flex-col gap-[16px]'>
+      <h3 className='text-[2rem] !font-bold text-[#0B27B6] md:text-[2.4rem]'>{t('text77')}</h3>
+      <div onClick={handlePlayVideo} className='relative col-span-1  text-center md:row-span-1'>
+        <Button
+          aria-label='play'
+          onClick={handlePlayVideo}
+          isIconOnly
+          className='absolute left-1/2 top-1/2 flex min-h-[64px] min-w-[64px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/40'
+        >
+          <PlayIcon className='size-[24px]' />
+        </Button>
+        <ImageFallback
+          src={'/become-employee/step6/huong-dan-kiem-tra-nghiep-vu.png'}
+          alt='huong-dan-kiem-tra-nghiep-vu'
+          height={350}
+          width={1000}
+          className='pointer-events-none mb-[10px] w-full cursor-pointer select-none overflow-hidden rounded-[20px]'
+        />
+        <i className=' font-light'>{t('text78')}</i>
+      </div>
+      <DefaultModal
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        hiddenCloseBtn
+        aria-label='modal video'
+        hiddenHeader
+        size='5xl'
+        modalBody={
+          <iframe className='min-h-[200px] w-full object-cover xs:min-h-[400px] lg:min-h-[500px] 2xl:min-h-[600px]' src='https://www.youtube.com/embed/yUzIennkrM8' title='YouTube video player' />
+        }
+      />
     </div>
   )
 })

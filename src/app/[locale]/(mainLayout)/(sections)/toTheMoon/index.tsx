@@ -15,7 +15,7 @@ function SectionToTheMoon() {
       <div className='order-1 flex flex-col justify-center gap-[10px]'>
         <>
           <h3 className='font-bold uppercase tracking-[8px]'>{td('text')}</h3>
-          <h2 className='text-[2.4rem] font-semibold text-primary-blue md:text-[3.2rem]'>{t('title')}</h2>
+          <h2 className='text-[2.4rem] font-bold uppercase text-primary-blue lg:text-[3.6rem]'>{t('title')}</h2>
         </>
         <motion.p
           initial={{
@@ -59,4 +59,5 @@ function SectionToTheMoon() {
     </div>
   )
 }
+
 export default memo(SectionToTheMoon)

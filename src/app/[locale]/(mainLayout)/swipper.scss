@@ -28,3 +28,12 @@
     }
   }
 }
+
+.swiper.swipperListOtherPress {
+  .swiper-pagination {
+    @apply bottom-0;
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      @apply bg-primary-yellow;
+    }
+  }
+}

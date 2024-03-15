@@ -3,7 +3,7 @@ import { PressContent } from '..'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
-    const { data } = await axios.get(`https://sandbox-api-website.vuatho.com/blog/byCategory?slug=${params.tag}`)
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/blog/byCategory?slug=${params.tag}`)
     const description: any = {
       vi: 'Ứng dụng số 1 Việt Nam',
       en: 'Leading App in Vietnam'

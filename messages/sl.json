@@ -44,7 +44,8 @@
     "sending": "Pošiljanje obvestil na",
     "BCT": "Ministrstvo za industrijo in trgovino",
     "text": "Podjetje z omejeno odgovornostjo Vua Tho",
-    "text1": "Davčna številka: "
+    "text1": "Davčna številka: ",
+    "text2": "0318063280 issued for the first time on September 25, 2023 by the Department of Planning and Investment of Ho Chi Minh City"
   },
   "NotFound": {
     "text": "Stran ni najdena!",
@@ -343,9 +344,14 @@
     "heading2": "Tehnologija in Ekosistem",
     "heading": "Super Aplikacija",
     "text": "Pri Vua Thợ smo ponosni, da smo vodilno tehnološko podjetje in pionirji pri zagotavljanju modela ekosistema super aplikacij v jugovzhodni Aziji. Izhajajoč iz naše strasti in poslanstva izboljšanja življenja milijonov uporabnikov na poti razvoja, ponujamo vrhunsko in priročno izkušnjo.",
-    "goal": "Naš cilj je povezati",
-    "numberGoal": "100.000 +",
-    "textGold": "mojstrov in uporabnikov po vsej državi do leta 2024"
+    "text1": "EKSPLOZIJA POTENCIALA",
+    "text2": "Cilj 100.000 povezav je le začetek trajnostnega razvoja podjetja Vua Thợ. Z vizionarsko strategijo in jasno usmeritvijo bo Vua Thợ postopoma širil mrežo, povezoval srca, ki ljubijo poklic, zadovoljeval potrebe trga in ustvaril dinamičen ekosistem, kjer ima vsak posameznik priložnost za rast in uspeh.",
+    "text3": "Pridružite se takoj",
+    "text4": "POTENCIAL",
+    "text5": "MLAD",
+    "text6": "NEPREKINJEN",
+    "text7": "TALENT",
+    "text8": "RAZVOJ"
   },
   "ContactUs": {
     "heading": "Kontaktirajte nas",
@@ -355,7 +361,14 @@
     "timeDay": "od ponedeljka do petka",
     "text": "Podpora ni na voljo ob sobotah, nedeljah in praznikih",
     "numberPhone": "38 786 688",
-    "gmail": "admin@vuatho.com"
+    "text4": "32/28, 35 Street, An Khanh Ward, Thu Duc City, Ho Chi Minh City",
+    "gmail": "admin@vuatho.com",
+    "text1": "Pogledajte na Google Maps",
+    "text2": "Radno vreme",
+    "text3": "Kancelarija Vua Thợ",
+    "text6": "Adresa",
+    "text5": "Broj telefona",
+    "desc": "S ciljem pružanja najboljeg iskustva našim klijentima, uvek smo otvoreni za prijem svih vaših sugestija. Ne dopustite da vas pitanja sputavaju u vašem iskustvu. Obratite nam se kako biste podelili svoje ideje i doprineli poboljšanju kvaliteta naše usluge."
   },
   "BecomeWorker": {
     "heading": "Vodič za registracijo kot ponudnik storitev",
@@ -430,7 +443,14 @@
     "text73": "Po izbiri države in vrste osebnega dokumenta sistem zahteva, da uporabnik posname obe strani izbranega dokumenta (priporočljivo je uporabiti Osebno izkaznico v Vietnamu). Nato sledi postopek zajemanja selfija uporabnika po navodilih SumSub.",
     "text74": "Po končanem postopku identifikacije bo sistem vrnil rezultate v približno 5 minutah, ki vključujejo:",
     "text75": "Uspešno preverjanje: Uporabnik lahko uporablja vse storitve in funkcije aplikacije.",
-    "text76": "Neuspešno preverjanje: Uporabnik mora ponovno izvesti postopek preverjanja, da lahko uporablja vse storitve in funkcije aplikacije."
+    "text76": "Neuspešno preverjanje: Uporabnik mora ponovno izvesti postopek preverjanja, da lahko uporablja vse storitve in funkcije aplikacije.",
+    "text77": "Navodila za preverjanje poslov",
+    "text78": "Video navodila za preverjanje poslov",
+    "text79": "Video navodila za registracijo",
+    "text80": "Korak 6: Navodila za preverjanje poslov"
+  },
+  "PressComunication": {
+    "heading": "TRŽNI KOMUNIKATI O VUA THỢ"
   },
   "FindWorker": {
     "heading": "Kako najti delavce na Vua Thợ",
@@ -511,7 +531,24 @@
     "text27": "Količina",
     "text28": "Izberi velikost",
     "text29": "Košarica",
-    "text30": "Izdelek je razprodan, prosimo, izberite drug izdelek"
+    "text30": "Izdelek je razprodan, prosimo, izberite drug izdelek",
+    "text31": "Plačilo po povzetju",
+    "text32": "Dobavitelj lahko izbere način plačila ob prevzemu uniforme od partnerskega prevoznika",
+    "text33": "Po uspešnem naročilu uniforme jo bo dobavitelj prejel v roku 7 - 10 delovnih dni, odvisno od prevoznika",
+    "text34": "Plačilo z nakazilom",
+    "text35": "Informacije o nakazilu",
+    "text36": "Ime računa",
+    "text37": "Številka računa",
+    "text38": "Banka: Azijska trgovinska banka - ACB",
+    "text39": "Opis nakazila: Telefonska številka, registrirana v aplikaciji - Plačilo za uniformo Vua Tho",
+    "text40": "Primer: 0122334455 Plačilo za uniformo Vua Tho",
+    "text41": "Neposredno plačilo v sedežu podjetja",
+    "text42": "Naslov: 57 Song Hành, Phường An Phú, TP. Thủ Đức, TP. Hồ Chí Minh",
+    "text43": "Odpiralni čas: 8:30 - 18:00 vse dni v tednu (razen praznikov)",
+    "text44": "Nakazilo",
+    "text45": "Neposredno plačilo v sedežu podjetja",
+    "text46": "Izberite način plačila",
+    "text47": "Izberite"
   },
   "Map": {
     "text1": "Uporabniki aplikacije",

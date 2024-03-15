@@ -12,6 +12,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Add as AddIcon, HambergerMenu as MenuIcon } from 'iconsax-react'
 import { twMerge } from 'tailwind-merge'
 import { useDispatch, useSelector } from 'react-redux'
+import LogoAnimate from '@/components/LogoAnimate'
 
 const Header = React.memo(() => {
   return (
@@ -69,14 +70,16 @@ export const HeaderWrapper = ({ children, style }: { children: React.ReactNode; 
 
 export const Logo = memo(() => {
   const locale = useLocale()
+
   const _handleClickLogo = useCallback(() => {
     window.scrollTo({
       top: 0
     })
   }, [])
+
   return (
     <Link onClick={_handleClickLogo} href={`/${locale}`} className='block h-fit'>
-      <Image src='/logo/textLogo.webp' alt='Logo nav' width={256} height={176} className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[70px]' />
+      <Image src='/logo/logo.svg' alt='Logo nav' width={256} height={176} className='pointer-events-none h-[60px] w-auto object-contain 3xl:h-[70px]' />
     </Link>
   )
 })

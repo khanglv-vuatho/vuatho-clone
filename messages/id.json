@@ -44,7 +44,8 @@
     "sending": "Mengirim pemberitahuan ke",
     "BCT": "Kementerian Perindustrian dan Perdagangan",
     "text": "Perusahaan Terbatas Pekerjaan Raja Tukang",
-    "text1": "Nomor Pajak: "
+    "text1": "Nomor Pajak: ",
+    "text2": "0318063280 issued for the first time on September 25, 2023 by the Department of Planning and Investment of Ho Chi Minh City"
   },
   "NotFound": {
     "text": "Halaman tidak ditemukan!",
@@ -342,9 +343,14 @@
     "heading2": "Teknologi & Ekosistem",
     "heading": "Super App",
     "text": "Di Vua Thợ, kami bangga menjadi perusahaan teknologi terkemuka dan pelopor dalam menyediakan model ekosistem super app di Asia Tenggara. Berawal dari passion dan misi kami untuk meningkatkan kehidupan jutaan pengguna seiring dengan perkembangan, kami memberikan pengalaman terbaik dan nyaman.",
-    "goal": "Tujuan kami adalah menghubungkan",
-    "numberGoal": "100,000 +",
-    "textGold": "Tukang dan pengguna di seluruh negeri pada tahun 2024"
+    "text1": "MEMBUKA POTENSI",
+    "text2": "Target 100.000 koneksi hanyalah awal dari perjalanan pembangunan berkelanjutan Vua Thợ. Dengan visi strategis dan arahan yang jelas, Vua Thợ akan secara bertahap memperluas jaringan, menghubungkan hati yang mencintai pekerjaan, memenuhi kebutuhan pasar, dan membangun ekosistem dinamis di mana setiap individu memiliki kesempatan untuk berkembang dan sukses.",
+    "text3": "Bergabunglah sekarang",
+    "text4": "POTENSI",
+    "text5": "MUDA",
+    "text6": "TERUS MENERUS",
+    "text7": "BAKAT",
+    "text8": "PENGEMBANGAN"
   },
   "ContactUs": {
     "heading": "Hubungi Kami",
@@ -354,7 +360,14 @@
     "timeDay": "Senin hingga Jumat",
     "text": "Tidak ada dukungan pada Sabtu, Minggu, dan hari libur umum",
     "numberPhone": "38 786 688",
-    "gmail": "admin@vuatho.com"
+    "text4": "32/28, 35 Street, An Khanh Ward, Thu Duc City, Ho Chi Minh City",
+    "gmail": "admin@vuatho.com",
+    "text1": "Voir sur Google Maps",
+    "text2": "Heures d'ouverture",
+    "text3": "Bureau du Roi Vua Thợ",
+    "text6": "Adresse",
+    "text5": "Numéro de téléphone",
+    "desc": "Dans le but d'offrir à nos clients la meilleure expérience possible, nous sommes toujours prêts à prendre en compte toutes les suggestions de nos clients. Ne laissez pas vos interrogations entraver votre expérience. Contactez-nous pour partager vos idées et contribuer à améliorer la qualité de nos services."
   },
   "BecomeWorker": {
     "heading": "Panduan Registrasi sebagai Penyedia Layanan",
@@ -429,7 +442,14 @@
     "text73": "Setelah memilih negara dan jenis dokumen identitas terkait, sistem meminta pengguna untuk mengambil foto kedua sisi dokumen yang telah dipilih (disarankan menggunakan Kartu Tanda Penduduk - KTP di Vietnam). Kemudian pengguna akan diminta untuk mengambil foto selfie sesuai panduan dari pihak ketiga SumSub.",
     "text74": "Setelah selesai melakukan identifikasi, sistem akan memberikan hasil perkiraan dalam waktu 5 menit, hasil sistem akan mencakup:",
     "text75": "Verifikasi berhasil: Pengguna dapat menggunakan semua layanan dan fitur aplikasi.",
-    "text76": "Verifikasi gagal: Pengguna harus melakukan verifikasi lagi untuk dapat menggunakan semua layanan dan fitur aplikasi."
+    "text76": "Verifikasi gagal: Pengguna harus melakukan verifikasi lagi untuk dapat menggunakan semua layanan dan fitur aplikasi.",
+    "text77": "Cara Menemukan Navigasi Bisnis",
+    "text78": "Video Cara Menemukan Navigasi Bisnis",
+    "text79": "Video Panduan Pendaftaran",
+    "text80": "Langkah 6: Cara Menemukan Navigasi Bisnis"
+  },
+  "PressComunication": {
+    "heading": "PERS KOMUNIKASI TENTANG VUA THỢ"
   },
   "FindWorker": {
     "heading": "Cara Menemukan Pekerja di Vua Thợ",
@@ -510,7 +530,24 @@
     "text27": "Jumlah",
     "text28": "Pilih ukuran",
     "text29": "Troli",
-    "text30": "Produk sudah habis, silakan pilih produk lain"
+    "text30": "Produk sudah habis, silakan pilih produk lain",
+    "text31": "Bayar di Tempat",
+    "text32": "Tukang dapat memilih metode pembayaran saat menerima seragam dari mitra kurir",
+    "text33": "Setelah berhasil memesan seragam, mitra Tukang akan menerima seragam dalam waktu 7 - 10 hari kerja tergantung pada layanan kurir",
+    "text34": "Pembayaran melalui Transfer Bank",
+    "text35": "Informasi Transfer",
+    "text36": "Nama Akun",
+    "text37": "Nomor Rekening",
+    "text38": "Bank: Bank Asia Commercial Joint Stock - ACB",
+    "text39": "Konten transfer: Nomor telepon yang terdaftar di aplikasi - Pembayaran seragam Vua Tho",
+    "text40": "Contoh: 0122334455 Pembayaran seragam Vua Tho",
+    "text41": "Pembayaran langsung di kantor perusahaan",
+    "text42": "Alamat: No. 57 Song Hành, Phường An Phú, TP. Thủ Đức, TP. Hồ Chí Minh",
+    "text43": "Jam buka: 8:30 - 18:00 semua hari dalam seminggu (kecuali hari Libur)",
+    "text44": "Transfer Bank",
+    "text45": "Pembayaran langsung di kantor",
+    "text46": "Pilih metode pembayaran",
+    "text47": "Pilih"
   },
   "Map": {
     "text1": "Pengguna Aplikasi",

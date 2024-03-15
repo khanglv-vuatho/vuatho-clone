@@ -27,6 +27,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
 import './pressSwiper.scss'
+import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
 
 export const MostViewed: React.FC<IMostViewed> = memo(({ isHidden, dataDefault, onLoading, onFetching }) => {
   const t = useTranslations('Press')
@@ -60,7 +61,7 @@ export const MostViewed: React.FC<IMostViewed> = memo(({ isHidden, dataDefault, 
                 <div title={item.title} key={item.title} className='block'>
                   <div className='group grid grid-cols-5 items-center bg-white'>
                     <Link href={`/${locale}/${item.slug}`} className='col-span-2 h-full min-h-[130px] w-full overflow-hidden'>
-                      <ImageFallback priority alt='blog' src={item?.thumb} width={256} height={202} className='h-full w-full object-cover transition group-hover:scale-[1.1]' />
+                      <ImageFallback alt='blog' src={item?.thumb} width={256} height={202} className='h-full w-full object-cover transition group-hover:scale-[1.1]' />
                     </Link>
                     <div className='col-span-3 flex h-full flex-col justify-center gap-[4px] p-[16px]'>
                       <Link href={`/${locale}/press/${item.category.slug}`} className='mb-[4px] block text-[1.5rem] text-primary-blue'>
@@ -94,18 +95,16 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
   const [onLoadingMostView, setOnLoadingMostView] = useState<boolean>(true)
   const [listBlog, setListBlog] = useState<any>([])
   const [listMostView, setListMostView] = useState<any>([])
-  const [meta, setMeta] = useState<IMeta>({
-    limit: 6,
-    page: 1,
-    totalPages: 6,
-    total: 10
-  })
+  const [meta, setMeta] = useState<any>({})
 
   const pathname = usePathname()
   const router = useRouter()
   const locale = useLocale()
 
   const listBreadcrumbs: IBreadcrumbWithUrl[] = [{ title: t('home'), url: '/' }, { title: t('acrticle') }]
+
+  const allQueryParams: any = useGetAllQueryParams()
+  const pageParams = allQueryParams.page
 
   const _serverFetchingMostView = async () => {
     try {
@@ -126,7 +125,7 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
           params: {
             slug: pathname.split('/')?.[3],
             lang: locale,
-            page: searchParams.page || 1
+            page: pageParams || 1
           }
         })
 
@@ -156,14 +155,12 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
             // },
           })
       setListBlog(data.data)
-      setMeta(
-        data?.meta || {
-          limit: 6,
-          page: 1,
-          totalPages: 1,
-          total: 0
-        }
-      )
+      setMeta({
+        limit: data.limit,
+        totalPages: data.totalPages,
+        total: data.total,
+        page: pageParams || 1
+      })
     } catch (error) {
       console.log(error)
     } finally {
@@ -173,7 +170,7 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
   }
 
   useEffect(() => {
-    searchParams.page && !isNaN(Number(searchParams?.page)) && setMeta((prev: any) => ({ ...prev, page: Number(searchParams.page) }))
+    pageParams && !isNaN(Number(searchParams?.page)) && setMeta((prev: any) => ({ ...prev, page: Number(pageParams) }))
   }, [])
 
   useEffect(() => {
@@ -196,9 +193,12 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
     setOnFetching(true)
   }, [searchParams.search, meta.page])
 
-  const handleChangePagi = (page: number) => {
+  const handleChangePagi = (pagePagi: number) => {
     // setMeta((prev: any) => ({ ...prev, page }))
-    router.push(`${pathname}?page=${page}`)
+    const queryString = Object.keys(allQueryParams)
+      .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(allQueryParams[key])}`)
+      .join('&')
+    router.push(`${pathname}?${queryString}`)
   }
 
   return (
@@ -263,7 +263,7 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
                         handleChangePagi(page)
                       }}
                       total={meta.totalPages || 1}
-                      page={meta.page}
+                      page={pageParams || meta.page}
                       classNames={{
                         cursor: 'h-[44px] w-[44px] text-[1.6rem] bg-[#282828] text-white',
                         item: 'h-[44px] w-[44px] text-[1.6rem] text-[#282828] bg-white'

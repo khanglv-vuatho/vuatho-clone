@@ -44,7 +44,8 @@
     "sending": "Notifikāciju sūtīšana uz",
     "BCT": "Rūpniecības un tirdzniecības ministrija",
     "text": "Sabiedrība ar ierobežotu atbildību Vua Thợ",
-    "text1": "Nodokļa numurs: "
+    "text1": "Nodokļa numurs: ",
+    "text2": "0318063280 issued for the first time on September 25, 2023 by the Department of Planning and Investment of Ho Chi Minh City"
   },
   "NotFound": {
     "text": "Lapa nav atrasta!",
@@ -342,9 +343,14 @@
     "heading2": "Tehnoloģijas & Ekosistēma",
     "heading": "Super lietotne",
     "text": "Vua Thợ, mēs lepojamies ar to, ka esam vadoša tehnoloģiju uzņēmums un pionieris, kas piedāvā super lietotnes ekosistēmas modeli Dienvidaustrumāzijā. Izrietot no mūsu aizraušanās un misijas uzlabot miljonu lietotāju dzīvi attīstības ceļā, mēs piedāvājam pirmšķirīgu un ērtu pieredzi.",
-    "goal": "Mūsu mērķis ir savienot",
-    "numberGoal": "100 000 +",
-    "textGold": "Amatniekus un lietotājus visā valstī līdz 2024. gadam"
+    "text1": "ATKLĀJIET SAVU POTENCIĀLU",
+    "text2": "Mērķis 100 000 savienojumu ir tikai sākums Vua Thợ ilgtspējīgas attīstības ceļojumam. Ar stratēģisku vīziju un skaidru virzienu Vua Thợ pakāpeniski paplašinās savu tīklu, savienojot sirdis, kas mīl savu darbu, apmierinot tirgus vajadzības un radot dinamisku ekosistēmu, kurā katram indivīdam ir iespēja attīstīties un gūt panākumus.",
+    "text3": "Pievienojieties tūlīt",
+    "text4": "POTENCIĀLS",
+    "text5": "JAUNS",
+    "text6": "NEPārtraukts",
+    "text7": "Talants",
+    "text8": "ATTĪSTĪBA"
   },
   "ContactUs": {
     "heading": "Sazinieties ar mums",
@@ -354,7 +360,14 @@
     "timeDay": "Pirmdien līdz piektdienai",
     "text": "Nav atbalsta sestdienās, svētdienās un svētku dienās",
     "numberPhone": "38 786 688",
-    "gmail": "admin@vuatho.com"
+    "text4": "32/28, 35 Street, An Khanh Ward, Thu Duc City, Ho Chi Minh City",
+    "gmail": "admin@vuatho.com",
+    "text1": "Skatīt Google Maps",
+    "text2": "Darba laiks",
+    "text3": "Darbnīca Vua Thợ",
+    "text6": "Adrese",
+    "text5": "Tālrunis",
+    "desc": "Ar vēlmi sniegt labāko klientu pieredzi mēs vienmēr esam gatavi uzklausīt klientu atsauksmes un ieteikumus. Nenovērsiet jūsu jautājumus traucējot jūsu pieredzi. Lūdzu, sazinieties ar mums, lai dalītos ar savām idejām un palīdzētu uzlabot mūsu pakalpojumu kvalitāti."
   },
   "BecomeWorker": {
     "heading": "Rādītājs reģistrēšanai kā pakalpojumu sniedzējs",
@@ -429,7 +442,14 @@
     "text73": "Izvēloties valsti un attiecīgo personīgo dokumentu veidu, sistēma prasa lietotājam uzņemt 2 dokumentu veida abas puses fotogrāfijas (ieteicams izmantot Pilsoņa apliecību - PA Vietnā). Pēc tam tiks pieprasīta lietotāja paša uzņemta sevis fotoattēla ievietošana, sekojot SumSub norādēm.",
     "text74": "Pabeidzot identifikācijas procesu, sistēma sniegs aptuvenus rezultātus 5 minūšu laikā, kur rezultāti ietvers:",
     "text75": "Veiksmīga autentifikācija: Lietotājs var izmantot visas lietotnes pakalpojumus un funkcijas.",
-    "text76": "Autentifikācijas neveiksme: Lietotājam būs jāveic atkārtota autentifikācija, lai varētu izmantot visas lietotnes pakalpojumus un funkcijas."
+    "text76": "Autentifikācijas neveiksme: Lietotājam būs jāveic atkārtota autentifikācija, lai varētu izmantot visas lietotnes pakalpojumus un funkcijas.",
+    "text77": "Vadības pārbaudes norādījumi",
+    "text78": "Video vadības pārbaudes norādījumi",
+    "text79": "Video reģistrācijas norādījumi",
+    "text80": "6. solis: Vadības pārbaudes norādījumi"
+  },
+  "PressComunication": {
+    "heading": "MEDIJI RUNĀ PAR Vua Thợ"
   },
   "FindWorker": {
     "heading": "Kā atrast darbiniekus uz Vua Thợ",
@@ -510,7 +530,24 @@
     "text27": "Daudzums",
     "text28": "Izvēlēties izmēru",
     "text29": "Iepirkumu grozs",
-    "text30": "Produkts ir izpirkts, lūdzu, izvēlieties citu produktu"
+    "text30": "Produkts ir izpirkts, lūdzu, izvēlieties citu produktu",
+    "text31": "Maksājums pie saņemšanas",
+    "text32": "Meistars var izvēlēties maksājuma veidu, saņemot formu partnerim pārvadātājam",
+    "text33": "Pēc formas veiksmīgas pasūtīšanas partneris Meistars saņems formu 7-10 darba dienu laikā atkarībā no pārvadātāja",
+    "text34": "Maksājums ar pārskaitījumu",
+    "text35": "Pārskaitījuma informācija",
+    "text36": "Konta nosaukums",
+    "text37": "Konta numurs",
+    "text38": "Banka: Akciju komercbankā Āzija - ACB",
+    "text39": "Pārskaitījuma teksts: Reģistrācijas tālruņa numurs lietotnē - Apmaksājiet Vua Tho formu",
+    "text40": "Piemērs: 0122334455 Apmaksājiet Vua Tho formu",
+    "text41": "Tiešā apmaksa uzņēmuma birojā",
+    "text42": "Adrese: 57 Song Hành, An Phú rajons, Thủ Đức pilsēta, Hošiminas pilsēta",
+    "text43": "Darbala laiks: 8:30 - 18:00 visas nedēļas dienas (izņemot svētku dienas)",
+    "text44": "Pārskaitījums",
+    "text45": "Tiešā apmaksa birojā",
+    "text46": "Izvēlieties maksājuma veidu",
+    "text47": "Izvēlieties"
   },
   "Map": {
     "text1": "Lietotāji lietotnē",
