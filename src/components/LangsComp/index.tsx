@@ -3,21 +3,23 @@
 import { useLocale, useTranslations } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 import { memo, useCallback, useEffect, useMemo, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { langs } from '@/constants'
 
-import { Button, Input, Popover, PopoverContent, PopoverTrigger } from '@nextui-org/react'
-import { Add, Global, SearchNormal1 } from 'iconsax-react'
+import { Button, Input } from '@nextui-org/react'
+import { Add, Global, SearchNormal1, TickCircle } from 'iconsax-react'
 
 import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
 import instance from '@/services/axiosConfig'
 import { normalizeKeyword } from '@/utils'
-import { useSmallScreen } from '@/hook'
+import DropDownMenu from '../DropDownMenu'
+import useSmallScreen from '@/hook/useSmallScreen'
 
 function LangsComp() {
   const locale = useLocale()
   const dispatch = useDispatch()
+  const openLanguage = useSelector((state: any) => state.openLanguage)
 
   const router = useRouter()
   const pathName = usePathname()
@@ -28,8 +30,6 @@ function LangsComp() {
   }, [locale])
 
   const [onFetching, setOnFetching] = useState<boolean>(false)
-
-  const [isOpen, setIsOpen] = useState(false)
 
   const isSmallScreen = useSmallScreen()
 
@@ -49,6 +49,8 @@ function LangsComp() {
       dispatch({ type: 'currency', payload: newListCurrency })
     } catch (error) {
       console.log(error)
+    } finally {
+      setOnFetching(false)
     }
   }
 
@@ -72,26 +74,20 @@ function LangsComp() {
     }
   }, [])
 
-  useEffect(() => {
-    const _HandleScroll = () => {
-      setIsOpen(false)
-    }
-
-    _HandleScroll()
-
-    window.addEventListener('scroll', _HandleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', _HandleScroll)
-    }
-  }, [])
+  const handleToggleLanguage = () => {
+    dispatch({ type: 'toggle_language', payload: openLanguage })
+    dispatch({ type: 'toggle_menu', payload: true })
+    dispatch({ type: 'toggle_open_header_dropdown', payload: true })
+  }
 
   const _HandleChangeLang = useCallback(
     (value?: any) => {
-      isSmallScreen ? dispatch({ type: 'toggle_menu', payload: true }) : setIsOpen(false)
+      dispatch({ type: 'toggle_menu', payload: true })
+      // handleToggleLanguage()
+      dispatch({ type: 'toggle_language', payload: true })
 
       const arrayUrl = pathName?.split('/')
-      const urlReplace = arrayUrl.map((item) => (item === arrayUrl[1] ? value.code : item)).join('/')
+      const urlReplace = arrayUrl.map((item) => (item === arrayUrl?.[1] ? value.code : item)).join('/')
 
       const queryString = Object.keys(allQueryParams)
         .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(allQueryParams[key])}`)
@@ -106,7 +102,8 @@ function LangsComp() {
 
   const _HandleChangeCurrency = useCallback(
     (value: any) => {
-      isSmallScreen ? dispatch({ type: 'toggle_menu', payload: true }) : setIsOpen(false)
+      dispatch({ type: 'toggle_menu', payload: true })
+
       localStorage.setItem('currency', JSON.stringify(value))
       dispatch({ type: 'currencyCurrent', payload: { ...value } })
     },
@@ -115,56 +112,40 @@ function LangsComp() {
 
   return (
     <>
-      <div className='hidden lg:block'>
-        <Popover
-          placement='bottom-end'
-          isOpen={isOpen}
-          onOpenChange={(open: boolean) => setIsOpen(open)}
-          classNames={{
-            content: 'p-[16px] rounded-none'
-          }}
-        >
-          <PopoverTrigger>
-            <button className='flex h-[44px] cursor-pointer items-center space-x-6 divide-x-1 rounded-[44px] bg-[#F8F8F8] p-[10px] px-5 hover:opacity-80 focus:outline-none active:opacity-100'>
-              <div className='flex items-center gap-2 text-[#646464]'>
-                <Global size={24} />
-                <span className='text-[1.8rem] uppercase'>{lang?.code}</span>
-              </div>
-              <div className='flex items-center pl-6 text-[#646464]'>
-                <span className='text-[1.8rem] uppercase'>{selectCurrency?.code}</span>
-              </div>
-            </button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <Button isIconOnly onPress={() => setIsOpen(false)} variant='light' className='absolute right-0 top-0 h-[48px] w-[56px]'>
-              <Add className='rotate-45 ' size={24} />
-            </Button>
-            <div className='grid grid-cols-2 gap-[20px] overflow-y-scroll'>
-              <LangSelect lang={lang} onClick={(item: any) => _HandleChangeLang(item)} />
-              <CurrencySelect currency={currency} onClick={(item: any) => _HandleChangeCurrency(item)} selectCurrency={selectCurrency} />
-            </div>
-          </PopoverContent>
-        </Popover>
-      </div>
-      <div className='block w-full lg:hidden'>
-        <div className='grid grid-cols-2 overflow-y-scroll lg:gap-[20px]'>
+      <Button
+        variant='light'
+        isIconOnly
+        disableAnimation
+        disableRipple
+        aria-label='language'
+        onPress={handleToggleLanguage}
+        className={`flex min-h-[48px] min-w-[48px] items-center justify-center rounded-lg lg:rounded-xl ${openLanguage ? 'bg-primary-yellow data-[hover=true]:bg-primary-yellow' : 'bg-[#F8F8F8] data-[hover=true]:bg-[#f8f8f8]'}`}
+      >
+        <Global size={24} className='flex flex-shrink-0' />
+      </Button>
+      <DropDownMenu direction={isSmallScreen ? 'left' : 'top'} isOpen={openLanguage} className='w-full bg-primary-blue'>
+        <div className='ct-container flex items-center justify-end'>
+          <Button isIconOnly variant='light' disableAnimation disableRipple className='rounded-full p-6' onClick={() => handleToggleLanguage()}>
+            <Add className='flex size-[48px] flex-shrink-0 rotate-45 text-white ' size={48} />
+          </Button>
+        </div>
+        <div className='ct-container grid grid-cols-2 gap-5 overflow-y-scroll'>
           <LangSelect lang={lang} onClick={(item: any) => _HandleChangeLang(item)} />
           <CurrencySelect currency={currency} onClick={(item: any) => _HandleChangeCurrency(item)} selectCurrency={selectCurrency} />
         </div>
-      </div>
+      </DropDownMenu>
     </>
   )
 }
 
 const LangSelect = memo(({ lang, onClick }: { lang: any; onClick: any }) => {
   const t = useTranslations('Navbar')
-
   const [searchLang, setSearchLang] = useState('')
 
   return (
-    <div className='flex flex-col lg:gap-[8px]'>
-      <div className='flex flex-col justify-between gap-[16px]'>
-        <h5 className='text-[1.8rem] font-normal leading-normal text-primary-blue lg:font-bold'>{t('language')}</h5>
+    <div className='flex flex-col lg:gap-2'>
+      <div className='flex flex-col justify-between gap-4'>
+        <h5 className='p-2 text-2xl font-bold leading-normal text-white lg:p-4 lg:text-4xl lg:font-bold'>{t('language')}</h5>
         <Input
           variant='underlined'
           value={searchLang}
@@ -175,13 +156,13 @@ const LangSelect = memo(({ lang, onClick }: { lang: any; onClick: any }) => {
           startContent={<SearchNormal1 size={24} className='text-[#C9C9C9]' />}
           classNames={{
             base: 'w-full',
-            input: 'text-[1.4rem] text-[#C9C9C9]',
-            inputWrapper: 'h-[40px] pl-[12px]',
-            innerWrapper: 'gap-[4px]'
+            input: 'text-base group-data-[has-value=true]:text-white text-white placeholder:text-white',
+            inputWrapper: 'h-10 pl-3 after:hidden',
+            innerWrapper: 'gap-1'
           }}
         />
       </div>
-      <div className='grid max-h-[calc(100vh-300px)] grid-cols-1 gap-1 overflow-x-hidden overflow-y-scroll py-2 lg:max-h-[400px]'>
+      <div className='grid max-h-[calc(100vh-300px)] grid-cols-1 gap-1 overflow-x-hidden overflow-y-scroll py-2 '>
         {langs
           .filter((itemFilter) => normalizeKeyword(itemFilter.label).includes(normalizeKeyword(searchLang)))
           .map((item) => (
@@ -190,10 +171,10 @@ const LangSelect = memo(({ lang, onClick }: { lang: any; onClick: any }) => {
               disabled={!item.active}
               isActive={lang === item}
               customLabel={
-                <>
+                <div className='flex items-center gap-2'>
                   <span>{item.symbol}</span>
                   <span className={`${item.active ? '' : 'text-black/30'}`}>{item.label}</span>
-                </>
+                </div>
               }
               handleClick={() => onClick(item)}
             />
@@ -205,13 +186,14 @@ const LangSelect = memo(({ lang, onClick }: { lang: any; onClick: any }) => {
 
 const CurrencySelect = memo(({ currency, selectCurrency, onClick }: { currency: any; selectCurrency: any; onClick: any }) => {
   const t = useTranslations('Navbar')
+  const dispatch = useDispatch()
   const [searchCurrency, setSearchCurrency] = useState('')
 
   const _handleChangeValue = useCallback((e: any) => setSearchCurrency(e.target.value), [])
   return (
-    <div className='flex flex-col lg:gap-[8px]'>
-      <div className='flex flex-col justify-between gap-[16px]'>
-        <h5 className='text-[1.8rem] font-normal leading-normal text-primary-blue lg:font-bold'>{t('money')}</h5>
+    <div className='flex flex-col lg:gap-2'>
+      <div className='flex flex-col justify-between gap-4'>
+        <h5 className='p-2 text-2xl font-bold leading-normal text-white lg:p-4 lg:text-4xl lg:font-bold'>{t('money')}</h5>
         <Input
           variant='underlined'
           value={searchCurrency}
@@ -220,15 +202,15 @@ const CurrencySelect = memo(({ currency, selectCurrency, onClick }: { currency: 
           startContent={<SearchNormal1 size={24} className='text-[#C9C9C9]' />}
           classNames={{
             base: 'w-full',
-            input: 'text-[1.4rem] text-[#C9C9C9]',
-            inputWrapper: 'h-[40px] pl-[12px]',
-            innerWrapper: 'gap-[4px]'
+            input: 'text-base group-data-[has-value=true]:text-white text-white placeholder:text-white',
+            inputWrapper: 'h-10 pl-3 after:hidden',
+            innerWrapper: 'gap-1'
           }}
         />
       </div>
-      <div className='grid  max-h-[calc(100vh-300px)] grid-cols-1 gap-1 overflow-y-scroll py-2 lg:max-h-[400px] lg:min-w-[236px]'>
+      <div className='grid max-h-[calc(100vh-300px)] grid-cols-1 gap-1 overflow-y-scroll py-2'>
         {currency
-          .filter((item: any) => `${item.code} ${item.name} ${item.symbol}`.toLowerCase().includes(searchCurrency.toLowerCase().trim()))
+          .filter((item: any) => normalizeKeyword(`${item.code} ${item.name} ${item.symbol}`).toLowerCase().includes(normalizeKeyword(searchCurrency).toLowerCase().trim()))
           ?.map((x: any) => ({
             ...x,
             priority: x.code === selectCurrency.code ? 1 : 0
@@ -239,9 +221,11 @@ const CurrencySelect = memo(({ currency, selectCurrency, onClick }: { currency: 
               key={item.code}
               disabled={item.code === selectCurrency.code}
               isActive={selectCurrency.code === item.code}
-              canActive={item.code === selectCurrency.code}
               label={`${item.code} - ${item.symbol}`}
-              handleClick={() => onClick(item)}
+              handleClick={() => {
+                onClick(item)
+                dispatch({ type: 'toggle_language', payload: true })
+              }}
             />
           ))}
       </div>
@@ -249,20 +233,44 @@ const CurrencySelect = memo(({ currency, selectCurrency, onClick }: { currency: 
   )
 })
 
-const ItemSelect = memo(
-  ({ disabled, handleClick, isActive, canActive, label, customLabel }: { disabled: boolean; handleClick: any; isActive: boolean; canActive?: boolean; label?: string; customLabel?: any }) => {
-    return (
-      <button
-        onClick={handleClick}
-        disabled={disabled}
-        className={`${
-          isActive ? 'bg-primary-blue-2 text-primary-blue' : 'hover:bg-base-gray disabled:hover:bg-transparent'
-        } flex items-center gap-2 whitespace-nowrap rounded-lg px-4 py-6 text-left text-[1.8rem]`}
-      >
-        {customLabel ? customLabel : <span className={`${canActive ? '' : ''}`}>{label}</span>}
-      </button>
-    )
-  }
-)
+const ItemSelect = memo(({ disabled, handleClick, isActive, label, customLabel }: { disabled: boolean; handleClick: any; isActive: boolean; label?: string; customLabel?: any }) => {
+  return (
+    <button
+      onClick={handleClick}
+      disabled={disabled}
+      className={`${
+        isActive ? 'bg-white/10' : 'hover:bg-white/10 disabled:hover:bg-transparent'
+      } flex items-center justify-between gap-2 whitespace-nowrap rounded-lg px-4 py-6 text-left text-lg text-white`}
+    >
+      <div>{customLabel ? customLabel : label}</div>
+      {isActive ? <TickCircle variant='Bold' size={24} color='#00C070' className='flex size-6 flex-shrink-0' /> : <></>}
+    </button>
+  )
+})
+
+type TInputSearch = {
+  value: string
+  setValue: (value: string) => void
+}
+
+const InputSearch = ({ value, setValue }: TInputSearch) => {
+  return (
+    <Input
+      variant='underlined'
+      value={value}
+      onChange={(e) => {
+        setValue(e.target.value)
+      }}
+      placeholder='Search'
+      startContent={<SearchNormal1 size={24} className='text-[#C9C9C9]' />}
+      classNames={{
+        base: 'w-full',
+        input: 'text-base group-data-[has-value=true]:text-white text-white placeholder:text-white',
+        inputWrapper: 'h-10 pl-3 after:hidden',
+        innerWrapper: 'gap-1'
+      }}
+    />
+  )
+}
 
 export default memo(LangsComp)

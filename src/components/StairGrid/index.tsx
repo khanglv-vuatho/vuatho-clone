@@ -15,7 +15,7 @@ const StairGird = ({ cols = 3 }: { cols?: number }) => {
   const y: MotionValue<number> = useTransform(scrollYProgress, [0, 1], [0, 200])
 
   return (
-    <div ref={container} className={`ct-container-70 grid grid-cols-1 md:grid-cols-${cols} gap-[10px]`}>
+    <div ref={container} className={`ct-container grid grid-cols-1 md:grid-cols-${cols} gap-2`}>
       {dataImages?.map((item, index) => {
         return (
           <motion.div key={index} style={{ y }} className={`relative`}>

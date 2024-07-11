@@ -1,4 +1,16 @@
-import HomePage from '.'
+import Wrapper from '@/components/Wrapper'
+import SectionWithVuaTho from './(sections)/withVuaTho'
+import WorkerBenefitSection from './(sections)/WorkerBenefitSection'
+import ClientBenefitSection from './(sections)/CustomerBenefitSection'
+import AISection from './(sections)/AISection'
+import MinhBach from './(sections)/MinhBach'
+import HinhThucKetNoi from './(sections)/HinhThucKetNoi'
+import SectionToTheMoon from './(sections)/toTheMoon'
+import PressHome from './(sections)/PressHome'
+import MainSection from './(sections)/MainSection/section'
+import OtherPress from './(sections)/OtherPress'
+
+import './swipper.scss'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
@@ -15,7 +27,20 @@ export async function generateMetadata({ params }: { params?: any }) {
 }
 
 const HeroSection = () => {
-  return <HomePage />
+  return (
+    <Wrapper>
+      <MainSection />
+      <SectionWithVuaTho />
+      <OtherPress />
+      <WorkerBenefitSection />
+      <ClientBenefitSection />
+      <AISection />
+      <MinhBach />
+      <HinhThucKetNoi />
+      <SectionToTheMoon />
+      <PressHome />
+    </Wrapper>
+  )
 }
 
 export default HeroSection

@@ -1,0 +1,10 @@
+.mySwiper {
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      @apply mx-2 size-2 bg-[#a6a6a6] opacity-100 lg:size-4;
+    }
+    .swiper-pagination-bullet-active {
+      @apply bg-white;
+    }
+  }
+}

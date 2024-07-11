@@ -1,9 +1,9 @@
 .swiper.swiperStore {
   .swiper-button-prev,
   .swiper-button-next {
-    @apply flex size-[40px] items-center justify-center rounded-full bg-primary-yellow;
+    @apply flex size-10 items-center justify-center rounded-full bg-primary-yellow;
     &::after {
-      @apply text-[1.6rem] text-primary-blue lg:text-[2.4rem];
+      @apply text-base text-primary-blue lg:text-2xl;
     }
   }
 }

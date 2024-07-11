@@ -6,12 +6,12 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import React, { memo, useEffect, useState } from 'react'
 
-import { IBreadcrumbWithUrl, IMostViewed, IMeta } from '@/interface'
+import { IBreadcrumbWithUrl, IMostViewed } from '@/interface'
 import instance from '@/services/axiosConfig'
 
 import { ImageSkeleton } from '@/components/Icons'
 import Article from '@/components/article'
-import { ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
+import { ListBreadcrumbs } from '@/components/breadcrumbs'
 import { InputSearch } from '@/components/input'
 import { SkeletonBlog } from '@/components/skeleton'
 
@@ -35,9 +35,9 @@ export const MostViewed: React.FC<IMostViewed> = memo(({ isHidden, dataDefault, 
 
   return (
     <>
-      <div className='flex flex-col gap-[16px]'>
-        <h4 className=' flex h-[58px] items-center border-b-4 border-[#FCB713] text-[2rem] font-semibold'>{t('popular')}</h4>
-        <div className={`grid-cols-1 gap-[16px]  ${isHidden ? 'hidden !grid-cols-1 lg:grid lg:grid-cols-2' : 'grid md:grid-cols-2 lg:grid-cols-1'}`}>
+      <div className='flex flex-col gap-4'>
+        <h4 className=' flex h-[58px] items-center border-b-4 border-[#FCB713] text-xl font-semibold'>{t('popular')}</h4>
+        <div className={`grid-cols-1 gap-4  ${isHidden ? 'hidden !grid-cols-1 lg:grid lg:grid-cols-2' : 'grid md:grid-cols-2 lg:grid-cols-1'}`}>
           {onFetching || onLoading ? (
             Array(4)
               .fill(1)
@@ -46,11 +46,11 @@ export const MostViewed: React.FC<IMostViewed> = memo(({ isHidden, dataDefault, 
                   <Skeleton className='h-[130px] w-[165px] flex-shrink-0'>
                     <ImageSkeleton />
                   </Skeleton>
-                  <div className='flex w-full flex-col gap-[8px] p-[16px]'>
-                    <Skeleton className='h-[12px] w-[50px] rounded-[4px]' />
-                    <Skeleton className='h-[12px] w-[70px] rounded-[4px]' />
-                    <Skeleton className='h-[12px] w-full rounded-[4px]' />
-                    <Skeleton className='h-[12px] w-full rounded-[4px]' />
+                  <div className='flex w-full flex-col gap-2 p-4'>
+                    <Skeleton className='h-3 w-[50px] rounded-md' />
+                    <Skeleton className='h-3 w-[70px] rounded-md' />
+                    <Skeleton className='h-3 w-full rounded-md' />
+                    <Skeleton className='h-3 w-full rounded-md' />
                   </div>
                 </div>
               ))
@@ -63,12 +63,12 @@ export const MostViewed: React.FC<IMostViewed> = memo(({ isHidden, dataDefault, 
                     <Link href={`/${locale}/${item.slug}`} className='col-span-2 h-full min-h-[130px] w-full overflow-hidden'>
                       <ImageFallback alt='blog' src={item?.thumb} width={256} height={202} className='h-full w-full object-cover transition group-hover:scale-[1.1]' />
                     </Link>
-                    <div className='col-span-3 flex h-full flex-col justify-center gap-[4px] p-[16px]'>
-                      <Link href={`/${locale}/press/${item.category.slug}`} className='mb-[4px] block text-[1.5rem] text-primary-blue'>
+                    <div className='col-span-3 flex h-full flex-col justify-center gap-1 p-4'>
+                      <Link href={`/${locale}/press/${item.category.slug}`} className='mb-1 block  text-primary-blue'>
                         {item.category.name}
                       </Link>
-                      <time className='text-[1.5rem] text-base-drak-gray'>{item.created_at}</time>
-                      <Link href={`/${locale}/${item.slug}`} className='mt-[8px] line-clamp-2 h-fit text-[1.8rem] font-semibold leading-[1] '>
+                      <time className=' text-base-drak-gray'>{item.created_at}</time>
+                      <Link href={`/${locale}/${item.slug}`} className='mt-2 line-clamp-2 h-fit text-lg font-semibold'>
                         {item.title}
                       </Link>
                     </div>
@@ -105,6 +105,8 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
 
   const allQueryParams: any = useGetAllQueryParams()
   const pageParams = allQueryParams.page
+
+  console.log({ pageParams, meta })
 
   const _serverFetchingMostView = async () => {
     try {
@@ -149,17 +151,13 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
               lang: locale
             }
           })
-        : await instance.get('/blog/newest', {
-            // params: {
-            //   page: meta.page,
-            // },
-          })
-      setListBlog(data.data)
+        : await instance.get(`/blog/newest?page=${Number(pageParams)}`)
+      setListBlog(data?.data)
       setMeta({
-        limit: data.limit,
-        totalPages: data.totalPages,
-        total: data.total,
-        page: pageParams || 1
+        limit: data?.limit,
+        totalPages: data?.totalPages,
+        total: data?.total,
+        page: Number(pageParams) || 1
       })
     } catch (error) {
       console.log(error)
@@ -169,9 +167,9 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
     }
   }
 
-  useEffect(() => {
-    pageParams && !isNaN(Number(searchParams?.page)) && setMeta((prev: any) => ({ ...prev, page: Number(pageParams) }))
-  }, [])
+  // useEffect(() => {
+  //   pageParams && !isNaN(Number(searchParams?.page)) && setMeta((prev: any) => ({ ...prev, page: Number(pageParams) }))
+  // }, [])
 
   useEffect(() => {
     onFetchingMostView && _serverFetchingMostView()
@@ -191,35 +189,37 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
 
   useEffect(() => {
     setOnFetching(true)
-  }, [searchParams.search, meta.page])
+  }, [])
 
   const handleChangePagi = (pagePagi: number) => {
-    // setMeta((prev: any) => ({ ...prev, page }))
+    allQueryParams.page = pagePagi
+
     const queryString = Object.keys(allQueryParams)
       .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(allQueryParams[key])}`)
       .join('&')
+
+    console.log({ pagePagi })
+    console.log({ queryString })
+    console.log(`${pathname}?${queryString}`)
+
     router.push(`${pathname}?${queryString}`)
   }
 
   return (
     <>
-      {/* <div className='w-full'>
-        <SwiperPress renderBreadcums={<ListBreadcrumbs list={listBreadcrumbs} />} />
-      </div> */}
-
-      <div className='bg-base-gray py-[24px]'>
-        <div className='ct-container-70 space-y-[16px]'>
-          <ListBreadcrumbsForDetailPress list={listBreadcrumbs} />
-          <div className='grid grid-cols-6 lg:gap-[20px]'>
-            <h3 className='col-span-6 flex h-[58px] items-center text-[2.4rem]  font-semibold  lg:col-span-2'>BLOG</h3>
+      <div className='min-h-dvh bg-base-gray py-6'>
+        <div className='ct-container space-y-4'>
+          <ListBreadcrumbs list={listBreadcrumbs} />
+          <div className='grid grid-cols-6 lg:gap-5'>
+            <h3 className='col-span-6 flex h-[58px] items-center text-2xl  font-semibold  lg:col-span-2'>BLOG</h3>
             <div className='relative col-span-6 lg:col-span-4'>
               <InputSearch onRefresh={setOnFetching} />
             </div>
           </div>
-          <div className='grid grid-cols-6 lg:gap-[20px]'>
-            <div className='order-1 col-span-6 flex flex-col gap-[16px] lg:order-none lg:col-span-2'>
+          <div className='grid grid-cols-6 lg:gap-5'>
+            <div className='order-1 col-span-6 flex flex-col gap-4 lg:order-none lg:col-span-2'>
               <MostViewed isHidden dataDefault={listMostView} onFetching={onFetchingMostView} onLoading={onLoadingMostView} />
-              <div className='grid grid-cols-1 gap-[20px] md:grid-cols-2 lg:hidden'>
+              <div className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:hidden'>
                 {onFetching || onLoading ? (
                   Array(4)
                     .fill(null)
@@ -227,12 +227,12 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
                 ) : !!listMostView.length ? (
                   listMostView.map((item: any, index: number) => <Article item={item} key={item.id} index={index} />)
                 ) : (
-                  <p className='font-light text-[#969696]'>{td('oops')}</p>
+                  <p className=' text-[#969696]'>{td('oops')}</p>
                 )}
               </div>
             </div>
-            <div className='order-none col-span-6 flex flex-col gap-[16px] lg:order-1 lg:col-span-4'>
-              <h4 className=' flex h-[58px] flex-shrink-0 items-center border-b-4 border-primary-blue text-[2rem] font-semibold'>
+            <div className='order-none col-span-6 flex flex-col gap-4 lg:order-1 lg:col-span-4'>
+              <h4 className=' flex h-[58px] flex-shrink-0 items-center border-b-4 border-primary-blue text-xl font-semibold'>
                 {searchParams.search
                   ? `${td('result')} "${searchParams.search}"`
                   : pathname.split('/').length === 4
@@ -242,7 +242,7 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
                     : td('newest')}
               </h4>
               {onFetching || onLoading ? (
-                <div className='grid grid-cols-1 gap-[20px] md:grid-cols-2'>
+                <div className='grid grid-cols-1 gap-5 md:grid-cols-2'>
                   {Array(4)
                     .fill(null)
                     .map((_, index: number) => (
@@ -251,7 +251,7 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
                 </div>
               ) : !!listBlog?.length ? (
                 <>
-                  <div className='grid grid-cols-1 gap-[20px] md:grid-cols-2'>
+                  <div className='grid grid-cols-1 gap-5 md:grid-cols-2'>
                     {listBlog.map((item: any, index: number) => (
                       <Article key={item.id} item={item} index={index} />
                     ))}
@@ -265,8 +265,8 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
                       total={meta.totalPages || 1}
                       page={pageParams || meta.page}
                       classNames={{
-                        cursor: 'h-[44px] w-[44px] text-[1.6rem] bg-[#282828] text-white',
-                        item: 'h-[44px] w-[44px] text-[1.6rem] text-[#282828] bg-white'
+                        cursor: 'h-[44px] w-[44px] text-base bg-[#282828] text-white',
+                        item: 'h-[44px] w-[44px] text-base text-[#282828] bg-white'
                       }}
                     />
                   </div>
@@ -276,7 +276,7 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
                   <div className='h-[126px] w-[158px]'>
                     <Image src={'/empty.webp'} alt='empty' height={126} width={158} className='h-full w-full object-contain' />
                   </div>
-                  <p className='font-light text-[#969696]'>{td('oops')}</p>
+                  <p className=' text-[#969696]'>{td('oops')}</p>
                 </div>
               )}
             </div>
@@ -360,13 +360,13 @@ const SwiperPress = memo(({ renderBreadcums }: { renderBreadcums: any }) => {
             <SwiperSlide key={index}>
               <Image src={'/press/pressBanner1.webp'} alt='' height={419} width={3000} className={`absolute h-full rotate-180 object-cover`} />
               <div className='relative inset-0 h-[420px]'>
-                <div className='ct-container-70 relative flex h-full flex-col p-12'>
+                <div className='ct-container relative flex h-full flex-col p-12'>
                   <div className='max-w-[50%] space-y-6'>
                     {renderBreadcums ? renderBreadcums : <div />}
-                    <h1 className='text-[2.4rem] font-semibold text-white md:text-[3.2rem]'>{item.title}</h1>
+                    <h1 className='text-2xl font-semibold text-white md:text-3xl'>{item.title}</h1>
 
                     <Link href={item.url || ''}>
-                      <Button type='button' className='h-[46px] max-w-max rounded-full bg-[#FCB713] px-[24px] text-[1.8rem] font-semibold '>
+                      <Button type='button' className='h-[46px] max-w-max rounded-full bg-[#FCB713] px-6 text-lg font-semibold '>
                         {item.titleLink}
                       </Button>
                     </Link>

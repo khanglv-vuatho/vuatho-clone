@@ -5,13 +5,13 @@
       {
         "appID": "B88CURT7Z3.com.vuatho.mobile",
         "paths": [
-          "*"
+          "/referral-app*"
         ]
       },
       {
         "appID": "B88CURT7Z3.com.vuatho.mobile.dev",
         "paths": [
-          "*"
+          "/referral-app*"
         ]
       }
     ]

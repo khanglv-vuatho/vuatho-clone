@@ -10,7 +10,7 @@
   {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
-      "namespace": "vua_tho",
+      "namespace": "android_app",
       "package_name": "com.vuatho.mobile.dev",
       "sha256_cert_fingerprints": ["C8:56:53:68:DB:22:99:6C:E3:ED:06:50:4C:40:C0:28:9C:34:9E:92:D1:69:FE:85:B9:EC:82:C3:DD:89:3F:40"]
     }

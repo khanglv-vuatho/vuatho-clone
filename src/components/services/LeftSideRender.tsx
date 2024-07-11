@@ -41,7 +41,7 @@ const LeftRenderSearch = memo(() => {
   }, [])
 
   return (
-    <div className='flex flex-col gap-[10px]'>
+    <div className='flex flex-col gap-2'>
       <div className='mb-3'>
         <input onChange={_HandleOnChangeKeySearch} placeholder={td('search')} className='w-full rounded-full border p-3 px-6 py-5 focus-within:outline-none' />
       </div>
@@ -82,13 +82,11 @@ const ItemService = memo((props: any) => {
   return (
     <div
       onClick={_HandleClick.bind(this)}
-      className={`flex select-none items-center gap-[10px] rounded-[8px] px-6 py-8 transition hover:cursor-pointer ${
-        services == props.id ? 'bg-primary-blue-2 text-primary-blue' : 'hover:bg-base-gray'
-      }`}
+      className={`flex select-none items-center gap-2 rounded-lg px-6 py-8 transition hover:cursor-pointer ${services == props.id ? 'bg-primary-blue-2 text-primary-blue' : 'hover:bg-base-gray'}`}
     >
       <Image src={props.icon} alt='' width={68} height={68} className='max-h-[50px] max-w-[50px]' />
       <div>
-        <h3 className='text-[1.8rem] xl:text-[1.8rem]'>{props.name[locale]} </h3>
+        <h3 className='text-lg xl:text-lg'>{props.name[locale]} </h3>
       </div>
     </div>
   )

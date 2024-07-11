@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss'
 const { colorsConfig } = require('./src/themes/color.ts')
 const { nextui } = require('@nextui-org/react')
 import defaultTheme from 'tailwindcss/defaultTheme'
+const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
 
 const config: Config = {
   content: [
@@ -33,7 +34,7 @@ const config: Config = {
     screens: {
       xs: '475px',
       llg: '1100px',
-      '13inch': '1300px',
+      '13inch': '1440px',
       '2xxl': '1700px',
       '3xl': '1940px',
       ...defaultTheme.screens
@@ -41,7 +42,12 @@ const config: Config = {
   },
   darkMode: 'class',
   plugins: [
+    require('@tailwindcss/typography'),
     nextui({
+      prefix: 'nextui', // prefix for themes variables
+      addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").
+      defaultTheme: 'light', // default theme from the themes object
+      defaultExtendTheme: 'light', // default theme to extend on custom themes
       themes: {
         light: {
           colors: {
@@ -74,7 +80,18 @@ const config: Config = {
           }
         }
       }
-    })
+    }),
+    addVariablesForColors
   ]
 }
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme('colors'))
+  let newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]))
+
+  addBase({
+    ':root': newVars
+  })
+}
+
 export default config

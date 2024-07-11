@@ -1,4 +1,4 @@
-import { Store } from '.'
+import Store from '.'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params?: any }) {
     }
     return {
       title: metadata[params.locale || 'vi'] || metadata.en,
-      description: description[params.locale || 'vi'] || metadata.en
+      description: description[params.locale || 'vi'] || description.en
     }
   } catch (error) {
     console.log(error)

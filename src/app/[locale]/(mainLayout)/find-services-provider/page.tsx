@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params?: any }) {
     }
     return {
       title: metadata[params.locale || 'vi'] || metadata.en,
-      description: description[params.locale || 'vi'] || metadata.en
+      description: description[params.locale || 'vi'] || description.en
     }
   } catch (error) {
     console.log(error)
@@ -25,9 +25,9 @@ function FindWorker() {
   const t = useTranslations('FindWorker')
 
   return (
-    <div className='pt-[64px] 3xl:pt-[80px]'>
-      <div className='ct-container-70 flex flex-col gap-[30px] py-[20px]'>
-        <h3 className='text-[2.4rem] text-[#405AB7] md:text-[3.2rem]'>{t('heading')}</h3>
+    <div className='pt-[70px] 3xl:pt-[80px]'>
+      <div className='ct-container flex flex-col gap-8 py-5'>
+        <h3 className='text-2xl text-[#405AB7] md:text-3xl'>{t('heading')}</h3>
         <SectionTest />
       </div>
     </div>

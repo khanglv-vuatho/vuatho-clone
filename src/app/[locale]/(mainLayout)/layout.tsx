@@ -1,12 +1,10 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
-
-import { locales } from '@/constants'
 
 import Footer from './(layout)/footer'
 import Header from './(layout)/header'
 
 import './globals.css'
+import { WrapperInner } from '@/components/Wrapper'
 
 export const metadata: Metadata = {
   title: {
@@ -16,19 +14,11 @@ export const metadata: Metadata = {
   description: 'Ứng dụng số 1 Việt Nam'
 }
 
-export default async function RootLayout({ children, params }: any) {
-  const { locale } = params
-
-  const isValidLocale = locales.some((cur) => cur === locale)
-
-  if (!isValidLocale) {
-    return redirect(`/vi/${locale}`)
-  }
-
+export default async function RootLayout({ children }: any) {
   return (
     <>
       <Header />
-      {children}
+      <WrapperInner>{children}</WrapperInner>
       <Footer />
     </>
   )

@@ -15,7 +15,7 @@ export async function generateMetadata({ params, searchParams }: any): Promise<M
 
 function Press({ searchParams }: { searchParams: any }) {
   return (
-    <div className='flex flex-col pt-[64px] 3xl:pt-[80px]'>
+    <div className='flex flex-col pt-[70px] 3xl:pt-[80px]'>
       <PressContent searchParams={searchParams} />
     </div>
   )

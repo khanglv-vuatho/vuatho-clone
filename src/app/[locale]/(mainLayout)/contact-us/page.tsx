@@ -1,4 +1,4 @@
-import ContactUsPage from '.'
+import BioPage from '.'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
@@ -6,6 +6,7 @@ export async function generateMetadata({ params }: { params?: any }) {
       vi: 'Liên hệ',
       en: 'Contact us'
     }
+
     const description: any = {
       vi: 'Ứng dụng số 1 Việt Nam',
       en: 'Leading App in Vietnam'
@@ -21,7 +22,12 @@ export async function generateMetadata({ params }: { params?: any }) {
 }
 
 const ContactUs = () => {
-  return <ContactUsPage />
+  // return <ContactUsPage />
+  return (
+    <div className='pt-[70px] 3xl:pt-[80px]'>
+      <BioPage />
+    </div>
+  )
 }
 
 export default ContactUs

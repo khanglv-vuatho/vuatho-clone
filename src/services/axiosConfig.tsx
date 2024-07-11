@@ -1,3 +1,4 @@
+import ToastComponent from '@/components/ToastComponent'
 import axios, { AxiosResponse } from 'axios'
 
 const apiConfig = {
@@ -46,6 +47,7 @@ instance.interceptors.request.use(
     }
     return config
   },
+
   (error: any) => Promise.reject(error)
 )
 
@@ -61,8 +63,6 @@ instance.interceptors.response.use(
   (error: any) => {
     if (process.env.NODE_ENV !== 'production') {
       if (error?.response) {
-        console.log(error)
-
         console.log('====== Server Error =====')
       } else if (error?.request) {
         console.log('====== Timeout =====')

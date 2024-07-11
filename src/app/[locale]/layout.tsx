@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { Lexend } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { redirect } from 'next/navigation'
-import { ToastContainer } from 'react-toastify'
 import Script from 'next/script'
+import { ToastContainer } from 'react-toastify'
 
 import { locales } from '@/constants'
 import { Providers } from './providers'
 
-import './global.css'
 import ScrollToTop from '@/components/ScrollToTop'
+import './global.css'
+// import ChatBox from '@/components/ChatBox'
 
 export const metadata: Metadata = {
   title: {
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   }
 }
 
-const lexend = Lexend({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap'
 })
@@ -50,8 +51,9 @@ export default async function RootLayout({ children, params }: any) {
   } catch (error) {
     console.log(error)
   }
+
   return (
-    <html lang={locale} className={lexend.className}>
+    <html lang={locale} className={inter.className}>
       <body>
         <Script src='https://www.googletagmanager.com/gtag/js?id=G-Z8JD7Z5934' />
         <Script id='google-analytics'>
@@ -67,6 +69,7 @@ export default async function RootLayout({ children, params }: any) {
         <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
           <Providers>{children}</Providers>
           <ScrollToTop />
+          {/* <ChatBox /> */}
         </NextIntlClientProvider>
       </body>
     </html>

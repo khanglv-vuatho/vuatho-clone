@@ -1,5 +1,5 @@
 export const colorsConfig: any = {
-  'primary-blue': '#3748A0',
+  'primary-blue': '#0D308C',
   'primary-blue-2': '#F1F6FF',
   'primary-blue-3': '#327EEE',
   'base-black': '#5A9DFF',
@@ -10,7 +10,7 @@ export const colorsConfig: any = {
   'primary-red': '#FF4343',
   'primary-green': '#17D641',
   'primary-orange': '#FF8F34',
-  'primary-yellow': '#FCB813',
+  'primary-yellow': '#F4B807',
   danger: '#FF4343',
   success: '#17D641'
 }

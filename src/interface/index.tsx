@@ -50,3 +50,8 @@ export interface IUniform {
   info: { name: string; phone: { phone_code: string; phone_number: string } }
   list: IItemClothes[]
 }
+
+export interface IAccordionCustom {
+  title: string
+  children: string[]
+}

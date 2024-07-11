@@ -1,33 +1,28 @@
-import { toast } from 'react-toastify'
+import { ToastOptions, TypeOptions, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-export const ToastComponent = ({
-  message,
-  position,
-  autoClose,
-  hideProgressBar,
-  closeOnClick,
-  pauseOnHover,
-  draggable,
-  type = 'default'
-}: {
+type ToastComponent = {
   message: string
-  position?: 'top-left' | 'top-right' | 'top-center' | 'bottom-left' | 'bottom-right' | 'bottom-center'
   autoClose?: number
   hideProgressBar?: boolean
   closeOnClick?: boolean
   pauseOnHover?: boolean
   draggable?: boolean
-  type?: 'info' | 'success' | 'warning' | 'error' | 'default'
-}) => {
+  type: TypeOptions
+} & ToastOptions
+
+const ToastComponent = ({ message, autoClose, hideProgressBar, closeOnClick, pauseOnHover, draggable, type, ...props }: ToastComponent) => {
   toast(message, {
-    position: position || 'top-right',
+    position: 'top-right',
     autoClose: autoClose || 2000,
     hideProgressBar: hideProgressBar || false,
     closeOnClick: closeOnClick || true,
     pauseOnHover: pauseOnHover || true,
     draggable: draggable || true,
     progress: undefined,
-    type: type
+    type: type,
+    ...props
   })
 }
+
+export default ToastComponent

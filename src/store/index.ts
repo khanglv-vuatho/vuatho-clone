@@ -1,3 +1,4 @@
+import instance from '@/services/axiosConfig'
 import { createStore } from 'redux'
 
 const DefaultValueState: any = {
@@ -7,9 +8,12 @@ const DefaultValueState: any = {
   languages: [],
   currencyCurrent: { code: 'VND', name: 'Vietnamese Đồng', symbol: '₫' },
   services: [],
-  openMenu: null,
+  openMenu: false,
+  openLanguage: false,
+  openHeaderDropDownItem: false,
   typeOpenFinalPopupStore: null,
-  cards_store: {}
+  cards_store: {},
+  carts_store: {}
 }
 
 function counterReducer(state: any = DefaultValueState, action: any) {
@@ -18,6 +22,8 @@ function counterReducer(state: any = DefaultValueState, action: any) {
       return { ...state, access_token: action.payload }
     case 'cards_store':
       return { ...state, cards_store: action.payload }
+    case 'carts_store':
+      return { ...state, carts_store: action.payload }
     case 'worker/info':
       return { ...state, workerInfo: action.payload }
     case 'currency':
@@ -28,6 +34,10 @@ function counterReducer(state: any = DefaultValueState, action: any) {
       return { ...state, services: [...action.payload] }
     case 'toggle_menu':
       return { ...state, openMenu: !action.payload }
+    case 'toggle_language':
+      return { ...state, openLanguage: !action.payload }
+    case 'toggle_open_header_dropdown':
+      return { ...state, openHeaderDropDownItem: !action.payload }
     case 'typeOpenFinalPopupStore':
       return { ...state, typeOpenFinalPopupStore: action.payload }
     default:

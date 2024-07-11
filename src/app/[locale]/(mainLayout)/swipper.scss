@@ -11,20 +11,14 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    @apply -bottom-[44px] top-auto z-20 hidden size-[40px] translate-y-1/2 items-center justify-center rounded-full bg-[#FCB713] text-base-black-1 md:flex lg:-bottom-[46px] xl:-bottom-[12%] xl:size-[50px];
+    @apply -bottom-[44px] top-auto z-20 hidden size-10 translate-y-1/2 items-center justify-center rounded-full bg-[#FCB713] text-base-black-1 md:flex lg:-bottom-[46px] xl:-bottom-[12%] xl:size-[50px];
 
     &::after {
-      @apply text-[1.2rem] xl:text-[1.6rem];
+      @apply text-sm xl:text-base;
     }
 
     &.swiper-button-disabled {
       @apply bg-base-black-1/10;
-    }
-  }
-
-  .swiper-wrapper {
-    .swiper-slide {
-      @apply md:pb-[180px] xl:pb-[108px];
     }
   }
 }

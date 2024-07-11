@@ -9,7 +9,7 @@ import instance from '@/services/axiosConfig'
 import { IBreadcrumbWithUrl } from '@/interface'
 import { MostViewed } from '../..'
 
-import { ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
+import { ListBreadcrumbs } from '@/components/breadcrumbs'
 import { InputSearch } from '@/components/input'
 
 import { Skeleton } from '@nextui-org/react'
@@ -87,35 +87,35 @@ function PressDetail() {
 
   return (
     <div className='bg-base-gray py-[104px]'>
-      <div className=' ct-container-70 '>
-        <div className='flex flex-col gap-[16px]'>
-          <div className='grid grid-cols-6 lg:gap-[20px]'>
+      <div className=' ct-container '>
+        <div className='flex flex-col gap-4'>
+          <div className='grid grid-cols-6 lg:gap-5'>
             <div className='relative col-span-6 lg:col-span-2'>
               <InputSearch onRefresh={setOnFetching} />
             </div>
             <div className='col-span-6 max-w-max rounded-full p-[17px] lg:col-span-4 lg:bg-white'>
-              <ListBreadcrumbsForDetailPress list={listBreadcrumbs} />
+              <ListBreadcrumbs list={listBreadcrumbs} />
             </div>
           </div>
-          <div className='grid grid-cols-6 lg:gap-[20px]'>
+          <div className='grid grid-cols-6 lg:gap-5'>
             <div className='order-1 col-span-6 lg:order-none lg:col-span-2'>
               <MostViewed dataDefault={listMostView} onFetching={onFetchingMostView} onLoading={onLoadingMostView} />
             </div>
-            <div className='order-none col-span-6 space-y-[16px] rounded-[16px] bg-white p-[16px] lg:order-1 lg:col-span-4'>
+            <div className='order-none col-span-6 space-y-4 rounded-xl bg-white p-4 lg:order-1 lg:col-span-4'>
               {onFetching || onLoading ? (
-                <div className='flex flex-col gap-[16px]'>
-                  <Skeleton className='h-[32px] w-[140px] rounded-lg ' />
-                  <div className='flex items-center gap-[16px]'>
-                    <Skeleton className='h-[16px] w-[30px] rounded-lg ' />
-                    <Skeleton className='h-[16px] w-[50px] rounded-lg ' />
+                <div className='flex flex-col gap-4'>
+                  <Skeleton className='h-8 w-[140px] rounded-lg ' />
+                  <div className='flex items-center gap-4'>
+                    <Skeleton className='h-4 w-8 rounded-lg ' />
+                    <Skeleton className='h-4 w-[50px] rounded-lg ' />
                   </div>
                   <Skeleton className='h-[480px] w-full rounded-lg ' />
-                  <Skeleton className='h-[32px] w-[140px] rounded-lg ' />
-                  <div className='flex flex-col gap-[8px]'>
+                  <Skeleton className='h-8 w-[140px] rounded-lg ' />
+                  <div className='flex flex-col gap-2'>
                     {Array(7)
                       .fill(null)
                       .map((_, index) => (
-                        <Skeleton key={index} className='h-[16px] w-full rounded-lg ' />
+                        <Skeleton key={index} className='h-4 w-full rounded-lg ' />
                       ))}
                   </div>
                 </div>
@@ -126,21 +126,22 @@ function PressDetail() {
                       <div className='h-[126px] w-[158px]'>
                         <Image src={'/empty.webp'} alt='empty' height={126} width={158} className='h-full w-full object-contain' />
                       </div>
-                      <p className='font-light text-[#969696]'>{td('oopsDetail')}</p>
+                      <p className=' text-[#969696]'>{td('oopsDetail')}</p>
                     </div>
                   ) : (
                     <>
-                      <h1 className='text-[3.2rem] font-semibold '>
+                      <h1 className='text-xl font-semibold lg:text-3xl '>
                         {/* <Link href={`${detailPress?.slug}`}>{detailPress?.title}</Link> */}
                         {detailPress?.title}
                       </h1>
-                      <div className='flex items-center gap-[16px]'>
+                      <div className='flex items-center gap-4'>
                         <h3>
                           <Link href={`/${paramsData.locale}/press/${detailPress?.category?.slug}`}>{detailPress?.category?.name}</Link>
                         </h3>
-                        <time className='font-light text-base-drak-gray'>{detailPress?.created_at}</time>
+                        <time className=' text-base-drak-gray'>{detailPress?.created_at}</time>
                       </div>
-                      <div className='content-blog' dangerouslySetInnerHTML={{ __html: detailPress?.content }} />
+                      {console.log('detailPress?.content', detailPress?.content)}
+                      <div className='prose min-w-fit prose-figure:flex prose-figure:flex-col  prose-figure:items-center' dangerouslySetInnerHTML={{ __html: detailPress?.content }} />
                     </>
                   )}
                 </>

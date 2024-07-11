@@ -11,6 +11,7 @@ export async function generateMetadata({ params }: { params?: any }) {
     console.log(error)
   }
 }
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>

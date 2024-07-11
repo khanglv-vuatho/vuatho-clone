@@ -35,15 +35,15 @@ const SectionTest = memo(() => {
           items={tabs}
           variant='light'
           classNames={{
-            tabList: 'gap-6 w-full relative rounded-none py-2',
+            tabList: 'gap-4 w-full relative rounded-none py-2',
             cursor: 'w-full bg-[#405AB7]',
-            tab: 'max-w-fit px-[20px] py-[30px] flex items-center justify-center bg-[#F8F8F8]',
-            tabContent: 'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold'
+            tab: 'max-w-fit px-5 py-8 flex items-center justify-center bg-[#F8F8F8]',
+            tabContent: 'text-black group-data-[selected=true]:text-[#fff] lg:text-lg font-semibold'
           }}
         >
           {(item) => (
             <Tab key={item.id} title={item.label}>
-              <div className='rounded-2xl border-[1px] border-[#E1E1E1] p-[20px]'>{item.content}</div>
+              <div className='rounded-xl border-[1px] border-[#E1E1E1] p-5'>{item.content}</div>
             </Tab>
           )}
         </Tabs>
@@ -72,9 +72,9 @@ const SectionTest = memo(() => {
               }
               classNames={{
                 content: 'flex flex-col gap-2',
-                title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6]',
-                indicator: 'text-[1.8rem]',
-                base: 'group-[.is-splitted]:pl-12',
+                title: 'text-lg font-bold data-[open=true]:text-[#0B27B6]',
+                indicator: 'text-lg',
+                base: 'group-[.is-splitted]:pl-4',
                 trigger: 'data-[focus-visible=true]:!outline-none'
               }}
             >
@@ -91,20 +91,20 @@ const Step1 = memo(() => {
   const t = useTranslations('FindWorker')
 
   return (
-    <div className='flex-col gap-[20px] rounded-lg border-2 border-base-gray p-6 md:flex md:border-none md:p-0'>
-      <h3 className='text-[1.8rem] font-semibold text-[#405AB7]'>{t('text4')}</h3>
+    <div className='flex-col gap-5 rounded-lg border-2 border-base-gray p-6 md:flex md:border-none md:p-0'>
+      <h3 className='text-2xl font-semibold text-[#405AB7]'>{t('text4')}</h3>
       <div className='mt-8 flex flex-col gap-10 md:flex-row md:items-center'>
         <div className='space-y-10'>
           <div>
-            <h4 className='mb-2 whitespace-nowrap text-[1.8rem]'>{t('text5')}</h4>
+            <h4 className='mb-2 whitespace-nowrap text-lg'>{t('text5')}</h4>
             <AndroidBtn />
           </div>
           <div>
-            <h4 className='mb-2 whitespace-nowrap text-[1.8rem]'>{t('text6')}</h4>
+            <h4 className='mb-2 whitespace-nowrap text-lg'>{t('text6')}</h4>
             <IosBtn />
           </div>
         </div>
-        <span className='text-[1.8rem] text-black/50 3xl:text-[1.8rem]'>{t('text7')}</span>
+        <span className='text-lg text-black/50 3xl:text-lg'>{t('text7')}</span>
         <div>
           <QrCode />
         </div>
@@ -129,18 +129,18 @@ const Step2 = memo(() => {
     }
   ]
   return (
-    <div className='flex flex-col gap-[20px] rounded-lg border-2 border-base-gray p-6 md:border-none md:p-0'>
-      <h3 className='text-[1.8rem] font-semibold text-[#405AB7]'>{t('text10')}</h3>
-      <div className='hidden w-full gap-[20px] lg:flex'>
+    <div className='flex flex-col gap-5 rounded-lg border-2 border-base-gray p-4 md:border-none md:p-0 lg:p-6'>
+      <h3 className='text-2xl font-semibold text-[#405AB7]'>{t('text10')}</h3>
+      <div className='hidden w-full gap-5 lg:flex'>
         <Tabs
           aria-label='Option Login Logout Tabs'
           items={tabs}
           variant='light'
           classNames={{
-            tabList: 'gap-6 w-full relative rounded-none py-2 flex-col',
+            tabList: 'gap-2 w-full relative rounded-none py-2 flex-col',
             cursor: 'w-full bg-[#405AB7]',
-            tab: 'xl:min-w-[300px] min-w-[100px] p-[24px] flex items-center justify-start border-[1px] border-[#E1E1E1]',
-            tabContent: 'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold'
+            tab: 'xl:min-w-[300px] min-w-[100px] p-6 flex items-center justify-start border-[1px] border-[#E1E1E1]',
+            tabContent: 'text-black group-data-[selected=true]:text-[#fff] lg:text-lg font-semibold'
           }}
         >
           {(item) => (
@@ -166,8 +166,8 @@ const Step3 = memo(() => {
       thumb: 'findWorker1.webp',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text11')}</p>
-          <p className='text-[1.8rem]'>{t('text30')}</p>
+          <p className='text-lg font-semibold xl:text-2xl'>{t('text11')}</p>
+          <p className='text-lg'>{t('text30')}</p>
         </>
       )
     },
@@ -175,8 +175,8 @@ const Step3 = memo(() => {
       thumb: 'findWorker2.webp',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text14')}</p>
-          <p className='text-[1.8rem]'>{t('text31')}</p>
+          <p className='text-lg font-semibold xl:text-2xl'>{t('text14')}</p>
+          <p className='text-lg'>{t('text31')}</p>
         </>
       )
     },
@@ -184,8 +184,8 @@ const Step3 = memo(() => {
       thumb: 'findWorker3.webp',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text17')}</p>
-          <p className='text-[1.8rem]'>{t('text36')}</p>
+          <p className='text-lg font-semibold xl:text-2xl'>{t('text17')}</p>
+          <p className='text-lg'>{t('text36')}</p>
         </>
       )
     },
@@ -193,9 +193,9 @@ const Step3 = memo(() => {
       thumb: 'findWorker4.webp',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text20')}</p>
-          <p className='text-[1.8rem]'>{t('text38')}</p>
-          <p className='text-[1.8rem]'>{t('text39')}</p>
+          <p className='text-lg font-semibold xl:text-2xl'>{t('text20')}</p>
+          <p className='text-lg'>{t('text38')}</p>
+          <p className='text-lg'>{t('text39')}</p>
         </>
       )
     },
@@ -204,9 +204,9 @@ const Step3 = memo(() => {
       thumb2: 'findWorker5-2.webp',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text28')}</p>
-          <p className='text-[1.8rem]'>{t('text40')}</p>
-          <p className='text-[1.8rem]'>{t('text41')}</p>
+          <p className='text-lg font-semibold xl:text-2xl'>{t('text28')}</p>
+          <p className='text-lg'>{t('text40')}</p>
+          <p className='text-lg'>{t('text41')}</p>
         </>
       )
     },
@@ -215,19 +215,19 @@ const Step3 = memo(() => {
       thumb2: 'findWorker6-2.webp',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold xl:text-[2.4rem]'>{t('text29')}</p>
-          <p className='text-[1.8rem]'>{t('text42')}</p>
-          <p className='text-[1.8rem]'>{t('text43')}</p>
+          <p className='text-lg font-semibold xl:text-2xl'>{t('text29')}</p>
+          <p className='text-lg'>{t('text42')}</p>
+          <p className='text-lg'>{t('text43')}</p>
         </>
       )
     }
   ]
 
   return (
-    <div className='rounded-lg border-2 border-base-gray p-6 md:border-none md:p-0'>
-      <h3 className='text-[1.8rem] font-semibold text-[#405AB7]'>{t('text44')}</h3>
-      <p className='my-[20px] text-[1.8rem]'>{t('text45')}</p>
-      <div className='grid gap-[40px] lg:grid-cols-2'>
+    <div className='rounded-lg border-2 border-base-gray p-4 md:border-none md:p-0 lg:p-6'>
+      <h3 className='text-2xl font-semibold text-[#405AB7]'>{t('text44')}</h3>
+      <p className='my-5 text-lg'>{t('text45')}</p>
+      <div className='grid gap-10 lg:grid-cols-2'>
         {listRegisterItem.map((item) => (
           <RegisterItem thumb={item.thumb} key={item.thumb} thumb2={item.thumb2}>
             {item.content}
@@ -246,9 +246,9 @@ const Register: any = memo(() => {
       thumb: 'screen1.webp',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold'>{t('text11')}</p>
-          <p className='text-[1.8rem]'>{t('text12')}</p>
-          <p className='text-[1.8rem]'>{t('text13')}</p>
+          <p className='text-lg font-semibold'>{t('text11')}</p>
+          <p className='text-lg'>{t('text12')}</p>
+          <p className='text-lg'>{t('text13')}</p>
         </>
       )
     },
@@ -256,9 +256,9 @@ const Register: any = memo(() => {
       thumb: 'screen2.webp',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold'>{t('text14')}</p>
-          <p className='text-[1.8rem]'>{t('text15')}</p>
-          <p className='text-[1.8rem]'>{t('text16')}</p>
+          <p className='text-lg font-semibold'>{t('text14')}</p>
+          <p className='text-lg'>{t('text15')}</p>
+          <p className='text-lg'>{t('text16')}</p>
         </>
       )
     },
@@ -266,8 +266,8 @@ const Register: any = memo(() => {
       thumb: 'screen3.webp',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold'>{t('text17')}</p>
-          <p className='text-[1.8rem]'>
+          <p className='text-lg font-semibold'>{t('text17')}</p>
+          <p className='text-lg'>
             {t('text18')}
             <span className='text-[#FF4343]'>{t('text19')}</span>
           </p>
@@ -278,8 +278,8 @@ const Register: any = memo(() => {
       thumb: 'screen4.webp',
       content: (
         <>
-          <p className='text-[1.8rem] font-semibold'>{t('text20')}</p>
-          <p className='text-[1.8rem]'>{t('text21')}</p>
+          <p className='text-lg font-semibold'>{t('text20')}</p>
+          <p className='text-lg'>{t('text21')}</p>
         </>
       )
     }
@@ -287,7 +287,7 @@ const Register: any = memo(() => {
 
   return (
     <div>
-      <h5 className='mb-10 block w-full rounded-lg bg-primary-blue py-2 pl-6 text-[2.2rem] text-white lg:hidden'>{t('text8')}</h5>
+      <h5 className='mb-10 block w-full rounded-lg bg-primary-blue py-2 pl-6 text-2xl text-white lg:hidden'>{t('text8')}</h5>
       <div className='grid gap-10 md:grid-cols-2'>
         {listRegisterItem.map((item) => (
           <RegisterItem thumb={item.thumb} key={item.thumb}>
@@ -304,18 +304,18 @@ const Login = memo(() => {
 
   return (
     <>
-      <h5 className='mb-10 w-full rounded-lg bg-primary-blue py-2 pl-6 text-[2.2rem] text-white lg:hidden'>{t('text9')}</h5>
-      <p className='text-[1.8rem]'>{t('text22')}</p>
+      <h5 className='mb-10 mt-10 w-full rounded-lg bg-primary-blue py-2 pl-6 text-2xl text-white lg:mt-0 lg:hidden'>{t('text9')}</h5>
+      <p className='text-lg'>{t('text22')}</p>
       <p className='my-4'>
-        <strong className='text-[1.8rem]'> {t('text23')}</strong>
+        <strong className='text-lg'> {t('text23')}</strong>
       </p>
-      <p className='text-[1.8rem]'> {t('text24')}</p>
-      <ul className='list-inside list-disc pl-3 text-[1.8rem]'>
+      <p className='text-lg'> {t('text24')}</p>
+      <ul className='list-inside list-disc pl-3 text-lg'>
         <li> {t('text25')}</li>
         <li> {t('text26')}</li>
         <li> {t('text27')}</li>
       </ul>
-      <div className='mt-[20px] flex'>
+      <div className='mt-5 flex'>
         <ImageFallback src='/find-worker/loginScreen1.webp' alt={`find-worker-loginScreen1`} width={220} height={420} className='pointer-events-none' />
         <ImageFallback src='/find-worker/loginScreen2.webp' alt={`find-worker-loginScreen2`} width={220} height={420} className='pointer-events-none' />
         <ImageFallback src='/find-worker/loginScreen3.webp' alt={`find-worker-loginScreen3`} width={220} height={420} className='pointer-events-none' />
@@ -326,7 +326,7 @@ const Login = memo(() => {
 
 const RegisterItem = memo(({ children, thumb, thumb2 }: { children: any; thumb: any; thumb2?: any }) => {
   return (
-    <div className={`flex flex-col justify-between gap-[20px] md:col-span-2 md:flex-row xl:col-span-1`}>
+    <div className={`flex flex-col justify-between gap-5 md:col-span-2 md:flex-row xl:col-span-1`}>
       <div className={`flex flex-col gap-4 text-[#282828] ${thumb2 ? 'md:max-w-[55%]' : ''}`}>{children}</div>
       {thumb2 ? (
         <div className='flex w-fit flex-col gap-10 md:flex-row md:gap-2'>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useSmallScreen } from '@/hook'
+import useSmallScreen from '@/hook/useSmallScreen'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 

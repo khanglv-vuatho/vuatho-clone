@@ -1,133 +1,42 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
-import { memo, useEffect, useState } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
 
 import ImageFallback from '@/components/ImageFallback'
-import { DefaultModal } from '@/components/modal'
-import { useDisclosure } from '@nextui-org/react'
+import { playball } from '@/font'
+import { Button } from '@nextui-org/react'
+import Link from 'next/link'
 
 function SectionWithVuaTho() {
   const t = useTranslations('WithVuaTho')
   const td = useTranslations('Footer')
 
-  const [videoType, setVideoType] = useState('')
-  const { isOpen, onOpenChange, onOpen } = useDisclosure()
-
-  const handlePlayVideo = (value: string) => {
-    onOpen()
-    setVideoType(value)
-  }
-
-  const variantScale = {
-    initial: {
-      opacity: 0,
-      scale: 0.8
-    },
-    whileInView: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.2,
-        delay: 1.5
-      }
-    }
-  }
-
-  useEffect(() => {
-    isOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto')
-
-    return () => {
-      document.body.style.overflow = 'auto'
-    }
-  }, [isOpen])
+  const locale = useLocale()
 
   return (
-    <div className='ct-container-70 flex flex-col gap-[20px]'>
-      <motion.div>
-        <p className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>{td('about_us')}</p>
-        <h2 className='text-[2.4rem] font-bold uppercase text-primary-blue lg:text-[3.6rem]'>
-          {t('title')} {t('title1')}
-        </h2>
-        <p className='text-[1.8rem] font-light'>{t('text')}</p>
-      </motion.div>
-      <div className='grid gap-[20px] md:grid-cols-2 md:grid-rows-2'>
-        <motion.div variants={variantScale} initial='initial' animate='whileInView' viewport={{ once: true }} className='mx-auto w-full overflow-hidden rounded-[20px] md:row-span-2'>
-          <ImageFallback src={'/to-the-moon/to-the-moon-1.png'} alt='to-the-moon-1' height={750} priority width={610} className='pointer-events-none size-full select-none object-cover' />
-        </motion.div>
-        {/* <motion.div
-          variants={variantScale}
-          initial='initial'
-          animate='whileInView'
-          viewport={{ once: true }}
-          onClick={() => {
-            handlePlayVideo('HTV')
-          }}
-          className='relative col-span-1 mx-auto cursor-pointer overflow-hidden rounded-[20px] md:row-span-1'
-        >
-          <Button
-            aria-label='play'
-            onClick={() => {
-              handlePlayVideo('HTV')
-            }}
-            isIconOnly
-            className='absolute left-1/2 top-1/2 flex min-h-[48px] min-w-[48px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/20'
-          >
-            <PlayIcon className='size-[24px]' />
-          </Button>
-          <ImageFallback src={'/to-the-moon/to-the-moon-2.jpeg'} alt='to-the-moon-2' height={350} width={610} className='pointer-events-none w-auto select-none'  priority />
-        </motion.div> */}
-        {/* <motion.div
-          variants={variantScale}
-          initial='initial'
-          animate='whileInView'
-          viewport={{ once: true }}
-          onClick={() => {
-            handlePlayVideo('VTV')
-          }}
-          className='relative col-span-1 mx-auto cursor-pointer overflow-hidden rounded-[20px] md:row-span-1'
-        >
-          <Button
-            aria-label='play'
-            onClick={() => {
-              handlePlayVideo('VTV')
-            }}
-            isIconOnly
-            className='absolute left-1/2 top-1/2 flex min-h-[48px] min-w-[48px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/20'
-          >
-            <PlayIcon className='size-[24px]' />
-          </Button>
-          <ImageFallback src={'/vtv-thumb.jpg'} alt='to-the-moon-2' height={350} width={610} className='pointer-events-none w-auto select-none'   />
-        </motion.div> */}
-        <motion.div variants={variantScale} initial='initial' animate='whileInView' viewport={{ once: true }} className='size-full w-full overflow-hidden rounded-[20px] md:row-span-1'>
-          <ImageFallback src={'/to-the-moon/to-the-moon-3.png'} alt='to-the-moon-3' height={400} width={610} className='pointer-events-none size-full select-none object-cover' priority />
-        </motion.div>
-        <motion.div variants={variantScale} initial='initial' animate='whileInView' viewport={{ once: true }} className='mx-auto size-full overflow-hidden rounded-[20px] md:row-span-1'>
-          <ImageFallback src={'/to-the-moon/to-the-moon-2.png'} alt='to-the-moon-2' height={400} width={610} className='pointer-events-none size-full select-none object-cover' priority />
-        </motion.div>
+    <div className='ct-container grid grid-cols-1 gap-4 lg:grid-cols-5 lg:gap-[80px]'>
+      <div className='size-full lg:col-span-3'>
+        <ImageFallback src={'/to-the-moon/to-the-moon.webp'} alt='to-the-moon' className='size-full object-contain' />
       </div>
-      <DefaultModal
-        isOpen={isOpen}
-        onOpenChange={onOpenChange}
-        hiddenCloseBtn
-        aria-label='modal video'
-        hiddenHeader
-        size='5xl'
-        modalBody={
-          videoType === 'VTV' ? (
-            <video src='/video/vtv.mp4' controls></video>
-          ) : (
-            <iframe
-              className='min-h-[200px] w-full object-cover xs:min-h-[400px] lg:min-h-[500px] 2xl:min-h-[600px]'
-              src='https://www.youtube.com/embed/0SPc8O_G26U?si=drHkpvysmnTswANk'
-              title='YouTube video player'
-            />
-          )
-        }
-      />
+      <div className='lg:col-span-2 lg:py-[90px]'>
+        <div className='flex flex-col gap-4 lg:gap-[48px]'>
+          <div className='flex flex-col gap-2 lg:gap-4'>
+            <div className='flex flex-col gap-2'>
+              <p className='text-sm font-bold uppercase text-primary-yellow md:text-xl'>{td('about_us')}</p>
+              <div className='text-2xl font-bold uppercase text-primary-blue lg:text-4xl'>
+                <p className='max-w-[60%] md:max-w-[83%]'>{t('title')} Vua Thợ</p>
+              </div>
+            </div>
+            <div className={playball.className + ' flex gap-2 text-xl  lg:text-3xl'}>
+              <p className=' text-[#a6a6a6]'>“{t('slogan')}”</p>
+            </div>
+            <p className='text-sm text-baseBlack xs:text-base 2xl:text-lg'>{t('text')}</p>
+          </div>
+          <Link href={`/${locale}/about-us`}>
+            <Button className='flex h-[48px] w-fit items-center justify-center rounded-full bg-primary-yellow px-6 text-base font-semibold'>{t('readmore')}</Button>
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }
 
-export default memo(SectionWithVuaTho)
+export default SectionWithVuaTho

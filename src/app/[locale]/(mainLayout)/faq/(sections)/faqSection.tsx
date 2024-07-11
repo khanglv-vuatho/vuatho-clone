@@ -357,15 +357,15 @@ function FaqSection() {
 
   return (
     <>
-      <div className='py-[20px] 13inch:py-[40px] 3xl:py-[80px]'>
-        <div className='ct-container-70 hidden gap-10 md:flex'>
+      <div className='py-5 13inch:py-10 3xl:py-[80px]'>
+        <div className='ct-container hidden gap-10 md:flex'>
           <div className='relative w-full max-w-[320px] 3xl:max-w-[400px]'>
-            <div className='absolute w-full border-l-[4px] border-[#FCB713] bg-gradient-to-r from-[#FCB71333] to-[#FCB71300] transition ' ref={highlightRef} />
+            <div className='absolute w-full border-l-4 border-[#FCB713] bg-gradient-to-r from-[#FCB71333] to-[#FCB71300] transition ' ref={highlightRef} />
             <div className='flex flex-col gap-2'>
               {listAccordion.map((i: any) => (
                 <button
                   onClick={() => handleActiveSelect(i.title)}
-                  className={`flex w-full items-center justify-start border-l-[4px] border-transparent px-10 py-6 text-[1.8rem] ${
+                  className={`flex w-full items-center justify-start border-l-1 border-transparent px-8 py-4 text-lg ${
                     activeSelect === i.title ? ' menuActive text-black' : 'hover:border-[#FCB713]/5 hover:bg-gradient-to-r hover:from-[#FCB71333]/5 hover:to-[#FCB71300]/5'
                   }`}
                   key={i.title}
@@ -393,14 +393,13 @@ function FaqSection() {
                   title={i.title}
                   classNames={{
                     content: 'flex flex-col gap-2 pb-8',
-                    title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6]',
-                    indicator: 'text-[1.8rem]',
-                    base: 'group-[.is-splitted]:pl-12',
+                    title: 'text-lg font-bold data-[open=true]:text-[#0B27B6]',
+                    indicator: 'text-lg',
                     trigger: 'data-[focus-visible=true]:!outline-none'
                   }}
                 >
                   {i.children.map((ic: any) => (
-                    <p key={ic.title} className={`text-[1.8rem] text-[#555] ${ic?.bold ? 'font-bold' : ''}`}>
+                    <p key={ic.title} className={`text-lg text-[#555] ${ic?.bold ? 'font-bold' : ''}`}>
                       {ic.title}
                     </p>
                   ))}
@@ -409,7 +408,7 @@ function FaqSection() {
             </Accordion>
           </div>
         </div>
-        <div className='ct-container-70 block md:hidden'>
+        <div className='ct-container block md:hidden'>
           <div className='w-full'>
             <Accordion
               selectionMode='single'
@@ -430,9 +429,8 @@ function FaqSection() {
                   }}
                   classNames={{
                     content: 'flex flex-col gap-2',
-                    title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6]',
-                    indicator: 'text-[1.8rem]',
-                    base: 'group-[.is-splitted]:pl-12',
+                    title: 'text-lg font-bold data-[open=true]:text-[#0B27B6]',
+                    indicator: 'text-lg',
                     trigger: 'data-[focus-visible=true]:!outline-none'
                   }}
                 >
@@ -451,14 +449,13 @@ function FaqSection() {
                         title={ic.title}
                         classNames={{
                           content: 'flex flex-col gap-2 pb-2',
-                          title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6] pl-2',
-                          indicator: 'text-[1.8rem]',
-                          base: 'group-[.is-splitted]:pl-12',
+                          title: 'text-lg font-bold data-[open=true]:text-[#0B27B6] pl-2',
+                          indicator: 'text-lg',
                           trigger: 'data-[focus-visible=true]:!outline-none'
                         }}
                       >
                         {ic?.children.map((icc: any) => (
-                          <p className='text-[1.8rem] text-[#555]' key={icc.title}>
+                          <p className='text-lg text-[#555]' key={icc.title}>
                             {icc.title}
                           </p>
                         ))}

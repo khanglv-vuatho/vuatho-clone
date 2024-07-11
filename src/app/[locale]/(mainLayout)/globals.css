@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply scroll-smooth text-[62.5%] text-base-black-1;
+  @apply scroll-smooth text-base-black-1;
 }
 
 html *::-webkit-scrollbar {
@@ -26,7 +26,7 @@ html *::-webkit-scrollbar-track {
 }
 
 body {
-  @apply text-[1.6rem];
+  @apply text-base;
 }
 
 .blog-home::-webkit-scrollbar {

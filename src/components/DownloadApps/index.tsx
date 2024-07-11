@@ -14,7 +14,7 @@ function DownloadApps({ width, height, hidden = false, gap = false }: { width?: 
           <Image alt='QRCode' src={'/QRCODE.png'} fill className='pointer-events-none hover:cursor-pointer' />
         </div>
       )}
-      <div className={`flex items-center md:flex-col ${gap ? 'w-full justify-between gap-2 md:flex-col' : 'gap-2 13inch:gap-[20px]'}`}>
+      <div className={`flex items-center md:flex-col ${gap ? 'w-full justify-between gap-2 md:flex-col' : 'gap-2 13inch:gap-5'}`}>
         <Link href={'/'}>
           <div className='relative h-[50px] w-[160px] 13inch:h-[60px] 13inch:w-[200px]'>
             <Image alt='DownloadGooglePlay' src={'/DownloadGooglePlay1.svg'} height={height || 80} width={width || 260} className='pointer-events-none hover:cursor-pointer' />
@@ -37,15 +37,16 @@ export const AndroidBtn: React.FC<{ style?: any }> = ({ style }) => {
     <a
       href='https://play.google.com/store/apps/details?id=com.vuatho.mobile&pli=1'
       target='_blank'
-      className={twMerge('group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-4 text-white 2xl:min-w-[140px]', style)}
+      className={twMerge(
+        'group relative flex w-[150px] select-none items-center gap-1 overflow-hidden rounded-xl bg-primary-yellow px-4 py-2 text-baseBlack lg:w-[200px] lg:gap-2 lg:px-6 lg:py-4 2xl:gap-4',
+        style
+      )}
     >
-      <GooglePlayIcon variant='Bold' size={36} />
-      <div>
-        <span className='text-[1.2rem] text-white/70'>{t('download_chplay')}</span>
-        <p className='text-[1.2rem] md:text-[1.5rem] 3xl:text-[1.7rem]'>Google Play</p>
+      <GooglePlayIcon variant='Bold' size={36} className='flex size-6 flex-shrink-0 lg:size-9' />
+      <div className='flex flex-col text-baseBlack 2xl:gap-1'>
+        <span className='whitespace-nowrap text-sm'>{t('download_chplay')}</span>
+        <p className='whitespace-nowrap text-sm xs:text-base 3xl:text-lg'>Google Play</p>
       </div>
-      <div className='absolute -right-1/3 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/[0.15] transition group-hover:-translate-x-1/2' />
-      <div className='absolute -right-1/2 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/10 transition group-hover:-translate-x-1/2' />
     </a>
   )
 }
@@ -57,15 +58,16 @@ export const IosBtn: React.FC<{ style?: any }> = ({ style }) => {
     <a
       href='https://apps.apple.com/vn/app/vua-th%E1%BB%A3-si%C3%AAu-k%E1%BA%BFt-n%E1%BB%91i/id6467541777?l=vi'
       target='_blank'
-      className={twMerge('group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-4 text-white 2xl:min-w-[140px]', style)}
+      className={twMerge(
+        'group relative flex w-[150px] select-none items-center gap-1 overflow-hidden rounded-xl bg-primary-yellow px-4 py-2 text-baseBlack lg:w-[200px] lg:gap-2 lg:px-6 lg:py-4 2xl:gap-4',
+        style
+      )}
     >
-      <AppleIcon variant='Bold' size={36} />
-      <div>
-        <span className='text-[1.2rem] text-white/70'>{t('download_appstore')}</span>
-        <p className='text-[1.2rem] md:text-[1.5rem] 3xl:text-[1.7rem]'>App Store</p>
+      <AppleIcon variant='Bold' size={36} className='flex size-6 flex-shrink-0 lg:size-9' />
+      <div className='flex flex-col text-baseBlack 2xl:gap-1'>
+        <span className='whitespace-nowrap text-sm'>{t('download_appstore')}</span>
+        <p className='whitespace-nowrap text-sm xs:text-base 3xl:text-lg'>App Store</p>
       </div>
-      <div className='absolute -right-1/3 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/[0.15] transition group-hover:-translate-x-1/2' />
-      <div className='absolute -right-1/2 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/10 transition group-hover:-translate-x-1/2' />
     </a>
   )
 }

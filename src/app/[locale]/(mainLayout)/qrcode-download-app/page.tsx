@@ -1,12 +1,32 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
+import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
+import instance from '@/services/axiosConfig'
+import { error } from 'console'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 const Default = () => {
   const router = useRouter()
 
+  const [onSending, setOnSending] = useState(false)
+
+  const fullUrl = window.location.href
+
+  const getAllQueryParams: any = useGetAllQueryParams()
+
+  const handleSendingRefUrl = async () => {
+    const payload = { ref_code: getAllQueryParams.ref_code, mode: process.env.NODE_ENV === 'development' ? 'sandbox' : undefined, link: fullUrl }
+
+    try {
+      await instance.post('/referral-deep-link', payload)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
+    setOnSending(true)
     // Function to detect the device and OS and redirect
     const detectAndRedirect = () => {
       // Ensure this code does not run on server-side
@@ -28,6 +48,10 @@ const Default = () => {
 
     detectAndRedirect()
   }, [router])
+
+  useEffect(() => {
+    onSending && handleSendingRefUrl()
+  }, [onSending])
 
   return <div className='pt-[80px]'>Redirecting to Mobile Store...</div>
 }

@@ -1,7 +1,8 @@
+'use client'
+
 import { memo, useState } from 'react'
-import ImageFallback from '../ImageFallback'
 import { twMerge } from 'tailwind-merge'
-import { ImageProps } from 'next/image'
+import Image, { ImageProps } from 'next/image'
 
 type TImageZoom = { sizeImg?: string; style?: string; src: string; alt: string; width: number; height: number } & ImageProps
 
@@ -18,7 +19,7 @@ export const ImageZoom = memo(({ sizeImg, style, src, alt, ...props }: TImageZoo
 
   return (
     <div className={`overflow-hidden ${sizeImg ? sizeImg : 'flex size-full items-center justify-center'}`}>
-      <ImageFallback
+      <Image
         alt={alt}
         src={src}
         className={twMerge('size-full object-contain hover:scale-[2.0]', style)}
