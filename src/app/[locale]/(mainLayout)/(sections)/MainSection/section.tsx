@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl'
 import { Wave } from '@/components/Icons'
 import ImageFallback from '@/components/ImageFallback'
 import { ImageMotion, QuickDashboard } from '.'
+import Link from 'next/link'
 
 const MainSection = () => {
   const t = useTranslations('MainSection')

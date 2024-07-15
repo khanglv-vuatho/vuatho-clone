@@ -22,6 +22,7 @@ import 'swiper/css/thumbs'
 import 'swiper/css/zoom'
 
 import './WorkerBenefitSection.scss'
+import { useRouter } from 'next/navigation'
 
 const WorkerBenefitSection = () => {
   const t = useTranslations('WorkerBenefitSection')
@@ -85,12 +86,8 @@ const WorkerBenefitSection = () => {
   const handlePrev = () => handleSwiperAction('slidePrev')
   const handleNext = () => handleSwiperAction('slideNext')
 
-  useEffect(() => {
-    return () => clearTimeout(timer)
-  }, [timer])
-
   return (
-    <div className='relative flex flex-col'>
+    <div className='relative flex flex-col' id='worker-benefit'>
       <div className='ct-container flex flex-col gap-6'>
         <div className='flex items-center justify-between'>
           <div className='flex flex-col gap-2'>

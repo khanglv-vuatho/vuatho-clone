@@ -17,7 +17,6 @@ const OtherPress = () => {
   const [listArticleFollowCommunication, setListArticleFollowCommunication] = useState([])
   const [listArticleFollowCommunicationVideo, setListArticleFollowCommunicationVideo] = useState([])
   const [onFetching, setOnFetching] = useState(false)
-  const [mounted, setMounted] = useState(false)
 
   const locale = useLocale()
   const serverFetching = useCallback(async () => {
@@ -46,10 +45,6 @@ const OtherPress = () => {
     setOnFetching(true)
   }, [])
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   return (
     <div className='ct-container flex flex-col gap-5'>
       <div className='flex flex-col gap-2'>
@@ -57,37 +52,42 @@ const OtherPress = () => {
         <h2 className='text-2xl font-bold uppercase text-primary-blue lg:text-4xl'>{t('heading')}</h2>
       </div>
       <>
-        {mounted ? (
-          <>
-            {!!listArticleFollowCommunicationVideo?.length ? (
-              <>
-                <p className='text-xl font-semibold'>{t('text1')}</p>
-                <SwipperBlog data={listArticleFollowCommunicationVideo} />
-              </>
-            ) : (
-              <></>
-            )}
-            {!!listArticleFollowCommunication?.length ? (
-              <>
-                <p className='text-xl font-semibold'>{t('text2')}</p>
-                <SwipperBlog data={listArticleFollowCommunication} />
-              </>
-            ) : (
-              <></>
-            )}
-          </>
-        ) : (
-          <div className='flex flex-nowrap gap-2 overflow-x-auto overflow-y-hidden p-1'>
-            {Array(4)
-              .fill(null)
-              .map((_, index) => {
-                return (
-                  <div className='w-[80%] min-w-[250px] md:w-[40%] lg:w-full' key={`skeleton-listOtherPress-${index}`}>
-                    <SkeletonBlog />
-                  </div>
-                )
-              })}
+        {onFetching ? (
+          <div className='flex flex-col gap-5'>
+            <div className='flex flex-nowrap gap-2 overflow-x-auto overflow-y-hidden p-1'>
+              {Array(4)
+                .fill(null)
+                .map((_, index) => {
+                  return (
+                    <div className='w-[80%] min-w-[250px] md:w-[40%] lg:w-full' key={`skeleton-listOtherPress-${index}`}>
+                      <SkeletonBlog />
+                    </div>
+                  )
+                })}
+            </div>
+            <div className='flex flex-nowrap gap-2 overflow-x-auto overflow-y-hidden p-1'>
+              {Array(4)
+                .fill(null)
+                .map((_, index) => {
+                  return (
+                    <div className='w-[80%] min-w-[250px] md:w-[40%] lg:w-full' key={`skeleton-listOtherPress-${index}`}>
+                      <SkeletonBlog />
+                    </div>
+                  )
+                })}
+            </div>
           </div>
+        ) : (
+          <>
+            <>
+              <p className='text-xl font-semibold'>{t('text1')}</p>
+              <SwipperBlog data={listArticleFollowCommunicationVideo} />
+            </>
+            <>
+              <p className='text-xl font-semibold'>{t('text2')}</p>
+              <SwipperBlog data={listArticleFollowCommunication} />
+            </>
+          </>
         )}
       </>
     </div>

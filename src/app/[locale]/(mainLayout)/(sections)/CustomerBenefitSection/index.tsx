@@ -1,5 +1,9 @@
+'use client'
+
 import ImageFallback from '@/components/ImageFallback'
 import { useTranslations } from 'next-intl'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 const ClientBenefitSection = () => {
   const t = useTranslations('ClientBenefitSection')
@@ -16,7 +20,7 @@ const ClientBenefitSection = () => {
   ]
 
   return (
-    <div className='ct-container'>
+    <div className='ct-container' id='client-benefit'>
       <div className='flex flex-col gap-2'>
         <h3 className='text-sm font-bold uppercase text-primary-yellow md:text-xl'>{t('benefit')}</h3>
         <p className='inline-block text-2xl font-semibold uppercase text-primary-blue lg:mb-10 lg:text-4xl'>{t('text')}</p>
