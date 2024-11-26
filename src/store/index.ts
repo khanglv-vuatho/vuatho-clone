@@ -13,7 +13,8 @@ const DefaultValueState: any = {
   openHeaderDropDownItem: false,
   typeOpenFinalPopupStore: null,
   cards_store: {},
-  carts_store: {}
+  carts_store: {},
+  isHeaderVisible: false
 }
 
 function counterReducer(state: any = DefaultValueState, action: any) {
@@ -40,6 +41,8 @@ function counterReducer(state: any = DefaultValueState, action: any) {
       return { ...state, openHeaderDropDownItem: !action.payload }
     case 'typeOpenFinalPopupStore':
       return { ...state, typeOpenFinalPopupStore: action.payload }
+    case 'isHeaderVisible':
+      return { ...state, isHeaderVisible: !action.payload }
     default:
       return state
   }

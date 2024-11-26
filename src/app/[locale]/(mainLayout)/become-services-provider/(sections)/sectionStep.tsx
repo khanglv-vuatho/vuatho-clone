@@ -288,7 +288,13 @@ const Step3: React.FC = memo(() => {
           hiddenHeader
           size='5xl'
           modalBody={
-            <iframe className='min-h-[200px] w-full object-cover xs:min-h-[400px] lg:min-h-[500px] 2xl:min-h-[600px]' src='https://www.youtube.com/embed/Q2sh1pOaUuk' title='YouTube video player' />
+            <iframe
+              className='min-h-[200px] w-full object-cover xs:min-h-[400px] lg:min-h-[500px] 2xl:min-h-[600px]'
+              src='https://www.youtube.com/embed/_hAC56UHnsM'
+              title='YouTube video player dang ki'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              allowFullScreen
+            />
           }
         />
       </div>
@@ -406,7 +412,13 @@ const Step6: React.FC = memo(() => {
         hiddenHeader
         size='5xl'
         modalBody={
-          <iframe className='min-h-[200px] w-full object-cover xs:min-h-[400px] lg:min-h-[500px] 2xl:min-h-[600px]' src='https://www.youtube.com/embed/yUzIennkrM8' title='YouTube video player' />
+          <iframe
+            className='min-h-[200px] w-full object-cover xs:min-h-[400px] lg:min-h-[500px] 2xl:min-h-[600px]'
+            src='https://www.youtube.com/embed/d69EqiUszoA'
+            title='YouTube video player test nghiep vu'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+          />
         }
       />
     </div>

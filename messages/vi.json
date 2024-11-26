@@ -516,7 +516,7 @@
     "text1": "Trang phục chuyên nghiệp cho Thợ",
     "text2": "Tự tin hơn khi làm việc",
     "text3": "Liên hệ đặt mua ngay",
-    "text4": "ĐỒNG PHỤC CỦA VUA THỢ",
+    "text4": "ĐỒNG PHỤC VUA THỢ",
     "text5": "Chúng tôi chỉ cung cấp đồng phục cho nhân viên nội bộ công ty. Cảm ơn bạn đã quan tâm và rất mong bạn thông cảm cho sự bất tiện này.",
     "text6": " Số điện thoại đăng ký Thợ",
     "text7": "Tiếp tục",
@@ -560,7 +560,10 @@
     "text45": "Thanh toán trực tiếp tại văn phòng",
     "text46": "Chọn phương thức thanh toán",
     "text47": "Chọn",
-    "text48": "Kích thước"
+    "text48": "Kích thước",
+    "text49": "Phí vận chuyển do đối tác Thợ tự thanh toán sau khi nhận đầy đủ đồng phục.",
+    "text50": "'<p>Đối tác Thợ vui lòng <strong>THANH TOÁN TRƯỚC</strong> đầy đủ đơn hàng. Sau khi chuyển khoản thành công, đối tác Thợ vui lòng chụp lại hình ảnh giao dịch và gửi vào số Hotline 0912 426 404 hoặc Zalo OA <a href=https://zalo.me/vuathoofficial target=_blank><strong>Vua Thợ - Thợ nào cũng có</strong></a> để xác nhận.</p>'",
+    "text51": "Vua Thợ chưa hỗ trợ đổi trả đồng phục, quý Đối tác Thợ lưu ý kiểm tra kích thước kỹ trước khi đặt hàng."
   },
   "Map": {
     "text1": "Người dùng ứng dụng",

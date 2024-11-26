@@ -27,6 +27,7 @@ const Header = React.memo(() => {
 export const HeaderWrapper = ({ children, style }: { children: React.ReactNode; style?: string }) => {
   const [isHeaderVisible, setHeaderVisible] = useState(true)
   const [isWebview, sIsWebview] = useState(false)
+  const dispatch = useDispatch()
 
   const searchParams = useSearchParams()
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
@@ -38,15 +39,20 @@ export const HeaderWrapper = ({ children, style }: { children: React.ReactNode; 
 
   useEffect(() => {
     let prevScrollPos = window.scrollY
+
     const handleScroll = () => {
       const currentScrollPos = window.scrollY
 
-      if (currentScrollPos > prevScrollPos && currentScrollPos > 60) {
-        setHeaderVisible(false)
-      } else {
-        setHeaderVisible(true)
+      if (Math.abs(currentScrollPos - prevScrollPos) > 20) {
+        if (currentScrollPos > prevScrollPos && currentScrollPos > 60) {
+          setHeaderVisible(false)
+          dispatch({ type: 'isHeaderVisible', payload: false })
+        } else {
+          setHeaderVisible(true)
+          dispatch({ type: 'isHeaderVisible', payload: true })
+        }
+        prevScrollPos = currentScrollPos
       }
-      prevScrollPos = currentScrollPos
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -147,14 +153,28 @@ const RightNav = memo(() => {
         </div>
       </div>
       {/* test */}
-      <DropDownMenu direction={isSmallScreen ? 'right' : 'top'} isOpen={toggleMenu} className='h-dvh gap-0 bg-primary-blue px-0'>
-        <div className='ct-container flex justify-end'>
-          <Button isIconOnly variant='light' disableAnimation disableRipple className='rounded-full p-6'>
-            <Add className='flex size-[48px] flex-shrink-0 rotate-45 text-white ' size={48} onClick={() => dispatch({ type: 'toggle_menu', payload: toggleMenu })} />
-          </Button>
+      <DropDownMenu
+        direction={isSmallScreen ? 'right' : 'top'}
+        isOpen={toggleMenu}
+        className='flex h-[calc(100dvh-70px)] flex-col items-center justify-between gap-0 overflow-auto bg-primary-blue p-0'
+      >
+        <div className='flex w-full flex-1 flex-col'>
+          <div className='ct-container flex justify-end'>
+            <Button isIconOnly variant='light' disableAnimation disableRipple className='rounded-full p-6'>
+              <Add
+                className='flex size-[48px] flex-shrink-0 rotate-45 text-white '
+                size={48}
+                onClick={() => {
+                  dispatch({ type: 'toggle_menu', payload: toggleMenu })
+                }}
+              />
+            </Button>
+          </div>
+          <div className='flex h-full flex-1 flex-col'>
+            <LinkList handleCloseMenuMobile={handleCloseMenuMobile} />
+          </div>
         </div>
-        <LinkList handleCloseMenuMobile={handleCloseMenuMobile} />
-        <Button onClick={_HandleOpenWindow} className='absolute bottom-[70px] flex h-[48px] w-full items-center justify-center rounded-none bg-primary-yellow text-base font-semibold text-baseBlack'>
+        <Button onClick={_HandleOpenWindow} className='flex min-h-[48px] w-full flex-shrink-0 items-center justify-center rounded-none bg-primary-yellow text-base font-semibold text-baseBlack'>
           {t('download')}
         </Button>
       </DropDownMenu>
@@ -226,7 +246,7 @@ const LinkList = memo(({ handleCloseMenuMobile }: { handleCloseMenuMobile?: any 
   }
 
   return (
-    <>
+    <div className='flex w-full flex-col items-center gap-4 lg:flex-row'>
       {navLink.map((link) => {
         const isActive = pathname === link.url
         if (link?.children) {
@@ -234,7 +254,7 @@ const LinkList = memo(({ handleCloseMenuMobile }: { handleCloseMenuMobile?: any 
             return (
               <Accordion
                 itemClasses={{
-                  content: 'text-xl flex flex-col gap-2 max-h-[500px] overflow-y-auto',
+                  content: 'text-xl flex flex-col gap-2',
                   indicator: 'text-2xl text-white',
                   title: 'text-xl text-white font-bold p-6',
                   trigger: 'py-0 pr-8 data-[open=true]:bg-white/10'
@@ -243,15 +263,15 @@ const LinkList = memo(({ handleCloseMenuMobile }: { handleCloseMenuMobile?: any 
                 className='px-0 text-lg'
               >
                 {/* khang */}
-                <AccordionItem aria-label='Thợ' title='Thợ'>
+                <AccordionItem aria-label={t('text1')} title={t('text1')}>
                   {link?.children?.map((itemChildren) => {
                     return (
                       <button
-                        key={itemChildren.id}
-                        onClick={() => handleClick(itemChildren.url)}
-                        className={`${isActive ? 'text-primary-yellow ' : ' hover:bg-white/10'} block w-full p-6 text-start text-white duration-300`}
+                        key={itemChildren?.id}
+                        onClick={() => handleClick(itemChildren?.url)}
+                        className={`${isActive ? 'text-primary-yellow ' : ' hover:bg-white/10'} block w-full p-4 pl-8 text-start text-lg text-white duration-300`}
                       >
-                        {itemChildren.title}
+                        {itemChildren?.title}
                       </button>
                     )
                   })}
@@ -287,6 +307,7 @@ const LinkList = memo(({ handleCloseMenuMobile }: { handleCloseMenuMobile?: any 
           )
         }
       })}
+
       <DropDownMenu isOpen={openHeaderDropDownItem} className='bg-primary-blue'>
         <div className='flex w-full flex-col text-end'>
           <div className='ct-container flex justify-end'>
@@ -306,7 +327,7 @@ const LinkList = memo(({ handleCloseMenuMobile }: { handleCloseMenuMobile?: any 
           })}
         </div>
       </DropDownMenu>
-    </>
+    </div>
   )
 })
 

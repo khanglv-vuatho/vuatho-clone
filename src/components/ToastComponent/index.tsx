@@ -12,17 +12,22 @@ type ToastComponent = {
 } & ToastOptions
 
 const ToastComponent = ({ message, autoClose, hideProgressBar, closeOnClick, pauseOnHover, draggable, type, ...props }: ToastComponent) => {
-  toast(message, {
-    position: 'top-right',
-    autoClose: autoClose || 2000,
-    hideProgressBar: hideProgressBar || false,
-    closeOnClick: closeOnClick || true,
-    pauseOnHover: pauseOnHover || true,
-    draggable: draggable || true,
-    progress: undefined,
-    type: type,
-    ...props
-  })
+  const toastId = message // Use message as the ID or generate a unique ID
+
+  if (!toast.isActive(toastId)) {
+    toast(message, {
+      toastId,
+      position: 'top-right',
+      autoClose: autoClose || 2000,
+      hideProgressBar: hideProgressBar || false,
+      closeOnClick: closeOnClick || true,
+      pauseOnHover: pauseOnHover || true,
+      draggable: draggable || true,
+      progress: undefined,
+      type: type,
+      ...props
+    })
+  }
 }
 
 export default ToastComponent

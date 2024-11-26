@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
 
 import Footer from './(layout)/footer'
 import Header from './(layout)/header'
 
-import './globals.css'
 import { WrapperInner } from '@/components/Wrapper'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: {

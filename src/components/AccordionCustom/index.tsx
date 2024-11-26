@@ -50,7 +50,7 @@ const AccordionCustom: React.FC<Props> = ({ data }) => {
       variant='splitted'
       disableIndicatorAnimation
       itemClasses={{
-        base: 'group-[.is-splitted]:bg-[#f8f8f8] group-[.is-splitted]:shadow-none group-[.is-splitted]:px-0 data-[open=true]:rounded-xl data-[open=true]:overflow-hidden',
+        base: 'group-[.is-splitted]:bg-white/10 group-[.is-splitted]:shadow-none group-[.is-splitted]:px-0 data-[open=true]:rounded-xl data-[open=true]:overflow-hidden',
         content: 'p-4 bg-primary-blue data-[open=true]:text-white pl-6',
         heading: 'data-[open=true]:bg-primary-blue data-[open=true]:overflow-hidden data-[open=true]:rounded-t-4',
         indicator: 'text-black data-[open=true]:text-white',

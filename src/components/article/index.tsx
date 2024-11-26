@@ -18,13 +18,7 @@ const Article = ({ item, style, index }: Props & { index: number }) => {
   const locale = useLocale()
   const t = useTranslations('RuleOfBehavior')
   return (
-    <motion.div
-      initial={{ x: 40, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.2, delay: 0.2 * index }}
-      viewport={{ once: true }}
-      className={twMerge('group flex w-full flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-lg bg-white shadow-[0px_4px_8px_0px_#50505029]', style)}
-    >
+    <motion.div className={twMerge('group flex w-full flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-lg bg-white shadow-[0px_4px_8px_0px_#50505029]', style)}>
       <Link href={`/${locale}/${item?.slug}`} className='h-[150px] w-full overflow-hidden object-contain transition hover:scale-105 lg:h-[200px]'>
         <ImageFallback loading='lazy' src={item?.thumb} alt='Article image' height={210} width={350} className={`h-full w-full object-cover transition`} />
       </Link>
@@ -58,13 +52,7 @@ export const ArticleOtherUrl = ({ item, style, index }: Props & { index: number 
   return (
     <div className={style}>
       <Link href={item?.redirect_url} target='_blank'>
-        <motion.div
-          initial={{ x: 40, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.2, delay: 0.2 * index }}
-          viewport={{ once: true }}
-          className={twMerge('group flex w-full flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-lg bg-white shadow-[0px_4px_8px_0px_#50505029]')}
-        >
+        <motion.div className={twMerge('group flex w-full flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-lg bg-white shadow-[0px_4px_8px_0px_#50505029]')}>
           <ImageFallback
             loading='lazy'
             src={item?.thumb}

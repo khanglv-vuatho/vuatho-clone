@@ -457,6 +457,8 @@ const BodyCard = memo(({ onCloseCart, onCloseDetail }: { onCloseCart: any; onClo
     onSending && _HandlePostCart()
   }, [onSending])
 
+  console.log({ cartItems })
+
   useEffect(() => {
     const totalPrice = cartItems.reduce((acc: any, product: any) => acc + product.price * product.quantity, 0)
     setTotalPrice(totalPrice)

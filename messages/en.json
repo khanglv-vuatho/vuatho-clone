@@ -562,7 +562,10 @@
     "text45": "Direct payment at the office",
     "text46": "Choose payment method",
     "text47": "Select",
-    "text48": "Size"
+    "text48": "Size",
+    "text49": "The shipping fee is to be paid by the partner after receiving the full uniform.",
+    "text50": "'<p>Partners, please <strong>PAY IN ADVANCE</strong> for the full order. After a successful transfer, partners are requested to take a picture of the transaction and send it to the Hotline 0912 426 404 or Zalo OA <a href=https://zalo.me/vuathoofficial target=_blank><strong>Vua Thợ - Thợ nào cũng có</strong></a> for confirmation.</p>'",
+    "text51": "Vua Thợ does not currently support uniform exchanges or returns, please check the sizes carefully before ordering."
   },
   "Map": {
     "text1": "App Users",

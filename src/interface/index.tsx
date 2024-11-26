@@ -55,3 +55,58 @@ export interface IAccordionCustom {
   title: string
   children: string[]
 }
+
+export type TContentItem = string | ISubContentItem
+
+export interface ISubContentItem {
+  title: string
+  content: string[]
+}
+
+export interface ICondition {
+  title: string
+  type?: 'subContent' // Tùy chọn, chỉ có khi điều kiện có cấu trúc con
+  content: TContentItem[]
+}
+
+interface Attribute {
+  name: {
+    en: string
+    vi: string
+  }
+  type: string
+  quantity?: number
+  uuid: string
+  selected: string
+  values: string[]
+}
+
+interface Image {
+  thumb: string
+}
+
+interface Package {
+  uuid: string
+  title: string
+  price: number
+  quantity: number
+  currency: string
+  attributes: Attribute[]
+  thumb: string
+  images: Image[]
+}
+
+export interface IHistoryItem {
+  uuid: string
+  createdAt: string
+  status: number
+  location: string
+  phone: string
+  typeOfPayment: string
+  title: string
+  price: number
+  currency: string
+  thumb: string
+  package: Package[]
+  isInStock: boolean
+}

@@ -1,3 +1,6 @@
+import ToastComponent from '@/components/ToastComponent'
+import moment from 'moment'
+
 export const formatMoney = (value: number, isNumber?: boolean) => {
   let formatNumber = value
   if (Number(value) % 1 !== 0) {
@@ -15,6 +18,9 @@ export const normalizeKeyword = (keyword: string) => {
     .replace('đ', 'd')
 }
 
+export const formatDDMMYYYY = (time: string) => {
+  return moment(time).format('DD/MM/YYYY')
+}
 export const convertToLowerCase = (str: string) => {
   return str.toLowerCase()
 }
@@ -87,3 +93,19 @@ export function objectToFormData(obj: any) {
 }
 
 export const validateEmail = (value: string) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i)
+
+type TPostMessage = { message: string; data?: any }
+export const postMessageCustom = ({ message, data = {} }: TPostMessage) => {
+  //@ts-ignore
+  if (window?.vuatho) {
+    //@ts-ignore
+    window?.vuatho?.postMessage(
+      JSON.stringify({
+        message,
+        data
+      })
+    )
+  } else {
+    ToastComponent({ message: message || 'has bug here', type: 'error' })
+  }
+}

@@ -450,42 +450,6 @@ export const locales = langs.map((item) => item.code)
 
 export const langMiddleWare = locales.join('|')
 
-export const animals = [
-  { label: 'Cat', value: 'cat', description: 'The second most popular pet in the world' },
-  { label: 'Dog', value: 'dog', description: 'The most popular pet in the world' },
-  { label: 'Elephant', value: 'elephant', description: 'The largest land animal' },
-  { label: 'Lion', value: 'lion', description: 'The king of the jungle' },
-  { label: 'Tiger', value: 'tiger', description: 'The largest cat species' },
-  { label: 'Giraffe', value: 'giraffe', description: 'The tallest land animal' },
-  {
-    label: 'Dolphin',
-    value: 'dolphin',
-    description: 'A widely distributed and diverse group of aquatic mammals'
-  },
-  {
-    label: 'Penguin',
-    value: 'penguin',
-    description: 'A group of aquatic flightless birds'
-  },
-  { label: 'Zebra', value: 'zebra', description: 'A several species of African equids' },
-  {
-    label: 'Shark',
-    value: 'shark',
-    description: 'A group of elasmobranch fish characterized by a cartilaginous skeleton'
-  },
-  {
-    label: 'Whale',
-    value: 'whale',
-    description: 'Diverse group of fully aquatic placental marine mammals'
-  },
-  {
-    label: 'Otter',
-    value: 'otter',
-    description: 'A carnivorous mammal in the subfamily Lutrinae'
-  },
-  { label: 'Crocodile', value: 'crocodile', description: 'A large semiaquatic reptile' }
-]
-
 export const city = [
   {
     key: 'HCM',
@@ -503,4 +467,19 @@ export const city = [
     key: 'HCM',
     value: 'HCM'
   }
+]
+
+export const StatusOrderUniform = [
+  { id: 0, name: 'Chờ xác nhận', color: '#0d308c' },
+  { id: 1, name: 'Đã giao hàng cho bên vận chuyển', color: '#212' },
+  // { id: 2, name: 'Đang chuẩn bị hàng' },
+  // { id: 3, name: 'Sẵn sàng giao hàng' },
+  // { id: 4, name: 'Đang vận chuyển' },
+  { id: 5, name: 'Đã hoàn tất', color: '#00C070' },
+  { id: 6, name: 'Đã hủy', color: '#FF3131' }
+]
+
+export const paymentMethod = [
+  { id: 1, name: 'Chuyển khoản' },
+  { id: 2, name: 'Thanh toán trực tiếp tại văn phòng' }
 ]

@@ -372,13 +372,7 @@ const ItemClothe = memo(({ cartItems, setCartItems, item }: { item: IItemClothes
     <>
       <div className='group flex h-full cursor-pointer flex-col overflow-hidden rounded-lg shadow-[0px_4px_8px_0px_#ACACAC29]' onClick={() => handleClick(item)}>
         <div className='flex max-h-[280px] min-h-[260px] w-full items-center justify-center'>
-          <ImageFallback
-            src={item?.thumb}
-            alt='image'
-            height={500}
-            width={500}
-            className='max-h-[260px] w-full object-contain duration-300 group-hover:scale-[1.1] group-hover:overflow-hidden'
-          />
+          <ImageFallback src={item?.thumb} alt='image' height={500} width={500} className='max-h-[260px] w-full object-contain duration-300 group-hover:scale-[1.1] group-hover:overflow-hidden' />
         </div>
         <div className='flex h-full flex-col justify-between gap-2 bg-white p-4'>
           <p className='line-clamp-2 min-h-[54px] text-lg font-semibold '>{item.title}</p>

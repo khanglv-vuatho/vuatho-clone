@@ -5,7 +5,7 @@ import { Call, Location, Sms } from 'iconsax-react'
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
 import React, { memo, useEffect, useState } from 'react'
 
 import { FacebookIcon, TiktokIcon, YoutubeIcon, ZaloIcon } from '@/components/Icons'
@@ -23,6 +23,9 @@ function Footer() {
   const locale = useLocale()
   const searchParams = useSearchParams()
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
+
+  const pathname = usePathname()
+  console.log({ pathname })
 
   const t = useTranslations('Footer')
   const td = useTranslations('Download')
@@ -54,10 +57,10 @@ function Footer() {
   }
 
   const partnerList = [
-    { id: 1, url: '/partner/sieuthimaylanh.webp' },
-    { id: 2, url: '/partner/dienmaygiagoc.webp' },
-    { id: 4, url: '/partner/logo_vuamaylanh_blue.svg' },
-    { id: 3, url: '/partner/maylanhmitsu.webp' }
+    { id: 1, url: '/partner/sieuthimaylanh.webp', link: 'https://sieuthimaylanh.com' },
+    { id: 2, url: '/partner/dienmaygiagoc.webp', link: 'https://dienmaygiagoc.com.vn' },
+    { id: 4, url: '/partner/logo_vuamaylanh_blue.svg', link: 'https://vuamaylanh.com' },
+    { id: 3, url: '/partner/maylanhmitsu.webp', link: 'https://maylanhmitsu.com' }
   ]
 
   if (isWebview) {
@@ -65,7 +68,7 @@ function Footer() {
   }
 
   if (hiddenHeaderAndFooter) return null
-
+  if (pathname.includes('toa-sang-cung-vua-tho')) return null
   return (
     <footer>
       <div className='bg-[#F6F9FF]'>
@@ -74,7 +77,9 @@ function Footer() {
           {/* doi tac */}
           <div className='col-span-2 grid grid-cols-4 items-center gap-5 md:gap-10 lg:col-span-1'>
             {partnerList.map((item) => (
-              <Image key={`partner-${item.id}`} alt={`partner-${item.id}`} width={194} height={64} src={item.url} className='pointer-events-none h-20 w-auto object-contain xl:h-16' />
+              <Link target='_blank' href={item.link} key={`partner-${item.id}`}>
+                <Image alt={`partner-${item.id}`} width={194} height={64} src={item.url} className='pointer-events-none h-20 w-auto object-contain xl:h-16' />
+              </Link>
             ))}
           </div>
         </div>
@@ -166,9 +171,6 @@ const LinkItem = ({ item, blank }: { item: any; blank?: boolean }) => {
   )
 }
 const ListSocialItem: React.FC = () => {
-  const shouldRenderIcon = (Icon: string) => {
-    return <Icon />
-  }
   const socialNetworkList: SocialNetwork[] = [
     {
       id: 'Facebook',

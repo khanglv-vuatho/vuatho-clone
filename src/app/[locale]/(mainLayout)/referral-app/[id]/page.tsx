@@ -18,19 +18,21 @@ const Default = () => {
 
   // Function to detect the device and OS and redirect
   const detectAndRedirect = () => {
+    // if (window.location.href.includes('zalo')) return
+
     // Ensure this code does not run on server-side
     if (typeof window !== 'undefined') {
       const userAgent = window.navigator.userAgent
 
-      // iOS detection
+      // iOS detection with a delay to support Zalo and embedded browsers
       if (/iPad|iPhone|iPod|Macintosh|MacBook/.test(userAgent)) {
-        window.location.href = 'https://apps.apple.com/vn/app/vua-th%E1%BB%A3-si%C3%AAu-k%E1%BA%BFt-n%E1%BB%91i/id6467541777?l=vi'
-        router.replace('/')
+        setTimeout(() => {
+          window.location.href = 'https://apps.apple.com/vn/app/vua-th%E1%BB%A3-si%C3%AAu-k%E1%BA%BFt-n%E1%BB%91i/id6467541777?l=vi'
+        }, 500) // 500ms delay
       }
       // Android detection
       else {
         window.location.href = 'https://play.google.com/store/apps/details?id=com.vuatho.mobile&pli=1'
-        router.replace('/')
       }
     }
   }
@@ -54,7 +56,11 @@ const Default = () => {
     onSending && handleSendingRefUrl()
   }, [onSending])
 
-  return <div className='pt-[80px]'>Redirecting ...</div>
+  return (
+    <div className='pt-[80px]'>
+      <p>Redirecting...</p>
+    </div>
+  )
 }
 
 export default Default

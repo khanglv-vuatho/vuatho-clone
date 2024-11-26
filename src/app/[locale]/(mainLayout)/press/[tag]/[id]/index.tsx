@@ -31,6 +31,10 @@ function PressDetail() {
   const [listMostView, setListMostView] = useState<any>([])
   const [detailPress, setDetailPress] = useState<any>({})
 
+  const [listImage, setListImage] = useState<{ key: string; url: string }[]>([])
+
+  const [doneFetching, setDoneFetching] = useState<boolean>(false)
+
   const listBreadcrumbs: IBreadcrumbWithUrl[] = useMemo(() => {
     return [{ title: t('home'), url: '/' }, { title: detailPress?.category?.name, url: `/${locale}/press/${detailPress?.category?.slug}` }, { title: t('acrticle') }]
   }, [detailPress])
@@ -45,6 +49,18 @@ function PressDetail() {
       })
       setIsSuccess(data.status === 200)
       setDetailPress(data.data)
+
+      const newListImage = !!data.data.attachments
+        ? data.data.attachments.list_key.map((key: any, index: number) => {
+            const url = data.data.attachments.list_image[index]
+            return {
+              key: key,
+              url: url
+            }
+          })
+        : []
+      setListImage(newListImage)
+      setDoneFetching(true)
     } catch (error) {
       setOnFetching(false)
     } finally {
@@ -68,6 +84,44 @@ function PressDetail() {
       setOnLoadingMostView(false)
     }
   }
+
+  const decodeHtmlEntities = (content: string) => {
+    const textArea = document.createElement('textarea')
+    textArea.innerHTML = content
+    return textArea.value
+  }
+
+  const replaceKeywordsWithImages = (content: string, listUrlImg: { key: string; url: string }[]) => {
+    console.log({ listUrlImg })
+    content = decodeHtmlEntities(content)
+
+    listUrlImg.forEach((item) => {
+      const imgTag = `
+        <div class="image-container" style="text-align: justify;" title="${item.key}" data-fancybox="group">
+          <figure style="text-align: center;">
+            <img class="img-fake" src="${item.url}" alt="${item.key}" width="600" height="auto">
+            <figcaption>${item.key}</figcaption>
+          </figure>
+        </div>
+      `
+      const keyRegex = new RegExp(item.key, 'g')
+
+      content = content?.replace(keyRegex, imgTag)
+    })
+
+    return content
+  }
+
+  console.log({ replaceKeywordsWithImages: replaceKeywordsWithImages(detailPress?.content, listImage) })
+
+  useEffect(() => {
+    if (!doneFetching) return
+
+    const content = replaceKeywordsWithImages(detailPress?.content, listImage)
+    setDetailPress((prev: any) => ({ ...prev, content: content }))
+
+    setDoneFetching(false)
+  }, [doneFetching])
 
   useEffect(() => {
     onFetchingMostView && _serverFetchingMostView()
@@ -140,8 +194,8 @@ function PressDetail() {
                         </h3>
                         <time className=' text-base-drak-gray'>{detailPress?.created_at}</time>
                       </div>
-                      {console.log('detailPress?.content', detailPress?.content)}
-                      <div className='prose min-w-fit prose-figure:flex prose-figure:flex-col  prose-figure:items-center' dangerouslySetInnerHTML={{ __html: detailPress?.content }} />
+                      {/* khang */}
+                      <div className='prose min-w-fit prose-figure:flex prose-figure:flex-col prose-figure:items-center' dangerouslySetInnerHTML={{ __html: detailPress?.content }} />
                     </>
                   )}
                 </>

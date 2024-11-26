@@ -10,6 +10,7 @@ import { Providers } from './providers'
 
 import ScrollToTop from '@/components/ScrollToTop'
 import './global.css'
+import Head from 'next/head'
 // import ChatBox from '@/components/ChatBox'
 
 export const metadata: Metadata = {

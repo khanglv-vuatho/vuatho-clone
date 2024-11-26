@@ -21,7 +21,6 @@ export const WrapperInner = ({ children }: { children: React.ReactNode }) => {
     if (hash) {
       const elementId = hash.replace('#', '')
       const element = document.getElementById(elementId)
-      console.log({ element })
 
       if (element) {
         timeoutId = setTimeout(() => {

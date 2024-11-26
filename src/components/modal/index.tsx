@@ -30,11 +30,11 @@ export const DefaultModal: React.FC<DefaultModal> = ({ isOpen, onOpenChange, mod
       placement='center'
       classNames={{
         body: 'p-0',
-        header: 'p-0 pl-8 ',
+        header: 'p-0 pl-8',
         base: 'rounded-xl max-w-[900px]'
       }}
     >
-      <ModalContent className={twMerge(`mx-auto ${size == 'full' ? '' : 'max-w-[90%]'}  p-6 md:max-w-[900px]`, className)}>
+      <ModalContent className={twMerge(`mx-auto ${size == 'full' ? '' : 'max-w-[90%]'} p-2 md:max-w-[900px] md:p-6`, className)}>
         {(onClose) => (
           <>
             {!hiddenHeader && (

@@ -106,8 +106,6 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
   const allQueryParams: any = useGetAllQueryParams()
   const pageParams = allQueryParams.page
 
-  console.log({ pageParams, meta })
-
   const _serverFetchingMostView = async () => {
     try {
       const data = await instance.get(`/blog/mostViewByWeek?lang=${locale}`)
@@ -151,7 +149,11 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
               lang: locale
             }
           })
-        : await instance.get(`/blog/newest?page=${Number(pageParams)}`)
+        : await instance.get('/blog/newest', {
+            params: {
+              page: Number(pageParams || meta?.page) || 1
+            }
+          })
       setListBlog(data?.data)
       setMeta({
         limit: data?.limit,
@@ -197,10 +199,6 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
     const queryString = Object.keys(allQueryParams)
       .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(allQueryParams[key])}`)
       .join('&')
-
-    console.log({ pagePagi })
-    console.log({ queryString })
-    console.log(`${pathname}?${queryString}`)
 
     router.push(`${pathname}?${queryString}`)
   }
@@ -263,7 +261,7 @@ export const PressContent = memo(({ searchParams }: { searchParams: any }) => {
                         handleChangePagi(page)
                       }}
                       total={meta.totalPages || 1}
-                      page={pageParams || meta.page}
+                      page={Number(!!pageParams ? pageParams : meta?.page)}
                       classNames={{
                         cursor: 'h-[44px] w-[44px] text-base bg-[#282828] text-white',
                         item: 'h-[44px] w-[44px] text-base text-[#282828] bg-white'

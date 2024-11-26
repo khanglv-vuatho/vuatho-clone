@@ -14,9 +14,10 @@ const urlExceptAuthorization = ['Authenticate']
 
 const authorization = async () => {
   const token = localStorage.getItem('access_token')
-
-  if (token) {
-    return { Authorization: 'Bearer ' + token }
+  const queryParams = new URLSearchParams(location.search)
+  const tokenFromWebview = queryParams?.get('token')
+  if (tokenFromWebview || token) {
+    return { Authorization: 'Bearer ' + (tokenFromWebview ? tokenFromWebview : token) }
   } else {
     return {}
   }
