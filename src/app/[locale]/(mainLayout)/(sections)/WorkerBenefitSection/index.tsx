@@ -177,7 +177,7 @@ const WorkerBenefitSection = () => {
                 spaceBetween={10}
                 freeMode
                 modules={[FreeMode, Thumbs]}
-                className={`swiperPagination absolute inset-0 top-[200%] !z-30 order-1 flex min-h-[80px] w-full justify-between md:!top-[500%] lg:!top-0 lg:order-2 lg:min-h-0 `}
+                // className={`swiperPagination absolute inset-0 top-[200%] !z-30 order-1 flex min-h-[80px] w-full justify-between md:!top-[500%] lg:!top-0 lg:order-2 lg:min-h-0 `}
               >
                 {listDataBenefit?.map((item: any, index: number) => (
                   <SwiperSlide key={`swipper-slide-${index}`}>
