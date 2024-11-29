@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Link, Button, Skeleton } from '@nextui-org/react'
+import { Button, Link, Skeleton } from '@nextui-org/react'
 
 import { ListBreadcrumbs } from '@/components/breadcrumbs'
 import { IBreadcrumbWithUrl, IItemClothes } from '@/interface'
@@ -22,8 +22,8 @@ import CheckValidWorker from '@/components/CheckValidWorker'
 import ItemClothe from '@/components/ItemClothe'
 import RecomfirmWorker from '@/components/RecomfirmWorker'
 import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
-import './storeSwiper.scss'
 import { ShoppingBag } from 'iconsax-react'
+import './storeSwiper.scss'
 
 const Store = () => {
   const td = useTranslations('listBreadcrumbs')
@@ -119,20 +119,10 @@ const Store = () => {
         </div>
         <div className='flex items-center justify-between'>
           <h3 className='mb-5 mt-9 text-2xl font-semibold uppercase'>{t('text4')}</h3>
-          <Button
-            as={Link}
-            href={`/${locale}/store/history?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjUxLCJmdWxsX25hbWUiOiJIw7l5IFZp4buHdCBIw7QiLCJwcm9maWxlX3BpY3R1cmUiOiJodHRwczovL2Nkbi1zYW5kYm94LnZ1YXRoby5jb20vaW1hZ2UvMjMzMzViODgtZDU0ZS00ZmRkLTg3YTMtM2ZjN2U0YWI5OWRjXzE3MTkzNjkyMDgyNDQiLCJyZWZfaWQiOm51bGwsImt5Y19zdGF0dXMiOjIsIndvcmtlcl9zdGF0dXMiOjIsInNlc3Npb25fbG9naW5zIjpbeyJJUCI6IjE5Mi4xNjguMC43NyIsImRldmljZSI6IjE3MzI2MDgyNjUwNjIiLCJ0aW1lIjoxNzMyNjA4MjY1MDYyfV0sImlhdCI6MTczMjYwODI2NX0.yMXPKOfavt3GfxdfjAFn70Qmvr9TQwTFv2Slu6osP6E`}
-            endContent={<ShoppingBag />}
-            className='hidden h-[44px] rounded-2xl bg-[#F8F8F8] text-[#212121] md:flex'
-          >
+          <Button as={Link} href={`/${locale}/store/history`} endContent={<ShoppingBag />} className='hidden h-[44px] rounded-2xl bg-[#F8F8F8] text-[#212121] md:flex'>
             Lịch sử mua hàng
           </Button>
-          <Button
-            isIconOnly
-            as={Link}
-            href={`/${locale}/store/history?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjUxLCJmdWxsX25hbWUiOiJIw7l5IFZp4buHdCBIw7QiLCJwcm9maWxlX3BpY3R1cmUiOiJodHRwczovL2Nkbi1zYW5kYm94LnZ1YXRoby5jb20vaW1hZ2UvMjMzMzViODgtZDU0ZS00ZmRkLTg3YTMtM2ZjN2U0YWI5OWRjXzE3MTkzNjkyMDgyNDQiLCJyZWZfaWQiOm51bGwsImt5Y19zdGF0dXMiOjIsIndvcmtlcl9zdGF0dXMiOjIsInNlc3Npb25fbG9naW5zIjpbeyJJUCI6IjE5Mi4xNjguMC43NyIsImRldmljZSI6IjE3MzI2MDgyNjUwNjIiLCJ0aW1lIjoxNzMyNjA4MjY1MDYyfV0sImlhdCI6MTczMjYwODI2NX0.yMXPKOfavt3GfxdfjAFn70Qmvr9TQwTFv2Slu6osP6E`}
-            className='h-[44px] rounded-2xl bg-[#F8F8F8] text-[#212121] md:hidden'
-          >
+          <Button isIconOnly as={Link} href={`/${locale}/store/history`} className='h-[44px] rounded-2xl bg-[#F8F8F8] text-[#212121] md:hidden'>
             <ShoppingBag />
           </Button>
         </div>

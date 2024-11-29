@@ -5,6 +5,7 @@ import Conditions from './(sections)/Conditions'
 import Hero from './(sections)/Hero'
 import HowToJoin from './(sections)/HowToJoin'
 import Infomation from './(sections)/Infomation'
+import Intro from './(sections)/Intro'
 import OrganizingCommittee from './(sections)/OrganizingCommittee'
 import Regulations from './(sections)/Regulations'
 
@@ -14,6 +15,7 @@ const ShineWithVuaTho = () => {
       <Banner />
       <div className='w-full bg-primary-blue'>
         <div className='mx-auto mt-10 flex max-w-[1300px] flex-col gap-20'>
+          <Intro />
           <Hero />
           {/* Điều kiện và tiêu chí */}
           <Conditions />

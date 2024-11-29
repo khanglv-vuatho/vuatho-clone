@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl'
 
 const AwardStructure = () => {
   const locale = useLocale()
-
+  const localText = locale === 'vi' ? 'vi' : 'en'
   const content = {
     vi: {
       title: 'Cơ cấu giải thưởng',
@@ -41,7 +41,7 @@ const AwardStructure = () => {
     en: {
       title: 'Prize Structure',
       firstPrize: 'FIRST PRIZE',
-      prize: 'Prize',
+      prize: 'Prizes',
       prizes: [
         {
           title: 'SECOND PRIZE',
@@ -71,7 +71,7 @@ const AwardStructure = () => {
     }
   }
 
-  const selectedContent = content[locale as keyof typeof content] || content.en
+  const selectedContent = content[localText] || content.vi
 
   return (
     <div className='mx-auto flex h-full w-full  flex-col gap-4 px-4 md:px-10'>

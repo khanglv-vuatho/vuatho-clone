@@ -8,6 +8,7 @@ import SubContent from './SubContent'
 import { useLocale } from 'next-intl'
 const Conditions = () => {
   const locale = useLocale()
+  const localText = locale === 'vi' ? 'vi' : 'en'
   const conditionsVi: ICondition[] = [
     {
       title: 'TIÊU CHÍ VỀ NỘI DUNG',
@@ -129,6 +130,7 @@ const Conditions = () => {
     }
   ]
   const conditions = locale === 'vi' ? conditionsVi : conditionsEn
+
   return (
     <div className='mx-auto flex h-full w-full flex-col gap-4 px-4 md:px-10'>
       <FrameText>{locale === 'vi' ? 'Điều kiện và tiêu chí' : 'Conditions and Criteria'}</FrameText>

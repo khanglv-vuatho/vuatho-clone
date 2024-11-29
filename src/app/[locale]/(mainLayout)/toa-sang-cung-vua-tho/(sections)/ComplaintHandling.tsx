@@ -4,7 +4,7 @@ import { useLocale } from 'next-intl'
 
 const ComplaintHandling = () => {
   const locale = useLocale()
-
+  const localText = locale === 'vi' ? 'vi' : 'en'
   const content = {
     vi: {
       title1: 'GIẢI QUYẾT KHIẾU NẠI VÀ',
@@ -32,7 +32,7 @@ const ComplaintHandling = () => {
     }
   }
 
-  const selectedContent = content[locale as keyof typeof content] || content.vi
+  const selectedContent = content[localText] || content.vi
 
   return (
     <div className='flex flex-col gap-10 px-4 md:px-10'>

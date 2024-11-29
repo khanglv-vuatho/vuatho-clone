@@ -68,6 +68,8 @@ const HistoryPage = () => {
     }
   }
 
+  console.log('test', handleFormatData(historyShoping?.splice(0, 1)))
+
   const handleMissToken = () => {
     ToastComponent({ message: 'Vui lòng đăng nhập để xem lịch sử mua hàng', type: 'error' })
     setIsMissToken(true)

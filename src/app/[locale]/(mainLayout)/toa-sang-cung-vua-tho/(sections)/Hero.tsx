@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 const Hero = () => {
   const locale = useLocale()
+  const localText = locale === 'vi' ? 'vi' : 'en'
 
   const customGradient = 'radial-gradient(61.97% 149.07% at 83.11% 83.68%, #FFFFFF 15.14%, #FFE35E 100%)'
 
@@ -59,7 +60,7 @@ const Hero = () => {
     }
   }
 
-  const selectedContent = content[locale as keyof typeof content] || content.vi
+  const selectedContent = content[localText] || content.vi
 
   return (
     <div id='join-now' className='mx-auto w-full px-10'>

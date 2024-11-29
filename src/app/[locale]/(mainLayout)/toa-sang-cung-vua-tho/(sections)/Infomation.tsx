@@ -6,6 +6,7 @@ import { useLocale } from 'next-intl'
 const Infomation = () => {
   const locale = useLocale()
 
+  const localText = locale === 'vi' ? 'vi' : 'en'
   const content = {
     vi: {
       title: 'Thông tin liên hệ',
@@ -47,7 +48,7 @@ const Infomation = () => {
     }
   }
 
-  const selectedContent = content[locale as keyof typeof content] || content.vi
+  const selectedContent = content[localText] || content.vi
 
   return (
     <div className='mt-10 w-full bg-[#4EC4FF]/10 py-5 md:mt-20'>

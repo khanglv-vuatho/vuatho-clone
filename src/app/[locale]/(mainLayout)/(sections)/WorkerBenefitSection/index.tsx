@@ -22,7 +22,6 @@ import 'swiper/css/thumbs'
 import 'swiper/css/zoom'
 
 import './WorkerBenefitSection.scss'
-import { useRouter } from 'next/navigation'
 
 const WorkerBenefitSection = () => {
   const t = useTranslations('WorkerBenefitSection')
