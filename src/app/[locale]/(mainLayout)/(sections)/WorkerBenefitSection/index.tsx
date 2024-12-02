@@ -21,7 +21,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/thumbs'
 import 'swiper/css/zoom'
 
-import './WorkerBenefitSection.scss'
+import './workerBenefitSection.scss'
 
 const WorkerBenefitSection = () => {
   const t = useTranslations('WorkerBenefitSection')
