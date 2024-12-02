@@ -19,6 +19,8 @@ import 'swiper/css/pagination'
 import 'swiper/css/thumbs'
 import 'swiper/css/zoom'
 
+import './swipper.scss'
+
 export async function generateMetadata({ params }: { params?: any }) {
   try {
     const metadata: any = {
