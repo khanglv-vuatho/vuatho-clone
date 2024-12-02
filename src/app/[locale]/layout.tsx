@@ -19,8 +19,6 @@ import 'swiper/css/pagination'
 import 'swiper/css/thumbs'
 import 'swiper/css/zoom'
 
-// import ChatBox from '@/components/ChatBox'
-
 export const metadata: Metadata = {
   title: {
     default: 'Trang chủ',

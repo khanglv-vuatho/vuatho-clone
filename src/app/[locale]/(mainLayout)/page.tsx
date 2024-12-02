@@ -10,7 +10,6 @@ import PressHome from './(sections)/PressHome'
 import MainSection from './(sections)/MainSection/section'
 import OtherPress from './(sections)/OtherPress'
 
-// import './swipper.scss'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/free-mode'
@@ -18,9 +17,6 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/thumbs'
 import 'swiper/css/zoom'
-
-import './swipper.scss'
-import WorkerBenefitSectionTest from './(sections)/WorkerBenefitSectionTest'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
