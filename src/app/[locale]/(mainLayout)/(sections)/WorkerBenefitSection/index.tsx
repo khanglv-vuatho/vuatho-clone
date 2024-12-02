@@ -215,12 +215,8 @@ const WorkerBenefitSection = () => {
 
   return (
     <div className='relative flex flex-col' id='worker-benefit'>
-      <div className='ct-container z-[100] mb-20 flex flex-col gap-2 lg:hidden'>
-        <h2 className='text-sm font-bold uppercase text-primary-yellow md:text-xl'>{t('benefit')}</h2>
-        <p className='text-2xl font-bold uppercase text-primary-blue lg:text-4xl'>{t('text')}</p>
-      </div>
       <div className='ct-container flex flex-col gap-6'>
-        <div className='z-[100] hidden items-center justify-between lg:flex'>
+        <div className='flex items-center justify-between'>
           <div className='flex flex-col gap-2'>
             <h2 className='text-sm font-bold uppercase text-primary-yellow md:text-xl'>{t('benefit')}</h2>
             <p className='text-2xl font-bold uppercase text-primary-blue lg:text-4xl'>{t('text')}</p>
@@ -264,11 +260,7 @@ const WorkerBenefitSection = () => {
                   swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
                 }}
                 modules={[Autoplay, EffectFade, FreeMode, Thumbs]}
-                // className={`benefitSwipper z-[5] order-2 h-full w-full lg:order-1`}
-                className={`benefitSwipper  z-[5] h-full w-full`}
-                style={{
-                  overflow: 'unset'
-                }}
+                className={`benefitSwipper z-[5] order-2 h-full w-full lg:order-1`}
                 onActiveIndexChange={(swiper: any) => {
                   setCurrentIndex(swiper.realIndex)
                 }}
@@ -305,7 +297,7 @@ const WorkerBenefitSection = () => {
                   )
                 })}
               </Swiper>
-              <Swiper
+              {/* <Swiper
                 onSwiper={(swiper: any) => {
                   return setThumbsSwiper(swiper)
                 }}
@@ -314,7 +306,7 @@ const WorkerBenefitSection = () => {
                 freeMode
                 modules={[FreeMode, Thumbs]}
                 // className={`swiperPagination absolute inset-0 top-[200%] !z-30 order-1 flex min-h-[80px] w-full justify-between md:!top-[500%] lg:!top-0 lg:order-2 lg:min-h-0 `}
-                className={`swiperPagination none absolute !z-30 order-1 hidden min-h-[80px] w-full justify-between lg:static lg:order-2 lg:flex lg:min-h-0`}
+                className={`swiperPagination none absolute !z-30 order-1 flex min-h-[80px] w-full justify-between lg:!bottom-0 lg:order-2 lg:min-h-0 `}
               >
                 {listDataBenefit?.map((item: any, index: number) => (
                   <SwiperSlide key={`swipper-slide-${index}`}>
@@ -335,7 +327,7 @@ const WorkerBenefitSection = () => {
                     </div>
                   </SwiperSlide>
                 ))}
-              </Swiper>
+              </Swiper> */}
             </div>
           )}
         </div>
