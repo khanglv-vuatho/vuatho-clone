@@ -20,6 +20,7 @@ import 'swiper/css/thumbs'
 import 'swiper/css/zoom'
 
 import './swipper.scss'
+import WorkerBenefitSectionTest from './(sections)/WorkerBenefitSectionTest'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
@@ -41,6 +42,7 @@ const HeroSection = () => {
       <MainSection />
       <SectionWithVuaTho />
       <OtherPress />
+      {/* <WorkerBenefitSectionTest /> */}
       <WorkerBenefitSection />
       <ClientBenefitSection />
       <AISection />

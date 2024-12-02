@@ -11,9 +11,6 @@ import { Providers } from './providers'
 import ScrollToTop from '@/components/ScrollToTop'
 import './global.css'
 
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/free-mode'

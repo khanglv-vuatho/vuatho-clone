@@ -169,7 +169,7 @@ const WorkerBenefitSection = () => {
                   )
                 })}
               </Swiper>
-              <Swiper
+              {/* <Swiper
                 onSwiper={(swiper: any) => {
                   return setThumbsSwiper(swiper)
                 }}
@@ -198,7 +198,7 @@ const WorkerBenefitSection = () => {
                     </div>
                   </SwiperSlide>
                 ))}
-              </Swiper>
+              </Swiper> */}
             </div>
           )}
         </div>
