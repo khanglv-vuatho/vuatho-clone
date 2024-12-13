@@ -48,10 +48,6 @@ const Store = () => {
   const initPhoneValue = !!allQuery?.phone ? allQuery?.phone : ''
   const tokenFromWebview = !!allQuery?.token ? allQuery?.token : ''
 
-  if (tokenFromWebview) {
-    localStorage.setItem('token', tokenFromWebview)
-  }
-
   const serverFetching = useCallback(async () => {
     if (!token?.length) return
     try {
@@ -79,6 +75,7 @@ const Store = () => {
       setListItem([...updatedData])
 
       dispatch({ type: 'worker/info', payload: data.info })
+
       setIsOpenModal(false)
     } catch (error) {
       console.log(error)
@@ -111,6 +108,10 @@ const Store = () => {
       setIsOpenModal(true)
     }
   }, [token])
+
+  useEffect(() => {
+    localStorage.removeItem('token')
+  }, [])
 
   if (!mounted) return null
 
