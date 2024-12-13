@@ -15,7 +15,6 @@ const HandlingViolations = () => {
   const td = useTranslations('listBreadcrumbs')
   const ta = useTranslations('AboutUs')
 
-  const [searchValue, setSearchValue] = useState<string>('')
   const [dataFilterd, setDataFilterd] = useState<(typeof newData)[]>([])
 
   const listBreadcrumb = [{ title: td('home'), url: '/' }, { title: t('text60'), url: `/rule-of-behavior` }, { title: t('text1') }]
@@ -295,40 +294,6 @@ const HandlingViolations = () => {
     content: Content[]
   }
 
-  const handleSearch = (e: any) => {
-    setSearchValue(e.target.value)
-  }
-
-  useEffect(() => {
-    // Filter the newData based on the searchValue
-    const dataFilter = newData
-      .map((item) => {
-        const filteredContent = item.content
-          .map((itemContent) => {
-            const filteredChildren = itemContent.children.filter((itemChild) =>
-              normalizeKeyword(`${itemChild.code} ${itemChild.title}`).toLowerCase().trim().includes(normalizeKeyword(searchValue).toLowerCase().trim())
-            )
-            // Only return itemContent if there are any filteredChildren
-            return filteredChildren.length > 0 ? { ...itemContent, children: filteredChildren } : null
-          })
-          .filter(Boolean) // Remove null values
-
-        // Only return the item if there are any filteredContent
-        return filteredContent.length > 0 ? { ...item, content: filteredContent } : null
-      })
-      .filter(Boolean) // Remove null values
-
-    setDataFilterd(dataFilter as any)
-  }, [searchValue])
-
-  const NoResult = () => {
-    return (
-      <div className='text-center text-lg'>
-        {t('text72')} <span className='text-primary-blue'>{searchValue}</span>
-      </div>
-    )
-  }
-
   return (
     <div className='ct-container flex flex-col gap-[48px] pb-[100px] pt-[70px] lg:gap-[100px] 3xl:pt-[80px]'>
       <div className='mt-[48px] flex flex-col gap-6'>
@@ -346,76 +311,57 @@ const HandlingViolations = () => {
       <div className='flex flex-col gap-6'>
         <div className='flex flex-col items-center justify-between gap-4 lg:flex-row lg:gap-0'>
           <h2 className='text-2xl font-bold'>{t('text3')}</h2>
-          <Input
-            radius='full'
-            startContent={<SearchNormal1 size={24} color='#6f6f75' />}
-            variant='bordered'
-            value={searchValue}
-            autoComplete='off'
-            onChange={handleSearch}
-            name='search'
-            placeholder={t('text72') + '...'}
-            className='lg:max-w-[320px]'
-            classNames={{
-              input: 'text-black/80 placeholder:text-black/50',
-              inputWrapper: `h-12 border-[#6f6f75] data-[hover=true]:border-[#6f6f75] group-data-[focus=true]:border-[#6f6f75]`
-            }}
-          />
         </div>
         <div className='hidden flex-col gap-[48px] md:flex'>
-          {dataFilterd?.length ? (
-            dataFilterd?.map((item: any) => {
-              return (
-                <div className='flex flex-col gap-4' key={item.heading.title}>
-                  <div className='grid grid-cols-2'>
-                    <div className='text-xl font-bold uppercase text-primary-blue'>{item.heading.title}</div>
-                    <div className='grid grid-cols-3'>{item?.heading.children.map((itemHeading: any) => <div key={itemHeading.text}>{itemHeading.text}</div>)}</div>
-                  </div>
-                  {item.content.map((itemContent: any) => {
-                    return (
-                      <div key={itemContent.title} className='flex flex-col gap-4'>
-                        <div className='bg-primary-blue p-4 text-xl text-white'>{itemContent.title}</div>
-                        {itemContent.children?.map((itemChildContent: any, idx: number) => (
-                          <div key={itemChildContent.title} className='grid grid-cols-2 gap-5 py-4'>
-                            <div>
-                              <span className='font-bold'>{itemContent?.children?.[idx].code}</span>
-                              <span> {itemChildContent.title}</span>
-                            </div>
-                            {ShouldRenderGrid(itemChildContent.children)}
-                          </div>
-                        ))}
-                      </div>
-                    )
-                  })}
-                </div>
-              )
-            })
-          ) : (
-            <NoResult />
-          )}
-        </div>
-        <div className='flex flex-col gap-[48px] md:hidden'>
-          {dataFilterd?.length ? (
-            dataFilterd.map((item: any) => {
-              return (
-                <div key={item.heading.title} className='flex flex-col gap-2'>
-                  <div className='text-xl font-bold uppercase text-primary-blue'>{item.heading.title}</div>
-                  <div className='flex flex-col gap-4'>
-                    {item.content?.map((itemC: any) => {
+          {newData?.length
+            ? newData?.map((item: any) => {
+                return (
+                  <div className='flex flex-col gap-4' key={item.heading.title}>
+                    <div className='grid grid-cols-2'>
+                      <div className='text-xl font-bold uppercase text-primary-blue'>{item.heading.title}</div>
+                      <div className='grid grid-cols-3'>{item?.heading.children.map((itemHeading: any) => <div key={itemHeading.text}>{itemHeading.text}</div>)}</div>
+                    </div>
+                    {item.content.map((itemContent: any) => {
                       return (
-                        <div className='flex flex-col gap-2' key={itemC.title}>
-                          <div className='bg-primary-blue p-4 text-xl text-white'>{itemC.title}</div>
-                          <AccordionVioaltions data={itemC?.children} />
+                        <div key={itemContent.title} className='flex flex-col gap-4'>
+                          <div className='bg-primary-blue p-4 text-xl text-white'>{itemContent.title}</div>
+                          {itemContent.children?.map((itemChildContent: any, idx: number) => (
+                            <div key={itemChildContent.title} className='grid grid-cols-2 gap-5 py-4'>
+                              <div>
+                                <span className='font-bold'>{itemContent?.children?.[idx].code}</span>
+                                <span> {itemChildContent.title}</span>
+                              </div>
+                              {ShouldRenderGrid(itemChildContent.children)}
+                            </div>
+                          ))}
                         </div>
                       )
                     })}
                   </div>
-                </div>
-              )
-            })
-          ) : (
-            <NoResult />
-          )}
+                )
+              })
+            : null}
+        </div>
+        <div className='flex flex-col gap-[48px] md:hidden'>
+          {newData?.length
+            ? newData.map((item: any) => {
+                return (
+                  <div key={item.heading.title} className='flex flex-col gap-2'>
+                    <div className='text-xl font-bold uppercase text-primary-blue'>{item.heading.title}</div>
+                    <div className='flex flex-col gap-4'>
+                      {item.content?.map((itemC: any) => {
+                        return (
+                          <div className='flex flex-col gap-2' key={itemC.title}>
+                            <div className='bg-primary-blue p-4 text-xl text-white'>{itemC.title}</div>
+                            <AccordionVioaltions data={itemC?.children} />
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )
+              })
+            : null}
         </div>
         <div className='flex flex-col gap-4 rounded-xl bg-[#f8f8f8] p-4 md:p-10'>
           <p className='text-xl font-bold text-primary-blue md:text-2xl'>{t('text57')}</p>

@@ -215,12 +215,12 @@ const WorkerBenefitSection = () => {
 
   return (
     <div className='relative flex flex-col' id='worker-benefit'>
-      <div className='ct-container z-[10] flex flex-col gap-2 lg:hidden'>
+      <div className='ct-container z-[10] mb-5 hidden flex-col gap-2 lg:mb-10 lg:flex'>
         <h2 className='text-sm font-bold uppercase text-primary-yellow md:text-xl'>{t('benefit')}</h2>
         <p className='text-2xl font-bold uppercase text-primary-blue lg:text-4xl'>{t('text')}</p>
       </div>
       <div className='ct-container flex flex-col gap-6'>
-        <div className='z-[10] mb-20 hidden items-center justify-between lg:flex'>
+        <div className='z-[10] mb-20 flex items-center justify-between lg:hidden'>
           <div className='flex flex-col gap-2'>
             <h2 className='text-sm font-bold uppercase text-primary-yellow md:text-xl'>{t('benefit')}</h2>
             <p className='text-2xl font-bold uppercase text-primary-blue lg:text-4xl'>{t('text')}</p>

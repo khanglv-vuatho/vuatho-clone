@@ -118,10 +118,10 @@ function Footer() {
                 </div>
                 <div className='flex items-center gap-2'>
                   <Sms size={24} className='text-white' />
-                  <p>admin@vuatho.com</p>
+                  <p>social@vuatho.com</p>
                 </div>
-                <div className='flex items-center gap-2'>
-                  <Location size={24} className='text-white' />
+                <div className='flex items-start gap-2'>
+                  <Location size={24} className='flex flex-shrink-0 text-white' />
                   <div>
                     <span> {t('address')}</span>
                     <span className='ml-2 xl:ml-0 3xl:ml-2' /> {t('location')}
