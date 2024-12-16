@@ -33,7 +33,7 @@ const Article = ({ item, style, index }: Props & { index: number }) => {
             <time className='text-sm  text-[#6a6a6a]'>{item?.created_at}</time>
           </Link>
         </div>
-        <Link href={`/${locale}/${item?.slug}`} className='line-clamp-2 text-base font-semibold lg:text-lg' title={item?.title}>
+        <Link href={`/${locale}/${item?.slug}`} className='line-clamp-2 min-h-[56px] text-base font-semibold lg:text-lg' title={item?.title}>
           {item?.title}
         </Link>
         {/* <div className='line-clamp-3 text-lg  text-[#6a6a6a]' dangerouslySetInnerHTML={{ __html: item?.short_description }} /> */}
