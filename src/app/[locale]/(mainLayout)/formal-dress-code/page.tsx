@@ -1,6 +1,5 @@
 import AccordionCustom from '@/components/AccordionCustom'
 import ImageFallback from '@/components/ImageFallback'
-import Regards from '@/components/Regards'
 import { ListBreadcrumbs } from '@/components/breadcrumbs'
 import { IAccordionCustom } from '@/interface'
 import { ShouldRenderGrid } from '@/utils'
@@ -169,7 +168,7 @@ const FormalDressCode = () => {
         <div className='md:hidden'>
           <AccordionCustom data={listNoiceClone} />
         </div>
-        <Regards />
+        {/* <Regards /> */}
       </div>
     </div>
   )
