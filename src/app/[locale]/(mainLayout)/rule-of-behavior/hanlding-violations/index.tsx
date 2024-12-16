@@ -1,14 +1,13 @@
 'use client'
 
 import ImageFallback from '@/components/ImageFallback'
-import Regards from '@/components/Regards'
 import { ListBreadcrumbs } from '@/components/breadcrumbs'
-import { ShouldRenderGrid, normalizeKeyword } from '@/utils'
+import { ShouldRenderGrid } from '@/utils'
 
-import { Accordion, AccordionItem, Input } from '@nextui-org/react'
-import { Add, Minus, SearchNormal1 } from 'iconsax-react'
+import { Accordion, AccordionItem } from '@nextui-org/react'
+import { Add, Minus } from 'iconsax-react'
 import { useTranslations } from 'next-intl'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const HandlingViolations = () => {
   const t = useTranslations('HandlingViolations')
@@ -303,7 +302,7 @@ const HandlingViolations = () => {
             <ImageFallback src={'/rule-of-behavior/hanlding-violations.png'} alt='/rule-of-behavior/hanlding-violations.png' height={3000} width={3000} className='size-full rounded-xl object-cover' />
           </div>
           <div className='*: flex flex-col gap-5 *:text-base'>
-            <h1 className='mt-0 text-2xl !font-bold uppercase lg:mt-5 lg:!text-4xl'>{t('text1')}</h1>
+            <h1 className='text-2xl !font-bold uppercase lg:!text-4xl'>{t('text1')}</h1>
             <p>{t('text2')}</p>
           </div>
         </div>
@@ -376,7 +375,7 @@ const HandlingViolations = () => {
           </div>
         </div>
       </div>
-      <Regards />
+      {/* <Regards /> */}
     </div>
   )
 }
