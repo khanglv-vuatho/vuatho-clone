@@ -447,7 +447,6 @@ const BodyCard = memo(({ onCloseCart, onCloseDetail }: { onCloseCart: any; onClo
         onCloseCart()
         cartItems[0].quantity = 1
         // setCartItems([...cartItems])
-        router.push(`/${locale}/store/order/${data.data.order_id}`)
       }
     } catch (error) {
       console.log(error)

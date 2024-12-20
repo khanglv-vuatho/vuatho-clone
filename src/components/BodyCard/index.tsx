@@ -18,7 +18,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
 
   const allQueryParams: any = useGetAllQueryParams()
   const isWebview = allQueryParams.isWebview === 'true'
-
+  const tokenFromWebview = allQueryParams?.token
   const dispatch = useDispatch()
   const isHeaderVisible = useSelector((state: any) => state.isHeaderVisible)
 
@@ -169,9 +169,9 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
   }, [cartItems])
 
   useEffect(() => {
-    const access_token = localStorage.getItem('token') || ''
+    const access_token = isWebview ? tokenFromWebview : localStorage.getItem('token')
     setToken(access_token)
-  }, [])
+  }, [isWebview, tokenFromWebview])
 
   return (
     //khang
