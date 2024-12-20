@@ -483,3 +483,7 @@ export const paymentMethod = [
   { id: 1, name: 'Chuyển khoản' },
   { id: 2, name: 'Thanh toán trực tiếp tại văn phòng' }
 ]
+
+export const messageWebview = {
+  CANPOP: 'canPop'
+}

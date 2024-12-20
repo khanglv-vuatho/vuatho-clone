@@ -3,6 +3,7 @@ import ModalComfirmPhone from '../ModalComfirmPhone'
 import instance from '@/services/axiosConfig'
 import { useTranslations } from 'next-intl'
 import { useDispatch } from 'react-redux'
+import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
 
 type TCheckValidWorker = {
   isOpenModal: boolean
@@ -10,10 +11,14 @@ type TCheckValidWorker = {
   setToken: (value: string) => void
   setValidToken: (value: boolean) => void
   initPhoneValue: string
+  isWebview: boolean
 }
 
-const CheckValidWorker = ({ isOpenModal, initPhoneValue, setIsOpenModal, setToken, setValidToken }: TCheckValidWorker) => {
+const CheckValidWorker = ({ isOpenModal, initPhoneValue, setIsOpenModal, setToken, setValidToken, isWebview }: TCheckValidWorker) => {
   const t = useTranslations('Store')
+
+  const allQuery: any = useGetAllQueryParams()
+  const phoneQuery = allQuery?.phone
 
   const [onSending, setOnSending] = useState<boolean>(false)
   const [phone, setPhone] = useState(!!initPhoneValue.length ? initPhoneValue : '')
@@ -44,7 +49,15 @@ const CheckValidWorker = ({ isOpenModal, initPhoneValue, setIsOpenModal, setToke
     onSending && handleCheckValid()
   }, [onSending])
 
-  return <ModalComfirmPhone isOpen={isOpenModal} onClose={() => setIsOpenModal(false)} setPhone={setPhone} phone={phone} onSending={onSending} setOnSending={setOnSending} />
+  useEffect(() => {
+    if (!phoneQuery) return
+
+    if (isWebview) {
+      setOnSending(true)
+    }
+  }, [isWebview, phoneQuery])
+
+  return <ModalComfirmPhone isOpen={isOpenModal} onClose={() => setIsOpenModal(false)} setPhone={setPhone} phone={phone} onSending={onSending} setOnSending={setOnSending} isWebview={isWebview} />
 }
 
 export default CheckValidWorker

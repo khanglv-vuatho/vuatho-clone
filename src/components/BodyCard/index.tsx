@@ -56,8 +56,8 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
         {/* <p>{t('text34')}:</p> */}
         <p>{t('text35')}:</p>
         <ul className='list-inside list-disc '>
-          <li>{t('text36')}: CÔNG TY TNHH CÔNG NGHỆ VUA THỢ</li>
-          <li>{t('text37')}: 31361688</li>
+          <li>{t('text36')}: TỐNG PHƯỚC ĐẠI</li>
+          <li>{t('text37')}: 333 6666 88</li>
           <li>{t('text38')}</li>
           <li>{t('text39')}</li>
           <li>{t('text40')}</li>

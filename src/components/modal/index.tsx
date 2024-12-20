@@ -17,14 +17,16 @@ type DefaultModal = {
   hiddenHeader?: boolean
   styleHeader?: string
   size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full' | 'xs' | '3xl' | '4xl' | '5xl'
+  isDismissable?: boolean
 }
 
-export const DefaultModal: React.FC<DefaultModal> = ({ isOpen, onOpenChange, modalBody, className, defaultOpen, title, hiddenCloseBtn, hiddenHeader, size, styleHeader }) => {
+export const DefaultModal: React.FC<DefaultModal> = ({ isOpen, onOpenChange, modalBody, className, defaultOpen, title, hiddenCloseBtn, hiddenHeader, size, styleHeader, isDismissable = true }) => {
   return (
     <Modal
       isOpen={defaultOpen ? true : isOpen}
       onOpenChange={defaultOpen ? () => {} : onOpenChange}
       hideCloseButton
+      isDismissable={isDismissable}
       defaultOpen={defaultOpen || false}
       size={size ? size : '5xl'}
       placement='center'

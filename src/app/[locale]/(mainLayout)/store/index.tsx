@@ -45,6 +45,7 @@ const Store = () => {
   const currencyCurrent = useSelector((state: any) => state.currencyCurrent)
 
   const allQuery: any = useGetAllQueryParams()
+  const isWebview = allQuery.isWebview === 'true'
   const tokenFromLocalStorage = localStorage.getItem('token')
   const initPhoneValue = !!allQuery?.phone ? allQuery?.phone : ''
   const tokenFromWebview = !!allQuery?.token ? allQuery?.token : tokenFromLocalStorage
@@ -118,7 +119,7 @@ const Store = () => {
 
   return (
     <div className='min-h-[60vh] pt-[70px] 3xl:pt-[80px]'>
-      <CheckValidWorker initPhoneValue={initPhoneValue} setToken={setToken} setValidToken={setValidToken} isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />
+      <CheckValidWorker initPhoneValue={initPhoneValue} setToken={setToken} setValidToken={setValidToken} isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} isWebview={isWebview} />
       <div className='ct-container mb-[60px]'>
         <div className='mt-10'>
           <ListBreadcrumbs list={listBreadcrumbs} />

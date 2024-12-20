@@ -5,6 +5,8 @@ import { ArrowLeft } from 'iconsax-react'
 import Link from 'next/link'
 import { Button, Input } from '@nextui-org/react'
 import Image from 'next/image'
+import { postMessageCustom } from '@/utils'
+import { messageWebview } from '@/constants'
 
 const ModalComfirmPhone = ({
   isOpen,
@@ -12,7 +14,8 @@ const ModalComfirmPhone = ({
   setPhone,
   phone,
   onSending,
-  setOnSending
+  setOnSending,
+  isWebview
 }: {
   isOpen: boolean
   onClose: () => void
@@ -20,6 +23,7 @@ const ModalComfirmPhone = ({
   phone: string
   onSending: boolean
   setOnSending: (onSending: boolean) => void
+  isWebview: boolean
 }) => {
   const t = useTranslations('Store')
 
@@ -28,14 +32,24 @@ const ModalComfirmPhone = ({
       isOpen={isOpen}
       onOpenChange={onClose}
       hiddenCloseBtn
+      isDismissable={!isWebview}
       aria-label='modal logic'
       styleHeader='pl-0'
       title={
-        <Link href={'/'}>
-          <Button startContent={<ArrowLeft size={24} />} className='h-[44px] gap-3 bg-transparent hover:bg-base-gray-2'>
+        isWebview ? (
+          <Button
+            isDisabled={onSending}
+            startContent={<ArrowLeft size={24} />}
+            className='h-[44px] gap-3 bg-transparent hover:bg-base-gray-2'
+            onClick={() => postMessageCustom({ message: messageWebview.CANPOP })}
+          >
+            <p>Trở về App</p>
+          </Button>
+        ) : (
+          <Button as={Link} href={'/'} isDisabled={onSending} startContent={<ArrowLeft size={24} />} className='h-[44px] gap-3 bg-transparent hover:bg-base-gray-2'>
             <p className='text-base'>{t('text14')}</p>
           </Button>
-        </Link>
+        )
       }
       size='5xl'
       modalBody={
@@ -50,6 +64,11 @@ const ModalComfirmPhone = ({
                 value={phone}
                 onChange={(e: any) => {
                   setPhone(e.target.value)
+                }}
+                onKeyUp={(e: any) => {
+                  if (e.key === 'Enter') {
+                    setOnSending(true)
+                  }
                 }}
                 placeholder={t('text15')}
                 radius='full'
