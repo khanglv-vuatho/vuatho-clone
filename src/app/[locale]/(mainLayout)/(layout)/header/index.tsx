@@ -1,19 +1,21 @@
 'use client'
 
+import { Accordion, AccordionItem, Button } from '@nextui-org/react'
+import { Add, ArrowDown2, ArrowLeft2, HambergerMenu as MenuIcon } from 'iconsax-react'
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import React, { memo, useCallback, useEffect, useState } from 'react'
-import { twMerge } from 'tailwind-merge'
-import { Accordion, AccordionItem, Button } from '@nextui-org/react'
-import { Add, ArrowDown2, HambergerMenu as MenuIcon } from 'iconsax-react'
 import { useDispatch, useSelector } from 'react-redux'
+import { twMerge } from 'tailwind-merge'
 
 import DropDownMenu from '@/components/DropDownMenu'
 
 import LangsComp from '@/components/LangsComp'
 import useSmallScreen from '@/hook/useSmallScreen'
+import { postMessageCustom } from '@/utils'
+import { messageWebview } from '@/constants'
 
 const Header = React.memo(() => {
   return (
@@ -31,7 +33,7 @@ export const HeaderWrapper = ({ children, style }: { children: React.ReactNode; 
 
   const searchParams = useSearchParams()
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
-
+  const isWebviewQuery = searchParams.get('isWebview') === 'true'
   useEffect(() => {
     const is_uiwebview = navigator.userAgent.includes('WebView')
     sIsWebview(is_uiwebview)
@@ -65,6 +67,18 @@ export const HeaderWrapper = ({ children, style }: { children: React.ReactNode; 
   if (isWebview) {
     return null
   }
+  if (hiddenHeaderAndFooter && isWebviewQuery)
+    return (
+      <div className='flex w-full items-center justify-start border-1 border-b bg-transparent'>
+        <Button
+          onClick={() => postMessageCustom({ message: messageWebview.CANPOP })}
+          className='flex h-[50px] w-full items-center justify-start rounded-none bg-transparent text-lg font-bold'
+          startContent={<ArrowLeft2 />}
+        >
+          Vua Thợ
+        </Button>
+      </div>
+    )
 
   if (hiddenHeaderAndFooter) return null
 

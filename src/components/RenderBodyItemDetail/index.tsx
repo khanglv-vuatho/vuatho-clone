@@ -9,11 +9,14 @@ import PackageItem from '../PackageItem'
 import BodyCard from '../BodyCard'
 import { DefaultModal } from '../modal'
 import QuantityControl from '../QuantityControl'
+import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
 
 const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems, onCloseDetail }: { data: any; cartItems: any; setCartItems: any; onCloseDetail: any }) => {
   const t = useTranslations('Store')
   const isHeaderVisible = useSelector((state: any) => state.isHeaderVisible)
 
+  const allQuery: any = useGetAllQueryParams()
+  const isWebview = allQuery?.isWebview === 'true'
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
   const [noted, setNoted] = useState('')
   const [quantity, setQuantity] = useState(1)
@@ -36,7 +39,7 @@ const RenderBodyItemDetail = memo(({ data, cartItems, setCartItems, onCloseDetai
 
   return (
     <div className='flex h-full flex-col gap-2 overflow-auto md:max-h-[80dvh]'>
-      <div className={`${isHeaderVisible ? '' : 'mt-[90px] md:mt-0'} flex items-center justify-between px-2`}>
+      <div className={`${isHeaderVisible || isWebview ? '' : 'mt-[90px] md:mt-0'} flex items-center justify-between px-2`}>
         <p className='text-lg font-bold'>{item?.title}</p>
         <Button className='max-h-[48px] min-h-[48px] min-w-[48px] max-w-[48px] bg-transparent px-0' onPress={onCloseDetail}>
           <Add className='rotate-45' size={32} />

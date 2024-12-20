@@ -23,6 +23,7 @@ function Footer() {
   const locale = useLocale()
   const searchParams = useSearchParams()
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
+  const isWebviewQuery = searchParams.get('isWebview') === 'true'
 
   const pathname = usePathname()
   console.log({ pathname })

@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Button, Link, Skeleton } from '@nextui-org/react'
+import { Button, cn, Link, Skeleton } from '@nextui-org/react'
 
 import { ListBreadcrumbs } from '@/components/breadcrumbs'
 import { IBreadcrumbWithUrl, IItemClothes } from '@/interface'
@@ -47,6 +47,7 @@ const Store = () => {
   const allQuery: any = useGetAllQueryParams()
   const isWebview = allQuery.isWebview === 'true'
   const tokenFromLocalStorage = localStorage.getItem('token')
+
   const initPhoneValue = !!allQuery?.phone ? allQuery?.phone : ''
   const tokenFromWebview = !!allQuery?.token ? allQuery?.token : tokenFromLocalStorage
 
@@ -118,12 +119,14 @@ const Store = () => {
   if (!mounted) return null
 
   return (
-    <div className='min-h-[60vh] pt-[70px] 3xl:pt-[80px]'>
+    <div className={cn('min-h-[60vh] pt-[70px] 3xl:pt-[80px]', isWebview ? 'pt-0' : '')}>
       <CheckValidWorker initPhoneValue={initPhoneValue} setToken={setToken} setValidToken={setValidToken} isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} isWebview={isWebview} />
       <div className='ct-container mb-[60px]'>
-        <div className='mt-10'>
-          <ListBreadcrumbs list={listBreadcrumbs} />
-        </div>
+        {!isWebview && (
+          <div className='mt-10'>
+            <ListBreadcrumbs list={listBreadcrumbs} />
+          </div>
+        )}
         <div className='flex items-center justify-between'>
           <h3 className='mb-5 mt-9 text-2xl font-semibold uppercase'>{t('text4')}</h3>
           <Button as={Link} href={`/${locale}/store/history?token=${tokenFromWebview}`} endContent={<ShoppingBag />} className='hidden h-[44px] rounded-2xl bg-[#F8F8F8] text-[#212121] md:flex'>

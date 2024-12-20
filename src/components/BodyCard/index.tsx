@@ -176,7 +176,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
   return (
     //khang
     <div className='flex h-[calc(100dvh)] flex-col gap-6 overflow-y-auto p-4 pb-8 md:h-fit md:max-h-[70dvh] md:pb-0'>
-      <div className={`${isHeaderVisible ? '' : 'mt-[90px] md:mt-0'} flex items-center justify-between`}>
+      <div className={`${isHeaderVisible || isWebview ? '' : 'mt-[90px] md:mt-0'} flex items-center justify-between`}>
         <h3 className='font-semibold md:text-2xl'>{t('text19')}</h3>
         <Button className='max-h-[48px] min-h-[48px] min-w-[48px] max-w-[48px] bg-transparent px-0' onPress={onCloseCart}>
           <Add className='rotate-45' size={32} />
