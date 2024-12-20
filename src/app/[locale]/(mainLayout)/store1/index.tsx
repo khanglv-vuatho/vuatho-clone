@@ -33,6 +33,7 @@ import 'swiper/css/thumbs'
 import 'swiper/css/zoom'
 
 import './storeSwiper.scss'
+import { useRouter } from 'next/navigation'
 
 const Store1 = () => {
   const td = useTranslations('listBreadcrumbs')
@@ -307,6 +308,8 @@ const RenderBodyItemDetail = memo(({ data, onCloseDetail }: { data: any; onClose
 const BodyCard = memo(({ onCloseCart, onCloseDetail }: { onCloseCart: any; onCloseDetail?: any }) => {
   const t = useTranslations('Store')
   const dispatch = useDispatch()
+  const router = useRouter()
+  const locale = useLocale()
 
   const workerInfo = useSelector((state: any) => state.workerInfo)
   const currencyCurrent = useSelector((state: any) => state.currencyCurrent)
@@ -332,6 +335,7 @@ const BodyCard = memo(({ onCloseCart, onCloseDetail }: { onCloseCart: any; onClo
   const [errorInfo, setInfoError] = useState(initalErrorInfo)
   const [onSending, setOnSending] = useState(false)
   const [totalPrice, setTotalPrice] = useState('')
+  const [isBuying, setIsBuying] = useState(false)
 
   const [token, setToken] = useState('')
   const isSmallScreen = useSmallScreen()
@@ -431,8 +435,8 @@ const BodyCard = memo(({ onCloseCart, onCloseDetail }: { onCloseCart: any; onClo
       cartItems[0].quantity = 1
 
       dispatch({ type: 'cards_store', payload: [...cartItems] })
-      return
 
+      setIsBuying(true)
       const data = await instance.post('/uniforms/order', payload)
       if (data?.status === 200) {
         setInfoError(initalErrorInfo)
@@ -443,12 +447,14 @@ const BodyCard = memo(({ onCloseCart, onCloseDetail }: { onCloseCart: any; onClo
         onCloseCart()
         cartItems[0].quantity = 1
         // setCartItems([...cartItems])
+        router.push(`/${locale}/store/order/${data.data.order_id}`)
       }
     } catch (error) {
       console.log(error)
       ToastComponent({ message: t('text30'), type: 'error' })
     } finally {
       setOnSending(false)
+      setIsBuying(false)
       onCloseDetail && onCloseDetail()
     }
   }

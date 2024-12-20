@@ -50,6 +50,8 @@ const HistoryPage = () => {
     return result
   }
 
+  console.log({ tokenFromWebview })
+
   const handleFetchingHistoryShoping = async () => {
     if (!tokenFromWebview) return ToastComponent({ message: 'Vui lòng đăng nhập để xem lịch sử mua hàng', type: 'error' })
 
@@ -68,14 +70,13 @@ const HistoryPage = () => {
     }
   }
 
-  console.log('test', handleFormatData(historyShoping?.splice(0, 1)))
-
   const handleMissToken = () => {
     ToastComponent({ message: 'Vui lòng đăng nhập để xem lịch sử mua hàng', type: 'error' })
     setIsMissToken(true)
   }
 
   useEffect(() => {
+    console.log({ tokenFromWebview })
     if (!!tokenFromWebview) {
       setOnFetching(true)
     }

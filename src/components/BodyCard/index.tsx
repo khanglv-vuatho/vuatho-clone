@@ -7,12 +7,17 @@ import instance from '@/services/axiosConfig'
 import { Button, Input, RadioGroup, Radio } from '@nextui-org/react'
 import { Add } from 'iconsax-react'
 import ImageFallback from '../ImageFallback'
-import { formatMoney } from '@/utils'
+import { formatMoney, postMessageCustom } from '@/utils'
 import CartItem from '../CartItem'
+import { DefaultModal } from '../modal'
+import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
 
 const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: { cartItems: any; setCartItems: any; onCloseCart: any; onCloseDetail?: any }) => {
   const t = useTranslations('Store')
   const t2 = useTranslations('FindWorker')
+
+  const allQueryParams: any = useGetAllQueryParams()
+  const isWebview = allQueryParams.isWebview === 'true'
 
   const dispatch = useDispatch()
   const isHeaderVisible = useSelector((state: any) => state.isHeaderVisible)
@@ -40,7 +45,8 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
   const [errorInfo, setInfoError] = useState(initalErrorInfo)
   const [onSending, setOnSending] = useState(false)
   const [totalPrice, setTotalPrice] = useState('')
-
+  const [isBuying, setIsBuying] = useState(false)
+  const [isOpenModalBuySuccess, setIsOpenModalBuySuccess] = useState(false)
   const [token, setToken] = useState('')
   const isSmallScreen = useSmallScreen()
 
@@ -127,6 +133,7 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
         }
       }
 
+      setIsBuying(true)
       const data = await instance.post('/uniforms/order', payload)
       if (data?.status === 200) {
         setInfoError(initalErrorInfo)
@@ -134,15 +141,20 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
         ToastComponent({ message: t('text18'), type: 'success' })
         dispatch({ type: 'cards_store', payload: {} })
 
-        onCloseCart()
         cartItems[0].quantity = 1
         setCartItems([...cartItems])
+        if (isWebview) return setIsOpenModalBuySuccess(true)
+        onCloseCart()
       }
     } catch (error) {
       console.log(error)
       ToastComponent({ message: t('text30'), type: 'error' })
     } finally {
       setOnSending(false)
+      setIsBuying(false)
+
+      // nếu là webview thì không tắt modal
+      if (isWebview) return
       onCloseDetail && onCloseDetail()
     }
   }
@@ -257,12 +269,33 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
               ''
             )}
           </div>
-          <Button onPress={handleSubmit} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-base font-medium '>
+          <Button isLoading={isBuying} onPress={handleSubmit} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-base font-medium '>
             {t('text25')}
           </Button>
         </div>
       ) : (
         <></>
+      )}
+
+      {isWebview && (
+        <DefaultModal
+          hiddenCloseBtn
+          size='full'
+          modalBody={
+            <div className='flex h-full flex-col items-center justify-center gap-4 p-4'>
+              <p className='text-xl font-bold'>Đặt mua đồng phục thành công!</p>
+              <div className='size-[200px]'>
+                <ImageFallback src={'/store/buy-success.png'} alt='buy-success' width={307} height={240} className='object-cover' />
+              </div>
+              <p className='text-center text-sm'>Đơn hàng của bạn đã được ghi nhận. Vua thợ sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+              <Button className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-base font-medium' onClick={() => postMessageCustom({ message: 'canPop' })}>
+                Quay trở lại App
+              </Button>
+            </div>
+          }
+          isOpen={isOpenModalBuySuccess}
+          onOpenChange={() => setIsOpenModalBuySuccess(false)}
+        />
       )}
     </div>
   )
