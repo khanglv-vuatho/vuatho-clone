@@ -51,6 +51,14 @@ const Store = () => {
   const initPhoneValue = !!allQuery?.phone ? allQuery?.phone : ''
   const tokenFromWebview = !!allQuery?.token ? allQuery?.token : tokenFromLocalStorage
 
+  const buildQueryString = (query: any) => {
+    return Object.entries(query)
+      .map(([key, value]) => `${key}=${value}`)
+      .join('&')
+  }
+
+  const queryInParams = isWebview ? buildQueryString(allQuery) : ''
+
   const serverFetching = useCallback(async () => {
     if (!token?.length) return
     try {
@@ -129,10 +137,15 @@ const Store = () => {
         )}
         <div className='flex items-center justify-between'>
           <h3 className='mb-5 mt-9 text-2xl font-semibold uppercase'>{t('text4')}</h3>
-          <Button as={Link} href={`/${locale}/store/history?token=${tokenFromWebview}`} endContent={<ShoppingBag />} className='hidden h-[44px] rounded-2xl bg-[#F8F8F8] text-[#212121] md:flex'>
+          <Button
+            as={Link}
+            href={`/${locale}/store/history?token=${tokenFromWebview}&${queryInParams}`}
+            endContent={<ShoppingBag />}
+            className='hidden h-[44px] rounded-2xl bg-[#F8F8F8] text-[#212121] md:flex'
+          >
             Lịch sử mua hàng
           </Button>
-          <Button isIconOnly as={Link} href={`/${locale}/store/history?token=${tokenFromWebview}`} className='h-[44px] rounded-2xl bg-[#F8F8F8] text-[#212121] md:hidden'>
+          <Button isIconOnly as={Link} href={`/${locale}/store/history?token=${tokenFromWebview}&${queryInParams}`} className='h-[44px] rounded-2xl bg-[#F8F8F8] text-[#212121] md:hidden'>
             <ShoppingBag />
           </Button>
         </div>

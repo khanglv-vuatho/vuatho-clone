@@ -269,9 +269,11 @@ const BodyCard = memo(({ cartItems, setCartItems, onCloseCart, onCloseDetail }: 
               ''
             )}
           </div>
-          <Button isLoading={isBuying} onPress={handleSubmit} className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-base font-medium '>
-            {t('text25')}
-          </Button>
+          <div className={isWebview ? 'sticky -bottom-[26px] bg-white py-4' : ''}>
+            <Button isLoading={isBuying} onPress={handleSubmit} className='flex  h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-base font-medium '>
+              {t('text25')}
+            </Button>
+          </div>
         </div>
       ) : (
         <></>

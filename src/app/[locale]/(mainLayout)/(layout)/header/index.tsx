@@ -64,6 +64,8 @@ export const HeaderWrapper = ({ children, style }: { children: React.ReactNode; 
     }
   }, [])
 
+  console.log({ hiddenHeaderAndFooter, isWebviewQuery })
+
   if (isWebview) {
     return null
   }

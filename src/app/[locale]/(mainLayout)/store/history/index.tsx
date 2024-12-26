@@ -12,17 +12,21 @@ import { useLocale, useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import './storeSwiper.scss'
+import { cn } from '@nextui-org/react'
 
 const HistoryPage = () => {
   const td = useTranslations('listBreadcrumbs')
   const listBreadcrumbs: IBreadcrumbWithUrl[] = [{ title: td('home'), url: '/' }, { title: td('store'), url: '/store' }, { title: 'Lịch sử mua hàng' }]
-
   const allQuery: any = useGetAllQueryParams()
+
   const dispatch = useDispatch()
   const tokenFromWebview = !!allQuery?.token ? allQuery?.token : ''
   const [onFetching, setOnFetching] = useState(false)
   const [isMissToken, setIsMissToken] = useState(false)
   const [historyShoping, setHistoryShoping] = useState<IHistoryItem[]>([])
+
+  const isWebview = allQuery.isWebview === 'true'
+  const tokenFromLocalStorage = localStorage.getItem('token')
 
   const locale = useLocale()
   const localeText = locale === 'vi' ? 'vi' : 'en'
@@ -87,11 +91,13 @@ const HistoryPage = () => {
   }, [onFetching])
 
   return (
-    <div className='pt-[70px] 3xl:pt-[80px]'>
+    <div className={cn('pt-[70px] 3xl:pt-[80px]', isWebview ? 'pt-0' : '')}>
       <div className='ct-container mb-[60px]'>
-        <div className='mt-10 '>
-          <ListBreadcrumbs list={listBreadcrumbs} />
-        </div>
+        {!isWebview && (
+          <div className='mt-10 '>
+            <ListBreadcrumbs list={listBreadcrumbs} />
+          </div>
+        )}
         {/* <ModalRebuy isOpen={isOpenModalRebuy} onClose={() => setIsOpenModalRebuy(false)} /> */}
 
         {!tokenFromWebview ? null : (

@@ -1,13 +1,13 @@
 'use client'
 
-import { ThemeProvider as NextThemesProvider } from 'next-themes'
-import { AppProgressBar as ProgressBar } from 'next-nprogress-bar'
 import { NextUIProvider } from '@nextui-org/react'
+import { AppProgressBar as ProgressBar } from 'next-nprogress-bar'
+import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { Provider } from 'react-redux'
 
 import store from '@/store'
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export function Providers({ children, locale }: { children: React.ReactNode; locale: string }) {
   return (
     <Provider store={store}>
       <NextUIProvider>

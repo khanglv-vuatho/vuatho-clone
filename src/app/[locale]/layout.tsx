@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { Inter } from 'next/font/google'
-import { redirect } from 'next/navigation'
 import Script from 'next/script'
 import { ToastContainer } from 'react-toastify'
 
@@ -19,6 +18,8 @@ import 'swiper/css/pagination'
 import 'swiper/css/thumbs'
 import 'swiper/css/zoom'
 
+import { headers } from 'next/headers'
+import { redirect } from 'next/navigation'
 export const metadata: Metadata = {
   title: {
     default: 'Trang chủ',
@@ -44,11 +45,25 @@ const timeZone = 'Asia/Ho_Chi_Minh'
 
 export default async function RootLayout({ children, params }: any) {
   const { locale = 'vi' } = params
-
   const isValidLocale = locales.some((cur) => cur === locale)
+  const headersList = headers()
+  const referer = headersList.get('referer') || ''
 
-  if (!isValidLocale) {
-    return redirect(`/vi/${locale}`)
+  let url: URL | null = null
+  if (referer) {
+    try {
+      url = new URL(referer)
+    } catch (error) {
+      console.error('Invalid referer URL:', referer, error)
+    }
+  }
+
+  const searchParams = url ? Object.fromEntries(url.searchParams.entries()) : {} // Lấy tất cả query strings nếu URL hợp lệ
+  console.log({ searchParams })
+  function objectToQueryString(obj: any) {
+    if (!obj) return ''
+    const queryParams = new URLSearchParams(obj)
+    return queryParams.toString()
   }
 
   let messages
@@ -57,6 +72,10 @@ export default async function RootLayout({ children, params }: any) {
     messages = (await import(`../../../messages/${locale || 'vi'}.json`)).default
   } catch (error) {
     console.log(error)
+  }
+
+  if (!isValidLocale) {
+    return redirect(`/vi/${locale}?${objectToQueryString(searchParams)}`)
   }
 
   return (
@@ -74,7 +93,7 @@ export default async function RootLayout({ children, params }: any) {
         </Script>
         <ToastContainer />
         <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
-          <Providers>{children}</Providers>
+          <Providers locale={locale}>{children}</Providers>
           <ScrollToTop />
           {/* <ChatBox /> */}
         </NextIntlClientProvider>
